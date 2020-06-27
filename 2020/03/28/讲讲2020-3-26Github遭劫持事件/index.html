@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
+  <meta name="author" content="CYF">
+  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生">
+  <title>讲讲2020/3/26Github遭中间人攻击事件 || 陈YFの博客(￣▽￣)&#34;</title>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+details:focus,summary:focus{outline:none}
+
+
+</style>
+<script>
+(function(){
+    var vendorPrefix=getBrowserPrefix();
+    var eventName=visibilityEvent(vendorPrefix);
+    document.addEventListener(eventName,visibilityEventCallback);
+    var oldTitle=document.title;
+    function visibilityEventCallback(){
+        if(document.hidden){
+            oldTitle=document.title;
+            document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~";
+        }else{
+            document.title=oldTitle;
+        }
+    }
+    /*------------------------ 解决浏览器兼容性问题 ----------------------------------*/
+    // Get Browser-Specifc Prefix
+    function getBrowserPrefix() {
+          // Check for the unprefixed property.  
+          if ('hidden' in document) {
+            return null;
+        }
+        // All the possible prefixes.  
+        var browserPrefixes = ['moz', 'ms', 'o', 'webkit'];
+        for (var i = 0; i < browserPrefixes.length; i++) {
+            var prefix = browserPrefixes[i] + 'Hidden';
+            if (prefix in document) {
+              return browserPrefixes[i];
+            }
+        }
+         // The API is not supported in browser.  
+         return null;
+    }
+    // Get Browser Specific Hidden Property
+    function hiddenProperty(prefix) {
+        if (prefix) {
+            return prefix + 'Hidden';
+        } else {
+            return 'hidden';
+        }
+    }
+    // Get Browser Specific Visibility State
+    function visibilityState(prefix) {
+      if (prefix) {
+        return prefix + 'VisibilityState';
+      } else {
+        return 'visibilityState';
+      }
+    }
+    // Get Browser Specific Event
+    function visibilityEvent(prefix) {
+      if (prefix) {
+        return prefix + 'visibilitychange';
+      } else {
+        return 'visibilitychange';
+      }
+    }
+})();
+</script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="../../../../lib/prettify/tomorrow-night-eighties.min.css">
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../index.html">主页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../links/">朋友们</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../随口胡说/">随口胡说</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://cyfan.top">项目主页</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://img.cyfan.top/pic/post/pasted-137.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+<script src="/js/fire.js"></script>
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期六, 三月 28日 2020, 8:29 早上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    4.1k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      14 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p
+                class="note note-warning">本文最后更新于：星期六, 五月 23日 2020, 1:38 下午</p>
+            
+            <div class="markdown-body">
+              <p><del><strong>原标题：世界上最大的男同性恋GayHub遭到443端口劫持，是人性的毁灭还是道德的扭曲？</strong></del></p>
+<p>本博文上半篇转载【 <a href="https://blog.qwqdanchun.cn/archives/807" target="_blank" rel="noopener">https://blog.qwqdanchun.cn/archives/807</a> 】的博文，转载如下：</p>
+<hr>
+<hr>
+<h1 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h1><h2 id="GitHub今晨遭遇大规模中间人攻击"><a href="#GitHub今晨遭遇大规模中间人攻击" class="headerlink" title="GitHub今晨遭遇大规模中间人攻击"></a>GitHub今晨遭遇大规模中间人攻击</h2><p>昨晚6，7点左右，国内访问所有的 github pages 页面开启 HTTPS 的话证书都变成下面这个</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-136.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>今晨，github.com也遭受了相同的中间人攻击</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-137.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>谷歌浏览器提示不安全</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-138.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>证书与昨晚的相同<br>疑似GitHub等网站遭到了大规模中间人攻击 。</p>
+<p>中间人攻击（英语：Man-in-the-middle attack，缩写：MITM）在密码学和计算机安全领域中是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。在许多情况下这是很简单的（例如，在一个未加密的Wi-Fi 无线接入点的接受范围内的中间人攻击者，可以将自己作为一个中间人插入这个网络）。</p>
+<p>一个中间人攻击能成功的前提条件是攻击者能将自己伪装成每一个参与会话的终端，并且不被其他终端识破。中间人攻击是一个（缺乏）相互认证的攻击。大多数的加密协议都专门加入了一些特殊的认证方法以阻止中间人攻击。例如，SSL协议可以验证参与通讯的一方或双方使用的证书是否是由权威的受信任的数字证书认证机构颁发，并且能执行双向身份认证。</p>
+<p>简而言之，所谓的中间人攻击就是通过拦截正常的网络通信数据，并进行数据篡改和嗅探，而通信的双方却毫不知情。</p>
+<p>奇特的是，可以实现此攻击需要劫持运营商或者dns才有可能实现，但是这种公然留qq邮箱的做法就十分迷惑</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-139.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>本账号疑似真实姓名：张勇 ，黑龙江人？？？<br>经搜索，该用户曾在 <a href="https://blog.csdn.net/yhyhyhy/article/details/51248497#comments" target="_blank" rel="noopener">https://blog.csdn.net/yhyhyhy/article/details/51248497#comments</a> 帖子下评论，csdn账户： <a href="https://me.csdn.net/blog/qq_29158525" target="_blank" rel="noopener">https://me.csdn.net/blog/qq_29158525</a> ；引出qq： 29158525</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-140.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>本账号疑似真实姓名：周言諭 ，台北人？？？</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-141.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>本账号疑似真实姓名： 谢邵 ，河南人？？？<br>据不可靠消息来源： <a href="https://www.hottg.com/liyuans/p31809.html" target="_blank" rel="noopener">https://www.hottg.com/liyuans/p31809.html</a> 此邮箱可能归属于某三位数公司？？？</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-142.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>另有v2ex老哥声称之前就看到过这个邮箱劫持其他域名</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-144.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>证书生成疑似参照此文章：<a href="https://www.lagou.com/lgeduarticle/52972.html" target="_blank" rel="noopener">https://www.lagou.com/lgeduarticle/52972.html</a>（是否参照存疑，不过原理确实相同，仅加密算法有所更改）</p>
+<p>曾在贴吧提问： <a href="https://tieba.baidu.com/p/400626957?red_tag=3454236974" target="_blank" rel="noopener">https://tieba.baidu.com/p/400626957?red_tag=3454236974</a></p>
+<p>从论坛其他人评论可以得到其qq群关系：</p>
+<pre><code>
+群号:4823518 昵称:张勇
+群名:建三江一中同学
+群介绍:三江一中89级92届同学,,本届的加入,加入必须写名字!谢
+群号:66136842 昵称:张勇
+群名:亲友群
+群介绍:沟通
+群号:69386774 昵称:帅哥5号  张勇
+群名:帅哥靓女对对碰
+群介绍:命运负责洗牌，但是玩牌的是我们自己！
+群号:72876767 昵称:张勇
+群号:10456040 昵称:张勇
+群名:synjones
+群介绍:http://www.synjones.com
+群号:13602636 昵称:灵山-D3
+群名:★城东新居—D区★
+群介绍:哈尔滨城东新居，群策群力，共建美好家园。（有好的主张，可以发到群论坛）
+群号:15116517 昵称:灵山-D3
+群名:城东新居
+群介绍:小区业主维权的专家，溪畔家园业主委员会的李主任，联系电话是13069708074。大家回家
+群号:15376336 昵称:心即灵山
+群名:金龙卡服务群
+群介绍:内部专用
+群号:32068923 昵称:心即灵山
+群名:城东新居高级群
+群介绍:希望大家都能为本群和小区做一些贡献。都想一想办法，怎样能解决我们小区现存的问题。
+群号:19466772 昵称:我想回到以前
+群名:张兴庄吧
+群号:52260534 昵称:我想回到以前
+群名:巧
+群号:1363550 昵称:(り Remote、
+群名:都四班的
+群号:4250637 昵称:(り Remote、
+群名:QQ群
+群介绍:http://www.167cq.com/
+群号:70152084 昵称:谢绍。
+群名:国专08三班
+群介绍:国际经济与贸易专科0803班
+群号:84351791 昵称:帅气G★Remote
+群名:荣华09汽三
+群介绍:-
+群号:92050039 昵称:(り Remote、
+群名:ｖ1p{會員}倲.总群
+群号:92118193 昵称:(り Remote、
+群名:高楼庄⒐⑥界黄金一班
+群号:92637291 昵称:(り Remote、
+群名:小伙伴
+群号:95128769 昵称:(り Remote、
+群名:藝术学院体育部
+群介绍:发掘、培养体育特长学生；做好对班级的考核工作；协助其他部门开展工作。
+群号:6888129 昵称:(り Remote、
+群号:9496270 昵称:(り Remote、
+群名:21中
+群号:11604443 昵称:収惢養鮏.┊
+群名:安阳铁路中学高06
+群介绍:班级群外人勿进
+群号:22739863 昵称:(り Remote、
+群名:华□豫□学□院。
+群号:29121641 昵称:(り Remote、
+群名:乀闭丄眼﹋⒑指紧筘
+群号:30215035 昵称:(り Remote、
+群名:看群公告！好消息！
+群介绍:免费拿話費兩百块!群里的朋友们用手机拨打1259064212参加侣友在线答题就可以了，我今
+群号:32591681 昵称:(り Remote、
+群名:高三一班群
+群介绍:创建此群的目的：仅仅是为了提供朋友之间的交流。在此群里，拒绝一切色情粗俗
+群号:34421223 昵称:(り Remote、
+群名:魭滴系鲥緔
+群介绍:IC，IP．IQ卡，通通告诉我密码！！
+群号:38607494 昵称:(り Remote、
+群名:ωǒ錯了？
+群介绍:莪們都昰好孩孓。异想’兲開徳孩孒︶￣~°
+群号:56483925 昵称:谢邵。
+群名:国专0803班
+群介绍:国专0803
+</code></pre><p>总结：其人曾用qq：346608453，29158525，23853637；地址等不明，有代码基础，有能力实现本次攻击，疑似qq都是盗来的，无法确定本人身份</p>
+<h2 id="最后提醒："><a href="#最后提醒：" class="headerlink" title="最后提醒："></a>最后提醒：</h2><p>《中华人民共和国刑法》第二百八十六条 违反国家规定，对计算机信息系统功能进行删除、修改、增加、干扰，造成计算机信息系统不能正常运行，后果严重的，处五年以下有期徒刑或者拘役；后果特别严重的，处五年以上有期徒刑。</p>
+<p>违反国家规定，对计算机信息系统中存储、处理或者传输的数据和应用程序进行删除、修改、增加的操作，后果严重的，依照前款的规定处罚。</p>
+<p>千万要知法守法，技术无罪，但是拿来做坏事可是要被抓进去的哦</p>
+<h2 id="11：03前来更新"><a href="#11：03前来更新" class="headerlink" title="11：03前来更新"></a>11：03前来更新</h2><p>攻击者换了一个证书，新的邮箱为 <a href="mailto:1396060845037@mymail.com" target="_blank" rel="noopener">1396060845037@mymail.com</a> ，截图如下</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-145.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>第一个qq里的网址可能是因为这个qq是盗的，如果这样的话，几个qq之间没有联系也就正常了</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-146.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<h2 id="可能是最后的更新（2020-3-28-9：38）"><a href="#可能是最后的更新（2020-3-28-9：38）" class="headerlink" title="可能是最后的更新（2020/3/28 9：38）"></a>可能是最后的更新（2020/3/28 9：38）</h2><p>昨天文章写的有些急，也受了一些言论的误导，出现了一处错误，csdn的昵称后缀是随机生成的，因此推出来的后两个qq号与此无关。而在昨晚，该用户修改签名为：“QQ号码被盗，现已恢复”，并在随后关闭空间（确实很多老哥前去轰炸），这一波貌似洗白的操作却是疑点重重。</p>
+<p>首先，大家基本已经认为这个号是被盗的了，但是号主现身就有些奇妙，作为一个 从事软件开发工作近 16 年（ CSDN 介绍 ）的人，被长时间盗号，却不找回或无法找回，突然出事了便轻松找回，可能性？？？</p>
+<p>而且，这样的话，另一个昨天没用到的点就有意思了，928天 qq达人，如果是盗号，那盗号的人也是把这个号当大号用了叭。这样我们可以假设确实被盗号，那么如果明天达人就该断了叭。找回了一个三年多没用的号，发完解释还会占着手机那一个qq登录的位置吗，大概率不会。而如果不是盗号，咳咳，那这位张勇兄弟大概就是真的勇了叭，哈哈。</p>
+<p>其实说了这么多，就是我们这些GitHub重度用户，想要一个合理的解释，不管是有些人猜测的G||F||//，还是一线小兵误操作，抑或是黑客在家闲极无聊等等。如果是误操作或被黑，大家就当吃瓜一场，就算是墙的问题，我们也好提前搬好仓库吧。</p>
+<hr>
+<hr>
+<p>好的，视线转回来，我要开始bb了。</p>
+<p>刚开始知道这件事还是我的好<span class="heimu">基</span>友 <a href="https://blog.say521.cn" target="_blank" rel="noopener">奥秘Sir</a> QQ空间里的转载:</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-147.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>哦，发生了什么？</p>
+<p>于是拿着QQ号去网上一找，冷汗直流：</p>
+<p>这个QQ号的主人在2020/3/26通过手段劫持了Github、CloudflareCDN、京东网站，不过证书有问题被截下来了。</p>
+<p>为什么冷汗直流？因为我全站绑定在Github+CloudFlare上，那岂不是我也被影响了吗？</p>
+<p>至于为什么我没有察觉到,是因为3/26-3/27我在认真学习,没有上github<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"></p>
+<p>后来查找了一下，这次攻击只是影响了国内的互联网，CloudFlare劫持也只是针对美国那几个节点。</p>
+<p>正好，上次嫌美国节点慢，通过自代理的方式节点到香港线，也就是我和攻击玩了个擦边球。</p>
+<p>于是我就放心了.</p>
+<p>但这次攻击不是一般的诡异，有很多疑点，当我松了一口气后又觉得不对，请听我慢慢讲解：</p>
+<h1 id="1-本次攻击并非DNS劫持，而是中间人劫持"><a href="#1-本次攻击并非DNS劫持，而是中间人劫持" class="headerlink" title="1.本次攻击并非DNS劫持，而是中间人劫持"></a>1.本次攻击并非DNS劫持，而是中间人劫持</h1><p>DNS劫持那是G||F||\/\/的老把戏了,如果这一次这三家遭到DNS劫持,也许我也就懒得说了,毕竟这已经见怪不怪了，手动绕开来就可以了。</p>
+<p>但是这一次，是七层精准劫持,也许这个名词不懂,那就是<strong>中间人攻击特定端口</strong>.</p>
+<h2 id="什么是中间人"><a href="#什么是中间人" class="headerlink" title="什么是中间人?"></a>什么是中间人?</h2><p><strong>MITM</strong>,全称Man-in-the-middle attack,这种攻击在一定程度上能突破HTTPS,通俗的来讲是这样的:</p>
+<p>先说正常https传输:</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-148.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>这种加密方式叫<strong>非对称加密</strong>,应用的很广泛,至于为什么要用非对称加密而不用对称加密,这不是这里该讨论的.</p>
+<p>假设有个黑客,想要窃取他们之间的信息:</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-149.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>为什么毫无卵用?因为,非对称加密有个特点,<strong>用公钥加密的东西就不能用公钥解密了</strong>,而公钥是公开的.</p>
+<p>但是,这样还有攻击的方式:</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-150.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>这种黑客卡中间的方式,叫<strong>中间人攻击</strong>.</p>
+<p>而且这种攻击,做的好就可以神不知鬼不觉窃听通话<strong>甚至篡改内容</strong>,最惨的是你都不知道被窃听了,用户和服务器都以为自己和对方直接通话,这才是最阴险的地方.解决办法只有HSTS。</p>
+<p>至于用户是怎么被误导到黑客的,这就相当有意思,这就是路由污染,我们所说的ip查找,其实没有说有ip就可以直接找到对方了,还是要经过路由的.</p>
+<p>比如说我第一次上百度（假设沿途完全没有缓存）:baidu.com,真正完整的经过是这样的</p>
+<ol>
+<li>电脑查找hosts,没有baidu</li>
+<li>电脑于是向DNS（假如是8.8.8.8）发送请求包，问baidu.com在哪？</li>
+<li>8.8.8.8这台服务器查了查，没有缓存，于是回头和我说稍等，自己去联系.com服务器</li>
+<li>.com服务器查了查,和8.8.8.8说,你去北京I根域名服务器找,我这里没有缓存</li>
+<li>于是8.8.8.8又屁颠屁颠去北京I根域名服务器找NS记录,I根查了查,你去ns1.baidu.com找,它的ip是202.108.22.220</li>
+<li>于是8.8.8.8回来跟我说,nameserver是202.108.22.220</li>
+<li>于是我去202.108.22.220,向上一级路由(我的路由器)问202.108.22.220在哪?</li>
+<li>路由器不知道,于是向上一级询问</li>
+<li>上一级返回给我的路由器稍等,自己还要去上上级查询,我这里是117.149.*.*<br>(此处省略17步路由查询)</li>
+<li>最终,层层路由查询告诉我,ip202.108.22.220在北京联通,我帮你找到了</li>
+<li>发个握手包,连接,返回baidu.com的ip 39.156.69.79</li>
+<li>又一次经历7-10步，我与百度连接成功<br>||完了？嘿嘿，其实还没完</li>
+<li>百度301重定向将我从 <code>baidu.com</code> 定向到 <code>www.baidu.com</code></li>
+<li>又一次经历1-10步,最终,百度界面华丽丽地展开来.</li>
+</ol>
+<p>那么,中间的路由查询变得很有意思,如果我在骨干网那么干,故意把 <code>github.io</code> 路由到我的服务器上,是不是所有人都被劫持了?</p>
+<p>很不巧,这一次真的就是那么干的.</p>
+<h1 id="2-只劫持443端口-没有劫持80端口"><a href="#2-只劫持443端口-没有劫持80端口" class="headerlink" title="2.只劫持443端口,没有劫持80端口"></a>2.只劫持443端口,没有劫持80端口</h1><p>有人curl一下github.io,80端口TTL是51,443就变成56了<img src="https://img.cyfan.top/pic/moji/ld.jpg" srcset="/img/loading.gif"></p>
+<p>更nb是，有人ping了一下github.io:80和github.io:443,前者延迟280ms,丢包率25%,后者延迟20ms,不丢包<img src="https://img.cyfan.top/pic/moji/dy.png" srcset="/img/loading.gif">.</p>
+<p>所以这玩意还能降低延迟?</p>
+<p>我笑了.</p>
+<p>更厉害的是,由于是中间人攻击,有网友说如果信任证书还能上github,不过速度很慢.</p>
+<p>也对,谁叫他手贱修改了全国路由,现在他的服务器正在遭受全国的DDoS.</p>
+<p>敢情难道是他想给全国人民一个惊喜,反向代理gihub以提高访问速度?</p>
+<h1 id="3-留下QQ邮箱"><a href="#3-留下QQ邮箱" class="headerlink" title="3.留下QQ邮箱"></a>3.留下QQ邮箱</h1><p>【以一己之力攻击国家骨干网污染三个大网站的路由】和【留下自己的QQ邮箱】，干这两件事情的真的是同一个人吗？？？？？</p>
+<p>有人说这是仿照一篇文章伪造的，文章什么我就懒得贴了，反正伪造证书这种事情我也不会( ﹁ ﹁ ) ~→</p>
+<p>但是，能攻击国家骨干网却拿了个自签名的证书攻击，这种事情都可以上诡异录了，唯一的解释可能是混淆视听，或者是大攻击前的试水，亦或是真的QQ被盗了，来当个替罪羊。</p>
+<h1 id="4-声称自己QQ被盗"><a href="#4-声称自己QQ被盗" class="headerlink" title="4.声称自己QQ被盗"></a>4.声称自己QQ被盗</h1><p>这是QQ对应的空间，3/27晚上已无法正常访问，这是之前截图的：</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-151.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<h1 id="5-同时攻击了京东和CloudFlare"><a href="#5-同时攻击了京东和CloudFlare" class="headerlink" title="5.同时攻击了京东和CloudFlare"></a>5.同时攻击了京东和CloudFlare</h1><p>如果说只攻击了Github，那我能肯定，多半是G||F||\/\/技术人员手动失误,但你把京东给搞了,我觉得这……没搞懂啊,所以这真的可能是试水咯?</p>
+<h1 id="6-初学者"><a href="#6-初学者" class="headerlink" title="6.初学者?"></a>6.初学者?</h1><p>网上有很多人说这是个初学者,想测试一下,没想到惹出那么大的事情.</p>
+<p>好啊,初学者随随便便搞塌国内Github京东CF,再学一点签个真实证书,下次干脆把gov.cn全站劫持了,是不是这样才能让zf了解到https的重要性.</p>
+<p>如果真的是初学者,那么从侧面就可以讽刺我国网络安全堪忧啊.</p>
+<p>教练,我想学这个.<img src="https://img.cyfan.top/pic/moji/zcbg.jpg" srcset="/img/loading.gif"></p>
+<h1 id="7-这么值得报道的新闻，官媒毫无反应"><a href="#7-这么值得报道的新闻，官媒毫无反应" class="headerlink" title="7.这么值得报道的新闻，官媒毫无反应"></a>7.这么值得报道的新闻，官媒毫无反应</h1><p>我觉得这就很有意思了，我不说，大家应该知道为什么</p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>关于这次被攻击，为什么Github错误页面会被显示呢？</p>
+<p>1.Github开了HSTS，匹配的头字符不对，浏览器直接拦截，连<kbd>忽略警告,继续访问</kbd>这样的字符都没有,吓得我赶紧给我全站开了HSTS.<br>2.证书是个自签名,按理说能攻击骨干网的大佬伪造个证书应该很容易,为什么用了这个呢?</p>
+<p>另外，以国内的环境，大家上Github扔代码一定要用SSH，因为SSH双方是强加密的，可以预防中间人攻击！</p>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/随心记/">随心记</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/CloudFlare/">CloudFlare</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/Github/">Github</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/网络/">网络</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/京东/">京东</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/劫持/">劫持</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/安全/">安全</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-12 col-md-6">
+                    
+                      <a href="../../29/PHPnow/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>PHPnow-Windows下最轻巧的PHP运行软件，没有之一</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-12 col-md-6">
+                    
+                      <a href="../../26/一次“修”冰箱的经历/">
+                        <span>一次“修”冰箱的经历</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
+  <div id="vcomments"></div>
+  <script defer src="https://img.cyfan.top/js/av-min.js"></script>
+  <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
+
+  <script type="text/javascript">
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "RMX6WtyzwUc2iR0tjygzqAvc-MdYXbMMI",
+        app_key: "5Omr7dbOOYyCCwflnKntv5IS",
+        placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
+        avatar: "../../../../retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+		emoticon_url:'https://img.cyfan.top/pic/moji',
+        emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","fqsk.jpg","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","wc.jpg","whks.png","zcbg.jpg","邪魅一笑.jpg"],
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Hello?你开了JS吗？？？？</a></noscript>
+
+
+                </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="../../../../js/main.js" ></script>
+
+
+  <script  src="../../../../js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "讲讲2020/3/26Github遭中间人攻击事件&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+  <script>
+    var path = "../../../../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+<footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+
+		
+		<script src="/js/index.js"></script>
+	</div>
+
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a>
+	<a href="https://icp.gov.moe/?keyword=2020213344" target="_blank"> 2020213344号</a>
+  </div>
+  
+
+
+    
+  </div>
+    <script type="text/javascript" src="/js/copyright.js" ></script>
+</footer>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

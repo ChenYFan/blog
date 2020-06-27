@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
+  <meta name="author" content="CYF">
+  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生">
+  <title>Valine：一款极简评论系统的安装到升级 || 陈YFの博客(￣▽￣)&#34;</title>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+details:focus,summary:focus{outline:none}
+
+
+</style>
+<script>
+(function(){
+    var vendorPrefix=getBrowserPrefix();
+    var eventName=visibilityEvent(vendorPrefix);
+    document.addEventListener(eventName,visibilityEventCallback);
+    var oldTitle=document.title;
+    function visibilityEventCallback(){
+        if(document.hidden){
+            oldTitle=document.title;
+            document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~";
+        }else{
+            document.title=oldTitle;
+        }
+    }
+    /*------------------------ 解决浏览器兼容性问题 ----------------------------------*/
+    // Get Browser-Specifc Prefix
+    function getBrowserPrefix() {
+          // Check for the unprefixed property.  
+          if ('hidden' in document) {
+            return null;
+        }
+        // All the possible prefixes.  
+        var browserPrefixes = ['moz', 'ms', 'o', 'webkit'];
+        for (var i = 0; i < browserPrefixes.length; i++) {
+            var prefix = browserPrefixes[i] + 'Hidden';
+            if (prefix in document) {
+              return browserPrefixes[i];
+            }
+        }
+         // The API is not supported in browser.  
+         return null;
+    }
+    // Get Browser Specific Hidden Property
+    function hiddenProperty(prefix) {
+        if (prefix) {
+            return prefix + 'Hidden';
+        } else {
+            return 'hidden';
+        }
+    }
+    // Get Browser Specific Visibility State
+    function visibilityState(prefix) {
+      if (prefix) {
+        return prefix + 'VisibilityState';
+      } else {
+        return 'visibilityState';
+      }
+    }
+    // Get Browser Specific Event
+    function visibilityEvent(prefix) {
+      if (prefix) {
+        return prefix + 'visibilitychange';
+      } else {
+        return 'visibilitychange';
+      }
+    }
+})();
+</script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="../../../../lib/prettify/tomorrow-night-eighties.min.css">
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../index.html">主页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../links/">朋友们</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../随口胡说/">随口胡说</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://cyfan.top">项目主页</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://img.cyfan.top/pic/img/3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+<script src="/js/fire.js"></script>
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期六, 八月 17日 2019, 3:30 下午
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    3.7k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      15 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p
+                class="note note-warning">本文最后更新于：星期日, 六月 7日 2020, 1:57 下午</p>
+            
+            <div class="markdown-body">
+              <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><blockquote>
+<p>这可能就是这个暑假最后一篇了，好怀念啊(ノへ￣、)</p>
+</blockquote>
+<p>几天前我的博客评论系统还是来比力的，这几天我把它换成了Valine，为什么呢？我列了一张表，你可以参考一下：</p>
+<p>（这些都是还活着、中国能访问的评论系统）</p>
+<table>
+<thead>
+<tr>
+<th>项目&amp;评论系统：</th>
+<th>Gitalk</th>
+<th>Gitment</th>
+<th>Livere</th>
+<th>Valine</th>
+<th>畅言</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>需要备案？</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>外国版❌，国内版未来✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>评论系统存储服务器地址？</td>
+<td>Github issues</td>
+<td>Github issues</td>
+<td>Livere服务器</td>
+<td>Leancloud</td>
+<td>畅言服务器</td>
+</tr>
+<tr>
+<td>速度？</td>
+<td>较快</td>
+<td>快</td>
+<td>很慢</td>
+<td>快</td>
+<td>较快</td>
+</tr>
+<tr>
+<td>延迟？</td>
+<td>&lt;6s</td>
+<td>&lt;6s</td>
+<td>&gt;10s</td>
+<td>&lt;3s</td>
+<td>&lt;3s</td>
+</tr>
+<tr>
+<td>支持匿名？</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>登陆方式？</td>
+<td>Github账号</td>
+<td>Github账号</td>
+<td>多种SNS账号</td>
+<td>邮箱</td>
+<td>多种SNS账号</td>
+</tr>
+<tr>
+<td>UI风格？</td>
+<td>极简</td>
+<td>一般</td>
+<td>一般</td>
+<td>极简</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>缺陷</td>
+<td>只支持Github账号</td>
+<td>只支持Github账号</td>
+<td>加载极慢</td>
+<td>免费版每天强制休眠6小时</td>
+<td>要备案</td>
+</tr>
+</tbody></table>
+<p>这么看来，还Valine最优秀。</p>
+<h1 id="What’s-Valine"><a href="#What’s-Valine" class="headerlink" title="What’s Valine?"></a>What’s Valine?</h1><p>Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。</p>
+<p>理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用Valine。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>快速</li>
+<li>安全</li>
+<li>Emoji 😉</li>
+<li>无后端实现</li>
+<li>MarkDown 全语法支持</li>
+<li>轻量易用(~15kb gzipped)</li>
+<li>文章阅读量统计 v1.2.0+</li>
+</ul>
+<h1 id="开始安装："><a href="#开始安装：" class="headerlink" title="开始安装："></a>开始安装：</h1><h2 id="注册LeanCloud账号。"><a href="#注册LeanCloud账号。" class="headerlink" title="注册LeanCloud账号。"></a>注册LeanCloud账号。</h2><blockquote>
+<p>注意一下，如果你不想手持身份证拍照，还是乖乖使用国际版吧！</p>
+</blockquote>
+<p><a href="https://leancloud.cn" target="_blank" rel="noopener">国内LeanCloud</a> <a href="https://leancloud.app" target="_blank" rel="noopener">国外LeanCloud</a> </p>
+<p>好在国际版也支持中文。</p>
+<p>注册-&gt;绑定手机号（这一步逃不了的）-&gt;手持身份证拍照（海外版可以跳过这一步）-&gt;创建一个应用，选择开发板</p>
+<p><img src="https://img.cyfan.top/pic/VALINE/CREATE.jpg" srcset="/img/loading.gif" alt="创建应用" title="创建应用"></p>
+<p>到此注册已完成了，确实很简单吧？</p>
+<h2 id="安装Valine"><a href="#安装Valine" class="headerlink" title="安装Valine"></a>安装Valine</h2><h3 id="获取App-ID和App-Key"><a href="#获取App-ID和App-Key" class="headerlink" title="获取App ID和App Key"></a>获取<code>App ID</code>和<code>App Key</code></h3><p>进入设置-&gt;应用Key,可以看到<code>App ID</code>和<code>App Key</code>,<code>Master Key</code>用不着,先不用管.</p>
+<blockquote>
+<h2 id="安全提示"><a href="#安全提示" class="headerlink" title="安全提示"></a>安全提示</h2><p>Master Key 是最高权限的 Key，一旦泄露，请立刻使用「重置」按钮重置。<br>App Key 是客户端中使用的 Key，理论上客户端中所有请求都不应被信任，默认应认为 App Key 是泄露的。<br>防御恶意请求，不应通过加密 App Key，而应通过设置 ACL（访问权限控制列表）来实现，详细请参考 <a href="https://console.leancloud.app/docs/data_security.html" target="_blank" rel="noopener">「数据与安全文档」 </a>。</p>
+</blockquote>
+<h3 id="Hexo-NexT用户："><a href="#Hexo-NexT用户：" class="headerlink" title="Hexo+NexT用户："></a>Hexo+NexT用户：</h3><p>打开<code>/theme/next/_config</code>文件,搜索<code>Valine</code>,你会看到类似的字样:</p>
+<pre><code># Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+valine:
+  enable: false
+  appid: 
+  appkey: 
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder:  # comment box placeholder
+  avatar: mp # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size</code></pre><p>这里解释一下:</p>
+<ul>
+<li><code>enable</code>: 表示Valine是否开启,请把它修改为<code>true</code></li>
+<li><code>appid</code>: 你的<code>App id</code></li>
+<li><code>appkey</code>: 你的<code>App Key</code></li>
+<li><code>notify</code>: 邮箱提醒,这个功能并不完善,请保持为<code>false</code>,以后我们会有更好的邮件系统.</li>
+<li><code>verify</code>: 人机验证,最好开起来,避免恶意灌水,但是发的评论越多,题目越难,有点反人类.</li>
+<li><code>placeholder</code>: 默认在评论框内显示的文字</li>
+<li><code>avatar</code>: 没有留下<a href="https://cn.gravatar.com" target="_blank" rel="noopener">Gravatar</a> 账号的用户默认头像，具体前往<a href="https://valine.js.org" target="_blank" rel="noopener">https://valine.js.org</a>查看更多。</li>
+<li><code>guest_info</code>: 默认显示的三个信息输入框</li>
+<li><code>pageSize</code>: 单页显示评论量，默认十条。</li>
+</ul>
+<p>接着<code>hexo g</code>自己看一看吧!</p>
+<h3 id="其它用户"><a href="#其它用户" class="headerlink" title="其它用户:"></a>其它用户:</h3><p>先在<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>间添加:</p>
+<pre><code class="Javascript">&lt;script src=&#39;//unpkg.com/valine/dist/Valine.min.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>接着在<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>间在你要添加的区间添加:</p>
+<pre><code class="html">    &lt;div id=&quot;vcomments&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        new Valine({
+            el: &#39;#vcomments&#39; ,
+            appId: &#39;&lt;APP_ID&gt;&#39;,
+            appKey: &#39;&lt;APP_KEY&gt;&#39;,
+            notify: false, 
+            verify: false, 
+            avatar: &#39;mp&#39;, 
+            placeholder: &#39;just go go&#39; })
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>与上面相同:</p>
+<ul>
+<li><code>appid</code>: 你的<code>App id</code></li>
+<li><code>appkey</code>: 你的<code>App Key</code></li>
+<li><code>notify</code>: 邮箱提醒,这个功能并不完善,请保持为<code>false</code>,以后我们会有更好的邮件系统.</li>
+<li><code>verify</code>: 人机验证,最好开起来,避免恶意灌水,但是发的评论越多,题目越难,有点反人类.</li>
+<li><code>placeholder</code>: 默认在评论框内显示的文字</li>
+<li><code>avatar</code>: 没有留下<a href="https://cn.gravatar.com" target="_blank" rel="noopener">Gravatar</a> 账号的用户默认头像，具体前往<a href="https://valine.js.org" target="_blank" rel="noopener">https://valine.js.org</a>查看更多。</li>
+</ul>
+<blockquote>
+<p><strong>手动填坑</strong><br>在 <code>:</code>后一定要有一个<kbd>Space</kbd>!</p>
+</blockquote>
+<p>搞定了!</p>
+<h2 id="去除Powered-by-Valine"><a href="#去除Powered-by-Valine" class="headerlink" title="去除Powered by Valine"></a>去除<code>Powered by Valine</code></h2><p>在<code>&lt;/script&gt;</code>前添加以下文字:</p>
+<pre><code class="javascript">var infoEle = document.querySelector(&#39;#comments .info&#39;);
+if (infoEle &amp;&amp; infoEle.childNodes &amp;&amp; infoEle.childNodes.length &gt; 0){
+  infoEle.childNodes.forEach(function(item) {
+    item.parentNode.removeChild(item);
+  });
+}</code></pre>
+<p>你会看到版权神秘失踪了.</p>
+<h1 id="升阶"><a href="#升阶" class="headerlink" title="升阶:"></a>升阶:</h1><p>Valine主打无后台,虽然避免了种种麻烦的事,但为管理造成了一定麻烦.</p>
+<p>况且邮箱发送提醒也有很大缺陷,这时,我们就要祭出神器: <code>Valine-Admin</code> !</p>
+<p>感谢<a href="https://gitee.com/a1401358759/Valine-Admin" target="_blank" rel="noopener">杨学峰</a> 的贡献!本篇转载以下。</p>
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境:"></a>部署环境:</h2><p>在Leancloud中<code>云引擎</code>-&gt;<code>设置</code>-&gt;<code>源码部署</code>-&gt;<code>代码库</code>,设置为<a href="https://github.com/ChenYFan/Valine-Admin.git" target="_blank" rel="noopener">https://github.com/ChenYFan/Valine-Admin.git</a>,接着进入<code>云引擎</code>-&gt;<code>部署</code>,点击部署,过一下就部署完成啦!</p>
+<h2 id="设置变量"><a href="#设置变量" class="headerlink" title="设置变量:"></a>设置变量:</h2><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>CYFの博客</td>
+<td>[必填]博客名称</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td><a href="https://blog.cyfan.ga" target="_blank" rel="noopener">https://blog.cyfan.ga</a></td>
+<td>[必填]首页地址</td>
+</tr>
+<tr>
+<td><strong>SMTP_SERVICE</strong></td>
+<td>163</td>
+<td>[新版支持]邮件服务提供商，支持 QQ、163、126、Gmail 以及 <a href="https://nodemailer.com/smtp/well-known/#supported-services" target="_blank" rel="noopener">更多</a> ,不建议使用QQex.</td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td><a href="mailto:xxxxxx@163.com" target="_blank" rel="noopener">xxxxxx@163.com</a></td>
+<td>[必填]SMTP登录用户</td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>xxxxxxxx</td>
+<td>[必填]SMTP登录密码（QQ邮箱需要获取独立密码,建议使用163）</td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>CYF</td>
+<td>[必填]发件人</td>
+</tr>
+<tr>
+<td>SENDER_EMAIL</td>
+<td><a href="mailto:xxxxxx@163.com" target="_blank" rel="noopener">xxxxxx@163.com</a></td>
+<td>[必填]发件邮箱</td>
+</tr>
+<tr>
+<td>ADMIN_URL</td>
+<td><a href="https://xxx.avosapps.us/" target="_blank" rel="noopener">https://xxx.avosapps.us/</a></td>
+<td>[建议]Web主机二级域名，用于自动唤醒</td>
+</tr>
+<tr>
+<td>BLOGGER_EMAIL</td>
+<td><a href="mailto:xxxxx@gmail.com" target="_blank" rel="noopener">xxxxx@gmail.com</a></td>
+<td>[可选]博主通知收件地址，默认使用SENDER_EMAIL</td>
+</tr>
+<tr>
+<td>AKISMET_KEY</td>
+<td>xxxxxxxxxxxx</td>
+<td>[可选]Akismet Key 用于垃圾评论检测，设为MANUAL_REVIEW开启人工审核，留空不使用反垃圾</td>
+</tr>
+</tbody></table>
+<p>接着<code>云引擎</code>-&gt;<code>Web主机域名</code>,自主设置,比如<code>xxx</code>,然后访问<a href="https://xxx.avosapps.us/sign-up" target="_blank" rel="noopener">https://xxx.avosapps.us/sign-up</a>，快速注册自己的管理员账号。</p>
+<blockquote>
+<p>注：使用原版Valine如果遇到注册页面不显示直接跳转至登录页的情况，请手动删除_User表中的全部数据。</p>
+</blockquote>
+<blockquote>
+<p>注: 国内版更可能是<code>xxx.leancloudapp.cn</code>,具体看情况.</p>
+</blockquote>
+<p>此后，可以通过<code>https://xxx.avosapps.us/</code>管理评论。</p>
+<h2 id="定时任务设置"><a href="#定时任务设置" class="headerlink" title="定时任务设置"></a>定时任务设置</h2><p>开发版有限制，每天强制休眠6小时和每半小时睡眠。</p>
+<p>解决：</p>
+<p>目前实现了两种云函数定时任务：(1)自动唤醒，定时访问Web APP二级域名防止云引擎休眠；(2)每天定时检查24小时内漏发的邮件通知。</p>
+<p>进入云引擎-定时任务中，创建定时器，创建两个定时任务。</p>
+<h3 id="自动唤醒"><a href="#自动唤醒" class="headerlink" title="自动唤醒"></a>自动唤醒</h3><p>选择self-wake云函数，Cron表达式为<code>0 0/30 7-23 * * ?</code>，表示每天早7点到晚23点每隔30分钟访问云引擎，<code>ADMIN_URL</code>环境变量务必设置正确：</p>
+<p><img src="https://img.cyfan.top/pic/VALINE/SW.png" srcset="/img/loading.gif" alt title="自唤醒"></p>
+<blockquote>
+<p>不建议添加该函数，这回导致你的评论系统在半夜无法正常运行。</p>
+</blockquote>
+<h3 id="邮件通知"><a href="#邮件通知" class="headerlink" title="邮件通知"></a>邮件通知</h3><p>选择resend-mails云函数，Cron表达式为<code>0 0 8 * * ?</code>，表示每天早8点检查过去24小时内漏发的通知邮件并补发：<br><img src="https://img.cyfan.top/pic/VALINE/MAIL.png" srcset="/img/loading.gif" alt title="邮件通知"></p>
+<p><del><strong>添加定时器后记得点击启动方可生效。</strong></del></p>
+<p>[2020年6月6日更新]</p>
+<p>注意!LeanCloud于2020-4-14 流控：<br><a href="https://forum.leancloud.cn/t/topic/22595" target="_blank" rel="noopener">官网链接</a></p>
+<pre><code>我们近期发现有大量云引擎的体验版（免费版）用户创建了在同一时刻触发的定时任务唤醒容器运行，会对服务的负载产生一定影响。因此我们决定根据服务器的负载，对这些定时任务添加流控，通过定时任务唤醒容器将有可能会失败。这个改动不会对云引擎的标准版（付费版）用户产生影响。</code></pre><p>简单地说就是赶人,拒绝自动唤醒.这可以理解,毕竟这么多人白嫖也不对;但同时还有一个问题,你一个LeanCloud商业版一天30￥，这怎么说我都觉得付不起，我认为，搞个0.1￥/日的套餐没准白嫖的人就少些呢</p>
+<p><img src="https://img.cyfan.top/pic/postpic/20200606145909.png" srcset="/img/loading.gif" alt></p>
+<p>所以,要么就不添加定时任务【此时评论依旧可以导入，只不过不会发邮件而已】，要么就外部自唤醒【可以试试GithubAction、CloudFlareWorkers、CronJob，甚至最简单的UpTimeRobot都可以】。至于我么，懒得自唤醒了，毕竟所有评论都是要我手动审核的，审核完了才发邮件，这个时候老早就唤醒了。</p>
+<p><strong>至此，Valine Admin 已经可以正常工作，更多以下是可选的进阶配置。</strong></p>
+<table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MAIL_SUBJECT</td>
+<td>${PARENT_NICK}，您在${SITE_NAME}上的评论收到了回复</td>
+<td>[可选]@通知邮件主题（标题）模板</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE</td>
+<td>见下文</td>
+<td>[可选]@通知邮件内容模板</td>
+</tr>
+<tr>
+<td>MAIL_SUBJECT_ADMIN</td>
+<td>${SITE_NAME}上有新评论了</td>
+<td>[可选]博主邮件通知主题模板</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE_ADMIN</td>
+<td>见下文</td>
+<td>[可选]博主邮件通知内容模板</td>
+</tr>
+</tbody></table>
+<p>邮件通知包含两种，分别是被@通知和博主通知，这两种模板都可以完全自定义。默认使用经典的蓝色风格模板（样式来源未知）。</p>
+<p>默认被@通知邮件内容模板如下：</p>
+<pre><code class="html">&lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;您在&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot; href=&quot;${SITE_URL}&quot; target=&quot;_blank&quot;&gt;            ${SITE_NAME}&lt;/a&gt;上的评论有了新的回复&lt;/h2&gt; ${PARENT_NICK} 同学，您曾发表评论：&lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;            ${PARENT_COMMENT}&lt;/div&gt;&lt;p&gt;&lt;strong&gt;${NICK}&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt; ${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;${POST_URL}&quot; target=&quot;_blank&quot;&gt;查看回复的完整內容&lt;/a&gt;，欢迎再次光临&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;${SITE_URL}&quot; target=&quot;_blank&quot;&gt;${SITE_NAME}&lt;/a&gt;。&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+<p>效果如下图：</p>
+<p><img src="https://img.cyfan.top/pic/VALINE/MB.png" srcset="/img/loading.gif" alt="mail-blue-template"></p>
+<p>@通知模板中的可用变量如下（注，这是邮件模板变量，请勿与云引擎环境变量混淆）：</p>
+<table>
+<thead>
+<tr>
+<th>模板变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>博客名称</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td>博客首页地址</td>
+</tr>
+<tr>
+<td>POST_URL</td>
+<td>文章地址（完整路径）</td>
+</tr>
+<tr>
+<td>PARENT_NICK</td>
+<td>收件人昵称（被@者，父级评论人）</td>
+</tr>
+<tr>
+<td>PARENT_COMMENT</td>
+<td>父级评论内容</td>
+</tr>
+<tr>
+<td>NICK</td>
+<td>新评论者昵称</td>
+</tr>
+<tr>
+<td>COMMENT</td>
+<td>新评论内容</td>
+</tr>
+</tbody></table>
+<p>默认博主通知邮件内容模板如下：</p>
+<pre><code class="html">&lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;您在&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot; href=&quot;${SITE_URL}&quot; target=&quot;_blank&quot;&gt;${SITE_NAME}&lt;/a&gt;上的文章有了新的评论&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;${NICK}&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt; ${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;${POST_URL}&quot; target=&quot;_blank&quot;&gt;查看回复的完整內容&lt;/a&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+<p>博主通知邮件模板中的可用变量与@通知中的基本一致， <code>PARENT_NICK</code> 和 <code>PARENT_COMMENT</code> 变量不再可用。 </p>
+<p>这里还提供一个彩虹风格的@通知邮件模板代码：</p>
+<pre><code class="html">&lt;div style=&quot;border-radius: 10px 10px 10px 10px;font-size:13px;    color: #555555;width: 666px;font-family:&#39;Century Gothic&#39;,&#39;Trebuchet MS&#39;,&#39;Hiragino Sans GB&#39;,微软雅黑,&#39;Microsoft Yahei&#39;,Tahoma,Helvetica,Arial,&#39;SimSun&#39;,sans-serif;margin:50px auto;border:1px solid #eee;max-width:100%;background: #ffffff repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);&quot;&gt;&lt;div style=&quot;width:100%;background:#49BDAD;color:#ffffff;border-radius: 10px 10px 0 0;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));background-image: -webkit-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;&quot;&gt;&lt;p style=&quot;font-size:15px;word-break:break-all;padding: 23px 32px;margin:0;background-color: hsla(0,0%,100%,.4);border-radius: 10px 10px 0 0;&quot;&gt;您在&lt;a style=&quot;text-decoration:none;color: #ffffff;&quot; href=&quot;${SITE_URL}&quot;&gt; ${SITE_NAME}&lt;/a&gt;上的留言有新回复啦！&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;margin:40px auto;width:90%&quot;&gt;&lt;p&gt;${PARENT_NICK} 同学，您曾在文章上发表评论：&lt;/p&gt;&lt;div style=&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;&gt;${PARENT_COMMENT}&lt;/div&gt;&lt;p&gt;${NICK} 给您的回复如下：&lt;/p&gt;&lt;div style=&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;&gt;${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;${POST_URL}#comments&quot;&gt;查看回复的完整內容&lt;/a&gt;，欢迎再次光临&lt;a style=&quot;text-decoration:none; color:#12addb&quot;                href=&quot;${SITE_URL}&quot;&gt; ${SITE_NAME}&lt;/a&gt;。&lt;/p&gt;&lt;style type=&quot;text/css&quot;&gt;a:link{text-decoration:none}a:visited{text-decoration:none}a:hover{text-decoration:none}a:active{text-decoration:none}&lt;/style&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+<p>效果如图：</p>
+<p><img src="https://img.cyfan.top/pic/VALINE/RB.png" srcset="/img/loading.gif" alt="彩虹模板"></p>
+<h2 id="垃圾评论检测"><a href="#垃圾评论检测" class="headerlink" title="垃圾评论检测"></a>垃圾评论检测</h2><blockquote>
+<p>Akismet (Automattic Kismet)是应用广泛的一个垃圾留言过滤系统，其作者是大名鼎鼎的WordPress 创始人 Matt Mullenweg，Akismet也是WordPress默认安装的插件，其使用非常广泛，设计目标便是帮助博客网站来过滤留言Spam。有了Akismet之后，基本上不用担心垃圾留言的烦恼了。<br>启用Akismet后，当博客再收到留言会自动将其提交到Akismet并与Akismet上的黑名单进行比对，如果名列该黑名单中，则该条留言会被标记为垃圾评论且不会发布。</p>
+</blockquote>
+<p>如果还没有Akismet Key，你可以去 <a href="https://akismet.com/development/" target="_blank" rel="noopener">AKISMET FOR DEVELOPERS 免费申请一个</a>；<br><strong>当AKISMET_KEY设为MANUAL_REVIEW时，开启人工审核模式；</strong><br>如果你不需要反垃圾评论，Akismet Key 环境变量可以忽略。</p>
+<p><strong>为了实现较为精准的垃圾评论识别，采集的判据除了评论内容、邮件地址和网站地址外，还包括评论者的IP地址、浏览器信息等，但仅在云引擎后台使用这些数据，确保隐私和安全。</strong></p>
+<p><strong>如果使用了本站最新的Valine和Valine Admin，并设置了Akismet Key，可以有效地拦截垃圾评论。被标为垃圾的评论可以在管理页面取消标注。</strong></p>
+<table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AKISMET_KEY</td>
+<td>xxxxxxxxxxxx</td>
+<td>[可选]Akismet Key 用于垃圾评论检测</td>
+</tr>
+</tbody></table>
+<p>到此位置，Valine设置完全啦！赶紧试一试吧！</p>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/丆插件/">丆插件</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/站长必备/">站长必备</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/评论/">评论</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/Valine/">Valine</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-12 col-md-6">
+                    
+                      <a href="../../../09/01/CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-12 col-md-6">
+                    
+                      <a href="../../15/Live2D：为你的hexo博客添加萌萌哒看板娘/">
+                        <span>Live2D：为你的hexo博客添加萌萌哒看板娘</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
+  <div id="vcomments"></div>
+  <script defer src="https://img.cyfan.top/js/av-min.js"></script>
+  <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
+
+  <script type="text/javascript">
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "RMX6WtyzwUc2iR0tjygzqAvc-MdYXbMMI",
+        app_key: "5Omr7dbOOYyCCwflnKntv5IS",
+        placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
+        avatar: "../../../../retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+		emoticon_url:'https://img.cyfan.top/pic/moji',
+        emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","fqsk.jpg","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","wc.jpg","whks.png","zcbg.jpg","邪魅一笑.jpg"],
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Hello?你开了JS吗？？？？</a></noscript>
+
+
+                </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="../../../../js/main.js" ></script>
+
+
+  <script  src="../../../../js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Valine：一款极简评论系统的安装到升级&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+  <script>
+    var path = "../../../../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+<footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+
+		
+		<script src="/js/index.js"></script>
+	</div>
+
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a>
+	<a href="https://icp.gov.moe/?keyword=2020213344" target="_blank"> 2020213344号</a>
+  </div>
+  
+
+
+    
+  </div>
+    <script type="text/javascript" src="/js/copyright.js" ></script>
+</footer>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
