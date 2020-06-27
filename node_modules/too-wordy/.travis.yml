@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "4"
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+deploy:
+  provider: npm
+  email: matt@mattblair.co
+  api_key:
+    secure: DbkUwNyJJ3x16QKPL1jw60OebZVrGaNU26qVur/PXvJ9o7m4PLNi4eorIGJa6QtALGhsKWVuw/RWrSqSve6bCEMs/+8MuCJ/gXm6vRpD50/wg6lHZUdTc0Bb2T22uyAltKG4jn8mnlvdGyB6WHBYHL+ySIIhL/77gNa6CAyNiW8=
+  on:
+    tags: true
+    repo: duereg/too-wordy

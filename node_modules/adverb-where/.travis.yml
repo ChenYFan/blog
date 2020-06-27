@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.10'
+deploy:
+  provider: npm
+  email: matt@mattblair.co
+  api_key:
+    secure: ehX1EGVb4xHBE00rV0XpK+pVpO3fLzAs6D1j20/5jAWcvIVleDT0CQL5kx1/+EQRK8aYACKe2Zje+6fgYyjYlrvFNafFME20kFxsKs8TnQ6X4ynZ7xDz+K1AXF1XHDEFCDetGGp+SM5tjierDYLEUrOkrjqwKaEUCe0WhsHYoxM=
+  on:
+    tags: true
+    repo: duereg/adverb-where

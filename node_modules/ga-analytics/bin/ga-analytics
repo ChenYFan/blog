@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+
+var fs = require("fs");
+
+var program = require('commander'),
+	_ = require("lodash"),
+	gaAnalytics = require("../module.js"),
+	Table = require('cli-table');
+
+program
+	.version(require('../package.json').version)
+
+	.option('--client-id [clientid]', 'OAuth client id. Can be omitted if the GOOGLEAPI_CLIENTID environment variable is set.')
+	.option('--service-email [email]', 'Google Service Account Email. Can be omitted if the GOOGLEAPI_EMAIL environment variable is set.')
+	.option('--key [path_to_key]', 'Path to Service Account private key. Can be omitted if the GOOGLEAPI_KEY environment variable is set.')
+
+	.option('--ids [ids]', 'Google Analytics view (profile). Can be omitted if the GOOGLEAPI_ANALYTICS_TABLE environment variable is set.')
+	.option('-s, --start-date [start-date]', 'Start Date (2010-01-01). Defaults to one month ago')
+	.option('-e, --end-date [end_date]', 'End Date (2010-01-15). Defaults to one month after start date.')
+	.option('-m, --metrics [metric]', 'Metric, gs:sessions by default', 'ga:sessions')
+	.option('-d, --dimensions [dimension]', 'Dimension (ga:source,ga:keyword)')
+	.option('-s, --sort [sort]', 'Sort (-ga:sessions,source)')
+	.option('-f, --filter [filter]', 'Filter (ga:medium==organic)')
+	.option('--max [num]', 'Define the max amount of results')
+	.option('--json', 'Show entire JSON output rather than formatted results.')
+
+	.on('--help', function(){
+		console.log('  Example:');
+		console.log('');
+		console.log('    $ ga-analytics -m ga:users,ga:sessions -d ga:pagePath,ga:pageTitle');
+		console.log('    ┌────────────────────────────┬─────────────────────────────────────────┬─────────────────┬────────────────────┐\n'+
+					'    │ pagePath (STRING)          │ pageTitle (STRING)                      │ users (INTEGER) │ sessions (INTEGER) │\n'+
+					'    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤\n'+
+					'    │ /                          │ My Main Page                            │ 35              │ 60                 │\n'+
+					'    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤\n'+
+					'    │ /internal-page/            │ My internal Page                        │ 12              │ 1                  │\n'+
+					'    └────────────────────────────┴─────────────────────────────────────────┴─────────────────┴────────────────────┘'+
+					'\n    Total users: 47\n    Total sessions: 61');
+		console.log("\n    See https://github.com/sfarthin/ga-analytics for more examples.\n")
+	})	
+	.parse(process.argv)
+
+gaAnalytics(program, function(err, res) {
+	if(err) {
+		console.log("  "+err.message);
+		console.log("\n More Help: ga-analytics --help\n")
+		return;
+	}
+	
+	if(program.json) {
+		console.log(res);
+	} else {
+		
+		var table = new Table({
+			head: _.map(res.columnHeaders, function(columnHeader) { 
+				return columnHeader.name.replace(/ga\:/,"") + " ("+columnHeader.dataType+")"
+			})
+		});
+		
+		if(res.rows) {
+			res.rows.forEach(function(row) {
+				table.push(row);
+			});	
+		}
+		
+		console.log(table.toString() + "\n");
+
+		_.each(res.totalsForAllResults, function(value, key) {
+			console.log("Total " +key.replace(/ga\:/gi, "") + ": " + value);
+		});
+		
+		
+	}	
+})

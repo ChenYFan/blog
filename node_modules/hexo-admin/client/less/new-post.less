@@ -1,0 +1,56 @@
+
+.new-post {
+  cursor: pointer;
+  position: relative;
+}
+
+.new-post_button {
+  padding: 10px 20px;
+  color: @accentp5;
+  transition: background-color .3s ease;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: @primaryRatherLight;
+  }
+}
+
+.new-post_input {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  height: 52px;
+  outline: none;
+  border: none;
+}
+
+.m-icon-button {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  opacity: .5;
+  transition: opacity .3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.new-post_ok {
+  right: 35px;
+  color: rgb(0, 102, 255);
+
+  .m-icon-button;
+}
+
+.new-post_cancel {
+  right: 10px;
+  color: rgb(255, 115, 115);
+
+  .m-icon-button;
+}
+
