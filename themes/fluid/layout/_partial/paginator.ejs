@@ -1,0 +1,18 @@
+<% if (page.total > 1){ %>
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <%- paginator({
+        prev_text: '<i class="fas fa-angle-double-left"></i>',
+        next_text: '<i class="fas fa-angle-double-right"></i>',
+        mid_size: 2,
+        escape: false
+      }) %>
+    </span>
+  </nav>
+  <% var point = theme.scroll_down_arrow.scroll_after_turning_page ? '#board' : '' %>
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '<%- point %>';
+    }
+  </script>
+<% } %>

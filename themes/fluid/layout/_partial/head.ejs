@@ -1,0 +1,115 @@
+<%
+var joinStr = theme.title_join_string
+var title = config.title
+if (page.title) {
+  title = [page.title, title].join(joinStr)
+}
+%>
+
+<head>
+  <meta charset="UTF-8">
+  
+
+  <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.apple_touch_icon) %>">
+  <link rel="icon" type="image/png" href="<%- url_for(theme.favicon) %>">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <% if (theme.force_https) { %>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <% } %>
+  <meta name="theme-color" content="<%- theme.color.navbar_bg_color %>">
+  <meta name="description" content="<%= config.description %>">
+  <meta name="author" content="<%= config.author %>">
+  <meta name="keywords" content="<%= config.keywords %>">
+  <title><%= title %></title>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+details:focus,summary:focus{outline:none}
+
+
+</style>
+<script>
+(function(){
+    var vendorPrefix=getBrowserPrefix();
+    var eventName=visibilityEvent(vendorPrefix);
+    document.addEventListener(eventName,visibilityEventCallback);
+    var oldTitle=document.title;
+    function visibilityEventCallback(){
+        if(document.hidden){
+            oldTitle=document.title;
+            document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~";
+        }else{
+            document.title=oldTitle;
+        }
+    }
+    /*------------------------ 解决浏览器兼容性问题 ----------------------------------*/
+    // Get Browser-Specifc Prefix
+    function getBrowserPrefix() {
+          // Check for the unprefixed property.  
+          if ('hidden' in document) {
+            return null;
+        }
+        // All the possible prefixes.  
+        var browserPrefixes = ['moz', 'ms', 'o', 'webkit'];
+        for (var i = 0; i < browserPrefixes.length; i++) {
+            var prefix = browserPrefixes[i] + 'Hidden';
+            if (prefix in document) {
+              return browserPrefixes[i];
+            }
+        }
+         // The API is not supported in browser.  
+         return null;
+    }
+    // Get Browser Specific Hidden Property
+    function hiddenProperty(prefix) {
+        if (prefix) {
+            return prefix + 'Hidden';
+        } else {
+            return 'hidden';
+        }
+    }
+    // Get Browser Specific Visibility State
+    function visibilityState(prefix) {
+      if (prefix) {
+        return prefix + 'VisibilityState';
+      } else {
+        return 'visibilityState';
+      }
+    }
+    // Get Browser Specific Event
+    function visibilityEvent(prefix) {
+      if (prefix) {
+        return prefix + 'visibilitychange';
+      } else {
+        return 'visibilitychange';
+      }
+    }
+})();
+</script>
+  <%- partial('_partial/css.ejs') %>
+</head>

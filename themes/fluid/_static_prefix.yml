@@ -1,0 +1,70 @@
+#---------------------------
+# Fluid
+# Author: Fluid-dev organization
+# Github: https://github.com/fluid-dev/hexo-theme-fluid
+#---------------------------
+
+#---------------------------
+# 这里是配置 JS CSS 静态资源的 URL 前缀，可以自定义成 CDN 地址，
+# 请注意，您最好使用与内部版本相同的版本，以避免潜在的问题，
+# 在站点上启用 https 时，请使用 CDN 地址的 https 协议，
+# 同样，这里的配置也支持覆盖功能
+# ** 如果你不知道如何设置，请不要做任何改动 **
+#
+# Here is the url prefix to configure JS and CSS static assets. Set CDN addresses you want to customize.
+# Be aware that you would better use the same version as internal ones to avoid potential problems.
+# Please use the https protocol of CDN files when you enable https on your site.
+# the configuration here supports overwrite
+# DO NOT EDIT THE FOLLOWING SETTINGS UNLESS YOU KNOW WHAT YOU ARE DOING
+#---------------------------
+
+#---------------------------
+# 内部静态
+# Internal static
+#---------------------------
+
+internal_js: /js
+internal_css: /css
+internal_img: /img
+
+
+#---------------------------
+# 第三方库
+# Third-party library
+#---------------------------
+
+anchor: https://cdn.staticfile.org/anchor-js/4.2.2/
+
+font_awesome: https://cdn.staticfile.org/font-awesome/5.12.1/
+
+github_markdown: https://cdn.staticfile.org/github-markdown-css/3.0.1/
+
+jquery: https://cdn.staticfile.org/jquery/3.4.1/
+
+bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.4.1/
+
+mdbootstrap: https://cdn.staticfile.org/mdbootstrap/4.13.0/
+
+popper: https://cdn.staticfile.org/popper.js/1.16.1/umd/
+
+prettify: https://cdn.staticfile.org/prettify/188.0.0/
+
+# 高亮主题的路径，只支持 min.css，文件名需要与 _config.highlight.theme 对应
+# the path of highlight theme, only support `min.css` file，filename need to be the same as _config.highlight.theme
+prettify_theme: /lib/prettify/
+
+tocbot: https://cdn.staticfile.org/tocbot/4.10.0/
+
+typed: https://cdn.staticfile.org/typed.js/2.0.11/
+
+fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
+
+smooth_scroll: https://cdn.staticfile.org/smoothscroll/1.4.10/
+
+mathjax: https://cdn.staticfile.org/mathjax/2.7.7/
+
+katex: https://cdn.staticfile.org/KaTeX/0.11.1/
+
+aplayer: https://cdn.staticfile.org/aplayer/1.10.1/
+
+busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/

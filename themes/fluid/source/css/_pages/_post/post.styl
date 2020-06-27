@@ -1,0 +1,173 @@
+.post-content
+  box-sizing border-box
+  padding-left 10%
+  padding-right 10%
+  max-width 64rem
+
+@media (max-width: 767px)
+  .post-content
+    padding-left 2rem
+    padding-right 2rem
+
+@media (max-width: 424px)
+  .post-content
+    padding-left 1rem
+    padding-right 1rem
+
+.post-content h1::before, h2::before, h3::before, h4::before, h5::before, h6::before
+  display block
+  content ""
+  margin-top -50px
+  height 50px
+  width 1px
+  visibility hidden
+
+.post-meta
+  margin 0 .25rem
+
+  i
+    margin 0 .15rem
+
+.post-prevnext
+  margin-top 2rem
+  display flex
+  justify-content space-between
+
+  .post-prev, .post-next
+    display flex
+
+    i
+      font-size 1.2rem
+      -webkit-transform translateZ(0)
+      -moz-transform translateZ(0)
+      -ms-transform translateZ(0)
+      -o-transform translateZ(0)
+      transform translateZ(0)
+
+    a
+      display flex
+      align-items center
+
+    span
+      display -webkit-box
+      -webkit-box-orient vertical
+      -webkit-line-clamp 2
+      text-overflow ellipsis
+      overflow hidden
+
+  .post-prev:hover i, .post-prev:active i, .post-next:hover i, .post-next:active i
+    -webkit-animation-duration 1s
+    animation-duration 1s
+    -webkit-animation-delay .1s
+    animation-delay .1s
+    -webkit-animation-timing-function ease-in-out
+    animation-timing-function ease-in-out
+    -webkit-animation-iteration-count infinite
+    animation-iteration-count infinite
+    -webkit-animation-fill-mode forwards
+    animation-fill-mode forwards
+    -webkit-animation-direction alternate
+    animation-direction alternate
+
+  .post-prev:hover i, .post-prev:active i
+    -webkit-animation-name post-prev-anim
+    animation-name post-prev-anim
+
+  .post-next:hover i, .post-next:active i
+    -webkit-animation-name post-next-anim
+    animation-name post-next-anim
+
+  .post-next
+    justify-content flex-end
+
+  .fa-chevron-left
+    margin-right .5rem
+
+  .fa-chevron-right
+    margin-left .5rem
+
+@media (max-width: 424px)
+  .post-prevnext
+    display none
+
+@keyframes post-prev-anim
+  0%
+    -webkit-transform translateX(0)
+    transform translateX(0)
+  50%
+    -webkit-transform translateX(-0.35rem)
+    transform translateX(-0.35rem)
+  100%
+    -webkit-transform translateX(0)
+    transform translateX(0)
+
+@keyframes post-next-anim
+  0%
+    -webkit-transform translateX(0)
+    transform translateX(0)
+  50%
+    -webkit-transform translateX(0.35rem)
+    transform translateX(0.35rem)
+  100%
+    -webkit-transform translateX(0)
+    transform translateX(0)
+
+// toc
+
+#toc
+  padding 3rem 0 0 0
+  height 80%
+
+  p
+    visibility: hidden
+
+#tocbot
+  max-height 100%
+  overflow-y auto
+  overflow -moz-scrollbars-none
+  -ms-overflow-style none
+
+  ol
+    list-style none
+    padding-inline-start 1rem
+
+  &::-webkit-scrollbar
+    display none
+
+.tocbot-list
+  ol
+    list-style none
+    padding-left 1rem
+
+  a
+    font-size: 15px
+
+.tocbot-link
+  color $tocbot-link-color
+
+.tocbot-active-link
+  font-weight 600
+  color $tocbot-link-active-color
+
+.tocbot-is-collapsible
+  max-height 1000px
+  overflow hidden
+  transition all 300ms ease-in-out
+
+.tocbot-is-collapsed
+  max-height 0
+
+@media (max-width: 1024px)
+  .toc-container
+    padding-left 0
+    padding-right 0
+
+.custom, .comments
+  margin-top 2rem
+
+@media (min-width: 64rem)
+  .custom, .comments
+    max-width: 64rem
+
+.katex-block
+  overflow-x auto
