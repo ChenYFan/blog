@@ -20,6 +20,8 @@ Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷�
 
 过几天在扯吧，现在回去潜水了<img src="https://img.cyfan.top/pic/moji/huaji.gif">
 
+其实也是方便了我在手机端进行修改，额，不过手机端打字确实不是很舒服，还是电脑为主力。
+
 </details>
 <details>
 <summary> --痛苦的五月</summary>
