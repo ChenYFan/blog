@@ -7,6 +7,21 @@ Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷�
 <details>
 <summary> -2020</summary>
 <details>
+<summary> -- ~~蕉~~ 焦灼的六月</summary>
+
+### ---27日
+
+中考考完了<img src="https://img.cyfan.top/pic/moji/%E9%95%BF%E8%8D%89.png">，忙里偷闲对网站做了很多小更改，比较大的如
+
+- 修改IPFS快速上传与镜像二合一
+- 建立CDN介绍页面
+- 通过CloudFlareCDNAPI几乎无耗时获取用户侧信息
+- 将博客部署成 `travis-ci` ，实现在线更新博客<span class="heimu">省得在学校无法更新博客</span>.[然而比较令人难堪的是，博客nodejs拓展特别多，git上传了将近一个小时，不过接下来更新博客就不用那么麻烦了]
+
+过几天在扯吧，现在回去潜水了<img src="https://img.cyfan.top/pic/moji/huaji.gif">
+
+</details>
+<details>
 <summary> --痛苦的五月</summary>
 
 #### ---23日
