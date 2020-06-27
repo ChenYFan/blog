@@ -6,7 +6,7 @@
 title: 陈YFの博客(￣▽￣)"
 subtitle: (｡･∀･)ﾉﾞ嗨
 description: 高中生技术博,喜欢薅羊毛,爱白嫖,啥都写
-keywords: BLOG,薅羊毛,技术,高中生
+keywords: BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽
 author: CYF
 language: zh-CN
 timezone: Asia/Shanghai
@@ -120,10 +120,3 @@ related_posts:
     isDate: false
     isImage: false
     isExcerpt: false
-	
-# hexo-admin authentification
-admin:
-  username: CYF
-  password_hash: $2a$10$JPO4CefVkKHe7jsayewAx.cQWifW/tj95OylsvUofL6VtY0TYZGuq
-  secret: nimabidenimasilecaonimabifuckshitsunxiaochuannicaibudaobahahahahhahaha
-  deployCommand: 'push.bat'
