@@ -9,6 +9,7 @@ categories:
 index_img: 'https://img.cyfan.top/pic/postpic/20200607135939.png'
 banner_img: 'https://img.cyfan.top/pic/postpic/20200607135939.png'
 date: 2020-06-07 11:54:00
+update: 2020-06-28 09:59:08
 ---
 啊,还有三星期就要中考了,中考完就休息两天是想灭了我吗?博客感觉要永久性拖更了，大概也就一两个月更一篇吧。累了累了（╯︿╰）.![](https://img.cyfan.top/pic/moji/抽烟.png)
 
@@ -35,14 +36,20 @@ date: 2020-06-07 11:54:00
 
 ![](https://img.cyfan.top/pic/postpic/20200607134104.png)
 
-就NM联通离谱,就没有什么好线路链接,走香港都给我绕道新加坡.延迟高的吓人：
+~~就NM联通离谱,就没有什么好线路链接,走香港都给我绕道新加坡.延迟高的吓人：~~
 
 ![](https://img.cyfan.top/pic/postpic/20200607134345.png)
 
-这里就对联通用户说声对不起了
+~~这里就对联通用户说声对不起了~~
+
+抱歉啊，这个星期刚发现 `104.16.246.*` 和 `104.16.245.*` 对联通相当好，速度500kb/s都没问题<span class="heimu">【虽然延迟还是很大】</span>
+![](https://img.cyfan.top/pic/postpic/20200628090939.png)
+![](https://img.cyfan.top/pic/postpic/20200628095806.png)
+
+~~真香。~~
 
 Google评分也高了不少,电脑端评分上90了。
-
+![](https://img.cyfan.top/pic/postpic/20200628091136.png)
 当然，本站基本上都是托管于CloudFlare的，我也没这个闲工夫把每一个域名负载均衡，最简单的就是设置一个已经负载均衡的域名，然后直接CNAME，本站加速域名为 `cdn.cyfan.top` ,如果你不想自己设置10个ip负载均衡也可以选择我的,配置如下
 
 ![](https://img.cyfan.top/pic/postpic/20200607134808.png)
