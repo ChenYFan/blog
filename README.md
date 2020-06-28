@@ -2,7 +2,7 @@
 
 <div align="center">
 
-:bicyclist: 一个在互联网角落挣扎的小小博客，很小很小
+😘 一个在互联网角落挣扎的小小博客，很小很小
 
 [![Author](https://flat.badgen.net/badge/author/ChenYFan/)](https://github.com/ChenYFan)
 [![Blog](https://flat.badgen.net/badge/blog/ChenYFan%E3%81%AEBlog/orange/)](https://blog.cyfan.top)
