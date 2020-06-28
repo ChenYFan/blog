@@ -1,4 +1,4 @@
-<h1 align="center">ChenYFan</h1>
+<h1 align="center">ChenYFanのBlog</h1>
 
 <div align="center">
 
