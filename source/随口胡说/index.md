@@ -17,9 +17,11 @@ Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷�
 
 Google分析也很明确指出了,图片太大是得分低的最主要原因：
 
-![](https://img.cyfan.top/pic/postpic/20200628101723.webp)
+![](https://img.cyfan.top/pic/postpic/20200628101723.JPG)
 
-好在PicGo有这样一插件，以牺牲不到2s的CPU时间换来访客的舒适度还是很划算的。
+~~好在PicGo有这样一插件，以牺牲不到2s的CPU时间换来访客的舒适度还是很划算的。~~
+
+然而比较恼火，ios的Safari中如果有懒加载，webp就会加载不出来，而jpg可以，这就很人类疑惑行为。最终采用了tinyjpg和Caesium压缩。
 
 ### ---27日
 
