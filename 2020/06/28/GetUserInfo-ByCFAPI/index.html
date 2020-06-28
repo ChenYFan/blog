@@ -20,7 +20,7 @@
   <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
   <meta name="author" content="CYF">
   <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽">
-  <title>归档 || 陈YFの博客(￣▽￣)&#34;</title>
+  <title>通过CloudFlareAPI获取用户侧信息 || 陈YFの博客(￣▽￣)&#34;</title>
 
 <style>
 span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
@@ -231,7 +231,7 @@ details:focus,summary:focus{outline:none}
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://img.cyfan.top/pic/img/4.jpg') no-repeat center center;
+         style="background: url('https://img.cyfan.top/pic/postpic/20200628082609.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center">
@@ -240,6 +240,33 @@ details:focus,summary:focus{outline:none}
               
             </span>
 <script src="/js/fire.js"></script>
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期日, 六月 28日 2020, 8:30 早上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    1.8k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      9 分钟
+                  </span>
+                
+
+                
+              </p>
             
           </div>
 
@@ -255,55 +282,202 @@ details:focus,summary:focus{outline:none}
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 53 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="../../../../2020/01/24/我们一起解题目吧/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">我们一起解题目吧！</span>
-      <span style="float: right;">01-24</span>
-    </a>
-  
-    
-    <a href="../../../../2020/01/20/回归啦！这是见面礼/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">回归啦！这是见面礼：寒蝉！</span>
-      <span style="float: right;">01-20</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="../3/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="../../">1</a><a class="page-number" href="../2/">2</a><a class="page-number" href="../3/">3</a><span class="page-number current">4</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p
+                class="note note-warning">本文最后更新于：星期日, 六月 28日 2020, 9:50 上午</p>
+            
+            <div class="markdown-body">
+              <p>噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了<img src="https://img.cyfan.top/pic/moji/%E8%82%BF%E5%8C%85.png" srcset="/img/loading.gif" alt>,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。</p>
+<p>因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">hexo官方文档</a> 用Travis-ci+Github实现在线自动部署,以后更新也方便点<img src="https://img.cyfan.top/pic/moji/%E5%9D%90%E7%AD%89.png" srcset="/img/loading.gif" alt></p>
+<p>好了好了，不说了，今天简单讲一下如何用CloudFlare自带的API获取用户信息。</p>
+<h1 id="cdn-cgi-trace"><a href="#cdn-cgi-trace" class="headerlink" title="/cdn-cgi/trace"></a>/cdn-cgi/trace</h1><p>刚开始建立博客的时候，也是想过显示用户ip地址的，但网上的教程大多都是用搜狐新浪的js，而且很早就过期了。所以也就搁着迟迟没有解决。</p>
+<p>后来偶然间知道CloudFlare有个比较神奇的技术，在部署在CloudFlare上的网站，域名后面加上<code>/cdn-cgi/trace</code>就可以获得用户侧信息，例如<code>https://blog.cyfan.top/cdn-cgi/trace</code>：</p>
+<pre><code>fl=23f2**
+h=blog.cyfan.top
+ip=39.182.***.***
+ts=15933078**.***
+visit_scheme=https
+uag=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+colo=HKG
+http=http/2
+loc=CN
+tls=TLSv1.3
+sni=plaintext
+warp=off</code></pre><p>[对于部分隐私替换掉，请见谅]</p>
+<p>差不多都全了，<code>ip</code>、<code>uag</code>、<code>colo</code>、<code>loc</code>、<code>tls</code>这些数据都是我们所需要的，那么，怎么把这些数据迁移到网页上呢？</p>
+<h1 id="答案是：JavaScript"><a href="#答案是：JavaScript" class="headerlink" title="答案是：JavaScript"></a>答案是：JavaScript</h1><p>首先要引入Jquery，如果你的网页上已经有Jquery，那么就不必再次引入：</p>
+<pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>接着加入JS[需在Jquery以下,否则会报错]:</p>
+<pre><code class="js">&lt;script&gt;
+    getCDNinfo = function() {
+    $.ajax({
+        url: &quot;https://cdn.cyfan.top/cdn-cgi/trace&quot;,
+        success: function(data, status) {
+            let areas = &quot;Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi&#39;an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George&#39;s, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)&quot;.split(&quot;;&quot;);
+            let area = data.split(&quot;colo=&quot;)[1].split(&quot;\n&quot;)[0];
+            for (var i = 0; i &lt; areas.length; i++) {
+                if (areas[i].indexOf(area) != -1) {
+                    document.getElementById(&quot;cdn&quot;).innerHTML = areas[i];
+                    document.getElementById(&quot;ip&quot;).innerHTML = data.split(&quot;ip=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;httpos&quot;).innerHTML = data.split(&quot;visit_scheme=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;uag&quot;).innerHTML = data.split(&quot;uag=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;http&quot;).innerHTML = data.split(&quot;http=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;loc&quot;).innerHTML = data.split(&quot;loc=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;tls&quot;).innerHTML = data.split(&quot;tls=&quot;)[1].split(&quot;\n&quot;)[0];
+                    document.getElementById(&quot;warp&quot;).innerHTML = data.split(&quot;warp=&quot;)[1].split(&quot;\n&quot;)[0];
+                    break;
+                }
+            }
+        }
+    })
+}
+$(document).ready(function() {
+    getCDNinfo();
+    //页面加载完毕就获取CDN信息
+});
+&lt;/script&gt;</code></pre>
+<p>这个脚本会获取大部分用户信息并解析所链接节点位置,默认链接到<code>cdn.cyfan.top</code>，已通过<code>CORS</code>,接着在网页需要添加的地方增加html代码:</p>
+<pre><code class="html">&lt;p&gt;
+当前CDN节点: &lt;span id=&quot;cdn&quot;&gt;【未知】&lt;/span&gt;&lt;/br&gt;
+你的ip: &lt;span id=&quot;ip&quot;&gt;【未知】&lt;/span&gt;&lt;/br&gt;
+你当前以: &lt;span id=&quot;httpos&quot;&gt;【未知】&lt;/span&gt;形式访问我们的网站&lt;/br&gt;
+你的User-Agent: &lt;span id=&quot;uag&quot;&gt;【未知】&lt;/span&gt;&lt;/br&gt;
+你以: &lt;span id=&quot;http&quot;&gt;【未知】&lt;/span&gt;形式访问本网站&lt;/br&gt;
+你的所在国家/地区: &lt;span id=&quot;loc&quot;&gt;【未知】&lt;/span&gt;&lt;/br&gt;
+你以: &lt;span id=&quot;tls&quot;&gt;【未知】&lt;/span&gt;&lt;/br&gt;
+你是否以Warp访问我们: &lt;span id=&quot;warp&quot;&gt;【未知】&lt;/span&gt;&lt;/p&gt;</code></pre>
+<p>[可以根据需要增减]，一般情况下简单获取写成这样：</p>
+<pre><code>&lt;p&gt;
+当前CDN节点: &lt;span id=&quot;cdn&quot;&gt;【未知】&lt;/span&gt; |
+你的ip: &lt;span id=&quot;ip&quot;&gt;【未知】&lt;/span&gt; |
+你的所在国家/地区: &lt;span id=&quot;loc&quot;&gt;【未知】 &lt;/span&gt;&lt;/p&gt;</code></pre><p>结果应该类似这样:</p>
+<p><img src="https://img.cyfan.top/pic/postpic/20200628094419.png" srcset="/img/loading.gif" alt></p>
+<p>划到页底即可看到。</p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了<img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="/img/loading.gif" alt>。</p>
 
-
-
-              </div>
             </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/屌代码/">屌代码</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/CloudFlare/">CloudFlare</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/API/">API</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/IP/">IP</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/用户信息/">用户信息</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-12 col-md-6">
+                    
+                      <a href="../../../../9999/12/31/博客暂更预警/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>博客暂更预警</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-12 col-md-6">
+                    
+                      <a href="../../07/Blog-sChanges/">
+                        <span>博客DNS解析是不是发生了亿点点变化</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
+  <div id="vcomments"></div>
+  <script defer src="https://img.cyfan.top/js/av-min.js"></script>
+  <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
+
+  <script type="text/javascript">
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "RMX6WtyzwUc2iR0tjygzqAvc-MdYXbMMI",
+        app_key: "5Omr7dbOOYyCCwflnKntv5IS",
+        placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
+        avatar: "../../../../retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+		emoticon_url:'https://img.cyfan.top/pic/moji',
+        emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","fqsk.jpg","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","wc.jpg","whks.png","zcbg.jpg","邪魅一笑.jpg"],
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Hello?你开了JS吗？？？？</a></noscript>
+
+
+                </div>
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -350,6 +524,59 @@ details:focus,summary:focus{outline:none}
 
 
   <script  src="../../../../js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
 
 
 
@@ -401,7 +628,7 @@ details:focus,summary:focus{outline:none}
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档 - 所有的所有都在这儿了&nbsp;",
+        "通过CloudFlareAPI获取用户侧信息&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,
