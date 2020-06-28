@@ -6,7 +6,7 @@
 
 [![Author](https://flat.badgen.net/badge/author/ChenYFan/)](https://github.com/ChenYFan)
 [![Blog](https://flat.badgen.net/badge/blog/ChenYFan%E3%81%AEBlog/orange/)](https://blog.cyfan.top)
-[![Build Status](https://flat.badgen.net/travis/ChenYFan/blog/source)](https://travis-ci.org/ChenYFan/blog)
+[![Build Status](https://travis-ci.org/ChenYFan/blog.svg?branch=master)](https://travis-ci.org/ChenYFan/blog)
 [![Made with ❤](https://flat.badgen.net/badge/made%20with/%e2%9d%a4/ff69b4)](https://cyfan.top)
 
 </div>
