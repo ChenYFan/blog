@@ -9,6 +9,18 @@ Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷�
 <details>
 <summary> --<span class="heimu">蕉</span>焦灼的六月</summary>
 
+### ---28日
+
+有必要对图片进行压缩了。
+
+刚才试了一下PicGo中的 `picgo-plugin-sharp` 效果十分显著，一张4MB的jpg图片压成Webp之后就只有300kb，而且图片质量几乎不变。
+
+Google分析也很明确指出了,图片太大是得分低的最主要原因：
+
+![](https://img.cyfan.top/pic/postpic/20200628101723.webp)
+
+好在PicGo有这样一插件，以牺牲不到2s的CPU时间换来访客的舒适度还是很划算的。
+
 ### ---27日
 
 中考考完了<img src="https://img.cyfan.top/pic/moji/%E9%95%BF%E8%8D%89.png">，忙里偷闲对网站做了很多小更改，比较大的如
