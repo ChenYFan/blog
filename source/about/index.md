@@ -1,20 +1,9 @@
-title: 关于
-comments: false
-date: 2020-03-11 09:27:11
----
-<style>
-.img{
-  width="25%";
-  height="25%";
-  
-  }
 
-</style>
+<img src="https://img.cyfan.top/pic/BLOGER.jpg" width="75%">
+<img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
+<img src="https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
+</br>
 
-# 博主
-
-![博主](https://img.cyfan.top/pic/BLOGER.jpg "博主")
-<img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" />
 
 <a class="btn" href="https://github.com/Chenyfan">
               >>Github
@@ -269,61 +258,11 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 感谢以下企业大佬的支持!
 
 
-![企业](https://img.cyfan.top/pic/post/pasted-28.png "Google大佬-提供AdSense少量收入\搜索引擎接入")
-
-![企业](https://img.cyfan.top/pic/post/pasted-29.png "Baidu-提供国内良好的统计环境\较为快捷的搜索")
-
-![企业](https://img.cyfan.top/pic/post/pasted-30.png "Github-优良的代码分享场所\静态网页托管场所")
-
-![企业](https://img.cyfan.top/pic/post/pasted-31.png "CloudFlare大佬-资本主义良心CDN企业之一\网站加速\DNS解析\Workers免费代理")
-
-![企业](https://img.cyfan.top/pic/post/pasted-33.png "良心阿里云-提供白菜价域名(虽然实名认证坑了点)")
-
-![企业](https://img.cyfan.top/pic/post/pasted-32.png "Microsoft-我现在在用Windows10")
-
-![企业](https://img.cyfan.top/pic/post/pasted-34.png "???-提供免费的AV（o´・ェ・｀o）")
-  
-![企业](https://img.cyfan.top/pic/post/pasted-35.png "Coding-提供早期的网页寄存")
-
-
-<script>
-    Function.prototype.getMultiLine = function () {
-            var lines = new String(this);
-            lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));
-            return lines;
-        }
-
-        var string = function () {
-/*
-          _____                    _____                    _____                    _____                    _____                _____          
-         /\    \                  /\    \                  /\    \                  /\    \                  /\    \              /\    \         
-        /::\    \                /::\    \                /::\    \                /::\    \                /::\    \            /::\    \        
-       /::::\    \              /::::\    \              /::::\    \              /::::\    \              /::::\    \           \:::\    \       
-      /::::::\    \            /::::::\    \            /::::::\    \            /::::::\    \            /::::::\    \           \:::\    \      
-     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \           \:::\    \     
-    /:::/__\:::\    \        /:::/__\:::\    \        /:::/  \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \           \:::\    \    
-    \:::\   \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \      /::::\   \:::\    \      /::::\   \:::\    \          /::::\    \   
-  ___\:::\   \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \    /::::::\   \:::\    \    /::::::\   \:::\    \        /::::::\    \  
- /\   \:::\   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\    \  /:::/\:::\   \:::\____\  /:::/\:::\   \:::\    \      /:::/\:::\    \ 
-/::\   \:::\   \:::\____\/:::/__\:::\   \:::\____\/:::/____/     \:::\____\/:::/  \:::\   \:::|    |/:::/__\:::\   \:::\____\    /:::/  \:::\____\
-\:::\   \:::\   \::/    /\:::\   \:::\   \::/    /\:::\    \      \::/    /\::/   |::::\  /:::|____|\:::\   \:::\   \::/    /   /:::/    \::/    /
- \:::\   \:::\   \/____/  \:::\   \:::\   \/____/  \:::\    \      \/____/  \/____|:::::\/:::/    /  \:::\   \:::\   \/____/   /:::/    / \/____/ 
-  \:::\   \:::\    \       \:::\   \:::\    \       \:::\    \                    |:::::::::/    /    \:::\   \:::\    \      /:::/    /          
-   \:::\   \:::\____\       \:::\   \:::\____\       \:::\    \                   |::|\::::/    /      \:::\   \:::\____\    /:::/    /           
-    \:::\  /:::/    /        \:::\   \::/    /        \:::\    \                  |::| \::/____/        \:::\   \::/    /    \::/    /            
-     \:::\/:::/    /          \:::\   \/____/          \:::\    \                 |::|  ~|               \:::\   \/____/      \/____/             
-      \::::::/    /            \:::\    \               \:::\    \                |::|   |                \:::\    \                              
-       \::::/    /              \:::\____\               \:::\____\               \::|   |                 \:::\____\                             
-        \::/    /                \::/    /                \::/    /                \:|   |                  \::/    /                             
-         \/____/                  \/____/                  \/____/                  \|___|                   \/____/                              
-                                                                                                                                                                                                                                     
-欸，你怎么找到这里来了。
-(///￣皿￣)○～别走！
-
-快速代理 https://ssss.cyfan.workers.dev
-
-
-*/
-        }
-        window.console.log(string.getMultiLine());
-</script>
+<img src="https://img.cyfan.top/pic/post/pasted-28.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-29.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-30.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-31.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-33.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-32.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-34.png" width="25%">
+<img src="https://img.cyfan.top/pic/post/pasted-35.png" width="25%">
