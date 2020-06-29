@@ -190,6 +190,8 @@ $ export GH_TOKEN=[secure]
 
 其实这个比较简单，在修改时新建一个branch，名字叫 `drafts` ,由于 `.travis.yml` 规定只捕获 `master` ,草稿分支不会触发，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！
 
+**这么干以后,一定要注意,以后所有修改无论大小,都必须先在  `drafts` 里修改,然后发起PR,然后合并.不然直接在 `master` 里修改有可能会导致无法合并! **
+
 # 后记
 
 总之，这样就可以安心用手机或者在学校更新Blog了！
