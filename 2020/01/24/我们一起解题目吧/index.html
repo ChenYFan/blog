@@ -526,14 +526,8 @@ Process exited after 142.5 seconds with return value 0</code></pre><p>果然快�
   <script type="text/javascript">
 function downloadJSAtOnload() {
 var element = document.createElement("script");
-var valineav = document.createElement("script");
-var valinejs = document.createElement("script");
 element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-valineav.src = "https://img.cyfan.top/js/av-min.js";
-valinejs.src = "https://img.cyfan.top/js/valine.min.js";
 document.body.appendChild(element);
-document.body.appendChild(valineav);
-document.body.appendChild(valinejs);
 }
 if (window.addEventListener)
 window.addEventListener("load", downloadJSAtOnload, false);
@@ -542,10 +536,9 @@ window.attachEvent("onload", downloadJSAtOnload);
 else window.onload = downloadJSAtOnload;
 </script>
 
-<!--Valine&GoogleAds-LazyLoad
   <script defer src="https://img.cyfan.top/js/av-min.js"></script>
   <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
--->
+
   <script type="text/javascript">
     var notify = 'false' === 'true';
     var verify = 'false' === 'true';
