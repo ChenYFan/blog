@@ -427,10 +427,28 @@ details:focus,summary:focus{outline:none}
     };
   </script>
   <noscript>Hello?你开了JS吗？？？？</a></noscript>
-  
-  <div class="adsense">
-  <ins data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"></ins>
-  <p class="adsense__loading"><span>广告懒加载中...</span></p>
+<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 
