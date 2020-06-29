@@ -1,6 +1,10 @@
 
 <img src="https://img.cyfan.top/pic/BLOGER.jpg" width="75%">
+
+
 <img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
+
+<img src="https://s04.flagcounter.com/count2/KOtF/bg_FFE600/txt_86869C/border_58CCC4/columns_6/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
 <img src="https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
 </br>
 
