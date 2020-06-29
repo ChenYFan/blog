@@ -115,7 +115,7 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 ### 4.修改Repo
 
 
-进入Repo的 **Master** 分支，新建一个文件，里面塞上：
+进入Repo的 **Master** 分支，新建一个 `.travis.yml` ，里面塞上：
 
 ```yml
 sudo: false
@@ -188,7 +188,7 @@ $ export GH_TOKEN=[secure]
 
 # 草稿问题
 
-其实这个比较简单，在修改时新建一个branch，名字叫 `drafts` ，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！
+其实这个比较简单，在修改时新建一个branch，名字叫 `drafts` ,由于 `.travis.yml` 规定只捕获 `master` ,草稿分支不会触发，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！
 
 # 后记
 
