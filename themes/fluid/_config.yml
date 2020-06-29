@@ -354,7 +354,6 @@ links:
   subtitle:  # 打字机内容
   items:  # 键是友链标题、值的列表内容分别是 [链接, 简介, 头像]，头像可以省略
     潘高博客: [https://blog.pangao.vip, (翻译：我只是个搞 IT的！哭笑脸), https://blog.pangao.vip/images/avatar.jpg]
-    稚晖的个人站: [http://pengzhihui.xyz, “十年饮冰，难凉热血”, https://i.loli.net/2020/03/22/oy5hAsbN7glKRjB.png]
     CWorld‘s Blog: [https://blog.cworld.top/, Stay hungry，Stay foolish，求知若愚，虚怀若谷。, https://www.gravatar.com/avatar/85b870f6b1a177981d3e9566e3ad7264?s=160]
     Kindyear’s Blog: [https://www.kindyear.cn/, 杂乱无章的技术小站, https://www.kindyear.cn/logo.jpg]
     小丁的博客: [https://www.xding.top/, 一个神秘的大宝贝, https://www.xding.top/face.png]
@@ -366,4 +365,5 @@ links:
     WINKILLER: [https://www.winkiller.cf, 驱动爱好者集结地, https://i.loli.net/2020/04/04/rI9mLp6B8xnfi4X.jpg]
     TigerRoot: [https://blog.tigerroot.cn, 那有什么岁月静好，只是有人在替我们负重前行。, https://s2.ax1x.com/2020/03/08/3zdGes.png]
     伊舍导航: [https://eesdh.com, 一个在互联网角落挣扎的小小导航，很小很小。, https://gitee.com/eesdh/eesdh/raw/master/img/tx.png]
+    Sukka's Blog: [https://blog.skk.moe, 童话只美在真实却从不续写, https://cdn.jsdelivr.net/npm/skx@0.2.3/avatar/192x192.png]
     友链还有空位！: [https://blog.cyfan.top/1949/10/01/留言板/, 点我跑去留言！, https://img.cyfan.top/pic/？.jpg]
