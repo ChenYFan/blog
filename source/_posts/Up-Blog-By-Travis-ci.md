@@ -178,6 +178,8 @@ $ export GH_TOKEN=[secure]
 
 ![麻烦无视右上角的亮度调节](https://img.cyfan.top/pic/postpic/20200629150600.jpg)
 
+![](https://img.cyfan.top/pic/postpic/20200629152935.jpg)
+
 本次日志地址 [https://api.travis-ci.org/v3/job/703061869/log.txt]
 
 ### 8.以后
