@@ -293,7 +293,7 @@ details:focus,summary:focus{outline:none}
           <div class="post-content mx-auto" id="post">
             
               <p
-                class="note note-warning">本文最后更新于：星期一, 六月 29日 2020, 3:27 下午</p>
+                class="note note-warning">本文最后更新于：星期一, 六月 29日 2020, 3:34 下午</p>
             
             <div class="markdown-body">
               <p>Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN依然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 <code>ChenYFan</code> 打成 <code>CehnYFan</code> <span class="heimu">真实事件</span> ，异或着是用手机查看自己的博客，突然发现：</p>
@@ -351,7 +351,7 @@ details:focus,summary:focus{outline:none}
 <p>点击生成Token：</p>
 <p><img src="https://img.cyfan.top/pic/postpic/20200629143305.jpg" srcset="/img/loading.gif" alt></p>
 <p>记得复制下来保存！不然下次你就看不到你的Token了！</p>
-<h3 id="4-修改Repo"><a href="#4-修改Repo" class="headerlink" title="4.修改Repo"></a>4.修改Repo</h3><p>进入Repo的 <strong>Master</strong> 分支，新建一个文件，里面塞上：</p>
+<h3 id="4-修改Repo"><a href="#4-修改Repo" class="headerlink" title="4.修改Repo"></a>4.修改Repo</h3><p>进入Repo的 <strong>Master</strong> 分支，新建一个 <code>.travis.yml</code> ，里面塞上：</p>
 <pre><code class="yml">sudo: false
 language: node_js
 node_js:
@@ -385,9 +385,10 @@ deploy:
 <p><img src="https://img.cyfan.top/pic/postpic/20200629150414.jpg" srcset="/img/loading.gif" alt></p>
 <p><img src="https://img.cyfan.top/pic/postpic/20200629150525.jpg" srcset="/img/loading.gif" alt></p>
 <p><img src="https://img.cyfan.top/pic/postpic/20200629150600.jpg" srcset="/img/loading.gif" alt="麻烦无视右上角的亮度调节"></p>
+<p><img src="https://img.cyfan.top/pic/postpic/20200629152935.jpg" srcset="/img/loading.gif" alt></p>
 <p>本次日志地址 [<a href="https://api.travis-ci.org/v3/job/703061869/log.txt]" target="_blank" rel="noopener">https://api.travis-ci.org/v3/job/703061869/log.txt]</a></p>
 <h3 id="8-以后"><a href="#8-以后" class="headerlink" title="8.以后"></a>8.以后</h3><p>更新博客直接在Github上更改，或者写好之后直接上传，或者pull到本地写好后push到Github，此后操作用户无需本地使用Hexo，也不用调整Travis-ci，安心写博客吧！</p>
-<h1 id="草稿问题"><a href="#草稿问题" class="headerlink" title="草稿问题"></a>草稿问题</h1><p>其实这个比较简单，在修改时新建一个branch，名字叫 <code>drafts</code> ，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！</p>
+<h1 id="草稿问题"><a href="#草稿问题" class="headerlink" title="草稿问题"></a>草稿问题</h1><p>其实这个比较简单，在修改时新建一个branch，名字叫 <code>drafts</code> ,由于 <code>.travis.yml</code> 规定只捕获 <code>master</code> ,草稿分支不会触发，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>总之，这样就可以安心用手机或者在学校更新Blog了！</p>
 <p><img src="https://img.cyfan.top/pic/moji/stick_54.png" srcset="/img/loading.gif" alt></p>
 
