@@ -324,7 +324,7 @@ tag:
 about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/about.md 中编辑，支持 markdown 和 HTML
   banner_img: https://img.cyfan.top/pic/img/7.jpg
   banner_img_height: 100  # available: 0 - 100
-  subtitle:  好像是关于 ·博主· 的什么什么呢...
+  subtitle:  好像是关于什么呢
   avatar: https://img.cyfan.top/pic/img/avatar.png # 头像
   name: CYF
   introduce: info / info / info # 支持 HTML
