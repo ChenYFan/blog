@@ -89,7 +89,7 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 
 ### 1.注册travis-ci.org
 
-前往 [https://travis-ci.org]用Github账号注册 **注意了啊,注意了啊,** 是 `.org` 而不是 `.com` ! 鬼知道我在这上面浪费了多少时间! `travis-ci.org` 是免费给公开repo部署的,`travis-ci.com` 是收费的,但是 `travis-ci.com` 却是可以绑定并免费部署公开Repo的.最有问题的是这两个网站其中一个绑定repo后,另一个就不能绑定了!! 害得我以为是缓存搞出来的事,搞了半天没解决,一看地址栏人都傻了.![](https://img.cyfan.top/pic/moji/tx.png)
+前往 [https://travis-ci.org] 用Github账号注册 **注意了啊,注意了啊,** 是 `.org` 而不是 `.com` ! 鬼知道我在这上面浪费了多少时间! `travis-ci.org` 是免费给公开repo部署的,`travis-ci.com` 是收费的,但是 `travis-ci.com` 却是可以绑定并免费部署公开Repo的.最有问题的是这两个网站其中一个绑定repo后,另一个就不能绑定了!! 害得我以为是缓存搞出来的事,搞了半天没解决,一看地址栏人都傻了.![](https://img.cyfan.top/pic/moji/tx.png)
 
 ### 2.绑定travis
  前往 [https://github.com/marketplace/travis-ci] 绑定travis-ci到你的github后 继续前往 [GitHub 的 Applications settings](https://github.com/settings/installations) ,点击 `Travis CI`配置你的repo能被TravisCI访问 
