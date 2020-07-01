@@ -307,7 +307,7 @@ details:focus,summary:focus{outline:none}
           <div class="post-content mx-auto" id="post">
             
               <p
-                class="note note-warning">本文最后更新于：星期三, 七月 1日 2020, 11:04 上午</p>
+                class="note note-warning">本文最后更新于：星期三, 七月 1日 2020, 11:11 上午</p>
             
             <div class="markdown-body">
               <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>没想到怎么快就更新一篇了。</p>
@@ -358,7 +358,7 @@ gitalk.render(&#39;gitalk-container&#39;)</code></pre><p>当然,在hexo里面使
 <p>其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可</p>
 <h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><p>根据Gitment样式，整理如下</p>
 <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>进入 <code>\themes\next\layout\_third-party\comments\</code> 新建 <code>gitalk.swig</code> 文件,里面填写一下内容:</p>
-<pre><code>{% raw %}
+<pre><code class="html">{% raw %}
 {% if page.comments && theme.gitalk.enable %}
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -375,27 +375,32 @@ gitalk.render(&#39;gitalk-container&#39;)</code></pre><p>当然,在hexo里面使
         gitalk.render('gitalk-container')           
        </script>
 {% endif %}
-{% endraw %}</code></pre><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>修改 <code>\themes\next\layout\_third-party\comments\</code> ,在最后一行填下:</p>
+{% endraw %}</code></pre>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>修改 <code>\themes\next\layout\_third-party\comments\</code> ,在最后一行填下:</p>
 <pre><code>{% raw %}
 {% include 'gitalk.swig' %}
 {% endraw %}</code></pre><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>修改 <code>\themes\next\layout\_partials\comments.swig</code> ,在 <code>{if}</code> 之下, <code>{elseif}</code> 之上填下:</p>
-<pre><code>{% raw %}
+<pre><code class="html">{% raw %}
 {% elseif theme.gitalk.enable %}
  <div id="gitalk-container"></div>
-{% endraw %}</code></pre><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>新建 <code>\themes\next\source\css\_common\components\third-party\gitalk.styl</code> ,填下:</p>
-<pre><code>.gt-header a, .gt-comments a, .gt-popup a
+{% endraw %}</code></pre>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>新建 <code>\themes\next\source\css\_common\components\third-party\gitalk.styl</code> ,填下:</p>
+<pre><code class="css">.gt-header a, .gt-comments a, .gt-popup a
   border-bottom: none;
 .gt-container .gt-popup .gt-action.is--active:before
-  top: 0.7em;</code></pre><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>修改<code>\themes\next\source\css\_common\components\third-party\third-party.styl</code>,最后一行填下</p>
-<pre><code>@import &quot;gitalk&quot;;</code></pre><h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>最后,在<code>\themes\next\_config.yml</code>最后一行填下:</p>
-<pre><code>gitalk:
+  top: 0.7em;</code></pre>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>修改<code>\themes\next\source\css\_common\components\third-party\third-party.styl</code>,最后一行填下</p>
+<pre><code class="css">@import &quot;gitalk&quot;;</code></pre>
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>最后,在<code>\themes\next\_config.yml</code>最后一行填下:</p>
+<pre><code class="yml">gitalk:
   enable: true
   githubID: github帐号  #如ChenYFan   
   repo: 仓库名称   # 例：blog
   ClientID: Client ID
   ClientSecret: Client Secret
   adminUser: github帐号 #指定可初始化评论账户
-  distractionFreeMode: true</code></pre><h3 id="结束"><a href="#结束" class="headerlink" title="结束?"></a>结束?</h3><p>打开博客,你会发现有一些博文评论是正常的,但是有一些博文你可能会看到:</p>
+  distractionFreeMode: true</code></pre>
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束?"></a>结束?</h3><p>打开博客,你会发现有一些博文评论是正常的,但是有一些博文你可能会看到:</p>
 <p>Error:Validation Failed</p>
 <p>没错，这不是我的错<span class="heimu" title="别打我！">滑稽狗头保命</span>。</p>
 <p>这个错误在Gitalk用户里非常常见。</p>
@@ -447,7 +452,7 @@ gitalk.render(&#39;gitalk-container&#39;)</code></pre><p>当然,在hexo里面使
 <p><del>但是,使用MD5需要额外添加很长一段js,在进行初始化估计就要一段时间了.</del></p>
 <p><del>所以,此处不推荐使用MD5,如果你有这个需求,可以去gitalk或gitment官方github的issues中查看.</del></p>
 <p>修改方式：在进入 <code>\themes\next\layout\_third-party\comments\gitalk.swig</code> ,修改成这样：</p>
-<pre><code>{% raw %}
+<pre><code class="html">{% raw %}
 {% if page.comments && theme.gitalk.enable %}
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -465,7 +470,8 @@ gitalk.render(&#39;gitalk-container&#39;)</code></pre><p>当然,在hexo里面使
         gitalk.render('gitalk-container')           
        </script>
 {% endif %}
-{% endraw %}</code></pre><p>至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如 <code>\留言板\</code> ,这个经过md5后是 <code>b31b6a578fce950674accdd14100e448</code></p>
+{% endraw %}</code></pre>
+<p>至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如 <code>\留言板\</code> ,这个经过md5后是 <code>b31b6a578fce950674accdd14100e448</code></p>
 <p>所以只要不改题目都没问题。</p>
 <p>咳咳,<span class="heimu" title="你知道的太多了">还是MD5大法好b（￣▽￣）d　</span></p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>看起来自己解决问题就是好啊。</p>
