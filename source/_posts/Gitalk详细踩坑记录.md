@@ -11,6 +11,8 @@ tags:
 - Github
 categories: 爱折腾
 copyright: true
+index_img: 'https://img.cyfan.top/pic/postpic/20200701111700.JPG'
+banner_img: 'https://img.cyfan.top/pic/postpic/20200701111700.JPG'
 ---
 # 前言
 
