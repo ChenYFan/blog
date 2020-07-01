@@ -121,7 +121,7 @@ gitalk.render('gitalk-container')
 ### 1
 进入 `\themes\next\layout\_third-party\comments\` 新建 `gitalk.swig` 文件,里面填写一下内容:
 
-```
+```html
 {% raw %}
 {% if page.comments && theme.gitalk.enable %}
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -156,7 +156,7 @@ gitalk.render('gitalk-container')
 
 修改 `\themes\next\layout\_partials\comments.swig` ,在 `{if}` 之下, `{elseif}` 之上填下:
 
-```
+```html
 {% raw %}
 {% elseif theme.gitalk.enable %}
  <div id="gitalk-container"></div>
@@ -167,7 +167,7 @@ gitalk.render('gitalk-container')
 
 新建 `\themes\next\source\css\_common\components\third-party\gitalk.styl` ,填下:
 
-```
+```css
 .gt-header a, .gt-comments a, .gt-popup a
   border-bottom: none;
 .gt-container .gt-popup .gt-action.is--active:before
@@ -179,7 +179,7 @@ gitalk.render('gitalk-container')
 
 修改`\themes\next\source\css\_common\components\third-party\third-party.styl`,最后一行填下
 
-```
+```css
 @import "gitalk";
 ```
 
@@ -187,7 +187,7 @@ gitalk.render('gitalk-container')
 
 最后,在`\themes\next\_config.yml`最后一行填下:
 
-```
+```yml
 gitalk:
   enable: true
   githubID: github帐号  #如ChenYFan   
@@ -299,7 +299,7 @@ Error:Validation Failed
 
 修改方式：在进入 `\themes\next\layout\_third-party\comments\gitalk.swig` ,修改成这样：
 
-```
+```html
 {% raw %}
 {% if page.comments && theme.gitalk.enable %}
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
