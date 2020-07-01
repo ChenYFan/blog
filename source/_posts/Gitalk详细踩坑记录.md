@@ -58,20 +58,22 @@ copyright: true
 
 Gitalk官方说明安装只有简单的几句话:
 
-> ## 安装
-> -直接使用
-```
+
+``` html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <!-- or -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 ```
+
 > ...
 > 添加一个容器：
 > `<div id="gitalk-container"></div>`
 > 用下面的 Javascript 代码来生成 gitalk 插件：
 > 
+
+
 ```
 var gitalk = new Gitalk({
   clientID: 'GitHub Application Client ID',
@@ -117,7 +119,7 @@ gitalk.render('gitalk-container')
 根据Gitment样式，整理如下
 
 ### 1
-进入`\themes\next\layout\_third-party\comments\`新建`gitalk.swig`文件,里面填写一下内容:
+进入 `\themes\next\layout\_third-party\comments\` 新建 `gitalk.swig` 文件,里面填写一下内容:
 
 ```
 {% raw %}
@@ -142,7 +144,7 @@ gitalk.render('gitalk-container')
 
 ### 2
 
-修改`\themes\next\layout\_third-party\comments\`,在最后一行填下:
+修改 `\themes\next\layout\_third-party\comments\` ,在最后一行填下:
 
 ```
 {% raw %}
@@ -152,7 +154,7 @@ gitalk.render('gitalk-container')
 
 ### 3
 
-修改`\themes\next\layout\_partials\comments.swig`,在`{if}`之下,`{elseif}`之上填下:
+修改 `\themes\next\layout\_partials\comments.swig` ,在 `{if}` 之下, `{elseif}` 之上填下:
 
 ```
 {% raw %}
@@ -163,7 +165,7 @@ gitalk.render('gitalk-container')
 
 ### 4
 
-新建`\themes\next\source\css\_common\components\third-party\gitalk.styl`,填下:
+新建 `\themes\next\source\css\_common\components\third-party\gitalk.styl` ,填下:
 
 ```
 .gt-header a, .gt-comments a, .gt-popup a
@@ -248,10 +250,10 @@ Error:Validation Failed
 
 ![图片](https://img.cyfan.top/pic/gitalk/2.jpg "规避解码")
 
-但是,但是,你还记得我有一篇文章的题目吗:`CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81`
+但是,但是,你还记得我有一篇文章的题目吗: `CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81`
 
 
-没错,解码以后就是:`CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！`
+没错,解码以后就是: `CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！`
 加上博客域名和路径,将近60字.
 
 这个方法依旧没有解决根本问题.
@@ -261,7 +263,7 @@ Error:Validation Failed
 
 ~~这个最终还是被我采用了,原因是它修改起来真的很简单.~~ 最终这个办法还是被舍弃了。
 
-返回步骤1,第11行,默认值是`location.pathname`也就是路径,把它替换成`J3t7cGFnZS5kYXRlfX0n`(直接输入page.date被识别成nodejs语言执行了,只能通过base64编码,解码即可)(请解码后替换即可).
+返回步骤1,第11行,默认值是 `location.pathname` 也就是路径,把它替换成 `J3t7cGFnZS5kYXRlfX0n` (直接输入page.date被识别成nodejs语言执行了,只能通过base64编码,解码即可)(请解码后替换即可).
 
 最终的lable会变成时间戳(还是毫秒级别的),时间戳就是目标时间距离1970-01-01 08:00:00(UTC +8)的毫秒
 
@@ -275,7 +277,7 @@ Error:Validation Failed
 
 ### MD5压缩字符
 
-2020年2月27日最终选择。
+> 2020年2月27日最终选择。
 
 为什么？
 
@@ -295,7 +297,8 @@ Error:Validation Failed
 
 ~~所以,此处不推荐使用MD5,如果你有这个需求,可以去gitalk或gitment官方github的issues中查看.~~
 
-修改方式：在进入`\themes\next\layout\_third-party\comments\gitalk.swig` ,修改成这样：
+修改方式：在进入 `\themes\next\layout\_third-party\comments\gitalk.swig` ,修改成这样：
+
 ```
 {% raw %}
 {% if page.comments && theme.gitalk.enable %}
@@ -318,7 +321,7 @@ Error:Validation Failed
 {% endraw %}
 ```
 
-至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如`\留言板\`,这个经过md5后是`b31b6a578fce950674accdd14100e448`
+至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如 `\留言板\` ,这个经过md5后是 `b31b6a578fce950674accdd14100e448`
 
 
 所以只要不改题目都没问题。
