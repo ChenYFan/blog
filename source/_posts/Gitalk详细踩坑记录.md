@@ -124,20 +124,21 @@ gitalk.render('gitalk-container')
 ```html
 {% raw %}
 {% if page.comments && theme.gitalk.enable %}
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-   <script type="text/javascript">
+
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;
+  &lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot;&gt;
         var gitalk = new Gitalk({
-          clientID: '{{ theme.gitalk.ClientID }}',
-          clientSecret: '{{ theme.gitalk.ClientSecret }}',
-          repo: '{{ theme.gitalk.repo }}',
-          owner: '{{ theme.gitalk.githubID }}',
-          admin: ['{{ theme.gitalk.adminUser }}'],
+          clientID: &#x27;{{ theme.gitalk.ClientID }}&#x27;,
+          clientSecret: &#x27;{{ theme.gitalk.ClientSecret }}&#x27;,
+          repo: &#x27;{{ theme.gitalk.repo }}&#x27;,
+          owner: &#x27;{{ theme.gitalk.githubID }}&#x27;,
+          admin: [&#x27;{{ theme.gitalk.adminUser }}&#x27;],
           id: location.pathname,
-          distractionFreeMode: '{{ theme.gitalk.distractionFreeMode }}'
+          distractionFreeMode: &#x27;{{ theme.gitalk.distractionFreeMode }}&#x27;
         })
-        gitalk.render('gitalk-container')           
-       </script>
+        gitalk.render(&#x27;gitalk-container&#x27;)           
+       &lt;/script&gt;
 {% endif %}
 {% endraw %}
 ```
@@ -159,7 +160,7 @@ gitalk.render('gitalk-container')
 ```html
 {% raw %}
 {% elseif theme.gitalk.enable %}
- <div id="gitalk-container"></div>
+ &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;
 {% endraw %}
 ```
 
@@ -302,21 +303,22 @@ Error:Validation Failed
 ```html
 {% raw %}
 {% if page.comments && theme.gitalk.enable %}
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-   <script type="text/javascript">
+
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;
+  &lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot;&gt;
         var gitalk = new Gitalk({
-          clientID: '{{ theme.gitalk.ClientID }}',
-          clientSecret: '{{ theme.gitalk.ClientSecret }}',
-          repo: '{{ theme.gitalk.repo }}',
-          owner: '{{ theme.gitalk.githubID }}',
-          admin: ['{{ theme.gitalk.adminUser }}'],
+          clientID: &#x27;{{ theme.gitalk.ClientID }}&#x27;,
+          clientSecret: &#x27;{{ theme.gitalk.ClientSecret }}&#x27;,
+          repo: &#x27;{{ theme.gitalk.repo }}&#x27;,
+          owner: &#x27;{{ theme.gitalk.githubID }}&#x27;,
+          admin: [&#x27;{{ theme.gitalk.adminUser }}&#x27;],
           id: md5(location.pathname),
-          distractionFreeMode: '{{ theme.gitalk.distractionFreeMode }}'
+          distractionFreeMode: &#x27;{{ theme.gitalk.distractionFreeMode }}&#x27;
         })
-        gitalk.render('gitalk-container')           
-       </script>
+        gitalk.render(&#x27;gitalk-container&#x27;)           
+       &lt;/script&gt;
 {% endif %}
 {% endraw %}
 ```
