@@ -6,6 +6,16 @@ date: 2020-03-19 13:21:09
 Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷的发牢骚,如果作为博文又搞得博客像怨妇篇一样,所以干脆新建了这个文档.
 <details>
 <summary> -2020</summary>
+ 
+ <details>
+<summary> --奇妙的七月</summary>
+
+#### ---2日
+ 
+泪目了，破解Xuehai平板被抓了，哭了哭了 ![](https://img.cyfan.top/pic/moji/stick_60.png) 
+ 
+</details>
+ 
 <details>
 <summary> --<span class="heimu">蕉</span>焦灼的六月</summary>
 
