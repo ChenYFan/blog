@@ -12,14 +12,14 @@ layout: about
 <img src="https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
 </br>
 
-
+<!--
 <a class="btn" href="https://github.com/Chenyfan">
               >>Github
             </a>
 
 <a class="btn" href="mailto:chenyf@cyfan.top">
               >>Email:chenyf@cyfan.top
-            </a>
+            </a>-->
 </div>
 
 ### 性别：未知
