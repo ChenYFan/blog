@@ -4,8 +4,7 @@ date: 2020-03-11 09:27:11
 layout: about
 ---
 
-<img src="https://img.cyfan.top/pic/BLOGER.jpg" width="75%">
-
+<div align="center">
 
 <img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
 
@@ -21,7 +20,7 @@ layout: about
 <a class="btn" href="mailto:chenyf@cyfan.top">
               >>Email:chenyf@cyfan.top
             </a>
-
+</div>
 ### 性别：未知
 
 ### 年龄：0~50
