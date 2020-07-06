@@ -286,6 +286,12 @@ details:focus,summary:focus{outline:none}
       
       <p class="h5">2020</p>
     
+    <a href="../../2020/07/06/LazyLoad-GoogleAdsense/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">怎么才能让GoogleAdsense不拖慢速度</span>
+      <span style="float: right;">07-06</span>
+    </a>
+  
+    
     <a href="../../2020/06/29/Up-Blog-By-Travis-ci/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">利用Travis-CI实现在线更新Hexo</span>
       <span style="float: right;">06-29</span>
@@ -342,13 +348,19 @@ details:focus,summary:focus{outline:none}
       <span style="float: right;">07-19</span>
     </a>
   
-    
-    <a href="../../2019/07/17/巧妙去除百度首页广告/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">巧妙去除百度首页广告</span>
-      <span style="float: right;">07-17</span>
-    </a>
-  
 </div>
+
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
