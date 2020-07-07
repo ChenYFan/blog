@@ -195,7 +195,7 @@ post:
     enable: true
   custom:  # 文章底部自定义内容
     enable: true
-    content: '<img src="https://img.cyfan.top/pic/AP.jpg" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
+    content: '<img src="https://img.cyfan.top/pic/AP.jpg" class="rounded mx-auto d-block mt-5" height=70%>' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
   comments:  # 评论
     enable: true  # 开启评论
     type: valine  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere  推荐 utterances
@@ -330,8 +330,8 @@ about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/a
   introduce: 一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
   icons: # 更多图标可从 https://fontawesome.com/v5.10.0/icons?d=gallery 查找，并以 "图标名: url" 的格式添加在下方
     "fab fa-github": https://github.com/ChenYFan
-    "fab fa-mail": mailto:chenyf@cyfan.top
-    #"fab fa-weixin qrcode":  # 添加 qrcode 后，点击不再跳转，而是悬浮二维码，因此值需要是二维码图片地址
+    "fab fa-envelope": mailto:chenyf@cyfan.top
+    "fab fa-money qrcode":  # 添加 qrcode 后，点击不再跳转，而是悬浮二维码，因此值需要是二维码图片地址
 
 
 #---------------------------
