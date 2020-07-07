@@ -88,7 +88,6 @@ aplayer:  # 音乐播放器，注意不能与 hexo-tag-aplayer 插件共用
 navbar:
   blog_title:  # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu:  # 可自行增减，若想减去某个入口，可以将值留空，显示文本关联 languages
-    主页: /
     归档: /archives/
     分类: /categories/
     标签: /tags/
@@ -120,7 +119,7 @@ banner_parallax: true  # 头图滚动视差
 #---------------------------
 footer:
   statistics:  # 统计网站 PV、UV，使用的是不蒜子，显示在页脚  *不蒜子近期连接不稳定，谨慎开启
-    enable: false
+    enable: true
     pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
     uv_format: "总访客数 {} 人"
 
@@ -180,7 +179,7 @@ post:
       enable: true
       format: "{} 分钟"
     views:  # 阅读次数，统计基于不蒜子  *不蒜子近期连接不稳定，谨慎开启
-      enable: false
+      enable: true
       format: "{} 次"
   updated:
     enable: true
@@ -332,7 +331,7 @@ about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/a
     "fab fa-github": https://github.com/ChenYFan
     "fa fa-envelope": mailto:chenyf@cyfan.top
     "fab fa-twitter": https://twitter.com/ChenYF_OHHH
-    "fab fa-qrcode": https://img.cyfan.top/pic/AP.jpg
+    "fa fa-qrcode": https://img.cyfan.top/pic/AP.jpg
 
 
 #---------------------------
