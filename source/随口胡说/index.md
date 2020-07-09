@@ -10,7 +10,8 @@ date: 2020-03-19 13:21:09
     var per=10;
     var lazy=1;
     var slanguage="zh";
-    var atemoji_array={8082.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/8082.png",
+    var atemoji_array={
+8082.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/8082.png",
 bx.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/bx.png",
 c.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/c.png",
 dhuaji.gif: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/dhuaji.gif",
@@ -179,8 +180,7 @@ zhuaji.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/zhuaji.png",
 锁眉.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/锁眉.png",
 长草.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/长草.png",
 阴暗.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/阴暗.png",
-高兴.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/高兴.png",
-
+高兴.png: "https://assets.cyfan.top/file/CYF-PicBed/pic/moji/高兴.png"
       }
 </script>
 
