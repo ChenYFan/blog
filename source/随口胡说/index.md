@@ -6,8 +6,8 @@ date: 2020-03-19 13:21:09
 <body>
     {% raw %}
     <script>
-    var appID="";
-    var appKEY="";
+    var appID="091PTJVtHs0SgCL7aYyiMffR-MdYXbMMI";
+    var appKEY="P76xlgEUy82LoiAdw3b3Awce";
     </script>
     {% endraw %}
     <div id="artitalk_main"></div>
