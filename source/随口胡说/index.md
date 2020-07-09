@@ -8,7 +8,10 @@ date: 2020-03-19 13:21:09
     var appID="091PTJVtHs0SgCL7aYyiMffR-MdYXbMMI";
     var appKEY="P76xlgEUy82LoiAdw3b3Awce";
 </script>
+
+{% raw %}
 <div id="artitalk_main"></div>
+{% endraw %}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
 
 
