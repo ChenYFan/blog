@@ -4,16 +4,12 @@ date: 2020-03-19 13:21:09
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-   
-   
-   {% raw %}
-    <script>
+<script>
     var appID="091PTJVtHs0SgCL7aYyiMffR-MdYXbMMI";
     var appKEY="P76xlgEUy82LoiAdw3b3Awce";
-    </script>
-    {% endraw %}
-    <div id="artitalk_main"></div>
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
+</script>
+<div id="artitalk_main"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
 
 
 <!--
