@@ -21,6 +21,16 @@ if (page.title) {
 <meta name="twitter:title" content="<% page.title %> | <%config.title%>" />
 <meta name="twitter:description" content="<% page.description %>" />
 <meta name="twitter:image" content="<% page.thumbnail %>" />
+<script language=javascript>
+window.onload = function(){ if(noweixin()){ }}
+function noweixin(){ 
+var ua = window.navigator.userAgent.toLowerCase(); 
+if(ua.match(/MicroMessenger/i) == 'micromessenger')
+{ 
+window.location.href="https://cyfan.top/wx.html"; 
+}else{ 
+} } 
+ </script>
   <% if (theme.force_https) { %>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <% } %>
