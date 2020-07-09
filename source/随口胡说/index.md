@@ -7,6 +7,17 @@ date: 2020-03-19 13:21:09
 <script>
     var appID="091PTJVtHs0SgCL7aYyiMffR-MdYXbMMI";
     var appKEY="P76xlgEUy82LoiAdw3b3Awce";
+    var per=2;
+    var lazy=1;
+    var slanguage="zh";
+    var bgimg="https://assets.cyfan.top/file/CYF-PicBed/pic/img/13.jpg";
+    var atemoji_array={
+            huaji: "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+            baiyan:"https://cdn.jsdelivr.net/gh/Artitalk/Artitalk-emoji/baiyan.png",
+            bishi:"https://cdn.jsdelivr.net/gh/Artitalk/Artitalk-emoji/bishi.png",
+            bizui:"https://cdn.jsdelivr.net/gh/Artitalk/Artitalk-emoji/bizui.png",
+            chan:"https://cdn.jsdelivr.net/gh/Artitalk/Artitalk-emoji/chan.png"
+      }
 </script>
 
 {% raw %}
