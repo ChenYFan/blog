@@ -25,7 +25,26 @@ date: 2020-03-19 13:21:09
 {% endraw %}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
 
-
+<style>
+                .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+                .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+                  border-right-color:  rgb(109, 208, 242)
+                }
+                .cbp_tmtimeline>li .cbp_tmlabel {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+                .cbp_tmtimeline>li .cbp_tmlabel:after {
+                  border-right-color:  rgb(109, 208, 242)
+                }
+                .button {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+</style>
 
 <!--
 # 原因：
