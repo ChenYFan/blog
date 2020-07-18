@@ -5,8 +5,8 @@ date: 2020-03-19 13:21:09
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 <script>
-    var appID="091PTJVtHs0SgCL7aYyiMffR-MdYXbMMI";
-    var appKEY="P76xlgEUy82LoiAdw3b3Awce";
+    var appID= window.atob("MDkxUFRKVnRIczBTZ0NMN2FZeWlNZmZSLU1kWVhiTU1J");
+    var appKEY= window.atob("UDc2eGxnRVV5ODJMb2lBZHczYjNBd2Nl");
     var per=10;
     var lazy=1;
     var slanguage="zh";
