@@ -247,8 +247,8 @@ gitalk:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  app_id: jbxznmsljbxznmsljbxznmsljbxznmsljbxznmsl
-  app_key: jbxznmsljbxznmsljbxznmsljbxznmsl
+  app_id:  jbxznmsljbxznmsljbxznmsljbxznmsljbxznmsl
+  app_key:  jbxznmsljbxznmsljbxznmsljbxznmsl
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false
   placeholder: 开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）
