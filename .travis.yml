@@ -6,6 +6,8 @@ cache: npm
 branches:
   only:
     - master # build master branch only
+install:
+  - npm i hexo-offline-popup --save
 script:
   - hexo generate # generate static files
 deploy:
