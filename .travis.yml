@@ -7,9 +7,8 @@ branches:
   only:
     - master # build master branch only
 script:
-  - hexo generate # generate static files
-install:
   - npm i hexo-offline-popup --save
+  - hexo generate # generate static files
 deploy:
   provider: pages
   skip-cleanup: true
