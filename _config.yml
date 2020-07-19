@@ -147,3 +147,21 @@ service_worker:
       handler: cacheFirst
       options:
         origin: img.cyfan.top # 域名
+	neat_enable: true
+# 压缩html
+neat_html:
+ enable: true
+ exclude:
+# 压缩css
+neat_css:
+ enable: true
+ exclude:
+   - '*/*.min.css'
+# 压缩js
+neat_js:
+ enable: true
+ mangle: true
+ output:
+ compress:
+ exclude:
+   - '*/*.js'
