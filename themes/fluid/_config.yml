@@ -30,7 +30,7 @@ fun_features: # 一些好玩的功能
     cursorChar: "|" # 游标字符
     loop: true # 是否循环播放效果
   anchorjs: # 为文章内容中的标题添加锚图标
-    enable: false
+    enable: true
     element: h1,h2,h3,h4,h5,h6
     placement: left # icon放置的位置： left | right
     visible: hover # 默认悬浮显示，可选：hover（鼠标在元素上悬浮时显示） | always（一直显示） | touch（移动端触摸显示）
@@ -88,7 +88,6 @@ aplayer:  # 音乐播放器，注意不能与 hexo-tag-aplayer 插件共用
 navbar:
   blog_title:  # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu:  # 可自行增减，若想减去某个入口，可以将值留空，显示文本关联 languages
-    主页: /
     归档: /archives/
     分类: /categories/
     标签: /tags/
@@ -120,7 +119,7 @@ banner_parallax: true  # 头图滚动视差
 #---------------------------
 footer:
   statistics:  # 统计网站 PV、UV，使用的是不蒜子，显示在页脚  *不蒜子近期连接不稳定，谨慎开启
-    enable: false
+    enable: true
     pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
     uv_format: "总访客数 {} 人"
 
@@ -180,7 +179,7 @@ post:
       enable: true
       format: "{} 分钟"
     views:  # 阅读次数，统计基于不蒜子  *不蒜子近期连接不稳定，谨慎开启
-      enable: false
+      enable: true
       format: "{} 次"
   updated:
     enable: true
@@ -195,7 +194,7 @@ post:
     enable: true
   custom:  # 文章底部自定义内容
     enable: true
-    content: '<img src="https://img.cyfan.top/pic/AP.jpg" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
+    content: '<img src="https://img.cyfan.top/pic/AP.jpg" class="rounded mx-auto d-block mt-5" height=40%>' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
   comments:  # 评论
     enable: true  # 开启评论
     type: valine  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere  推荐 utterances
@@ -248,8 +247,8 @@ gitalk:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  appid:  RMX6WtyzwUc2iR0tjygzqAvc-MdYXbMMI
-  appkey:  5Omr7dbOOYyCCwflnKntv5IS
+  app_id:  jbxznmsljbxznmsljbxznmsljbxznmsljbxznmsl
+  app_key:  jbxznmsljbxznmsljbxznmsljbxznmsl
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false
   placeholder: 开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）
@@ -327,11 +326,12 @@ about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/a
   subtitle:  好像是关于什么呢
   avatar: https://img.cyfan.top/pic/img/avatar.png # 头像
   name: CYF
-  introduce: info / info / info # 支持 HTML
+  introduce: 一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
   icons: # 更多图标可从 https://fontawesome.com/v5.10.0/icons?d=gallery 查找，并以 "图标名: url" 的格式添加在下方
     "fab fa-github": https://github.com/ChenYFan
-    "fab fa-email": chenyf@cyfan.top
-    #"fab fa-weixin qrcode":  # 添加 qrcode 后，点击不再跳转，而是悬浮二维码，因此值需要是二维码图片地址
+    "fa fa-envelope": mailto:chenyf@cyfan.top
+    "fab fa-twitter": https://twitter.com/ChenYF_OHHH
+    "fa fa-qrcode": https://img.cyfan.top/pic/AP.jpg
 
 
 #---------------------------
@@ -366,5 +366,8 @@ links:
     TigerRoot: [https://blog.tigerroot.cn, 那有什么岁月静好，只是有人在替我们负重前行。, https://s2.ax1x.com/2020/03/08/3zdGes.png]
     伊舍导航: [https://eesdh.com, 一个在互联网角落挣扎的小小导航，很小很小。, https://gitee.com/eesdh/eesdh/raw/master/img/tx.png]
     Sukka's Blog: [https://blog.skk.moe, 童话只美在真实却从不续写, https://cdn.jsdelivr.net/npm/skx@0.2.3/avatar/192x192.png]
-    Tajoy's blog: [https://tajoy.net/, 一个不会摄影的程序猿，不是一个好的艺术家。, https://raw.githubusercontent.com/tajoy/tajoy.github.io/src/static/profile.jpg]
+    Colsrch: [https://colsrch.top, 愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。, https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg]
+    姑苏的猫: [https://www.islery.com, 一个有趣的地方 , https://www.islery.com/favicon.ico]
+    Flexiston: [https://flexiston.com, 立即行动吧，未来要自己争取, https://cdn.jsdelivr.net/gh/Flexiston/CDN/img/avatar.png]
+    Tajoy's blog: [https://tajoy.net/, 一个不会摄影的程序猿，不是一个好的艺术家。, https://wx2.sbimg.cn/2020/07/23/DiyUU.jpg]
     友链还有空位！: [https://blog.cyfan.top/1949/10/01/留言板/, 点我跑去留言！, https://img.cyfan.top/pic/？.jpg]

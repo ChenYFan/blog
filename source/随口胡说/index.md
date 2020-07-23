@@ -1,11 +1,233 @@
 title: 随口胡说
 date: 2020-03-19 13:21:09
 ---
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+    var appID= window.atob(rfwFoV1+j3+mXLcNMYJJ4);
+    var appKEY= window.atob($$Yn2+hPjHsvGO5);
+    var per=10;
+    var lazy=1;
+    var slanguage="zh";
+    var atemoji_array={
+            "8082.png": "https://img.cyfan.top/pic/moji/8082.png",
+            "bx.png": "https://img.cyfan.top/pic/moji/bx.png",
+            "c.png": "https://img.cyfan.top/pic/moji/c.png",
+            "dhuaji.gif": "https://img.cyfan.top/pic/moji/dhuaji.gif",
+            "dy.png": "https://img.cyfan.top/pic/moji/dy.png",
+            "fn.gif": "https://img.cyfan.top/pic/moji/fn.gif",
+            "fqsk.jpg": "https://img.cyfan.top/pic/moji/fqsk.jpg",
+            "h.png": "https://img.cyfan.top/pic/moji/h.png",
+            "hjh.png": "https://img.cyfan.top/pic/moji/hjh.png",
+            "huaji.gif": "https://img.cyfan.top/pic/moji/huaji.gif",
+            "huaji.png": "https://img.cyfan.top/pic/moji/huaji.png",
+            "j.png": "https://img.cyfan.top/pic/moji/j.png",
+            "k.png": "https://img.cyfan.top/pic/moji/k.png",
+            "ld.jpg": "https://img.cyfan.top/pic/moji/ld.jpg",
+            "lh.jpg": "https://img.cyfan.top/pic/moji/lh.jpg",
+            "lh.png": "https://img.cyfan.top/pic/moji/lh.png",
+            "m.png": "https://img.cyfan.top/pic/moji/m.png",
+            "qgbf.png": "https://img.cyfan.top/pic/moji/qgbf.png",
+            "s.png": "https://img.cyfan.top/pic/moji/s.png",
+            "stick_1.png": "https://img.cyfan.top/pic/moji/stick_1.png",
+            "stick_10.png": "https://img.cyfan.top/pic/moji/stick_10.png",
+            "stick_11.png": "https://img.cyfan.top/pic/moji/stick_11.png",
+            "stick_12.png": "https://img.cyfan.top/pic/moji/stick_12.png",
+            "stick_13.png": "https://img.cyfan.top/pic/moji/stick_13.png",
+            "stick_14.png": "https://img.cyfan.top/pic/moji/stick_14.png",
+            "stick_15.png": "https://img.cyfan.top/pic/moji/stick_15.png",
+            "stick_16.png": "https://img.cyfan.top/pic/moji/stick_16.png",
+            "stick_17.png": "https://img.cyfan.top/pic/moji/stick_17.png",
+            "stick_18.png": "https://img.cyfan.top/pic/moji/stick_18.png",
+            "stick_19.png": "https://img.cyfan.top/pic/moji/stick_19.png",
+            "stick_2.png": "https://img.cyfan.top/pic/moji/stick_2.png",
+            "stick_20.png": "https://img.cyfan.top/pic/moji/stick_20.png",
+            "stick_21.png": "https://img.cyfan.top/pic/moji/stick_21.png",
+            "stick_22.png": "https://img.cyfan.top/pic/moji/stick_22.png",
+            "stick_23.png": "https://img.cyfan.top/pic/moji/stick_23.png",
+            "stick_24.png": "https://img.cyfan.top/pic/moji/stick_24.png",
+            "stick_25.png": "https://img.cyfan.top/pic/moji/stick_25.png",
+            "stick_26.png": "https://img.cyfan.top/pic/moji/stick_26.png",
+            "stick_27.png": "https://img.cyfan.top/pic/moji/stick_27.png",
+            "stick_28.png": "https://img.cyfan.top/pic/moji/stick_28.png",
+            "stick_29.png": "https://img.cyfan.top/pic/moji/stick_29.png",
+            "stick_3.png": "https://img.cyfan.top/pic/moji/stick_3.png",
+            "stick_30.png": "https://img.cyfan.top/pic/moji/stick_30.png",
+            "stick_31.png": "https://img.cyfan.top/pic/moji/stick_31.png",
+            "stick_32.png": "https://img.cyfan.top/pic/moji/stick_32.png",
+            "stick_33.png": "https://img.cyfan.top/pic/moji/stick_33.png",
+            "stick_34.png": "https://img.cyfan.top/pic/moji/stick_34.png",
+            "stick_35.png": "https://img.cyfan.top/pic/moji/stick_35.png",
+            "stick_36.png": "https://img.cyfan.top/pic/moji/stick_36.png",
+            "stick_37.png": "https://img.cyfan.top/pic/moji/stick_37.png",
+            "stick_38.png": "https://img.cyfan.top/pic/moji/stick_38.png",
+            "stick_39.png": "https://img.cyfan.top/pic/moji/stick_39.png",
+            "stick_4.png": "https://img.cyfan.top/pic/moji/stick_4.png",
+            "stick_40.png": "https://img.cyfan.top/pic/moji/stick_40.png",
+            "stick_41.png": "https://img.cyfan.top/pic/moji/stick_41.png",
+            "stick_42.png": "https://img.cyfan.top/pic/moji/stick_42.png",
+            "stick_43.png": "https://img.cyfan.top/pic/moji/stick_43.png",
+            "stick_44.png": "https://img.cyfan.top/pic/moji/stick_44.png",
+            "stick_45.png": "https://img.cyfan.top/pic/moji/stick_45.png",
+            "stick_46.png": "https://img.cyfan.top/pic/moji/stick_46.png",
+            "stick_47.png": "https://img.cyfan.top/pic/moji/stick_47.png",
+            "stick_48.png": "https://img.cyfan.top/pic/moji/stick_48.png",
+            "stick_49.png": "https://img.cyfan.top/pic/moji/stick_49.png",
+            "stick_5.png": "https://img.cyfan.top/pic/moji/stick_5.png",
+            "stick_50.png": "https://img.cyfan.top/pic/moji/stick_50.png",
+            "stick_51.png": "https://img.cyfan.top/pic/moji/stick_51.png",
+            "stick_52.png": "https://img.cyfan.top/pic/moji/stick_52.png",
+            "stick_53.png": "https://img.cyfan.top/pic/moji/stick_53.png",
+            "stick_54.png": "https://img.cyfan.top/pic/moji/stick_54.png",
+            "stick_55.png": "https://img.cyfan.top/pic/moji/stick_55.png",
+            "stick_56.png": "https://img.cyfan.top/pic/moji/stick_56.png",
+            "stick_57.png": "https://img.cyfan.top/pic/moji/stick_57.png",
+            "stick_58.png": "https://img.cyfan.top/pic/moji/stick_58.png",
+            "stick_59.png": "https://img.cyfan.top/pic/moji/stick_59.png",
+            "stick_6.png": "https://img.cyfan.top/pic/moji/stick_6.png",
+            "stick_60.png": "https://img.cyfan.top/pic/moji/stick_60.png",
+            "stick_61.png": "https://img.cyfan.top/pic/moji/stick_61.png",
+            "stick_62.png": "https://img.cyfan.top/pic/moji/stick_62.png",
+            "stick_63.png": "https://img.cyfan.top/pic/moji/stick_63.png",
+            "stick_64.png": "https://img.cyfan.top/pic/moji/stick_64.png",
+            "stick_65.png": "https://img.cyfan.top/pic/moji/stick_65.png",
+            "stick_66.png": "https://img.cyfan.top/pic/moji/stick_66.png",
+            "stick_67.png": "https://img.cyfan.top/pic/moji/stick_67.png",
+            "stick_68.png": "https://img.cyfan.top/pic/moji/stick_68.png",
+            "stick_69.png": "https://img.cyfan.top/pic/moji/stick_69.png",
+            "stick_7.png": "https://img.cyfan.top/pic/moji/stick_7.png",
+            "stick_70.png": "https://img.cyfan.top/pic/moji/stick_70.png",
+            "stick_71.png": "https://img.cyfan.top/pic/moji/stick_71.png",
+            "stick_72.png": "https://img.cyfan.top/pic/moji/stick_72.png",
+            "stick_73.png": "https://img.cyfan.top/pic/moji/stick_73.png",
+            "stick_74.png": "https://img.cyfan.top/pic/moji/stick_74.png",
+            "stick_75.png": "https://img.cyfan.top/pic/moji/stick_75.png",
+            "stick_76.png": "https://img.cyfan.top/pic/moji/stick_76.png",
+            "stick_77.png": "https://img.cyfan.top/pic/moji/stick_77.png",
+            "stick_78.png": "https://img.cyfan.top/pic/moji/stick_78.png",
+            "stick_79.png": "https://img.cyfan.top/pic/moji/stick_79.png",
+            "stick_8.png": "https://img.cyfan.top/pic/moji/stick_8.png",
+            "stick_80.png": "https://img.cyfan.top/pic/moji/stick_80.png",
+            "stick_81.png": "https://img.cyfan.top/pic/moji/stick_81.png",
+            "stick_9.png": "https://img.cyfan.top/pic/moji/stick_9.png",
+            "tx.png": "https://img.cyfan.top/pic/moji/tx.png",
+            "wc.jpg": "https://img.cyfan.top/pic/moji/wc.jpg",
+            "whks.png": "https://img.cyfan.top/pic/moji/whks.png",
+            "wjlkdhxs.jpg": "https://img.cyfan.top/pic/moji/wjlkdhxs.jpg",
+            "xy.png": "https://img.cyfan.top/pic/moji/xy.png",
+            "yhuaji.png": "https://img.cyfan.top/pic/moji/yhuaji.png",
+            "zcbg.jpg": "https://img.cyfan.top/pic/moji/zcbg.jpg",
+            "zhuaji.png": "https://img.cyfan.top/pic/moji/zhuaji.png",
+            "不出所料.png": "https://img.cyfan.top/pic/moji/不出所料.png",
+            "不说话.png": "https://img.cyfan.top/pic/moji/不说话.png",
+            "不高兴.png": "https://img.cyfan.top/pic/moji/不高兴.png",
+            "中刀.png": "https://img.cyfan.top/pic/moji/中刀.png",
+            "中指.png": "https://img.cyfan.top/pic/moji/中指.png",
+            "中枪.png": "https://img.cyfan.top/pic/moji/中枪.png",
+            "亲亲.png": "https://img.cyfan.top/pic/moji/亲亲.png",
+            "便便.png": "https://img.cyfan.top/pic/moji/便便.png",
+            "内伤.png": "https://img.cyfan.top/pic/moji/内伤.png",
+            "击掌.png": "https://img.cyfan.top/pic/moji/击掌.png",
+            "口吐芳言.jpg": "https://img.cyfan.top/pic/moji/口吐芳言.jpg",
+            "口水.png": "https://img.cyfan.top/pic/moji/口水.png",
+            "吐.png": "https://img.cyfan.top/pic/moji/吐.png",
+            "吐舌.png": "https://img.cyfan.top/pic/moji/吐舌.png",
+            "吐血倒地.png": "https://img.cyfan.top/pic/moji/吐血倒地.png",
+            "呲牙.png": "https://img.cyfan.top/pic/moji/呲牙.png",
+            "咽气.png": "https://img.cyfan.top/pic/moji/咽气.png",
+            "哭泣.png": "https://img.cyfan.top/pic/moji/哭泣.png",
+            "喜极而泣.png": "https://img.cyfan.top/pic/moji/喜极而泣.png",
+            "喷水.png": "https://img.cyfan.top/pic/moji/喷水.png",
+            "喷血.png": "https://img.cyfan.top/pic/moji/喷血.png",
+            "坐等.png": "https://img.cyfan.top/pic/moji/坐等.png",
+            "害羞.png": "https://img.cyfan.top/pic/moji/害羞.png",
+            "小眼睛.png": "https://img.cyfan.top/pic/moji/小眼睛.png",
+            "尴尬.png": "https://img.cyfan.top/pic/moji/尴尬.png",
+            "得意.png": "https://img.cyfan.top/pic/moji/得意.png",
+            "惊喜.png": "https://img.cyfan.top/pic/moji/惊喜.png",
+            "想一想.png": "https://img.cyfan.top/pic/moji/想一想.png",
+            "愤怒.png": "https://img.cyfan.top/pic/moji/愤怒.png",
+            "扇耳光.png": "https://img.cyfan.top/pic/moji/扇耳光.png",
+            "投降.png": "https://img.cyfan.top/pic/moji/投降.png",
+            "抠鼻.png": "https://img.cyfan.top/pic/moji/抠鼻.png",
+            "抽烟.png": "https://img.cyfan.top/pic/moji/抽烟.png",
+            "无奈.png": "https://img.cyfan.top/pic/moji/无奈.png",
+            "无所谓.png": "https://img.cyfan.top/pic/moji/无所谓.png",
+            "无语.png": "https://img.cyfan.top/pic/moji/无语.png",
+            "暗地观察.png": "https://img.cyfan.top/pic/moji/暗地观察.png",
+            "期待.png": "https://img.cyfan.top/pic/moji/期待.png",
+            "欢呼.png": "https://img.cyfan.top/pic/moji/欢呼.png",
+            "汗.png": "https://img.cyfan.top/pic/moji/汗.png",
+            "深思.png": "https://img.cyfan.top/pic/moji/深思.png",
+            "狂汗.png": "https://img.cyfan.top/pic/moji/狂汗.png",
+            "献花.png": "https://img.cyfan.top/pic/moji/献花.png",
+            "献黄瓜.png": "https://img.cyfan.top/pic/moji/献黄瓜.png",
+            "皱眉.png": "https://img.cyfan.top/pic/moji/皱眉.png",
+            "看不见.png": "https://img.cyfan.top/pic/moji/看不见.png",
+            "看热闹.png": "https://img.cyfan.top/pic/moji/看热闹.png",
+            "瞅你.png": "https://img.cyfan.top/pic/moji/瞅你.png",
+            "肿包.png": "https://img.cyfan.top/pic/moji/肿包.png",
+            "脸红.png": "https://img.cyfan.top/pic/moji/脸红.png",
+            "蜡烛.png": "https://img.cyfan.top/pic/moji/蜡烛.png",
+            "装大款.png": "https://img.cyfan.top/pic/moji/装大款.png",
+            "观察.png": "https://img.cyfan.top/pic/moji/观察.png",
+            "赞一个.png": "https://img.cyfan.top/pic/moji/赞一个.png",
+            "邪恶.png": "https://img.cyfan.top/pic/moji/邪恶.png",
+            "邪魅一笑.jpg": "https://img.cyfan.top/pic/moji/邪魅一笑.jpg",
+            "锁眉.png": "https://img.cyfan.top/pic/moji/锁眉.png",
+            "长草.png": "https://img.cyfan.top/pic/moji/长草.png",
+            "阴暗.png": "https://img.cyfan.top/pic/moji/阴暗.png",
+            "高兴.png": "https://img.cyfan.top/pic/moji/高兴.png",
+      }
+</script>
+
+{% raw %}
+<div id="artitalk_main"></div>
+{% endraw %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
+
+<style>
+                .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+                .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+                  border-right-color:  rgb(109, 208, 242)
+                }
+                .cbp_tmtimeline>li .cbp_tmlabel {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+                .cbp_tmtimeline>li .cbp_tmlabel:after {
+                  border-right-color:  rgb(109, 208, 242)
+                }
+				.cbp_tmtimeline>li img.atemoji {
+                  width: 7%;
+				  max-height: 7%;
+                }
+                .button {
+                  background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
+                  color: white;
+                }
+</style>
+
+<!--
 # 原因：
 
 Hexo作为静态博客 ~~唯一~~ 的问题就是不想静态博客那样快捷的发牢骚,如果作为博文又搞得博客像怨妇篇一样,所以干脆新建了这个文档.
 <details>
 <summary> -2020</summary>
+ 
+ <details>
+<summary> --奇妙的七月</summary>
+
+#### ---2日
+ 
+泪目了，破解Xuehai平板被抓了，哭了哭了 ![](https://img.cyfan.top/pic/moji/stick_60.png) 
+ 
+</details>
+ 
 <details>
 <summary> --<span class="heimu">蕉</span>焦灼的六月</summary>
 
@@ -249,3 +471,4 @@ NexT专属内建标签在其它主题是不兼容的，不兼容的！这意味�
 </details>
 
 </details>
+-->

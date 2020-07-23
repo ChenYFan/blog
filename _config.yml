@@ -120,3 +120,48 @@ related_posts:
     isDate: false
     isImage: false
     isExcerpt: false
+service_worker:
+    maximumFileSizeToCacheInBytes: 5242880
+    staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+    stripPrefix: public
+    verbose: false
+    runtimeCaching:
+    - urlPattern: /*  # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: unpkg.com  # 域名
+    - urlPattern: /*   # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: cdn.jsdelivr.net  # 域名
+    - urlPattern: /*   # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: cdn.staticfile.org # 域名
+    - urlPattern: /*   # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: assets.cyfan.top # 域名
+    - urlPattern: /* # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: img.cyfan.top # 域名
+neat_enable: true
+# 压缩html
+neat_html:
+ enable: true
+ exclude:
+# 压缩css
+neat_css:
+ enable: true
+ exclude:
+   - '*/*.min.css'
+# 压缩js
+neat_js:
+ enable: true
+ mangle: true
+ output:
+ compress:
+ exclude:
+   - '*/*.js'

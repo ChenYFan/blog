@@ -49,7 +49,7 @@
 
 + 8.如果因特殊原因而更换地址，请留言或PR。
 
-+ 9.1 添加方式：留言。格式如下：
++ ~~9.1 添加方式：留言。格式如下：~~
 
 
 ```
@@ -57,8 +57,10 @@
 标题: #尽可能简短，不得大于10字
 地址: https://
 ```
+
+> 我们拒绝了留言的方式添加友链，任何以留言形式添加友链都将被我们拒绝，请采用PR形式添加友链
 	
-+ 9.2另一种添加方式：Pull Request。
++ 9.2另一种添加方式：Pull Request:
 
 + 9.2.1 进入[存储Blog的Repo](https://github.com/ChenYFan/blog), ~~Fork~~(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)[https://github.com/ChenYFan/blog/blob/master/themes/fluid/\_config.yml] 在倒数第二行按照示例规则添加友链【务必注意缩进和换行】:
     

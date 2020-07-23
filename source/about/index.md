@@ -1,10 +1,10 @@
 title: 关于
 comments: false
 date: 2020-03-11 09:27:11
+layout: about
 ---
 
-<img src="https://img.cyfan.top/pic/BLOGER.jpg" width="75%">
-
+<div align="center">
 
 <img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
 
@@ -12,16 +12,17 @@ date: 2020-03-11 09:27:11
 <img src="https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
 </br>
 
-
+<!--
 <a class="btn" href="https://github.com/Chenyfan">
               >>Github
             </a>
 
 <a class="btn" href="mailto:chenyf@cyfan.top">
               >>Email:chenyf@cyfan.top
-            </a>
+            </a>-->
+</div>
 
-### 性别：未知
+### 性别：可能是男孩纸吧【没有女装癖！】
 
 ### 年龄：0~50
 
@@ -47,7 +48,7 @@ date: 2020-03-11 09:27:11
 
 以[Hexo](https://hexo.io/zh-cn/)为框架,主题为[NexT 5.1.4](http://theme-next.iissnan.com), ~~建立在Coding Pages上(原本想直接扔在Github上，但由于`不可告人`的秘密,速度哦出奇的慢)~~ 在2020年初发现Coding转型升级了，接着使用需要实名认证，无奈之下迁回Github，不过加了个CloudFlareCDN，速度在压力测试下 ~~大约稳定在80kb/s~~ 很抱歉通过 [站内自选CDN](/2020/03/11/如何不出CloudFlare随便搞一搞将托管在其上的网站速度提升20倍/#more) 现在已经比Github打开还要快了,目前1.7Mb/s的凶狠速度是可以保证的，ip可以手动切换CloudFlare CDNIP以获得更好速度。
 
-内部统计使用[百度统计](https://tongji.baidu.com),评论系统为~~[来必力](https://livere.com)（来必力服务器构建于韩国，评论区加载较慢，请耐心等待。） [valine](http://valine.js.org) （后来发现Valine可以绕过手持身份证拍照这验证）~~ Valine又抽风了,所以最终换成了Gitalk,评论请使用Github账号.
+内部统计使用[百度统计](https://tongji.baidu.com),评论系统为Valine。
 
 目前本站并没有被 `墙` ,未来也尽可能保证不被墙.因为本站就是一个分享互联网知识的博客小站点,并没有包含任何反动的内容!
 
@@ -118,7 +119,7 @@ date: 2020-03-11 09:27:11
 104.16.192.0-207.255
 ```
 
-绑定方式如: `162.159.210.33 blog.cyfan.ga`
+绑定方式如: `162.159.210.33 blog.cyfan.top`
 
 或:采用`DNS over HTTPS` 或 `DNS over TLS` 也就是常说的 `DoH` 和 `DoT`,可以修复所有DNS污染.
 
@@ -134,9 +135,12 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 
 ###### DDoS攻击
 
-主站点 `blog.cyfan.ga` 以及 `cyfan.ga` 是通过CloudFlare Workers的，每天10万次请求，对于我这种日PV不到5的博主完全足够了，一般每天请求数不超过5000，但由于是有限度的，所以请各位NB大佬手下留情，谢谢。
 
-当然还有直接受CFCDN保护的两个回源站点 `s.cyfan.ga` 以及 `sblog.cyfan.ga` 这两个不计算在CFWorker请求里，而且受CDN保护，只是速度极慢，是可以在博客崩塌时访问的。
+~~主站点 `blog.cyfan.top` 以及 `cyfan.top` 是通过CloudFlare Workers的，每天10万次请求，对于我这种日PV不到5的博主完全足够了，一般每天请求数不超过5000，但由于是有限度的，所以请各位NB大佬手下留情，谢谢。~~
+
+~~当然还有直接受CFCDN保护的两个回源站点 `s.cyfan.top` 以及 `sblog.cyfan.top` 这两个不计算在CFWorker请求里，而且受CDN保护，只是速度极慢，是可以在博客崩塌时访问的。~~
+
+不再采用Worker反向代理，香港CDN直接上！
 
 ### 域名:
 
