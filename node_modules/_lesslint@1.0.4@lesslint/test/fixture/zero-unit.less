@@ -1,0 +1,26 @@
+// @import './comment.less';
+
+@right-unit: 1px;
+@right-unit1: 12px;
+@right-unit2: 0deg;
+@right-unit3: 0s;
+@right-unit4: 0ms;
+@wrong-unit: 0px;
+@wrong-unit1: 0em;
+@color: green;
+
+@import './variable';
+
+
+div{
+    background-color: darken(#fff, 0%);
+    margin: 0px @right-unit;
+    h1 {
+        height: @wrong-unit;
+        h2 {
+            height: @wrong-unit;
+            box-shadow: 0 0px 2px lighten(@color, 0px);
+        }
+    }
+};
+

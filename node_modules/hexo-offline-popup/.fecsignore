@@ -1,0 +1,12 @@
+.DS_Store
+._.DS_Store
+dist
+tmp
+*.log
+*.tmp
+node_modules
+lib
+src/lib/*.tpl.js
+coverage
+.nyc_output
+npm-debug.*

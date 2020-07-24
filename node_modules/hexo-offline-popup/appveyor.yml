@@ -1,0 +1,34 @@
+# Fix line endings in Windows. (runs before repo cloning)
+init:
+  - git config --global core.autocrlf input
+
+# Test against these versions of Node.js.
+environment:
+  matrix:
+    - nodejs_version: "4"
+    - nodejs_version: "6"
+    - nodejs_version: "8"
+
+matrix:
+  fast_finish: true
+
+# Install scripts. (runs after repo cloning)
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
+
+cache:
+  - node_modules
+
+# Post-install test scripts.
+test_script:
+  - npm test
+
+# Don't actually build.
+build: off
+
+# Don't actually deploy.
+deploy: off
+
+# Set build version format here instead of in the admin panel.
+version: "{build}"

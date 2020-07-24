@@ -1,0 +1,439 @@
+//
+// Variables
+// -----------------------------------------
+
+$balloon-bg:             fade-out(#111, .1) !default;
+$balloon-base-size:      10px !default;
+$balloon-arrow-height:   6px !default;
+
+
+//
+// Mixins
+// -----------------------------------------
+
+@mixin svg-arrow ($color, $position: up) {
+
+  $degrees: 0;
+  $height:  6px;
+  $width:   18px;
+
+  @if ($position == down) {
+    $degrees: 180 18 6;
+    } @else if ($position == left) {
+      $degrees: -90 18 18;
+      $width: 6px;
+      $height: 18px;
+      } @else if ($position == right) {
+        $degrees: 90 6 6;
+        $width: 6px;
+        $height: 18px;
+      }
+
+      background: no-repeat url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%22#{$width * 2}%22%20height%3D%22#{$height * 2}%22%3E%3Cpath%20fill%3D%22#{$color}%22%20transform%3D%22rotate(#{$degrees})%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E');
+      background-size: 100% auto;
+      width: $width;
+      height: $height;
+    }
+
+    @mixin transition ($args...) {
+      -webkit-transition: $args;
+      -moz-transition: $args;
+      -ms-transition: $args;
+      -o-transition: $args;
+      transition: $args;
+    }
+
+    @mixin transform ($val) {
+      -webkit-transform: $val;
+      -moz-transform: $val;
+      -ms-transform: $val;
+      transform: $val;
+    }
+
+    @mixin transform-origin ($val) {
+      -webkit-transform-origin: $val;
+      -moz-transform-origin: $val;
+      -ms-transform-origin: $val;
+      transform-origin: $val;
+    }
+
+    @mixin opacity ($trans) {
+      filter: alpha(opacity=($trans * 100));
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+      -moz-opacity: $trans;
+      -khtml-opacity: $trans;
+      opacity: $trans;
+    }
+
+    @mixin base-effects () {
+      @include opacity(0);
+      pointer-events: none;
+      @include transition(all .18s ease-out .18s);
+    }
+
+    @mixin no-effects () {
+      @include transition(none);
+    }
+
+    @mixin normalized-text() {
+      font-family: sans-serif !important;
+      font-weight: normal !important;
+      font-style: normal !important;
+      text-shadow: none !important;
+      font-size: $balloon-base-size + 2 !important;
+    }
+
+
+//
+// Styles
+// -----------------------------------------
+
+// IE 11 button bugfix
+button[data-balloon] {
+  overflow: visible;
+}
+
+[data-balloon] {
+  position: relative; // alt. absolute or fixed
+
+  // Fixing iOS Safari event issue.
+  // More info at: https://goo.gl/w8JF4W
+  cursor: pointer;
+
+  &:after {
+    @include base-effects();
+    @include normalized-text();
+    background: $balloon-bg;
+    border-radius: 4px;
+    color: #fff;
+    content: attr(data-balloon);
+    padding: .5em 1em;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  &:before {
+    @include svg-arrow($balloon-bg);
+    @include base-effects();
+
+    content: '';
+    position: absolute;
+    z-index: 10;
+  }
+
+  &:hover, &[data-balloon-visible] {
+    &:before,
+    &:after {
+      @include opacity(1);
+      pointer-events: auto;
+    }
+  }
+  
+  &:not([data-balloon-pos]) {
+      &:after {
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: 5px + $balloon-arrow-height;
+        @include transform(translate(-50%, 10px));
+        @include transform-origin(top);
+      }
+      &:before {
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: 5px;
+        @include transform(translate(-50%, 10px));
+        @include transform-origin(top);
+      }
+
+      &:hover, &[data-balloon-visible] {
+        &:after {
+          @include transform(translate(-50%, 0));
+        }
+
+        &:before {
+          @include transform(translate(-50%, 0));
+        }
+      }
+  }
+
+  &.font-awesome:after {
+    font-family: FontAwesome, sans-serif !important;
+  }
+
+  &[data-balloon-break] {
+    &:after {
+      white-space: pre;
+    }
+  }
+
+  &[data-balloon-blunt] {
+    &:before,
+    &:after {
+      @include no-effects();
+    }
+  }
+
+  &[data-balloon-pos="up"] {
+    &:after {
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: 5px + $balloon-arrow-height;
+      @include transform(translate(-50%, 10px));
+      @include transform-origin(top);
+    }
+    &:before {
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: 5px;
+      @include transform(translate(-50%, 10px));
+      @include transform-origin(top);
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(-50%, 0));
+      }
+
+      &:before {
+        @include transform(translate(-50%, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos="up-left"] {
+    &:after {
+      bottom: 100%;
+      left: 0;
+      margin-bottom: 5px + $balloon-arrow-height;
+      @include transform(translate(0, 10px));
+      @include transform-origin(top);
+    }
+    &:before {
+      bottom: 100%;
+      left: 5px;
+      margin-bottom: 5px;
+      @include transform(translate(0, 10px));
+      @include transform-origin(top);
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, 0));
+      }
+
+      &:before {
+        @include transform(translate(0, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos="up-right"] {
+    &:after {
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 5px + $balloon-arrow-height;
+      @include transform(translate(0, 10px));
+      @include transform-origin(top);
+    }
+    &:before {
+      bottom: 100%;
+      right: 5px;
+      margin-bottom: 5px;
+      @include transform(translate(0, 10px));
+      @include transform-origin(top);
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, 0));
+      }
+
+      &:before {
+        @include transform(translate(0, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos='down'] {
+    &:after {
+      left: 50%;
+      margin-top: 5px + $balloon-arrow-height;
+      top: 100%;
+      @include transform(translate(-50%, -10px));
+    }
+
+    &:before {
+      @include svg-arrow($balloon-bg, 'down');
+
+      left: 50%;
+      margin-top: 5px;
+      top: 100%;
+      @include transform(translate(-50%, -10px));
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(-50%, 0));
+      }
+
+      &:before {
+        @include transform(translate(-50%, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos='down-left'] {
+    &:after {
+      left: 0;
+      margin-top: 5px + $balloon-arrow-height;
+      top: 100%;
+      @include transform(translate(0, -10px));
+    }
+
+    &:before {
+      @include svg-arrow($balloon-bg, 'down');
+
+      left: 5px;
+      margin-top: 5px;
+      top: 100%;
+      @include transform(translate(0, -10px));
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, 0));
+      }
+
+      &:before {
+        @include transform(translate(0, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos='down-right'] {
+    &:after {
+      right: 0;
+      margin-top: 5px + $balloon-arrow-height;
+      top: 100%;
+      @include transform(translate(0, -10px));
+    }
+
+    &:before {
+      @include svg-arrow($balloon-bg, 'down');
+
+      right: 5px;
+      margin-top: 5px;
+      top: 100%;
+      @include transform(translate(0, -10px));
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, 0));
+      }
+
+      &:before {
+        @include transform(translate(0, 0));
+      }
+    }
+  }
+
+  &[data-balloon-pos='left'] {
+    &:after {
+      margin-right: 5px + $balloon-arrow-height;
+      right: 100%;
+      top: 50%;
+      @include transform(translate(10px, -50%));
+    }
+
+    &:before {
+      @include svg-arrow($balloon-bg, 'left');
+
+      margin-right: 5px;
+      right: 100%;
+      top: 50%;
+      @include transform(translate(10px, -50%));
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, -50%));
+      }
+
+      &:before {
+        @include transform(translate(0, -50%));
+      }
+    }
+
+  }
+
+  &[data-balloon-pos='right'] {
+    &:after {
+
+      left: 100%;
+      margin-left: 5px + $balloon-arrow-height;
+      top: 50%;
+      @include transform(translate(-10px, -50%));
+    }
+
+    &:before {
+      @include svg-arrow($balloon-bg, 'right');
+
+      left: 100%;
+      margin-left: 5px;
+      top: 50%;
+      @include transform(translate(-10px, -50%));
+    }
+
+    &:hover, &[data-balloon-visible] {
+      &:after {
+        @include transform(translate(0, -50%));
+      }
+
+      &:before {
+        @include transform(translate(0, -50%));
+      }
+    }
+  }
+
+  &[data-balloon-length='small'] {
+    &:after {
+      white-space: normal;
+      width: 80px;
+    }
+  }
+
+  &[data-balloon-length='medium'] {
+    &:after {
+      white-space: normal;
+      width: 150px;
+    }
+  }
+
+  &[data-balloon-length='large'] {
+    &:after {
+      white-space: normal;
+      width: 260px;
+    }
+  }
+
+  &[data-balloon-length='xlarge'] {
+    &:after {
+      white-space: normal;
+      width: 380px;
+
+      @media screen and (max-width: 768px) {
+        white-space: normal;
+        width: 90vw;
+      }
+    }
+  }
+
+  &[data-balloon-length='fit'] {
+    &:after {
+      white-space: normal;
+      width: 100%;
+    }
+  }
+}

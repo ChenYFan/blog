@@ -1,0 +1,45 @@
+asset-type: true
+bool-attribute-value: true
+button-name: true
+button-type: true
+charset: true
+css-in-head: true
+doctype: true
+html-lang: true
+ie-edge: true
+img-alt: true
+img-src: true
+img-title: true
+img-width-height: true
+indent-char: "space-4"
+lowercase-class-with-hyphen: true
+lowercase-id-with-hyphen: true
+nest: true
+rel-stylesheet: true
+script-in-tail: true
+title-required: true
+unique-id: true
+no-duplication-id-and-name: true
+no-meta-css:
+  threshold: 4
+  minlen: 4
+no-hook-class:
+  keys:
+    - "/[-_#](?:js|hook)[-_#]/"
+max-len: 80
+no-bom: true
+viewport: true
+label-for-input: true
+attr-lowercase: true
+attr-no-duplication: true
+attr-unsafe-chars: true
+attr-value-double-quotes: true
+id-class-ad-disabled: true
+spec-char-escape: true
+self-close: "no-close"
+style-disabled: true
+tag-pair: true
+tagname-lowercase: true
+script-content: true
+style-content: true
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>hello world.</title>
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script>
+    <script>window.DEBUG=true;</script>
+    <script>
+    require.config({
+        "baseUrl": "src",
+        "paths": {
+            "hello": "src/bar/hello",
+            "css": "src/resource/css"
+        },
+        "packages": [
+            {
+                "name": "dummy",
+                "location": "http://www.baidu.com/img/src",
+                "main": "main"
+            },
+            {
+                "name": "er",
+                "location": "../dep/er/3.0.2/src",
+                "main": "main"
+            },
+            {
+                "name": "esui",
+                "location": "../dep/esui/3.0.1/src",
+                "main": "main"
+            },
+            {
+                "name": "ef",
+                "location": "../dep/ef/3.0.1/src",
+                "main": "main"
+            },
+            {
+                "name": "moment",
+                "location": "../dep/moment/2.0.0/src",
+                "main": "moment"
+            },
+            {
+                "name": "underscore",
+                "location": "../dep/underscore/1.4.4/src",
+                "main": "underscore"
+            },
+            {
+                "name": "underscore.string",
+                "location": "../dep/underscore.string/2.3.1/src",
+                "main": "underscore.string"
+            },
+            {
+                "name": "swfupload",
+                "location": "../dep/swfupload/2.2.0",
+                "main": "swfupload"
+            },
+            {
+                "name": "io",
+                "location": "../../base/io/1.0.0/src",
+                "main": "main"
+            },
+            {
+                "name": "net",
+                "location": "../../base/net/1.2.0/src",
+                "main": "main"
+            }
+        ],
+        "combine": {
+            "main": 1
+        }
+    });
+    </script>
+</head>
+<body>
+<script>
+require(['foo', 'bar'], function(foo, bar){
+    console.log(foo);
+    console.log(bar);
+});
+</script>
+</body>
+</html>

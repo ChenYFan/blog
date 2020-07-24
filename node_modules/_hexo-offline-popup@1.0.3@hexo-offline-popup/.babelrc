@@ -1,0 +1,33 @@
+{
+    "env": {
+        "test": {
+            "plugins": [
+                "istanbul"
+            ],
+            "presets": [
+                [
+                    "env",
+                    {
+                        "targets": {
+                            "node": 4
+                        }
+                    }
+                ]
+            ]
+        }
+    },
+    "ignore": [
+        "./src/templates/inject.tpl.js",
+        "./src/templates/sw-register.tpl.js"
+    ],
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": 4
+                }
+            }
+        ]
+    ]
+}

@@ -1,0 +1,314 @@
+// 这里是对esui原有样式的修改
+
+.ui-commandmenu-layer {
+    height: auto;
+}
+.skin-command-menu {
+    .inline-block();
+}
+
+.state-error {
+    color: #f00;
+}
+
+.state-disabled {
+    color: #999;
+}
+
+*+html .ui-select-layer {
+    height: auto;
+
+    .ui-select-item {
+        /*width: 100%;*/
+        display: block;
+    }
+}
+
+/**
+ * ESUI (Enterprise Simple UI)
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @file 对话框样式
+ * @author dbear
+ */
+.ui-actiondialog {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #394459;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    position: absolute;
+    width: 660px;
+    z-index: 1203;
+}
+
+.ui-actiondialog .ui-actiondialog-head {
+    background-image: url("./img/esui-actiondialog-head-bg.png");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 26px;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+.ui-actiondialog .ui-actiondialog-head .ui-actiondialog-close-icon {
+    background-image: url("../img/esui-actiondialog-head-close.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+.ui-actiondialog .ui-actiondialog-head .ui-actiondialog-title {
+    padding-left: 12px;
+    line-height: 28px;
+    font-size: 15px;
+    line-height: 26px;
+}
+.ui-actiondialog .ui-actiondialog-body {
+    padding: 10px 8px 8px;
+    overflow: hidden;
+    zoom: 1;
+}
+.ui-actiondialog .ui-actiondialog-foot-panel {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    margin: 0px 8px 3px;
+    padding: 15px 0 20px 25px;
+    border-top: 1px solid #F0F0F0;
+    overflow: hidden;
+    zoom: 1;
+}
+.ui-actiondialog .ui-actiondialog-foot-panel .ui-actiondialog-foot {
+    float: right;
+}
+.ui-actiondialog .ui-actiondialog-foot-panel .ui-actiondialog-foot .ui-button {
+    margin-right: 6px;
+}
+.ui-actiondialog-draggable .ui-actiondialog-head {
+    cursor: move;
+}
+.ui-actiondialog-dragging {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+/** 警告框，确认框 */
+.skin-alert-dialog .ui-dialog-body div.ui-dialog-text,
+.skin-confirm-dialog .ui-dialog-body div.ui-dialog-text {
+    float: left;
+    margin-top: 20px;
+    line-height: 18px;
+    margin-right: 0;
+}
+/*.skin-alert-dialog .ui-dialog-body div.ui-dialog-text {
+    width: 200px;
+}*/
+
+.ui-actiondialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // 兼容IE6
+    _position: absolute;
+    _width: 100%;
+    _height: 100%;
+    background: #333;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    z-index: 1003;
+}
+
+.ui-sidebar-body {
+    left: 0;
+    right: 0;
+}
+
+// 弹出层的样式设定
+
+.skin-alert-dialog,
+.skin-confirm-dialog {
+    width: 300px;
+
+    .ui-dialog-body {
+        .ui-dialog-icon-fail,
+        .ui-dialog-icon-warning,
+        .ui-dialog-icon-success,
+        .ui-dialog-icon-confirm {
+            display: block;
+            float: left;
+            height: 24px;
+            width: 24px;
+            margin: 15px 10px 8px 40px;
+            _margin: 12px 10px 8px 25px;
+        }
+
+        .ui-dialog-icon-warning {
+            background-image: url('./img/esui-actiondialog-notice.png');
+        }
+
+        .ui-dialog-icon-success {
+            background-image: url('./img/esui-actiondialog-done.png');
+        }
+
+        .ui-dialog-icon-fail {
+            background-image: url('./img/esui-actiondialog-fail.png');
+        }
+
+        .ui-dialog-icon-confirm {
+            background-image: url('./img/esui-actiondialog-question.png');
+        }
+    }
+}
+
+.skin-exconfirm-dialog {
+
+    line-height: 18px;
+
+    .ui-dialog-body {
+        padding: 15px;
+    }
+
+}
+
+.ui-crumb {
+    font-size: 12px;
+
+    .ui-crumb-node-last {
+        color: #000;
+    }
+}
+
+// Button pseudo states
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+.btn-pseudo-states(@color, @background, @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background: none;
+        background-color: darken(@background, 5%);
+        border-color: darken(@border, 10%);
+        box-shadow: 0 0 2px lighten(@border, 50%);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: @background;
+              border-color: @border
+        }
+    }
+
+    &:before {
+        content: '';
+    }
+}
+
+/** 冬天系列 */
+@btn-primary-color:   #fff;
+@btn-primary-bg:      #4A74CE;
+@btn-primary-border:  #428bca;
+
+.skin-winter-button {
+    background: none;
+    border: 1px solid @btn-primary-border;
+
+    .btn-pseudo-states(@btn-primary-color, @btn-primary-bg, @btn-primary-border);
+}
+
+.skin-major-button:hover {
+    .box-shadow(0 0 2px lighten(@btn-primary-border, 10%));
+    text-shadow: 1px 1px 1px #666;
+}
+
+.ui-tree .ui-tree-node .ui-tree-content-wrapper .skin-folder-tree-node-indicator-level-2 {
+    display: none;
+}
+
+// 长得像link一样的button
+.skin-link,
+.skin-link-button {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    border: 0;
+    color: @link-color;
+    background: none;
+    line-height: 1;
+    height: auto;
+    *height: auto;
+    vertical-align: baseline;
+
+    &:hover, &:active {
+        border: none;
+        text-decoration: underline;
+        line-height: 1;
+        height: auto;
+    }
+}
+
+.ui-pager-item, .ui-pager-item-extend {
+    &:hover {
+        text-shadow: 1px 1px 1px #ccc;
+        box-shadow: 0 0 1px #ccc;
+    }
+}
+
+.ui-pager-item-current, .ui-pager-item-omit {
+    &:hover {
+        text-shadow: 0;
+        box-shadow: 0;
+    }
+}
+
+.ui-textarea-validity-label-invalid {
+    color: #c00;
+    padding-left: 10px;
+}
+
+a.ui-button {
+    text-decoration: none;
+}
+
+.ui-boxgroup-radio input {
+    margin-top: 0;
+}
+
+.ui-textline .ui-textbox {
+    right: 0;
+    bottom: 0;
+}

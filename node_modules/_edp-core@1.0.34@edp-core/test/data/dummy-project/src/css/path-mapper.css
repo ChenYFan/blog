@@ -1,0 +1,46 @@
+/***************************************************************************
+ * 
+ * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
+ * $Id$ 
+ * 
+ **************************************************************************/
+ 
+ 
+ 
+/**
+ * data/dummy-project/src/css/path-mapper.css ~ 2014/02/12 10:41:31
+ * @author leeight(liyubei@baidu.com)
+ * @version $Revision$ 
+ * @description 
+ *  
+ **/
+div {
+  background: url(../../src/img/logo.gif);
+  background: url(//www.baidu.com/src/img/logo.gif);
+  background: url('//www.baidu.com/src/img/logo.gif');
+  background: url(http://www.baidu.com/src/img/logo.gif);
+  background: url("http://www.baidu.com/src/img/logo.gif");
+  background: url(https://www.baidu.com/src/img/logo.gif);
+  background: url(../../img/logo.gif);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* vim: set ts=4 sw=4 sts=4 tw=100: */

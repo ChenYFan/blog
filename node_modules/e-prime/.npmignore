@@ -1,0 +1,6 @@
+.travis.yml
+node_modules
+test
+.idea
+coverage
+npm-debug.log

@@ -1,0 +1,13 @@
+files:
+    - src
+eslint:
+    env:
+        es6: true
+    rules:
+        no-console: 0
+        fecs-camelcase:
+            - 2
+            -
+                ignore:
+                    - "/-_/"
+        fecs-min-vars-per-destructure: false

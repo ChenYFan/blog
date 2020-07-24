@@ -1,0 +1,53 @@
+{
+    // Htmlcs Default Configuration File
+
+    "asset-type": true,                     // true: Default value of attribute "type" (<link>/<style>/<script>) should not be set
+    "attr-lowercase": true,                 // true: Attribute name must be lowercase
+    "attr-no-duplication": true,            // true: Attribute name can not been duplication
+    "attr-value-double-quotes": true,       // true: Attribute value must be closed by double quotes
+    "bool-attribute-value": true,           // true: Value of boolean attributes (allowfullscreen, async, autofocus, ...) should not be set
+    "button-name": true,                    // true: Attribute "name" of <button> should not be set
+    "button-type": true,                    // true: Attribute "type" of <button> should be set
+    "charset": true,                        // true: <meta charset> required
+    "css-in-head": true,                    // true: Css contents (link[rel=stylesheet], style) should to be in <head>
+    "doctype": true,                        // true: DOCTYPE required
+    "html-lang": true,                      // true: Attribute "lang" of <html> should be set
+    "id-class-ad-disabled": true,           // true: Id and class can not use ad-relative keyword, it will be blocked by adblock software
+    "ie-edge": true,                        // true: <meta http-equiv="X-UA-Compatible" content="IE=Edge"> required
+    "img-alt": true,                        // true: Attribute "alt" of <img> should be set
+    "img-src": true,                        // true: Attribute "src" of <img> should not be empty
+    "img-title": true,                      // true: Attribute "title" of <img> should not be set
+    "img-width-height": true,               // true: Attribute "width" & "height" of <img> should be set
+    "indent-char": "space-4",               // "space-4": Line should indent with 4 spaces.
+    "lowercase-class-with-hyphen": true,    // true: ClassName should be lowercase words connected with hyphens
+    "lowercase-id-with-hyphen": true,       // true: Id should be lowercase words connected with hyphens
+    "nest": true,                           // true: Elements should be nested abiding by specific rules
+    "rel-stylesheet": true,                 // true: Attribute "rel" of imported css (<link>) should be set as "stylesheet"
+    "script-content": true,                 // true: Content of <script> must meet standard
+    "script-in-tail": true,                 // true: Js contents (script:not([type]), script[type="text/javascript"]) should be in the tail of <body>
+    "self-close": "no-close",               // "no-close": Void tags should not close themeselves  with "/"
+    "spec-char-escape": true,               // true: Special characters must be escaped
+    "style-content": true,                  // true: Content of <style> must meet standard
+    "style-disabled": true,                 // true: Style tag can not be used
+    "tag-pair": true,                       // true: Tag must be paired
+    "tagname-lowercase": true,              // true: Tagname must be lowercase
+    "title-required": true,                 // true: <title> required
+    "unique-id": true,                      // true: Id should be unique in page
+    "no-duplication-id-and-name": true,     // true: Id and name should be not duplication in difference elements
+    "viewport": true,                       // true: <meta name="viewport" content="..."> required
+    "label-for-input": true,                // true: input should be associate with label
+    "no-meta-css": {
+        "threshold": 3,
+        "minlen": 3
+    },
+    "no-hook-class": {
+        "keys": ["/[-_#](?:js|hook)[-_#]/"]
+    },
+    "no-bom": true,
+
+    "max-len": 120,                         // max length of line, 0 means no limit
+    "max-error": 0,                         // max num of errors, 0 means no limit
+    "format": {},                           // basic options for format
+    "linters": {},                          // extra linters ('scipt', 'style')
+    "default": true                         // flag for unit test
+}

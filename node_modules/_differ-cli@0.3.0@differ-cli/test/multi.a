@@ -1,0 +1,20 @@
+var compare = require('universal-diff').compare;
+
+var getSimilarity = function(arr1, arr2){
+    var t = Date.now();
+
+    var diffs = compare(arr1, arr2),
+        totalNum = arr1.length + arr2.length,
+        diffNum = 0;
+
+    diffs.forEach(function(diff){
+        diffNum += diff[1] + diff[2].length;
+    });
+
+    console.log(arr1.length, arr2.length, Date.now() - t);
+    return (1 - diffNum / totalNum);
+};
+
+module.exports = {
+    get: getSimilarity
+};

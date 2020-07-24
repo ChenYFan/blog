@@ -1,0 +1,69 @@
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* entire app is wrapped in a div that must have height for flexbox to work */
+body > div:first-of-type {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans";
+  height: 100%;
+}
+
+.app_header {
+  background-color: @primaryVeryDark;
+  height: 52px;
+
+  &, a {
+    color: @primaryDarkText;
+  }
+}
+
+.app_logo {
+  width: 25px;
+  vertical-align: middle;
+  margin: -4px 10px 0;
+}
+
+.app_nav {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+  display: inline-block;
+
+  li {
+    color: @primaryDarkText;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+
+    a {
+      color: @primaryDarkText;
+      text-decoration: none;
+      padding: 10px 20px 7px;
+      display: inline-block;
+      border-bottom: 3px solid transparent;
+
+      &.active,
+      &:hover {
+        border-bottom-color: @accentp5;
+        color: @accentp5;
+      }
+    }
+
+  }
+}
+
+.app_main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
