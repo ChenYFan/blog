@@ -1,5 +1,4 @@
 <h1 align="center">ChenYFanのBlog</h1>
-Pre
 <div align="center">
 
 😘 一个在互联网角落挣扎的小小博客，很小很小
