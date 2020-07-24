@@ -160,7 +160,8 @@ details:focus,summary:focus{outline:none}
  
   <script>var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZeWlNZmZSLU1kWV",mXLcNMYJJ4="hiTU1J",hPjHsvGO5="ODJMb2lBZHczYjNBd2Nl"</script>
   
-</head>
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -590,7 +591,7 @@ function addCssLink(url) {
           <div class="post-content mx-auto" id="post">
             
               <p
-                class="note note-warning">本文最后更新于：星期五, 七月 24日 2020, 3:53 下午</p>
+                class="note note-warning">本文最后更新于：星期五, 七月 24日 2020, 3:54 下午</p>
             
             <div class="markdown-body">
               <p>Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN毅然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 <code>ChenYFan</code> 打成 <code>CehnYFan</code> <span class="heimu">真实事件</span> ，异或着是用手机查看自己的博客，突然发现：</p>
@@ -649,7 +650,7 @@ function addCssLink(url) {
 <p><img src="https://img.cyfan.top/pic/postpic/20200629143305.jpg" srcset="/img/loading.gif" alt></p>
 <p>记得复制下来保存！不然下次你就看不到你的Token了！</p>
 <h3 id="4-修改Repo"><a href="#4-修改Repo" class="headerlink" title="4.修改Repo"></a>4.修改Repo</h3><p>进入Repo的 <strong>Master</strong> 分支，新建一个 <code>.travis.yml</code> ，里面塞上：</p>
-<pre><code class="yml">sudo: false
+<pre class="line-numbers language-yml"><code class="language-yml">sudo: false
 language: node_js
 node_js:
   - 10 # use nodejs v10 LTS
@@ -666,7 +667,7 @@ deploy:
   keep-history: true
   on:
     branch: master
-  local-dir: public</code></pre>
+  local-dir: public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>对,改都不要改,就这么塞进去.</p>
 <h3 id="5-Token导入Travis-ci"><a href="#5-Token导入Travis-ci" class="headerlink" title="5.Token导入Travis-ci"></a>5.Token导入Travis-ci</h3><p>Token很重要,你必须要告诉Travis-ci,因为它要获取对你的repo的写入权,但你也不能明文写在Repo里面,因为别人看得到.</p>
 <p>所以,在 [### 4.修改Repo] 中,<code>github-token:</code> 后面跟着的不是明文,而是变量  <code>$GH_TOKEN</code>.</p>
