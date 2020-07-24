@@ -1,4 +1,745 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content><meta name="twitter:creator" content="@YourName"><meta name="twitter:title" content=" | "><meta name="twitter:description" content><meta name="twitter:image" content><script>var rfwFoV1="MDkxUFRKVn",$$Yn2="UDc2eGxnRVV5",TWOUMh1="Uk1YNld0eXp3VWMyaVI",jUYjTJZ2="NU9tcjdkYk9PWXl",rU3="wdGp5Z3pxQXZjL"</script><script language="javascript">function noweixin(){"micromessenger"==window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i)&&(window.location.href="https://cyfan.top/wx.html")}window.onload=function(){noweixin()}</script><meta name="theme-color" content="#F6B352"><meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写"><meta name="author" content="CYF"><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽"><title>IPFS+CloudFlare=ServerLessWebPage || 陈YFの博客(￣▽￣)&#34;</title><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}details:focus,summary:focus{outline:0}.adsense{display:block}.adsense:before{display:none!important}.adsense ins{width:100%;height:100%;display:block}@media screen and (max-width:1024px){.adsense{width:728px;height:90px}.adsense:before{content:'1024'}}@media screen and (max-width:800px){.adsense{width:468px;height:60px}.adsense:before{content:'800'}}</style><script>!function(){var n=function(){if("hidden"in document)return null;for(var n=["moz","ms","o","webkit"],t=0;t<n.length;t++)if(n[t]+"Hidden"in document)return n[t];return null}(),t=n?n+"visibilitychange":"visibilitychange";document.addEventListener(t,function(){document.hidden?(e=document.title,document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~"):document.title=e});var e=document.title}()</script><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"><link rel="stylesheet" href="../../../../lib/prettify/tomorrow-night-eighties.min.css"><link rel="stylesheet" href="../../../../css/main.css"><link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZeWlNZmZSLU1kWV",mXLcNMYJJ4="hiTU1J",hPjHsvGO5="ODJMb2lBZHczYjNBd2Nl"</script></head><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="../../../../archives/">归档</a></li><li class="nav-item"><a class="nav-link" href="../../../../categories/">分类</a></li><li class="nav-item"><a class="nav-link" href="../../../../tags/">标签</a></li><li class="nav-item"><a class="nav-link" href="../../../../about/">关于</a></li><li class="nav-item"><a class="nav-link" href="../../../../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a></li><li class="nav-item"><a class="nav-link" href="../../../../随口胡说/">随口胡说</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(https://img.cyfan.top/pic/cover/ipfs.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask rgba-black-light flex-center"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><script src="/js/fire.js"></script><p class="mt-3 post-meta"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 星期二, 四月 7日 2020, 4:29 下午</p><p class="mt-1"><span class="post-meta"><i class="far fa-chart-bar"></i> 3k 字 </span><span class="post-meta"><i class="far fa-clock"></i> 10 分钟 </span><span id="busuanzi_container_page_pv" class="post-meta" style="display:none"><i class="far fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></p></div><div class="scroll-down-bar"><i class="fas fa-angle-down scroll-down-arrow"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5 z-depth-3" id="board"><div class="post-content mx-auto" id="post"><p class="note note-warning">本文最后更新于：星期六, 五月 23日 2020, 1:38 下午</p><div class="markdown-body"><p>IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。</p><h1 id="IPFS是什么"><a href="#IPFS是什么" class="headerlink" title="IPFS是什么"></a>IPFS是什么</h1><p>网上一大堆文绉绉气昂昂极富学术气息的营销号整天吹嘘着ipfs是跨时代下一时代的比特币，我只能说呵呵，真的想要了解ipfs是什么的，建议左转维基百科或百度百科。</p><p>抄一下wikipedia上的介绍：</p><blockquote><p>（InterPlanetary File System，缩写IPFS）是一个旨在创建持久且分布式存储和共享文件的网络传输协议。它是一种内容可寻址的对等超媒体分发协议。在IPFS网络中的节点将构成一个分布式文件系统。</p></blockquote><p>其实按我的话来说,ipfs就是一个神奇的东西,你放上去一个文件,就会立刻被瓜分成数个文件碎片,每一台运行着ipfs的电脑和矿机就会争先恐后来抢夺你的碎片,并且抢到的人就会获得系统的奖励,而你却一分钱也不用付出.</p><p>是不是听起来很神奇?对的,你没有付出任何东西,别人却能获得奖励,而且你既满足储存文件的需求,储存你文件的人也能得到金钱.这种机制,叫做FileCoin.</p><p>你可以把它想象成Bittorrent+BitCoin的结合物,实际上他就是这样的<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif">.当然不完全是,但核心理念就是这样的.只不过,BitCoin付出的是算力,而FileCoin付出的是硬盘.</p><p>IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以目前ipfs可以通过官网ipfs.io获取.</p><h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p>与bt下载类似,我们需要先介绍BT.</p><h2 id="Bittorrent：分布式哈希表技术"><a href="#Bittorrent：分布式哈希表技术" class="headerlink" title="Bittorrent：分布式哈希表技术"></a>Bittorrent：分布式哈希表技术</h2><h3 id="先来一个故事"><a href="#先来一个故事" class="headerlink" title="先来一个故事"></a>先来一个故事</h3><p>很久很久以前，有一位老头，叫做刘XX。</p><p>他是一位很有资格的老师，为了顽固学生们的学习效果，他发送给所有学生一部视频：</p><p><img src="https://img.cyfan.top/pic/BT/%E8%A7%86%E9%A2%91.bmp" srcset="/img/loading.gif" alt="图片" title="大视频"></p><p>（注：老刘的带宽是8Mbps，即最大带宽1MB/s，每一个学生的带宽也是8Mbps）</p><p>我们假设有5位学生需要这部视频，则可以画这样一幅图：</p><p><img src="https://img.cyfan.top/pic/BT/down1.png" srcset="/img/loading.gif" alt="图片" title="组团下载ing..."></p><p>这只视频是<code>88.8MB</code>大小,按照这样的速度,同学需要花费<code>1024*88.8MB/(204.8kb/s)=444s</code>即<code>7分钟24秒</code></p><p>这还往往只是最理想状况.现在,我们来假设一下现象的出现:</p><ol><li>由于视频过于好看,引起广泛关注.现在有200个同学要求下载.则单个人下载完需要17760s即296min也就是约5h!</li><li>刘老师觉得单个视频教学质量不够好,决定上传一个8880GB的超大视频.(下载时间大于一天)</li><li>几个同学与刘老师搞好了关系,刘老师给他们较高的下载速度,导致带宽分配不均匀,没有关系的学生下载速度更慢了.(百度网盘既视感)</li></ol><p><img src="https://img.cyfan.top/pic/BT/down-VIP.png" srcset="/img/loading.gif" alt="图片" title="A1拥有VIP专线"></p><ol start="4"><li>由于刘老师给的视频过于激烈,在下载了一段时间后,FBI<code>open the door!</code>敲上门来带走了刘老师,视频被查封了!!!(下载速度0)</li></ol><p><img src="https://img.cyfan.top/pic/BT/FBI.jpeg" srcset="/img/loading.gif" alt="图片" title="FBI！Open the door！"></p><p>可是，学习是必须的，这可怎么办呢？？？</p><p>这时….</p><p>刘老师突然想起来，为什么不让每一个学生互相连接，贡献自己已经下好的部分，以来获得最大的下载速度呢？？</p><p>请注意，在上述下载中，每一个人都没有充分利用自己的最大带宽，对不对？</p><p>那，解决办法就来了:</p><h3 id="P2P："><a href="#P2P：" class="headerlink" title="P2P："></a>P2P：</h3><p>以256KB为一包，我们就可获得356块文件</p><p><img src="https://img.cyfan.top/pic/BT/file.png" srcset="/img/loading.gif" alt="图片" title="分包"></p><p>回到下载界面，我们看到，所有人都与其他人获得连接，那么，连接完成后：</p><p><img src="https://img.cyfan.top/pic/BT/down-each.png" srcset="/img/loading.gif" alt="图片" title="连接"></p><p>（为了方便观察，我们将不必要的连接全部去掉）</p><p>现在，我们重新开始下载：</p><p>我们假设，A1下载了第一块，A2下载了第二块…</p><p>两秒后，所有人手上都拥有了一块文件：</p><p><img src="https://img.cyfan.top/pic/BT/down-part1.png" srcset="/img/loading.gif" alt="图片" title="下载"></p><p>接下来，在不影响下载的情况下，A1与A2交换下载好的部分，同时与A3、A4、A5交换</p><p><img src="https://img.cyfan.top/pic/BT/down-part2.png" srcset="/img/loading.gif" alt="图片" title="贡献&amp;下载"></p><p>看到了吗，所有人都得到了更高的速度，所有人的带宽都得到了最充分的利用，包括原先看起来毫无用处的上传带宽。</p><p>接着4秒后，所有的贡献分块都下载好了，而每一个人都从文件发布者身上又得到新的文件碎片。</p><p><img src="https://img.cyfan.top/pic/BT/down-part3.png" srcset="/img/loading.gif" alt="图片" title="下载！"></p><p>所以，这种情况回一直持续下去，直到每一个人都下载完成，每一个人都只需下载149秒即2分29秒！相对于单点时间大大减少！</p><p><img src="https://img.cyfan.top/pic/BT/down-finish.png" srcset="/img/loading.gif" alt="图片" title="完整！"></p><h3 id="人数多-amp-文件大-问题"><a href="#人数多-amp-文件大-问题" class="headerlink" title="人数多&amp;文件大 问题"></a>人数多&amp;文件大 问题</h3><p>现在，我们来假设第一个问题，200人下载怎么办？</p><p>我们可以明白，人数越多，文件交换越密集，对不对？</p><p>显然会见的，这个问题显得异常白痴，可以体会的是，在最佳条件下，每个人的带宽都达到了最大，如果每个人都下载了不同的分块，同时每个人都在贡献。</p><p>那么，每个人的下载速度，根本不会受到很大影响。</p><p>这对于传统下载（http/https/ftp）不同，传统下载仅仅由一台服务器贡献，人数多对于这台服务器压力极大。</p><p>但是，在这个环境里，服务器不仅仅是一台，而且，每当加入一个人，每一个人都可以当作服务器，这样，下载速度反而会大大提升。</p><p>反而文件很大是个硬梗，不过相对于传统下载，这种下载方式还是有一定能力解决这个问题的。</p><p><strong>回到这里</strong></p><h2 id="IPFS的原理"><a href="#IPFS的原理" class="headerlink" title="IPFS的原理"></a>IPFS的原理</h2><p>ipfs的世界有个东西叫做cid,大概类似于这样一串: <code>QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> ,前面的 <code>Qm</code> 是固定的,后面是SHA256密钥.cid又分为用户密钥和文件密钥,这个暂时不讨论.SHA256强度目前看来基本不会碰撞,毕竟64位十六进制的字符串,能实现16^64个文件的存储,也就是1.1579208923731619542357098500869e+77个id,有生之年能看到它碰撞也不是一件容易的事情</p><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>如同BT,在短短几秒内,需要分享的文件被分块完毕,但此时,文件还是乖乖的窝在硬盘里,没有分享出去.</p><p>当有任何一个人试图获取资源时，你的ipfs会联系距离最近的节点,询问他们有没有意愿存东西.请注意此处的 <code>距离</code> ,这可不是物理距离,而是逻辑距离.</p><p>节点大都都会很高兴的同意,当然有些节点可能就是混口饭吃不想存,于是这些节点就会帮你联系离他最近的节点要不要,直到所有碎片瓜分完毕.这种算法,像极了DHT.</p><p>几分钟内,全球数个硬盘里就会出现你的文件的碎片,只要一声令下,这些文件就会调出.</p><p>此时,纵使文件发布者下线,文件照样流传.重复上传的文件,拆碎后被校验到与存在的文件相同则不会被上传.</p><p>上传完毕,文件就会拥有自己的id,也称为指纹,取回这些文件则需要id.</p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>你可以通过客户端下载,这个下载方式和btDHT其实原理是一样的;当然IPFS为了向下兼容http,自己也有网关,不过网关由于是公开的,一方面是速度,另一方面是已经引起了G||F||\/\/の注意，目前并不推荐使用网关下载，当然对于一些小文件比如网页和图片，这些都是随意的。</p><h1 id="IPFS的作用"><a href="#IPFS的作用" class="headerlink" title="IPFS的作用"></a>IPFS的作用</h1><p>与一些网盘相反，ipfs反而非常鼓励你往里面塞东西，越多越好，但是作为个人网盘并不适合，一方面ipfs的资源会随着下载的人越多，缓存的机器也会越多，速度更快，私人文件反而速度不佳；另一方面ipfs一旦上传，任何人包括你自己永远无法彻底删除这些文件，即使你在ipfs客户端删除了你分享的文件，这些文件仍然会得到传播。所以ipfs其实可以作为公开下载，甚至是图床，网页托管等等。</p><p>在中国，ipfs实际上并没有得到很大的限制，分享文件和下载文件其实很容易做到，麻烦的只是不能从ipfs网关获取罢了。</p><p>下面是我放在ipfs上的一张图片，即使我下线，这个文件依旧流传于网络之间。</p><p><img src="https://ipfs.cyfan.top/ipfs/QmU4Eh586TBCBP5KwKF3zvcXCKcnkw9wD9nKCqxTi15f4n" srcset="/img/loading.gif" alt></p><p>但是，ipfs反感在网关下载大文件，因为这样会造成不必要的带宽浪费，下载大文件请使用ipfs客户端+ipfs伴侣</p><h1 id="搭建无服务器网页"><a href="#搭建无服务器网页" class="headerlink" title="搭建无服务器网页"></a>搭建无服务器网页</h1><p>很多人网页放在Github+CloudFlare，其实换个思路，为什么不用IPFS+CloudFlare呢？</p><p>开始吧！</p><h2 id="下载ipfs"><a href="#下载ipfs" class="headerlink" title="下载ipfs"></a>下载ipfs</h2><p>官网因为自带网关已经封锁了，请自带梯子访问。</p><h2 id="写html"><a href="#写html" class="headerlink" title="写html"></a>写html</h2><p>请注意，在ipfs上写网页时，请尽量不要使用外链，对于js和css请直接写在网页中，图片请使用base64或上传至ipfs后使用相对链接。</p><h2 id="上传-1"><a href="#上传-1" class="headerlink" title="上传"></a>上传</h2><p><img src="https://img.cyfan.top/pic/post/pasted-189.png" srcset="/img/loading.gif" alt="upload successful"></p><p>点击添加按钮，上传</p><p><img src="https://img.cyfan.top/pic/post/pasted-190.png" srcset="/img/loading.gif" alt="upload successful"></p><p>接下来，重点来了！</p><p>ipfs分享文件有两种方式，是ipfs和ipns，前者采用文件hash辨别文件，文件内容一旦改变，原来的链接无法更新，链接格式为 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> ；后者采用用户id辨别,内容允许更新，但是用户在线时间过短会导致无法同步，并且有可能暴露用户信息，后者格式为： <code>https://ipfs.io/ipfs/QmQQKZphgJdEGhTp18NRvVdSJ3RJArRst2keKk3tZvmfPz?filename=index.html</code> .</p><p>如果你只是单个文件网页，此处比较建议使用ipfs，ipns可能离线时间过长导致无法下载。具体看个人所好。</p><p>ipfs链接获取：点击 <code>···</code> ,选择复制哈希，在前面加上网关域名即可。</p><p>ipns连接获取：点击 <code>···</code> ,选择分享，复制链接即可。</p><p>在科学上网的前提下访问 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> 显示目标界面</p><p><img src="https://ipfs.cyfan.top/ipfs/QmSGR6p5PxFJqQdEbDySG9QUpBx4WnQcVfxDPohgQ4pDoL" srcset="/img/loading.gif" alt></p><blockquote><p>请注意，每次上传后一定要先访问一遍资源，否则文件是不会上传到ipfs服务器的！</p></blockquote><h2 id="CloudFlare设置"><a href="#CloudFlare设置" class="headerlink" title="CloudFlare设置"></a>CloudFlare设置</h2><p><del>不知道为什么CloudFlare的ipfs服务器有点问题，使用官方说明一直爆404 page not found，官方地址在这里<a href="https://www.cloudflare.com/distributed-web-gateway/" target="_blank" rel="noopener">https://www.cloudflare.com/distributed-web-gateway/</a> 反正我是折腾失败了。<img src="https://img.cyfan.top/pic/moji/lh.jpg" srcset="/img/loading.gif"></del></p><p>↑以上为放屁，现在来讲一下怎么正确绑定：</p><h3 id="dnslink绑定"><a href="#dnslink绑定" class="headerlink" title="dnslink绑定"></a>dnslink绑定</h3><p>这个方法无论你的dns服务商在哪都能绑定，只不过不在CloudFlare托管的用户要多一步。</p><p>1.将需要绑定的域名,以CNAME形式指向 <code>www.cloudflare-ipfs.com</code> ,比如我需要让 <code>showtime.cyfan.top</code> 成为ipfs出口，则这么设置。</p><p><img src="https://img.cyfan.top/pic/post/pasted-191.png" srcset="/img/loading.gif" alt="upload successful"></p><p>2.使用txt记录绑定ipfs hash，新建txt记录，名字是 <code>_dnslink.yourwebsite</code> 一定要加上yourwebsite！比如我绑定的是 <code>showtime.cyfan.top</code> ，则名称一行填上 <code>_dnslink.showtime</code> !接着内容是 <code>dnslink=/ipfs/</code> 后面接上hash，比如showtimehtml的hash是： <code>QmWAvNck7QBhUAYAEgBFvbvvsMxDC9s55NXVJXeJTjTM1Y</code> 则大概这么填:</p><p><img src="https://img.cyfan.top/pic/post/pasted-192.png" srcset="/img/loading.gif" alt="upload successful"></p><p>3.如果你本来就是托管在CloudFlare上的,到此为止就可以了,如果不是托管在Cloudflare上,类似dnspod\alicdn之类的,那还要获取证书,进入<a href="https://www.cloudflare.com/distributed-web-gateway/" target="_blank" rel="noopener">https://www.cloudflare.com/distributed-web-gateway/</a> 拉到最底下</p><p><img src="https://img.cyfan.top/pic/post/pasted-193.png" srcset="/img/loading.gif" alt="upload successful"></p><p>输入域名，获取证书即可。</p><p><strong>但问题是，<code>www.cloudflare-ipfs.com</code> 已经被dns污染了，你用cname绑定是无法正常访问的啦！所以只能用Workers绕路啦！</strong></p><h3 id="JSProxy反代ipfs-io"><a href="#JSProxy反代ipfs-io" class="headerlink" title="JSProxy反代ipfs.io"></a>JSProxy反代ipfs.io</h3><p>老办法，Workersjsproxy反向代理ipfs网关，解决<img src="https://img.cyfan.top/pic/moji/wc.jpg" srcset="/img/loading.gif"></p><p>网址：<a href="https://showtime.cyfan.top" target="_blank" rel="noopener">https://showtime.cyfan.top</a></p><h1 id="其他的用处"><a href="#其他的用处" class="headerlink" title="其他的用处"></a>其他的用处</h1><p>我在Github上看了很多奇奇怪怪的用法，有的拿来做博客，有的拿来做网盘，有的拿来做图床，欸，真的是脑洞大开，幸好ipfs经得起折腾，越折腾他们赚的越多<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"></p></div><hr><div><p><span><i class="iconfont icon-inbox"></i> <a class="hover-with-bg" href="../../../../categories/爱学习/">爱学习</a> &nbsp; </span>&nbsp;&nbsp; <span><i class="iconfont icon-tag"></i> <a class="hover-with-bg" href="../../../../tags/CloudFlare/">CloudFlare</a> <a class="hover-with-bg" href="../../../../tags/撸羊毛/">撸羊毛</a> <a class="hover-with-bg" href="../../../../tags/IPFS/">IPFS</a></span></p><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-12 col-md-6"><a href="../../17/Pandownload-愿你归来仍是英雄/"><i class="fa fa-chevron-left"></i> <span>Pandownload:愿你归来仍是英雄</span></a></div><div class="post-next col-12 col-md-6"><a href="../../05/use-ipv6-in-unsv6-en/"><span>在不支持ipv6的路由器下使用ipv6</span> <i class="fa fa-chevron-right"></i></a></div></div></div><div class="comments" id="comments"><div id="vcomments"></div><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload</script><script defer src="https://img.cyfan.top/js/av-min.js"></script><script defer src="https://img.cyfan.top/js/valine.min.js"></script><script type="text/javascript">var notify=!1,verify=!1,oldLoad=window.onload;window.onload=function(){new Valine({el:"#vcomments",notify:notify,verify:verify,app_id:window.atob(TWOUMh1+rU3+MjOF5),app_key:window.atob(jUYjTJZ2+ZU4+wlNgSyoP6),placeholder:"开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",avatar:"../../../../retro",meta:["nick","mail","link"],pageSize:"10",emoticon_url:"https://assets.cyfan.top/file/CYF-PicBed/pic/moji",emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","stick_1.png","stick_2.png","stick_3.png","stick_4.png","stick_5.png","stick_6.png","stick_7.png","stick_8.png","stick_9.png","stick_10.png","stick_11.png","stick_12.png","stick_13.png","stick_14.png","stick_15.png","stick_16.png","stick_17.png","stick_18.png","stick_19.png","stick_20.png","stick_21.png","stick_22.png","stick_23.png","stick_24.png","stick_25.png","stick_26.png","stick_27.png","stick_28.png","stick_29.png","stick_30.png","stick_31.png","stick_32.png","stick_33.png","stick_34.png","stick_35.png","stick_36.png","stick_37.png","stick_38.png","stick_39.png","stick_40.png","stick_41.png","stick_42.png","stick_43.png ","stick_44.png","stick_45.png","stick_46.png","stick_47.png","stick_48.png","stick_49.png","stick_50.png ","stick_51.png","stick_52.png","stick_53.png","stick_54.png","stick_55.png","stick_56.png","stick_57.png ","stick_58.png","stick_59.png","stick_60.png","stick_61.png","stick_62.png","stick_63.png","stick_64.png ","stick_65.png","stick_66.png","stick_67.png","stick_68.png","stick_69.png","stick_70.png","stick_71.png ","stick_72.png","stick_73.png","stick_74.png","stick_75.png","stick_76.png","stick_77.png","stick_78.png ","stick_79.png","stick_80.png","stick_81.png","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","zcbg.jpg","邪魅一笑.jpg","口吐芳言.jpg"]}),oldLoad&&oldLoad()}</script><noscript>Hello?你开了JS吗？？？？</noscript><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc-start"></div><div id="toc"><p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" height="40%"></div></div></main><a class="z-depth-1" id="scroll-top-button" href="#" role="button"><i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js"></script><script src="../../../../js/main.js"></script><script src="../../../../js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js"></script><script>$(document).ready(function(){var s=$("#navbar").height(),c=$("#toc"),t=$("#board-ctn"),o=t.offset().top,i=2*o+t.height();$(window).scroll(function(){var t=$("#toc-start").offset().top-s,o=document.body.scrollTop+document.documentElement.scrollTop;t<=o&&o<=i?c.css({display:"block",position:"fixed",top:s}):o<=t?c.css({position:"",top:""}):i<o&&c.css("display","none")}),tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",scrollSmooth:!0,headingsOffset:-o}),0<$(".toc-list-item").length&&$("#toc > p").css("visibility","visible");var l=t.css("margin-right");$("#toc-ctn").css({right:l})})</script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js"></script><script>$(document).ready(function(){$("pre").addClass("prettyprint  linenums"),prettyPrint()})</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","IPFS+CloudFlare=ServerLessWebPage&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content>
+<meta name="twitter:creator" content="@YourName">
+<meta name="twitter:title" content=" | ">
+<meta name="twitter:description" content>
+<meta name="twitter:image" content>
+
+<script>
+var rfwFoV1="\x4d\x44\x6b\x78\x55\x46\x52\x4b\x56\x6e";var $$Yn2="\x55\x44\x63\x32\x65\x47\x78\x6e\x52\x56\x56\x35";var TWOUMh1="\x55\x6b\x31\x59\x4e\x6c\x64\x30\x65\x58\x70\x33\x56\x57\x4d\x79\x61\x56\x49";var jUYjTJZ2="\x4e\x55\x39\x74\x63\x6a\x64\x6b\x59\x6b\x39\x50\x57\x58\x6c";var rU3="\x77\x64\x47\x70\x35\x5a\x33\x70\x78\x51\x58\x5a\x6a\x4c";
+</script>
+<script language="javascript">
+window.onload = function(){ if(noweixin()){ }}
+function noweixin(){ 
+var ua = window.navigator.userAgent.toLowerCase(); 
+if(ua.match(/MicroMessenger/i) == 'micromessenger')
+{ 
+window.location.href="https://cyfan.top/wx.html"; 
+}else{ 
+} } 
+ </script>
+  
+  <meta name="theme-color" content="#F6B352">
+  <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
+  <meta name="author" content="CYF">
+  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽">
+  <title>IPFS+CloudFlare=ServerLessWebPage || 陈YFの博客(￣▽￣)&#34;</title>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+details:focus,summary:focus{outline:none}
+.adsense{
+    display: block;
+}
+.adsense:before { display: none !important; }
+.adsense ins    { width: 100%; height: 100%; display: block; }
+ 
+@media screen and ( max-width: 1024px ) {
+    .adsense        { width: 728px; height: 90px; }
+    .adsense:before { content: '1024'; }
+}
+ 
+@media screen and ( max-width: 800px ) {
+    .adsense        { width: 468px; height: 60px; }
+    .adsense:before { content: '800'; }
+}
+
+</style>
+<script>
+(function(){
+    var vendorPrefix=getBrowserPrefix();
+    var eventName=visibilityEvent(vendorPrefix);
+    document.addEventListener(eventName,visibilityEventCallback);
+    var oldTitle=document.title;
+    function visibilityEventCallback(){
+        if(document.hidden){
+            oldTitle=document.title;
+            document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~";
+        }else{
+            document.title=oldTitle;
+        }
+    }
+    /*------------------------ 解决浏览器兼容性问题 ----------------------------------*/
+    // Get Browser-Specifc Prefix
+    function getBrowserPrefix() {
+          // Check for the unprefixed property.  
+          if ('hidden' in document) {
+            return null;
+        }
+        // All the possible prefixes.  
+        var browserPrefixes = ['moz', 'ms', 'o', 'webkit'];
+        for (var i = 0; i < browserPrefixes.length; i++) {
+            var prefix = browserPrefixes[i] + 'Hidden';
+            if (prefix in document) {
+              return browserPrefixes[i];
+            }
+        }
+         // The API is not supported in browser.  
+         return null;
+    }
+    // Get Browser Specific Hidden Property
+    function hiddenProperty(prefix) {
+        if (prefix) {
+            return prefix + 'Hidden';
+        } else {
+            return 'hidden';
+        }
+    }
+    // Get Browser Specific Visibility State
+    function visibilityState(prefix) {
+      if (prefix) {
+        return prefix + 'VisibilityState';
+      } else {
+        return 'visibilityState';
+      }
+    }
+    // Get Browser Specific Event
+    function visibilityEvent(prefix) {
+      if (prefix) {
+        return prefix + 'visibilitychange';
+      } else {
+        return 'visibilitychange';
+      }
+    }
+})();
+</script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="../../../../lib/prettify/tomorrow-night-eighties.min.css">
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script>
+  var ZU4="\x44\x51\x33\x64\x6d\x62\x47\x35\x4c";var MjOF5="\x55\x31\x6b\x57\x56\x68\x69\x54\x55\x31\x4a";var wlNgSyoP6="\x62\x6e\x52\x32\x4e\x55\x6c\x54";var j3="\x52\x49\x63\x7a\x42\x54\x5a\x30\x4e\x4d\x4e\x32\x46\x5a\x65\x57\x6c\x4e\x5a\x6d\x5a\x53\x4c\x55\x31\x6b\x57\x56";var mXLcNMYJJ4="\x68\x69\x54\x55\x31\x4a";var hPjHsvGO5="\x4f\x44\x4a\x4d\x62\x32\x6c\x42\x5a\x48\x63\x7a\x59\x6a\x4e\x42\x64\x32\x4e\x6c";
+  </script>
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../links/">朋友们</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../随口胡说/">随口胡说</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://cyfan.top">项目主页</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://img.cyfan.top/pic/cover/ipfs.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+<script src="/js/fire.js"></script>
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期二, 四月 7日 2020, 4:29 下午
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    3k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      10 分钟
+                  </span>
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
+                    <i class="far fa-eye" aria-hidden="true"></i>
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>
+                
+              </p>
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p
+                class="note note-warning">本文最后更新于：星期六, 五月 23日 2020, 1:38 下午</p>
+            
+            <div class="markdown-body">
+              <p>IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。</p>
+<h1 id="IPFS是什么"><a href="#IPFS是什么" class="headerlink" title="IPFS是什么"></a>IPFS是什么</h1><p>网上一大堆文绉绉气昂昂极富学术气息的营销号整天吹嘘着ipfs是跨时代下一时代的比特币，我只能说呵呵，真的想要了解ipfs是什么的，建议左转维基百科或百度百科。</p>
+<p>抄一下wikipedia上的介绍：</p>
+<blockquote>
+<p>（InterPlanetary File System，缩写IPFS）是一个旨在创建持久且分布式存储和共享文件的网络传输协议。它是一种内容可寻址的对等超媒体分发协议。在IPFS网络中的节点将构成一个分布式文件系统。</p>
+</blockquote>
+<p>其实按我的话来说,ipfs就是一个神奇的东西,你放上去一个文件,就会立刻被瓜分成数个文件碎片,每一台运行着ipfs的电脑和矿机就会争先恐后来抢夺你的碎片,并且抢到的人就会获得系统的奖励,而你却一分钱也不用付出.</p>
+<p>是不是听起来很神奇?对的,你没有付出任何东西,别人却能获得奖励,而且你既满足储存文件的需求,储存你文件的人也能得到金钱.这种机制,叫做FileCoin.</p>
+<p>你可以把它想象成Bittorrent+BitCoin的结合物,实际上他就是这样的<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif">.当然不完全是,但核心理念就是这样的.只不过,BitCoin付出的是算力,而FileCoin付出的是硬盘.</p>
+<p>IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以目前ipfs可以通过官网ipfs.io获取.</p>
+<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p>与bt下载类似,我们需要先介绍BT.</p>
+<h2 id="Bittorrent：分布式哈希表技术"><a href="#Bittorrent：分布式哈希表技术" class="headerlink" title="Bittorrent：分布式哈希表技术"></a>Bittorrent：分布式哈希表技术</h2><h3 id="先来一个故事"><a href="#先来一个故事" class="headerlink" title="先来一个故事"></a>先来一个故事</h3><p>很久很久以前，有一位老头，叫做刘XX。</p>
+<p>他是一位很有资格的老师，为了顽固学生们的学习效果，他发送给所有学生一部视频：</p>
+<p><img src="https://img.cyfan.top/pic/BT/%E8%A7%86%E9%A2%91.bmp" srcset="/img/loading.gif" alt="图片" title="大视频"></p>
+<p>（注：老刘的带宽是8Mbps，即最大带宽1MB/s，每一个学生的带宽也是8Mbps）</p>
+<p>我们假设有5位学生需要这部视频，则可以画这样一幅图：</p>
+<p><img src="https://img.cyfan.top/pic/BT/down1.png" srcset="/img/loading.gif" alt="图片" title="组团下载ing..."></p>
+<p>这只视频是<code>88.8MB</code>大小,按照这样的速度,同学需要花费<code>1024*88.8MB/(204.8kb/s)=444s</code>即<code>7分钟24秒</code></p>
+<p>这还往往只是最理想状况.现在,我们来假设一下现象的出现:</p>
+<ol>
+<li>由于视频过于好看,引起广泛关注.现在有200个同学要求下载.则单个人下载完需要17760s即296min也就是约5h!</li>
+<li>刘老师觉得单个视频教学质量不够好,决定上传一个8880GB的超大视频.(下载时间大于一天)</li>
+<li>几个同学与刘老师搞好了关系,刘老师给他们较高的下载速度,导致带宽分配不均匀,没有关系的学生下载速度更慢了.(百度网盘既视感)</li>
+</ol>
+<p><img src="https://img.cyfan.top/pic/BT/down-VIP.png" srcset="/img/loading.gif" alt="图片" title="A1拥有VIP专线"></p>
+<ol start="4">
+<li>由于刘老师给的视频过于激烈,在下载了一段时间后,FBI<code>open the door!</code>敲上门来带走了刘老师,视频被查封了!!!(下载速度0)</li>
+</ol>
+<p><img src="https://img.cyfan.top/pic/BT/FBI.jpeg" srcset="/img/loading.gif" alt="图片" title="FBI！Open the door！"></p>
+<p>可是，学习是必须的，这可怎么办呢？？？</p>
+<p>这时….</p>
+<p>刘老师突然想起来，为什么不让每一个学生互相连接，贡献自己已经下好的部分，以来获得最大的下载速度呢？？</p>
+<p>请注意，在上述下载中，每一个人都没有充分利用自己的最大带宽，对不对？</p>
+<p>那，解决办法就来了:</p>
+<h3 id="P2P："><a href="#P2P：" class="headerlink" title="P2P："></a>P2P：</h3><p>以256KB为一包，我们就可获得356块文件</p>
+<p><img src="https://img.cyfan.top/pic/BT/file.png" srcset="/img/loading.gif" alt="图片" title="分包"></p>
+<p>回到下载界面，我们看到，所有人都与其他人获得连接，那么，连接完成后：</p>
+<p><img src="https://img.cyfan.top/pic/BT/down-each.png" srcset="/img/loading.gif" alt="图片" title="连接"></p>
+<p>（为了方便观察，我们将不必要的连接全部去掉）</p>
+<p>现在，我们重新开始下载：</p>
+<p>我们假设，A1下载了第一块，A2下载了第二块…</p>
+<p>两秒后，所有人手上都拥有了一块文件：</p>
+<p><img src="https://img.cyfan.top/pic/BT/down-part1.png" srcset="/img/loading.gif" alt="图片" title="下载"></p>
+<p>接下来，在不影响下载的情况下，A1与A2交换下载好的部分，同时与A3、A4、A5交换</p>
+<p><img src="https://img.cyfan.top/pic/BT/down-part2.png" srcset="/img/loading.gif" alt="图片" title="贡献&amp;下载"></p>
+<p>看到了吗，所有人都得到了更高的速度，所有人的带宽都得到了最充分的利用，包括原先看起来毫无用处的上传带宽。</p>
+<p>接着4秒后，所有的贡献分块都下载好了，而每一个人都从文件发布者身上又得到新的文件碎片。</p>
+<p><img src="https://img.cyfan.top/pic/BT/down-part3.png" srcset="/img/loading.gif" alt="图片" title="下载！"></p>
+<p>所以，这种情况回一直持续下去，直到每一个人都下载完成，每一个人都只需下载149秒即2分29秒！相对于单点时间大大减少！</p>
+<p><img src="https://img.cyfan.top/pic/BT/down-finish.png" srcset="/img/loading.gif" alt="图片" title="完整！"></p>
+<h3 id="人数多-amp-文件大-问题"><a href="#人数多-amp-文件大-问题" class="headerlink" title="人数多&amp;文件大 问题"></a>人数多&amp;文件大 问题</h3><p>现在，我们来假设第一个问题，200人下载怎么办？</p>
+<p>我们可以明白，人数越多，文件交换越密集，对不对？</p>
+<p>显然会见的，这个问题显得异常白痴，可以体会的是，在最佳条件下，每个人的带宽都达到了最大，如果每个人都下载了不同的分块，同时每个人都在贡献。</p>
+<p>那么，每个人的下载速度，根本不会受到很大影响。</p>
+<p>这对于传统下载（http/https/ftp）不同，传统下载仅仅由一台服务器贡献，人数多对于这台服务器压力极大。</p>
+<p>但是，在这个环境里，服务器不仅仅是一台，而且，每当加入一个人，每一个人都可以当作服务器，这样，下载速度反而会大大提升。</p>
+<p>反而文件很大是个硬梗，不过相对于传统下载，这种下载方式还是有一定能力解决这个问题的。</p>
+<p><strong>回到这里</strong></p>
+<h2 id="IPFS的原理"><a href="#IPFS的原理" class="headerlink" title="IPFS的原理"></a>IPFS的原理</h2><p>ipfs的世界有个东西叫做cid,大概类似于这样一串: <code>QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> ,前面的 <code>Qm</code> 是固定的,后面是SHA256密钥.cid又分为用户密钥和文件密钥,这个暂时不讨论.SHA256强度目前看来基本不会碰撞,毕竟64位十六进制的字符串,能实现16^64个文件的存储,也就是1.1579208923731619542357098500869e+77个id,有生之年能看到它碰撞也不是一件容易的事情</p>
+<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>如同BT,在短短几秒内,需要分享的文件被分块完毕,但此时,文件还是乖乖的窝在硬盘里,没有分享出去.</p>
+<p>当有任何一个人试图获取资源时，你的ipfs会联系距离最近的节点,询问他们有没有意愿存东西.请注意此处的 <code>距离</code> ,这可不是物理距离,而是逻辑距离.</p>
+<p>节点大都都会很高兴的同意,当然有些节点可能就是混口饭吃不想存,于是这些节点就会帮你联系离他最近的节点要不要,直到所有碎片瓜分完毕.这种算法,像极了DHT.</p>
+<p>几分钟内,全球数个硬盘里就会出现你的文件的碎片,只要一声令下,这些文件就会调出.</p>
+<p>此时,纵使文件发布者下线,文件照样流传.重复上传的文件,拆碎后被校验到与存在的文件相同则不会被上传.</p>
+<p>上传完毕,文件就会拥有自己的id,也称为指纹,取回这些文件则需要id.</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>你可以通过客户端下载,这个下载方式和btDHT其实原理是一样的;当然IPFS为了向下兼容http,自己也有网关,不过网关由于是公开的,一方面是速度,另一方面是已经引起了G||F||\/\/の注意，目前并不推荐使用网关下载，当然对于一些小文件比如网页和图片，这些都是随意的。</p>
+<h1 id="IPFS的作用"><a href="#IPFS的作用" class="headerlink" title="IPFS的作用"></a>IPFS的作用</h1><p>与一些网盘相反，ipfs反而非常鼓励你往里面塞东西，越多越好，但是作为个人网盘并不适合，一方面ipfs的资源会随着下载的人越多，缓存的机器也会越多，速度更快，私人文件反而速度不佳；另一方面ipfs一旦上传，任何人包括你自己永远无法彻底删除这些文件，即使你在ipfs客户端删除了你分享的文件，这些文件仍然会得到传播。所以ipfs其实可以作为公开下载，甚至是图床，网页托管等等。</p>
+<p>在中国，ipfs实际上并没有得到很大的限制，分享文件和下载文件其实很容易做到，麻烦的只是不能从ipfs网关获取罢了。</p>
+<p>下面是我放在ipfs上的一张图片，即使我下线，这个文件依旧流传于网络之间。</p>
+<p><img src="https://ipfs.cyfan.top/ipfs/QmU4Eh586TBCBP5KwKF3zvcXCKcnkw9wD9nKCqxTi15f4n" srcset="/img/loading.gif" alt></p>
+<p>但是，ipfs反感在网关下载大文件，因为这样会造成不必要的带宽浪费，下载大文件请使用ipfs客户端+ipfs伴侣</p>
+<h1 id="搭建无服务器网页"><a href="#搭建无服务器网页" class="headerlink" title="搭建无服务器网页"></a>搭建无服务器网页</h1><p>很多人网页放在Github+CloudFlare，其实换个思路，为什么不用IPFS+CloudFlare呢？</p>
+<p>开始吧！</p>
+<h2 id="下载ipfs"><a href="#下载ipfs" class="headerlink" title="下载ipfs"></a>下载ipfs</h2><p>官网因为自带网关已经封锁了，请自带梯子访问。</p>
+<h2 id="写html"><a href="#写html" class="headerlink" title="写html"></a>写html</h2><p>请注意，在ipfs上写网页时，请尽量不要使用外链，对于js和css请直接写在网页中，图片请使用base64或上传至ipfs后使用相对链接。</p>
+<h2 id="上传-1"><a href="#上传-1" class="headerlink" title="上传"></a>上传</h2><p><img src="https://img.cyfan.top/pic/post/pasted-189.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>点击添加按钮，上传</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-190.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>接下来，重点来了！</p>
+<p>ipfs分享文件有两种方式，是ipfs和ipns，前者采用文件hash辨别文件，文件内容一旦改变，原来的链接无法更新，链接格式为 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> ；后者采用用户id辨别,内容允许更新，但是用户在线时间过短会导致无法同步，并且有可能暴露用户信息，后者格式为： <code>https://ipfs.io/ipfs/QmQQKZphgJdEGhTp18NRvVdSJ3RJArRst2keKk3tZvmfPz?filename=index.html</code> .</p>
+<p>如果你只是单个文件网页，此处比较建议使用ipfs，ipns可能离线时间过长导致无法下载。具体看个人所好。</p>
+<p>ipfs链接获取：点击 <code>···</code> ,选择复制哈希，在前面加上网关域名即可。</p>
+<p>ipns连接获取：点击 <code>···</code> ,选择分享，复制链接即可。</p>
+<p>在科学上网的前提下访问 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> 显示目标界面</p>
+<p><img src="https://ipfs.cyfan.top/ipfs/QmSGR6p5PxFJqQdEbDySG9QUpBx4WnQcVfxDPohgQ4pDoL" srcset="/img/loading.gif" alt></p>
+<blockquote>
+<p>请注意，每次上传后一定要先访问一遍资源，否则文件是不会上传到ipfs服务器的！</p>
+</blockquote>
+<h2 id="CloudFlare设置"><a href="#CloudFlare设置" class="headerlink" title="CloudFlare设置"></a>CloudFlare设置</h2><p><del>不知道为什么CloudFlare的ipfs服务器有点问题，使用官方说明一直爆404 page not found，官方地址在这里<a href="https://www.cloudflare.com/distributed-web-gateway/" target="_blank" rel="noopener">https://www.cloudflare.com/distributed-web-gateway/</a> 反正我是折腾失败了。<img src="https://img.cyfan.top/pic/moji/lh.jpg" srcset="/img/loading.gif"></del></p>
+<p>↑以上为放屁，现在来讲一下怎么正确绑定：</p>
+<h3 id="dnslink绑定"><a href="#dnslink绑定" class="headerlink" title="dnslink绑定"></a>dnslink绑定</h3><p>这个方法无论你的dns服务商在哪都能绑定，只不过不在CloudFlare托管的用户要多一步。</p>
+<p>1.将需要绑定的域名,以CNAME形式指向 <code>www.cloudflare-ipfs.com</code> ,比如我需要让 <code>showtime.cyfan.top</code> 成为ipfs出口，则这么设置。</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-191.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>2.使用txt记录绑定ipfs hash，新建txt记录，名字是 <code>_dnslink.yourwebsite</code> 一定要加上yourwebsite！比如我绑定的是 <code>showtime.cyfan.top</code> ，则名称一行填上 <code>_dnslink.showtime</code> !接着内容是 <code>dnslink=/ipfs/</code> 后面接上hash，比如showtimehtml的hash是： <code>QmWAvNck7QBhUAYAEgBFvbvvsMxDC9s55NXVJXeJTjTM1Y</code> 则大概这么填:</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-192.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>3.如果你本来就是托管在CloudFlare上的,到此为止就可以了,如果不是托管在Cloudflare上,类似dnspod\alicdn之类的,那还要获取证书,进入<a href="https://www.cloudflare.com/distributed-web-gateway/" target="_blank" rel="noopener">https://www.cloudflare.com/distributed-web-gateway/</a> 拉到最底下</p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-193.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p>输入域名，获取证书即可。</p>
+<p><strong>但问题是，<code>www.cloudflare-ipfs.com</code> 已经被dns污染了，你用cname绑定是无法正常访问的啦！所以只能用Workers绕路啦！</strong></p>
+<h3 id="JSProxy反代ipfs-io"><a href="#JSProxy反代ipfs-io" class="headerlink" title="JSProxy反代ipfs.io"></a>JSProxy反代ipfs.io</h3><p>老办法，Workersjsproxy反向代理ipfs网关，解决<img src="https://img.cyfan.top/pic/moji/wc.jpg" srcset="/img/loading.gif"></p>
+<p>网址：<a href="https://showtime.cyfan.top" target="_blank" rel="noopener">https://showtime.cyfan.top</a></p>
+<h1 id="其他的用处"><a href="#其他的用处" class="headerlink" title="其他的用处"></a>其他的用处</h1><p>我在Github上看了很多奇奇怪怪的用法，有的拿来做博客，有的拿来做网盘，有的拿来做图床，欸，真的是脑洞大开，幸好ipfs经得起折腾，越折腾他们赚的越多<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"></p>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/爱学习/">爱学习</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/CloudFlare/">CloudFlare</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/撸羊毛/">撸羊毛</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/IPFS/">IPFS</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-12 col-md-6">
+                    
+                      <a href="../../17/Pandownload-愿你归来仍是英雄/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>Pandownload:愿你归来仍是英雄</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-12 col-md-6">
+                    
+                      <a href="../../05/use-ipv6-in-unsv6-en/">
+                        <span>在不支持ipv6的路由器下使用ipv6</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                    <div id="vcomments"></div>
+  
+  <script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
+
+  <script defer src="https://img.cyfan.top/js/av-min.js"></script>
+  <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
+
+  <script type="text/javascript">
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+	app_id: window.atob(TWOUMh1+rU3+MjOF5),
+	app_key: window.atob(jUYjTJZ2+ZU4+wlNgSyoP6),
+        placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
+        avatar: "../../../../retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+		emoticon_url:'https://assets.cyfan.top/file/CYF-PicBed/pic/moji',
+        emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","stick_1.png","stick_2.png","stick_3.png","stick_4.png","stick_5.png","stick_6.png","stick_7.png","stick_8.png","stick_9.png","stick_10.png","stick_11.png","stick_12.png","stick_13.png","stick_14.png","stick_15.png","stick_16.png","stick_17.png","stick_18.png","stick_19.png","stick_20.png","stick_21.png","stick_22.png","stick_23.png","stick_24.png","stick_25.png","stick_26.png","stick_27.png","stick_28.png","stick_29.png","stick_30.png","stick_31.png","stick_32.png","stick_33.png","stick_34.png","stick_35.png","stick_36.png","stick_37.png","stick_38.png","stick_39.png","stick_40.png","stick_41.png","stick_42.png","stick_43.png ","stick_44.png","stick_45.png","stick_46.png","stick_47.png","stick_48.png","stick_49.png","stick_50.png ","stick_51.png","stick_52.png","stick_53.png","stick_54.png","stick_55.png","stick_56.png","stick_57.png ","stick_58.png","stick_59.png","stick_60.png","stick_61.png","stick_62.png","stick_63.png","stick_64.png ","stick_65.png","stick_66.png","stick_67.png","stick_68.png","stick_69.png","stick_70.png","stick_71.png ","stick_72.png","stick_73.png","stick_74.png","stick_75.png","stick_76.png","stick_77.png","stick_78.png ","stick_79.png","stick_80.png","stick_81.png","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","zcbg.jpg","邪魅一笑.jpg","口吐芳言.jpg"],
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Hello?你开了JS吗？？？？</a></noscript>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" height=40%>
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="../../../../js/main.js" ></script>
+
+
+  <script  src="../../../../js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "IPFS+CloudFlare=ServerLessWebPage&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
       placement: "left",
       visible: "hover",
      
@@ -10,7 +751,134 @@
     for (item of el) {
       res.push(".markdown-body > " + item)
     }
-    anchors.add(res.join(", "))</script><script src="../../../../js/local-search.js"></script><script>var path="../../../../local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){getSearchFile(path),this.onclick=null}</script><script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script>$("#post img:not(.no-zoom img, img[no-zoom])").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><footer class="mt-5"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a><p><span id="sentence" style="font-size:1rem"></span></p><p id="showsectime"></p><script>function NewDate(e){e=e.split("-");var t=new Date;return t.setUTCFullYear(e[0],e[1]-1,e[2]),t.setUTCHours(0,0,0,0),t}function showsectime(){var e=NewDate("2019-7-16"),t=(new Date).getTime()-e.getTime(),o=t/1e3,r=(Math.floor(o),t/864e5),s=Math.floor(r),a=-24*(s-r),i=Math.floor(a),n=-60*(i-a),h=Math.floor(-60*(i-a)),l=Math.floor(-60*(h-n)).toString();document.getElementById("showsectime").innerHTML="自2019-7-16建站以来，本站已苟活"+s+"天"+i+"小时"+h+"分"+l+"秒",setTimeout(showsectime,1e3)}showsectime()</script><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><script>getCDNinfo = function() {
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+  <script>
+    var path = "../../../../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+<footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+<p>
+当前CDN节点: <span id="cdn">【未知】</span> |
+你的ip: <span id="ip">【未知】</span> |
+你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+<script>
+	getCDNinfo = function() {
 	$.ajax({
 		url: "/cdn-cgi/trace",
 		success: function(data, status) {
@@ -30,4 +898,46 @@
 $(document).ready(function() {
 	getCDNinfo();
     //页面加载完毕就获取CDN信息
-});</script><p></p><script src="/js/index.js"></script></div><div><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div><div><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020213344" target="_blank">2020213344号</a></div></div><script type="text/javascript" src="/js/copyright.js"></script></footer><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginModelPath:"assets/",model:{jsonPath:"/live2dw/assets/z16.model.json"},display:{position:"left",width:150,height:300},mobile:{show:!0},log:!1,pluginJsPath:"lib/",pluginRootPath:"live2dw/",tagMode:!1})</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+});
+</script></p>
+		
+		<script src="/js/index.js"></script>
+	</div>
+
+    
+  <div>
+    
+      <!-- 不蒜子统计PV -->
+      
+      <span id="busuanzi_container_site_pv" style="display: none">
+      总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
+    
+    
+      <!-- 不蒜子统计UV -->
+      
+      <span id="busuanzi_container_site_uv" style="display: none">
+      总访客数 <span id="busuanzi_value_site_uv"></span> 人
+    </span>
+    
+  </div>
+
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a>
+	<a href="https://icp.gov.moe/?keyword=2020213344" target="_blank"> 2020213344号</a>
+  </div>
+  
+
+
+    
+  </div>
+    <script type="text/javascript" src="/js/copyright.js" ></script>
+	
+</footer>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
