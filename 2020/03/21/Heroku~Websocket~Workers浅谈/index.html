@@ -1,36 +1,16 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-  
-
   <link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content>
-<meta name="twitter:creator" content="@YourName">
-<meta name="twitter:title" content=" | ">
-<meta name="twitter:description" content>
-<meta name="twitter:image" content>
-<script language="javascript">
-window.onload = function(){ if(noweixin()){ }}
-function noweixin(){ 
-var ua = window.navigator.userAgent.toLowerCase(); 
-if(ua.match(/MicroMessenger/i) == 'micromessenger')
-{ 
-window.location.href="https://cyfan.top/wx.html"; 
-}else{ 
-} } 
- </script>
   
   <meta name="theme-color" content="#F6B352">
   <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
@@ -38,129 +18,40 @@ window.location.href="https://cyfan.top/wx.html";
   <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽">
   <title>Heroku~Websocket~Workers浅谈 || 陈YFの博客(￣▽￣)&#34;</title>
 
-<style>
-span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
-    color: #252525
-}
-
-.heimu,.heimu a,a .heimu,.heimu a.new {
-    background-color: #252525;
-    color: #252525;
-    text-shadow: none
-}
-
-body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
-    transition: color .13s linear;
-    color: #fff
-}
-
-body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
-    transition: color .13s linear;
-    color: #add8e6
-}
-
-body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
-    transition: color .13s linear;
-    color: #ba0000
-}
-details:focus,summary:focus{outline:none}
-.adsense{
-    display: block;
-}
-.adsense:before { display: none !important; }
-.adsense ins    { width: 100%; height: 100%; display: block; }
- 
-@media screen and ( max-width: 1024px ) {
-    .adsense        { width: 728px; height: 90px; }
-    .adsense:before { content: '1024'; }
-}
- 
-@media screen and ( max-width: 800px ) {
-    .adsense        { width: 468px; height: 60px; }
-    .adsense:before { content: '800'; }
-}
-
-</style>
-<script>
-(function(){
-    var vendorPrefix=getBrowserPrefix();
-    var eventName=visibilityEvent(vendorPrefix);
-    document.addEventListener(eventName,visibilityEventCallback);
-    var oldTitle=document.title;
-    function visibilityEventCallback(){
-        if(document.hidden){
-            oldTitle=document.title;
-            document.title="你就这么忍心抛下我吗/(ㄒoㄒ)/~~";
-        }else{
-            document.title=oldTitle;
-        }
-    }
-    /*------------------------ 解决浏览器兼容性问题 ----------------------------------*/
-    // Get Browser-Specifc Prefix
-    function getBrowserPrefix() {
-          // Check for the unprefixed property.  
-          if ('hidden' in document) {
-            return null;
-        }
-        // All the possible prefixes.  
-        var browserPrefixes = ['moz', 'ms', 'o', 'webkit'];
-        for (var i = 0; i < browserPrefixes.length; i++) {
-            var prefix = browserPrefixes[i] + 'Hidden';
-            if (prefix in document) {
-              return browserPrefixes[i];
-            }
-        }
-         // The API is not supported in browser.  
-         return null;
-    }
-    // Get Browser Specific Hidden Property
-    function hiddenProperty(prefix) {
-        if (prefix) {
-            return prefix + 'Hidden';
-        } else {
-            return 'hidden';
-        }
-    }
-    // Get Browser Specific Visibility State
-    function visibilityState(prefix) {
-      if (prefix) {
-        return prefix + 'VisibilityState';
-      } else {
-        return 'visibilityState';
-      }
-    }
-    // Get Browser Specific Event
-    function visibilityEvent(prefix) {
-      if (prefix) {
-        return prefix + 'visibilitychange';
-      } else {
-        return 'visibilitychange';
-      }
-    }
-})();
-</script>
-  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 
 
-  <link rel="stylesheet" href="../../../../lib/prettify/tomorrow-night-eighties.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css">
+  <link rel="stylesheet" href="../../../../lib/hint/hint.min.css">
+
+  
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css">
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
 
 <link rel="stylesheet" href="../../../../css/main.css">
-
-
-  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
-
 
 <!-- 自定义样式保持在最底部 -->
 
 
+  <script src="../../../../js/utils.js"></script>
+  <script src="../../../../js/color-schema.js"></script>
 </head>
 
 
 <body>
+<script>var rfwFoV1="MDkxUFRKVn",$$Yn2="UDc2eGxnRVV5",TWOUMh1="Uk1YNld0eXp3VWMyaVI",jUYjTJZ2="NU9tcjdkYk9PWXl",rU3="wdGp5Z3pxQXZjL"</script>
+
+  <script>var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZeWlNZmZSLU1kWV",mXLcNMYJJ4="hiTU1J",hPjHsvGO5="ODJMb2lBZHczYjNBd2Nl"</script>
+  
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -181,70 +72,108 @@ details:focus,summary:focus{outline:none}
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../archives/">归档</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../archives/">
+                
+                归档
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../categories/">分类</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../categories/">
+                
+                分类
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../tags/">标签</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../tags/">
+                
+                标签
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../about/">关于</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../about/">
+                
+                关于
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../links/">朋友们</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../1949/10/01/留言板/">
+                
+                留言板
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="../../../../随口胡说/">随口胡说</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../随口胡说/ ">
+                
+                随口胡说
+              </a>
+            </li>
+          
         
           
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="https://cyfan.top">项目主页</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -252,56 +181,56 @@ details:focus,summary:focus{outline:none}
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <div class="banner intro-2" id="background" parallax=true
          style="background: url('https://img.cyfan.top/pic/cover/3.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
             </span>
-<script src="/js/fire.js"></script>
+
             
               
-                <p class="mt-3 post-meta">
-                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                  星期六, 三月 21日 2020, 8:08 早上
-                </p>
-              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-03-21 08:08" pubdate>
+      2020年3月21日 早上
+    </time>
+  </div>
 
-              <p class="mt-1">
-                
-                  
-                  <span class="post-meta">
-                    <i class="far fa-chart-bar"></i>
-                    1k 字
-                  </span>
-                
 
-                
-                  
-                  <span class="post-meta">
-                      <i class="far fa-clock"></i>
-                      3 分钟
-                  </span>
-                
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k字
+    </span>
+  
 
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
-                    <i class="far fa-eye" aria-hidden="true"></i>
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>
-                
-              </p>
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+      分钟
+    </span>
+  
+
+  
+  
+</div>
+
             
           </div>
 
           
             <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
+              <i class="iconfont icon-arrowdown"></i>
             </div>
           
         </div>
@@ -318,13 +247,12 @@ details:focus,summary:focus{outline:none}
     <div class="d-none d-lg-block col-lg-2"></div>
     <div class="col-lg-8 nopadding-md">
       <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5 z-depth-3" id="board">
-          <div class="post-content mx-auto" id="post">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Heroku~Websocket~Workers浅谈</h1>
             
-              <p
-                class="note note-warning">本文最后更新于：星期六, 五月 23日 2020, 1:38 下午</p>
-            
-            <div class="markdown-body">
+            <div class="markdown-body" id="post-body">
               <p>不好意思，我又抛弃了 <code>diaspora</code>(刚满一天),跳槽到了 <code>fluid</code><img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"> 而且感觉用户体验比 <code>diaspora</code> 好多了,因为以前 <code>NexT</code>是不能添加图片表情的，因为图片会强制居中，<del>那玩意叫表情</del>,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,<del>所以很适合添加表情</del><img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="/img/loading.gif">.而且现在看来, <code>fluid</code> 并不比 <code>NexT</code> 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://img.cyfan.top/pic/moji/xy.png" srcset="/img/loading.gif">,比如懒加载<img src="https://img.cyfan.top/pic/moji/zhuaji.png" srcset="/img/loading.gif">.所以我可以随意添加图片啦!!!于是决定用这个主题了。</p>
 <p>好了,今天带来的又是一篇撸羊毛的技巧.</p>
 <blockquote>
@@ -340,7 +268,9 @@ details:focus,summary:focus{outline:none}
 <details>
 <summary>避免大规模泛滥和爬虫，已用很简单的方式加密脚本，点击展开</summary>
 
-<pre><code>YWRkRXZlbnRMaXN0ZW5lciUyOCUwQSUyMmZldGNoJTIyJTJDZXZlbnQlMjAlM0QlM0UlMjAlN0IlMEFsZXQlMjB1cmwlM0RuZXclMjBVUkwlMjhldmVudC5yZXF1ZXN0LnVybCUyOSUzQiUwQXVybC5ob3N0bmFtZSUzRCUyMnNzLWJ5Y3lmLWV1MS5oZXJva3VhcHAuY29tJTIyJTNCJTBBbGV0JTIwcmVxdWVzdCUzRG5ldyUyMFJlcXVlc3QlMjh1cmwlMkNldmVudC5yZXF1ZXN0JTI5JTNCJTBBZXZlbnQuJTIwcmVzcG9uZFdpdGglMjglMEFmZXRjaCUyOHJlcXVlc3QlMjklMEElMjklMEElN0QlMEElMjk=</code></pre></details>
+<div class="hljs"><pre><code class="hljs undefined">YWRkRXZlb<span class="hljs-symbol">nRMaXN0</span>ZW<span class="hljs-number">5</span>lciUyOCUwQSUyMmZldG<span class="hljs-symbol">NoJTIyJTJDZXZlbnQlMjAlM0</span>Ql<span class="hljs-name">M0</span>UlMjAl<span class="hljs-symbol">N0</span>IlMEFsZXQlMjB<span class="hljs-number">1</span>cmwl<span class="hljs-name">M0</span>RuZXclMjBVUkwlMjhldmVudC<span class="hljs-number">5</span>yZXF<span class="hljs-number">1</span>ZX<span class="hljs-symbol">N0</span>L<span class="hljs-symbol">nVybCUyOSUzQiUwQXVybC5</span>ob<span class="hljs-number">3</span><span class="hljs-symbol">N0</span>bmFtZSUzRCUyM<span class="hljs-symbol">nNzLWJ5</span>Y<span class="hljs-number">3</span>lmLWV<span class="hljs-number">1</span>MS<span class="hljs-number">5</span>oZXJva<span class="hljs-number">3</span>VhcHAuY<span class="hljs-number">29</span>tJTIyJT<span class="hljs-symbol">NCJTBBbGV0</span>JTIwcmVxdWVzdCUzR<span class="hljs-name">G5</span>ldyUyMFJlcXVlc<span class="hljs-number">3</span>QlMjh<span class="hljs-number">1</span>cmwlMk<span class="hljs-symbol">NldmVudC5</span>yZXF<span class="hljs-number">1</span>ZX<span class="hljs-symbol">N0</span>JTI<span class="hljs-number">5</span>JT<span class="hljs-symbol">NCJTBBZXZlbnQuJTIwcmVzcG9</span>uZFdpdGglMjglMEFmZXRjaCUyOHJlcXVlc<span class="hljs-number">3</span>QlMjklMEElMjklMEEl<span class="hljs-symbol">N0</span>QlMEElMjk=</code></pre></div>
+
+</details>
 
 
 <p>解密,替换第四行的herokuapp地址。</p>
@@ -357,19 +287,18 @@ details:focus,summary:focus{outline:none}
             </div>
             <hr>
             <div>
-              <p>
+              <div class="post-metas mb-3">
                 
-                  <span>
-                <i class="iconfont icon-inbox"></i>
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
                     
                       <a class="hover-with-bg" href="../../../../categories/撸羊毛/">撸羊毛</a>
-                      &nbsp;
                     
-                  </span>&nbsp;&nbsp;
+                  </div>
                 
                 
-                  <span>
-                <i class="iconfont icon-tag"></i>
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="../../../../tags/CloudFlare/">CloudFlare</a>
                     
@@ -379,40 +308,43 @@ details:focus,summary:focus{outline:none}
                     
                       <a class="hover-with-bg" href="../../../../tags/Workers/">Workers</a>
                     
-                  </span>
+                  </div>
                 
-              </p>
+              </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
                 <div class="post-prevnext row">
-                  <div class="post-prev col-12 col-md-6">
+                  <article class="post-prev col-6">
+                    
                     
                       <a href="../../22/GithubのUnlimited-Private-Repo有感/">
-                        <i class="fa fa-chevron-left"></i>
-                        <span>GithubのUnlimited Private Repo有感</span>
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GithubのUnlimited Private Repo有感</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
-                  </div>
-                  <div class="post-next col-12 col-md-6">
+                  </article>
+                  <article class="post-next col-6">
+                    
                     
                       <a href="../../20/一次糟糕的换主题过程/">
-                        <span>一次糟糕的换主题过程</span>
-                        <i class="fa fa-chevron-right"></i>
+                        <span class="hidden-mobile">一次糟糕的换主题过程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
                       </a>
                     
-                  </div>
+                  </article>
                 </div>
               
             </div>
 
-              
-                <!-- Comments -->
-                <div class="comments" id="comments">
-                  
-                          
-  <div id="vcomments"></div>
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  <div id="vcomments"></div>
   
   <script type="text/javascript">
 function downloadJSAtOnload() {
@@ -430,7 +362,7 @@ else window.onload = downloadJSAtOnload;
   <script defer src="https://img.cyfan.top/js/av-min.js"></script>
   <script defer src="https://img.cyfan.top/js/valine.min.js"></script>
 
-  <script type="text/javascript">
+ <script type="text/javascript">
     var notify = 'false' === 'true';
     var verify = 'false' === 'true';
     var oldLoad = window.onload;
@@ -439,13 +371,13 @@ else window.onload = downloadJSAtOnload;
         el: '#vcomments',
         notify: notify,
         verify: verify,
-        app_id: "RMX6WtyzwUc2iR0tjygzqAvc-MdYXbMMI",
-        app_key: "5Omr7dbOOYyCCwflnKntv5IS",
+	app_id: window.atob(TWOUMh1+rU3+MjOF5),
+	app_key: window.atob(jUYjTJZ2+ZU4+wlNgSyoP6),
         placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
         avatar: "../../../../retro",
         meta: ['nick', 'mail', 'link'],
         pageSize: "10",
-		emoticon_url:'https://assets.cyfan.top/file/CYF-PicBed/pic/moji',
+	emoticon_url:'https://assets.cyfan.top/file/CYF-PicBed/pic/moji',
         emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","stick_1.png","stick_2.png","stick_3.png","stick_4.png","stick_5.png","stick_6.png","stick_7.png","stick_8.png","stick_9.png","stick_10.png","stick_11.png","stick_12.png","stick_13.png","stick_14.png","stick_15.png","stick_16.png","stick_17.png","stick_18.png","stick_19.png","stick_20.png","stick_21.png","stick_22.png","stick_23.png","stick_24.png","stick_25.png","stick_26.png","stick_27.png","stick_28.png","stick_29.png","stick_30.png","stick_31.png","stick_32.png","stick_33.png","stick_34.png","stick_35.png","stick_36.png","stick_37.png","stick_38.png","stick_39.png","stick_40.png","stick_41.png","stick_42.png","stick_43.png ","stick_44.png","stick_45.png","stick_46.png","stick_47.png","stick_48.png","stick_49.png","stick_50.png ","stick_51.png","stick_52.png","stick_53.png","stick_54.png","stick_55.png","stick_56.png","stick_57.png ","stick_58.png","stick_59.png","stick_60.png","stick_61.png","stick_62.png","stick_63.png","stick_64.png ","stick_65.png","stick_66.png","stick_67.png","stick_68.png","stick_69.png","stick_70.png","stick_71.png ","stick_72.png","stick_73.png","stick_74.png","stick_75.png","stick_76.png","stick_77.png","stick_78.png ","stick_79.png","stick_80.png","stick_81.png","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","zcbg.jpg","邪魅一笑.jpg","口吐芳言.jpg"],
       });
       oldLoad && oldLoad();
@@ -464,19 +396,16 @@ else window.onload = downloadJSAtOnload;
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
-
-                </div>
+              </article>
             
-          </div>
+          </article>
         </div>
       </div>
     </div>
     
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc-start"></div>
-<div id="toc">
-  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div id="tocbot"></div>
 </div>
 
@@ -498,8 +427,8 @@ else window.onload = downloadJSAtOnload;
   </main>
 
   
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
     </a>
   
 
@@ -531,112 +460,147 @@ else window.onload = downloadJSAtOnload;
 
   
 
-  <!-- SCRIPTS -->
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+<p>
+当前CDN节点: <span id="cdn">【未知】</span> |
+你的ip: <span id="ip">【未知】</span> |
+你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+<script>
+	getCDNinfo = function() {
+	$.ajax({
+		url: "/cdn-cgi/trace",
+		success: function(data, status) {
+			let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+			let area = data.split("colo=")[1].split("\n")[0];
+			for (var i = 0; i < areas.length; i++) {
+				if (areas[i].indexOf(area) != -1) {
+					document.getElementById("cdn").innerHTML = areas[i];
+					document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+					document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+					break;
+				}
+			}
+		}
+	})
+}
+$(document).ready(function() {
+	getCDNinfo();
+    //页面加载完毕就获取CDN信息
+});
+</script></p></div>
+    
+  <div class="statistics">
+    
+    
+
+    
+  </div>
+
+
+    
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">2020213344号</a>
+    
+      <a
+        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020213344"
+        rel="nofollow noopener"
+        class="beian-police"
+        target="_blank"
+      >
+        <span class="beian-police-sep">&nbsp;|&nbsp;</span>
+        
+        <span>萌ICP备</span>
+      </a>
+     
+  </div>
+
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="../../../../js/debouncer.js" ></script>
 <script  src="../../../../js/main.js" ></script>
 
-
-  <script  src="../../../../js/lazyload.js" ></script>
-
+<!-- Plugins -->
 
 
   
-  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+    <script  src="../../../../js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="../../../../js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
   <script>
     $(document).ready(function () {
-      var navHeight = $('#navbar').height();
-      var toc = $('#toc');
       var boardCtn = $('#board-ctn');
       var boardTop = boardCtn.offset().top;
-      var tocLimMax = 2 * boardTop + boardCtn.height();
 
-      $(window).scroll(function () {
-        var tocLimMin = $('#toc-start').offset().top - navHeight;
-        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
-
-        if (tocLimMin <= scroH && scroH <= tocLimMax) {
-          toc.css({
-            'display': 'block',
-            'position': 'fixed',
-            'top': navHeight,
-          });
-        } else if (scroH <= tocLimMin) {
-          toc.css({
-            'position': '',
-            'top': '',
-          });
-        } else if (scroH > tocLimMax) {
-          toc.css('display', 'none');
-        }
-      });
       tocbot.init({
         tocSelector: '#tocbot',
-        contentSelector: '.post-content',
+        contentSelector: '#post-body',
         headingSelector: 'h1,h2,h3,h4,h5,h6',
         linkClass: 'tocbot-link',
         activeLinkClass: 'tocbot-active-link',
         listClass: 'tocbot-list',
         isCollapsedClass: 'tocbot-is-collapsed',
         collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
         scrollSmooth: true,
         headingsOffset: -boardTop
       });
       if ($('.toc-list-item').length > 0) {
-        $('#toc > p').css('visibility', 'visible');
+        $('#toc').css('visibility', 'visible');
       }
-      var offset = boardCtn.css('margin-right')
-      $('#toc-ctn').css({
-        'right': offset
-      })
     });
-  </script>
-
-
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-<!-- Plugins -->
-
-
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
   </script>
 
 
@@ -661,23 +625,6 @@ else window.onload = downloadJSAtOnload;
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "left",
-      visible: "hover",
-     
-      icon: "♂"
-
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
 
 
   <script  src="../../../../js/local-search.js" ></script>
@@ -685,24 +632,28 @@ else window.onload = downloadJSAtOnload;
     var path = "../../../../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
-      getSearchFile(path);
+      searchFunc(path, 'local-search-input', 'local-search-result');
       this.onclick = null
     }
   </script>
 
 
 
-  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
   <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
       function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
         $(this).wrap(element);
       }
     );
   </script>
+
+
 
 
 
@@ -764,105 +715,38 @@ else window.onload = downloadJSAtOnload;
 
 
 
-<footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
-    <p><span id="sentence" style="font-size: 1rem;"></span></p>
-	<p id="showsectime"></p>
-	<script>
-		function NewDate(str) { 
-		str = str.split('-'); 
-		var date = new Date(); 
-		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
-		date.setUTCHours(0, 0, 0, 0); 
-	return date; 
-	} 
-		function showsectime() {
-var birthDay =NewDate("2019-7-16");
-var today=new Date();
-var timeold=today.getTime()-birthDay.getTime();
-var sectimeold=timeold/1000
-var secondsold=Math.floor(sectimeold);
-var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
-var daysold=Math.floor(e_daysold);
-var e_hrsold=(daysold-e_daysold)*-24;
-var hrsold=Math.floor(e_hrsold);
-var e_minsold=(hrsold-e_hrsold)*-60;
-var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
-document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
-setTimeout(showsectime, 1000);
-}showsectime();
-</script>
-<p>
-当前CDN节点: <span id="cdn">【未知】</span> |
-你的ip: <span id="ip">【未知】</span> |
-你的所在国家/地区: <span id="loc">【未知】 </span></p>
-
-<script>
-	getCDNinfo = function() {
-	$.ajax({
-		url: "/cdn-cgi/trace",
-		success: function(data, status) {
-			let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
-			let area = data.split("colo=")[1].split("\n")[0];
-			for (var i = 0; i < areas.length; i++) {
-				if (areas[i].indexOf(area) != -1) {
-					document.getElementById("cdn").innerHTML = areas[i];
-					document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
-					document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
-					break;
-				}
-			}
-		}
-	})
-}
-$(document).ready(function() {
-	getCDNinfo();
-    //页面加载完毕就获取CDN信息
-});
-</script></p>
-		
-		<script src="/js/index.js"></script>
-	</div>
-
-    
-  <div>
-    
-      <!-- 不蒜子统计PV -->
-      
-      <span id="busuanzi_container_site_pv" style="display: none">
-      总访问量 <span id="busuanzi_value_site_pv"></span> 次
-    </span>
-    
-    
-      <!-- 不蒜子统计UV -->
-      
-      <span id="busuanzi_container_site_uv" style="display: none">
-      总访客数 <span id="busuanzi_value_site_uv"></span> 人
-    </span>
-    
-  </div>
 
 
-    
-  <!-- 备案信息 -->
-  <div>
-    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a>
-	<a href="https://icp.gov.moe/?keyword=2020213344" target="_blank"> 2020213344号</a>
-  </div>
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
 
-    
-  </div>
-    <script type="text/javascript" src="/js/copyright.js" ></script>
-	
-</footer>
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-</html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
