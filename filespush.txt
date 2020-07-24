@@ -1,0 +1,6 @@
+cd files
+heroku git:remote -a cyfpan
+git init
+git add .
+git commit -am "make it better"
+git push heroku master

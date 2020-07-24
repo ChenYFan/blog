@@ -1,0 +1,37 @@
+@import "_widget/*"
+
+html, body
+  font-size $font-size
+  font-family $font-family
+
+html, body, header
+  height 100%
+  overflow-wrap break-word
+
+body
+  transition color .2s ease-in-out, background-color .2s ease-in-out
+  background-color var(--body-bg-color)
+  color var(--text-color)
+
+  a
+    color var(--text-color)
+    text-decoration none
+    cursor pointer
+    transition color .2s ease-in-out, background-color .2s ease-in-out
+
+    &:hover
+      color var(--link-hover-color)
+      text-decoration none
+      transition color .2s ease-in-out, background-color .2s ease-in-out
+
+img[srcset]
+  object-fit cover
+
+*[align="left"]
+  text-align left
+
+*[align="center"]
+  text-align center
+
+*[align="right"]
+  text-align right
