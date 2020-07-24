@@ -1,7 +1,9 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" >
+<html lang="zh-CN">
+
+
+
+
 
 
 
@@ -164,260 +166,7 @@ details:focus,summary:focus{outline:none}
 
 <body>
   <header style="height: 100vh;">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-  <script>
-  // eslint-disable-next-line no-unused-vars
-function waitElementVisible(targetId, callback) {
-  var runningOnBrowser = typeof window !== 'undefined';
-  var isBot = (runningOnBrowser && !('onscroll' in window)) || (typeof navigator !== 'undefined'
-    && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
-  var supportsIntersectionObserver = runningOnBrowser && 'IntersectionObserver' in window;
-  if (!isBot && supportsIntersectionObserver) {
-    var io = new IntersectionObserver(function(entries, ob) {
-      if (entries[0].isIntersecting) {
-        callback && callback();
-        ob.disconnect();
-      }
-    }, {
-      threshold : [0],
-      rootMargin: (window.innerHeight || document.documentElement.clientHeight) + 'px'
-    });
-    io.observe(document.getElementById(targetId));
-  } else {
-    callback && callback();
-  }
-}
-
-// eslint-disable-next-line no-unused-vars
-function waitElementLoaded(targetId, callback) {
-  var runningOnBrowser = typeof window !== 'undefined';
-  var isBot = (runningOnBrowser && !('onscroll' in window)) || (typeof navigator !== 'undefined'
-    && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
-  if (!runningOnBrowser || isBot) {
-    return;
-  }
-
-  if ('MutationObserver' in window) {
-    var mo = new MutationObserver(function(records, ob) {
-      var ele = document.getElementById(targetId);
-      if (ele) {
-        callback && callback();
-        ob.disconnect();
-      }
-    });
-    mo.observe(document, { childList: true, subtree: true });
-  } else {
-    var oldLoad = window.onload;
-    window.onload = function() {
-      oldLoad && oldLoad();
-      callback && callback();
-    };
-  }
-}
-
-// eslint-disable-next-line no-unused-vars
-function addScript(url, onload) {
-  var s = document.createElement('script');
-  s.setAttribute('src', url);
-  s.setAttribute('type', 'text/javascript');
-  s.setAttribute('charset', 'UTF-8');
-  s.async = false;
-  if (typeof onload === 'function') {
-    if (window.attachEvent) {
-      s.onreadystatechange = function() {
-        var e = s.readyState;
-        if (e === 'loaded' || e === 'complete') {
-          s.onreadystatechange = null;
-          onload();
-        }
-      };
-    } else {
-      s.onload = onload;
-    }
-  }
-  var e = document.getElementsByTagName('script')[0]
-    || document.getElementsByTagName('head')[0]
-    || document.head || document.documentElement;
-  e.parentNode.insertBefore(s, e);
-}
-
-// eslint-disable-next-line no-unused-vars
-function addCssLink(url) {
-  var l = document.createElement('link');
-  l.setAttribute('rel', 'stylesheet');
-  l.setAttribute('type', 'text/css');
-  l.setAttribute('href', url);
-  var e = document.getElementsByTagName('link')[0]
-    || document.getElementsByTagName('head')[0]
-    || document.head || document.documentElement;
-  e.parentNode.insertBefore(l, e);
-}
-  </script>
-  <script>
-  /**
- * Modify by https://blog.skk.moe/post/hello-darkmode-my-old-friend/
- */
-// eslint-disable-next-line no-unused-expressions
-!(function(window, document) {
-  var rootElement = document.documentElement;
-  var colorSchemaStorageKey = 'Fluid_Color_Scheme';
-  var colorSchemaMediaQueryKey = '--color-mode';
-  var userColorSchemaAttributeName = 'data-user-color-scheme';
-  var defaultColorSchemaAttributeName = 'data-default-color-scheme';
-  var colorToggleButtonName = 'color-toggle-btn';
-  var colorToggleIconName = 'color-toggle-icon';
-
-  function setLS(k, v) {
-    try {
-      localStorage.setItem(k, v);
-    } catch (e) {}
-  }
-
-  function removeLS(k) {
-    try {
-      localStorage.removeItem(k);
-    } catch (e) {}
-  }
-
-  function getLS(k) {
-    try {
-      return localStorage.getItem(k);
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function getModeFromCSSMediaQuery() {
-    var res = getComputedStyle(rootElement).getPropertyValue(
-      colorSchemaMediaQueryKey
-    );
-    if (res.length > 0) {
-      return res.replace(/["'\s]/g, '');
-    }
-    return null;
-  }
-
-  function resetRootColorSchemaAttributeAndLS() {
-    rootElement.removeAttribute(userColorSchemaAttributeName);
-    removeLS(colorSchemaStorageKey);
-  }
-
-  var validColorSchemaKeys = {
-    dark : true,
-    light: true
-  };
-
-  function getDefaultColorSchemaAttribute() {
-    // 取默认字段的值
-    var schema = rootElement.getAttribute(defaultColorSchemaAttributeName);
-    // 如果明确指定了 schema 则返回
-    if (validColorSchemaKeys[schema]) {
-      return schema;
-    }
-    // 默认优先按 prefers-color-scheme
-    schema = getModeFromCSSMediaQuery();
-    if (validColorSchemaKeys[schema]) {
-      return schema;
-    }
-    // 否则按本地时间是否大于 18 点
-    if (new Date().getHours() >= 18) {
-      return 'dark';
-    }
-    return 'light';
-  }
-
-  function applyCustomColorSchemaSettings(schema) {
-    // 接受从「开关」处传来的模式，或者从 localStorage 读取，否则按默认设置值
-    var currentSetting = schema || getLS(colorSchemaStorageKey) || getDefaultColorSchemaAttribute();
-
-    if (currentSetting === getModeFromCSSMediaQuery()) {
-      // 当用户自定义的显示模式和 prefers-color-scheme 相同时，重置到自动模式
-      resetRootColorSchemaAttributeAndLS();
-    } else if (validColorSchemaKeys[currentSetting]) {
-      rootElement.setAttribute(
-        userColorSchemaAttributeName,
-        currentSetting
-      );
-    } else {
-      // 首次访问或从未使用过开关、localStorage 中没有存储的值，currentSetting 是 null
-      // 或者 localStorage 被篡改，currentSetting 不是合法值
-      resetRootColorSchemaAttributeAndLS();
-    }
-
-    // 根据当前模式设置图标
-    setButtonIcon(currentSetting);
-  }
-
-  var invertColorSchemaObj = {
-    dark : 'light',
-    light: 'dark'
-  };
-
-  function toggleCustomColorSchema() {
-    var currentSetting = getLS(colorSchemaStorageKey);
-
-    if (validColorSchemaKeys[currentSetting]) {
-      // 从 localStorage 中读取模式，并取相反的模式
-      currentSetting = invertColorSchemaObj[currentSetting];
-    } else if (currentSetting === null) {
-      // localStorage 中没有相关值，或者 localStorage 抛了 Error
-      // 从 CSS 中读取当前 prefers-color-scheme 并取相反的模式
-      currentSetting = invertColorSchemaObj[getModeFromCSSMediaQuery()];
-    } else {
-      return;
-    }
-    // 将相反的模式写入 localStorage
-    setLS(colorSchemaStorageKey, currentSetting);
-
-    return currentSetting;
-  }
-
-  function setButtonIcon(schema) {
-    if (validColorSchemaKeys[schema]) {
-      // 切换图标
-      var icon = 'icon-dark';
-      if (schema) {
-        icon = 'icon-' + invertColorSchemaObj[schema];
-      }
-      var iconElement = document.getElementById(colorToggleIconName);
-      if (iconElement) {
-        iconElement.setAttribute(
-          'class',
-          'iconfont ' + icon
-        );
-      } else {
-        // 如果图标不存在则说明图标还没加载出来，等到页面全部加载再尝试切换
-        // eslint-disable-next-line no-undef
-        waitElementLoaded(colorToggleIconName, function() {
-          var iconElement = document.getElementById(colorToggleIconName);
-          if (iconElement) {
-            iconElement.setAttribute(
-              'class',
-              'iconfont ' + icon
-            );
-          }
-        });
-      }
-    }
-  }
-
-  // 当页面加载时，将显示模式设置为 localStorage 中自定义的值（如果有的话）
-  applyCustomColorSchemaSettings();
-
-  var oldLoadCs = window.onload;
-  window.onload = function() {
-    oldLoadCs && oldLoadCs();
-    document.getElementById(colorToggleButtonName).addEventListener('click', () => {
-      // 当用户点击「开关」时，获得新的显示模式、写入 localStorage、并在页面上生效
-      applyCustomColorSchemaSettings(toggleCustomColorSchema());
-    });
-  };
-})(window, document);
-  </script>
-<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
        href="../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
@@ -502,37 +251,27 @@ function addCssLink(url) {
                 class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
           </li>
         
-		
-		     
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:" rel="external nofollow noreferrer">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-		
       </ul>
     </div>
-	
-	
-	
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="view intro-2" id="background" parallax=true
          style="background: url('https://img.cyfan.top/pic/img/1.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container page-header text-center fade-in-up">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
             </span>
-
+<script src="/js/fire.js"></script>
             
           </div>
 
           
             <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
             </div>
           
         </div>
@@ -543,7 +282,7 @@ function addCssLink(url) {
   <main>
     
       <div class="container nopadding-md">
-        <div class="py-5" id="board"
+        <div class="py-5 z-depth-3" id="board"
           style=margin-top:0>
           
           <div class="container">
@@ -1147,8 +886,8 @@ display: blo</div>
   </main>
 
   
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
     </a>
   
 
