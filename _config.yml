@@ -134,11 +134,3 @@ service_worker:
       handler: cacheFirst
       options:
         origin: at.alicdn.com
-    - urlPattern: /pic/*
-      handler: cacheFirst
-      options:
-        origin: img.cyfan.top
-    - urlPattern: /file/CYF-PicBed/pic/*
-      handler: cacheFirst
-      options:
-        origin: assets.cyfan.top
