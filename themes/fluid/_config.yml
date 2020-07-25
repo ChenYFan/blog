@@ -123,9 +123,14 @@ navbar:
     px: 3  # 模糊像素，只能为数字，数字越大模糊度越高
     alpha: 0.7   # 透明度，只能为数字，范围 0~1，数字越大透明度越低，注意透明过度可能看不清菜单字体
   menu:  # 可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
-    - { key: '归档', link: '/archives/'}
-    - { key: '分类', link: '/categories/'}
-    - { key: '标签', link: '/tags/'}
+    - { 
+    key: '文章', 
+    submenu: [
+        { key: '归档', link: '/archives/' },
+        { key: '分类', link: '/categories/'},
+        { key: '标签', link: '/tags/'}
+      ]
+    }
     - { key: '关于', link: '/about/'}
     - { key: '朋友们', link: '/links/'}
     - { key: '留言板', link: '/1949/10/01/留言板/'}
