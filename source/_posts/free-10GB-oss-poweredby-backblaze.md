@@ -1,4 +1,4 @@
-title: 白嫖！10GB免流海外对象存储【可套CDN】
+title: 白嫖！10GB免流海外BackBlaze对象存储【可套CDN】
 author: CYF
 tags:
   - 图床
