@@ -119,10 +119,10 @@ service_worker:
   verbose: false
   runtimeCaching:
   - urlPattern: /*  # 子路径（接受通配符）
-      handler: cacheFirst
-      options:
-        origin: cdn.staticfile.org  # 域名
+    handler: cacheFirst
+    options:
+      origin: cdn.staticfile.org  # 域名
   - urlPattern: /*   # 子路径（接受通配符）
-      handler: cacheFirst
-      options:
-        origin: assets.cyfan.top  # 域名
+    handler: cacheFirst
+    options:
+      origin: assets.cyfan.top  # 域名
