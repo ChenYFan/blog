@@ -110,3 +110,18 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
+# offline config passed to sw-precache.
+service_worker:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: false
+  - urlPattern: /*  # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: cdn.staticfile.org  # 域名
+  - urlPattern: /*   # 子路径（接受通配符）
+      handler: cacheFirst
+      options:
+        origin: assets.cyfan.top  # 域名
