@@ -110,11 +110,3 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
-# offline config passed to sw-precache.
-# offline config passed to sw-precache.
-service_worker:
-  maximumFileSizeToCacheInBytes: 5242880
-  staticFileGlobs:
-  - public/**/*.{css,png,jpg,gif,svg,eot,ttf,woff,woff2}
-  stripPrefix: public
-  verbose: false
