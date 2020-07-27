@@ -115,6 +115,6 @@ sitemap:
 service_worker:
   maximumFileSizeToCacheInBytes: 5242880
   staticFileGlobs:
-  - public/**/*.{html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  - public/**/*.{css,png,jpg,gif,svg,eot,ttf,woff,woff2}
   stripPrefix: public
   verbose: false
