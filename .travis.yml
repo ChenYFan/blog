@@ -7,7 +7,6 @@ branches:
   only:
     - master # build master branch only
 script:
-  - npm i hexo-service-worker --save
   - hexo generate # generate static files
 deploy:
   provider: pages
