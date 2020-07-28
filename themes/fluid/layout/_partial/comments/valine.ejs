@@ -51,47 +51,47 @@ else window.onload = downloadJSAtOnload;
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<style>
-  
-:root {
-  --color-mode: 'light';
-  --valinetext: #fff;
-  --valineback: #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-
-  :root:not([data-user-color-scheme]) {
-  --valinetext: #fff;
-  --valineback: #000;
-  }
-}
-
-[data-user-color-scheme='dark'] {
-  --valinetext: #000;
-  --valineback: #fff;
-}
-
+  <style>
 .valine * {
-    color: var(--color-valinetext);
+    color: var(--text-color);
   }
 .valine .info .col{
-    background: var(--color-valineback);
+    background: var(--board-bg-color);
   }
 .valine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{
-    background: var(--color-valineback);
-	color: var(--color-valinetext);
+    background: var(--board-bg-color);
+	color: var(--text-color);
   }
 .valine .vlist .vcard .vcomment-body .vhead .vname{
-    color: var(--color-valinetext);
+    color: var(--text-color);
   }
 .valine .vlist .vcard .vcomment-children .vshow-children-wrapper .vshow-children{
-    color: var(--color-valinetext);
+    color: var(--text-color);
   }
 .valine .vinputs-area .textarea-wrapper .comment_trigger{
-    background-color: var(--color-valineback);
-  }
+	background-color: var(--board-bg-color);
+}
+.valine .vinputs-area .textarea-wrapper textarea {
+	background-color: var(--board-bg-color);
+	color: var(--text-color);
+}
+.valine .vinputs-area .auth-section {
+	background-color: var(--board-bg-color);
+		color: var(--text-color);
+}
+.valine .vinputs-area .auth-section .input-wrapper input {
+	background-color: var(--board-bg-color);
+		color: var(--text-color);
+}
+.valine .vinputs-area{
+	border: var(--board-bg-color);
+}
+.valine .vinputs-area .textarea-wrapper{
+	background-color: var(--board-bg-color);
+	color: var(--text-color);
+}
+.valine .vinputs-area .vextra-area .vsmile-icons{
+	border-top: 1px solid transparent
+}
 </style>
+
