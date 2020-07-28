@@ -573,6 +573,50 @@ else window.onload = downloadJSAtOnload;
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<style>
+  
+:root {
+  --color-mode: 'light';
+  --valinetext: #fff;
+  --valineback: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-user-color-scheme]) {
+  --valinetext: #fff;
+  --valineback: #000;
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --valinetext: #000;
+  --valineback: #fff;
+}
+
+.valine * {
+    color: var(--color-valinetext);
+  }
+.valine .info .col{
+    background: var(--color-valineback);
+  }
+.valine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{
+    background: var(--color-valineback);
+	color: var(--color-valinetext);
+  }
+.valine .vlist .vcard .vcomment-body .vhead .vname{
+    color: var(--color-valinetext);
+  }
+.valine .vlist .vcard .vcomment-children .vshow-children-wrapper .vshow-children{
+    color: var(--color-valinetext);
+  }
+.valine .vinputs-area .textarea-wrapper .comment_trigger{
+    background-color: var(--color-valineback);
+  }
+</style>
 
               </article>
             

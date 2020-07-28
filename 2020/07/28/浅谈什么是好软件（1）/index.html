@@ -220,7 +220,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-28 11:00" pubdate>
+    <time datetime="2020-07-28 11:21" pubdate>
       2020年7月28日 上午
     </time>
   </div>
@@ -520,6 +520,50 @@ else window.onload = downloadJSAtOnload;
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<style>
+  
+:root {
+  --color-mode: 'light';
+  --valinetext: #fff;
+  --valineback: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-user-color-scheme]) {
+  --valinetext: #fff;
+  --valineback: #000;
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --valinetext: #000;
+  --valineback: #fff;
+}
+
+.valine * {
+    color: var(--color-valinetext);
+  }
+.valine .info .col{
+    background: var(--color-valineback);
+  }
+.valine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{
+    background: var(--color-valineback);
+	color: var(--color-valinetext);
+  }
+.valine .vlist .vcard .vcomment-body .vhead .vname{
+    color: var(--color-valinetext);
+  }
+.valine .vlist .vcard .vcomment-children .vshow-children-wrapper .vshow-children{
+    color: var(--color-valinetext);
+  }
+.valine .vinputs-area .textarea-wrapper .comment_trigger{
+    background-color: var(--color-valineback);
+  }
+</style>
 
               </article>
             
