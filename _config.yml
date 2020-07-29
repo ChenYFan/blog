@@ -131,4 +131,4 @@ neat_js:
   exclude:
     - '**/*.min.js'
     - '**/jquery.fancybox.pack.js'
-    - '**/index.js
+    - '**/index.js'
