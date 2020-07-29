@@ -7,7 +7,6 @@ branches:
   only:
     - master # build master branch only
 script:
-  - npm install hexo-neat --save
   - hexo generate # generate static files
 deploy:
   provider: pages
