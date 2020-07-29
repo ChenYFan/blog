@@ -18,7 +18,7 @@ var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZe
   <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
   <meta name="author" content="CYF">
   <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽">
-  <title>留言板 || 陈YFの博客(￣▽￣)&#34;</title>
+  <title>打造一个可国内访问的Blogger（Blogspot）方法 || 陈YFの博客(￣▽￣)&#34;</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -207,7 +207,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://img.cyfan.top/pic/cover/2.jpg') no-repeat center center;
+         style="background: url('https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -220,8 +220,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="1949-10-01 23:59" pubdate>
-      1949年10月1日 晚上
+    <time datetime="2020-07-29 10:43" pubdate>
+      2020年7月29日 上午
     </time>
   </div>
 
@@ -231,7 +231,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      940字
+      2.1k字
     </span>
   
 
@@ -241,7 +241,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      26
       分钟
     </span>
   
@@ -275,82 +275,206 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">留言板</h1>
+            <h1 style="display: none">打造一个可国内访问的Blogger（Blogspot）方法</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>有什么要说的可以写在这里<br>如果你想说悄悄话，发邮件到<a href="mailto:&#x63;&#x68;&#x65;&#110;&#x79;&#102;&#64;&#x63;&#121;&#x66;&#97;&#110;&#46;&#x74;&#111;&#x70;" target="_blank" rel="noopener">&#x63;&#x68;&#x65;&#110;&#x79;&#102;&#64;&#x63;&#121;&#x66;&#97;&#110;&#46;&#x74;&#111;&#x70;</a><br>你可能需要注意：</p>
-<ol>
-<li><span class="heimu" title="不堪回首的更换评论系统记录"> <del>来比力服务器部署于韩国，可能无法加载或长时间空白。在无法加载情况下请刷新，在空白情况下请耐心等待。如果手机SNS登陆方式被遮挡，请横屏选择登陆方式！</del> <del>加载太TM慢了！！！！换作Valine吧！评论时要注明自己的邮箱，头像会来自<a href="http://cn.gravatar.com" target="_blank" rel="noopener">Gravatar</a>，同时你也会收到邮件通知。一定要正确！  蛋疼的是LeanCloud出了点小问题,于是跳槽到Gitalk了.使用Gitalk需要Github账号,而且很有可能需要梯子!国内对于Github相当不友好,很有可能加载不出来或者是网络错误! ~</del> </span> Valine，我最终还是选择了你【吐血】</li>
-<li>拒绝包括但不限于色情、反动、低俗发言，拒绝抹黑当局的言论。</li>
-<li>拒绝无意义的言语，相信我，你打字要6秒，我删除只要1秒！</li>
-<li>拒绝机器人、小学生、广告主！</li>
-<li>欢迎添加友情链接!不过您可能需要注意以下几点:</li>
-</ol>
+              <p>Blogger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&amp;Wordpress高昂的服务器费用，避免了Hexo&amp;Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。</p>
+<p>实际上，当今写博客的软件数不胜数，主要分为一下三类：</p>
 <ul>
-<li>0.首先确保有本站的友情链接:</li>
+<li>服务器部署：典型代表：Wordpress\Typecho</li>
+<li>无服务器托管：典型代表：Hexo\Jekyll\Gidea\Hugo\Hola等等</li>
+<li>集成型网站：Blogger、简书、CSDN、cnblog、wodemo等等</li>
 </ul>
-<div class="hljs"><pre><code class="hljs undefined">标题: 陈YF的博客
-地址: https:<span class="hljs-comment">//blog.cyfan.top</span>
-图像<span class="hljs-comment">(如果有)</span>: https:<span class="hljs-comment">//img.cyfan.top/pic/BLOGER.jpg</span>
-简介<span class="hljs-comment">(如果有)</span>: 一个在互联网角落挣扎的小小博客，很小很小</code></pre></div>
-
-<ul>
-<li><p>1.存活时间不小于3个月。</p>
-</li>
-<li><p>2.确定不会随随便便删库跑路。</p>
-</li>
-<li><p>3.时间达到30天无法正常访问的将会被踢除。</p>
-</li>
-<li><p>4.免费顶级域名看情况接受,二级域名(如*.cyfan.top)则需验证主域名所有权，验证方式（设置顶级域名的TXT记录为二级记录的SHA256值，如我的顶级域名是 <code>cyfan.top</code>,我的二级域名是 <code>blog.cyfan.top</code>,则txt记录为： <code>cyfan.top 0370E381DE878A0799F3B72600C2805AC4BCEA76AA0A6539812F77361E696353</code> ,【大小写不严格】，这说明对于 *.github.io 和 *.coding.me 这种公有域名给予拒绝）</p>
-</li>
-<li><p>5.确保站点可以以HTTPS访问,允许不强制,可以没有HSTS(为什么要https原因很显然,这里不阐述) 。当然有例外，如果是我恳求加友链的https可以作为不是特别重要的原因。</p>
-</li>
-<li><p>6.确保站点内容不违反中国大陆法律.</p>
-</li>
-<li><p>7.拥有尽可能多的原创内容,越多优先级越高。</p>
-</li>
-<li><p>8.如果因特殊原因而更换地址，请留言或PR。</p>
-</li>
-</ul>
-<ul>
-<li><del>9.1 添加方式：留言。格式如下：</del></li>
-</ul>
-<div class="hljs"><pre><code class="hljs undefined">求友链！
-标题: <span class="hljs-meta">#尽可能简短，不得大于10字</span>
-地址: https:<span class="hljs-comment">//</span></code></pre></div>
-
+<p>上面所有软件，优缺点都有，具体看个人选择</p>
+<p>当然，个人认为Typecho适合做个人博客，Hexo可以作为要求不高的人。集成性网站最主要的是只要安安心心写文章，不用管后端乱七八糟的代码。当然，最有问题的是大多数都不支持绑定域名，而且经常往网站上塞广告，自定义范围也不够。</p>
+<p>接下来，我们扯扯集成博客中的一股清流：Blogger</p>
 <blockquote>
-<p>我们拒绝了留言的方式添加友链，任何以留言形式添加友链都将被我们拒绝，请采用PR形式添加友链</p>
+<p>Blogger.com是由Pyra Labs公司创立，是目前全球用户数量最多的个人网志服务提供商。Pyra Labs和Blogger.com均被Google公司收购，成为其旗下的一项服务内容。<br>Blogger提供免费主机Blogspot.com存放博客，用户不必写任何代码或者安装服务器软件或脚本，通过所见即所得界面轻松地创建、发布、维护和修改自己的网志。<br>Blogger允许有经验的用户自行设计博客界面，其模板支持使用HTML和CSS进行编辑</p>
 </blockquote>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20084428.jpg" srcset="/img/loading.gif" alt></p>
+<p>实际上，由于Blogger托管于谷歌，写作域名 <code>www.blogger.com</code> 和托管域名 <code>*.blogspot.com</code> 均被MainLand所Ban。但是接下来来，我会讲讲如何打造一个能在国内大陆访问的Blogger</p>
+<h1 id="1-注册Blogger"><a href="#1-注册Blogger" class="headerlink" title="1. 注册Blogger"></a>1. 注册Blogger</h1><blockquote>
+<p>众所周知，请科学上网。</p>
+</blockquote>
+<p>用谷歌账号登录 (<a href="https://www.blogger.com" target="_blank" rel="noopener">https://www.blogger.com</a>) ，没有？不是⑧不是吧不是扒，都0202年了，还不会去注册一个谷歌账号？</p>
+<p>进入控制台，新建一个博客：</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20084652.jpg" srcset="/img/loading.gif" alt></p>
+<p>绑定域名,这一步随意,因为我们还要绑定一个自定义域名.</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20084847.jpg" srcset="/img/loading.gif" alt></p>
+<p>点击确定,一个博客就搭建好了!快吧?</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20085021.jpg" srcset="/img/loading.gif" alt></p>
+<p>这时候,我们<strong>科学上网</strong>访问之前的域名,我这里是: <code>cyfblogger.blogspot.com</code>，打开：</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20085021.jpg" srcset="/img/loading.gif" alt></p>
+<p>搞定！搞完之后才知道，Blogger真正做到了什么叫1分钟创建一个博客，但这还不够，中国访客实际上还是打不开这个网站<a href="大多被污染到莫名其妙的ip去了,例如Facebook和Twitter">1</a>。所以，接下来，我们要让这个网站能在中国访问。</p>
+<p>目前我们有一下思路:</p>
 <ul>
-<li><p>9.2另一种添加方式：Pull Request:</p>
-</li>
-<li><p>9.2.1 进入<a href="https://github.com/ChenYFan/blog" target="_blank" rel="noopener">存储Blog的Repo</a>, <del>Fork</del>(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)[<a href="https://github.com/ChenYFan/blog/blob/master/themes/fluid/\_config.yml" target="_blank" rel="noopener">https://github.com/ChenYFan/blog/blob/master/themes/fluid/\_config.yml</a> ] 在倒数第二行按照示例规则添加友链【务必注意缩进、空格和换行】:</p>
-</li>
+<li>选择一个未被官方屏蔽的Blogger节点,此方法几年前还是可用的,最近不大灵光了,被屏蔽的差不多了</li>
+<li>使用服务器反向代理Blogger,不推荐,有这个闲工夫你还不如直接用Typecho呢</li>
+<li>CloudFlareCDN反向代理,这似乎是唯一一个解决的办法.</li>
 </ul>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-selector-tag">-</span> &#123;        
-<span class="hljs-attribute">title</span>: <span class="hljs-string">'博客名字【不得大于9字，否则会被截断】'</span>,
-link: <span class="hljs-string">'网页链接，需进行主域名认证'</span>,
-intro: <span class="hljs-string">'Slogan【不得大于15字，否则会被截断】'</span>,
-image: <span class="hljs-string">'icon图片链接【推荐使用jsdelivr加速链接或者sm.ms链接，使用github直接做图床未经加速将受到警告】'</span>,
-&#125;</code></pre></div>
+<h1 id="2-绑定自定义域名"><a href="#2-绑定自定义域名" class="headerlink" title="2.绑定自定义域名"></a>2.绑定自定义域名</h1><p>由于 <code>*.blogspot.com</code> 泛域名被屏蔽,所以你必须要有一个自己的域名.</p>
+<p>不推荐免费域名，因为免费域名无法自选CF节点，当然你也可以换别的方式。</p>
+<p>这里推荐一个买域名的好网站：<code>https://namebeta.com/</code> namebeta并不是购买域名的地方,但是它可以帮你货比三家,让你跳出更优惠的方案,并且自带各种温馨提示,包括能不能备案,有没有被注册等等,比较适合刚入门想买域名的小白.</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20090113.jpg" srcset="/img/loading.gif" alt></p>
+<p>购买绑定NS不在谈论范围内,有域名的看下去</p>
+<p>以下演示方便在CloudFlare官网里进行,采用免费域名演示,实际用笨牛CNAME解析为好.</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20091514.jpg" srcset="/img/loading.gif" alt></p>
+<p>点击【设置】-【正在发布】-【自定义域名】</p>
+<p>接着会报错：</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20092548.jpg" srcset="/img/loading.gif" alt></p>
+<p>提示没验证，没关系，去CloudFlare加上CNAME，注意验证过程中切记把橙色云朵点灰<a href="实际上下面那条记录是为了验证你有没有主域名控制权。">2</a>：</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20092736.jpg" srcset="/img/loading.gif" alt></p>
+<p>回去，点击确定，勾选HTTPS可用性。</p>
+<p>谷歌SSL验证和办法真的慢，没办法，喝杯茶，写点作业，过了10min，显示颁发成功：</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20093118.jpg" srcset="/img/loading.gif" alt></p>
+<p>回到CloudFlare，把访客访问的那条记录点亮橙色云朵，作为验证的记录不点亮.</p>
+<p>国内访问试试？</p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20094026.jpg" srcset="/img/loading.gif" alt></p>
+<p>这时候我们发现，虽然国内能直连了，但是背景图加载不出来，整个网页加载缓慢。控制台以下，我们就会发现，Blogspot请求了国外谷歌边缘节点的内容，包括背景图片和部分js。</p>
+<p>所以，我们还要对博客主题进行加工。</p>
+<h1 id="3-更改主题"><a href="#3-更改主题" class="headerlink" title="3.更改主题"></a>3.更改主题</h1><blockquote>
+<p>演示方便，用Contempo Light主题<br>实际上用其它主题也差不多的，注意替换掉外链即可</p>
+</blockquote>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20094333.jpg" srcset="/img/loading.gif" alt></p>
+<p>点击备份，下载主题</p>
+<p>用Notepad++打开，方便处理</p>
+<h2 id="屏蔽加载"><a href="#屏蔽加载" class="headerlink" title="屏蔽加载"></a>屏蔽加载</h2><p>将<code>&lt;head&gt;</code>替换为<code>&amp;lt;!--&lt;head&gt;--&amp;gt;&amp;lt;head&amp;gt;</code></p>
+<p>将<code>&lt;/head&gt;</code>替换为<code>&amp;lt;/head&amp;gt;&amp;lt;!--&lt;/head&gt;--&amp;gt;</code></p>
+<p>将<code>&lt;/body&gt;</code>替换为<code>&amp;lt;!--&lt;/body&gt;--&amp;gt;&amp;lt;/body&amp;gt;</code></p>
+<h2 id="替换背景"><a href="#替换背景" class="headerlink" title="替换背景"></a>替换背景</h2><p>在49行左右，有这么一段代码：</p>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"body.background"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Background"</span>
+      <span class="hljs-attr">color</span>=<span class="hljs-string">"$(body.background.color)"</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">"background"</span>
+      <span class="hljs-attr">default</span>=<span class="hljs-string">"$(color) none repeat scroll top left"</span>  <span class="hljs-attr">value</span>=<span class="hljs-string">"$(color) url(https://themes.googleusercontent.com/image?id=L1lcAxxz0CLgsDzixEprHJ2F38TyEjCyE3RSAjynQDks0lT1BDc1OxXKaTEdLc89HPvdB11X9FDw) no-repeat scroll top center /* Credit: Michael Elkan (http://www.offset.com/photos/394244) */;"</span>/&gt;</span></code></pre></div>
 
-<p>由于PR的特殊性，没有遵守以上任何一条条款将无条件拒绝并ClosePR。同样，为了维护公平，我们<strong>拒绝了</strong>留言方式添加，<del>除非你和CYF是好朋友</del></p>
-<img src="https://img.cyfan.top/pic/TK.jpg" srcset="/img/loading.gif" class="full-image">
+<p>将其中的</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">https:</span><span class="hljs-comment">//themes.googleusercontent.com/image?id=L1lcAxxz0CLgsDzixEprHJ2F38TyEjCyE3RSAjynQDks0lT1BDc1OxXKaTEdLc89HPvdB11X9FDw</span></code></pre></div>
 
+<p>替换为背景外链.</p>
+<h2 id="必要的JS替换"><a href="#必要的JS替换" class="headerlink" title="必要的JS替换"></a>必要的JS替换</h2><p>打开F12,我们会发现,有一个资源阻塞了请求:</p>
+<p><code>https://resources.blogblog.com/blogblog/data/res/2629068285-indie_compiled.js</code></p>
+<p>但这个是必须的,我们要保留,搜索 <code>&lt;b:template-script async=&#39;true&#39; name=&#39;indie&#39; version=&#39;1.0.0&#39;/&gt;</code> 并删除,将其替换成:<br><code>&lt;script async=&#39;async&#39; src=&#39;https://cdn.jsdelivr.net/gh/chenyfan/chenyfan.github.io/1468123664-indie_compiled.js&#39;&gt;&lt;/script&gt;</code></p>
+<blockquote>
+<p>当然你也可以用自己的链接.</p>
+</blockquote>
+<h2 id="解决缩略图问题"><a href="#解决缩略图问题" class="headerlink" title="解决缩略图问题"></a>解决缩略图问题</h2><p>【感谢阿虚同学的博客解决此方法】</p>
+<p>将 此JS 代码放置于 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script> 标签前：</p>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">b:if</span> <span class="hljs-attr">cond</span>=<span class="hljs-string">'data:blog.pageType in &#123;"index","searchQuery","searchLabel","archive"&#125;'</span>&gt;</span> <span class="hljs-comment">&lt;!--如果当前页是首页，搜索页，标签页，那么代码继续执行--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span>=<span class="hljs-string">'defer'</span>&gt;</span><span class="javascript">
+        <span class="hljs-comment">//&lt;![CDATA[</span>
+        <span class="hljs-keyword">var</span> postThumbnails = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"post-thumbnail"</span>);
+        <span class="hljs-keyword">var</span> postContents = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"post-text"</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;postContents.length;i++)
+        &#123;
+            <span class="hljs-keyword">var</span> postContent = postContents[i].innerText;
+            <span class="hljs-keyword">var</span> imgReg = <span class="hljs-regexp">/&lt;img.*?(?:&gt;|\/&gt;)/gi</span>;
+            <span class="hljs-keyword">var</span> srcReg = <span class="hljs-regexp">/src=[\'\"]?([^\'\"]*)[\'\"]?/i</span>;
+            <span class="hljs-keyword">var</span> imgTags = postContent.match(imgReg);
+            imgSrcs = imgTags[<span class="hljs-number">0</span>].match(srcReg);
+            imgSrc = imgSrcs[<span class="hljs-number">1</span>];
+            postThumbnails[i].setAttribute(<span class="hljs-string">'src'</span>, imgSrc);
+        &#125;
+        <span class="hljs-comment">//]]&gt;</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">b:if</span>&gt;</span></code></pre></div>
+
+<p>修改模板，搜索data:post.featuredImage，在缩略图处改成下代码：</p>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">b:if</span> <span class="hljs-attr">cond</span>=<span class="hljs-string">'data:post.featuredImage'</span>&gt;</span>  <span class="hljs-comment">&lt;!--判断文章内是否有图片，有则代码继续执行--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'snippet-thumbnail'</span>&gt;</span>  <span class="hljs-comment">&lt;!--创建一个 div 容器，缩略图放置在这里--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'post-thumbnail'</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">'(max-width: 800px) 20vw, 128px'</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://ae01.alicdn.com/kf/HTB1Gb7LUmzqK1RjSZFL5jcn2XXac.gif'</span>/&gt;</span>  <span class="hljs-comment">&lt;!--预先放置一个加载图片，增强用户体验--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'post-text'</span> <span class="hljs-attr">style</span>=<span class="hljs-string">'display:none;'</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">data:post.body.escaped</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span> <span class="hljs-comment">&lt;!--这里放置文章全文，图片从中提取，样式设置为不显示--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">b:if</span>&gt;</span></code></pre></div>
+
+<h2 id="头像、icon设置"><a href="#头像、icon设置" class="headerlink" title="头像、icon设置"></a>头像、icon设置</h2><p>搜索 <code>profile-img</code> 约3899行：</p>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'profile-img'</span> <span class="hljs-attr">expr:alt</span>=<span class="hljs-string">'data:messages.myPhoto'</span> <span class="hljs-attr">expr:height</span>=<span class="hljs-string">'data:authorPhoto.height'</span> <span class="hljs-attr">expr:src</span>=<span class="hljs-string">'data:authorPhoto.image'</span> <span class="hljs-attr">expr:width</span>=<span class="hljs-string">'data:authorPhoto.width'</span>/&gt;</span></code></pre></div>
+
+<p>将其直接改成</p>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'profile-img'</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"你的头像外链地址"</span>&gt;</span></code></pre></div>
+
+<h2 id="字体问题"><a href="#字体问题" class="headerlink" title="字体问题"></a>字体问题</h2><p>我测试时没有发现字体相关问题，请求字体的网址gstatic.com在国内可以访问，虽然部分地区莫名其妙解析到澳大利亚facebook，但大多数都正确解析时国内谷翔。</p>
+<h2 id="评论问题"><a href="#评论问题" class="headerlink" title="评论问题"></a>评论问题</h2><p>默认的Google评论肯定时不行的，留着还拖慢加载，推荐用DiqusJS或Valine.</p>
+<p>修改主题，搜索 <code>&lt;b:includable id=&#39;comments&#39; var=&#39;post&#39;&gt;</code> 约3453行至 <code>&lt;/b:includable&gt;</code> 3511行,全部删除,将以下代码填写回原处</p>
+<div class="hljs"><pre><code class="hljs undefined">&lt;<span class="hljs-selector-tag">b</span>:includable id=<span class="hljs-string">'comments'</span> var=<span class="hljs-string">'post'</span>&gt;
+                      &lt;<span class="hljs-selector-tag">div</span> id=<span class="hljs-string">'disqus_thread'</span>/&gt;
+                      
+&lt;/<span class="hljs-selector-tag">b</span>:includable&gt;</code></pre></div>
+
+<p>在末端 <code>&amp;lt;!--&lt;/body&gt;--&amp;gt;&amp;lt;/body&amp;gt;</code> 前添加:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+<span class="hljs-keyword">var</span> dsqjs = <span class="hljs-keyword">new</span> DisqusJS(&#123;
+    shortname: <span class="hljs-string">''</span>,
+    siteName: <span class="hljs-string">''</span>,
+    identifier: <span class="hljs-string">''</span>,
+    url: <span class="hljs-string">''</span>,
+    title: <span class="hljs-string">''</span>,
+    api: <span class="hljs-string">''</span>,
+    apikey: <span class="hljs-string">''</span>,
+    admin: <span class="hljs-string">''</span>,
+    adminLabel: <span class="hljs-string">''</span>
+&#125;);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
+
+<p>以上代码具体配置前往  [<a href="https://github.com/SukkaW/DisqusJS#%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">https://github.com/SukkaW/DisqusJS#%E4%BD%BF%E7%94%A8</a> ] 配置</p>
+<p>完</p>
+<p>Demo&amp;&amp;以后的日记本:[<a href="https://moe.cyfan.top" target="_blank" rel="noopener">https://moe.cyfan.top</a> ]</p>
 <hr>
-<p>以下是留言区:</p>
+<p>推荐自选CDN加速.</p>
+<p>注意以后写文章图片必须是外链,可以试试sm.ms</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/好方法/">好方法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/Blogger/">Blogger</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/Blogspot/">Blogspot</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/谷歌/">谷歌</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/博客/">博客</a>
+                    
+                  </div>
                 
               </div>
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../浅谈什么是好软件（1）/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">浅谈什么是好软件（1）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../09/free-10GB-oss-poweredby-backblaze/">
+                        <span class="hidden-mobile">白嫖！10GB免流海外BackBlaze对象存储【可套CDN】</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
@@ -673,7 +797,7 @@ $(document).ready(function() {
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "留言板&nbsp;",
+        "打造一个可国内访问的Blogger（Blogspot）方法&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,
