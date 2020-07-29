@@ -1,14 +1,728 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><script>var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZeWlNZmZSLU1kWV",mXLcNMYJJ4="hiTU1J",hPjHsvGO5="ODJMb2lBZHczYjNBd2Nl"</script><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写"><meta name="author" content="CYF"><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽"><title>MarkDown语法详解（高级版） || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="../../../../lib/hint/hint.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="../../../../css/main.css"><script src="../../../../js/utils.js"></script><script src="../../../../js/color-schema.js"></script></head><script>var rfwFoV1="MDkxUFRKVn",$$Yn2="UDc2eGxnRVV5",TWOUMh1="Uk1YNld0eXp3VWMyaVI",jUYjTJZ2="NU9tcjdkYk9PWXl",rU3="wdGp5Z3pxQXZjL"</script><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../../../../archives/">归档 </a><a class="dropdown-item" href="../../../../categories/">分类 </a><a class="dropdown-item" href="../../../../tags/">标签</a></div></li><li class="nav-item"><a class="nav-link" href="../../../../about/">关于</a></li><li class="nav-item"><a class="nav-link" href="../../../../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="../../../../1949/10/01/留言板/">留言板</a></li><li class="nav-item"><a class="nav-link" href="../../../../随口胡说/">随口胡说</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://img.cyfan.top/pic/img/3.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2019-07-24 12:46" pubdate>2019年7月24日 下午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.2k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 15 分钟</span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">MarkDown语法详解（高级版）</h1><div class="markdown-body" id="post-body"><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><blockquote><p><strong>注意</strong><br>文章内所有名字纯属虚构,如有雷同,纯属巧合!</p></blockquote><blockquote><p>这是第三篇MarkDown语法详解（高级版），如果你想要学习第二篇，请前往<a href="/2019/07/22/MarkDown语法详解（中级版）">MarkDown语法详解（中级版）</a>；如果你想要学习第一篇，请前往<a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a></p></blockquote><blockquote><p><strong>警告</strong><br>本次授课相对来说比较难,请做好心理准备!</p></blockquote><h2 id="列表："><a href="#列表：" class="headerlink" title="列表："></a>列表：</h2><h3 id="正常方法"><a href="#正常方法" class="headerlink" title="正常方法:"></a>正常方法:</h3><p>Markdown 制作表格使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br>语法格式如下：</p><div class="hljs"><pre><code class="hljs Markdown">|  表头   | 表头  |
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<script>
+var ZU4="DQ3dmbG5L",MjOF5="U1kWVhiTU1J",wlNgSyoP6="bnR2NUlT",j3="RIczBTZ0NMN2FZeWlNZmZSLU1kWV",mXLcNMYJJ4="hiTU1J",hPjHsvGO5="ODJMb2lBZHczYjNBd2Nl";
+</script>
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://img.cyfan.top/pic/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://img.cyfan.top/pic/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  <meta name="description" content="高中生技术博,喜欢薅羊毛,爱白嫖,啥都写">
+  <meta name="author" content="CYF">
+  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽">
+  <title>MarkDown语法详解（高级版） || 陈YFの博客(￣▽￣)&#34;</title>
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css">
+  <link rel="stylesheet" href="../../../../lib/hint/hint.min.css">
+
+  
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css">
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script src="../../../../js/utils.js"></script>
+  <script src="../../../../js/color-schema.js"></script>
+</head>
+
+<script>
+var rfwFoV1="MDkxUFRKVn",$$Yn2="UDc2eGxnRVV5",TWOUMh1="Uk1YNld0eXp3VWMyaVI",jUYjTJZ2="NU9tcjdkYk9PWXl",rU3="wdGp5Z3pxQXZjL";
+</script>
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../../../../index.html">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../../../archives/">
+                    
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../../../categories/">
+                    
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../../../tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../about/">
+                
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../1949/10/01/留言板/">
+                
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../随口胡说/ ">
+                
+                随口胡说
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://img.cyfan.top/pic/img/3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-07-24 12:46" pubdate>
+      2019年7月24日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+      分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">MarkDown语法详解（高级版）</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><blockquote>
+<p><strong>注意</strong><br>文章内所有名字纯属虚构,如有雷同,纯属巧合!</p>
+</blockquote>
+<blockquote>
+<p>这是第三篇MarkDown语法详解（高级版），如果你想要学习第二篇，请前往<a href="/2019/07/22/MarkDown语法详解（中级版）">MarkDown语法详解（中级版）</a>；如果你想要学习第一篇，请前往<a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a></p>
+</blockquote>
+<blockquote>
+<p><strong>警告</strong><br>本次授课相对来说比较难,请做好心理准备!</p>
+</blockquote>
+<h2 id="列表："><a href="#列表：" class="headerlink" title="列表："></a>列表：</h2><h3 id="正常方法"><a href="#正常方法" class="headerlink" title="正常方法:"></a>正常方法:</h3><p>Markdown 制作表格使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br>语法格式如下：</p>
+<div class="hljs"><pre><code class="hljs Markdown">|  表头   | 表头  |
 |  ----  | ----  |
 | 单元格  | 单元格 |
-| 单元格  | 单元格 |</code></pre></div><table><thead><tr><th>表头</th><th>表头</th></tr></thead><tbody><tr><td>单元格</td><td>单元格</td></tr><tr><td>单元格</td><td>单元格</td></tr></tbody></table><p>当然你也可以在表格中使用特殊符号如:</p><div class="hljs"><pre><code class="hljs Markdown">|人物|技能一|技能二|技能三|大招|
+| 单元格  | 单元格 |</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p>当然你也可以在表格中使用特殊符号如:</p>
+<div class="hljs"><pre><code class="hljs Markdown">|人物|技能一|技能二|技能三|大招|
 |----|----|----|----|----|
 |刘老师|讲一个段子|加一张试卷|/|考一场试|
 |梁M法|抢体育课|<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">yello</span>&gt;</span></span>抢电脑课<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></span>|<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">red</span>&gt;</span></span>抢美术课<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></span>|<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">green</span>&gt;</span></span>连续考试<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></span>|
-|刘老师老婆|[<span class="hljs-string">哭</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|[<span class="hljs-string">闹</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|[<span class="hljs-string">上吊</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|向刘老师发射一张离婚协议书.对其造成5000点物理伤害|</code></pre></div><table><thead><tr><th>人物</th><th>技能一</th><th>技能二</th><th>技能三</th><th>大招</th></tr></thead><tbody><tr><td>刘老师</td><td>讲一个段子</td><td>加一张试卷</td><td>/</td><td>考一场试</td></tr><tr><td>梁M法</td><td>抢体育课</td><td><font color="yello">抢电脑课</font></td><td><font color="red">抢美术课</font></td><td><font color="green">连续考试</font></td></tr><tr><td>刘老师老婆</td><td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">哭</a></td><td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">闹</a></td><td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">上吊</a></td><td>向刘老师发射一张离婚协议书.对其造成5000点物理伤害</td></tr></tbody></table><h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐:"></a>对齐:</h3><p>我们可以设置表格的对齐方式：</p><ul><li>-: 设置内容和标题栏居右对齐。</li><li>:- 设置内容和标题栏居左对齐。</li><li>:-: 设置内容和标题栏居中对齐。<br>实例如下：<div class="hljs"><pre><code class="hljs undefined">|<span class="hljs-string"> 左对齐 </span>|<span class="hljs-string"> 右对齐 </span>|<span class="hljs-string"> 居中对齐 </span>|
+|刘老师老婆|[<span class="hljs-string">哭</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|[<span class="hljs-string">闹</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|[<span class="hljs-string">上吊</span>](<span class="hljs-link">https://baike.baidu.com/item/一哭二闹三上吊/838254</span>)|向刘老师发射一张离婚协议书.对其造成5000点物理伤害|</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>人物</th>
+<th>技能一</th>
+<th>技能二</th>
+<th>技能三</th>
+<th>大招</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘老师</td>
+<td>讲一个段子</td>
+<td>加一张试卷</td>
+<td>/</td>
+<td>考一场试</td>
+</tr>
+<tr>
+<td>梁M法</td>
+<td>抢体育课</td>
+<td><font color="yello">抢电脑课</font></td>
+<td><font color="red">抢美术课</font></td>
+<td><font color="green">连续考试</font></td>
+</tr>
+<tr>
+<td>刘老师老婆</td>
+<td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">哭</a></td>
+<td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">闹</a></td>
+<td><a href="https://baike.baidu.com/item/一哭二闹三上吊/838254" target="_blank" rel="noopener">上吊</a></td>
+<td>向刘老师发射一张离婚协议书.对其造成5000点物理伤害</td>
+</tr>
+</tbody></table>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐:"></a>对齐:</h3><p>我们可以设置表格的对齐方式：</p>
+<ul>
+<li>-: 设置内容和标题栏居右对齐。</li>
+<li>:- 设置内容和标题栏居左对齐。</li>
+<li>:-: 设置内容和标题栏居中对齐。<br>实例如下：<div class="hljs"><pre><code class="hljs undefined">|<span class="hljs-string"> 左对齐 </span>|<span class="hljs-string"> 右对齐 </span>|<span class="hljs-string"> 居中对齐 </span>|
 |<span class="hljs-string"> :-----</span>|<span class="hljs-string"> ----: </span>|<span class="hljs-string"> :----: </span>|
 |<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|
-|<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|</code></pre></div></li></ul><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中对齐</th></tr></thead><tbody><tr><td align="left">单元格</td><td align="right">单元格</td><td align="center">单元格</td></tr><tr><td align="left">单元格</td><td align="right">单元格</td><td align="center">单元格</td></tr></tbody></table><blockquote><p><strong>提示</strong>:<br>表格打完要空一行啊!</p></blockquote><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图:"></a>流程图:</h2><p>Hexo用户可能要额外安装插件: <code>npm install --save hexo-filter-flowchart</code></p><p>st=&gt;start: Start:&gt;<a href="http://www.google.com[blank]" target="_blank" rel="noopener">http://www.google.com[blank]</a> e=&gt;end:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a> op1=&gt;operation: My Operation sub1=&gt;subroutine: My Subroutine cond=&gt;condition: Yes or No?:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a> io=&gt;inputoutput: catch something… para=&gt;parallel: parallel tasks st-&gt;op1-&gt;cond cond(yes)-&gt;io-&gt;e cond(no)-&gt;para para(path1, bottom)-&gt;sub1(right)-&gt;op1 para(path2, top)-&gt;op1<br>具体写法前往<a href="http://flowchart.js.org" target="_blank" rel="noopener">官网</a>了解更多.</p><h2 id="打出正常符号来"><a href="#打出正常符号来" class="headerlink" title="打出正常符号来:"></a>打出正常符号来:</h2><p>用<code>\</code>反斜杠来转义,转义表格如下:</p><table><thead><tr><th>你要打出的符号</th><th>你应该写出的符号</th></tr></thead><tbody><tr><td><code>!</code></td><td>`!</td></tr><tr><td>`</td><td>\`</td></tr><tr><td><code>#</code></td><td><code>\#</code></td></tr><tr><td><code>-</code></td><td><code>\-</code></td></tr><tr><td><code>&amp;</code></td><td><code>\&amp;</code></td></tr><tr><td><code>*</code></td><td><code>\*</code></td></tr><tr><td><code>+</code></td><td><code>\+</code></td></tr></tbody></table><p>等等等等只要以单个<code>\</code>放在需转义的单个字符前即可.</p><blockquote><p><strong>注意</strong><br>多字符转义需要一个一个添加<code>\</code>!<br>被`和```包裹起来的代码无需转义!</p></blockquote><h2 id="公式"><a href="#公式" class="headerlink" title="公式:"></a>公式:</h2><h3 id="单行公式"><a href="#单行公式" class="headerlink" title="单行公式:"></a>单行公式:</h3><p>用一个<code>$</code>来包裹单行代码(Hexo不支持)</p><h3 id="多行公式："><a href="#多行公式：" class="headerlink" title="多行公式："></a>多行公式：</h3><p>用两个<code>$</code>来包裹单行代码(Hexo不支持)</p><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo:"></a>Todo:</h2><p>用<code>[ ]</code>代替未完成的事项:</p><ul><li><input disabled type="checkbox"> 语文作业<br>用<code>[x]</code>代替已完成的事项:</li><li><input checked disabled type="checkbox"> 科学作业</li></ul><blockquote><p><strong>注意</strong><br>如果你显示不出来….<br>说明你踩坑里去了!<br>在每一个<code>[ ]</code>和<code>[x]</code>前要加上<a href="/2019/07/22/MarkDown语法详解（中级版）/#无序排序">无序列表的符号</a>!!<br>反正我是踩坑里去了!</p></blockquote><h2 id="HTML标签："><a href="#HTML标签：" class="headerlink" title="HTML标签："></a>HTML标签：</h2><p>Markdown本身就能与html互相转换,比如:</p><div class="hljs"><pre><code class="hljs markdown">[<span class="hljs-string">baidu</span>](<span class="hljs-link">https://baidu.com</span>)</code></pre></div><p>转换成html:</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://baidu.com"</span>&gt;</span>baidu<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。<br>目前支持的 HTML 元素有：<code>&amp;amp;lt;kbd&amp;amp;gt; &amp;amp;lt;b&amp;amp;gt; &amp;amp;lt;i&amp;amp;gt; &amp;amp;lt;em&amp;amp;gt; &amp;amp;lt;sup&amp;amp;gt; &amp;amp;lt;sub&amp;amp;gt; &amp;amp;lt;br&amp;amp;gt;</code>等 ，如：<br>此处讲解几个不能被markdown使用的标签:</p><h3 id="按键符号"><a href="#按键符号" class="headerlink" title="按键符号:"></a>按键符号:</h3><div class="hljs"><pre><code class="hljs undefined">按&amp;amp;<span class="hljs-keyword">lt</span>;kbd&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;b&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;i&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;em&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;sup&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;<span class="hljs-function"><span class="hljs-keyword">sub</span>&amp;<span class="hljs-title">amp</span></span>;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;br&amp;amp;<span class="hljs-keyword">gt</span>;就可以调出任务管理器了！</code></pre></div><p>按<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd>就可以调出任务管理器了！</p><h3 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h3><div class="hljs"><pre><code class="hljs html">我是正常的刘老师<span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>我是上标刘老师<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span></code></pre></div><p>我是正常的刘老师<sup>我是上标刘老师</sup></p><h3 id="下标"><a href="#下标" class="headerlink" title="下标:"></a>下标:</h3><div class="hljs"><pre><code class="hljs html">我是正常的刘老师<span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>我是下标刘老师<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span></code></pre></div><p>我是正常的刘老师<sub>我是下标刘老师</sub></p><h3 id="改字体颜色"><a href="#改字体颜色" class="headerlink" title="改字体颜色:"></a>改字体颜色:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">#F7FE2E</span>&gt;</span>刘:我的心和我一样颜色<span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></code></pre></div><p><font color="#F7FE2E">刘:我的心和我一样颜色</font></p><h3 id="改字体背景颜色"><a href="#改字体背景颜色" class="headerlink" title="改字体背景颜色:"></a>改字体背景颜色:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background:#F7FE2E"</span>&gt;</span>刘:我的心和背景一样颜色!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div><p style="background:#f7fe2e">刘:我的心和背景一样颜色!</p><h3 id="改字体大小"><a href="#改字体大小" class="headerlink" title="改字体大小:"></a>改字体大小:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">size</span>=<span class="hljs-string">72</span>&gt;</span>刘:我的\*和我一样大<span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></code></pre></div><p><font size="72">刘:我的*和我一样大</font></p><h2 id="js-css"><a href="#js-css" class="headerlink" title="js/css"></a>js/css</h2><p>与正常使用无差异</p><p>完</p><hr></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../../../../categories/爱学习/">爱学习</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../../../../tags/MarkDown/">MarkDown</a> <a class="hover-with-bg" href="../../../../tags/语法/">语法</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="../../25/JS特效：一个打字绚烂烟花的特效/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">JS特效：一个打字绚烂烟花的特效</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="../../23/JS特效：鼠标单击出现爱心/"><span class="hidden-mobile">JS特效：鼠标单击出现爱心</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="vcomments"></div><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload</script><script defer src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/valine/valine.min.js"></script><script defer src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/valine/av-min.js"></script><script type="text/javascript">var notify=!1,verify=!1,oldLoad=window.onload;window.onload=function(){new Valine({el:"#vcomments",notify:notify,verify:verify,app_id:window.atob(TWOUMh1+rU3+MjOF5),app_key:window.atob(jUYjTJZ2+ZU4+wlNgSyoP6),placeholder:"开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",avatar:"../../../../retro",meta:["nick","mail","link"],pageSize:"10",emoticon_url:"https://assets.cyfan.top/file/CYF-PicBed/pic/moji",emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","stick_1.png","stick_2.png","stick_3.png","stick_4.png","stick_5.png","stick_6.png","stick_7.png","stick_8.png","stick_9.png","stick_10.png","stick_11.png","stick_12.png","stick_13.png","stick_14.png","stick_15.png","stick_16.png","stick_17.png","stick_18.png","stick_19.png","stick_20.png","stick_21.png","stick_22.png","stick_23.png","stick_24.png","stick_25.png","stick_26.png","stick_27.png","stick_28.png","stick_29.png","stick_30.png","stick_31.png","stick_32.png","stick_33.png","stick_34.png","stick_35.png","stick_36.png","stick_37.png","stick_38.png","stick_39.png","stick_40.png","stick_41.png","stick_42.png","stick_43.png ","stick_44.png","stick_45.png","stick_46.png","stick_47.png","stick_48.png","stick_49.png","stick_50.png ","stick_51.png","stick_52.png","stick_53.png","stick_54.png","stick_55.png","stick_56.png","stick_57.png ","stick_58.png","stick_59.png","stick_60.png","stick_61.png","stick_62.png","stick_63.png","stick_64.png ","stick_65.png","stick_66.png","stick_67.png","stick_68.png","stick_69.png","stick_70.png","stick_71.png ","stick_72.png","stick_73.png","stick_74.png","stick_75.png","stick_76.png","stick_77.png","stick_78.png ","stick_79.png","stick_80.png","stick_81.png","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","zcbg.jpg","邪魅一笑.jpg","口吐芳言.jpg"]}),oldLoad&&oldLoad()}</script><noscript>Hello?你开了JS吗？？？？</noscript><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><style>.valine *{color:var(--text-color)}.valine .info .col{background:var(--board-bg-color)}.valine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{background:var(--board-bg-color);color:var(--text-color)}.valine .vlist .vcard .vcomment-body .vhead .vname{color:var(--text-color)}.valine .vlist .vcard .vcomment-children .vshow-children-wrapper .vshow-children{color:var(--text-color)}.valine .vinputs-area .textarea-wrapper .comment_trigger{background-color:var(--board-bg-color)}.valine .vinputs-area .textarea-wrapper textarea{background-color:var(--board-bg-color);color:var(--text-color)}.valine .vinputs-area .auth-section{background-color:var(--board-bg-color);color:var(--text-color)}.valine .vinputs-area .auth-section .input-wrapper input{background-color:var(--board-bg-color);color:var(--text-color)}.valine .vinputs-area{border:var(--board-bg-color)}.valine .vinputs-area .textarea-wrapper{background-color:var(--board-bg-color);color:var(--text-color)}.valine .vinputs-area .vextra-area .vsmile-icons{border-top:1px solid transparent}</style></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a><p><span id="sentence" style="font-size:1rem"></span></p><p id="showsectime"></p><script>function NewDate(e){e=e.split("-");var t=new Date;return t.setUTCFullYear(e[0],e[1]-1,e[2]),t.setUTCHours(0,0,0,0),t}function showsectime(){var e=NewDate("2019-7-16"),t=(new Date).getTime()-e.getTime(),o=t/1e3,r=(Math.floor(o),t/864e5),s=Math.floor(r),a=-24*(s-r),i=Math.floor(a),n=-60*(i-a),h=Math.floor(-60*(i-a)),l=Math.floor(-60*(h-n)).toString();document.getElementById("showsectime").innerHTML="自2019-7-16建站以来，本站已苟活"+s+"天"+i+"小时"+h+"分"+l+"秒",setTimeout(showsectime,1e3)}showsectime()</script><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script><script>getCDNinfo = function() {
+|<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|<span class="hljs-string"> 单元格 </span>|</code></pre></div>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>提示</strong>:<br>表格打完要空一行啊!</p>
+</blockquote>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图:"></a>流程图:</h2><p>Hexo用户可能要额外安装插件: <code>npm install --save hexo-filter-flowchart</code></p>
+<p>st=&gt;start: Start:&gt;<a href="http://www.google.com[blank]" target="_blank" rel="noopener">http://www.google.com[blank]</a> e=&gt;end:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a> op1=&gt;operation: My Operation sub1=&gt;subroutine: My Subroutine cond=&gt;condition: Yes or No?:&gt;<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a> io=&gt;inputoutput: catch something… para=&gt;parallel: parallel tasks st-&gt;op1-&gt;cond cond(yes)-&gt;io-&gt;e cond(no)-&gt;para para(path1, bottom)-&gt;sub1(right)-&gt;op1 para(path2, top)-&gt;op1<br>具体写法前往<a href="http://flowchart.js.org" target="_blank" rel="noopener">官网</a>了解更多.</p>
+<h2 id="打出正常符号来"><a href="#打出正常符号来" class="headerlink" title="打出正常符号来:"></a>打出正常符号来:</h2><p>用<code>\</code>反斜杠来转义,转义表格如下:</p>
+<table>
+<thead>
+<tr>
+<th>你要打出的符号</th>
+<th>你应该写出的符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>!</code></td>
+<td>`!</td>
+</tr>
+<tr>
+<td>`</td>
+<td>\`</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td><code>\#</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><code>\-</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>\&amp;</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>\*</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>\+</code></td>
+</tr>
+</tbody></table>
+<p>等等等等只要以单个<code>\</code>放在需转义的单个字符前即可.</p>
+<blockquote>
+<p><strong>注意</strong><br>多字符转义需要一个一个添加<code>\</code>!<br>被`和```包裹起来的代码无需转义!</p>
+</blockquote>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式:"></a>公式:</h2><h3 id="单行公式"><a href="#单行公式" class="headerlink" title="单行公式:"></a>单行公式:</h3><p>用一个<code>$</code>来包裹单行代码(Hexo不支持)</p>
+<h3 id="多行公式："><a href="#多行公式：" class="headerlink" title="多行公式："></a>多行公式：</h3><p>用两个<code>$</code>来包裹单行代码(Hexo不支持)</p>
+<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo:"></a>Todo:</h2><p>用<code>[ ]</code>代替未完成的事项:</p>
+<ul>
+<li><input disabled type="checkbox"> 语文作业<br>用<code>[x]</code>代替已完成的事项:</li>
+<li><input checked disabled type="checkbox"> 科学作业</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong><br>如果你显示不出来….<br>说明你踩坑里去了!<br>在每一个<code>[ ]</code>和<code>[x]</code>前要加上<a href="/2019/07/22/MarkDown语法详解（中级版）/#无序排序">无序列表的符号</a>!!<br>反正我是踩坑里去了!</p>
+</blockquote>
+<h2 id="HTML标签："><a href="#HTML标签：" class="headerlink" title="HTML标签："></a>HTML标签：</h2><p>Markdown本身就能与html互相转换,比如:</p>
+<div class="hljs"><pre><code class="hljs markdown">[<span class="hljs-string">baidu</span>](<span class="hljs-link">https://baidu.com</span>)</code></pre></div>
+
+<p>转换成html:</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://baidu.com"</span>&gt;</span>baidu<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
+
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。<br>目前支持的 HTML 元素有：<code>&amp;amp;lt;kbd&amp;amp;gt; &amp;amp;lt;b&amp;amp;gt; &amp;amp;lt;i&amp;amp;gt; &amp;amp;lt;em&amp;amp;gt; &amp;amp;lt;sup&amp;amp;gt; &amp;amp;lt;sub&amp;amp;gt; &amp;amp;lt;br&amp;amp;gt;</code>等 ，如：<br>此处讲解几个不能被markdown使用的标签:</p>
+<h3 id="按键符号"><a href="#按键符号" class="headerlink" title="按键符号:"></a>按键符号:</h3><div class="hljs"><pre><code class="hljs undefined">按&amp;amp;<span class="hljs-keyword">lt</span>;kbd&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;b&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;i&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;em&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;sup&amp;amp;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;<span class="hljs-function"><span class="hljs-keyword">sub</span>&amp;<span class="hljs-title">amp</span></span>;<span class="hljs-keyword">gt</span>; &amp;amp;<span class="hljs-keyword">lt</span>;br&amp;amp;<span class="hljs-keyword">gt</span>;就可以调出任务管理器了！</code></pre></div>
+
+<p>按<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd>就可以调出任务管理器了！</p>
+<h3 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h3><div class="hljs"><pre><code class="hljs html">我是正常的刘老师<span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>我是上标刘老师<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span></code></pre></div>
+
+<p>我是正常的刘老师<sup>我是上标刘老师</sup></p>
+<h3 id="下标"><a href="#下标" class="headerlink" title="下标:"></a>下标:</h3><div class="hljs"><pre><code class="hljs html">我是正常的刘老师<span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>我是下标刘老师<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span></code></pre></div>
+
+<p>我是正常的刘老师<sub>我是下标刘老师</sub></p>
+<h3 id="改字体颜色"><a href="#改字体颜色" class="headerlink" title="改字体颜色:"></a>改字体颜色:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">#F7FE2E</span>&gt;</span>刘:我的心和我一样颜色<span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></code></pre></div>
+
+<p><font color="#F7FE2E">刘:我的心和我一样颜色</font></p>
+<h3 id="改字体背景颜色"><a href="#改字体背景颜色" class="headerlink" title="改字体背景颜色:"></a>改字体背景颜色:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background:#F7FE2E"</span>&gt;</span>刘:我的心和背景一样颜色!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div>
+
+<p style="background:#F7FE2E">刘:我的心和背景一样颜色!</p>
+
+<h3 id="改字体大小"><a href="#改字体大小" class="headerlink" title="改字体大小:"></a>改字体大小:</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">size</span>=<span class="hljs-string">72</span>&gt;</span>刘:我的\*和我一样大<span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span></code></pre></div>
+
+<p><font size="72">刘:我的*和我一样大</font></p>
+<h2 id="js-css"><a href="#js-css" class="headerlink" title="js/css"></a>js/css</h2><p>与正常使用无差异</p>
+<p>完</p>
+<hr>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../categories/爱学习/">爱学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/MarkDown/">MarkDown</a>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/语法/">语法</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../../25/JS特效：一个打字绚烂烟花的特效/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JS特效：一个打字绚烂烟花的特效</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../23/JS特效：鼠标单击出现爱心/">
+                        <span class="hidden-mobile">JS特效：鼠标单击出现爱心</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  <div id="vcomments"></div>
+  
+  <script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/valine/valine.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/valine/av-min.js"></script>
+
+
+  
+ <script type="text/javascript">
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+	app_id: window.atob(TWOUMh1+rU3+MjOF5),
+	app_key: window.atob(jUYjTJZ2+ZU4+wlNgSyoP6),
+        placeholder: "开车不规范，亲人两行泪。（慎言，每一条评论都需要进行博主审核，通过后自动显示，请不要重复发评论。）",
+        avatar: "../../../../retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+	emoticon_url:'https://assets.cyfan.top/file/CYF-PicBed/pic/moji',
+        emoticon_list:["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png","stick_1.png","stick_2.png","stick_3.png","stick_4.png","stick_5.png","stick_6.png","stick_7.png","stick_8.png","stick_9.png","stick_10.png","stick_11.png","stick_12.png","stick_13.png","stick_14.png","stick_15.png","stick_16.png","stick_17.png","stick_18.png","stick_19.png","stick_20.png","stick_21.png","stick_22.png","stick_23.png","stick_24.png","stick_25.png","stick_26.png","stick_27.png","stick_28.png","stick_29.png","stick_30.png","stick_31.png","stick_32.png","stick_33.png","stick_34.png","stick_35.png","stick_36.png","stick_37.png","stick_38.png","stick_39.png","stick_40.png","stick_41.png","stick_42.png","stick_43.png ","stick_44.png","stick_45.png","stick_46.png","stick_47.png","stick_48.png","stick_49.png","stick_50.png ","stick_51.png","stick_52.png","stick_53.png","stick_54.png","stick_55.png","stick_56.png","stick_57.png ","stick_58.png","stick_59.png","stick_60.png","stick_61.png","stick_62.png","stick_63.png","stick_64.png ","stick_65.png","stick_66.png","stick_67.png","stick_68.png","stick_69.png","stick_70.png","stick_71.png ","stick_72.png","stick_73.png","stick_74.png","stick_75.png","stick_76.png","stick_77.png","stick_78.png ","stick_79.png","stick_80.png","stick_81.png","lh.jpg","huaji.gif","huaji.png","zhuaji.png","yhuaji.png","qgbf.png","ld.jpg","tx.png","zcbg.jpg","邪魅一笑.jpg","口吐芳言.jpg"],
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Hello?你开了JS吗？？？？</a></noscript>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <style>
+.valine * {
+    color: var(--text-color);
+  }
+.valine .info .col{
+    background: var(--board-bg-color);
+  }
+.valine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{
+    background: var(--board-bg-color);
+	color: var(--text-color);
+  }
+.valine .vlist .vcard .vcomment-body .vhead .vname{
+    color: var(--text-color);
+  }
+.valine .vlist .vcard .vcomment-children .vshow-children-wrapper .vshow-children{
+    color: var(--text-color);
+  }
+.valine .vinputs-area .textarea-wrapper .comment_trigger{
+	background-color: var(--board-bg-color);
+}
+.valine .vinputs-area .textarea-wrapper textarea {
+	background-color: var(--board-bg-color);
+	color: var(--text-color);
+}
+.valine .vinputs-area .auth-section {
+	background-color: var(--board-bg-color);
+		color: var(--text-color);
+}
+.valine .vinputs-area .auth-section .input-wrapper input {
+	background-color: var(--board-bg-color);
+		color: var(--text-color);
+}
+.valine .vinputs-area{
+	border: var(--board-bg-color);
+}
+.valine .vinputs-area .textarea-wrapper{
+	background-color: var(--board-bg-color);
+	color: var(--text-color);
+}
+.valine .vinputs-area .vextra-area .vsmile-icons{
+	border-top: 1px solid transparent
+}
+</style>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://img.cyfan.top/pic/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+<p>
+当前CDN节点: <span id="cdn">【未知】</span> |
+你的ip: <span id="ip">【未知】</span> |
+你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+	getCDNinfo = function() {
 	$.ajax({
 		url: "/cdn-cgi/trace",
 		success: function(data, status) {
@@ -28,4 +742,250 @@
 $(document).ready(function() {
 	getCDNinfo();
     //页面加载完毕就获取CDN信息
-});</script><p></p></div><div class="statistics"></div><div class="beian"><a href="https://icp.gov.moe/" target="_blank" rel="nofollow noopener">2020213344号</a> <a href="https://icp.gov.moe/?t=2020213344" rel="nofollow noopener" class="beian-police" target="_blank"><span class="beian-police-sep">&nbsp;|&nbsp;</span> <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon"> <span>萌ICP备</span></a></div></div></div></footer><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="../../../../js/debouncer.js"></script><script src="../../../../js/main.js"></script><script src="../../../../js/lazyload.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="../../../../js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","MarkDown语法详解（高级版）&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="../../../../js/local-search.js"></script><script>var path="../../../../local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script defer>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginModelPath:"assets/",model:{jsonPath:"/live2dw/assets/z16.model.json"},display:{position:"left",width:150,height:300},mobile:{show:!0},log:!1,pluginJsPath:"lib/",pluginRootPath:"live2dw/",tagMode:!1})</script></body></html>
+});
+</script></p></div>
+    
+  <div class="statistics">
+    
+    
+
+    
+  </div>
+
+
+    
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="https://icp.gov.moe/" target="_blank"
+       rel="nofollow noopener">2020213344号</a>
+    
+      <a
+        href="https://icp.gov.moe/?t=2020213344"
+        rel="nofollow noopener"
+        class="beian-police"
+        target="_blank"
+      >
+        <span class="beian-police-sep">&nbsp;|&nbsp;</span>
+
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+
+        <span>萌ICP备</span>
+      </a>
+     
+  </div>
+
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="../../../../js/debouncer.js" ></script>
+<script  src="../../../../js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="../../../../js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="../../../../js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "MarkDown语法详解（高级版）&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+  <script>
+    var path = "../../../../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
