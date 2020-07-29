@@ -1,3 +1,18 @@
+---
+title: 打造一个可国内访问的Blogger（Blogspot）方法
+date: 2020-07-29 10:43:19
+tags:
+- Blogger
+- Blogspot
+- 谷歌
+- 博客
+categories: 好方法
+copyright: true
+author: CYF
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
+---
+
 Blogger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&Wordpress高昂的服务器费用，避免了Hexo&Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。
 
 实际上，当今写博客的软件数不胜数，主要分为一下三类：
@@ -44,7 +59,7 @@ Blogger,一个干爽、免费的博客发布平台，作为主流的发布，提
 
 ![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-29%20085021.jpg)
 
-搞定！Blogger真正做到了什么叫10s创建一个博客，但这还不够，中国访客实际上还是打不开这个网站[1]。所以，接下来，我们要让这个网站能在中国访问。
+搞定！搞完之后才知道，Blogger真正做到了什么叫1分钟创建一个博客，但这还不够，中国访客实际上还是打不开这个网站[1]。所以，接下来，我们要让这个网站能在中国访问。
 
 目前我们有一下思路:
 
