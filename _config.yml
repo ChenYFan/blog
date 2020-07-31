@@ -110,4 +110,4 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
-# hexo-neat
+all_minifier: true
