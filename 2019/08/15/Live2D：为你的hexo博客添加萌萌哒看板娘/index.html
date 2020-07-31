@@ -916,7 +916,18 @@ $(document).ready(function() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!--Valine appid&appkey--><script>
+</script>
+<script>
+  window.FPConfig = {
+    delay: 0,    // 浏览器空闲多少秒后开始预加载
+    ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+    maxRPS: 3,    // 每秒最大加载数
+    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+    // 上方数值未默认值
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<!--Valine appid&appkey--><script>
 eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0 4="\\1\\5\\2\\6\\3\\7";0 a="\\1\\2\\b\\8\\9";',12,12,'var|u4f60|u5988|u627e|app_id|u4ed6|u518d|uff1f|u4e86|uff01|app_key|u6b7b'.split('|'),0,{}))
 </script>
 <script>

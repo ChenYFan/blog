@@ -274,7 +274,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             <h1 style="display: none">留言板</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>有什么要说的可以写在这里<br>如果你想说悄悄话，发邮件到<a href="mailto:&#x63;&#104;&#x65;&#110;&#121;&#x66;&#64;&#99;&#121;&#102;&#x61;&#110;&#46;&#116;&#x6f;&#x70;" target="_blank" rel="noopener">&#x63;&#104;&#x65;&#110;&#121;&#x66;&#64;&#99;&#121;&#102;&#x61;&#110;&#46;&#116;&#x6f;&#x70;</a><br>你可能需要注意：</p>
+              <p>有什么要说的可以写在这里<br>如果你想说悄悄话，发邮件到<a href="mailto:&#x63;&#x68;&#101;&#110;&#121;&#x66;&#x40;&#99;&#121;&#102;&#x61;&#x6e;&#46;&#116;&#111;&#112;" target="_blank" rel="noopener">&#x63;&#x68;&#101;&#110;&#121;&#x66;&#x40;&#99;&#121;&#102;&#x61;&#x6e;&#46;&#116;&#111;&#112;</a><br>你可能需要注意：</p>
 <ol>
 <li><span class="heimu" title="不堪回首的更换评论系统记录"> <del>来比力服务器部署于韩国，可能无法加载或长时间空白。在无法加载情况下请刷新，在空白情况下请耐心等待。如果手机SNS登陆方式被遮挡，请横屏选择登陆方式！</del> <del>加载太TM慢了！！！！换作Valine吧！评论时要注明自己的邮箱，头像会来自<a href="http://cn.gravatar.com" target="_blank" rel="noopener">Gravatar</a>，同时你也会收到邮件通知。一定要正确！  蛋疼的是LeanCloud出了点小问题,于是跳槽到Gitalk了.使用Gitalk需要Github账号,而且很有可能需要梯子!国内对于Github相当不友好,很有可能加载不出来或者是网络错误! ~</del> </span> Valine，我最终还是选择了你【吐血】</li>
 <li>拒绝包括但不限于色情、反动、低俗发言，拒绝抹黑当局的言论。</li>
@@ -820,7 +820,18 @@ $(document).ready(function() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!--Valine appid&appkey--><script>
+</script>
+<script>
+  window.FPConfig = {
+    delay: 0,    // 浏览器空闲多少秒后开始预加载
+    ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+    maxRPS: 3,    // 每秒最大加载数
+    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+    // 上方数值未默认值
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<!--Valine appid&appkey--><script>
 eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0 4="\\1\\5\\2\\6\\3\\7";0 a="\\1\\2\\b\\8\\9";',12,12,'var|u4f60|u5988|u627e|app_id|u4ed6|u518d|uff1f|u4e86|uff01|app_key|u6b7b'.split('|'),0,{}))
 </script>
 <script>
