@@ -2,11 +2,13 @@ title: 随口胡说
 date: 2020-03-19 13:21:09
 ---
 
-
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3="4";2="0";1="8";9="7";5="6";',10,10,'UDc2eGxnRVV5OD|d789|b12|a56|MDkxUFRKVnRI|e12|WlNZmZSLU1kWVhiTU1J|JMb2lBZHczYjNBd2Nl|czBTZ0NMN2FZe|c34'.split('|'),0,{}))
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 <script>
-    var appID= window.atob(rfwFoV1+j3+mXLcNMYJJ4);
-    var appKEY= window.atob($$Yn2+hPjHsvGO5);
+    var appID= window.atob(a56+d789+e12);
+    var appKEY= window.atob(b12+c34);
     var per=10;
     var lazy=1;
     var slanguage="zh";
