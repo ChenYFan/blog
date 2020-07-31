@@ -110,4 +110,4 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
-all_minifier: true
+
