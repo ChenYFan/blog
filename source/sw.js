@@ -150,5 +150,12 @@ routing.registerRoute(
     new RegExp('^https://googleads\.g\.doubleclick\.net/'),
     new NetworkOnly()
 );
-
+workboxSW.router.registerRoute(/\.(?:png|gif|jpg)$/,
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'picimages-cache',
+    cacheExpiration: {
+      maxEntries: 30 * 24 * 60 * 60,
+    }
+  })
+);
 
