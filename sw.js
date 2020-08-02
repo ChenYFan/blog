@@ -133,3 +133,22 @@ workbox.routing.registerRoute(
       ],
     })
 );
+routing.registerRoute(
+    new RegExp('^https://(.*)googlesyndication\.com'),
+    new NetworkOnly()
+);
+
+routing.registerRoute(
+    new RegExp('^https://(.*)googletagservices\.com(.*)'),
+    new NetworkOnly()
+);
+routing.registerRoute(
+    new RegExp('^https://(.*)google\.com(.*)'),
+    new NetworkOnly()
+);
+routing.registerRoute(
+    new RegExp('^https://googleads\.g\.doubleclick\.net/'),
+    new NetworkOnly()
+);
+
+
