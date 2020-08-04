@@ -13,7 +13,7 @@ index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
 banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
 ---
 
-Blogger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&Wordpress高昂的服务器费用，避免了Hexo&Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。
+Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍‌‌‌​‌‍‌‌​‍‍‍​‍‍‌​​‍‌‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍​‍‍‍​‌‍‍‌ger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&Wordpress高昂的服务器费用，避免了Hexo&Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。
 
 实际上，当今写博客的软件数不胜数，主要分为一下三类：
 
