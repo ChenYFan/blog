@@ -133,23 +133,7 @@ workbox.routing.registerRoute(
       ],
     })
 );
-workbox.routing.registerRoute(
-    new RegExp('^https://(.*)googlesyndication\.com'),
-    new NetworkOnly()
-);
 
-workbox.routing.registerRoute(
-    new RegExp('^https://(.*)googletagservices\.com(.*)'),
-    new NetworkOnly()
-);
-workbox.routing.registerRoute(
-    new RegExp('^https://(.*)google\.com(.*)'),
-    new NetworkOnly()
-);
-workbox.routing.registerRoute(
-    new RegExp('^https://googleads\.g\.doubleclick\.net/'),
-    new NetworkOnly()
-);
 workboxSW.router.registerRoute(/\.(?:png|gif|jpg)$/,
   workboxSW.strategies.cacheFirst({
     cacheName: 'picimages-cache',
