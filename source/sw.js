@@ -133,13 +133,3 @@ workbox.routing.registerRoute(
       ],
     })
 );
-
-workbox.router.registerRoute(/\.(?:png|gif|jpg)$/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'picimages-cache',
-    cacheExpiration: {
-      maxEntries: 30 * 24 * 60 * 60,
-    }
-  })
-);
-
