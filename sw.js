@@ -134,8 +134,8 @@ workbox.routing.registerRoute(
     })
 );
 
-workboxSW.router.registerRoute(/\.(?:png|gif|jpg)$/,
-  workboxSW.strategies.cacheFirst({
+workbox.router.registerRoute(/\.(?:png|gif|jpg)$/,
+  workbox.strategies.cacheFirst({
     cacheName: 'picimages-cache',
     cacheExpiration: {
       maxEntries: 30 * 24 * 60 * 60,
