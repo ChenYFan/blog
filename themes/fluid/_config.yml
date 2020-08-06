@@ -11,9 +11,9 @@
 # 全局
 # Site
 #---------------------------
-favicon: https://img.cyfan.top/pic/img/favicon.png # 网站标签页的 icon
+favicon: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png # 网站标签页的 icon
 
-apple_touch_icon: https://img.cyfan.top/pic/img/apple-touch-icon.png # 用于苹果设备的 icon
+apple_touch_icon: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png # 用于苹果设备的 icon
 
 title_join_string: ' || '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
@@ -199,7 +199,7 @@ index:
 # 通过 hexo new page 命令创建的页面
 # Custom Page
 page:
-  banner_img: https://img.cyfan.top/pic/img/2.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/b2.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
 
@@ -208,7 +208,7 @@ page:
 # Post Page
 #---------------------------
 post:  # 部分配置同时控制自定义页面，注意备注
-  banner_img: https://img.cyfan.top/pic/img/3.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/3.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   meta:  # 文章标题下方的信息
@@ -241,7 +241,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
     enable: true
   custom:  # 文章底部自定义内容
     enable: true
-    content: '<img src="https://img.cyfan.top/pic/AP.jpg" class="rounded mx-auto d-block mt-5" style="width:40%">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
+    content: '<img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" class="rounded mx-auto d-block mt-5" style="width:40%">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
   image_zoom:  # 文章图片可点击放大
     enable: true  # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `image_zoom: true`，并且图片使用该格式插入：<img src="..." zoom />
   footnote:  # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
@@ -331,7 +331,7 @@ livere:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://img.cyfan.top/pic/img/4.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/1.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  归档 - 所有的所有都在这儿了
@@ -341,7 +341,7 @@ archive:
 # Categories Page
 #---------------------------
 category:
-  banner_img: https://img.cyfan.top/pic/img/5.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/5.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  分类 - 是不是比较杂?# 打字机内容
@@ -353,7 +353,7 @@ category:
 # Tags Page
 #---------------------------
 tag:
-  banner_img: https://img.cyfan.top/pic/img/6.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/6.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 标签 - 找找你想要的
@@ -370,7 +370,7 @@ tag:
 # About Page
 #---------------------------
 about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.com/docs/guide/#%E5%85%B3%E4%BA%8E%E9%A1%B5
-  banner_img: https://img.cyfan.top/pic/img/7.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/7.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 好像是关于什么呢
@@ -388,7 +388,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
 # 404 Page
 #---------------------------
 page404:
-  banner_img: https://img.cyfan.top/pic/img/8.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/8.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: '咻~~页面飞走啦！！！！！'  # 打字机内容
@@ -398,7 +398,7 @@ page404:
 # Links Page
 #---------------------------
 links:
-  banner_img: https://img.cyfan.top/pic/img/9.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/9.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 我亲爱的小伙伴！
