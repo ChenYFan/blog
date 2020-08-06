@@ -7,8 +7,6 @@ branches:
   only:
     - master # build master branch only
 script:
-  - sed '$a $BAIDU_TOKEN' ./_config.yml
-  - npm i hexo-baidu-url-submit --save
   - hexo generate # generate static files
 deploy:
   provider: pages
