@@ -7,9 +7,9 @@ branches:
   only:
     - master # build master branch only
 script:
-  - curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
   - npm install hexo-baidu-url-submit --save
   - hexo generate
+  - curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
 deploy:
   provider: pages
   skip-cleanup: true
