@@ -110,3 +110,8 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
+baidu_url_submit:
+  count: 3 ## 比如3，代表提交最新的三个链接
+  host: blog.cyfan.top
+  token: QWQ
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
