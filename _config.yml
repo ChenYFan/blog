@@ -110,8 +110,3 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
-baidu_url_submit:
-  count: 1 ## 提交最新的一个链接
-  host: www.hui-wang.info ## 在百度站长平台中注册的域名
-  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
-  token: 
