@@ -7,6 +7,7 @@ branches:
   only:
     - master # build master branch only
 script:
+  - npm install hexo-baidu-url-submit --save
   - hexo generate # generate static files
 deploy:
   provider: pages
