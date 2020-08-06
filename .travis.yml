@@ -8,7 +8,8 @@ branches:
     - master # build master branch only
 script:
   - npm install hexo-baidu-url-submit --save
-  - hexo generate # generate static files
+  - hexo generate
+  - curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt $BD_TOKEN
 deploy:
   provider: pages
   skip-cleanup: true
