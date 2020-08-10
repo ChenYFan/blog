@@ -21,7 +21,6 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     // Cache JS files
     /.*\.js/,
-    exclude: 'https://embed\.widgetpack\.com/*'
     // Use cache but update in the background ASAP
     workbox.strategies.staleWhileRevalidate({
         // Use a custom cache name
