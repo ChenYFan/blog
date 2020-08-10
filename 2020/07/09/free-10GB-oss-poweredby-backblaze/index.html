@@ -278,17 +278,17 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             
             <div class="markdown-body" id="post-body">
               <p>腾讯云的COS就是个暗坑，进去的时候大肆宣扬用户前六个月免费，但实际上免费仅针对于存储于国内的bucket，而存储于国外的阶梯定价又极不合理，我的COS在一个月走了流量1.6GB。按照官方定价</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20094557.jpg" srcset="/img/loading.gif" alt></p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20094840.jpg" srcset="/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20094557.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20094840.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>大概就是0.7左右。</p>
 <p>但是，腾讯云从来就是不满1GB按1GB计算的jier，我瞟了一下账单：</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20095520.jpg" srcset="/img/loading.gif" alt></p>
-<p>不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊<img src="https://img.cyfan.top/pic/moji/%E5%90%90.png" srcset="/img/loading.gif" alt>！</p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20095520.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊<img src="https://img.cyfan.top/pic/moji/%E5%90%90.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>！</p>
 <p>很难让人理解，我CDN设置为一个月的超长缓存，但腾讯还是给我计价1GB，和回源没什么区别。</p>
-<p>后来F12看了一下，腾讯悄悄地在header里添加max-cache为43200s，12个小时强制清除缓存。Asir，赚钱不带这么玩吧。<img src="https://img.cyfan.top/pic/moji/%E4%B8%AD%E6%9E%AA.png" srcset="/img/loading.gif" alt></p>
-<p>最让我憋屈的是，<code>cyfan.top</code> 是没有备案的，使用国内的bucket就不给绑定域名，害的我只能用香港，但是香港的绑定域名是不给SSL的，偏要套一层CDN才行。可***腾讯云默认CDN是亚马逊的，速度渣的很，用来用去还是用回CloudFlare。可是，既然有CloudFlare，那我为什么不用免费的Github服务啊！<img src="https://img.cyfan.top/pic/moji/%E5%93%AD%E6%B3%A3.png" srcset="/img/loading.gif" alt></p>
-<p>这就是逼着我要换一个图床啊么<img src="https://img.cyfan.top/pic/moji/qgbf.png" srcset="/img/loading.gif" alt>。</p>
-<p>后来twitter上有人发推推荐 <code>backblaze</code> 的海外存储，使用了一下，发现完全满足需求。<img src="https://img.cyfan.top/pic/moji/stick_27.png" srcset="/img/loading.gif" alt></p>
+<p>后来F12看了一下，腾讯悄悄地在header里添加max-cache为43200s，12个小时强制清除缓存。Asir，赚钱不带这么玩吧。<img src="https://img.cyfan.top/pic/moji/%E4%B8%AD%E6%9E%AA.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>最让我憋屈的是，<code>cyfan.top</code> 是没有备案的，使用国内的bucket就不给绑定域名，害的我只能用香港，但是香港的绑定域名是不给SSL的，偏要套一层CDN才行。可***腾讯云默认CDN是亚马逊的，速度渣的很，用来用去还是用回CloudFlare。可是，既然有CloudFlare，那我为什么不用免费的Github服务啊！<img src="https://img.cyfan.top/pic/moji/%E5%93%AD%E6%B3%A3.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>这就是逼着我要换一个图床啊么<img src="https://img.cyfan.top/pic/moji/qgbf.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
+<p>后来twitter上有人发推推荐 <code>backblaze</code> 的海外存储，使用了一下，发现完全满足需求。<img src="https://img.cyfan.top/pic/moji/stick_27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <h1 id="Backblaze"><a href="#Backblaze" class="headerlink" title="Backblaze"></a>Backblaze</h1><p>2015年9月，Backblaze推出了新产品B2 Cloud Storage。作为基础架构即服务（IaaS），它的目标是软件集成（尽管也提供Web前端和API）。它直接与类似服务Amazon S3，Microsoft Azure和Google Cloud竞争。在2018年4月，Backblaze宣布了云计算合作伙伴关系，它将直接将Backblaze的数据中心与其合作伙伴Packet和ServerCentral连接起来，为存储在B2 Cloud Storage中的数据提供高性能的云计算，而无需支付任何费用。</p>
 <p>B2 Cloud Storage非常客气，有以下优点：</p>
 <ul>
@@ -299,36 +299,36 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <li>每天上传请求<strong>2500</strong>次免费</li>
 <li>基于CloudFlareCDN</li>
 </ul>
-<p>而且超出免费额度的价钱也十分合理【不过我不会往里头冲一分钱的！】 <img src="https://img.cyfan.top/pic/postpic/2020-07-09%20100931.jpg" srcset="/img/loading.gif" alt="https://img.cyfan.top/pic/postpic/2020-07-09%20100931.jpg"></p>
-<p>然而我偶然得知，Backblaze加入了CloudFlare的 <a href="https://www.cloudflare.com/bandwidth-alliance/" target="_blank" rel="noopener">带宽联盟（ Bandwidth Alliance）</a> Backblaze与CloudFlare之间的流量直接免费，也就是每天<strong>无限量</strong>下行流量，配上CloudFlare超长缓存，每天下载请求无限次免费。<img src="https://img.cyfan.top/pic/moji/%E5%BE%97%E6%84%8F.png" srcset="/img/loading.gif" alt></p>
+<p>而且超出免费额度的价钱也十分合理【不过我不会往里头冲一分钱的！】 <img src="https://img.cyfan.top/pic/postpic/2020-07-09%20100931.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="https://img.cyfan.top/pic/postpic/2020-07-09%20100931.jpg"></p>
+<p>然而我偶然得知，Backblaze加入了CloudFlare的 <a href="https://www.cloudflare.com/bandwidth-alliance/" target="_blank" rel="noopener">带宽联盟（ Bandwidth Alliance）</a> Backblaze与CloudFlare之间的流量直接免费，也就是每天<strong>无限量</strong>下行流量，配上CloudFlare超长缓存，每天下载请求无限次免费。<img src="https://img.cyfan.top/pic/moji/%E5%BE%97%E6%84%8F.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>而且这样与我用COS的速度是差不多的，那我何必用付费的COS呢？</p>
 <h1 id="注册："><a href="#注册：" class="headerlink" title="注册："></a>注册：</h1><p>去<a href="https://www.backblaze.com/zh_CN/cloud-storage.html" target="_blank" rel="noopener">B2 云存储</a>注册，可以用Google快捷登录：</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20101845.jpg" srcset="/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20101845.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>注册之后可能会要求你绑定手机号，乖乖的绑定自己的中国手机号吧【可能会产生短信费用，大概0.1￥】，不要想什么歪门邪道<br>，毕竟很多公开的手机号是不能用的，而且GoogleVoice也被拒绝了。</p>
 <p>新建一个桶，设置为公开：</p>
 <p>上传一个文件，点击右边的信息按钮，我们要在这里获取一些信息：</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20102255.jpg" srcset="/img/loading.gif" alt></p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20102940.jpg" srcset="/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20102255.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20102940.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>看到那个友好链接吗，这就是CloudFlare加速的链接，但这个不是我们想要的链接，我们要自定义域名，毕竟默认的加速相当蛋疼。</p>
 <h1 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h1><p>这一步需要你有个域名，开个子域给图床：</p>
-<p>由于我是bnxb接入的CloudFlare，所以我首先要去 <code>cdn.bnxb.com</code> ，将 <code>assets.cyfan.top</code> 指向 <code>f000.backblazeb2.com</code> 【每个人都可能不一样，自己看情况】，并开启CDN，然后在DNSPOD里CNAME负载均衡一下，这里就不放图了。<img src="https://img.cyfan.top/pic/moji/%E6%9C%9F%E5%BE%85.png" srcset="/img/loading.gif" alt></p>
+<p>由于我是bnxb接入的CloudFlare，所以我首先要去 <code>cdn.bnxb.com</code> ，将 <code>assets.cyfan.top</code> 指向 <code>f000.backblazeb2.com</code> 【每个人都可能不一样，自己看情况】，并开启CDN，然后在DNSPOD里CNAME负载均衡一下，这里就不放图了。<img src="https://img.cyfan.top/pic/moji/%E6%9C%9F%E5%BE%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <h1 id="缩短链接"><a href="#缩短链接" class="headerlink" title="缩短链接"></a>缩短链接</h1><p>默认即使绑定域名后，链接大概是这样滴：</p>
 <div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>assets.cyfan.top<span class="hljs-regexp">/file/</span>CYF-PicBed<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div>
 
 <p>可以看到,中间多了 <code>/file/CYF-PicBed/</code> ,这并不是我所需要的,所以我们要把它变成这样:</p>
 <div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//img</span>.cyfan.top<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div>
 
-<p>你要知道，我有一大堆图片都是直接以 <code>https://img.cyfan.top/pic/</code> 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。<img src="https://img.cyfan.top/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png" srcset="/img/loading.gif" alt></p>
+<p>你要知道，我有一大堆图片都是直接以 <code>https://img.cyfan.top/pic/</code> 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。<img src="https://img.cyfan.top/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>前往CloudFlare,设置页面规则,进行301转发:</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20103634.jpg" srcset="/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20103634.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>其中 <code>$1</code> 是CloudFlare的匹配符号，此规则意思是将所有的 <code>https://assets.cyfan.top/file/CYF-PicBed/*</code> 跳转向 <code>https://img.cyfan.top/*</code> </p>
 <p>去 <code>cdn.bnxb.com</code> ，将 <code>img.cyfan.top</code> 指向 任意一ip,比如 <code>1.0.0.1</code> 并开启CDN，然后在DNSPOD里CNAME。</p>
 <p>此后,所有访问图片都会在里头跳转一下,外面基本看不出来有什么差别.</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20104238.jpg" srcset="/img/loading.gif" alt></p>
-<h1 id="开启CORS-加长缓存时间"><a href="#开启CORS-加长缓存时间" class="headerlink" title="开启CORS|加长缓存时间"></a>开启CORS|加长缓存时间</h1><p>就这样结束了么？没有，你会发现访问的链接里所有的资源都是MISS，这是因为Backblaze默认不缓存<img src="https://img.cyfan.top/pic/moji/stick_65.png" srcset="/img/loading.gif" alt>。</p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20104238.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<h1 id="开启CORS-加长缓存时间"><a href="#开启CORS-加长缓存时间" class="headerlink" title="开启CORS|加长缓存时间"></a>开启CORS|加长缓存时间</h1><p>就这样结束了么？没有，你会发现访问的链接里所有的资源都是MISS，这是因为Backblaze默认不缓存<img src="https://img.cyfan.top/pic/moji/stick_65.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
 <p>所以，自己设置呗！</p>
 <p>点击桶，进入桶设定：</p>
-<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20104802.jpg" srcset="/img/loading.gif" alt></p>
+<p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20104802.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>里头写上:</p>
 <div class="hljs"><pre><code class="hljs undefined">&#123;<span class="hljs-attr">"cache-control"</span>:<span class="hljs-string">"max-age=43200000"</span>&#125;</code></pre></div>
 
@@ -337,13 +337,13 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <div class="hljs"><pre><code class="hljs undefined">与所有HTTPS来源共享此存储桶中的所有内容。</code></pre></div>
 
 <p>即可.</p>
-<h1 id="实测"><a href="#实测" class="headerlink" title="实测"></a>实测</h1><p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20105402.jpg" srcset="/img/loading.gif" alt></p>
+<h1 id="实测"><a href="#实测" class="headerlink" title="实测"></a>实测</h1><p><img src="https://img.cyfan.top/pic/postpic/2020-07-09%20105402.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>免费额度基本用不完.</p>
-<p>可惜PicGo没有支持Backblaze，我只能通过网页端上传<img src="https://img.cyfan.top/pic/moji/%E8%A3%85%E5%A4%A7%E6%AC%BE.png" srcset="/img/loading.gif" alt>。</p>
-<p>然而有一件事情非常蛋疼，你丫的根目录上传的时候是不会创建文件夹的，一次上传会把文件夹里的图片全部上传到根目录。所以，我只能手动创建文件夹，这个痛苦我真的是，<img src="https://img.cyfan.top/pic/moji/tx.png" srcset="/img/loading.gif" alt>。</p>
+<p>可惜PicGo没有支持Backblaze，我只能通过网页端上传<img src="https://img.cyfan.top/pic/moji/%E8%A3%85%E5%A4%A7%E6%AC%BE.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
+<p>然而有一件事情非常蛋疼，你丫的根目录上传的时候是不会创建文件夹的，一次上传会把文件夹里的图片全部上传到根目录。所以，我只能手动创建文件夹，这个痛苦我真的是，<img src="https://img.cyfan.top/pic/moji/tx.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
 <p>嗯，用了一个晚上，感觉还是挺香的，鹅厂的COS收费确实不合理，也要学学外面人家收费啊！</p>
 <hr>
-<p>溜了溜了，作业还没写完呢<img src="https://img.cyfan.top/pic/moji/%E9%82%AA%E9%AD%85%E4%B8%80%E7%AC%91.jpg" srcset="/img/loading.gif" alt></p>
+<p>溜了溜了，作业还没写完呢<img src="https://img.cyfan.top/pic/moji/%E9%82%AA%E9%AD%85%E4%B8%80%E7%AC%91.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 
             </div>
             <hr>
@@ -548,7 +548,7 @@ vtag-vmaster {
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -668,7 +668,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>

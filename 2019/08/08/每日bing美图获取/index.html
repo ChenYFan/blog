@@ -391,7 +391,7 @@ https://www.bing.com/search?q=%E8%B1%B9%E5%AD%90&amp;form=hpcapt&amp;mkt=zh-cn
 <div class="hljs"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> $str=file_get_contents(<span class="hljs-string">'https://cn.bing.com/HPImageArchive.aspx?idx=0&amp;n=1'</span>);<span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">"/&lt;url&gt;(.+?)&lt;\/url&gt;/ies"</span>, $str, $matches)) &#123; $imgurl=<span class="hljs-string">'https://cn.bing.com'</span>.$matches[<span class="hljs-number">1</span>];&#125;<span class="hljs-keyword">if</span> ($imgurl) &#123; header(<span class="hljs-string">'Content-Type: image/JPEG'</span>); @ob_end_clean(); @readfile($imgurl); @flush(); @ob_flush(); <span class="hljs-keyword">exit</span>();&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-keyword">exit</span>(<span class="hljs-string">'error'</span>);&#125;<span class="hljs-meta">?&gt;</span></code></pre></div>
 
 <p>下面是返回的图片(每天都不一样):</p>
-<p><img src="https://tools.cyfan.ga/bingpic/bing.php" srcset="/img/loading.gif" alt="bing" title="今日bing美图"></p>
+<p><img src="https://tools.cyfan.ga/bingpic/bing.php" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="bing" title="今日bing美图"></p>
 <p>修改了一下Cloudflare,支持http直接访问.<br>接着用wget下载:</p>
 <div class="hljs"><pre><code class="hljs undefined">--<span class="hljs-number">13</span>:<span class="hljs-number">38</span>:<span class="hljs-number">17</span>--  http://tools.cyfan.ga/bingpic/bing.php
            =&gt; `bing.php.<span class="hljs-number">1</span>'
@@ -664,7 +664,7 @@ vtag-vmaster {
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -784,7 +784,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>

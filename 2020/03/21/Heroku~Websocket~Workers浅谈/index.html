@@ -277,13 +277,13 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             <h1 style="display: none">Heroku~Websocket~Workers浅谈</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>不好意思，我又抛弃了 <code>diaspora</code>(刚满一天),跳槽到了 <code>fluid</code><img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"> 而且感觉用户体验比 <code>diaspora</code> 好多了,因为以前 <code>NexT</code>是不能添加图片表情的，因为图片会强制居中，<del>那玩意叫表情</del>,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,<del>所以很适合添加表情</del><img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="/img/loading.gif">.而且现在看来, <code>fluid</code> 并不比 <code>NexT</code> 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://img.cyfan.top/pic/moji/xy.png" srcset="/img/loading.gif">,比如懒加载<img src="https://img.cyfan.top/pic/moji/zhuaji.png" srcset="/img/loading.gif">.所以我可以随意添加图片啦!!!于是决定用这个主题了。</p>
+              <p>不好意思，我又抛弃了 <code>diaspora</code>(刚满一天),跳槽到了 <code>fluid</code><img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"> 而且感觉用户体验比 <code>diaspora</code> 好多了,因为以前 <code>NexT</code>是不能添加图片表情的，因为图片会强制居中，<del>那玩意叫表情</del>,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,<del>所以很适合添加表情</del><img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">.而且现在看来, <code>fluid</code> 并不比 <code>NexT</code> 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://img.cyfan.top/pic/moji/xy.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">,比如懒加载<img src="https://img.cyfan.top/pic/moji/zhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">.所以我可以随意添加图片啦!!!于是决定用这个主题了。</p>
 <p>好了,今天带来的又是一篇撸羊毛的技巧.</p>
 <blockquote>
 <h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p>脚本作者承认了该脚本违反了Heroku使用条款,所以使用该脚本造成Heroku账号被封本站概不负责!</p>
 </blockquote>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>我这个脚本Fork了自己的Github小号，我以前的小号Fork的是onplus的repo,onplusFork并改版了mrluanma的repo了,而mrluanma是fork了shadowsocks组织的php项目,所以这个脚本是8年前的…..<img src="https://img.cyfan.top/pic/moji/lh.png" srcset="/img/loading.gif"></p>
-<p>不得不说这个脚本的生存时间是真的强，从2012年至今，这个脚本依旧可以用<img src="https://img.cyfan.top/pic/moji/xy.png" srcset="/img/loading.gif">，只不过速度被硬生生压到了20kb/s，不过，我有提速的秘诀<del>废话，没点真本事我在这儿瞎晃？</del></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>我这个脚本Fork了自己的Github小号，我以前的小号Fork的是onplus的repo,onplusFork并改版了mrluanma的repo了,而mrluanma是fork了shadowsocks组织的php项目,所以这个脚本是8年前的…..<img src="https://img.cyfan.top/pic/moji/lh.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"></p>
+<p>不得不说这个脚本的生存时间是真的强，从2012年至今，这个脚本依旧可以用<img src="https://img.cyfan.top/pic/moji/xy.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">，只不过速度被硬生生压到了20kb/s，不过，我有提速的秘诀<del>废话，没点真本事我在这儿瞎晃？</del></p>
 <p>原理非常好理解，虽然教程上口口声声说原理是SS，但实际上脚本是基于NodeJS的WebSocks技术，所以其实就是个代理。</p>
 <h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><p>Heroku免费dyno也有550H/mo,自己用完全足够了,不过公开的话就够呛了,这个脚本注定只能偷偷摸摸的使用.(谁挂代理24小时挂着的呀)</p>
 <p>本教程为了避免 <code>教授方法</code> 故此避嫌（其实就是懒得写），具体可以看看<a href="https://github.com/ChenYFan/shadowsocks-heroku" target="_blank" rel="noopener">我Fork的项目</a>,里面写的已经很详细了,所以不要问我了….</p>
@@ -301,10 +301,10 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>下载我repo里的ss-win32/64或ss-mac，选择对应系统，解压，编辑 <code>conf.json</code> 替换地址为workers的地址。</p>
 <h1 id="自选节点"><a href="#自选节点" class="headerlink" title="自选节点"></a>自选节点</h1><p>由于workers默认解析至美国，延迟太大速度太低，可以绑定域名自选CDN或hosts修改。推荐hosts修改，这样省得DNS污染导致无法正常使用。</p>
 <p>可以试试1.1.1.*，日本节点,对于各种运营商支持不错.或者使用ipv6,避免水管拥堵.</p>
-<h1 id="表现"><a href="#表现" class="headerlink" title="表现:"></a>表现:</h1><p><img src="https://img.cyfan.top/pic/post/pasted-77.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<h1 id="表现"><a href="#表现" class="headerlink" title="表现:"></a>表现:</h1><p><img src="https://img.cyfan.top/pic/post/pasted-77.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>无论是作为备用还是主用,表现都还可以.毕竟老是白嫖我同学康哥在JMS的搬瓦工花的每月20多美元的SS线(100MBps)总是觉得愧疚.</p>
 <h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p><span class="heimu"><del>很好,又水了一篇</del></span></p>
-<p>但是前面说的很清楚,拿来应个急还可以,你要是拿来主用…那么很容易引起Heroku注意,账号封锁了就不要怪我喽<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif">.</p>
+<p>但是前面说的很清楚,拿来应个急还可以,你要是拿来主用…那么很容易引起Heroku注意,账号封锁了就不要怪我喽<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">.</p>
 <p>Heroku的服务器用的是Amazon的,所以不要指望带宽和延迟能很好.</p>
 <p>非常推荐自定义域名后故意手动污染DNS至一些封锁ip避免引起 <code>「羲农去我久」1PjT8X/2TCX3i。</code> 注意,这个脚本如果加上privoxy,在监听至0.0.0.0,还可以给手机做代理,速度也就一般吧.</p>
 
@@ -511,7 +511,7 @@ vtag-vmaster {
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -631,7 +631,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>

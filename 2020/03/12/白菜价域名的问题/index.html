@@ -280,7 +280,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
               <p>……………………………………………</p>
 <h1 id="没有开头的开头"><a href="#没有开头的开头" class="headerlink" title="没有开头的开头"></a>没有开头的开头</h1><p>今天2020年3月12日早上去万网，发现<code>.top</code>域名首年只要9块钱.</p>
 <p>真的只要9块钱,而且下一年续费也炒鸡便宜,只要26元,这点小钱还是付的起的.</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-21.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-21.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>因为自己的.ga域名毕竟是免费域名,拿出去没牌面.Freenom半死不活,现在又不能重新购买白嫖撸羊毛,反正9元也不贵,买就买吧，就把.top换成永久站点名字也行.</p>
 <p>然后手贱,一步一步点下去,支付宝一扫,就在那指纹按下去的一瞬间,我突然意识到一件事情,不用实名认证吗?</p>
 <p>结果低头一看,支付成功.</p>
@@ -288,24 +288,24 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>点进去,默认的NS是阿里云,用这个很容易被ServerHold,而且不能用CFCDN.</p>
 <p>国内备案你就让我别想了,你让我手持身份证拍照很抱歉我做不到,况且我服务器本来就是白嫖Github+CF高速香港CDN不在国内,也不需要备案.</p>
 <p>于是我就换成了CoudFlare的NameServer:</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-22.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-22.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>结果CloudFlare死活不肯接受:</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-23.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-23.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>但是Whois已经确认绑定完成了.</p>
 <p>…</p>
 <p>我当时就无语了,NS解析已经删除了,人家whois也说可以了,怎么就你不行呢?</p>
 <p>放ICANN Lookup上查:</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-24.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-24.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>怎么就被serverHold了???????还有注册姓名全部是空的为什么????</p>
 <p>前往ICANN帮助文档:</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-26.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-26.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <div class="hljs"><pre><code class="hljs undefined">If you provided delegation information (name servers), this status may indicate <span class="hljs-keyword">an</span> issue <span class="hljs-keyword">with</span> your domain that needs resolution. If so, you should contact your registrar <span class="hljs-built_in">to</span> request more information. If your domain does <span class="hljs-keyword">not</span> have <span class="hljs-keyword">any</span> issues, but you need <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> <span class="hljs-built_in">resolve</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> DNS, you must <span class="hljs-keyword">first</span> contact your registrar <span class="hljs-keyword">in</span> order <span class="hljs-built_in">to</span> provide <span class="hljs-keyword">the</span> necessary delegation information.</code></pre></div>
 
 <p>至少以我现在的英语水平,还是能勉强读懂的,大意就是注册商没有给予完整的注册人信息;</p>
 <p>可是我在万网填的东西比当时Freenom填的东西还要多,怎么就没完整呢???</p>
 <p>回到万网,我找了找帮助文档:</p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-25.png" srcset="/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://img.cyfan.top/pic/post/pasted-27.png" srcset="/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-25.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://img.cyfan.top/pic/post/pasted-27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>行了行了,到这一步我也明白了,简单的说不给实名认证就故意不填写完整,故意Serverhold,目的就是要实名认证.</p>
 <p>可是,问题是我身份证落在老家,现在疫情这么严重,你让我怎么回去拿????</p>
 <p>(而且问题是我还是个学生,未成年…)</p>
@@ -514,7 +514,7 @@ vtag-vmaster {
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -634,7 +634,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>

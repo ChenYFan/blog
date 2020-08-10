@@ -506,14 +506,14 @@ Google分析也很明确指出了,图片太大是得分低的最主要原因：
 
 ### ---27日
 
-中考考完了<img src="https://img.cyfan.top/pic/moji/%E9%95%BF%E8%8D%89.png" srcset="/img/loading.gif">，忙里偷闲对网站做了很多小更改，比较大的如
+中考考完了<img src="https://img.cyfan.top/pic/moji/%E9%95%BF%E8%8D%89.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">，忙里偷闲对网站做了很多小更改，比较大的如
 
 - 修改IPFS快速上传与镜像二合一
 - 建立CDN介绍页面
 - 通过CloudFlareCDNAPI几乎无耗时获取用户侧信息
-- 将博客部署成 `travis-ci` ，实现在线更新博客<span class="heimu">省得在学校无法更新博客</span>.[然而比较令人难堪的是，博客nodejs拓展特别多，git上传了将近一个小时，不过接下来更新博客就不用那么麻烦了]<img src="https://travis-ci.com/ChenYFan/blog.svg?branch=master" srcset="/img/loading.gif">【以及CloudFlare缓存更新速度有点难堪】
+- 将博客部署成 `travis-ci` ，实现在线更新博客<span class="heimu">省得在学校无法更新博客</span>.[然而比较令人难堪的是，博客nodejs拓展特别多，git上传了将近一个小时，不过接下来更新博客就不用那么麻烦了]<img src="https://travis-ci.com/ChenYFan/blog.svg?branch=master" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">【以及CloudFlare缓存更新速度有点难堪】
 
-过几天在扯吧，现在回去潜水了<img src="https://img.cyfan.top/pic/moji/huaji.gif" srcset="/img/loading.gif">
+过几天在扯吧，现在回去潜水了<img src="https://img.cyfan.top/pic/moji/huaji.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">
 
 其实也是方便了我在手机端进行修改，额，不过手机端打字确实不是很舒服，还是电脑为主力。
 
@@ -524,10 +524,10 @@ Google分析也很明确指出了,图片太大是得分低的最主要原因：
 #### ---23日
 
 ~~WTM~~，GoogleDrive如果用GDindex，正常下载大文件或视频也就算了，下载一个2MB的文件居然要杀毒！神奇算法居然一次杀毒要10秒！！！更令人666的是，大文件不杀毒，小文件杀的的飞起！没杀完直接给404？！？！
-最让我无语的是，这个功能取消不了...<img src="https://img.cyfan.top/pic/moji/lh.jpg" srcset="/img/loading.gif">
+最让我无语的是，这个功能取消不了...<img src="https://img.cyfan.top/pic/moji/lh.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">
 这就导致在16-23日间博客图片迟迟打不开的原因
 Workers更是在后台爆异常，严重拖慢了速度。
-<img src="https://img.cyfan.top/pic/post/pasted-205.png" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-205.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 简称：脑阔疼。
 
 目前所有图片已迁移至OneDrive，自己下载速度大概有500kb/s，用的是ODM搭建与Tencent的SCF，好像OneDrive也就5GB，要求不大，能拿来图床就行了，反正视频照样走GDrive。
@@ -535,7 +535,7 @@ Workers更是在后台爆异常，严重拖慢了速度。
 因为获取到后就直接走302跳转到微软直链下载，效率是差了点，不过比走GDrive（20s）或Github（12s），平均下来只要6s就够了，小图片秒开，况且OneDrive可以映射在Windows里成为一个硬盘，正常做图床还方便修改，足够了。
 
 SCF的收费相当良心，前面免费额度估计是用不完的，反正我又不是拿来做网盘，就是个图床，能走40万GBs100万次，对于我这个小博主来说，基本不太可能，当然，各位大侠手下留情，我似乎没招惹什么人吧。
-<img src="https://img.cyfan.top/pic/post/pasted-205.jpg" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-205.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 
 换图床的好处就是大大减少了走Githubpages流量，因为我整个博客不带图片只有15MB，可以算作轻巧了。
 
@@ -551,18 +551,18 @@ SCF的收费相当良心，前面免费额度估计是用不完的，反正我�
 我要死了呜呜呜呜呜。
 趁死之前把图床换到GoogleDrive直链网盘上，省得走Github和CloudFlare速度太慢了，还浪费Github空间，以下是截图：
 替换图床前：
-<img src="https://img.cyfan.top/pic/post/pasted-196.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-197.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-198.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-199.jpg" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-196.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-197.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-198.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-199.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 替换图床后：
-<img src="https://img.cyfan.top/pic/post/pasted-200.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-201.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-202.jpg" srcset="/img/loading.gif" height=45% width=45%>
-<img src="https://img.cyfan.top/pic/post/pasted-203.jpg" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-200.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-201.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-202.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-203.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 
 我地妈呀，我居然有这么多图片！！！
-<img src="https://img.cyfan.top/pic/post/pasted-204.jpg" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-204.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 幸好早点迁移过来了，(*≧︶≦))(￣▽￣* )ゞ
 以后上传走Workers，至少不要走Github就行。
 
@@ -580,7 +580,7 @@ SCF的收费相当良心，前面免费额度估计是用不完的，反正我�
 #### ---11日
 
 
-<img src="https://img.cyfan.top/pic/post/pasted-194.png" srcset="/img/loading.gif" height=45% width=45%>
+<img src="https://img.cyfan.top/pic/post/pasted-194.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" height=45% width=45%>
 
 这下连个<kbd>忽略警告，继续访问</kbd>也没有了（つ﹏⊂）
 
@@ -675,7 +675,7 @@ F12看了一下博客，5秒加载时间一半是不蒜子的功劳...
 ---
 
 
-<img src="https://img.cyfan.top/pic/post/pasted-81.png" srcset="/img/loading.gif" width="75%" height="75%">
+<img src="https://img.cyfan.top/pic/post/pasted-81.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" width="75%" height="75%">
 
 不好意思，谷歌，我有点无法理解你的思维。
 
@@ -690,7 +690,7 @@ F12看了一下博客，5秒加载时间一半是不蒜子的功劳...
 
 ---
 
-对不起，我又换成fluid了<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif">，而且意外的发现这可以随便加表情<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="/img/loading.gif"><img src="https://img.cyfan.top/pic/moji/zhuaji.png" srcset="/img/loading.gif"><img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="/img/loading.gif">
+对不起，我又换成fluid了<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">，而且意外的发现这可以随便加表情<img src="https://img.cyfan.top/pic/moji/huaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"><img src="https://img.cyfan.top/pic/moji/zhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"><img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">
 
 ---
 
@@ -835,7 +835,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>

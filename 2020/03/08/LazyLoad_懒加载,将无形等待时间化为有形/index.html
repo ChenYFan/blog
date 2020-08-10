@@ -280,7 +280,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
               <p>说实话，很早以前接触懒加载是在看别人提到过，但当时对此不温不火的，因为当时部署在Coding上，速度基本加载图片几毫秒的事。而且当时每篇文章也就三四张图，基本不影响加载时间。</p>
 <p>可是现在部署在github上，国内一访问，终于明白LazyLoad的妙用了。</p>
 <p>即使加载了CloudFlareCDN，选了个比较快的CDNIP加载Hosts中，也只有120kb/s的速度，致命的是，我上一篇博文图片将近31MB。</p>
-<p><img src="https://img.cyfan.top/pic/lazy/1.jpg" srcset="/img/loading.gif" alt="图片" title="上一次手贱,图片添加的比较多."></p>
+<p><img src="https://img.cyfan.top/pic/lazy/1.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="上一次手贱,图片添加的比较多."></p>
 <p>以120kb/s的速度,以前加载个不到1MB的博文(Live2D看板娘本身自带LazyLoad)也就几秒钟的事情,加载个30MB的网页…</p>
 <p>宏观来讲,就是打开博文一片空白,既看不到文字也看不到图片.</p>
 <p>那么这就有一个问题,网页一片空白,你是怪博主还是怪网络呢?</p>
@@ -317,7 +317,7 @@ Control-C
 ^C</code></pre></div>
 
 <p>如果丢包丢的正好是图片,即使加载完毕,估计也是这么一个半死不活的图标:</p>
-<p><img src="https://img.cyfan.top/pic/lazy/2.jpg" srcset="/img/loading.gif" alt="图片" title="..."></p>
+<p><img src="https://img.cyfan.top/pic/lazy/2.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="..."></p>
 <p>啧啧,有伤风雅有伤风雅…..((/- -)/</p>
 <p>这个时候,懒加载就变得非常重要了.</p>
 <h1 id="说了那么多-什么是懒加载"><a href="#说了那么多-什么是懒加载" class="headerlink" title="说了那么多,什么是懒加载?"></a>说了那么多,什么是懒加载?</h1><p>名符其义,懒加载懒加载,你懒得看我就懒得加载.</p>
@@ -329,7 +329,7 @@ Control-C
 <p>当时,我的上一篇博文正常国内加载到显示文字用了将近10min,也就是空白页显示了10min,纵使在国外加载也用了4min.</p>
 <p>也就是正常游客看起来根本加载不了,只有空白页.</p>
 <p>现在,当使用懒加载后:</p>
-<p><img src="https://img.cyfan.top/pic/lazy/3.gif" srcset="/img/loading.gif" alt="图片" title="请注意开发者工具的监视项"></p>
+<p><img src="https://img.cyfan.top/pic/lazy/3.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="请注意开发者工具的监视项"></p>
 <p>(为了降低用户查看该动图的时间,我进行了压缩减帧:30fps,大小约有4.3MB,请耐心等待)</p>
 <p>看看开发者工具Network一项,我们很自然发现,当我滑动到某张图片上方,某张图片才开始加载,使用一张动图作为未加载的动画.</p>
 <p>这,就是懒加载的奥秘.</p>
@@ -378,7 +378,7 @@ Control-C
 </ol>
 <p>当然,懒加载所需的图片要尽量的小,我的懒加载图片是剽窃百度的,压缩了一下约300kb,加载所需时间为0.2s.</p>
 <p>这是我现在用的懒加载图片：</p>
-<p><img src="https://img.cyfan.top/pic/lazy.gif" srcset="/img/loading.gif" alt="LazyLoad"></p>
+<p><img src="https://img.cyfan.top/pic/lazy.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="LazyLoad"></p>
 
             </div>
             <hr>
@@ -589,7 +589,7 @@ vtag-vmaster {
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -709,7 +709,7 @@ $(document).ready(function() {
       >
         <span class="beian-police-sep">&nbsp;|&nbsp;</span>
 <!--
-          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="/img/loading.gif" alt="police-icon" />
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
 -->
         <span>萌ICP备</span>
       </a>
