@@ -39,7 +39,7 @@ iconfont: //at.alicdn.com/t/font_1736178_pjno9b9zyxs.css
 
 anchor: https://cdn.staticfile.org/anchor-js/4.2.2/
 
-github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
+github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
 
 jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/
 
