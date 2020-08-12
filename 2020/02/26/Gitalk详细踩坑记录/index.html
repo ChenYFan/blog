@@ -206,7 +206,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://img.cyfan.top/pic/postpic/20200701111700.JPG') no-repeat center center;
+         style="background: url('https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200701111700.JPG') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -288,7 +288,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>没办法，只好又迁回Github。好在Github可以给每一个仓库绑定一个域名，（大不了以后更新博客麻烦点罢了。）</p>
 <p>接着折腾了Github好一会儿，包括后来解决Coding赖着域名不放，国内ip解析错误的原因。</p>
 <p>结果今天早上登陆却发现：</p>
-<p><img src="https://img.cyfan.top/pic/gitalk/1.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="LeanCloud报错"></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/gitalk/1.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="LeanCloud报错"></p>
 <p>…</p>
 <p>打开LeanCloud官方文档,并没有找到答案.</p>
 <p>也就是说,我还不知道错误发生在归档后还是在迁移后的.</p>
@@ -408,14 +408,14 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
 <h3 id="规避解码"><a href="#规避解码" class="headerlink" title="规避解码:"></a>规避解码:</h3><p>毕竟Github Lable其实是支持中文的…<span class="heimu" title="你知道的太多了">你怎么不早说!</span>,所以思路很简单,规避解码即可.</p>
 <p>返回步骤1,第11行,默认值是<code>location.pathname</code>也就是路径,规避解码很简单,把它替换成<code>decode(location.pathname)</code>就可以啦.</p>
 <p>当然这个办法最终还是有效的:</p>
-<p><img src="https://img.cyfan.top/pic/gitalk/2.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="规避解码"></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/gitalk/2.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="规避解码"></p>
 <p>但是,但是,你还记得我有一篇文章的题目吗: <code>CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81</code></p>
 <p>没错,解码以后就是: <code>CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！</code><br>加上博客域名和路径,将近60字.</p>
 <p>这个方法依旧没有解决根本问题.</p>
 <h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p><del>这个最终还是被我采用了,原因是它修改起来真的很简单.</del> 最终这个办法还是被舍弃了。</p>
 <p>返回步骤1,第11行,默认值是 <code>location.pathname</code> 也就是路径,把它替换成 <code>J3t7cGFnZS5kYXRlfX0n</code> (直接输入page.date被识别成nodejs语言执行了,只能通过base64编码,解码即可)(请解码后替换即可).</p>
 <p>最终的lable会变成时间戳(还是毫秒级别的),时间戳就是目标时间距离1970-01-01 08:00:00(UTC +8)的毫秒</p>
-<p><img src="https://img.cyfan.top/pic/gitalk/3.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="完结撒花"></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/gitalk/3.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="完结撒花"></p>
 <p>这个是创建时间,也就是说只要我不是故意去更改时间,是几乎不可能碰撞的<span class="heimu" title="你知道的太多了">废话,我怎么可能在同一时间内写好两篇博文</span></p>
 <p>而且时间戳到50位…9999年12月31日23点59分59秒的时间戳253402271999000（刚刚好15位），也就是说用到我200代都够用。</p>
 <p>但是，</p>

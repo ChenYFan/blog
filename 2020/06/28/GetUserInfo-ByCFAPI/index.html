@@ -206,7 +206,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://img.cyfan.top/pic/postpic/20200628082609.jpg') no-repeat center center;
+         style="background: url('https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628082609.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -277,8 +277,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             <h1 style="display: none">通过CloudFlareAPI获取用户侧信息</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了<img src="https://img.cyfan.top/pic/moji/%E8%82%BF%E5%8C%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。</p>
-<p>因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">hexo官方文档</a> 用Travis-ci+Github实现在线自动部署,以后更新也方便点<img src="https://img.cyfan.top/pic/moji/%E5%9D%90%E7%AD%89.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+              <p>噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E8%82%BF%E5%8C%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。</p>
+<p>因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">hexo官方文档</a> 用Travis-ci+Github实现在线自动部署,以后更新也方便点<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E5%9D%90%E7%AD%89.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>好了好了，不说了，今天简单讲一下如何用CloudFlare自带的API获取用户信息。</p>
 <h1 id="cdn-cgi-trace"><a href="#cdn-cgi-trace" class="headerlink" title="/cdn-cgi/trace"></a>/cdn-cgi/trace</h1><p>刚开始建立博客的时候，也是想过显示用户ip地址的，但网上的教程大多都是用搜狐新浪的js，而且很早就过期了。所以也就搁着迟迟没有解决。</p>
 <p>后来偶然间知道CloudFlare有个比较神奇的技术，在部署在CloudFlare上的网站，域名后面加上<code>/cdn-cgi/trace</code>就可以获得用户侧信息，例如<code>https://blog.cyfan.top/cdn-cgi/trace</code>：</p>
@@ -348,9 +348,9 @@ $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"
 你的所在国家/地区: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"loc"</span>&gt;</span>【未知】 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div>
 
 <p>结果应该类似这样:</p>
-<p><img src="https://img.cyfan.top/pic/postpic/20200628094419.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628094419.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>划到页底即可看到。</p>
-<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了<img src="https://img.cyfan.top/pic/moji/yhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/yhuaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p>
 
             </div>
             <hr>

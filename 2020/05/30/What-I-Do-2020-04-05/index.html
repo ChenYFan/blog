@@ -206,7 +206,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://img.cyfan.top/pic/cover/9.jpg') no-repeat center center;
+         style="background: url('https://assets.cyfan.top/file/CYF-PicBed/pic/cover/9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -230,7 +230,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      972字
+      978字
     </span>
   
 
@@ -277,8 +277,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             <h1 style="display: none">这一个半月，我干了什么</h1>
             
             <div class="markdown-body" id="post-body">
-              <p><img src="https://img.cyfan.top/pic/moji/wjlkdhxs.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
-<p>啊，期中考试终于考完了，现在心里想的都是司马脸，<img src="https://img.cyfan.top/pic/moji/huaji.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+              <p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/wjlkdhxs.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>啊，期中考试终于考完了，现在心里想的都是司马脸，<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>距离上一次更新已经将近1个半月了，赶在5月小尾巴发一篇博文。当然，这个月维护还是做到了，只不过太忙没更新而已。</p>
 <p>过来扯扯这个月发生了什么。</p>
 <h1 id="计算机方面"><a href="#计算机方面" class="headerlink" title="计算机方面"></a>计算机方面</h1><h2 id="网站方面"><a href="#网站方面" class="headerlink" title="网站方面"></a>网站方面</h2><h3 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h3><p>入手了一台德国VPS，还得感谢这位老兄：</p>
@@ -286,34 +286,34 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>试了一下，性能略差，连IPV4都没有，就当是学习吧，现在就是拿来玩玩的，毕竟我大多数情况下基本是ServerLess。</p>
 <p>以后打算全站迁移到一台VPS上，当然习惯用Hexo了，毕竟Hexo-Admin还是很给力的。</p>
 <h3 id="图床："><a href="#图床：" class="headerlink" title="图床："></a>图床：</h3><p>我当场裂开。</p>
-<p>之前全放在Github上，但是，但是这会导致多线程并发是Worker抛出异常，速度还很慢。而且很大，Github那么恐怖的大小：<img src="https://img.cyfan.top/pic/post/206.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>之前全放在Github上，但是，但是这会导致多线程并发是Worker抛出异常，速度还很慢。而且很大，Github那么恐怖的大小：<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/206.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>三个星期前开始迁移，刚开始采用了GoogleDrive+<br>GDIndex，上学去的时候，加载速度还不错，结果一到学校，自己打开，爆一大堆404.</p>
-<p>Workers自然也出大问题<br><img src="https://img.cyfan.top/pic/post/pasted-205.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
-<p>后来了解到，谷歌网盘在每每输出一个文件，都会来一次销魂的杀毒，一张10kb的图片，杀毒将近10s，Worker超时30s直接返回404！！！？？？，我当时心里就开始表演天皇meta的showtime了。<img src="https://img.cyfan.top/pic/moji/%E5%96%B7%E8%A1%80.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
-<p>所以后来又采用腾讯云免费SCF额度+OneDrive那可怜的5GB制作图床，好歹也能正常加载，但是OMp的工作原理和GI不一样，GoogleDrive在国内那是不可访问的，所以最终还是采用了反向代理，但是OneDrive是可以滴，所以OMp采用的是301跳转。燃鹅，直连速度和延迟相当的感人，在多线程并发时经常超时。<img src="https://img.cyfan.top/pic/moji/tx.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>Workers自然也出大问题<br><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-205.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>后来了解到，谷歌网盘在每每输出一个文件，都会来一次销魂的杀毒，一张10kb的图片，杀毒将近10s，Worker超时30s直接返回404！！！？？？，我当时心里就开始表演天皇meta的showtime了。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E5%96%B7%E8%A1%80.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>所以后来又采用腾讯云免费SCF额度+OneDrive那可怜的5GB制作图床，好歹也能正常加载，但是OMp的工作原理和GI不一样，GoogleDrive在国内那是不可访问的，所以最终还是采用了反向代理，但是OneDrive是可以滴，所以OMp采用的是301跳转。燃鹅，直连速度和延迟相当的感人，在多线程并发时经常超时。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/tx.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>当时整个人都裂开了。</p>
 <p>所以，最终解决办法就是，氪金！！！！！！</p>
 <p>腾讯云COS（相当于阿里云OSS）+CDN，当然因为没备案所以放在Hongkong，但是腾讯云有个暗坑，COS绑定自定义域名<del>md</del>居然不给直接开SSL，非得要套层CDN才行，这不是明摆着坑钱么。计算下来，每天平均支出0.03￥.</p>
-<p>肉疼。<img src="https://img.cyfan.top/pic/moji/s.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>肉疼。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/s.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>好在腾讯COS也有客户端，上传文件至少没那么麻烦。</p>
-<p><img src="https://img.cyfan.top/pic/post/207.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/207.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>不过话说回来，最近香港局势确实很不稳定，我现在根本无法直连Hongkong的COSBucket，CDN套就套吧，只不过神奇地绕道美国都是什么奇葩玩意，害得我只能A到日本，出口居然是Amazon。</p>
 <h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>又是一个当场炸裂的东西。</p>
 <p>Gitalk本身链接api.github.com就是一个相当蛋疼的事情。</p>
-<p><img src="https://img.cyfan.top/pic/post/205.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/205.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>我也尝试着做过类似于DiqusJS的反向代理的尝试，可是到最后一步Github回调地址又给我强制跳到api.github.com，我当时人都傻了。最后实在头疼，换成了Valine。当然找了个魔改版本，看起来还不错。<del>【这一次再也不会造成30天无访问自动归档这种奇异的事情了】</del></p>
-<p><img src="https://img.cyfan.top/pic/post/208.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/208.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>两个魔改后的JS地址</p>
-<div class="hljs"><pre><code class="hljs html">https://img.cyfan.top/js/av-min.js
-https://img.cyfan.top/js/valine.min.js</code></pre></div>
+<div class="hljs"><pre><code class="hljs html">https://assets.cyfan.top/file/CYF-PicBed/js/av-min.js
+https://assets.cyfan.top/file/CYF-PicBed/js/valine.min.js</code></pre></div>
 
-<h2 id="编程方面"><a href="#编程方面" class="headerlink" title="编程方面"></a>编程方面</h2><p>艹，VB轮到我这一届居然不考，<img src="https://img.cyfan.top/pic/moji/qgbf.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>，害得我只能硬啃C++。考试还行，就那附加题做不出来，一道高精乘法，居然忘记了<code>strlen()</code>这个函数，当时想撞墙的心态都有了。</p>
+<h2 id="编程方面"><a href="#编程方面" class="headerlink" title="编程方面"></a>编程方面</h2><p>艹，VB轮到我这一届居然不考，<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/qgbf.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>，害得我只能硬啃C++。考试还行，就那附加题做不出来，一道高精乘法，居然忘记了<code>strlen()</code>这个函数，当时想撞墙的心态都有了。</p>
 <h1 id="学习方面"><a href="#学习方面" class="headerlink" title="学习方面"></a>学习方面</h1><p>考完了，我完了。</p>
 <p>数学150分扣46分是什么鬼？？？？？？？语文五道选择题错三道又是什么鬼？？？？？？？？</p>
 <p><span class="heimu">还好物理只扣10分，化学一分没扣，计算机也只是附加题最后一道不会写而已</span></p>
 <p>欸欸欸欸欸欸欸，感觉我要垫底。</p>
 <h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>好好学习，天天向上！</p>
-<p>好了好了，继续潜水<img src="https://img.cyfan.top/pic/moji/%E6%97%A0%E5%A5%88.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
+<p>好了好了，继续潜水<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E6%97%A0%E5%A5%88.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>滑稽</p>
 
             </div>
