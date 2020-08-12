@@ -45,7 +45,7 @@ jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/
 
 bootstrap: https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/
 
-highlightjs: https://cdn.staticfile.org/highlight.js/10.0.0/
+highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.0.0/
 
 tocbot: https://cdn.staticfile.org/tocbot/4.11.1/
 
@@ -61,7 +61,7 @@ aplayer: https://cdn.staticfile.org/aplayer/1.10.1/
 
 busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-clipboard: https://cdn.staticfile.org/clipboard.js/2.0.6/
+clipboard: https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/
 
 mermaid: https://cdn.staticfile.org/mermaid/8.5.0/
 
