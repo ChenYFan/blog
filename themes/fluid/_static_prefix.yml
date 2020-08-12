@@ -51,7 +51,7 @@ tocbot: https://cdn.jsdelivr.net/npm/tocbot@4.11.1/dist/
 
 typed: https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
 
-fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
+fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
 
 mathjax: https://cdn.staticfile.org/mathjax/3.0.5/es5/
 
