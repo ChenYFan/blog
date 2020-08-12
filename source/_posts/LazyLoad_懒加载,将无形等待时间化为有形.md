@@ -19,7 +19,7 @@ copyright: true
 
 即使加载了CloudFlareCDN，选了个比较快的CDNIP加载Hosts中，也只有120kb/s的速度，致命的是，我上一篇博文图片将近31MB。
 
-![图片](https://img.cyfan.top/pic/lazy/1.jpg "上一次手贱,图片添加的比较多.")
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/lazy/1.jpg "上一次手贱,图片添加的比较多.")
 
 以120kb/s的速度,以前加载个不到1MB的博文(Live2D看板娘本身自带LazyLoad)也就几秒钟的事情,加载个30MB的网页...
 
@@ -67,7 +67,7 @@ Control-C
 
 如果丢包丢的正好是图片,即使加载完毕,估计也是这么一个半死不活的图标:
 
-![图片](https://img.cyfan.top/pic/lazy/2.jpg "...")
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/lazy/2.jpg "...")
 
 啧啧,有伤风雅有伤风雅.....((/- -)/
 
@@ -95,7 +95,7 @@ Control-C
 
 现在,当使用懒加载后:
 
-![图片](https://img.cyfan.top/pic/lazy/3.gif "请注意开发者工具的监视项")
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/lazy/3.gif "请注意开发者工具的监视项")
 
 (为了降低用户查看该动图的时间,我进行了压缩减帧:30fps,大小约有4.3MB,请耐心等待)
 
@@ -120,7 +120,7 @@ Control-C
 
 
 ```html
-<img src="https://img.cyfan.top/pic/lazy.gif" data-original="/xxx.jpg" alt="图片" title="title">
+<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/lazy.gif" data-original="/xxx.jpg" alt="图片" title="title">
 ```
 
 这样,当打开时网站回家再 `src` 的资源,只有当滑动到图片上方,再加载 `data-original` 原始图片.
@@ -194,5 +194,5 @@ Hexo-lazy-image 实现原理
 
 这是我现在用的懒加载图片：
 
-![LazyLoad](https://img.cyfan.top/pic/lazy.gif)
+![LazyLoad](https://assets.cyfan.top/file/CYF-PicBed/pic/lazy.gif)
 

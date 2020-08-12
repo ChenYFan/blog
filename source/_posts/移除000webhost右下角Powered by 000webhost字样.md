@@ -17,7 +17,7 @@ copyright: true
 
 # 右下角广告：
 
-![广告](https://img.cyfan.top/pic/000AD.jpg "↑这是什么??????")
+![广告](https://assets.cyfan.top/file/CYF-PicBed/pic/000AD.jpg "↑这是什么??????")
 
 哇,这么一大块东西看的我恶心.
 打广告也不能打的那么显眼吧?\(\(\(φ\(◎ロ◎;\)φ\)\)\)
@@ -25,11 +25,11 @@ copyright: true
 
 我登入三蛋空间后台,看看有没有可以去除广告选项:
 
-![广告不可抗](https://img.cyfan.top/pic/000ADE.jpg "↑F**K,居然不给关")
+![广告不可抗](https://assets.cyfan.top/file/CYF-PicBed/pic/000ADE.jpg "↑F**K,居然不给关")
 
 可能大家不懂英语,google翻译一下:
 
-![广告不可抗](https://img.cyfan.top/pic/000ADC.jpg "↑咳咳,怎么办?")
+![广告不可抗](https://assets.cyfan.top/file/CYF-PicBed/pic/000ADC.jpg "↑咳咳,怎么办?")
 
 呵呵,居然威胁我升级高级版,我要是有钱还用得着说吗?
 

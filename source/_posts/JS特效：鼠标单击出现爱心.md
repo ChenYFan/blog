@@ -18,7 +18,7 @@ copyright: true
 其实用起来还是可以的，自我感觉良好啊。
 不说了，直接贴演示：
 # 演示：
-![演示](https://img.cyfan.top/pic/HEART.jpg "爱心特效")
+![演示](https://assets.cyfan.top/file/CYF-PicBed/pic/HEART.jpg "爱心特效")
 ## Javascript代码:
 ```Javascript
 (function(window,document,undefined){

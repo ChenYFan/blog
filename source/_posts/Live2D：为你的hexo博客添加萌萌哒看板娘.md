@@ -180,7 +180,7 @@ live2d:
 想修改看板娘大小、位置、格式、文本内容等，可查看并修改 `waifu-tips.js` 、 `waifu-tips.json` 和 `waifu.css`。
 
 最终效果如图：
-![](https://img.cyfan.top/pic/KBN.png "最终效果")
+![](https://assets.cyfan.top/file/CYF-PicBed/pic/KBN.png "最终效果")
 后端API地址：
 <https://github.com/fghrsh/live2d_api>
 

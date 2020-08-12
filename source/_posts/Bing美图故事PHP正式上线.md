@@ -9,12 +9,12 @@ copyright: true
 categories:
   - 屌代码
 date: 2020-03-16 10:44:00
-index_img: https://img.cyfan.top/pic/img/10.jpg
-banner_img: https://img.cyfan.top/pic/img/10.jpg
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/img/10.jpg
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/img/10.jpg
 ---
 欸...自己挖的坑必须要自己填啊...
 
-最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://img.cyfan.top/pic/post/pasted-5.png" >，一旦进行 `hexo server -w` 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了...<img src="https://img.cyfan.top/pic/post/pasted-5.png">
+最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png" >，一旦进行 `hexo server -w` 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了...<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png">
 
 欸，最近逃课太频繁，理科全挂科了，甚至在这一次<span class="heimu" title="你知道的太多了">尖子班</span>考试里化学挂科了，不应该这样的啊，我以前化学老棒老棒的了，看起来要拾回学习的心了。所以以后站点维护估计不会那么频繁了。
 
@@ -37,25 +37,25 @@ banner_img: https://img.cyfan.top/pic/img/10.jpg
 
 桌面端:
 
-![实际使用](https://img.cyfan.top/pic/post/8.gif "桌面端动图")
+![实际使用](https://assets.cyfan.top/file/CYF-PicBed/pic/post/8.gif "桌面端动图")
 
 手机端:
 
 
-<img src="https://img.cyfan.top/pic/post/9.gif" width="200%" height="200%">
+<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/9.gif" width="200%" height="200%">
 
 解决手机端不兼容桌面端问题：
 
 手机横屏bug（已修复）：
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-40.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-40.png)
 
 
 以及我的头像版权镇压，保证没有bug（不要删除ヽ（≧□≦）ノ！）
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-41.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-41.png)
 
 已开源，https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher
 不过暂时不允许转载删除版权和头像,因为修改这个花费我太多精力了,感谢您的理解!

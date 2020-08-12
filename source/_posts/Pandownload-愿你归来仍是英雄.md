@@ -5,8 +5,8 @@ tags:
   - 网盘
   - PanDownload
   - 悼文
-index_img: https://img.cyfan.top/pic/cover/8.jpg
-banner_img: https://img.cyfan.top/pic/cover/8.jpg
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/8.jpg
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/8.jpg
 categories:
   - 随心记
 date: 2020-04-17 17:19:00
@@ -44,7 +44,7 @@ PanDownload窃取用户隐私？你可能没搞懂，PanDownload，作用就是�
 # 漏洞百出的被捕声明
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-195.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-195.png)
 
 首先，PanDownload核心就是获取个直链，你需要反编译解剖软件结构，一盯几个小时？民警办案效率挺高的嘛。
 

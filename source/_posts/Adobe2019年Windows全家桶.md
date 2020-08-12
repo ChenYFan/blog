@@ -17,7 +17,7 @@ copyright: true
             </a>
 这可是百年难见的好东西啊！
 
-![旗舰店上的价格](https://img.cyfan.top/pic/ADOBE.png "旗舰店上的价格")
+![旗舰店上的价格](https://assets.cyfan.top/file/CYF-PicBed/pic/ADOBE.png "旗舰店上的价格")
 
 # 什么是Adobe CC?
 adobe是Photoshop的原始软件名称，CC即为：Creative Cloud ，也就是创意云。

@@ -8,8 +8,8 @@ tags:
 categories:
   - 撸羊毛
 date: 2020-03-19 09:07:00
-index_img: https://img.cyfan.top/pic/post/pasted-69.png
-banner_img: https://img.cyfan.top/pic/post/pasted-69.png
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-69.png
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-69.png
 ---
 自从CloudFlare渐渐浮出大众的视野，现在它的各项服务已经玩出花了，如果不陌生，它有一个应用叫 `1.1.1.1`,简单的说就是在手机上搭建DoH和DoT,本来的意思就是绕开域名污染,结果正好撞到某些人怀里,<span class="heimu">当然也包括我 </span>,亲测使用DoH虽然速度慢了点,但是上`DuckDuckGo` 不是梦啊.
 
@@ -22,12 +22,12 @@ banner_img: https://img.cyfan.top/pic/post/pasted-69.png
 就拿CFWorker来说,传统服务是这样的:
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-67.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-67.png)
 
 但是CloudFlare换了个思路,为什么所有数据都要一个中心节点算,在用户旁边的CDN不能算吗?
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-68.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-68.png)
 
 让用户身边的服务器进行相应,在用户与服务器的边缘计算,这就是边缘服务.
 
@@ -38,7 +38,7 @@ banner_img: https://img.cyfan.top/pic/post/pasted-69.png
 那么,我现在告诉你我有多少流量:
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-69.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-69.png)
 
 这全都依赖这个脚本：
 
@@ -53,7 +53,7 @@ Ly8lMjBGYWtlJTIwcmVnaXN0ZXIlMjBmb3IlMjByZWZlcnJlciUyMHRvJTIwZ2V0JTIwd2FycCUyMHBs
 
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-70.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-70.png)
 
 解密脚本，前面四行是这样的：
 

@@ -15,13 +15,13 @@ copyright: true
 LeanCould是支持CNAME别名解析滴，这也是个不错的建站选择。
 
 然而比较蛋疼的是，LeanCloud国际版虽然可以CNAME，可是SSL证书要自己配啊。（不知道国内会不会送一个(lll￢ω￢)）
-![蛋蛋的忧伤](https://img.cyfan.top/pic/LCSSL.png "蛋蛋的忧伤")
+![蛋蛋的忧伤](https://assets.cyfan.top/file/CYF-PicBed/pic/LCSSL.png "蛋蛋的忧伤")
 于是我就开始了漫漫SSL证书寻找之旅。
 
 # 蠢方法：
 
 我直接在百度上搜索`免费SSL证书`，当我按下搜索键时，心里咯噔一下，完了，待会儿出来一堆广告。
-![果不其然](https://img.cyfan.top/pic/BAIDUSSL.png "果不其然")
+![果不其然](https://assets.cyfan.top/file/CYF-PicBed/pic/BAIDUSSL.png "果不其然")
 
 默默按下了关闭按钮....
 
@@ -29,7 +29,7 @@ LeanCould是支持CNAME别名解析滴，这也是个不错的建站选择。
 
 腾讯的SSL似乎是有赛门铁克的免费的SSL，况且也有一年的有效期。
 
-![勉强选购](https://img.cyfan.top/pic/TSSL.png "勉强选购")
+![勉强选购](https://assets.cyfan.top/file/CYF-PicBed/pic/TSSL.png "勉强选购")
 
 `实名认证`...我不喜欢的又来了.
 
@@ -39,7 +39,7 @@ LeanCould是支持CNAME别名解析滴，这也是个不错的建站选择。
 
 那么问题来了，泛域名又是多少呢？
 
-![Oh！SHIT！](https://img.cyfan.top/pic/PSSL.png "Oh！SHIT！")
+![Oh！SHIT！](https://assets.cyfan.top/file/CYF-PicBed/pic/PSSL.png "Oh！SHIT！")
 
 1699.15元/年！个人需求也要那么多？腾讯想钱想疯了吧？？？
 
@@ -61,17 +61,17 @@ LeanCould是支持CNAME别名解析滴，这也是个不错的建站选择。
 
 我后来想起来CloudFlare似乎有送SSL的,幸好本生就DNS放在CloudFlare上托管，已经有了账号。点击网址,选择`SSL/TLS`,翻到了`Origin Certificates`
 
-![eem](https://img.cyfan.top/pic/CFSSL.jpg)
+![eem](https://assets.cyfan.top/file/CYF-PicBed/pic/CFSSL.jpg)
 
 点击`Creat Certificate`,弹出提示框
 
-![eem](https://img.cyfan.top/pic/CFCSSL.png)
+![eem](https://assets.cyfan.top/file/CYF-PicBed/pic/CFCSSL.png)
 
 第一行默认`RSA`就这个吧(我也不知道这是什么(￣▽￣)")
 第二行支持泛域名,也不错.
 第三行年限.....15年???????????????
 这个年限有点超乎我的期望。
-![What?](https://img.cyfan.top/pic/WHAT.jpg "什么鬼")
+![What?](https://assets.cyfan.top/file/CYF-PicBed/pic/WHAT.jpg "什么鬼")
 
 点击创建,证书就出来了.
 

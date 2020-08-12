@@ -8,10 +8,10 @@ tags:
 categories:
   - 撸羊毛
 date: 2020-03-21 08:08:00
-index_img: https://img.cyfan.top/pic/cover/3.jpg
-banner_img: https://img.cyfan.top/pic/cover/3.jpg
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/3.jpg
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/3.jpg
 ---
-不好意思，我又抛弃了 `diaspora`(刚满一天),跳槽到了 `fluid`<img src="https://img.cyfan.top/pic/moji/huaji.png"> 而且感觉用户体验比 `diaspora` 好多了,因为以前 `NexT`是不能添加图片表情的，因为图片会强制居中，~~那玩意叫表情~~,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,~~所以很适合添加表情~~<img src="https://img.cyfan.top/pic/moji/yhuaji.png">.而且现在看来, `fluid` 并不比 `NexT` 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://img.cyfan.top/pic/moji/xy.png">,比如懒加载<img src="https://img.cyfan.top/pic/moji/zhuaji.png">.所以我可以随意添加图片啦!!!于是决定用这个主题了。
+不好意思，我又抛弃了 `diaspora`(刚满一天),跳槽到了 `fluid`<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png"> 而且感觉用户体验比 `diaspora` 好多了,因为以前 `NexT`是不能添加图片表情的，因为图片会强制居中，~~那玩意叫表情~~,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,~~所以很适合添加表情~~<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/yhuaji.png">.而且现在看来, `fluid` 并不比 `NexT` 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/xy.png">,比如懒加载<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/zhuaji.png">.所以我可以随意添加图片啦!!!于是决定用这个主题了。
 
 好了,今天带来的又是一篇撸羊毛的技巧.
 
@@ -21,9 +21,9 @@ banner_img: https://img.cyfan.top/pic/cover/3.jpg
 
 # 简介
 
-我这个脚本Fork了自己的Github小号，我以前的小号Fork的是onplus的repo,onplusFork并改版了mrluanma的repo了,而mrluanma是fork了shadowsocks组织的php项目,所以这个脚本是8年前的.....<img src="https://img.cyfan.top/pic/moji/lh.png">
+我这个脚本Fork了自己的Github小号，我以前的小号Fork的是onplus的repo,onplusFork并改版了mrluanma的repo了,而mrluanma是fork了shadowsocks组织的php项目,所以这个脚本是8年前的.....<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/lh.png">
 
-不得不说这个脚本的生存时间是真的强，从2012年至今，这个脚本依旧可以用<img src="https://img.cyfan.top/pic/moji/xy.png">，只不过速度被硬生生压到了20kb/s，不过，我有提速的秘诀~~废话，没点真本事我在这儿瞎晃？~~
+不得不说这个脚本的生存时间是真的强，从2012年至今，这个脚本依旧可以用<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/xy.png">，只不过速度被硬生生压到了20kb/s，不过，我有提速的秘诀~~废话，没点真本事我在这儿瞎晃？~~
 
 原理非常好理解，虽然教程上口口声声说原理是SS，但实际上脚本是基于NodeJS的WebSocks技术，所以其实就是个代理。
 
@@ -64,7 +64,7 @@ YWRkRXZlbnRMaXN0ZW5lciUyOCUwQSUyMmZldGNoJTIyJTJDZXZlbnQlMjAlM0QlM0UlMjAlN0IlMEFs
 # 表现:
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-77.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-77.png)
 
 无论是作为备用还是主用,表现都还可以.毕竟老是白嫖我同学康哥在JMS的搬瓦工花的每月20多美元的SS线(100MBps)总是觉得愧疚.
 
@@ -73,7 +73,7 @@ YWRkRXZlbnRMaXN0ZW5lciUyOCUwQSUyMmZldGNoJTIyJTJDZXZlbnQlMjAlM0QlM0UlMjAlN0IlMEFs
 
 <span class="heimu">~~很好,又水了一篇~~</span>
 
-但是前面说的很清楚,拿来应个急还可以,你要是拿来主用...那么很容易引起Heroku注意,账号封锁了就不要怪我喽<img src="https://img.cyfan.top/pic/moji/huaji.png">.
+但是前面说的很清楚,拿来应个急还可以,你要是拿来主用...那么很容易引起Heroku注意,账号封锁了就不要怪我喽<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">.
 
 Heroku的服务器用的是Amazon的,所以不要指望带宽和延迟能很好.
 

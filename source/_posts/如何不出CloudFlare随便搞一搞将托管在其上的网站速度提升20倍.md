@@ -13,10 +13,10 @@ copyright: true
 date: 2020-03-11 13:49:00
 ---
 这是加速前的压力测试：
-![图片](https://img.cyfan.top/pic/post/5.gif)
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/5.gif)
 
 这是加速后的压力测试：
-![图片](https://img.cyfan.top/pic/post/6.gif)
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/6.gif)
 
 
 这是我头一次一天更新两篇博文.
@@ -121,7 +121,7 @@ ipv4：104.28.16.222以及104.28.16.223，速度慢的一撇。
 
 先不说别的，大名鼎鼎的 [loadbt](https://loadbt.com) 种子不限速离线下载就是用CF免费版的CDN，那速度下载只有60kb/s，而且经常断线。
 
-![图片](https://img.cyfan.top/pic/post/pasted-11.png)
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-11.png)
 
 那么，如何加速？
 
@@ -186,12 +186,12 @@ PS:这个办法适用于像我一样的站长,所有资源都存在同一个服�
 进入Workers:
 
 
-![图片](https://img.cyfan.top/pic/post/pasted-12.png)
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-12.png)
 
 点击Create a Worker
 
 
-![图片](https://img.cyfan.top/pic/post/pasted-13.png)
+![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-13.png)
 
 清空左边的编辑框，将刚刚复制的代码粘贴进去。
 
@@ -204,14 +204,14 @@ PS:这个办法适用于像我一样的站长,所有资源都存在同一个服�
 #### 修改DNS：
 
 
-![将正常需要回源的](https://img.cyfan.top/pic/post/pasted-14.png)
+![将正常需要回源的](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-14.png)
 
 将正常需要回源的地址后面加个s，注意如果使用Proxied请暂时去除。
 
 新建真正需要的地址：
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-15.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-15.png)
 
 使用A记录，IP选择上面提到的，随意，建议1.0.0.\* ,速度快，丢包少，延迟低。
 
@@ -220,7 +220,7 @@ PS:这个办法适用于像我一样的站长,所有资源都存在同一个服�
 #### 绑定Workers
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-19.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-19.png)
 
 就照这个样子填就可以了。
 
@@ -229,7 +229,7 @@ PS:这个办法适用于像我一样的站长,所有资源都存在同一个服�
 Github更换绑定：
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-16.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-16.png)
 
 可以看到修改DNS后报错了，把地址改成**回源后**地址，我这里是 `pss.cyfan.ga`
 
@@ -242,7 +242,7 @@ Custom domain "pss.cyfan.ga" saved.
 还没有完，翻到底下，你会发现Github提示：
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-17.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-17.png)
 
 ```
 Enforce HTTPS — Not yet available for your site because the certificate has not finished being issued.
@@ -254,7 +254,7 @@ When HTTPS is enforced, your site will only be served over HTTPS. Learn more.
 不急,申请TLS证书其实根本不需要24小时,过个2分钟,刷新一下:
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-18.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-18.png)
 
 勾选Enforce https,刷新,可能会报成功,不急,再刷新一下就会报失败,过一段时间再刷新,如果报成功,那么恭喜成功!但还没完!
 
@@ -269,7 +269,7 @@ CF加速完成,试试吧!
 
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-20.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-20.png)
 
 
 ping一下博客：
@@ -321,12 +321,12 @@ ping一下博客：
 加速前
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-80.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-80.png)
 
 `说实话有些看不懂这路是怎么绕的，为什么又从北京出口`
 
 加速后
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-79.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-79.png)
 
 实际上后面还有一端链接到Github，不过这一段可以忽略不计了。

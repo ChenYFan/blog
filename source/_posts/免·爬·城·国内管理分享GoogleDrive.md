@@ -11,8 +11,8 @@ tags:
 categories:
   - 撸羊毛
 copyright: true
-index_img: https://img.cyfan.top/pic/img/15.jpg
-banner_img: https://img.cyfan.top/pic/img/15.jpg
+index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/img/15.jpg
+banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/img/15.jpg
 date: 2020-03-18 08:38:00
 ---
 昨天网上早早写完作业在Github上瞎逛，话说回来Github Explorer有时候真的很神奇给我推荐一些稀奇好用或正好急缺的东西，比如Accesser、MusicPlayer2、PHPProxy等等等等。结果昨天搜罗了这么一个极棒的玩意：[GDIndex](https://github.com/maple3142/GDIndex)。
@@ -54,17 +54,17 @@ date: 2020-03-18 08:38:00
 进入[https://gdindex-code-builder.glitch.me/ ],
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-52.png "界面")
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-52.png "界面")
 
 
 点击<kbd>Click me</kbd>
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-53.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-53.png)
 
 点击登入,允许(此时需要你的谷歌账号授权,如果你觉得这对你的账号造成了危险,可以换一个不常用的谷歌账号,反正我个人使用时没有问题)
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-54.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-54.png)
 获取密钥:
 回到[https://gdindex-code-builder.glitch.me/ ]，粘贴密钥
 
@@ -72,12 +72,12 @@ date: 2020-03-18 08:38:00
 
 登入自己的谷歌drive
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-55.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-55.png)
 
 进入希望分享的文件夹,比如 `Public`
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-56.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-56.png)
 
 那么地址栏就会变成这样:
 
@@ -112,14 +112,14 @@ folders后面就是文件夹ID,我这里是 `1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx`
 进入cloudflare，点击workers,新建路由，选择之前新建的Workers，写入需要绑定的域名：
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-57.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-57.png)
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-58.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-58.png)
 
 确定，回到DNS，添加A记录，名字为刚刚绑定的那个，ip地址请去我博客-关于界面查看所有CFIPv4地址，这里比较推荐1.0.0.* CN2线路，速度不错。
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-59.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-59.png)
 
 最好在加个ipv6，这样对于ipv4小水管比较好解决问题，本站暂时不添加，因为国内ipv6环境真的不是很好。
 
@@ -134,7 +134,7 @@ folders后面就是文件夹ID,我这里是 `1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx`
 ### 支持直接上传
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-60.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-60.png)
 
 自选CDN，上传速度很可观
 
@@ -147,29 +147,29 @@ folders后面就是文件夹ID,我这里是 `1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx`
 
 打开Upload From Url，输入网址：
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-61.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-61.png)
 
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-62.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-62.png)
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-63.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-63.png)
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-64.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-64.png)
 
 不过上面也写的很清楚，由于CFWorkers的限制，下载大文件有可能会失败。
 
 ### 支持免F下载
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-65.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-65.png)
 
 速度很可观，将近1.5MB/s，但请不要使用IDM！本来速度就可以了，如果使用IDM多线程，会导致CFWorkers提早达到每分钟阈值导致无法下载！
 
 ### 支持在线预览视频文档音乐
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-66.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-66.png)
 
 ### 支持放一些XXX福利的东西
 
@@ -182,7 +182,7 @@ folders后面就是文件夹ID,我这里是 `1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx`
 ### 上传很容易失败
 
 
-![upload successful](https://img.cyfan.top/pic/post/pasted-78.png)
+![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-78.png)
 
 这个问题是在我试图上传htmlDesigner时发现的，上传上传就卡住了，原来是达到100MB,CloudFlare免费计划最多上传100MB限制，而且有时候上传完成却没有出现等等。这个就比较影响用户体验了。
 

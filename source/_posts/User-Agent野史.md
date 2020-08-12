@@ -12,7 +12,7 @@ copyright: true
 # 前言
 关于这几天为什么不更新博客，原因很简单，台风来了，我家断电了。
 
-![台风](https://img.cyfan.top/pic/TY.jpg "我在台风旁边啊！！！")
+![台风](https://assets.cyfan.top/file/CYF-PicBed/pic/TY.jpg "我在台风旁边啊！！！")
 
 好吧，当我有网络后，我去 <https://baiduwp.com> 下载百度网盘上的东西时,弹出这样的一句话:
 
@@ -81,7 +81,7 @@ User Agent中文名为用户代理，简称 UA，它是一个特殊字符串头�
 - 2008年9月2日：Chrome诞生
 - 2018年8月15日：红芯浏览器打脸
 
-![UA](https://img.cyfan.top/pic/UA.jpg "不，这是你的UA")
+![UA](https://assets.cyfan.top/file/CYF-PicBed/pic/UA.jpg "不，这是你的UA")
 
 ## 一、盘古开天地
 
@@ -219,7 +219,7 @@ Chrome希望能得到为Safari编写的网页，于是决定装成Safari，Safar
 
 ## 八、军阀混战
 
-![UA](https://img.cyfan.top/pic/3Q.jpg "军阀混战")
+![UA](https://assets.cyfan.top/file/CYF-PicBed/pic/3Q.jpg "军阀混战")
 
 将目光聚焦到国内，更是狼烟四起，混乱不堪。大家都知道，浏览器是互联网的入口，这块肥肉谁也不想丢。因而一个接一个的“国产”浏览器进入斗兽场。
 360，百度，QQ，UC，搜狗，猎豹，遨游，世界之窗…你能说出一大堆。连淘宝，酷狗，hao123都有浏览器，不信你搜。
@@ -272,7 +272,7 @@ Chrome希望能得到为Safari编写的网页，于是决定装成Safari，Safar
 
 上面说的国产浏览器还是诚实的，起码它们自己承认了是双核Chrome+IE。
 
-![RC](https://img.cyfan.top/pic/RC/RC.jpg "RedCore")
+![RC](https://assets.cyfan.top/file/CYF-PicBed/pic/RC/RC.jpg "RedCore")
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=476114873&auto=0&height=66"></iframe>
 （自己配上音乐读下面的话更带劲）
@@ -295,7 +295,7 @@ Chrome希望能得到为Safari编写的网页，于是决定装成Safari，Safar
 
 红芯一看，完了完了，暴露了，赶紧把`谣言`压下去啊!
 
-![RC](https://img.cyfan.top/pic/RC/NO.jpg "红芯：我不是在作假！！！")
+![RC](https://assets.cyfan.top/file/CYF-PicBed/pic/RC/NO.jpg "红芯：我不是在作假！！！")
 
 接着,就出现了种种闹剧:
 
@@ -307,7 +307,7 @@ Chrome希望能得到为Safari编写的网页，于是决定装成Safari，Safar
 
 结果就道歉了:
 
-![RC](https://img.cyfan.top/pic/RC/SORRY.jpg "红芯：好吧好吧，我承认了！！")
+![RC](https://assets.cyfan.top/file/CYF-PicBed/pic/RC/SORRY.jpg "红芯：好吧好吧，我承认了！！")
 
 
 ## 十一、明日边缘
