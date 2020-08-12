@@ -41,9 +41,9 @@ anchor: https://cdn.staticfile.org/anchor-js/4.2.2/
 
 github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
 
-jquery: https://cdn.staticfile.org/jquery/3.4.1/
+jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/
 
-bootstrap: https://cdn.staticfile.org/twitter-bootstrap/4.4.1/
+bootstrap: https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/js/
 
 highlightjs: https://cdn.staticfile.org/highlight.js/10.0.0/
 
