@@ -131,10 +131,15 @@ navbar:
         { key: '标签', link: '/tags/'}
       ]
     }
-    - { key: '关于', link: '/about/'}
+    - { 
+    key: '页面', 
+    submenu: [
+    	{ key: '留言板', link: '/1949/10/01/留言板/'},
+    	{ key: '随口胡说', link: '/随口胡说/ '},
+    	{ key: '关于', link: '/about/'}
+      ]
+    }
     - { key: '朋友们', link: '/links/'}
-    - { key: '留言板', link: '/1949/10/01/留言板/'}
-    - { key: '随口胡说', link: '/随口胡说/ '}
     - { key: '项目主页', link: 'https://cyfan.top'}
 
 
