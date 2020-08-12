@@ -43,7 +43,7 @@ github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
 
 jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/
 
-bootstrap: https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/js/
+bootstrap: https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/
 
 highlightjs: https://cdn.staticfile.org/highlight.js/10.0.0/
 
