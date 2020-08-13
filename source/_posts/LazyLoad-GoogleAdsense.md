@@ -9,8 +9,8 @@ categories:
   - 好方法
 date: 2020-07-06 14:19:00
 
-index_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200706170836.jpg'
-banner_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200706170836.jpg'
+index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200706170836.jpg'
+banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200706170836.jpg'
 ---
 GoogleAdsense嘛，著名的赚钱大师，<span class="heimu">虽然只给我40美分，但毕竟我没有做很好的优化嘛，这也不怪谷歌</span>。由于以前用的是 `.ga` 的免费域名,在上一年将近4个月荒凉,基本日PV在没有和1之间徘徊.后来过年的时候买了一个 `.top` 总算撑起一层牌面,但是由于 `COVID19` ,嗯,所以每次提交2星期就给我来这么一出:
 
