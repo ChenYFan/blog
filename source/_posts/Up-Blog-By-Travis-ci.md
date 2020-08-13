@@ -8,8 +8,8 @@ tags:
 categories:
   - 好方法
 date: 2020-06-29 13:31:00
-index_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629152457.jpg'
-banner_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629152457.jpg'
+index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200629152457.jpg'
+banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200629152457.jpg'
 ---
 Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN毅然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 `ChenYFan` 打成 `CehnYFan` <span class="heimu">真实事件</span> ，异或着是用手机查看自己的博客，突然发现：
 
