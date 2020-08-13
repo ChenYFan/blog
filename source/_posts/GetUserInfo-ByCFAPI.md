@@ -8,8 +8,8 @@ tags:
 categories:
   - 屌代码
 date: 2020-06-28 08:30:00
-index_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628082609.jpg'
-banner_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628082609.jpg'
+index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628082609.jpg'
+banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628082609.jpg'
 ---
 噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E8%82%BF%E5%8C%85.png),以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。
 
