@@ -9,7 +9,7 @@ branches:
 script:
   - npm install hexo-baidu-url-submit --save
   - hexo generate
-  - curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
+  - curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
 deploy:
   provider: pages
   skip-cleanup: true
