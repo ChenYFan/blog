@@ -6,8 +6,8 @@ tags:
   - CDN
 categories:
   - 又双叒叕是水文
-index_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628102330.JPG'
-banner_img: 'https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628102330.JPG'
+index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628102330.jpg'
+banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628102330.jpg'
 date: 2020-06-07 11:54:00
 update: 2020-06-28 09:59:08
 ---
