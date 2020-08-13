@@ -9,8 +9,8 @@ tags:
 categories: 好方法
 copyright: true
 author: CYF
-index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
-banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/10.jpg
+index_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/10.jpg
+banner_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/10.jpg
 ---
 
 Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍‌‌‌​‌‍‌‌​‍‍‍​‍‍‌​​‍‌‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍​‍‍‍​‌‍‍‌ger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&Wordpress高昂的服务器费用，避免了Hexo&Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。
