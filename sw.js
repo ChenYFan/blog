@@ -133,3 +133,20 @@ workbox.routing.registerRoute(
       ],
     })
 );
+
+workbox.routing.registerRoute(
+    // Cache gravatar files
+    new RegExp('https://embed\.widgetpack\.com/'),
+    // Use the cache if it's available
+    workbox.strategies.cacheFirst({
+      // Use a custom cache name
+      cacheName: 'widget-cache',
+      plugins: [
+        new workbox.expiration.Plugin({
+          // Cache for a maximum of 30 Days
+          maxAgeSeconds: 0,
+        })
+      ],
+    })
+);
+
