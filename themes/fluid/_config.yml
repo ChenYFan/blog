@@ -413,12 +413,6 @@ links:
     intro: '(翻译：我只是个搞 IT的！哭笑脸)',
     link: 'https://blog.pangao.vip',
     image: 'https://blog.pangao.vip/images/avatar.jpg'
-	}
-    - {        
-    title:  'CWorld‘s Blog',
-    link: 'https://blog.cworld.top/',
-    image: 'https://www.gravatar.com/avatar/85b870f6b1a177981d3e9566e3ad7264?s=160',
-    intro: 'Stay hungry，Stay foolish，求知若愚，虚怀若谷。',
     }
     - {        
     title: 'Kindyear’s Blog',
