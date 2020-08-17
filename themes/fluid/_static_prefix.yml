@@ -23,9 +23,9 @@
 # Internal static
 #---------------------------
 
-internal_js: /js
-internal_css: /css
-internal_img: /img
+internal_js: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js
+internal_css: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/css
+internal_img: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/img
 
 
 #---------------------------
