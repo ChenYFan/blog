@@ -1,4 +1,5 @@
 https://blog.cyfan.top/2020/08/14/OneDrive-Index-On-CloudFlareWorkers-By-GithubAction/
+https://blog.cyfan.top/2020/08/14/dns-prefetch-with-more/
 https://blog.cyfan.top/2020/07/29/Make-BlogSpot-Avaliable-in-MainLand/
 https://blog.cyfan.top/2020/07/09/free-10GB-oss-poweredby-backblaze/
 https://blog.cyfan.top/2020/07/06/LazyLoad-GoogleAdsense/
