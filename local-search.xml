@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>多域名线程并发与DNS欲解析</title>
+    <title>多域名线程并发与DNS预解析</title>
     <link href="/2020/08/24/dns-prefetch-with-more/"/>
     <url>/2020/08/24/dns-prefetch-with-more/</url>
     
