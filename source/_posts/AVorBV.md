@@ -239,13 +239,7 @@ https://api.bilibili.com/x/web-interface/archive/stat?bvid=1874111715
 
 ### 缺点
 
-对于一些特♂殊♂の♀视♂频,比如av17001,就会返回:
-
-```json
-{"code":-404,"message":"啥都木有","ttl":1,"data":null}
-```
-
-关于av10492,则返回
+对于一些特♂殊♂の♀视♂频,av10492,则返回
 
 ```json
 {"code":-403,"message":"访问权限不足","ttl":1,"data":null}
