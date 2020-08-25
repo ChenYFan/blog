@@ -1,4 +1,4 @@
-title: 多域名线程并发与DNS欲解析
+title: 多域名线程并发与DNS预解析
 author: CYF
 index_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20204123.jpg
 banner_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20204123.jpg
