@@ -88,21 +88,6 @@ search:
   field: post
   format: html
   limit: 10000
-
-live2d:
-  enable: true
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  scriptFrom: jsdelivr
-  model:
-    use: live2d-widget-model-z16 #模板目录，在node_modules里
-  display:
-    position: left
-    width: 150 
-    height: 300
-  mobile:
-    show: true  #是否在手机进行显示
 	
 Plugins:
  - hexo-generator-baidu-sitemap
