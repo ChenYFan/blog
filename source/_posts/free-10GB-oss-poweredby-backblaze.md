@@ -95,7 +95,7 @@ https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-09%20102255.jpg
 https://img.cyfan.top/pic/postpic/2020-07-09%20102255.jpg
 ```
 
-你要知道，我有一大堆图片都是直接以 `https://assets.cyfan.top/file/CYF-PicBed/pic/` 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png)
+你要知道，我有一大堆图片都是直接以 `https://img.cyfan.top` 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png)
 
 前往CloudFlare,设置页面规则,进行301转发:
 
