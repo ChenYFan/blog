@@ -91,7 +91,10 @@ search:
 
 live2d:
   enable: true
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
   pluginModelPath: assets/
+  scriptFrom: jsdelivr
   model:
     use: live2d-widget-model-z16 #模板目录，在node_modules里
   display:
