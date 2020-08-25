@@ -101,7 +101,7 @@ live2d:
   pluginModelPath: assets/	
   scriptFrom: jsdelivr	
   model:	
-    use: live2d-widget-model-z16 #模板目录，在node_modules里	
+    use: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json	
   display:	
     position: left	
     width: 150 	
