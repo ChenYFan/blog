@@ -511,6 +511,12 @@ links:
     image: 'https://i.loli.net/2020/07/30/AdI79fjw3CZBOXc.png',
     }
     - {        
+    title: 'QWQAQ',
+    link: 'https://qwqaq.com/',
+    intro: 生命不止，折腾不息 ( ゜- ゜),
+    image: 'https://qwqaq.com/images/avatar.png',
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
