@@ -184,11 +184,6 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a
       }
 </script>
 
-{% raw %}
-<div id="artitalk_main"></div>
-{% endraw %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
-
 <style>
                 .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
                   background: linear-gradient(45deg, rgb(109, 208, 242) 15%, rgb(245, 154, 190) 85%);
@@ -213,6 +208,11 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a
                   color: white;
                 }
 </style>
+
+{% raw %}
+<div id="artitalk_main"></div>
+{% endraw %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
 
 <!--
 # 原因：
