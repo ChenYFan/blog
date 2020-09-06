@@ -58,6 +58,65 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     transition: color .13s linear;
     color: #ba0000
 }
+/* 注意避免类名相同造成样式冲突 */
+.link {
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  font-size: 2em;
+  color: #9e9ba4;
+  display: inline-block;
+}
+.link--kukuri {
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  color: #2f4144;
+}
+
+.link--kukuri:hover {
+  color: #2f4144;
+}
+
+.link--kukuri::after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  top: 42%;
+  margin: auto;
+  right: 0;
+  background: #F9F9F9;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.link--kukuri:hover::after {
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+
+.link--kukuri::before {
+  border:0px solid;
+  content: attr(data-letters);
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  color: #ff779a;
+  white-space: nowrap;
+  width: 0%;
+  -webkit-transition: width 0.4s 0.3s;
+  transition: width 0.4s 0.3s;
+}
+
+.link--kukuri:hover::before {
+  width: 100%;
+}
+
 ::-webkit-scrollbar-button
   display none
 
@@ -73,6 +132,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 
   &:hover
     background-color #2f4154b8;
+    
 </style>
 <body>
   <header style="height: 100vh;">
@@ -267,7 +327,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ybv000w2gxoevnty3yn" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ybv000w2gxoevnty3yn"
+        id="heading-ckeqmbxt5000q3awq183vvkkq" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxt5000q3awq183vvkkq"
         aria-expanded="false"
       >
         好方法
@@ -280,8 +340,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ybv000w2gxoevnty3yn" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ybv000w2gxoevnty3yn">
+  <div id="collapse-ckeqmbxt5000q3awq183vvkkq" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxt5000q3awq183vvkkq">
     
     
     
@@ -372,7 +432,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yb600062gxo90lhjsr3" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yb600062gxo90lhjsr3"
+        id="heading-ckeqmbxsm00043awqqyvfkpbb" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxsm00043awqqyvfkpbb"
         aria-expanded="false"
       >
         随心记
@@ -385,8 +445,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yb600062gxo90lhjsr3" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yb600062gxo90lhjsr3">
+  <div id="collapse-ckeqmbxsm00043awqqyvfkpbb" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxsm00043awqqyvfkpbb">
     
     
     
@@ -457,7 +517,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item  list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ycd001s2gxojvgqlr8r" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ycd001s2gxojvgqlr8r"
+        id="heading-ckeqmbxtc001a3awq6gt3w8an" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxtc001a3awq6gt3w8an"
         aria-expanded="true"
       >
         爱学习
@@ -470,8 +530,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ycd001s2gxojvgqlr8r" class="collapse in show" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ycd001s2gxojvgqlr8r">
+  <div id="collapse-ckeqmbxtc001a3awq6gt3w8an" class="collapse in show" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxtc001a3awq6gt3w8an">
     
   
   
@@ -480,7 +540,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category-sub row">
       <a
         class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yd5003s2gxov58r2et4" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yd5003s2gxov58r2et4"
+        id="heading-ckeqmbxvg005c3awq7ndrh5b5" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxvg005c3awq7ndrh5b5"
         aria-expanded="false"
       >
         物理
@@ -493,8 +553,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yd5003s2gxov58r2et4" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yd5003s2gxov58r2et4">
+  <div id="collapse-ckeqmbxvg005c3awq7ndrh5b5" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxvg005c3awq7ndrh5b5">
     
     
     
@@ -522,7 +582,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yd1003g2gxoqgs9udck" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yd1003g2gxoqgs9udck"
+        id="heading-ckeqmbxvb00513awq735cyd1k" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxvb00513awq735cyd1k"
         aria-expanded="false"
       >
         爱折腾
@@ -535,8 +595,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yd1003g2gxoqgs9udck" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yd1003g2gxoqgs9udck">
+  <div id="collapse-ckeqmbxvb00513awq735cyd1k" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxvb00513awq735cyd1k">
     
     
     
@@ -586,7 +646,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ycq002n2gxot7h0cb9b" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ycq002n2gxot7h0cb9b"
+        id="heading-ckeqmbxuj00423awqv1aoaafi" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxuj00423awqv1aoaafi"
         aria-expanded="false"
       >
         丆插件
@@ -599,8 +659,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ycq002n2gxot7h0cb9b" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ycq002n2gxot7h0cb9b">
+  <div id="collapse-ckeqmbxuj00423awqv1aoaafi" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxuj00423awqv1aoaafi">
     
     
     
@@ -650,7 +710,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yc5001h2gxogytlhc4q" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yc5001h2gxogytlhc4q"
+        id="heading-ckeqmbxt900153awqd6dwz666" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxt900153awqd6dwz666"
         aria-expanded="false"
       >
         撸羊毛
@@ -663,8 +723,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yc5001h2gxogytlhc4q" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yc5001h2gxogytlhc4q">
+  <div id="collapse-ckeqmbxt900153awqd6dwz666" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxt900153awqd6dwz666">
     
     
     
@@ -707,7 +767,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ybp000k2gxo21s8pn3o" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ybp000k2gxo21s8pn3o"
+        id="heading-ckeqmbxsx000e3awq6w1oe8bo" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxsx000e3awq6w1oe8bo"
         aria-expanded="false"
       >
         屌代码
@@ -720,8 +780,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ybp000k2gxo21s8pn3o" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ybp000k2gxo21s8pn3o">
+  <div id="collapse-ckeqmbxsx000e3awq6w1oe8bo" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxsx000e3awq6w1oe8bo">
     
     
     
@@ -764,7 +824,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ybi000d2gxov4mwbr34" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ybi000d2gxov4mwbr34"
+        id="heading-ckeqmbxst00093awqlt7p4iqa" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxst00093awqlt7p4iqa"
         aria-expanded="false"
       >
         繡软件
@@ -777,8 +837,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ybi000d2gxov4mwbr34" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ybi000d2gxov4mwbr34">
+  <div id="collapse-ckeqmbxst00093awqlt7p4iqa" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxst00093awqlt7p4iqa">
     
     
     
@@ -821,7 +881,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ycw00312gxozfae38g0" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ycw00312gxozfae38g0"
+        id="heading-ckeqmbxuw004m3awqcvijppal" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxuw004m3awqcvijppal"
         aria-expanded="false"
       >
         要公告
@@ -834,8 +894,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ycw00312gxozfae38g0" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ycw00312gxozfae38g0">
+  <div id="collapse-ckeqmbxuw004m3awqcvijppal" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxuw004m3awqcvijppal">
     
     
     
@@ -871,7 +931,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yc1001b2gxo0h97rwh3" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yc1001b2gxo0h97rwh3"
+        id="heading-ckeqmbxt800113awqtenbjqsi" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxt800113awqtenbjqsi"
         aria-expanded="false"
       >
         干问题
@@ -884,8 +944,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yc1001b2gxo0h97rwh3" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yc1001b2gxo0h97rwh3">
+  <div id="collapse-ckeqmbxt800113awqtenbjqsi" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxt800113awqtenbjqsi">
     
     
     
@@ -907,7 +967,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yby00142gxos4cj96v6" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yby00142gxos4cj96v6"
+        id="heading-ckeqmbxt7000w3awq2d6j8g71" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxt7000w3awq2d6j8g71"
         aria-expanded="false"
       >
         瞎扯淡
@@ -920,8 +980,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yby00142gxos4cj96v6" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yby00142gxos4cj96v6">
+  <div id="collapse-ckeqmbxt7000w3awq2d6j8g71" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxt7000w3awq2d6j8g71">
     
     
     
@@ -943,7 +1003,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yct002v2gxojea345cv" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yct002v2gxojea345cv"
+        id="heading-ckeqmbxus004f3awqb16ijvup" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxus004f3awqb16ijvup"
         aria-expanded="false"
       >
         爱分享
@@ -956,8 +1016,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yct002v2gxojea345cv" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yct002v2gxojea345cv">
+  <div id="collapse-ckeqmbxus004f3awqb16ijvup" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxus004f3awqb16ijvup">
     
     
     
@@ -979,7 +1039,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5ybt000r2gxouudmwo9t" role="tab" data-toggle="collapse" href="#collapse-ckeqm5ybt000r2gxouudmwo9t"
+        id="heading-ckeqmbxt2000l3awq9p417j9z" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxt2000l3awq9p417j9z"
         aria-expanded="false"
       >
         又双叒叕是水文
@@ -992,8 +1052,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5ybt000r2gxouudmwo9t" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5ybt000r2gxouudmwo9t">
+  <div id="collapse-ckeqmbxt2000l3awq9p417j9z" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxt2000l3awq9p417j9z">
     
     
     
@@ -1015,7 +1075,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckeqm5yh100fo2gxow6c3chfx" role="tab" data-toggle="collapse" href="#collapse-ckeqm5yh100fo2gxow6c3chfx"
+        id="heading-ckeqmbxz800f63awqkvojtosn" role="tab" data-toggle="collapse" href="#collapse-ckeqmbxz800f63awqkvojtosn"
         aria-expanded="false"
       >
         有故事
@@ -1028,8 +1088,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <div class="category-collapse">
         
           
-  <div id="collapse-ckeqm5yh100fo2gxow6c3chfx" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckeqm5yh100fo2gxow6c3chfx">
+  <div id="collapse-ckeqmbxz800f63awqkvojtosn" class="collapse in" role="tabpanel"
+       aria-labelledby="heading-ckeqmbxz800f63awqkvojtosn">
     
     
     

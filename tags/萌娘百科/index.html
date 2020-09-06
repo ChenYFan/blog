@@ -58,6 +58,65 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     transition: color .13s linear;
     color: #ba0000
 }
+/* 注意避免类名相同造成样式冲突 */
+.link {
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  font-size: 2em;
+  color: #9e9ba4;
+  display: inline-block;
+}
+.link--kukuri {
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  color: #2f4144;
+}
+
+.link--kukuri:hover {
+  color: #2f4144;
+}
+
+.link--kukuri::after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  top: 42%;
+  margin: auto;
+  right: 0;
+  background: #F9F9F9;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.link--kukuri:hover::after {
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+
+.link--kukuri::before {
+  border:0px solid;
+  content: attr(data-letters);
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  color: #ff779a;
+  white-space: nowrap;
+  width: 0%;
+  -webkit-transition: width 0.4s 0.3s;
+  transition: width 0.4s 0.3s;
+}
+
+.link--kukuri:hover::before {
+  width: 100%;
+}
+
 ::-webkit-scrollbar-button
   display none
 
@@ -73,6 +132,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 
   &:hover
     background-color #2f4154b8;
+    
 </style>
 <body>
   <header style="height: 100vh;">
