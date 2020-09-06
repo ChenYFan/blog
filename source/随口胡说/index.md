@@ -5,7 +5,7 @@ date: 2020-03-19 13:21:09
 
 <script>
 eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3="4";2="0";1="8";9="7";5="6";',10,10,'UDc2eGxnRVV5OD|d789|b12|a56|MDkxUFRKVnRI|e12|WlNZmZSLU1kWVhiTU1J|JMb2lBZHczYjNBd2Nl|czBTZ0NMN2FZe|c34'.split('|'),0,{}))
-</script><script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ArtitalkJS/Artitalk@dev/dist/js/artitalk.js"></script>
+</script><script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ArtitalkJS/Artitalk@master/dist/js/artitalk.js"></script>
 <div id="artitalk_main"></div>
 <!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>-->
 <!--<script>
