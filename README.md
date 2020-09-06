@@ -16,7 +16,7 @@
   </a>
 </p>
 
-<h2 align="center"><a href="https://blog.cyfan.top/links/">Friends</a></h2>
+<h2 align="center"><a href="https://blog.cyfan.top/links/">Friends!</a></h2>
 
 <div align="center">
 欢迎添加友情链接!不过您可能需要注意以下几点:
