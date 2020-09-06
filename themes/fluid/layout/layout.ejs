@@ -32,6 +32,21 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     transition: color .13s linear;
     color: #ba0000
 }
+::-webkit-scrollbar-button
+  display none
+
+::-webkit-scrollbar
+  width 10px
+  height 10px
+  background-color: #2f415452
+
+::-webkit-scrollbar-thumb
+  border-radius 5px
+  background-color #2f4154
+  background-image -webkit-linear-gradient(45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent)
+
+  &:hover
+    background-color #2f4154b8;
 </style>
 <body>
   <header style="height: <%- banner_img_height %>vh;">
