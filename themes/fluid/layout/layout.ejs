@@ -32,20 +32,19 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     transition: color .13s linear;
     color: #ba0000
 }
-/* 注意避免类名相同造成样式冲突 */
 .link {
   outline: none;
   text-decoration: none;
   position: relative;
   font-size: 2em;
-  color: #9e9ba4;
+  color: var(--navbar-text-color)
   display: inline-block;
 }
 .link--kukuri {
   text-transform: uppercase;
   font-weight: 700;
   overflow: hidden;
-  color: #2f4144;
+  color: var(--board-bg-color)
 }
 
 .link--kukuri:hover {
@@ -90,6 +89,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 .link--kukuri:hover::before {
   width: 100%;
 }
+
+
 
 ::-webkit-scrollbar-button
   display none
