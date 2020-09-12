@@ -360,7 +360,7 @@ post参数：file
 
 
 
-> 此处Hash获得的是文件的Qmhash，你还要依托ipfs镜像，如[https://ipfs.cyfan.top/ipfs/{QmHash}
+> 此处Hash获得的是文件的Qmhash，你还要依托ipfs镜像，如https://ipfs.cyfan.top/ipfs/{QmHash}
 
 
 
@@ -387,7 +387,7 @@ post参数：file
 
 
 
-正如[## Imgur](## Imgur)所说的，imgur在国内已经无法访问了，但是，图片缓存服务可以啊！
+正如<##Imgur>所说的，imgur在国内已经无法访问了，但是，图片缓存服务可以啊！
 
 
 
