@@ -1,3 +1,4 @@
+https://blog.cyfan.top/2020/09/12/hey-picbed/
 https://blog.cyfan.top/2020/08/24/dns-prefetch-with-more/
 https://blog.cyfan.top/2020/08/14/OneDrive-Index-On-CloudFlareWorkers-By-GithubAction/
 https://blog.cyfan.top/2020/07/29/Make-BlogSpot-Avaliable-in-MainLand/
