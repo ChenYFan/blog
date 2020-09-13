@@ -39,7 +39,7 @@ RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
 ```
 # 结果：
 
-![修复完成](https://assets.cyfan.top/file/CYF-PicBed/pic/MUSIC/OK.jpg "修复完成")
+![修复完成](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/MUSIC/OK.jpg "修复完成")
 
 # 心得：
 

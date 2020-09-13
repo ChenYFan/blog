@@ -13,7 +13,7 @@ copyright: true
 ---
 先放图：
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/pasted-0.png "Hexo-Admin")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/pasted-0.png "Hexo-Admin")
 
 怎么说，逛Github时偶然间发现了这个插件，感觉还不错。
 
@@ -89,24 +89,24 @@ Recently updated (since 2020-03-04): 2 packages (detail see file E:\bloghexo\nod
 但是使用Hexo-Admin后,我每新增一行,右边就会实时出现文章.
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-1.png "预览")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-1.png "预览")
 
 爽翻了.
 
 甚至上下滑动它都会自动同步:
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/1.gif "Hexo-Admin上下滑动自动同步")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/1.gif "Hexo-Admin上下滑动自动同步")
 
 ### 草稿制
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-0.png "草稿")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-0.png "草稿")
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-2.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-2.png)
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-3.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-3.png)
 
 当我点击 `New Post`时，它的显示就变成了灰色，这说明这是草稿形式，并不会真正发布。
 
@@ -119,7 +119,7 @@ Recently updated (since 2020-03-04): 2 packages (detail see file E:\bloghexo\nod
 看到右上角的齿轮了吗，点击它，
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-4.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-4.png)
 
 时间作者都能改，这个不重要，Tag和Categories换行就是随便填写，这个舒爽度直接爆表啊有木有。
 
@@ -135,7 +135,7 @@ Recently updated (since 2020-03-04): 2 packages (detail see file E:\bloghexo\nod
 2. 新建jpg空白图像
 3. 右键，编辑，粘贴
 4. 重命名文件
-5. 剪切到 `/sourcehttps://assets.cyfan.top/file/CYF-PicBed/pic/` 文件夹里，必要的时候会新建一个文件夹
+5. 剪切到 `/sourcehttps://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/` 文件夹里，必要的时候会新建一个文件夹
 6. 回到NotePad++，键入：`![标题](路径 "标题")`
 
 现在用了Hexo-Admin:
@@ -151,7 +151,7 @@ Recently updated (since 2020-03-04): 2 packages (detail see file E:\bloghexo\nod
 
 至于图片本来就以一个文件存在,那就有点麻烦了,剪切,改名,添加,完成!
 
-<img class="alingleft" src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png">
+<img class="alingleft" src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png">
 
 
 PS:Hexo Admin可以直接复制图片粘贴，然后自动下载到指定目录并重命名。但在Windows中粘贴后会出现裂图。这时就需要手动把括号中的前后两个斜杠去掉，就能正常显示。
@@ -163,12 +163,12 @@ PS:Hexo Admin可以直接复制图片粘贴，然后自动下载到指定目录�
 点击Setting：
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-6.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-6.png)
 
 点击 `Setup authentification here.`
 
 
-![输入](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-7.png)
+![输入](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-7.png)
 
 输入用户名、密码、和密钥。
 
@@ -212,7 +212,7 @@ deployCommand: 'push.bat'
 重启Hexo server,点击Deploy,进入以下画面:
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-8.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-8.png)
 
 什么都不用填,直接点击 `Deploy` 即可.
 
@@ -225,7 +225,7 @@ deployCommand: 'push.bat'
 不过Hexo-Admin的保存是真的快.在我打好这句话后发了一下呆o_o ....,右上角就出现这样的字:
 
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-9.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-9.png)
 
 ...都做到这样了,我还能说什么呢?
 
@@ -235,7 +235,7 @@ deployCommand: 'push.bat'
 
 点击右上角的勾,进入校对界面:
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-10.png)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-10.png)
 
 不过这个功能仅仅对于英文来讲,而且对于代码的语法校对似乎没有这么准确,我又不写英文,有点鸡肋.
 
@@ -247,11 +247,11 @@ Hexo-Admin能做到这样,我已经很满足了,不过我使用的时候,发现�
 
 ### 打字的时候浏览框会不自觉的向上飘:
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/2.gif)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/2.gif)
 
 ### 不能拖拽放入图片
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/3.gif)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/3.gif)
 
 ### 以及...直接粘贴的图片斜杠方向是反的！！！
 
@@ -262,9 +262,9 @@ Hexo-Admin能做到这样,我已经很满足了,不过我使用的时候,发现�
 <span class="heimu" title="你知道的太多了">你看的到我吗???</span>
 
 
-<img class="alingleft" src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png">
+<img class="alingleft" src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png">
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/post/4.gif)
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/4.gif)
 
 不过这到不是大问题,就是编辑的时候没法用罢了
 

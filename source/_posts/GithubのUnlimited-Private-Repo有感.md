@@ -8,11 +8,11 @@ tags:
   - 无限制
 categories:
   - 瞎扯淡
-index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/4.jpg
-banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/4.jpg
+index_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/4.jpg
+banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/4.jpg
 date: 2020-03-22 09:37:00
 ---
-Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/k.png">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/s.png">？？？顿时感觉失去了关爱....
+Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/k.png">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/s.png">？？？顿时感觉失去了关爱....
 
 <span class="heimu">~~欸没错这篇又是水文~~</span>今天讲讲关于这件事以及对于github的心理感想。
 
@@ -30,15 +30,15 @@ Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃
 
 甚至还有Gitlab公然在底下挑衅。
 
-（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">）
+（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">）
 
 我为什么当时毫无波澜呢，说实话原因有下：
 
-1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/h.png">）
-2.感觉收购后和收购前没什么不同。（大雾<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/m.png">）
-3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/c.png">）
+1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/h.png">）
+2.感觉收购后和收购前没什么不同。（大雾<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/m.png">）
+3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/c.png">）
 
-嗯<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.gif">。
+嗯<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif">。
 
 # 成长
 
@@ -53,8 +53,8 @@ Github附加功能有些真的没法比,光是那pages我就觉得好上天了,�
 很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:
 
 1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?
-2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/j.png">,滥用的可能性就会大大降低了.
-3.Github被国内防火\*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/8082.png">
+2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/j.png">,滥用的可能性就会大大降低了.
+3.Github被国内防火\*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/8082.png">
 
 当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.
 
@@ -70,7 +70,7 @@ Github附加功能有些真的没法比,光是那pages我就觉得好上天了,�
 
 开了一个Public坑 ==> 被dalao给了一个Star ==> 两个人互相follow ==> PY交易(雾) ==>两个人都被互相激励,写出更好的代码
 
-开了一个Public坑 ==> 没人来 ==> 默默自己写着repo ==> 有一天有人把你的repo分享到了知乎 ==> Star过一千 ==> ~~接到局里喝茶(大大雾)~~<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/8082.png"> ==> 删除repo
+开了一个Public坑 ==> 没人来 ==> 默默自己写着repo ==> 有一天有人把你的repo分享到了知乎 ==> Star过一千 ==> ~~接到局里喝茶(大大雾)~~<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/8082.png"> ==> 删除repo
 
 开了一个Public坑 ==> 没人来 ==> 归档,不想写了 ==> 一个人看到了,测试了一下,发了一个issues ==> 一群人被吸引过来,发了一堆issues ==>被迫续更
 

@@ -33,7 +33,7 @@ copyright: true
 
 然后我高高兴兴的在Github上搜索原版源代码，结果发现...好像...有人已经破解了
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/GOG.png "好尴尬啊")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GOG.png "好尴尬啊")
 
 那我一不做，二不休，直接就用这个吧！
 
@@ -45,15 +45,15 @@ copyright: true
 - [x] 更换插件图标,换了个Google Studio的(加了个小星星和滤镜)
 - [x] 厚颜无耻的加上了自己的名字.
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/GGFWZS.png "一阵酸爽")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GGFWZS.png "一阵酸爽")
 
 然而上Google是爽,加载速度极快:
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/GHS.bmp "速度不错")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GHS.bmp "速度不错")
 
 1.1MB的网页在2.1秒内打开,和百度打开速度相比:
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BHS.bmp "相差不多")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BHS.bmp "相差不多")
 
 1.4秒内打开也挺小,只有0.7s的相差,也是不多,完全可以用Google当引擎啦!
 

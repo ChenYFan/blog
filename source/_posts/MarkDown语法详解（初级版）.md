@@ -11,7 +11,7 @@ copyright: true
 ## 什么是MarkDown?
 Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
 Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。
-![约翰·格鲁伯](https://assets.cyfan.top/file/CYF-PicBed/pic/JG.jpg "约翰·格鲁伯")
+![约翰·格鲁伯](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/JG.jpg "约翰·格鲁伯")
 Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。
 Markdown 编写的文档后缀为 .md, .markdown。
 由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。甚至Markdown能被使用来撰写电子书。因此,很多博客把它当作语法来写,比如WordPress,Hexo,或者是Typecho.

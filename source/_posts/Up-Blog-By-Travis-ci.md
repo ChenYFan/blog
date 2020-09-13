@@ -13,19 +13,19 @@ banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200629152457.jpg'
 ---
 Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN毅然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 `ChenYFan` 打成 `CehnYFan` <span class="heimu">真实事件</span> ，异或着是用手机查看自己的博客，突然发现：
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629135012.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629135012.jpg)
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/stick_7.png)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_7.png)
 
-由于hexo基于nodejs+git，手机无法更新；同时如果换了台电脑，hexo就要重装。这种事情hexo用户应该体会得到，我也就不多说了。![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E4%B8%AD%E5%88%80.png)
+由于hexo基于nodejs+git，手机无法更新；同时如果换了台电脑，hexo就要重装。这种事情hexo用户应该体会得到，我也就不多说了。![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E4%B8%AD%E5%88%80.png)
 
 那么，hexo用户如何进行在线更新呢？
 
-正常来讲，**服务器法** 最直接，但也是最没用的。用服务器就意味着丧失了hexo的最优点-节省开支。当然，Hexo+Nginx+HexoAdmin确实可以实现很棒的书写环境，但是与其这么麻烦你还不如直接用Typecho&Wordpress呢。![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E4%B8%8D%E9%AB%98%E5%85%B4.png)
+正常来讲，**服务器法** 最直接，但也是最没用的。用服务器就意味着丧失了hexo的最优点-节省开支。当然，Hexo+Nginx+HexoAdmin确实可以实现很棒的书写环境，但是与其这么麻烦你还不如直接用Typecho&Wordpress呢。![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E4%B8%8D%E9%AB%98%E5%85%B4.png)
 
-曾经在 [Hexo官方](https://hexo.io) 上看过 [利用Travis-ci自动部署GithubPages](https://hexo.io/zh-cn/docs/github-pages) 不过我一看到这么多步骤直接 ~~**萎缩**~~ ![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E6%8A%95%E9%99%8D.png) 
+曾经在 [Hexo官方](https://hexo.io) 上看过 [利用Travis-ci自动部署GithubPages](https://hexo.io/zh-cn/docs/github-pages) 不过我一看到这么多步骤直接 ~~**萎缩**~~ ![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E6%8A%95%E9%99%8D.png) 
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629140241.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629140241.jpg)
 
 后来,促使我改变主意的,是我得知中考之后放假三天接着上课[高中],我\*\*\*,然后突然想起来博客不方便更新,接着手一抖,把博客的Repo删掉了.
 
@@ -53,7 +53,7 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 
 默认情况下，直接在hexo博客根目录上链接repo上传，不会把 `node_modules/` 上传上去，因为 `.gitignore` 中包含这么一行：
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629140732.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629140732.jpg)
 
 但是当时以为我拓展是不能上传的，于是手一滑，删掉那一行，上传上去了。
 
@@ -67,19 +67,19 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 
 3. `node_modules/` 中，文件比较碎
 
-嗯，![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/stick_38.png)
+嗯，![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_38.png)
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629141017.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629141017.jpg)
 
 我 `git add .` 了一下,它运算了半小时, `git commit` 又花了半小时,幸好`git push` 是打包上去的,不然我估计又要花半个小时.
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629141259.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629141259.jpg)
 
 结果戏剧性的是,当我去看travis-ci部署记录时,我发现:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629141542.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629141542.jpg)
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/tx.png)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/tx.png)
 
 > 所以,还没用Travis-ci的同学,请不要手贱删掉 `.gitignore` 中的 `node_modules/`
 
@@ -89,12 +89,12 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 
 ### 1.注册travis-ci.org
 
-前往 [https://travis-ci.org] 用Github账号注册 **注意了啊,注意了啊,** 是 `.org` 而不是 `.com` ! 鬼知道我在这上面浪费了多少时间! `travis-ci.org` 是免费给公开repo部署的,`travis-ci.com` 是收费的,但是 `travis-ci.com` 却是可以绑定并免费部署公开Repo的.最有问题的是这两个网站其中一个绑定repo后,另一个就不能绑定了!! 害得我以为是缓存搞出来的事,搞了半天没解决,一看地址栏人都傻了.![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/tx.png)
+前往 [https://travis-ci.org] 用Github账号注册 **注意了啊,注意了啊,** 是 `.org` 而不是 `.com` ! 鬼知道我在这上面浪费了多少时间! `travis-ci.org` 是免费给公开repo部署的,`travis-ci.com` 是收费的,但是 `travis-ci.com` 却是可以绑定并免费部署公开Repo的.最有问题的是这两个网站其中一个绑定repo后,另一个就不能绑定了!! 害得我以为是缓存搞出来的事,搞了半天没解决,一看地址栏人都傻了.![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/tx.png)
 
 ### 2.绑定travis
  前往 [https://github.com/marketplace/travis-ci] 绑定travis-ci到你的github后 继续前往 [GitHub 的 Applications settings](https://github.com/settings/installations) ,点击 `Travis CI`配置你的repo能被TravisCI访问 
  
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629142607.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629142607.jpg)
 
 ### 3.新建Token
 
@@ -102,13 +102,13 @@ Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDos
 
 新建一个Token:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629142812.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629142812.jpg)
 
 然而请注意,官方文档里说只需勾选 `repo` 全部权限即可,但是据我测试,**只勾选则会导致401验证错误**.似乎还要勾选 `read:public_key` 和 `read:user` ,当然如果你足够懒,你也可以全勾上, **但请不要把Token泄露出去**,否则你的Github就不太好使了.
 
 点击生成Token：
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629143305.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629143305.jpg)
 
 记得复制下来保存！不然下次你就看不到你的Token了！
 
@@ -152,7 +152,7 @@ Token很重要,你必须要告诉Travis-ci,因为它要获取对你的repo的写
 
 最终应该是这样子的:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629145235.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629145235.jpg)
 
 在日志里面,搜索Token,应该是这样子的:
 
@@ -164,7 +164,7 @@ $ export GH_TOKEN=[secure]
 
 前往 [https://travis-ci.org/account/repositories](https://travis-ci.org/account/repositories),打开目标Repo后面的按钮:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629145630.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629145630.jpg)
 
 ### 7.触发Travis-ci
 
@@ -172,13 +172,13 @@ $ export GH_TOKEN=[secure]
 
 比如说我更新 `留言板.md` ,Github上一更新,Travis-ci自动开始工作:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629150414.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150414.jpg)
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629150525.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150525.jpg)
 
-![麻烦无视右上角的亮度调节](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629150600.jpg)
+![麻烦无视右上角的亮度调节](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150600.jpg)
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200629152935.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629152935.jpg)
 
 本次日志地址 [https://api.travis-ci.org/v3/job/703061869/log.txt]
 
@@ -196,4 +196,4 @@ $ export GH_TOKEN=[secure]
 
 总之，这样就可以安心用手机或者在学校更新Blog了！
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/stick_54.png)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_54.png)

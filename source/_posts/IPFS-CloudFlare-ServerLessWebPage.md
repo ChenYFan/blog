@@ -5,8 +5,8 @@ tags:
   - CloudFlare
   - 撸羊毛
 categories: 爱学习
-index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/ipfs.jpg
-banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/ipfs.jpg
+index_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg
+banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg
 date: 2020-04-07 16:29:02
 ---
 IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。
@@ -23,7 +23,7 @@ IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然
 
 是不是听起来很神奇?对的,你没有付出任何东西,别人却能获得奖励,而且你既满足储存文件的需求,储存你文件的人也能得到金钱.这种机制,叫做FileCoin.
 
-你可以把它想象成Bittorrent+BitCoin的结合物,实际上他就是这样的<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">.当然不完全是,但核心理念就是这样的.只不过,BitCoin付出的是算力,而FileCoin付出的是硬盘.
+你可以把它想象成Bittorrent+BitCoin的结合物,实际上他就是这样的<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">.当然不完全是,但核心理念就是这样的.只不过,BitCoin付出的是算力,而FileCoin付出的是硬盘.
 
 IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以目前ipfs可以通过官网ipfs.io获取.
 
@@ -39,13 +39,13 @@ IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以
 
 他是一位很有资格的老师，为了顽固学生们的学习效果，他发送给所有学生一部视频：
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/视频.bmp "大视频")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/视频.bmp "大视频")
 
 （注：老刘的带宽是8Mbps，即最大带宽1MB/s，每一个学生的带宽也是8Mbps）
 
 我们假设有5位学生需要这部视频，则可以画这样一幅图：
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down1.png "组团下载ing...")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down1.png "组团下载ing...")
 
 这只视频是`88.8MB`大小,按照这样的速度,同学需要花费`1024*88.8MB/(204.8kb/s)=444s`即`7分钟24秒`
 
@@ -55,11 +55,11 @@ IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以
 2. 刘老师觉得单个视频教学质量不够好,决定上传一个8880GB的超大视频.(下载时间大于一天)
 3. 几个同学与刘老师搞好了关系,刘老师给他们较高的下载速度,导致带宽分配不均匀,没有关系的学生下载速度更慢了.(百度网盘既视感)
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-VIP.png "A1拥有VIP专线")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-VIP.png "A1拥有VIP专线")
 
 4. 由于刘老师给的视频过于激烈,在下载了一段时间后,FBI```open the door!```敲上门来带走了刘老师,视频被查封了!!!(下载速度0)
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/FBI.jpeg "FBI！Open the door！")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/FBI.jpeg "FBI！Open the door！")
 
 可是，学习是必须的，这可怎么办呢？？？
 
@@ -75,11 +75,11 @@ IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以
 
 以256KB为一包，我们就可获得356块文件
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/file.png "分包")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/file.png "分包")
 
 回到下载界面，我们看到，所有人都与其他人获得连接，那么，连接完成后：
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-each.png "连接")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-each.png "连接")
 
 （为了方便观察，我们将不必要的连接全部去掉）
 
@@ -89,21 +89,21 @@ IPFS的主要目标是取代HTTP,说是取代,那刚开始就必须兼容,所以
 
 两秒后，所有人手上都拥有了一块文件：
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-part1.png "下载")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-part1.png "下载")
 
 接下来，在不影响下载的情况下，A1与A2交换下载好的部分，同时与A3、A4、A5交换
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-part2.png "贡献&下载")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-part2.png "贡献&下载")
 
 看到了吗，所有人都得到了更高的速度，所有人的带宽都得到了最充分的利用，包括原先看起来毫无用处的上传带宽。
 
 接着4秒后，所有的贡献分块都下载好了，而每一个人都从文件发布者身上又得到新的文件碎片。
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-part3.png "下载！")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-part3.png "下载！")
 
 所以，这种情况回一直持续下去，直到每一个人都下载完成，每一个人都只需下载149秒即2分29秒！相对于单点时间大大减少！
 
-![图片](https://assets.cyfan.top/file/CYF-PicBed/pic/BT/down-finish.png "完整！")
+![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BT/down-finish.png "完整！")
 
 ### 人数多&文件大 问题
 
@@ -175,12 +175,12 @@ ipfs的世界有个东西叫做cid,大概类似于这样一串: `QmZCvMHrE56Vqse
 ## 上传
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-189.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-189.png)
 
 点击添加按钮，上传
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-190.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-190.png)
 
 接下来，重点来了！
 
@@ -200,7 +200,7 @@ ipns连接获取：点击 `···` ,选择分享，复制链接即可。
 
 ## CloudFlare设置
 
-~~不知道为什么CloudFlare的ipfs服务器有点问题，使用官方说明一直爆404 page not found，官方地址在这里<https://www.cloudflare.com/distributed-web-gateway/> 反正我是折腾失败了。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/lh.jpg">~~
+~~不知道为什么CloudFlare的ipfs服务器有点问题，使用官方说明一直爆404 page not found，官方地址在这里<https://www.cloudflare.com/distributed-web-gateway/> 反正我是折腾失败了。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/lh.jpg">~~
 
 ↑以上为放屁，现在来讲一下怎么正确绑定：
 
@@ -211,17 +211,17 @@ ipns连接获取：点击 `···` ,选择分享，复制链接即可。
 1.将需要绑定的域名,以CNAME形式指向 `www.cloudflare-ipfs.com` ,比如我需要让 `showtime.cyfan.top` 成为ipfs出口，则这么设置。
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-191.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-191.png)
 
 2.使用txt记录绑定ipfs hash，新建txt记录，名字是 `_dnslink.yourwebsite` 一定要加上yourwebsite！比如我绑定的是 `showtime.cyfan.top` ，则名称一行填上 `_dnslink.showtime` !接着内容是 `dnslink=/ipfs/` 后面接上hash，比如showtimehtml的hash是： `QmWAvNck7QBhUAYAEgBFvbvvsMxDC9s55NXVJXeJTjTM1Y` 则大概这么填:
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-192.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-192.png)
 
 3.如果你本来就是托管在CloudFlare上的,到此为止就可以了,如果不是托管在Cloudflare上,类似dnspod\alicdn之类的,那还要获取证书,进入<https://www.cloudflare.com/distributed-web-gateway/> 拉到最底下
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-193.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-193.png)
 
 输入域名，获取证书即可。
 
@@ -233,10 +233,10 @@ ipns连接获取：点击 `···` ,选择分享，复制链接即可。
 ### JSProxy反代ipfs.io
 
 
-老办法，Workersjsproxy反向代理ipfs网关，解决<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/wc.jpg">
+老办法，Workersjsproxy反向代理ipfs网关，解决<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/wc.jpg">
 
 网址：https://showtime.cyfan.top
 
 # 其他的用处
 
-我在Github上看了很多奇奇怪怪的用法，有的拿来做博客，有的拿来做网盘，有的拿来做图床，欸，真的是脑洞大开，幸好ipfs经得起折腾，越折腾他们赚的越多<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">
+我在Github上看了很多奇奇怪怪的用法，有的拿来做博客，有的拿来做网盘，有的拿来做图床，欸，真的是脑洞大开，幸好ipfs经得起折腾，越折腾他们赚的越多<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">

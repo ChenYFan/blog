@@ -21,7 +21,7 @@ Momentum插件是一款自动更换壁纸，自带时钟，任务日历和工作
 - [x] 时间、所在地天气、格言（英语谚语或来自某经典电影的台词…），合理的排布位置并没有让页面显得臃肿。
 - [x] 当然，常用网址和Chrome应用列表页也保留了。（点击左上角“Apps”进入）
 
-![棒棒哒](https://assets.cyfan.top/file/CYF-PicBed/pic/M.jpg "↑每天都能换壁纸呢!!")
+![棒棒哒](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/M.jpg "↑每天都能换壁纸呢!!")
 
 # Momentum chrome插件下载
 在chrome应用商店搜索momentum插件，直接安装就可以.但无法直连,这里提供私有云链接:

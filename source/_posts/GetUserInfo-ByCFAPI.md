@@ -11,9 +11,9 @@ date: 2020-06-28 08:30:00
 index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628082609.jpg'
 banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200628082609.jpg'
 ---
-噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E8%82%BF%E5%8C%85.png),以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。
+噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E8%82%BF%E5%8C%85.png),以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。
 
-因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着[hexo官方文档](https://hexo.io/zh-cn/docs/github-pages) 用Travis-ci+Github实现在线自动部署,以后更新也方便点![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/%E5%9D%90%E7%AD%89.png)
+因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着[hexo官方文档](https://hexo.io/zh-cn/docs/github-pages) 用Travis-ci+Github实现在线自动部署,以后更新也方便点![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%9D%90%E7%AD%89.png)
 
 好了好了，不说了，今天简单讲一下如何用CloudFlare自带的API获取用户信息。
 
@@ -108,12 +108,12 @@ $(document).ready(function() {
 
 结果应该类似这样:
 
-![](https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/20200628094419.png)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200628094419.png)
 
 划到页底即可看到。
 
 # End
 
-OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了![](https://assets.cyfan.top/file/CYF-PicBed/pic/moji/yhuaji.png)。
+OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png)。
 
 

@@ -23,7 +23,7 @@ copyright: true
 
 > **现在打个岔**
 > 本文图片较少,故接下来要强制添加图片:
-> ![强制有图](https://assets.cyfan.top/file/CYF-PicBed/pic/QZYT.png "强制有图")
+> ![强制有图](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/QZYT.png "强制有图")
 > 哈哈哈哈哈哈哈哈(●'◡'●)开玩笑.
 
 ## reCaptcha有哪些,有什么用?

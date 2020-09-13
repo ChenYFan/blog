@@ -35,13 +35,13 @@ for troubleshooting information.
 
 科学上网么...
 我挂上代理后再次进入,结果还是老样子:
-![老样子](https://assets.cyfan.top/file/CYF-PicBed/pic/GITHUB_ERROR.jpg "还是老样子啊")
+![老样子](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg "还是老样子啊")
 
 ...
 
 # 最后解决:
 然后我一直点着<kbd>Create an Account</kbd>,一直报错.大概点了5下后:
-![新样子](https://assets.cyfan.top/file/CYF-PicBed/pic/GITHUB_CAPTCHA.jpg "=_=换了个样子")
+![新样子](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GITHUB_CAPTCHA.jpg "=_=换了个样子")
 终于报出真正的人机验证了!点进去,人机验证的方式是旋转小狗小牛到正确的位置.
 人机验证完成,我就直接被跳到邮箱验证了.
 ^3^,终于解决了!

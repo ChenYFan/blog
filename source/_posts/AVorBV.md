@@ -1,7 +1,7 @@
 title: AV?BV!
 author: CYF
-index_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/6.jpg
-banner_img: https://assets.cyfan.top/file/CYF-PicBed/pic/cover/6.jpg
+index_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/6.jpg
+banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/6.jpg
 tags:
   - Bilibili
   - AV
@@ -42,14 +42,14 @@ BV：“BilibiliVideo”，感觉和油管接轨了一样，也是一堆看似�
 
 反人类设计：10位固定设计，字母数字混合，最难受的是还要**区分大小写**，这让线下传播视频就变得异常难受啊！！！
 
-区分大小写意味着如果你忘记按<kbd>CapsLock</kbd>打bv,那么你就会进入一个全新世界<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">
+区分大小写意味着如果你忘记按<kbd>CapsLock</kbd>打bv,那么你就会进入一个全新世界<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">
 
 
 # 坏处
 
 ## 难记难打
 
-AV号很简洁,稿件是 `av` 前缀 加 若干位数字，一般人大都是八到十位，当然一些陈年老梗： `av17001` <img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/huaji.png">、`av10492` <img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/yhuaji.png">、`av10388` <img src="https://assets.cyfan.top/file/CYF-PicBed/pic/moji/zhuaji.png"> 往往就更加简洁了。
+AV号很简洁,稿件是 `av` 前缀 加 若干位数字，一般人大都是八到十位，当然一些陈年老梗： `av17001` <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">、`av10492` <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png">、`av10388` <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/zhuaji.png"> 往往就更加简洁了。
 
 #### 以前
 
@@ -95,10 +95,10 @@ AV与BV其实是**互通的**,只是算法极其nb,base58(这辈子就听说过b
 
 ## 搞颜色
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-184.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-184.png)
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-185.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-185.png)
 
 注：BlueVideo是美国黄片的俚语
 
@@ -125,13 +125,13 @@ AV与BV其实是**互通的**,只是算法极其nb,base58(这辈子就听说过b
 目前我觉得可能性不大,一般性int值能达到2147483647,全中国一人发个视频也勉强装得下,而且最主要的AV号和BV号是互通的,以BV1874111715为例
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-168.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-168.png)
 
 
 换成av号av99307985
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-169.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-169.png)
 
 这说明,av只是从明面转向暗面,实际还是存在的.
 
@@ -177,22 +177,22 @@ AV与BV其实是**互通的**,只是算法极其nb,base58(这辈子就听说过b
 
 以BV1874111715
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-168.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-168.png)
 
 ChromeF12直接开挂开发者调试,选择 `Console` 控制台,输入aid
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-170.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-170.png)
 
 返回一串数字,就是av号
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-171.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-171.png)
 
 同理,对于AV视频,可以输入bvid获取那 ~~F\*\*king~~ BV
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-172.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-172.png)
 
 ### 缺点
 
@@ -283,12 +283,12 @@ print(enc(455017605))
 print(enc(882584971))
 ```
 
-互相转换脚本，如果算法没猜错，可以保证在 av 号 ![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-183.png) 时正确，同时应该在![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-174.png) 时也是正确的。
+互相转换脚本，如果算法没猜错，可以保证在 av 号 ![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-183.png) 时正确，同时应该在![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-174.png) 时也是正确的。
 
 此代码以 WTFPL 开源。
 UPD：之前的代码中，所有数位都被用到是乱凑的，实际上并不需要，目前只要低 6 位就足够了。
 （更大的 av 号需要 64 位整数存储，但是 b 站现在使用的应该还是 32 位整数，所以应该还要很久）
-发现的方法：首先从各种渠道的信息来看，应该是 base58 编码的。设 x 是一个钦定的 av 号，查询![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-175.png)这些 av 号对应的 bv 号，发现 bv 号的第 12、11、4、9、5 位分别会变化。所以猜测这些是 58 进制下的相应位。但是直接 base58 是不行的，所以猜测异或了一个大数，并且 base58 的字符表可能打乱了。经过实验，bv 号最低位相同的数，av 号的奇偶性相同，这一定程度上印证了之前的猜想。接下来找了一些 av 号 x，满足 x 和 x+1 对应 bv 号的第 11 位不同。设异或的数为 X，那么![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-176.png)（![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-177.png)表示异或）。由于 av 号（除了最新的少量视频）最多只有 27 bits，所以可以设![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-178.png)。然后可以发现X只和![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)和b有关，那么可以枚举这两个值（一共![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-180.png)种情况）然后使用上面的式子检查，就能得到若干可能的![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)和b。这里我得到的可能值如下：（左边是![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)，右边是b）
+发现的方法：首先从各种渠道的信息来看，应该是 base58 编码的。设 x 是一个钦定的 av 号，查询![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-175.png)这些 av 号对应的 bv 号，发现 bv 号的第 12、11、4、9、5 位分别会变化。所以猜测这些是 58 进制下的相应位。但是直接 base58 是不行的，所以猜测异或了一个大数，并且 base58 的字符表可能打乱了。经过实验，bv 号最低位相同的数，av 号的奇偶性相同，这一定程度上印证了之前的猜想。接下来找了一些 av 号 x，满足 x 和 x+1 对应 bv 号的第 11 位不同。设异或的数为 X，那么![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-176.png)（![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-177.png)表示异或）。由于 av 号（除了最新的少量视频）最多只有 27 bits，所以可以设![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-178.png)。然后可以发现X只和![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)和b有关，那么可以枚举这两个值（一共![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-180.png)种情况）然后使用上面的式子检查，就能得到若干可能的![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)和b。这里我得到的可能值如下：（左边是![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)，右边是b）
 
 ```
 22 90983642
@@ -297,7 +297,7 @@ UPD：之前的代码中，所有数位都被用到是乱凑的，实际上并�
 50 43234085
 ```
 
-有奇有偶是因为异或 1 之后也能找到轮换表。而![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-181.png)则使得模 58 的余数刚好变成![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-182.png)减它。我取了 b=43234084，然后处理最低位，可以得到一个字符表，即 fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF。对于更高位，实际上还需要知道![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)^2,![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)^3这些值也可以 枚举 58 次得到，最后我得到的值是![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-179.png)^4=1749968。这时我发现，每一位的字符表是相同的（实际上只对 b=43234084 是这样的），然后再微调一下参数（上面代码中的两个 magic number 就相当于这里的a,b），最后处理了一下![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-183.png)的情况就得到了这份代码。
+有奇有偶是因为异或 1 之后也能找到轮换表。而![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-181.png)则使得模 58 的余数刚好变成![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-182.png)减它。我取了 b=43234084，然后处理最低位，可以得到一个字符表，即 fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF。对于更高位，实际上还需要知道![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)^2,![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)^3这些值也可以 枚举 58 次得到，最后我得到的值是![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-179.png)^4=1749968。这时我发现，每一位的字符表是相同的（实际上只对 b=43234084 是这样的），然后再微调一下参数（上面代码中的两个 magic number 就相当于这里的a,b），最后处理了一下![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-183.png)的情况就得到了这份代码。
 
 讲句大实话,我根本没看懂,不过看起来好牛逼的样子.
 
@@ -312,10 +312,10 @@ UPD：之前的代码中，所有数位都被用到是乱凑的，实际上并�
 [Give me AV not BV](https://greasyfork.org/zh-CN/scripts/398526-give-me-av-not-bv)
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-186.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-186.png)
 
 
-![upload successful](https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-187.png)
+![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-187.png)
 
 作者估计是个暴躁老哥,骂人骂的挺顺口的,不过脚本不错,脚本检测到地址栏的BV号会自动无刷新替换为AV号，同时会在稿件页标题下方显示原始av号。.
 
