@@ -135,7 +135,7 @@ Recently updated (since 2020-03-04): 2 packages (detail see file E:\bloghexo\nod
 2. 新建jpg空白图像
 3. 右键，编辑，粘贴
 4. 重命名文件
-5. 剪切到 `/sourcehttps://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/` 文件夹里，必要的时候会新建一个文件夹
+5. 剪切到 `/source/pic/` 文件夹里，必要的时候会新建一个文件夹
 6. 回到NotePad++，键入：`![标题](路径 "标题")`
 
 现在用了Hexo-Admin:
