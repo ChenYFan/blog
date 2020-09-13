@@ -66,7 +66,7 @@ The following behavior is prohibited:
 
 
 
-不好意思，**免费图床非常多**，只是你不会用而已，这篇文章，就是拯救面前陷入图床危机的你【当然是面向小白，大佬也可以在底下给我提意见鸭![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png)】。
+不好意思，**免费图床非常多**，只是你不会用而已，这篇文章，就是拯救面前陷入图床危机的你【当然是面向小白，大佬也可以在底下给我提意见鸭】。![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png)
 
 
 
@@ -299,7 +299,9 @@ bdstatic是百度的内用npm镜像，速度也很好【百度CDN】，但是请
 
 
 
-啊哈？不会上传？![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png)去[npm](https://npmjs.org)官网注册个账号去,然后先：
+啊哈？不会上传？
+![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png)去[npm](https://npmjs.org)
+官网注册个账号去,然后先：
 
 
 
