@@ -43,7 +43,8 @@ new Artitalk({
      color1: '',
      color2: '',
      color3: '',
-	 atEmoji: {
+     atComment: 0,
+     atEmoji: {
             "8082.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/8082.png",
             "bx.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/bx.png",
             "c.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/c.png",
