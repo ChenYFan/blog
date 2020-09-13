@@ -120,7 +120,7 @@ The following behavior is prohibited:
 
 [https://7bu.top/](https://7bu.top/)
 
-推荐程度：？？？？？
+推荐程度：★★★★
 
 由[杜老师](https://dusays.com/241/)提供的个人公益图床，存储于阿里和腾讯的COS，官方保证SLA>=99%，是一个不错的选择，当然，7bu毕竟是个人维护的图床，能不能永久撑下去还是个问题，我也没有做过深度评测，无法表明其可用性。
 
@@ -131,14 +131,18 @@ The following behavior is prohibited:
 
 
 ```yml
-接口地址：https://7bu.top/upload/upload.html
+接口地址：https://7bu.top/api/upload
 post参数：image
 回调json：data.url
 ```
 
+[更准确的API文档](https://7bu.top/index/api.html)
 
+![](https://7.dusays.com/2020/09/13/aa555748a9f38.jpg)
 
-> 而且，就在我上传测试图片的时候，明明已经表明图片已经上传，打开却发现COS提示404，这一点我不得陷入思考，个人维持的公益项目真的能保证SLA吗？![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%BE%BF%E4%BE%BF.png)
+> ~~而且，就在我上传测试图片的时候，明明已经表明图片已经上传，打开却发现COS提示404，这一点我不得陷入思考，个人维持的公益项目真的能保证SLA吗？![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%BE%BF%E4%BE%BF.png)~~
+
+> 昨天上传的时候撞上服务器维修了，很抱歉做出了不够恰当的评价.7bu采用的是全国腾讯云CDN加速，国内访问速度十分优良。然而请注意，7bu刚开始建立的目的并不是面向全球【仅面对中国大陆游客】，这导致其大陆以外基本解析至国内西藏腾讯，访问效果并不好。并且，这是通过腾讯云的鉴黄，可能会存在误杀行为。具体使用请个人斟酌【不过作为开发环境还是可行的】。
 
 
 
