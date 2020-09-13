@@ -215,7 +215,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://assets.cyfan.top/file/CYF-PicBed/pic/cover/1.jpg') no-repeat center center;
+         style="background: url('https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/1.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -290,11 +290,11 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>回头看看自己的，NexT最大的缺点是什么？大众脸,通常随便点几个博客都跟我的博客差不多。因为集成了大量插件以及修改简单、界面优雅，NexT已经在Hexo里占了半边江山，基本上网上搜索Hexo建立博客教程，其中主题绝大多数是NexT。</p>
 <p>当然，NexT也有NexT的好处，毕竟作为一款主打全兼容的主题，NexT修改起来真的很简单，而且任何常见错误网上一搜就行了。但是，自建博客的主要目的是什么？当然是个性化，那不然我何苦不在CSDN、简书、掘金这些平台上写，还免去一番折腾，<span class="heimu">还能免去高额的域名价钱</span>.</p>
 <p>于是去<a href="https://hexo.io/themes" target="_blank" rel="noopener">hexo主题市场</a>看看，感觉 Diaspora主题不错：</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-71.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-71.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>因为NexT真的过于豪华，所以我就决定开始换主题，</p>
-<p>最后发现我究竟是入了一个什么大坑<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">…</p>
+<p>最后发现我究竟是入了一个什么大坑<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">…</p>
 <p>因为这是个个人主题，根本没有很多详细的使用文档，整合的东西也不多，网上基本没有资料，所以修改时全靠经验，有一些根本没办法在本地预览…</p>
-<p>说个数字就知道这坑有多大了，昨天刨掉上传前天博文一次，push量达到了30次。<img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">  我还能说什么。</p>
+<p>说个数字就知道这坑有多大了，昨天刨掉上传前天博文一次，push量达到了30次。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">  我还能说什么。</p>
 <h1 id="更换"><a href="#更换" class="headerlink" title="更换"></a>更换</h1><p>下载，解压，修改站点配置文件指向Diaspora。</p>
 <p>这一步简单极了，那么接下来谈谈这到底有多少问题。</p>
 <h2 id="Gitalk问题"><a href="#Gitalk问题" class="headerlink" title="Gitalk问题"></a>Gitalk问题</h2><p>首先，之前说过Gitalk一个lable不能超过50字，很多人采用了decode方式规避解码，但对于我这种<del>标题党</del>人来说，50字显然不够。</p>
@@ -336,10 +336,10 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     &gt;查看评论&lt;/div&gt;
 &lt;%&#125;%&gt;</code></pre></div>
 
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-73.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-73.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>根本没有id好不好!!!!!!!!所以你放在主题配置文件有什么用?????</p>
 <p>最终拿出notepad++的文件夹搜索功能</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-72.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-72.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>在 <code>\source\js\diaspora.js</code> 里有关于gitalk的配置,</p>
 <div class="hljs"><pre><code class="hljs undefined"><span class="hljs-comment">// comment</span>
            case - <span class="hljs-number">1</span> != tag.indexOf(<span class="hljs-string">"comment"</span>): 
@@ -366,16 +366,16 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 
 <p>把id换成 <code>id: md5(location.pathname),</code> ,回到 <code>\layout\_partial\post\gitalk.ejs</code> 添加一行 <code>&lt;script src=&quot;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js&quot;&gt;&lt;/script&gt;</code> 才行.</p>
 <p>更惨的是当我测试的时候,issues却多开了一个</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-74.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-75.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-73.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-74.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-75.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-73.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>编码之后才发现，NexT主题默认是在打开文章后添加了一个 <code>#more</code> 用于定位加载更多的地方，这个位置被gitalk统计进去了….</p>
 <p>还好博客没有人留言，这个坑总算是填上去了。</p>
 <h2 id="google-analytics"><a href="#google-analytics" class="headerlink" title="google-analytics"></a>google-analytics</h2><p>由于我不用谷歌统计,因为谷歌统计在国内真的支持很差,很容易拖慢速度,所以一直在用百度统计.</p>
 <p>但这个主题只整合了谷歌,没有百度.</p>
 <p>欸,这就是小主题和大主题的区别.(つ&amp;⊂)</p>
 <p>不过这个坑还好填,文件夹搜索google,很快定位到位置 <code>\diaspora\layout\_partial\post\google-analytics.ejs</code> ,直接全部替换,解决.</p>
-<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-76.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-76.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>按照官方文档说明,首先</p>
 <div class="hljs"><pre><code class="hljs undefined">hexo new<span class="hljs-built_in"> page </span>search</code></pre></div>
 

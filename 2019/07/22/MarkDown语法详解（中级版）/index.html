@@ -239,7 +239,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      846字
+      852字
     </span>
   
 
@@ -305,20 +305,20 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 
 <p>其中<code>图片alt</code>可不填.图片地址可以是绝对地址,也可以是相对地址.</p>
 <p>例如:</p>
-<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
+<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
 
-<p>是相对地址,会得到:<br><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"><br>（这么帅气的脸只舍得打半边马赛克）<br>而</p>
-<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://blog.cyfblog.gahttps://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
+<p>是相对地址,会得到:<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"><br>（这么帅气的脸只舍得打半边马赛克）<br>而</p>
+<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://blog.cyfblog.gahttps://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
 
-<p>是绝对地址,会得到:<br><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"></p>
+<p>是绝对地址,会得到:<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"></p>
 <p>其实结果是一样的.</p>
 <h3 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法:"></a>另一种方法:</h3><p>当然，你也可以像网址那样对图片网址使用变量:</p>
 <div class="hljs"><pre><code class="hljs undefined">这个链接用 1 作为网址变量 [<span class="hljs-string">刘老师真容</span>][<span class="hljs-symbol">1</span>].
 然后在文档的结尾位变量赋值（网址）
 
-[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg</span></code></pre></div>
+[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg</span></code></pre></div>
 
-<p>会得到:<br>这个链接用 1 作为网址变量 <a href="https://assets.cyfan.top/file/CYF-PicBed/pic/LLS.jpg" target="_blank" rel="noopener">刘老师真容</a>.<br>然后在文档的结尾位变量赋值（网址）</p>
+<p>会得到:<br>这个链接用 1 作为网址变量 <a href="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg" target="_blank" rel="noopener">刘老师真容</a>.<br>然后在文档的结尾位变量赋值（网址）</p>
 <blockquote>
 <p><strong>提示</strong><br>如果你对大小比较在意,可以使用html语法来写.具体写法在高级玩法写出.</p>
 </blockquote>

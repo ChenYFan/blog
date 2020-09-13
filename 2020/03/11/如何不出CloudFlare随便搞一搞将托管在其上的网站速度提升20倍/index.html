@@ -286,8 +286,8 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
             <h1 style="display: none">如何不出CloudFlare随便搞一搞将托管在其上的网站速度提升20倍</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>这是加速前的压力测试：<br><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/5.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
-<p>这是加速后的压力测试：<br><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/6.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
+              <p>这是加速前的压力测试：<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/5.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
+<p>这是加速后的压力测试：<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/6.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
 <p>这是我头一次一天更新两篇博文.</p>
 <h1 id="：（"><a href="#：（" class="headerlink" title="：（"></a>：（</h1><p>之前说过，Coding实名认证蛋疼，转到Github上又速度难受。</p>
 <p>本来以为CloudFlareCDN能给我加速，结果今天博客压力测试时只有50kb/s</p>
@@ -367,7 +367,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>那么，就有两种情况出现：</p>
 <h2 id="加速浏览别人的网站"><a href="#加速浏览别人的网站" class="headerlink" title="加速浏览别人的网站"></a>加速浏览别人的网站</h2><p>很多站长，尤其是国内个人站点站长，如果服务器放在国外的，基本都会用CFCDN。</p>
 <p>先不说别的，大名鼎鼎的 <a href="https://loadbt.com" target="_blank" rel="noopener">loadbt</a> 种子不限速离线下载就是用CF免费版的CDN，那速度下载只有60kb/s，而且经常断线。</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-11.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-11.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
 <p>那么，如何加速？</p>
 <p>很简单，上述提到的那么多IP，拿一个来，修改本地的Hosts，引导使用较快的ip来访问即可。</p>
 <p>实际上我相当推荐 <code>1.0.0.1</code> ~ <code>1.0.0.254</code> 这个ip段作为回源ip,因为这个ip段用的是CN2,速度很好,延迟也很低;</p>
@@ -407,40 +407,40 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p><code>ps.cyfan.ga</code> 是主站点，就是你给别人看的，是要经过加速。</p>
 <h4 id="复制脚本："><a href="#复制脚本：" class="headerlink" title="复制脚本："></a>复制脚本：</h4><p>[<a href="https://raw.githubusercontent.com/EtherDream/jsproxy/master/cf-worker/index.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/EtherDream/jsproxy/master/cf-worker/index.js</a> ] 或者是我Fork的地址 [<a href="https://raw.githubusercontent.com/ChenYFan/jsproxy/master/cf-worker/index.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/ChenYFan/jsproxy/master/cf-worker/index.js</a> ]<br>把里面的内容全部复制，进入下一步：</p>
 <h4 id="设置CFWorker"><a href="#设置CFWorker" class="headerlink" title="设置CFWorker"></a>设置CFWorker</h4><p>进入Workers:</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-12.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-12.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
 <p>点击Create a Worker</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-13.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-13.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片"></p>
 <p>清空左边的编辑框，将刚刚复制的代码粘贴进去。</p>
 <p>修改第六行，把地址变成自己的。</p>
 <p><del>娶</del> 取个霸气点的名字，不要想博主一样取ps那么弱小的名字。【手动滑稽】</p>
 <p>最后Save and Deploy</p>
-<h4 id="修改DNS："><a href="#修改DNS：" class="headerlink" title="修改DNS："></a>修改DNS：</h4><p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-14.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="将正常需要回源的"></p>
+<h4 id="修改DNS："><a href="#修改DNS：" class="headerlink" title="修改DNS："></a>修改DNS：</h4><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-14.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="将正常需要回源的"></p>
 <p>将正常需要回源的地址后面加个s，注意如果使用Proxied请暂时去除。</p>
 <p>新建真正需要的地址：</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-15.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-15.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>使用A记录，IP选择上面提到的，随意，建议1.0.0.* ,速度快，丢包少，延迟低。</p>
 <p><strong>千万不要勾选·proxied·！一定要改成·DNS Only·！</strong></p>
-<h4 id="绑定Workers"><a href="#绑定Workers" class="headerlink" title="绑定Workers"></a>绑定Workers</h4><p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-19.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<h4 id="绑定Workers"><a href="#绑定Workers" class="headerlink" title="绑定Workers"></a>绑定Workers</h4><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-19.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>就照这个样子填就可以了。</p>
 <h4 id="回到原网站："><a href="#回到原网站：" class="headerlink" title="回到原网站："></a>回到原网站：</h4><p>Github更换绑定：</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-16.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-16.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>可以看到修改DNS后报错了，把地址改成<strong>回源后</strong>地址，我这里是 <code>pss.cyfan.ga</code></p>
 <p>点击Save，接着有一行字：</p>
 <div class="hljs"><pre><code class="hljs undefined"><span class="hljs-selector-tag">Custom</span> <span class="hljs-selector-tag">domain</span> "<span class="hljs-selector-tag">pss</span><span class="hljs-selector-class">.cyfan</span><span class="hljs-selector-class">.ga</span>" <span class="hljs-selector-tag">saved</span>.</code></pre></div>
 
 <p>还没有完，翻到底下，你会发现Github提示：</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-17.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-17.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <div class="hljs"><pre><code class="hljs undefined">Enforce HTTPS — Not yet available <span class="hljs-keyword">for</span> your site because <span class="hljs-keyword">the</span> certificate has <span class="hljs-keyword">not</span> finished being issued.
 Please allow <span class="hljs-number">24</span> hours <span class="hljs-keyword">for</span> this process <span class="hljs-keyword">to</span> complete. (pss.cyfan.ga) 
 HTTPS provides a layer <span class="hljs-keyword">of</span> encryption <span class="hljs-keyword">that</span> prevents others <span class="hljs-keyword">from</span> snooping <span class="hljs-keyword">on</span> <span class="hljs-keyword">or</span> tampering <span class="hljs-keyword">with</span> traffic <span class="hljs-keyword">to</span> your site.
 When HTTPS <span class="hljs-keyword">is</span> enforced, your site will only be served <span class="hljs-keyword">over</span> HTTPS. Learn more.</code></pre></div>
 
 <p>不急,申请TLS证书其实根本不需要24小时,过个2分钟,刷新一下:</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-18.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-18.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>勾选Enforce https,刷新,可能会报成功,不急,再刷新一下就会报失败,过一段时间再刷新,如果报成功,那么恭喜成功!但还没完!</p>
 <h4 id="回源代理"><a href="#回源代理" class="headerlink" title="回源代理"></a>回源代理</h4><p>回到CloudFlareDNS,将pss.cyfan.ga勾选Proxies，但是ps.cyfan.ga千万不要勾选！</p>
 <p>CF加速完成,试试吧!</p>
-<h1 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h1><p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-20.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<h1 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-20.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>ping一下博客：</p>
 <div class="hljs"><pre><code class="hljs undefined">
 正在<span class="hljs-built_in"> Ping </span>blog.cyfan.ga [1.0.0.2] 具有 32 字节的数据:
@@ -479,10 +479,10 @@ When HTTPS <span class="hljs-keyword">is</span> enforced, your site will only be
 <hr>
 <p>反正IP随便改，最近随便换了个香港线：</p>
 <p>加速前</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-80.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-80.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p><code>说实话有些看不懂这路是怎么绕的，为什么又从北京出口</code></p>
 <p>加速后</p>
-<p><img src="https://assets.cyfan.top/file/CYF-PicBed/pic/post/pasted-79.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-79.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
 <p>实际上后面还有一端链接到Github，不过这一段可以忽略不计了。</p>
 
             </div>
