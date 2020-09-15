@@ -135,18 +135,46 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    // Cache gravatar files
-    new RegExp('https://embed\.widgetpack\.com/'),
-    // Use the cache if it's available
+    new RegExp('https://rmt\.dogedoge\.com/'),
     workbox.strategies.cacheFirst({
-      // Use a custom cache name
-      cacheName: 'widget-cache',
+      cacheName: 'doegdoge-cache',
       plugins: [
         new workbox.expiration.Plugin({
-          // Cache for a maximum of 30 Days
-          maxAgeSeconds: 0,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
         })
       ],
     })
 );
-
+workbox.routing.registerRoute(
+    new RegExp('https://unpkg\.zhimg\.com/'),
+    workbox.strategies.cacheFirst({
+      cacheName: 'zhimg-cache',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        })
+      ],
+    })
+);
+workbox.routing.registerRoute(
+    new RegExp('https://valine\-mini\.cyfan\.top/'),
+    workbox.strategies.cacheFirst({
+      cacheName: 'doegdoge-cache',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: 5 * 60,
+        })
+      ],
+    })
+);
+workbox.routing.registerRoute(
+    new RegExp('https://cdn\.cyfan\.top/'),
+    workbox.strategies.cacheFirst({
+      cacheName: 'cdn-user-cache',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        })
+      ],
+    })
+);
