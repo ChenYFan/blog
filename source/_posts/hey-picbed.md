@@ -261,7 +261,7 @@ post参数：file
 
 
 
-## npm+JSDelivr&&Zhimg&&bdstatic
+## npm+JSDelivr&&Zhimg&&bdstatic&&自定义镜像
 
 
 
@@ -352,6 +352,16 @@ unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点】https://shadow.elemecdn.com/npm/
 ```
+
+或者说，你还可以自建unpkg镜像。
+
+啊，你说你没有服务器反向代理unpkg？
+
+其实，七牛的对象存储，腾讯的COS和阿里的OSS都是支持镜像回源的鸭！
+
+七牛http流量每月免费10GB，腾讯的国内免费60GB6个月，作为自用完全足够了！
+
+![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/L6LVJL_1ZUM2ISQ]10R%7B3HF.png?q=45)
 
 ## ipfs
 
