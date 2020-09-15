@@ -239,7 +239,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.9k字
+      3k字
     </span>
   
 
@@ -249,7 +249,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
       <i class="iconfont icon-clock-fill"></i>
       
       
-      33
+      34
       分钟
     </span>
   
@@ -383,7 +383,7 @@ The following behavior is prohibited:
 <h2 id="BackBlaze"><a href="#BackBlaze" class="headerlink" title="BackBlaze"></a>BackBlaze</h2><p>推荐程度：★★★</p>
 <p>具体可以看看<a href="/2020/07/09/free-10GB-oss-poweredby-backblaze/">这篇文章</a></p>
 <h2 id="千奇百怪的"><a href="#千奇百怪的" class="headerlink" title="千奇百怪的"></a>千奇百怪的</h2><h2 id="Github-JSDelivr"><a href="#Github-JSDelivr" class="headerlink" title="Github+JSDelivr"></a>Github+JSDelivr</h2><p>正如我所说的，这种组合已经被广大博主所采纳，并且网上教程已经泛滥了，在这里不再阐述。</p>
-<h2 id="npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic"><a href="#npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic" class="headerlink" title="npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic"></a>npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic</h2><p>推荐程度：★★★★★</p>
+<h2 id="npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像"><a href="#npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像" class="headerlink" title="npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像"></a>npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像</h2><p>推荐程度：★★★★★</p>
 <p>为什么很多文章都没有提到用npm做图床？我想其中很大的原因是，白嫖jsd做图床的，很多都是小白【或者不愿花时间在于此的大佬】，同样的，这些文章面向的都是这些人，毕竟，以拖拽方式上传的Github和命令行方式上传，我想，大都数人会选择前者吧。</p>
 <p>可是，你们没有想到的是，github文件镜像【github.com.cnpmjs.org是站点镜像】只有jsd一个，npm镜像可远远不止这一个啊！</p>
 <p>让我们看看分别镜像在jsd、zhimg、bdstatic的文件怎么样：</p>
@@ -413,6 +413,11 @@ npm publish</code></pre></div>
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点】https://shadow.elemecdn.com/npm/</code></pre></div>
 
+<p>或者说，你还可以自建unpkg镜像。</p>
+<p>啊，你说你没有服务器反向代理unpkg？</p>
+<p>其实，七牛的对象存储，腾讯的COS和阿里的OSS都是支持镜像回源的鸭！</p>
+<p>七牛http流量每月免费10GB，腾讯的国内免费60GB6个月，作为自用完全足够了！</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/L6LVJL_1ZUM2ISQ%5D10R%7B3HF.png?q=45" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <h2 id="ipfs"><a href="#ipfs" class="headerlink" title="ipfs"></a>ipfs</h2><p>我曾经<a href="/2020/04/07/IPFS-CloudFlare-ServerLessWebPage/">写过关于ipfs的讲解</a> ,作为一个去中心化的存储系统拿来做公开图床其实挺不错的。</p>
 <p>我个人搭建的ipfs镜像【托管于CloudFlareWorkers】：<a href="https://ipfs.cyfan.top" target="_blank" rel="noopener">https://ipfs.cyfan.top</a> <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p>我个人搭建的ipfs上传API：<a href="https://ipfsupload.cyfan.top" target="_blank" rel="noopener">https://ipfsupload.cyfan.top</a></p>
