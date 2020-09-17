@@ -1,0 +1,1100 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  
+  <title>在不支持ipv6的路由器下使用ipv6 || 陈YFの博客(￣▽￣)&#34;</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css">
+
+  
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.0/styles/vs2015.min.css">
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/css/main.css">
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/color-schema.js"></script>
+</head>
+
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+
+
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../index.html" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../archives/">
+                    
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../categories/">
+                    
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                页面
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../1949/10/01/留言板/">
+                    
+                    留言板
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../随口胡说/ ">
+                    
+                    随口胡说
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../about/">
+                    
+                    关于
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+            <li class="nav-item" id="travellings-icon">
+            <a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<i
+                class="iconfont icon-map" id="color-travellings-icon"></i>&nbsp;</a>
+          </li>
+                  <li class="nav-item" id="tton">
+            <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-04-05 15:34" pubdate>
+      2020年4月5日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+      分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">在不支持ipv6的路由器下使用ipv6</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>从奶奶家回到城里，立刻有个问题困扰着我，我将处于没有ipv6的环境下。</p>
+<p>拜托，都0202年了，你怎么连ipv6都没有？</p>
+<p>因为家里情况有点小特殊，有三个路由器：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-127.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>移动路由器网关：楼下。100Mbps。通常使用LAN口直接网线插进去，一般不用无线功能，实际上老早支持ipv6了。</p>
+<p>小米路由器：楼下。有线连接移动网关，因为支持5GHz的WiFi，所以在楼下一般手机都是接入小米路由器。</p>
+<p>水星路由器：楼上。有线链接移动网关，不支持5GHzWiFi，不过2.4GHz一般满足日常使用，峰值可达44Mbps，对等网速4MB/s保持的住，也就不计较速度慢了。扯淡的是由于生产日期过早，居然不支持ipv6！！！</p>
+<p>我在楼上，身边有个2008年买来的水星路由器，这个路由器通过百兆网线链接楼下的移动网关，也就是套了两层路由器。</p>
+<p>恼火的是，由于是2008年的产物，这破玩意是不支持ipv6的。</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-128.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>问题是，没有公网ipv6就意味着我的BTSYNC将处于疯狂的中继服务器，欸，不可忍耐。</p>
+<p>以至于百度的ipv6都上不去。</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-129.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>甚至连自己ipv6站点都上不去。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"></p>
+<p>这谁忍得住啊。</p>
+<h1 id="坐下来好好想想"><a href="#坐下来好好想想" class="headerlink" title="坐下来好好想想"></a>坐下来好好想想</h1><p>之前去问过姨父，姨父是个非常屌的男人。</p>
+<p>我问：“阿姨丈（方言称呼），怎样在不支持ipv6的路由器下使用ipv6啊，把局域网下电脑做代理可以吗？”</p>
+<p>姨父：（一脸鄙夷地瞟了我一眼）“硬件解决不了的的事情还想用软件解决？”</p>
+<p>好，那我就用软件解决硬件解决不了的事情！</p>
+<p>刷固件？我不知道这种行不行的通，刚才问了一下 <a href="https://winkiller.jamjams.xyz" target="_blank" rel="noopener">winkiller</a> 刷硬件的大佬,回答是应该不行.</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-130.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>不行就不行吧,反正我也没指望刷硬件.</p>
+<p>想一想,对了,父母那台电脑不是挺适合拿来做代理服务器吗?</p>
+<p>思考一下:</p>
+<ul>
+<li><input checked disabled type="checkbox"> 我是笔记本,他们是台式电脑,他们电脑每天开机,早6:00到网上11:00一直开着,也就是我开机的时间他们绝对开着.</li>
+<li><input checked disabled type="checkbox"> 父母根本就没有ipv6这个需求,他们最多上爱奇艺央视看视频,ipv4和ipv6是啥都不知道,不过那台机子ipv6常开.</li>
+<li><input checked disabled type="checkbox"> 父母网速需求不大,我因为路由器一层限制速度最多4MB/s,而家里带宽是12.5MB/s,基本不会影响.</li>
+<li><input checked disabled type="checkbox"> 楼下那台绝大多数情况是空闲的╮(╯▽╰)╭</li>
+<li><input checked disabled type="checkbox"> 楼下那台为了方便我把它设置成静态ip了</li>
+</ul>
+<p>那就把父母那台机子做代理吧!</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>首先要思考拿什么做代理.</p>
+<p>VPN?算了吧,配置太麻烦,还是SS好.</p>
+<p>欸你没看错,没错,把父母电脑作为SS服务端.</p>
+<p>查了查,有一个东西叫做<a href="https://github.com/shadowsocks/libQtShadowsocks/releases" target="_blank" rel="noopener">libQtShadowsocks</a></p>
+<p>不过最新版本有点问题,于是我下载了1.10.0版</p>
+<p>那就下载吧,为了防止楼下Github连不上去,我打包好了</p>
+<p><a class="btn" href="https://drive.cyfan.top/shadowsocks-libqss-v1.10.0-win64.zip" target="_blank" rel="noopener"> &gt;&gt;去网盘下载<br>            </a></p>
+<p>解压,我的版本里已经预置了一下内容,可以修改,如果是用原版的同学请继续.</p>
+<p>在 <code>shadowsocks-libqss.exe</code> 同目录的文件夹下新建 <code>config.json</code> ,里面填上:</p>
+<div class="hljs"><pre><code class="hljs json">&#123;  
+    <span class="hljs-attr">"server"</span>:<span class="hljs-string">"0.0.0.0"</span>,  
+    <span class="hljs-attr">"server_port"</span>:<span class="hljs-number">8023</span>,  
+    <span class="hljs-attr">"local_address"</span>:<span class="hljs-string">"127.0.0.1"</span>,  
+    <span class="hljs-attr">"local_port"</span>:<span class="hljs-number">1080</span>,  
+    <span class="hljs-attr">"password"</span>:<span class="hljs-string">"password"</span>,  
+    <span class="hljs-attr">"timeout"</span>:<span class="hljs-number">600</span>,  
+    <span class="hljs-attr">"method"</span>:<span class="hljs-string">"aes-256-cfb"</span>,  
+    <span class="hljs-attr">"http_proxy"</span>: <span class="hljs-literal">false</span>,  
+    <span class="hljs-attr">"auth"</span>: <span class="hljs-literal">false</span>  
+&#125;</code></pre></div>
+
+<ul>
+<li><code>server</code> 表示监听的ip, <code>0.0.0.0</code> 表示监听来自局域网的ip,保持默认即可</li>
+<li><code>server_port</code> 表示监听的端口,随意,只要不被占用即可</li>
+<li><code>password</code> 密码</li>
+<li><code>method</code> 加密方式.</li>
+</ul>
+<p>上面的配置看情况修改,我这里就这样.</p>
+<p>运行,出现个黑色框框碍眼,还报错?</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-132.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>不要紧,因为没有指定配置,在底下新建 <code>Start.vbs</code> 里面填上：</p>
+<div class="hljs"><pre><code class="hljs vbs"><span class="hljs-keyword">Set</span> ws = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">"Wscript.Shell"</span>)
+ws.run <span class="hljs-string">"shadowsocks-libqss.exe  -c config.json -S"</span>,vbhide</code></pre></div>
+
+<p>双击解决,隐藏运行.</p>
+<h2 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h2><p>难道每天早上我都要手动去运行?</p>
+<p>不可能.</p>
+<p>所以要设置开机自启动.</p>
+<p>注册表 <code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</code>,里头新建一个字符串值,名字随意,值为vbs的绝对路径.</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-133.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>添加浏览器代理.</p>
+<p>于是出现封面如此不可思议的景象.</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-188.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>完成!</p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>实际上原理是这样的:</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-135.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>另外,不知道是不是楼下360杀毒的锅,http链接经常不能跳转成https,导致一些网页没办法好好运行,emmm,加个HTTPSEverywhere解决问题。</p>
+<p><a class="btn" href="https://pan.cyfan.top/%E6%8F%92%E4%BB%B6/crx/HTTPS_Everywhere.7z" target="_blank" rel="noopener"> &gt;&gt;去私有云下载HTTPSEverywhere<br>            </a></p>
+<p>因为代理在局域网内，速度损耗和延迟基本不计入在内，也就是全天挂在这里都没问题，想要全局笼罩建议加个Proxifier</p>
+<p><a class="btn" href="https://drive.cyfan.top/PHPnow-1.5.6.zip" target="_blank" rel="noopener"> &gt;&gt;去网盘下载Proxifier<br>            </a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/好方法/">好方法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/奇淫巧技/">奇淫巧技</a>
+                    
+                      <a class="hover-with-bg" href="../tags/网络/">网络</a>
+                    
+                      <a class="hover-with-bg" href="../tags/ipv6/">ipv6</a>
+                    
+                      <a class="hover-with-bg" href="../tags/代理/">代理</a>
+                    
+                      <a class="hover-with-bg" href="../tags/SS/">SS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="7fe9d99f.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">IPFS+CloudFlare=ServerLessWebPage</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="63180028.html">
+                        <span class="hidden-mobile">愿逝者安息，愿生者坚强</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                <link href="https://cdn.jsdelivr.net/gh/qwqcode/Artalk/dist/Artalk.css" rel="stylesheet">
+  <div id="ArtalkComments"></div>
+ 
+  <!-- ... -->
+  <script src="https://cdn.jsdelivr.net/gh/qwqcode/Artalk/dist/Artalk.js"></script>
+  <script>
+  new Artalk({
+    el: '#ArtalkComments', // 元素选择
+    placeholder: '来啊，快活啊 ( ゜- ゜)', // 占位符
+    noComment: '快来成为第一个评论的人吧~', // 无评论时显示
+    defaultAvatar: 'mp', // 参考 https://cn.gravatar.com/site/implement/images/#default-image
+    pageKey: location.pathname,
+    serverUrl: 'https://artalk-mini.cyfan.top/index.php',
+    readMore: { // 阅读更多配置
+      pageSize: 15, // 每次请求获取评论数
+      autoLoad: true // 滚动到底部自动加载
+    },
+	gravatar: {
+    cdn: 'https://dn-qiniu-avatar.qbox.me/avatar/'
+    },
+	emoticons: {	  
+		"滑稽":{"inputType":"image","container":{"原味稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d26b7ae13.png","还是算了":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/riySFlu75fJdG4p.png","蓝纹稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/jyh5IVzpqXsHuvU.jpg","随稽应变":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e6ec1d528.jpg","蠕动":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9712a3c1.gif","束手无稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/dF8sTOpgomj7qf5.jpg","微笑默叹以为妙绝":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53daa84f24a.png","喝嘤料":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d63d8c6af.jpg","暗中观察":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dd21a2e7b.jpg","高兴":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1b9e5f38.jpg","惊稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1e2ad89f.jpg","可这和我的帅有什么关系":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29a8e0.jpg","狱稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cUEQrVYGFiDjqhy.jpg","梆":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/TlAGjm6IvJSMVpq.jpg","吃鱼摆摆":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ec2cb7f39.gif","跃跃欲试 3":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2ac5a2.gif","突然滑稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53cf2a457f1.jpg","扶墙怂":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2ab57a.jpg","阔以":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7EYyq1TcBKa3eQ2.jpg","不得行":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/KoqBGauX7TEfeyn.jpg","少儿不宜":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/nt2ZWRozUNjBxAK.jpg","稽日可期":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/FmfYcoMJesi2Ddq.jpg","哎":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/ps7PTIANgSErqnU.jpg","别看丢人":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d4f89ea29.jpg","地稽 2":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbae85687.jpg","地稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/BnTMX35EPxleVmA.jpg","老阔有点扣":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/fhDXbA9T1zJPlKk.gif","啊哈哈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dc2947d84.jpg","无稽可奈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/UyxTzB2fS3LtH7Q.jpg","老实巴交":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7DgSoyqwtYBxchE.jpg","紧张":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e8a408253.jpg","摇摆稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1904dcb2.gif","又不是不能用":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg","一时滑稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d5d28e22c.jpg","无法接受":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53cee8422fc.jpg","嘤雄豪稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/sbtw6o7iKaM4Nmq.jpg","相视双稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d5a093149.jpg","稽皮发麻":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2a019f.jpg","地稽 3":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbe510bcf.jpg","地稽委屈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d76e250da.jpg","地稽抚摸":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cavZ6nNzMPimLy7.gif","地稽捶打":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/vFVPynXaHR5sitk.gif","绝望":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dc0ba2303.jpg","气稽败坏":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d216f3c60.jpg","当场去世":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/sogxHMTFWbE2lrP.jpg","喝酒":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg","老衲摆摊算命":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29d8a5.gif","老哥，稳":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29ebb0.jpg","自闭稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d6603ee24.jpg","无话可说":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d6a77b7e4.jpg","跃跃欲试":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9710dfd5.jpg","跃跃欲试 2":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dcc057350.jpg","满脑子骚操作":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/xJXcUtO2BryHAsa.gif","稽之舞":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53de1a4d14d.gif","将稽就稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/KVwf8qCrZts6WOT.gif","吐血":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/tx.png","右滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/yhuaji.png","中滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/huaji.png","左滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/zhuaji.png",}},
+		"阿鲁":{"inputType":"image","container":{"不出所料.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不出所料.png",
+            "不说话.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不说话.png",
+            "不高兴.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不高兴.png",
+            "中刀.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中刀.png",
+            "中指.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中指.png",
+            "中枪.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中枪.png",
+            "亲亲.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/亲亲.png",
+            "便便.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/便便.png",
+            "内伤.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/内伤.png",
+            "击掌.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/击掌.png",
+            "口水.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/口水.png",
+            "吐.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐.png",
+            "吐舌.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐舌.png",
+            "吐血倒地.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐血倒地.png",
+            "呲牙.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/呲牙.png",
+            "咽气.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/咽气.png",
+            "哭泣.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/哭泣.png",
+            "喜极而泣.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喜极而泣.png",
+            "喷水.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喷水.png",
+            "喷血.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喷血.png",
+            "坐等.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/坐等.png",
+            "害羞.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/害羞.png",
+            "小眼睛.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/小眼睛.png",
+            "尴尬.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/尴尬.png",
+            "得意.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/得意.png",
+            "惊喜.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/惊喜.png",
+            "想一想.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/想一想.png",
+            "愤怒.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/愤怒.png",
+            "扇耳光.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/扇耳光.png",
+            "投降.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/投降.png",
+            "抠鼻.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/抠鼻.png",
+            "抽烟.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/抽烟.png",
+            "无奈.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无奈.png",
+            "无所谓.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无所谓.png",
+            "无语.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无语.png",
+            "暗地观察.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/暗地观察.png",
+            "期待.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/期待.png",
+            "欢呼.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/欢呼.png",
+            "汗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/汗.png",
+            "深思.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/深思.png",
+            "狂汗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/狂汗.png",
+            "献花.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/献花.png",
+            "献黄瓜.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/献黄瓜.png",
+            "皱眉.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/皱眉.png",
+            "看不见.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/看不见.png",
+            "看热闹.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/看热闹.png",
+            "瞅你.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/瞅你.png",
+            "肿包.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/肿包.png",
+            "脸红.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/脸红.png",
+            "蜡烛.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/蜡烛.png",
+            "装大款.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/装大款.png",
+            "观察.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/观察.png",
+            "赞一个.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/赞一个.png",
+            "邪恶.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/邪恶.png",
+            "锁眉.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/锁眉.png",
+            "长草.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/长草.png",
+            "阴暗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/阴暗.png",
+            "高兴.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/高兴.png"}},
+	"猫羽雫":{"inputType":"image","container":{"stick_1.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_1.png",
+            "stick_10.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_10.png",
+            "stick_11.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_11.png",
+            "stick_12.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_12.png",
+            "stick_13.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_13.png",
+            "stick_14.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_14.png",
+            "stick_15.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_15.png",
+            "stick_16.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_16.png",
+            "stick_17.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_17.png",
+            "stick_18.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_18.png",
+            "stick_19.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_19.png",
+            "stick_2.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_2.png",
+            "stick_20.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_20.png",
+            "stick_21.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_21.png",
+            "stick_22.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_22.png",
+            "stick_23.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_23.png",
+            "stick_24.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_24.png",
+            "stick_25.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_25.png",
+            "stick_26.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_26.png",
+            "stick_27.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_27.png",
+            "stick_28.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_28.png",
+            "stick_29.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_29.png",
+            "stick_3.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_3.png",
+            "stick_30.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_30.png",
+            "stick_31.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png",
+            "stick_32.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_32.png",
+            "stick_33.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_33.png",
+            "stick_34.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png",
+            "stick_35.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_35.png",
+            "stick_36.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_36.png",
+            "stick_37.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_37.png",
+            "stick_38.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_38.png",
+            "stick_39.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_39.png",
+            "stick_4.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_4.png",
+            "stick_40.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_40.png",
+            "stick_41.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_41.png",
+            "stick_42.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_42.png",
+            "stick_43.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_43.png",
+            "stick_44.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_44.png",
+            "stick_45.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_45.png",
+            "stick_46.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_46.png",
+            "stick_47.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_47.png",
+            "stick_48.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_48.png",
+            "stick_49.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_49.png",
+            "stick_5.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_5.png",
+            "stick_50.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_50.png",
+            "stick_51.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_51.png",
+            "stick_52.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_52.png",
+            "stick_53.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_53.png",
+            "stick_54.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_54.png",
+            "stick_55.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_55.png",
+            "stick_56.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png",
+            "stick_57.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_57.png",
+            "stick_58.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_58.png",
+            "stick_59.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_59.png",
+            "stick_6.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_6.png",
+            "stick_60.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_60.png",
+            "stick_61.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_61.png",
+            "stick_62.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_62.png",
+            "stick_63.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_63.png",
+            "stick_64.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_64.png",
+            "stick_65.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_65.png",
+            "stick_66.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_66.png",
+            "stick_67.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_67.png",
+            "stick_68.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_68.png",
+            "stick_69.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_69.png",
+            "stick_7.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_7.png",
+            "stick_70.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_70.png",
+            "stick_71.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_71.png",
+            "stick_72.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_72.png",
+            "stick_73.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_73.png",
+            "stick_74.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_74.png",
+            "stick_75.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_75.png",
+            "stick_76.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_76.png",
+            "stick_77.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_77.png",
+            "stick_78.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_78.png",
+            "stick_79.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_79.png",
+            "stick_8.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_8.png",
+            "stick_80.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_80.png",
+            "stick_81.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_81.png",
+            "stick_9.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_9.png"}},
+			  "颜文字": {
+    "inputType": "emoticon",
+    "container": {
+      "Hi": "|´・ω・)ノ",
+      "开心": "ヾ(≧∇≦*)ゝ",
+      "星星眼": "(☆ω☆)",
+      "掀桌": "（╯‵□′）╯︵┴─┴",
+      "流口水": "￣﹃￣",
+      "捂脸": "(/ω＼)",
+      "给跪": "∠( ᐛ 」∠)＿",
+      "哈？": "(๑•̀ㅁ•́ฅ)",
+      "斜眼": "→_→",
+      "加油": "୧(๑•̀⌄•́๑)૭",
+      "有木有WiFi": "٩(ˊᗜˋ*)و",
+      "前方高能预警": "(ノ°ο°)ノ",
+      "纳尼": "(´இ皿இ｀)",
+      "吓死惹": "⌇●﹏●⌇",
+      "已阅留爪": "(ฅ´ω`ฅ)",
+      "去吧大师球": "(╯°A°)╯︵○○○",
+      "太萌惹": "φ(￣∇￣o)",
+      "咦咦咦": "ヾ(´･ ･｀｡)ノ\"",
+      "气呼呼": "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃",
+      "我受到了惊吓": "(ó﹏ò｡)",
+      "什么鬼": "Σ(っ °Д °;)っ",
+      "摸摸头": "( ,,´･ω･)ﾉ\"(´っω･｀｡)",
+      "无奈": "╮(╯▽╰)╭ ",
+      "脸红": "o(*////▽////*)q ",
+      "悲哀": "＞﹏＜",
+      "静静地看着你": "( ๑´•ω•) \"(ㆆᴗㆆ)",
+      "不要哇": "(｡•ˇ‸ˇ•｡)"
+    }
+  }
+	}
+  });
+  </script>
+<style>
+.artalk>.artalk-editor>.artalk-editor-textarea-wrap .artalk-editor-textarea{
+    background: var(--board-bg-color);
+	color: var(--text-color);
+	border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-header{
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-list-wrap {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+    border: 1px solid transparent;
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types>span.active, .artalk-editor-plug-emoticons .artalk-emoticons-types>span:hover {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-right {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-left {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-preview {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor {
+    background: var(--board-bg-color);
+	border: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-right {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk-comment-wrap>.artalk-comment>.artalk-comment-main>.artalk-body>.artalk-content>p{
+	color: var(--text-color);
+	border: 1px solid transparent;
+}
+.artalk-comment-wrap {
+	border: 1px solid transparent;
+}
+.artalk>.artalk-list>.artalk-list-header {
+    border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-plug-wrap {
+    border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-action:not(:last-child){
+    border: 1px solid transparent;
+	}
+.artalk>.artalk-list>.artalk-list-header .artalk-comment-count {
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-textarea-wrap .artalk-editor-textarea{
+	color: var(--text-color);
+}
+</style>
+ <script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a>&&<a href="https://vercel.com">Vercel</a></b>
+    <p><span id="sentence" style="font-size: 1rem;"></span></p>
+	<p id="showsectime"></p>
+	<script>
+		function NewDate(str) { 
+		str = str.split('-'); 
+		var date = new Date(); 
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+		date.setUTCHours(0, 0, 0, 0); 
+	return date; 
+	} 
+		function showsectime() {
+var birthDay =NewDate("2019-7-16");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "自2019-7-16建站以来，本站已苟活"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+<p>
+当前CDN节点: <span id="cdn">【未知】</span> |
+你的ip: <span id="ip">【未知】</span> |
+你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+	getCDNinfo = function() {
+	$.ajax({
+		url: "https://cdn.cyfan.top/cdn-cgi/trace",
+		success: function(data, status) {
+			let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+			let area = data.split("colo=")[1].split("\n")[0];
+			for (var i = 0; i < areas.length; i++) {
+				if (areas[i].indexOf(area) != -1) {
+					document.getElementById("cdn").innerHTML = areas[i];
+					document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+					document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+					break;
+				}
+			}
+		}
+	})
+}
+$(document).ready(function() {
+	getCDNinfo();
+});
+</script></p></div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="https://icp.gov.moe/" target="_blank"
+       rel="nofollow noopener">2020213344号</a>
+    
+      <a
+        href="https://icp.gov.moe/?t=2020213344"
+        rel="nofollow noopener"
+        class="beian-police"
+        target="_blank"
+      >
+        <span class="beian-police-sep">&nbsp;|&nbsp;</span>
+<!--
+          <img src="https://i.loli.net/2020/07/28/xTga3yJCmQEXOpt.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="police-icon" />
+-->
+        <span>萌ICP备</span>
+      </a>
+     
+  </div>
+
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/debouncer.js" ></script>
+<script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/clipboard-use.js" ></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/ttontran/ttontran.js"></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "在不支持ipv6的路由器下使用ipv6&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js" ></script>
+  <script>
+    var path = "https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05c96804c30d57ea6de2d0bf8d5b3e73";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<script>
+  window.FPConfig = {
+    delay: 0,    // 浏览器空闲多少秒后开始预加载
+    ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+    maxRPS: 3,    // 每秒最大加载数
+    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+    // 上方数值未默认值
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script>
+// Check that service workers are registered
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
