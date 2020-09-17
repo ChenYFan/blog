@@ -134,7 +134,7 @@ navbar:
     - { 
     key: '页面', 
     submenu: [
-    	{ key: '留言板', link: '/1949/10/01/留言板/'},
+    	{ key: '留言板', link: '/com/'},
     	{ key: '随口胡说', link: '/随口胡说/ '},
     	{ key: '关于', link: '/about/'}
       ]
