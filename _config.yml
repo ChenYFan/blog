@@ -15,7 +15,11 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://blog.cyfan.top
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: p/:abbrlink.html
+abbrlink:
+  alg: crc32 
+  rep: hex   
 permalink_defaults:
 
 # Directory
