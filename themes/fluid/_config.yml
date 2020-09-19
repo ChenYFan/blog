@@ -523,6 +523,12 @@ links:
     image: 'https://cdn.dusays.com/avatar.png',
     }
     - {        
+    title: '小孔成像',
+    link: 'https://kurumit3.top',
+    intro: 小孔成像的叙事游戏,
+    image: 'https://rmt.dogedoge.com/fetch/kurumit3/storage/avatar.jpg?fmt=webp',
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
