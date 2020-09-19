@@ -6,10 +6,10 @@ layout: about
 
 <div align="center">
 
-<img src="https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
+<img src="https://images.weserv.nl/?url=https://ghchart.rshah.org/chenyfan" alt="Github chart" width="70%"/>
 
-<img src="https://s04.flagcounter.com/count2/KOtF/bg_FFE600/txt_86869C/border_58CCC4/columns_6/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
-<img src="https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
+<img src="https://images.weserv.nl/?url=https://s04.flagcounter.com/count2/KOtF/bg_FFE600/txt_86869C/border_58CCC4/columns_6/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+<img src="https://images.weserv.nl/?url=https://travis-ci.org/ChenYFan/blog.svg?branch=master" >
 </br>
 
 <!--
@@ -46,7 +46,7 @@ layout: about
 
 ### 方式：
 
-以[Hexo](https://hexo.io/zh-cn/)为框架,主题为[NexT 5.1.4](http://theme-next.iissnan.com), ~~建立在Coding Pages上(原本想直接扔在Github上，但由于`不可告人`的秘密,速度哦出奇的慢)~~ 在2020年初发现Coding转型升级了，接着使用需要实名认证，无奈之下迁回Github，不过加了个CloudFlareCDN，速度在压力测试下 ~~大约稳定在80kb/s~~ ~~很抱歉通过 [站内自选CDN](/2020/03/11/如何不出CloudFlare随便搞一搞将托管在其上的网站速度提升20倍/#more) 现在已经比Github打开还要快了,目前1.7Mb/s的凶狠速度是可以保证的，ip可以手动切换CloudFlare CDNIP以获得更好速度。~~ CloudFlareCDN+JsdelivrCDN，前后端分离。
+以[Hexo](https://hexo.io/zh-cn/)为框架,主题为[NexT 5.1.4](http://theme-next.iissnan.com), ~~建立在Coding Pages上(原本想直接扔在Github上，但由于`不可告人`的秘密,速度哦出奇的慢)~~ 在2020年初发现Coding转型升级了，接着使用需要实名认证，无奈之下迁回Github，不过加了个CloudFlareCDN，速度在压力测试下 ~~大约稳定在80kb/s~~ ~~很抱歉通过 [站内自选CDN](/2020/03/11/如何不出CloudFlare随便搞一搞将托管在其上的网站速度提升20倍/#more) 现在已经比Github打开还要快了,目前1.7Mb/s的凶狠速度是可以保证的，ip可以手动切换CloudFlare CDNIP以获得更好速度。~~ Vercel+JsdelivrCDN，前后端分离。
 
 内部统计使用[百度统计](https://tongji.baidu.com),评论系统为~~Valine~~ Artalk。
 
@@ -119,7 +119,9 @@ layout: about
 104.16.192.0-207.255
 ```
 
-绑定方式如: `162.159.210.33 blog.cyfan.top`
+~~绑定方式如: `162.159.210.33 blog.cyfan.top`~~
+
+Vercel助力，IP为 `76.76.21.21`
 
 或:采用`DNS over HTTPS` 或 `DNS over TLS` 也就是常说的 `DoH` 和 `DoT`,可以修复所有DNS污染.
 
@@ -270,12 +272,13 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 + ~~Gitalk~~ Artalk-本站评论系统
 + 百度统计-本站统计
 + 一位不知名的画家  感谢您的图片Logo！
-+ CloudFlare-本站CDN
++ CloudFlare-博客容灾站点
 + JSDelivr-静态资源CDN
 + Euserv-白嫖小鸡作为部分网站后端
 + DogeDoge-本站部分图床
 + BackBlaze-本站部分图床
-+ Velcel-博客容灾站点
++ ZhimgUnpkg镜像-本站部分图床
++ Velcel-本站CDN
 
 感谢以下企业大佬的支持!
 
