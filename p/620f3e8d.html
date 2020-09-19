@@ -364,7 +364,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>当然你也可以用自己的链接.</p>
 </blockquote>
 <h2 id="解决缩略图问题"><a href="#解决缩略图问题" class="headerlink" title="解决缩略图问题"></a>解决缩略图问题</h2><p>【感谢阿虚同学的博客解决此方法】</p>
-<p>将 此JS 代码放置于 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script> 标签前：</p>
+<p>将 此JS 代码放置于 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script> 标签前：</p>
 <div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">b:if</span> <span class="hljs-attr">cond</span>=<span class="hljs-string">'data:blog.pageType in &#123;"index","searchQuery","searchLabel","archive"&#125;'</span>&gt;</span> <span class="hljs-comment">&lt;!--如果当前页是首页，搜索页，标签页，那么代码继续执行--&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span>=<span class="hljs-string">'defer'</span>&gt;</span><span class="javascript">
         <span class="hljs-comment">//&lt;![CDATA[</span>
@@ -1154,5 +1154,5 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
 </html>
