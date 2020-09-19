@@ -111,7 +111,7 @@ live2d:
     width: 150 	
     height: 300	
   mobile:	
-    show: true  #是否在手机进行显示
+    show: false
 
 baidusitemap:
     path: baidusitemap.xml
