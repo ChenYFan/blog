@@ -28,7 +28,7 @@
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://img.cyfan.top/pic/BLOGER.jpg
+图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
 ```
 
