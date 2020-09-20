@@ -375,9 +375,9 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
 <p>比如说我更新 <code>留言板.md</code> ,Github上一更新,Travis-ci自动开始工作:</p>
 <p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150414.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
 <p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150525.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150600.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="麻烦无视右上角的亮度调节"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629150600.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="麻烦无视左上角的亮度调节"></p>
 <p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200629152935.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>
-<p>本次日志地址 [<a href="https://api.travis-ci.org/v3/job/703061869/log.txt]" target="_blank" rel="noopener">https://api.travis-ci.org/v3/job/703061869/log.txt]</a></p>
+<p>本次日志地址 <a href="https://api.travis-ci.org/v3/job/703061869/log.txt" target="_blank" rel="noopener">https://api.travis-ci.org/v3/job/703061869/log.txt</a></p>
 <h3 id="8-以后"><a href="#8-以后" class="headerlink" title="8.以后"></a>8.以后</h3><p>更新博客直接在Github上更改，或者写好之后直接上传，或者pull到本地写好后push到Github，此后操作用户无需本地使用Hexo，也不用调整Travis-ci，安心写博客吧！</p>
 <h1 id="草稿问题"><a href="#草稿问题" class="headerlink" title="草稿问题"></a>草稿问题</h1><p>其实这个比较简单，在修改时新建一个branch，名字叫 <code>drafts</code> ,由于 <code>.travis.yml</code> 规定只捕获 <code>master</code> ,草稿分支不会触发，修改的时候全部在drafts上修改，修改好了直接PullRequest，完事！</p>
 <p>*<em>这么干以后,一定要注意,以后所有修改无论大小,都必须先在  <code>drafts</code> 里修改,然后发起PR,然后合并.不然直接在 <code>master</code> 里修改有可能会导致无法合并! *</em></p>
