@@ -524,9 +524,15 @@ links:
     }
     - {        
     title: '小孔成像',
-    link: 'https://kurumit3.top',
+    link: 'https://checkingakia.github.io/',
     intro: 小孔成像的叙事游戏,
     image: 'https://rmt.dogedoge.com/fetch/kurumit3/storage/avatar.jpg?fmt=webp',
+    }
+       - {        
+    title: '逗鸟10³脑洞实验室',
+    link: 'https://kurumit3.top',
+    intro: 专业的灯光照亮狂妄的黑夜
+    image: 'https://checkingakia.github.io/images/avatar.png?v=1600586947081',
     }
     - {        
     title: '友链还有空位！',
