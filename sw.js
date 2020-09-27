@@ -157,9 +157,9 @@ workbox.routing.registerRoute(
     })
 );
 workbox.routing.registerRoute(
-    new RegExp('https://valine\-mini\.cyfan\.top/'),
+    new RegExp('https://artalk\-mini\.cyfan\.top/'),
     workbox.strategies.cacheFirst({
-      cacheName: 'doegdoge-cache',
+      cacheName: 'comment-cache',
       plugins: [
         new workbox.expiration.Plugin({
           maxAgeSeconds: 5 * 60,
