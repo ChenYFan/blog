@@ -1,0 +1,25 @@
+<%
+page.layout = "404"
+page.title = theme.page404.title || __('page404.title')
+page.subtitle = theme.page404.subtitle || __('page404.subtitle')
+page.banner_img = theme.page404.banner_img
+page.banner_img_height = theme.page404.banner_img_height
+page.banner_mask_alpha = theme.page404.banner_mask_alpha
+%>
+
+<script>
+  function redirect() {
+    location.href = "/";
+  }
+
+  //setTimeout(redirect, 3000)
+</script>
+<script src="https://unpkg.zhimg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+swal({
+  title: "非常抱歉！qwq",
+  text: "由于2020/9/22更换了文章永久链接，部分搜索引擎没有更新，请点击右上角放大镜重新输入关键词搜索，为您带来不便请谅解！【热门关键词：OneIndex、onedrive-cf-index、gdindex、picgo、ipfs gateway api、图床、图床的千层套路】",
+  icon: "warning",
+  button: "您能原谅我吗？QvQ",
+});
+</script>
