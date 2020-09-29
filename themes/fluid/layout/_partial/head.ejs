@@ -19,9 +19,22 @@ if (page.title) {
   <meta name="theme-color" content="<%- theme.color.navbar_bg_color %>">
   <% if(!(is_post())) { %>
     <meta name="description" content="<%= config.description %>">
-  <meta name="author" content="<%= config.author %>">
+
   <meta name="keywords" content="<%= config.keywords %>">
   <% } %>
+    <% if(is_post()) { %>
+	<% if(page.des) { %>
+	    <meta name="description" content="<%= page.des %>">
+	 <% } %>
+	 
+	 	<% if(!(page.des)) { %>
+	    <meta name="description" content="<%= strip_html(page.content).substr(0, 150) %>">
+	 <% } %>
+
+
+  <meta name="keywords" content="<%= page.key %>">
+  <% } %>
+  <meta name="author" content="<%= config.author %>">
   <title><%= title %></title>
 
   <%- partial('_partial/css.ejs') %>
