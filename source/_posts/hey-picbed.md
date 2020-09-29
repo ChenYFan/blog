@@ -1,15 +1,18 @@
 ---
 title: 图床的千层套路
-date: 2020-09-12 21:27:41
 tags:
-- 图床
-- 白嫖
-- PicGo
+  - 图床
+  - 白嫖
+  - PicGo
 categories: 随心记
 copyright: true
 author: CYF
-index_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75
-banner_img: https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75
+index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75'
+banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75'
+abbrlink: eb490c73
+date: 2020-09-12 21:27:41
+des: 关于公开的或各种奇怪的方式的图床，能够解决图床选择困难症以及不知道用什么图床的同学，包括jsdelivr、npm、dogedoge
+key: 图床,白嫖,PicGo
 ---
 
 
