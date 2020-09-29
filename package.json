@@ -10,7 +10,6 @@
     "domhandler": "^3.0.0",
     "dplayer": "^1.25.0",
     "hexo": "^3.9.0",
-    "hexo-admin": "^2.3.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-flowchart": "^1.0.4",
     "hexo-generator-archive": "^0.1.5",
