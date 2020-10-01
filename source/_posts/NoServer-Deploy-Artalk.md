@@ -389,8 +389,10 @@ SLA：还在测试，大约90%，你可以前往<https://status.cyfan.top>查看
 如果你的artalk卡在了转圈圈的问题上，你可以在html前面加上这一句
 
 
-
+```html
 <link href="https://XXX.XXX.XXX/index.php" rel="preconnect" crossorigin>
+```
+
 
 `preconnect`可以强制在渲染页面试并发一个请求，可以有效解决5s超时问题和并发过多不稳定导致cancel问题。
 
