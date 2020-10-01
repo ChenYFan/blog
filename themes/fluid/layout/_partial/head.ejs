@@ -32,10 +32,10 @@ if (page.title) {
 	 <% } %>
 
 	<% if(page.key) { %>
-	    <meta name="description" content="<%= page.key %>">
+	    <meta name="keywords" content="<%= page.key %>">
 	 <% } %>
 	 
-	 	<% if(!(page.des)) { %>
+	 	<% if(!(page.key)) { %>
 	  <meta name="keywords" content="<%= config.keywords %>">
 	 <% } %>
 
