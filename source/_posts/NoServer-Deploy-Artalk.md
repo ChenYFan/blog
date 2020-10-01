@@ -252,7 +252,7 @@ PHP版本设置为7.1
 
 
 
-`Virtual Directories`网址设置为`/`路径设置为`site\wwwroot\public`\
+`Virtual Directories`网址设置为`/`路径设置为`site\wwwroot\public\`
 
 ![image-20201001083959803](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001084000.png?q=45)
 
@@ -268,7 +268,7 @@ PHP版本设置为7.1
 
 
 
-绑定git，上传三步走，`git init && git add . && git push website master`
+绑定git，上传三步走，`git init && git add . && git commit -m "OHH" && git push website master`
 
 
 
