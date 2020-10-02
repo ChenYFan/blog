@@ -12,6 +12,7 @@ banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001165456.jpg?
 date: 2020-10-01 16:57:09
 des: 通过各种php托管商实现Artalk评论系统的部署，包括composer以及000webhost、gearhost。
 key: Artalk,000webhost,gearhost
+lushkey: NoServer-Deploy-Artalk.md
 ---
 
 
