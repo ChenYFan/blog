@@ -10,6 +10,7 @@ categories:
 date: 2020-06-28 08:30:00
 index_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920193058.png?q=45'
 banner_img: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920193058.png?q=45'
+lushkey: GetUserInfo-ByCFAPI.md
 ---
 噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E8%82%BF%E5%8C%85.png),以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。
 
