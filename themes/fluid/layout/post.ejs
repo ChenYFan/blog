@@ -44,8 +44,16 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
                     <% page.tags.each(function(tag) { %>
                       <a class="hover-with-bg" href="<%= url_for(tag.path) %>"><%- tag.name %></a>
                     <% }) %>
+                  
+                  
                   </div>
-                <% } %>
+                  <% } %>
+                  <% if (page.lushkey) { %>
+                  <div class="post-meta">
+                  
+                  <a href="https://markdown-pre.cyfan.top/?url=https://cdn.jsdelivr.net/gh/ChenYFan/blog/source/_posts/<%= page.lushkey %>">此页面的闪电渲染界面</a>
+                 </div>
+                 <% } %>
               </div>
               <% if(theme.post.copyright.enable && theme.post.copyright.content && page.copyright !== false) { %>
                 <p class="note note-warning"><%- theme.post.copyright.content %></p>
