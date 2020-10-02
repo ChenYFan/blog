@@ -13,6 +13,7 @@ abbrlink: eb490c73
 date: 2020-09-12 21:27:41
 des: 关于公开的或各种奇怪的方式的图床，能够解决图床选择困难症以及不知道用什么图床的同学，包括jsdelivr、npm、dogedoge
 key: 图床,白嫖,PicGo
+lushkey: hey-picbed.md
 ---
 
 
