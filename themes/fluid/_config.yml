@@ -173,9 +173,9 @@ footer:
 
   beian:  # The footer of China's website policy, other areas keep disable
     enable: true
-    icp_text: 2020213344号 # ICP证号
+    icp_text: 20209909号 # ICP证号
     police_text: 萌ICP备
-    police_code: 2020213344 # 公安备案的编号，用于URL跳转查询
+    police_code: 20209909 # 公安备案的编号，用于URL跳转查询
     police_icon: 
 
 scroll_top_arrow:  # 向顶部滚动的箭头
