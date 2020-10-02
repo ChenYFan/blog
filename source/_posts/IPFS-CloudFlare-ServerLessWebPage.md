@@ -8,6 +8,7 @@ categories: 爱学习
 index_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg
 banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg
 date: 2020-04-07 16:29:02
+lushkey: IPFS-CloudFlare-ServerLessWebPage.md
 ---
 IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。
 
