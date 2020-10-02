@@ -61,7 +61,7 @@
 	
 + 9.2另一种添加方式：Pull Request:
 
-+ 9.2.1 进入[存储Blog的Repo](https://github.com/ChenYFan/blog), ~~Fork~~(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)[https://github.com/ChenYFan/blog/blob/master/themes/fluid/\_config.yml ] 在倒数第二行按照示例规则添加友链【务必注意缩进、空格和换行】:
++ 9.2.1 进入[存储Blog的Repo](https://github.com/ChenYFan/blog), ~~Fork~~(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)<https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml> 在倒数第二行按照示例规则添加友链【务必注意缩进、空格和换行】:
     
 ```
     - {        
