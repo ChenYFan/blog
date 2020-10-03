@@ -532,7 +532,7 @@ links:
     title: 'LOGI',
     link: 'https://logi.im',
     intro: 会点代码的强迫症,
-    image: 'https://cdn.v2ex.com/gravatar/744571c77891e75a52bd5c4dd96fc521',
+    image: 'https://cdn.jsdelivr.net/npm/logicdn@1.0.0/logi.im/usr/images/global/logo.webp',
     }
     - {        
     title: '友链还有空位！',
