@@ -529,6 +529,12 @@ links:
     image: 'https://rmt.dogedoge.com/fetch/kurumit3/storage/avatar.jpg?q=45',
     }
     - {        
+    title: 'LOGI',
+    link: 'https://logi.im',
+    intro: 会点代码的强迫症,
+    image: 'https://cdn.v2ex.com/gravatar/744571c77891e75a52bd5c4dd96fc521',
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
