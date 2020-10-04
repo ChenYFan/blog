@@ -19,7 +19,8 @@
   <%- js(theme.custom_js) %>
 <% } %>
 <% if(is_post()) { %>
-<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/lush.js,gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><!--这两个不能合并-->
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script>
 <script>
   window.post_views_api = "https://ga-hit.cyfan.top/api/ga";
 </script>
