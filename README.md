@@ -30,6 +30,7 @@
 地址: https://blog.cyfan.top
 图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
+屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
 ```
 
 + 1.存活时间不小于**3个月**。
@@ -69,6 +70,7 @@
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
     image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】',
+    domain: '博客主域名' 【这一条必须首先加入https://github.com/ChenYFan/ScreenShot/项目，请按照格式向https://github.com/ChenYFan/ScreenShot/blob/main/.github/workflows/get.yml提交PR，否则将驳回】
     }
 ```
 
@@ -76,4 +78,4 @@
 
 ## 特别预览和参考
 
-本站经过定制，加入了某些你可能不需要的东西（比如说Service-Worker、BaiduSitemapUpdate、魔改过的Artalk、FlyingPage、Travis-CI、闪开按钮、GA页面访问量统计、谷歌广告等等），以及魔改了一些私有的东西，这些东西需要经过比较复杂的配置【或完全脱离了配置】，不能直接拿来使用，所以你可以预览和参考，但是如果想自己建造博客，请你最好还是安装[Fluid主题](https://github.com/fluid-dev/hexo-theme-fluid)
+本站经过定制，加入了某些你可能不需要的东西（比如说Service-Worker、BaiduSitemapUpdate、魔改过的Artalk、FlyingPage、Travis-CI、闪开按钮、GA页面访问量统计、谷歌广告、友链屏幕截图等等），以及魔改了一些私有的东西，这些东西需要经过比较复杂的配置【或完全脱离了配置】，不能直接拿来使用，所以你可以预览和参考，但是如果想自己建造博客，请你最好还是安装[Fluid主题](https://github.com/fluid-dev/hexo-theme-fluid)
