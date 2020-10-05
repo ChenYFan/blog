@@ -87,7 +87,7 @@ B2 Cloud Storage非常客气，有以下优点：
 默认即使绑定域名后，链接大概是这样滴：
 
 ```
-https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20102255.jpg
+https://assets.cyfan.top/file/CYF-PicBed/pic/postpic/2020-07-09%20102255.jpg
 ```
 
 可以看到,中间多了 `/file/CYF-PicBed/` ,这并不是我所需要的,所以我们要把它变成这样:
@@ -102,9 +102,9 @@ https://img.cyfan.top/pic/postpic/2020-07-09%20102255.jpg
 
 ![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20103634.jpg)
 
-其中 `$1` 是CloudFlare的匹配符号，此规则意思是将所有的 `https://unpkg.zhimg.com/chenyfan-oss@1.0.0/*` 跳转向 `https://unpkg.zhimg.com/chenyfan-oss@1.0.0/*` 
+其中 `$1` 是CloudFlare的匹配符号，此规则意思是将所有的 `https://img.cyfan.top/*` 跳转向 `https://assets.cyfan.top/file/CYF-PicBed/*` 
 
-去 `cdn.bnxb.com` ，将 `assets.cyfan.top/file/CYF-PicBed` 指向 任意一ip,比如 `1.0.0.1` 并开启CDN，然后在DNSPOD里CNAME。
+去 `cdn.bnxb.com` ，将 `img.cyfan.top` 指向 任意一ip,比如 `1.0.0.1` 并开启CDN，然后在DNSPOD里CNAME。
 
 此后,所有访问图片都会在里头跳转一下,外面基本看不出来有什么差别.
 
