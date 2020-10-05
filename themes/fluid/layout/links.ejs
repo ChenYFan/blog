@@ -6,7 +6,22 @@ page.banner_img = theme.links.banner_img
 page.banner_img_height = theme.links.banner_img_height
 page.banner_mask_alpha = theme.links.banner_mask_alpha
 %>
-
+<style>
+.qr-trigger {
+	display:inline-block;
+	padding:1.5rem;
+	margin-right:.15rem
+}
+.qr-trigger:hover {
+	background-color:var(--link-hover-bg-color);
+	transition-duration:.2s;
+	transition-timing-function:ease-in-out;
+	border-radius:.15rem
+}
+.post-meta>a:not(.qr-trigger) {
+	margin-right:.15rem
+}
+</style>
 <div class="row links">
 
   <% for(const each of theme.links.items || []) { %>
@@ -14,8 +29,8 @@ page.banner_mask_alpha = theme.links.banner_mask_alpha
 	
     <div class="card col-lg-4 col-md-6 col-sm-12">
 	
-      <a href="<%= url_for(each.link) %>"  class="card-body hover-with-bg" target="_blank" rel="noopener">
-	  <a href="javascript:;" class="qr-trigger">
+
+	  <a href="<%= url_for(each.link) %>" class="qr-trigger" target="_blank" rel="noopener">
 	  
         <div class="card-content">
           <% if (each.image) { %>
@@ -29,7 +44,7 @@ page.banner_mask_alpha = theme.links.banner_mask_alpha
           </div>
         </div>
 		<img class="qr-img" src="https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/<%- each.domain %>.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="ScreenShot"></a>
-      </a>
+
 	  
     </div>
 	
