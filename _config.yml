@@ -143,10 +143,6 @@ neat_js:
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'  
 feed:
- type: atom
- path: atom.xml
- limit: 20
- hub:
- content:
- content_limit:
- content_limit_delim: ' '
+  type: atom
+  path: atom.xml
+  limit: 20
