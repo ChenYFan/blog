@@ -45,6 +45,7 @@ if (page.title) {
   <title><%= title %></title>
 
   <%- partial('_partial/css.ejs') %>
-  <%- js_ex(theme.static_prefix.internal_js, 'utils.js') %>
-  <%- js_ex(theme.static_prefix.internal_js, 'color-schema.js') %>
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js">
+
+</script>
 </head>
