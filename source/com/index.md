@@ -43,10 +43,10 @@ update: 2020-02-27 08:48:09
 地址: https://blog.cyfan.top
 图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
+屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
 ```
 
-
-+ 1.存活时间不小于3个月。
++ 1.存活时间不小于**3个月**。
 
 + 2.确定不会随随便便删库跑路。
 
@@ -58,10 +58,9 @@ update: 2020-02-27 08:48:09
 
 + 6.确保站点内容不违反中国大陆法律.
 
-+ 7.拥有尽可能多的原创内容,越多优先级越高，我们厌恶那些大批量复制粘贴、转载无版权、标题党、营销号，请自觉绕路。
++ 7.拥有尽可能多的原创内容,越多优先级越高。
 
 + 8.如果因特殊原因而更换地址，请~~留言或~~PR。
-
 
 + ~~9.1 添加方式：留言。格式如下：~~
 
@@ -76,7 +75,7 @@ update: 2020-02-27 08:48:09
 	
 + 9.2另一种添加方式：Pull Request:
 
-+ 9.2.1 进入[存储Blog的Repo](https://github.com/ChenYFan/blog), ~~Fork~~(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)<https://github.com/ChenYFan/blog/blob/master/themes/fluid/\_config.yml> 在倒数第二行按照示例规则添加友链【务必注意缩进、空格和换行】:
++ 9.2.1 进入[存储Blog的Repo](https://github.com/ChenYFan/blog), ~~Fork~~(新版本的Github已经自动完成了,无需手动Fork),直接修改(主题配置文件)<https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml> 在倒数第二行按照示例规则添加友链【务必注意缩进、空格和换行】:
     
 ```
     - {        
@@ -84,6 +83,7 @@ update: 2020-02-27 08:48:09
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
     image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】',
+    domain: '博客主域名' 【这一条必须首先加入https://github.com/ChenYFan/ScreenShot/项目，请按照格式向https://github.com/ChenYFan/ScreenShot/blob/main/.github/workflows/get.yml提交PR，否则将驳回】
     }
 ```
 
