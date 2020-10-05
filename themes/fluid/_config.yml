@@ -412,131 +412,153 @@ links:
     title:  '潘高博客',
     intro: '(翻译：我只是个搞 IT的！哭笑脸)',
     link: 'https://blog.pangao.vip',
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185147.jpeg?q=45'
+    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185147.jpeg?q=45',
+    domain: blog.pangao.vip
     }
     - {        
     title: 'Kindyear’s Blog',
     link: 'https://www.kindyear.cn/',
     intro: 杂乱无章的技术小站,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185218.jpeg?q=45',
+    domain: www.kindyear.cn
     }
     - {        
     title: '小丁的博客',
     link: 'https://www.xding.top/',
     intro: 一个神秘的大宝贝,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185329.png?q=45',
+    domain: www.xding.top
     }
     - {        
     title: 'Mystery博客',
     link: 'https://blog.say521.cn/',
     intro: 心有猛虎，细嗅蔷薇,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185407.jpg?p=45',
+    domain: blog.say521.cn
     }
     - {        
     title: '一座堤的博客',
     link: 'https://www.yizuodi.cn/',
     intro: 没啥寓意yizuodi即一座堤,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185416.jpeg?q=45',
+    domain: www.yizuodi.cn
     }
     - {        
     title: '簞純资源管理器',
     link: 'https://blog.qwqdanchun.cn',
     intro: 一行代码一壶酒，何不仗键走天涯,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185440.png?q=45',
+    domain: blog.qwqdanchun.cn
     }
     - {        
     title: 'Jimmy‘s Blog',
     link: 'https://blog.jimmyho.net/',
     intro: Hi，这里是可耐的Jimmy(<ゝω·)~☆,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185456.jpeg?q=45',
+    domain: blog.jimmyho.net
     }
     - {        
     title: 'godxiaolong',
     link: 'https://muyiio.com',
     intro: 智障程序猿,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185639.jpg?q=45',
+    domain: muyiio.com
     }
     - {        
     title: 'WINKILLER',
     link: 'https://www.winkiller.cf',
     intro: 驱动爱好者集结地,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185830.jpg?q=45',
+    domain: www.winkiller.cf
     }
     - {        
     title: 'TigerRoot',
     link: 'https://blog.tigerroot.cn',
     intro: 那有什么岁月静好，只是有人在替我们负重前行。,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185710.png?q=45',
+    domain: blog.tigerroot.cn
     }
     - {        
     title: '伊舍导航',
     link: 'https://eesdh.com',
     intro: 一个在互联网角落挣扎的小小导航，很小很小。,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185723.png?q=45',
+    domain: eesdh.com
     }
     - {        
     title: 'Sukka’s Blog',
     link: 'https://blog.skk.moe',
     intro: 童话只美在真实却从不续写,
     image: 'https://cdn.jsdelivr.net/npm/skx@0.2.3/avatar/192x192.png',
+    domain: blog.skk.moe
     }
     - {        
     title: 'Colsrch',
     link: 'https://colsrch.cn',
     intro: 愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。,
     image: 'https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg',
+    domain: colsrch.cn
     }
     - {        
     title: '姑苏的猫',
     link: 'https://www.islery.com',
     intro: 一个有趣的地方 ,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185943.jpg?q=45',
+    domain: www.islery.com
     }
     - {        
     title: 'Flexiston',
     link: 'https://flesx.cn',
     intro: 立即行动吧，未来要自己争取,
     image: 'https://rmt.dogedoge.com/fetch/Flexiston/storage/ava.jpg?q=45',
+    domain: flesx.cn
     }
     - {        
     title: 'Tajoy‘s blog',
     link: 'https://tajoy.net/',
     intro: 一个不会摄影的程序猿，不是一个好的艺术家。,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190002.jpeg?q=45',
+    domain: tajoy.net
     }
     - {        
     title: '布丁の基地',
     link: 'https://longyuan.store/',
     intro: 一个有梦想的咸鱼,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190029.png?q=45',
+    domain: longyuan.store
     }
     - {        
     title: 'QWQAQ',
     link: 'https://qwqaq.com/',
     intro: 生命不止，折腾不息 ( ゜- ゜),
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190050.png?q=45',
+    domain: qwqaq.com
     }
     - {        
     title: '杜老师说',
     link: 'https://dusays.com',
     intro: 师者，传道，授业，解惑！,
     image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190112.png?q=45',
+    domain: dusays.com
     }
     - {        
     title: '绎梦机',
     link: 'https://kurumit3.top',
     intro: 有限的记忆 无限的梦,
     image: 'https://rmt.dogedoge.com/fetch/kurumit3/storage/avatar.jpg?q=45',
+    domain: kurumit3.top
     }
     - {        
     title: 'LOGI',
     link: 'https://logi.im',
     intro: 会点代码的强迫症,
     image: 'https://cdn.jsdelivr.net/npm/logicdn@1.0.0/logi.im/usr/images/global/logo.webp',
+    domain: logi.im
     }
     - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
     image: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%EF%BC%9F.jpg',
+    domain: blog.cyfan.top
     }
