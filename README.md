@@ -31,6 +31,7 @@
 图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
 屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
+背景颜色(如果有): #F6B352
 ```
 
 + 1.存活时间不小于**3个月**。
