@@ -556,6 +556,13 @@ links:
     domain: logi.im
     }
     - {        
+    title: 'Jalen's Blog',
+    link: 'https://blog.jalenchuh.cn/',
+    intro: 我是 Jalen，你终于来了,
+    image: 'https://rmt.dogedoge.com/fetch/royce/storage/author.jpg',
+    domain: blog.jalenchuh.cn
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
