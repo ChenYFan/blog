@@ -10,7 +10,8 @@ script:
   - npm install hexo-baidu-url-submit --save
   - npm install hexo-abbrlink --save
   - npm install hexo-neat --save
-  - npm install hexo-generator-feed
+  - npm install hexo-filter-auto-spacing --save
+  - npm install hexo-generator-feed --save
   - hexo generate
   - echo "rz2.blog.cyfan.top" >> ./public/CNAME
 deploy:
