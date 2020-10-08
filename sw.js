@@ -1,13 +1,9 @@
 'use strict';
 
 importScripts('https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js');
-workbox.setConfig({
-    modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.3.0/'
-});
-if (workbox) {
-    console.log(`Yay! Workbox is loaded 🎉`);
-} else {
-    console.log(`Boo! Workbox didn't load 😬`);
+workbox.setConfig({modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.3.0/'});
+if (workbox) {console.log(`Yay! Workbox is loaded 🎉`);
+} else {console.log(`Boo! Workbox didn't load 😬`);
 }
 workbox.routing.registerRoute(
     // Cache CSS files
@@ -134,47 +130,35 @@ workbox.routing.registerRoute(
     })
 );
 
-workbox.routing.registerRoute(
-    new RegExp('https://rmt\.dogedoge\.com/'),
+workbox.routing.registerRoute(new RegExp('https://rmt\.dogedoge\.com/'),
     workbox.strategies.cacheFirst({
       cacheName: 'doegdoge-cache',
       plugins: [
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 30 * 24 * 60 * 60,
-        })
+        new workbox.expiration.Plugin({maxAgeSeconds: 30 * 24 * 60 * 60,})
       ],
     })
 );
-workbox.routing.registerRoute(
-    new RegExp('https://unpkg\.zhimg\.com/'),
+workbox.routing.registerRoute(new RegExp('https://unpkg\.zhimg\.com/'),
     workbox.strategies.cacheFirst({
       cacheName: 'zhimg-cache',
       plugins: [
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 30 * 24 * 60 * 60,
-        })
+        new workbox.expiration.Plugin({maxAgeSeconds: 30 * 24 * 60 * 60,})
       ],
     })
 );
-workbox.routing.registerRoute(
-    new RegExp('https://artalk\-mini\.cyfan\.top/'),
+workbox.routing.registerRoute(new RegExp('https://artalk\-mini\.cyfan\.top/'),
     workbox.strategies.cacheFirst({
       cacheName: 'comment-cache',
       plugins: [
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 5 * 60,
-        })
+        new workbox.expiration.Plugin({maxAgeSeconds: 5 * 60,})
       ],
     })
 );
-workbox.routing.registerRoute(
-    new RegExp('https://cdn\.cyfan\.top/'),
+workbox.routing.registerRoute(new RegExp('https://cdn\.cyfan\.top/'),
     workbox.strategies.cacheFirst({
       cacheName: 'cdn-user-cache',
       plugins: [
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 30 * 24 * 60 * 60,
-        })
+        new workbox.expiration.Plugin({maxAgeSeconds: 30 * 24 * 60 * 60,})
       ],
     })
 );
