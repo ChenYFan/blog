@@ -12,6 +12,7 @@ script:
   - npm install hexo-neat --save
   - npm install hexo-filter-auto-spacing --save
   - npm install hexo-generator-feed --save
+  - npm install hexo-filter-auto-spacing --save
   - hexo generate
   - echo "rz2.blog.cyfan.top" >> ./public/CNAME
 deploy:
