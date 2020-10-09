@@ -29,7 +29,6 @@
     "hexo-server": "^0.3.3",
     "hexo-tag-dplayer": "^0.3.3",
     "hexo-wordcount": "^6.0.1",
-    "leanengine": "^1.2.1",
     "live2d-widget-model-z16": "^1.0.5",
     "request": "^2.88.2",
     "sitemapper": "^3.0.5",
@@ -39,10 +38,18 @@
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-sitemap": "^1.2.0"
   },
-  "scripts": {
-  "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
-  },
-  "engines": {
-  "node": "10.x"
-  }
+  {
+    "name": "node-js-getting-started",
+    "scripts": {
+        "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
+    },
+    "engines": {
+        "node": "8.x"
+    },
+    "dependencies": {
+        "express": "4.12.3",
+        "leanengine": "^3.0.2",
+        "leancloud-storage": "^3.3.1"
+    }
+}
 }
