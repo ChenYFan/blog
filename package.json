@@ -39,15 +39,9 @@
     "hexo-generator-sitemap": "^1.2.0"
   },
   "scripts": {
-        "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
+  "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
   },
   "engines": {
-        "node": "8.x"
-  },
-  "dependencies": {
-      "express": "4.12.3",
-      "leanengine": "^3.0.2",
-      "leancloud-storage": "^3.3.1"
+    "node": "12.x"
   }
-}
 }
