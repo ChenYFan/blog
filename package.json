@@ -38,18 +38,16 @@
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-sitemap": "^1.2.0"
   },
-  {
-    "name": "node-js-getting-started",
-    "scripts": {
+  "scripts": {
         "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
-    },
-    "engines": {
+  },
+  "engines": {
         "node": "8.x"
-    },
-    "dependencies": {
-        "express": "4.12.3",
-        "leanengine": "^3.0.2",
-        "leancloud-storage": "^3.3.1"
-    }
+  },
+  "dependencies": {
+      "express": "4.12.3",
+      "leanengine": "^3.0.2",
+      "leancloud-storage": "^3.3.1"
+  }
 }
 }
