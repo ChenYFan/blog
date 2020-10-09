@@ -37,11 +37,5 @@
   "devDependencies": {
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-sitemap": "^1.2.0"
-  },
-"scripts": {
-  "start": "hexo server -i 0.0.0.0 -p 3000"
-},
-"engines": {
-  "node": "10.x"
-}
+  }
 }
