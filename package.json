@@ -39,7 +39,7 @@
     "hexo-generator-sitemap": "^1.2.0"
   },
 "scripts": {
-  "start": "hexo s -p $LEANCLOUD_APP_PORT"
+  "start": "hexo server -i 0.0.0.0 -p 3000"
 },
 "engines": {
   "node": "10.x"
