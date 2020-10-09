@@ -41,5 +41,8 @@
   },
   "scripts": {
     "start": "hexo g && static ./public/ -a 0.0.0.0 -p $LEANCLOUD_APP_PORT"
+  },
+  "engines": {	
+    "node": "12.x"	
   }
 }
