@@ -36,12 +36,10 @@
   },
   "devDependencies": {
     "hexo-generator-baidu-sitemap": "^0.1.6",
-    "hexo-generator-sitemap": "^1.2.0"
+    "hexo-generator-sitemap": "^1.2.0",
+    "node-static": "^0.7.9"
   },
   "scripts": {
-  "start": "hexo clean && hexo s -p $LEANCLOUD_APP_PORT"
-  },
-  "engines": {
-    "node": "12.x"
+    "start": "static . -a 0.0.0.0 -p $LEANCLOUD_APP_PORT"
   }
 }
