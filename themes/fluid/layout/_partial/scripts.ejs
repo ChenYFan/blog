@@ -19,12 +19,12 @@
   <%- js(theme.custom_js) %>
 <% } %>
 <% if(is_post()) { %>
-<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><!--这两个不能合并-->
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><!--这两个不能合并--><!--
 <script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script>
 <script>
   window.post_views_api = "https://ga-hit.cyfan.top/api/ga";
 </script>
-
+-->
   <% } %>
 <script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js"></script>
 <%- partial('_partial/plugins/tocjs.ejs') %>
