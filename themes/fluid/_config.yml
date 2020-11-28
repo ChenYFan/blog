@@ -563,6 +563,13 @@ links:
     domain: blog.jalenchuh.cn
     }
     - {        
+    title: 'Water_tomato',
+    link: 'https://www.watertomato.com/',
+    intro: 纵横诗意,
+    image: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/plk.jpg',
+    domain: www.watertomato.com
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
