@@ -156,7 +156,7 @@ post参数：image
 
 ## 阿里图床
 
-推荐程度：★★★★
+~~推荐程度：★★★★~~
 
 我个人搭建的API：<https://picbed.cyfan.top> 不保证上传SLA![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg)
 
@@ -174,7 +174,7 @@ post参数：file
 回调json：data.url
 ```
 
-
+已失效，切勿使用
 
 ## DogeDoge图床
 
