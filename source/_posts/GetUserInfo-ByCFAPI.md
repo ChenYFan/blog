@@ -115,6 +115,6 @@ $(document).ready(function() {
 
 # End
 
-OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png)。
+OHHH，又水了一篇，下次讲讲如何部署博客到Travis-ci上。溜了溜了 ![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png)。
 
 
