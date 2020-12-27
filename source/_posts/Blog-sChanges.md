@@ -27,7 +27,7 @@ update: 2020-06-28 09:59:08
 
 所以趁迁移的机会，接入了bnxb，实现了真正的加速 ![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E6%97%A0%E6%89%80%E8%B0%93.png).
 
-当然，负载均衡还是做得很好的，移动直接走香港，相当的快，延迟<50ms:
+当然，负载均衡还是做得很好的，移动直接走香港，相当的快，延迟<50ms :
 
 ![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200607133744.jpg)
 
