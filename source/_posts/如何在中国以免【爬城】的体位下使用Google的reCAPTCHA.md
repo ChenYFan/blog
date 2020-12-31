@@ -28,7 +28,7 @@ copyright: true
 
 ## reCaptcha有哪些,有什么用?
 reCaptcha有三个版本V1、V2、V3,通常现在使用的是v2.
-这些往往在原网站上的去，铀用上recaptcha的网站，比如谷歌镜像之类的。
+这些往往在原网站上的去，又用上recaptcha的网站，比如谷歌镜像之类的。
 
 # 试图解决:
 ## 直接绕开:
