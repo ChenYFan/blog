@@ -10,6 +10,10 @@ categories:
   - 撸羊毛
 date: 2020-08-14 09:51:23
 ---
+
+> **写在最前面**
+> 自从这篇博文发布后，OneIndex迎来了一次重大更新，去除了FireBase依赖，转用KV存储刷新令牌。本片教程已过时，具体会在春节前后更新最新版本。
+
 OneDrive，相信大家都不陌生，微软家的网盘，虽说有类似于OneManager一样的目录列表程序，但是直连海外总是会遭受严重的丢包，得到极其糟糕的体验。这时候CLoudFlare作为不那么好使的CDN就排上用场了，项目[onedrive-cf-index](https://github.com/spencerwooo/onedrive-cf-index) 解决了这个问题,但是据我观察,这个仓库作者应该是个中国人,但是readme文档可不是中文,这对一些使用者造成了一定的困扰,而且文档相当**言简意赅**![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%B8%AD%E6%9E%AA.png),这一篇文章相当于文档的中文翻译和使用教程.
 
 > **使用前言**
