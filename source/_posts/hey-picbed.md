@@ -158,15 +158,15 @@ post参数：image
 
 ~~推荐程度：★★★★~~
 
-我个人搭建的API：<https://picbed.cyfan.top> 不保证上传SLA![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg)
+~~我个人搭建的API：<https://picbed.cyfan.top> 不保证上传SLA![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg)~~
 
-由于小鸡联通国内网络不太好，很有可能无法正常上传，[原项目已经开源](https://github.com/ChenYFan-Tester/Alibaba_pic) ，你完全可以通过在国内的机子或者是本地搭建以获得更佳体验。
+~~由于小鸡联通国内网络不太好，很有可能无法正常上传，[原项目已经开源](https://github.com/ChenYFan-Tester/Alibaba_pic) ，你完全可以通过在国内的机子或者是本地搭建以获得更佳体验。~~
 
-如果上传成功了，图片将会托管于阿里云的CDN，无论是速度还是延迟都相当的优秀。
+~~如果上传成功了，图片将会托管于阿里云的CDN，无论是速度还是延迟都相当的优秀。~~
 
-官方大厂，下载SLA有保障。
+~~官方大厂，下载SLA有保障。~~
 
-可搭配PicGo。
+~~可搭配PicGo。~~
 
 ```yml
 接口地址：https://picbed.cyfan.top/update.php
@@ -174,7 +174,7 @@ post参数：file
 回调json：data.url
 ```
 
-已失效，切勿使用
+**已失效，切勿使用**
 
 ## DogeDoge图床
 
@@ -226,7 +226,7 @@ pos 还有一个特殊的值 auto，该值目前为 alpha 状态，可以根据�
 
 
 
-当然，DogeDoge也可以搭配PicGo使用。
+话说回来，DogeDoge也可以搭配PicGo使用。
 
 
 
@@ -240,7 +240,7 @@ post参数：file
 
 
 
-当然，申请不到dogedoge图床也没关系，看下去你就会发现，白嫖的路千千万万，何必执着于一条。![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png)
+不过，申请不到dogedoge图床也没关系，看下去你就会发现，白嫖的路千千万万，何必执着于一条。![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png)
 
 ![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205753.png?q=45)
 
@@ -250,7 +250,7 @@ post参数：file
 
 推荐程度：★★★
 
-具体可以看看[这篇文章](/2020/07/09/free-10GB-oss-poweredby-backblaze/)
+具体可以看看[这篇文章](/p/ce240368.html)
 
 
 ## 千奇百怪的
