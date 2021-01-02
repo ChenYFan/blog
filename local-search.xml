@@ -1405,33 +1405,6 @@
   
   
   <entry>
-    <title>【公告】博客多域名</title>
-    <link href="/p/cab2e459.html"/>
-    <url>/p/cab2e459.html</url>
-    
-    <content type="html"><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>连续两次宕机了！！！！！！！！！！！</p><p>香港线不靠谱啊啊啊啊啊啊啊啊啊啊啊！</p><p>一气之下添加了两个域名:</p><div class="hljs"><pre><code class="hljs undefined">sg<span class="hljs-selector-class">.blog</span><span class="hljs-selector-class">.cyfan</span><span class="hljs-selector-class">.ga</span>hk<span class="hljs-selector-class">.blog</span><span class="hljs-selector-class">.cyfan</span><span class="hljs-selector-class">.ga</span>blog<span class="hljs-selector-class">.cyfan</span><span class="hljs-selector-class">.ga</span></code></pre></div><p>其中<code>blog.cyfan.ga</code>没有失效,依然可以正常访问.华东地区会解析到香港,华北地区多半解析到新加坡.</p><p>(腾讯莫名其妙的,为什么不把华北接到HK?)</p><p>而另外的<code>sg.blog.cyfan.ga</code>和<code>hk.blog.cyfan.ga</code>则分别解析到新加坡和香港.</p><p>香港线速度较快,但经常宕机,新加坡不容易宕机,但速度迷人.</p><p>Valine的数据在三个域名都相通.因此你可以在任意一个域名上发言.</p><p>MMP,腾讯云!</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>要公告</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>宕机</tag>
-      
-      <tag>域名</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>User-Agent野史</title>
     <link href="/p/fbcbe4bc.html"/>
     <url>/p/fbcbe4bc.html</url>
