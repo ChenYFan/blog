@@ -13,7 +13,7 @@ banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png
 ---
 自从CloudFlare渐渐浮出大众的视野，现在它的各项服务已经玩出花了，如果不陌生，它有一个应用叫 `1.1.1.1`,简单的说就是在手机上搭建DoH和DoT,本来的意思就是绕开域名污染,结果正好撞到某些人怀里,<span class="heimu">当然也包括我 </span>,亲测使用DoH虽然速度慢了点,但是上`DuckDuckGo` 不是梦啊.
 
-另外,CloudFlare有多了一个功能叫 `Warp+`,简单的说就是 `代理` ,嗯~ o(*￣▽￣*)o,我想我在说什么你应该知道,由于CloudFlare主打边缘服务,所以.😏
+另外,'1.1.1.1'多了一个功能叫 `Warp+`,简单的说就是 `代理` ,嗯~ o(*￣▽￣*)o,我想我在说什么你应该知道,由于CloudFlare主打边缘服务,所以.😏
 
 # 什么是边缘服务?
 
