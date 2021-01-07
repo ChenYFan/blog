@@ -76,7 +76,7 @@ const PASSWORD = ''
 
 ![绑定域名](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101107.jpg)
 
-路由：`\{待绑定的域名\}\/\*` [后面\*的原理是覆盖该路径下所有文件]
+路由：`{待绑定的域名}/*` [后面\*的原理是覆盖该路径下所有文件]
 Worker：你新建的Worker名字
 
 # 评测
