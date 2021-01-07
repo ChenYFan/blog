@@ -107,10 +107,8 @@ update: 2020-02-27 08:48:09
 以下是留言区:
 
 <div id="tcomment"><div class="grid__item theme-1">
-				<a href="javascript:setTimeout('onclock();',1500);">
-					<button class="action"></button>
+					<button class="action"  onclick="setTimeout('onclock();',1500)"></button>
 					<button class="particles-button">点击加载评论</button>
-					</a>
 				</div></div>
 <script src="https://cdn.jsdelivr.net/combine/npm/twikoo@0.6.0/dist/twikoo.all.min.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script>
 
