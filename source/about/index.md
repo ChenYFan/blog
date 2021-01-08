@@ -296,13 +296,8 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-35.png" width="25%">
 
 
-<div id="tcomment"><div class="grid__item theme-1">
-				<a href="javascript:setTimeout('onclock();',1500);">
-					<button class="action"></button>
-					<button class="particles-button">点击加载评论</button>
-					</a>
-				</div></div>
-<script src="https://cdn.jsdelivr.net/combine/npm/twikoo@0.6.0/dist/twikoo.all.min.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script>
+<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo@0.6.0/dist/twikoo.all.min.js></script>
 
   <script>
   function onclock(){
@@ -321,86 +316,6 @@ border: 1px solid transparent!important;
 }
 .el-input__inner{
 border: 1px solid transparent!important;
-}
-	
-.grid__item {	
-	position: relative;	
-	display: grid;	
-	grid-template-columns: 100%;	
-	grid-template-rows: 100%;	
-	justify-items: center;	
-	overflow: hidden;	
-	padding: 4rem 1.5rem;	
-	background: var(--color-item-bg);	
-}	
-.grid__item-title {	
-	font-size: 0.85rem;	
-	color: var(--color-item-title);	
-	align-self: flex-start;	
-	margin: 0;	
-}	
-.action {	
-	position: absolute;	
-	top: 0;	
-	right: 0;	
-	background: none;	
-	margin: 2rem;	
-	color: var(--color-action);	
-	border: 0;	
-	padding: 0;	
-	opacity: 0;	
-	pointer-events: none;	
-}	
-.action:focus {	
-	outline: none;	
-}	
-.particles-button {	
-	-webkit-touch-callout: none;	
-	-webkit-user-select: none;	
-	-khtml-user-select: none;	
-	-moz-user-select: none;	
-	-ms-user-select: none;	
-	user-select: none;	
-	position: relative;	
-	border-radius: 5px;	
-	border-radius: var(--radius-button);	
-	background: var(--color-button-bg);	
-	color: var(--color-button-text);	
-	border: 0;	
-	border: var(--border-button);	
-	margin: 0;	
-	padding: 1.5rem 3rem;	
-	padding: var(--button-padding);	
-}	
-.particles-button:focus {	
-	outline: none;	
-}	
-.no-js .particles-button {	
-	grid-area: 1 / 1 / 2 / 2;	
-}	
-.particles {	
-	position: relative;	
-	grid-area: 1 / 1 / 2 / 2;	
-}	
-.particles-canvas {	
-	position: absolute;	
-	pointer-events: none;	
-	top: 50%;	
-	left: 50%;	
-	transform: translate3d(-50%,-50%,0);	
-}	
-.particles-wrapper {	
-	position: relative;	
-	display: inline-block;	
-    overflow: hidden;	
-}	
-.theme-1 {	
-	--color-action: var(--board-bg-color);	
-	--color-button-bg: var(--text-color);	
-	--color-button-text: #fff;	
-	--button-padding: 1.5rem 3rem;	
-	--radius-button: 5px;	
-	--border-button: 0;	
 }
 </style>
  
