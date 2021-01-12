@@ -296,38 +296,5 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-35.png" width="25%">
 
 
-<div id="tcomment"></div>
-<script src="https://cdn.jsdelivr.net/npm/twikoo@0.6.0/dist/twikoo.all.min.js></script>
-
-  <script>
-  function onclock(){
-  twikoo.init({
-  envId: 'blog-comment-6g821sad74db776c',
-  el: '#tcomment'
-	})
-  }
-  </script>
-  <style>
-.el-input-group__prepend{
-border: 1px solid transparent!important;
-}
-.el-textarea__inner{
-border: 1px solid transparent!important;
-}
-.el-input__inner{
-border: 1px solid transparent!important;
-}
-</style>
- 
-<!-- ADs-in-Blog-Under-Valine -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1878991317600808"
-     data-ad-slot="6517667779"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 
