@@ -352,7 +352,7 @@ unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯
 
 ```markdown
 【jsd出品，网宿国内节点】https://cdn.jsdelivr.net/npm/
-【知乎出品，阿里国内节点】https://unpkg.zhimg.com/
+【知乎出品，网宿国内节点】https://unpkg.zhimg.com/
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点】https://shadow.elemecdn.com/npm/
 ```
