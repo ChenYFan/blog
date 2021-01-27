@@ -4,6 +4,7 @@ tags:
   - 图床
   - 白嫖
   - PicGo
+  - JSDelivr
 categories: 随心记
 copyright: true
 author: CYF
