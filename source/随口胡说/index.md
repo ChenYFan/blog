@@ -8,7 +8,9 @@ date: 2020-03-19 13:21:09
 <script>
 new hpp_talk({
 id:"hpp_talk",
-back: "https://blogadmin.cyfan.top/hpp/api/gethpptalk"
+back: "https://blogadmin.cyfan.top/hpp/api/gethpptalk",
+limit: 10,
+start: 0
 })
 </script>
 
