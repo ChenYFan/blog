@@ -1,36 +1,3 @@
-<!--兼容firefox-->
-<script>
-(function() {
-  setTimeout(function(arg1) {
-    if (arg1 === 'test') {
-      // feature test is passed, no need for polyfill
-      return;
-    }
-    var __nativeST__ = window.setTimeout;
-    window.setTimeout = function(vCallback, nDelay /*, argumentToPass1, argumentToPass2, etc. */ ) {
-      var aArgs = Array.prototype.slice.call(arguments, 2);
-      return __nativeST__(vCallback instanceof Function ? function() {
-        vCallback.apply(null, aArgs);
-      } : vCallback, nDelay);
-    };
-  }, 0, 'test');
-
-  var interval = setInterval(function(arg1) {
-    clearInterval(interval);
-    if (arg1 === 'test') {
-      // feature test is passed, no need for polyfill
-      return;
-    }
-    var __nativeSI__ = window.setInterval;
-    window.setInterval = function(vCallback, nDelay /*, argumentToPass1, argumentToPass2, etc. */ ) {
-      var aArgs = Array.prototype.slice.call(arguments, 2);
-      return __nativeSI__(vCallback instanceof Function ? function() {
-        vCallback.apply(null, aArgs);
-      } : vCallback, nDelay);
-    };
-  }, 0, 'test');
-}())
-</script>
 
 <div id="tcomment"><div class="grid__item theme-1">
 				<a href="javascript:setTimeout('onclock();',1500);">
@@ -38,14 +5,25 @@
 					<button class="particles-button">点击加载评论</button>
 					</a>
 				</div></div>
-<script src="https://cdn.jsdelivr.net/combine/npm/twikoo@1.1.3-beta/dist/twikoo.all.min.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script>
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.css" /> 
+<script src="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script>
 
   <script>
   function onclock(){
-  twikoo.init({
-  envId: 'blog-comment-6g821sad74db776c',
-  el: '#tcomment'
-	})
+new hpp_comment({
+id:"hpp_comment",
+envId:"blog-comment-6g821sad74db776c",
+region:"ap-shanghai",
+ver:"1.1.3-beta",
+domain: "blogadmin.cyfan.top",
+path: 'window.location.pathname',
+cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",
+adminmail: '15359b6f2fe293366156959c8ab9476f',
+friendmail: ['4627388bbef109f3345048262a595cd9','793c16e466509caf093e182eabecb7b4'],
+guestcolor: '#8080809e',
+friendcolor: 'rgb(102 175 233 / 60%)',
+admincolor: '#ffd700'
+})
   }
   </script>
   <style>
