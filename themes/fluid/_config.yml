@@ -571,10 +571,10 @@ links:
     }
     - {        
     title: '默一',
-    link: 'https://www.nekomoyi.com/',
+    link: 'https://blog.nekomoyi.com/',
     intro: '来日可期。',
-    image: 'https://cn.gravatar.com/avatar/948b70116bb31d28b11cc7c6949e38bc?s=100&d=mp',
-    domain: www.nekomoyi.com
+    image: 'https://cdn.jsdelivr.net/gh/NekoMoYi/Delivr@master/avatar.png',
+    domain: nekomoyi.com
     }
     - {        
     title: '友链还有空位！',
