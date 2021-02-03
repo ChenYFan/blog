@@ -2,8 +2,8 @@ title: 随口胡说
 date: 2020-03-19 13:21:09
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@0e43d5f/dist/talk.css" /> 
-<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@0e43d5f/dist/talk.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@d3057da/dist/talk.css" /> 
+<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@d3057da/dist/talk.js"></script>
 <div id="hpp_talk"></div>
 <script>
 new hpp_talk({
