@@ -11,6 +11,9 @@ date: 2020-03-21 08:08:00
 index_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/3.jpg
 banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/3.jpg
 ---
+
+> 在2020年8月，V2Ray官方更新了安装方式，此教程失效
+
 不好意思，我又抛弃了 `diaspora`(刚满一天),跳槽到了 `fluid`<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png"> 而且感觉用户体验比 `diaspora` 好多了,因为以前 `NexT`是不能添加图片表情的，因为图片会强制居中，~~那玩意叫表情~~,所以只能使用emoji😭,可是emoji没有我想要的表情,<span class="heimu">比如滑稽</span>,所以一般使用颜文字（〃｀ 3′〃）,<span class="heimu">但颜文字还是没有滑稽</span>,所以一般强制居左居右;现在这个主题,图片默认靠左,而且可以环绕,~~所以很适合添加表情~~<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png">.而且现在看来, `fluid` 并不比 `NexT` 差,该有的还是有,而且个性化程度很高,基本常用的插件都自己集成了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/xy.png">,比如懒加载<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/zhuaji.png">.所以我可以随意添加图片啦!!!于是决定用这个主题了。
 
 好了,今天带来的又是一篇撸羊毛的技巧.
