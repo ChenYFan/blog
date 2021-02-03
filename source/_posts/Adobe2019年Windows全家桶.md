@@ -26,7 +26,3 @@ adobe是Photoshop的原始软件名称，CC即为：Creative Cloud ，也就是�
 # 我有这些有什么用?
 .......
 此处不做回答
-
-
-
-<img src="https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.10/12311679.png">
