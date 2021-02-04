@@ -2,8 +2,8 @@ title: 随口胡说
 date: 2020-03-19 13:21:09
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@d3057da/dist/talk.css" /> 
-<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@d3057da/dist/talk.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@f18bdcd/dist/talk.css" /> 
+<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@f18bdcd/dist/talk_user.js"></script>
 <div id="hpp_talk"></div>
 <script>
 new hpp_talk({
@@ -11,6 +11,6 @@ id:"hpp_talk",
 domain: "blogadmin.cyfan.top",
 limit: 10,
 start: 0
-})
+});
 </script>
 
