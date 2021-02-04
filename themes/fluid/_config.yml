@@ -575,6 +575,13 @@ links:
     intro: '来日可期。',
     image: 'https://cdn.jsdelivr.net/gh/NekoMoYi/Delivr@master/avatar.png',
     domain: blog.nekomoyi.com
+    } 
+    - {        
+    title: '贰猹的小窝',
+    link: 'https://noionion.top/',
+    intro: 用这生命中的每一秒，给自己一个不后悔的未来,
+    image: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612441810000.jpg',
+    domain: noionion.top
     }
     - {        
     title: '友链还有空位！',
