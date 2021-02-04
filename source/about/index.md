@@ -297,4 +297,24 @@ CloudFlare是大公司,与百度是有一定合作,目前看来这种情况不�
 
 
 
-
+<div id="hpp_comment"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoComment_TwikooPlus@main/dist/comment.css" /> 
+<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoComment_TwikooPlus@main/dist/comment.js"></script>
+<script>
+new hpp_comment({
+id:"hpp_comment",
+envId:"blog-comment-6g821sad74db776c",
+region:"ap-shanghai",
+ver:"1.2.0",
+domain: "blogadmin.cyfan.top",
+path: 'window.location.pathname',
+cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",
+adminmail: '15359b6f2fe293366156959c8ab9476f',
+friendmail: ['4627388bbef109f3345048262a595cd9','793c16e466509caf093e182eabecb7b4'],
+guestcolor: '#8080809e',
+friendcolor: 'rgb(102 175 233 / 60%)',
+admincolor: '#ffd700',
+timelimit: 200,
+mode:0
+})
+</script>
