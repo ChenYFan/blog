@@ -570,6 +570,13 @@ links:
     domain: www.watertomato.com
     }
     - {        
+    title: '默一',
+    link: 'https://blog.nekomoyi.com/',
+    intro: '来日可期。',
+    image: 'https://cdn.jsdelivr.net/gh/NekoMoYi/Delivr@master/avatar.png',
+    domain: blog.nekomoyi.com
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
