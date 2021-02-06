@@ -83,3 +83,7 @@ Heroku的服务器用的是Amazon的,所以不要指望带宽和延迟能很好.
 非常推荐自定义域名后故意手动污染DNS至一些封锁ip避免引起 `「羲农去我久」1PjT8X/2TCX3i。` 注意,这个脚本如果加上privoxy,在监听至0.0.0.0,还可以给手机做代理,速度也就一般吧.
 
 
+
+
+
+![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/199.jpg)
