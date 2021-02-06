@@ -64,3 +64,5 @@ banner_img: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/img/10.jpg
 今日Bing美图：
 
 ![Bing](https://pan.cyfan.top/api/bing/bing.php "今日Bing美图")
+
+![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/213.jpg)
