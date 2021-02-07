@@ -11,4 +11,4 @@ banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/16125
 hide: true
 ---
 
-之前我说过，我已经习惯了集成部署
+我一直都习惯在线写作，但因为口袋里没钱，不能买服务器用动态博客，使用Hexo，即使实现了集成部署，想要在github上直接书写，尤其是出门在外有所灵感
