@@ -11,22 +11,18 @@
 <a href="https://blogadmin.cyfan.top/hpp/admin">	
 	<p id="bloggeractivetime"></p></a>
 	<script type="text/javascript">
-  function loadtimeandads() {
-    var ele = document.createElement("script");
-    ele.src = "https://blogadmin.cyfan.top/hpp/api/getblogeractive";
-    document.body.appendChild(ele);
-    var ele2 = document.createElement("script");
-ele2.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-document.body.appendChild(ele2);
-  }
-  if (window.addEventListener)
-    window.addEventListener("load", loadtimeandads, false);
-  else if (window.attachEvent)
-    window.attachEvent("onload", loadtimeandads);
-  else window.onload = loadtimeandads;
+document.onreadystatechange = function(){
+    if(document.readyState == "complete"){
+        var ele1 = document.createElement("script");
+        ele1.src = "https://blogadmin.cyfan.top/hpp/api/getblogeractive";
+        document.body.appendChild(ele1);
+        var ele2 = document.createElement("script");
+        ele2.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        document.body.appendChild(ele2);
+     }
+}  
 </script>
-	<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn/js/retime.min.js" defer>
-
+<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn/js/retime.min.js" defer>
 </script>
 <p>
 当前CDN节点: <span id="cdn">【未知】</span> |
