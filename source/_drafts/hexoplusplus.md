@@ -39,7 +39,13 @@ user-agent: "GoogleChrome",
 
 OK这么一搞鉴权这一块就完毕了，接下来，我们要搞基本功能
 
-## 上传
+Github更改一个文件的url是一样的，为了方便接下来的书写和表达，我们统一将以下url称为RESTURL：
+
+```url
+https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/${Github文件路径}/${Github文件名}?ref=${Github分支}
+```
+
+## 新建
 
 如果是新建,body中这么写
 
@@ -52,9 +58,14 @@ OK这么一搞鉴权这一块就完毕了，接下来，我们要搞基本功能
 }
 ```
 
-接着使用`PUT`形式访问
+接着使用`PUT`形式访问RESTURL
 
-```url
-https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/${Github文件路径}/${Github文件名}?ref=${Github分支}
+创建成功后状态码应该返回：
+
+```status
+201 Created
 ```
 
+## 更新
+
+body与新建类似，但是首先你要获取该文件sha值，使用GET访问`RESTURL`
