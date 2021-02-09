@@ -26,6 +26,7 @@ hide:true
 譬如罢，上传一个文件，首先你要鉴权，在header中写入：
 
 ```url
+content-type: "application/json;charset=UTF-8"
 Authorization: "token  ${hpp_githubimagetoken}"
 ```
 
@@ -76,9 +77,45 @@ https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=
 }
 ```
 
-实际上,我们真正能用到的,只有
+这样子,我们只要提取json中的sha,就能知道到hash,进而进行修改.
+但这样子有个非常尴尬的一点,单文件获取会把`content`一口气拿过来
+例如下面的`RESTURL`
 
+```url
+https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload/1612843011000.jpg?ref=master
+```
 
+你获取的时候会发现返回了这个:
+
+```json
+{
+"message": "This API returns blobs up to 1 MB in size. The requested blob is too large to fetch via the API, but you can use the Git Data API to request blobs up to 100 MB in size.",
+"errors": [
+{
+"resource": "Blob",
+"field": "data",
+"code": "too_large"
+}
+],
+"documentation_url": "https://docs.github.com/rest/reference/repos#get-repository-content"
+}
+```
+
+很显然,直接用GithubAPI不能获取单个文件的hash值
+
+那怎么办？
+
+答：列表获取
+
+我们把之前的`RESTURL`去掉小尾巴,变成这样:
+
+```url
+https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload?ref=master
+```
+
+这样就能获取这个目录下整个列表,然后用json循环查找遍历name,再通过name拉hash即可.
+
+只是这样查询时间会略微变长.
 
 ## 新建
 
@@ -103,4 +140,22 @@ https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=
 
 ## 更新
 
-body与新建类似，但是首先你要获取该文件sha值，使用GET访问`RESTURL`，然后就能
+body与新建类似，但是首先你要通过拉取信息获取该文件sha值.
+
+```json
+{
+    branch: ${上传的分支},
+    message: ${上传的信息},
+    content: ${base64过的文件}, 
+    sha: "${此文件hash}"
+}
+```
+
+接着使用`PUT`形式访问`RESTURL`
+
+更新成功后状态码应该返回：
+
+```status
+200 OK
+```
+
