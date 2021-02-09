@@ -45,6 +45,41 @@ Github更改一个文件的url是一样的，为了方便接下来的书写和�
 https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/${Github文件路径}/${Github文件名}?ref=${Github分支}
 ```
 
+## 拉取信息
+
+默认情况下，直接`GET``RESTURL`就能获取该文件/文件夹的信息,例如获取我`AVorBV.md`源文件,那么`RESTURL`如下:
+
+```
+https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=master
+```
+
+直接`GET`[我的是公开仓库,不需要鉴权就能获取],得到数据如下:
+
+```json
+{
+"name": "AVorBV.md",
+"path": "source/_posts/AVorBV.md",
+"sha": "a0bd826f999a9bb73ac56251415f9e57199600a7",
+"size": 15742,
+"url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=master",
+"html_url": "https://github.com/ChenYFan/blog/blob/master/source/_posts/AVorBV.md",
+"git_url": "https://api.github.com/repos/ChenYFan/blog/git/blobs/a0bd826f999a9bb73ac56251415f9e57199600a7",
+"download_url": "https://raw.githubusercontent.com/ChenYFan/blog/master/source/_posts/AVorBV.md",
+"type": "file",
+"content": "dGl0bGU6IEFWP0JWIQphdX...",
+"encoding": "base64",
+"_links": {
+"self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=master",
+"git": "https://api.github.com/repos/ChenYFan/blog/git/blobs/a0bd826f999a9bb73ac56251415f9e57199600a7",
+"html": "https://github.com/ChenYFan/blog/blob/master/source/_posts/AVorBV.md"
+}
+}
+```
+
+实际上,我们真正能用到的,只有
+
+
+
 ## 新建
 
 如果是新建,body中这么写
