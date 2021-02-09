@@ -6,8 +6,8 @@ tags:
 categories:
   - 好方法
 date: 2021-2-5 15:40
-index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612509080000.jpg
-banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612509080000.jpg
+index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612828904000.jpg
+banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612828904000.jpg
 hide:true
 ---
 
@@ -19,4 +19,41 @@ hide:true
 
 2020年最后一个月，我总是在想如何解决这个问题，我的要求很简单，能弄个在线书写环境就好了。
 
-由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然
+由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有**60次**，但一旦鉴权每个用户每小时就有**5000次**。这些api完全能够支撑起一个在线写作的环境,<https://developer.github.com/v3/guides/getting-started/>更是详细讲解并提供了数个例子。
+
+# 原理
+
+譬如罢，上传一个文件，首先你要鉴权，在header中写入：
+
+```url
+Authorization: "token  ${hpp_githubimagetoken}"
+```
+
+> Anyone,你也可以在url后面加上`?access_token=`传参，但是这样不安全，Github官方也是提示将在明年彻底禁用传参鉴权
+
+但是记得GithubAPI不允许空User-Agent，所以你还得在header中加入UA：
+
+```url
+user-agent: "GoogleChrome",
+```
+
+OK这么一搞鉴权这一块就完毕了，接下来，我们要搞基本功能
+
+## 上传
+
+如果是新建,body中这么写
+
+```json
+{
+    branch: ${上传的分支},
+    message: ${上传的信息},
+    content: ${base64过的文件}, 
+    sha: ""
+}
+```
+
+接着使用`PUT`形式访问
+
+```url
+https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/${Github文件路径}/${Github文件名}?ref=${Github分支}
+```
