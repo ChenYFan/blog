@@ -21,7 +21,7 @@ hide:true
 
 由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有**60次**，但一旦鉴权每个用户每小时就有**5000次**。这些api完全能够支撑起一个在线写作的环境,<https://developer.github.com/v3/guides/getting-started/>更是详细讲解并提供了数个例子。
 
-# 原理
+# 原理 - GithubAPI
 
 譬如罢，上传一个文件，首先你要鉴权，在header中写入：
 
@@ -159,3 +159,29 @@ body与新建类似，但是首先你要通过拉取信息获取该文件sha值.
 200 OK
 ```
 
+## 删除
+
+相对来说,删除就更简单了
+
+```json
+{
+    branch: ${删除文件的分支},
+    message: ${删除的信息},
+    sha: "${此文件hash}"
+}
+```
+
+hash这一步逃不掉,用`DELETE`形式访问`RESTURL`,返回`200`说明删除成功
+
+# 原理 - CloudFlareWorkers
+
+之前看过[Laziji-VBlog](https://github.com/GitHub-Laziji/VBlog)项目,这个项目新颖的一点是将文章发布在gists,然后用户通过api访问获取.
+
+但这样有两个致命问题:
+
+1.API没鉴权，每小时单个ip只能访问60次，一开就爆
+2.在国内受干扰，不稳定
+
+并且什么迁入迁出麻烦、token容易忘记等等问题
+
+最最最早版本中,我是打算纯
