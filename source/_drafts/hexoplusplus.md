@@ -68,4 +68,4 @@ https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/$
 
 ## 更新
 
-body与新建类似，但是首先你要获取该文件sha值，使用GET访问`RESTURL`
+body与新建类似，但是首先你要获取该文件sha值，使用GET访问`RESTURL`，然后就能
