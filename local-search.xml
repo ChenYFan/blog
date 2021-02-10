@@ -233,11 +233,11 @@
     
     <tags>
       
-      <tag>LazyLoad</tag>
-      
       <tag>Google</tag>
       
       <tag>Adsense</tag>
+      
+      <tag>LazyLoad</tag>
       
       <tag>赚钱</tag>
       
@@ -1039,15 +1039,15 @@
     
     <tags>
       
-      <tag>Hexo</tag>
-      
       <tag>插件</tag>
       
-      <tag>黑科技</tag>
+      <tag>Hexo</tag>
       
       <tag>编辑</tag>
       
       <tag>神器</tag>
+      
+      <tag>黑科技</tag>
       
     </tags>
     
@@ -1074,9 +1074,9 @@
       
       <tag>Hexo</tag>
       
-      <tag>NPM</tag>
-      
       <tag>LazyLoad</tag>
+      
+      <tag>NPM</tag>
       
       <tag>奇淫巧技</tag>
       
@@ -1109,6 +1109,8 @@
     
     <tags>
       
+      <tag>黑科技</tag>
+      
       <tag>奇淫巧技</tag>
       
       <tag>头像</tag>
@@ -1118,8 +1120,6 @@
       <tag>素描</tag>
       
       <tag>填色</tag>
-      
-      <tag>黑科技</tag>
       
     </tags>
     
@@ -1144,8 +1144,6 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>踩坑</tag>
       
       <tag>手动填坑</tag>
@@ -1155,6 +1153,8 @@
       <tag>评论</tag>
       
       <tag>Gitalk</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
@@ -1307,9 +1307,9 @@
       
       <tag>插件</tag>
       
-      <tag>Chrome</tag>
-      
       <tag>Google</tag>
+      
+      <tag>Chrome</tag>
       
       <tag>破解</tag>
       
@@ -1365,11 +1365,11 @@
     
     <tags>
       
-      <tag>站长必备</tag>
+      <tag>评论</tag>
       
       <tag>Hexo</tag>
       
-      <tag>评论</tag>
+      <tag>站长必备</tag>
       
       <tag>Valine</tag>
       
@@ -1396,9 +1396,9 @@
     
     <tags>
       
-      <tag>站长必备</tag>
-      
       <tag>Hexo</tag>
+      
+      <tag>站长必备</tag>
       
       <tag>Live2D</tag>
       
@@ -1611,34 +1611,9 @@
       
       <tag>Tampermonkey</tag>
       
-      <tag>奇淫巧技</tag>
-      
       <tag>Google</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>【公告】关于宕机</title>
-    <link href="/p/28f4c3b1.html"/>
-    <url>/p/28f4c3b1.html</url>
-    
-    <content type="html"><![CDATA[<h1 id="第二次-2019-08-13-17-30-xx-2019-08-13-17-39-xx"><a href="#第二次-2019-08-13-17-30-xx-2019-08-13-17-39-xx" class="headerlink" title="第二次:2019-08-13 17:30:xx - 2019-08-13 17:39:xx"></a>第二次:<code>2019-08-13 17:30:xx - 2019-08-13 17:39:xx</code></h1><p>又一次迷人的小宕机。<br>由于更换域名调试，我把<code>CNAME</code>到了Coding的原始界面,用的是<code>CloudFlare</code>给予的DNS.<br>因为腾讯云本生就自带了CDN,我也没用CF的CDN.<br>结果昨天香港线又宕机了.<br>emmmmm，于是添加了<a href="/2019/08/14/【公告】博客多域名/#more">多域名</a>。</p><h1 id="第一次-2019-07-27-14-10-xx-2019-07-28-12-50-03"><a href="#第一次-2019-07-27-14-10-xx-2019-07-28-12-50-03" class="headerlink" title="第一次:2019-07-27 14:10:xx - 2019-07-28 12:50:03"></a>第一次:<code>2019-07-27 14:10:xx - 2019-07-28 12:50:03</code></h1><p>突然间我的博客不能访问了,刚开始以为是出发了关键字<code>科学上网</code>,接过删了也没有用.<br>今天我ping了一下我的博客,结果:<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/PINGBLOG.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="Ping" title="ping的结果"></p><p>好吧，估计是香港区IP抽风吧，那我只好更改<code>A</code>成新加坡了。<br>什么鬼？？？难不成<code>不可告人的秘密</code>又拦截了???<br>我也不清楚啊啊啊o((&gt;ω&lt; ))o</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>要公告</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>宕机</tag>
+      <tag>奇淫巧技</tag>
       
     </tags>
     

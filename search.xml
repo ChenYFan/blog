@@ -104,9 +104,9 @@
         <category>好方法</category>
       </categories>
       <tags>
-        <tag>LazyLoad</tag>
         <tag>Google</tag>
         <tag>Adsense</tag>
+        <tag>LazyLoad</tag>
         <tag>赚钱</tag>
       </tags>
   </entry>
@@ -468,11 +468,11 @@
         <category>丆插件</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>插件</tag>
-        <tag>黑科技</tag>
+        <tag>Hexo</tag>
         <tag>编辑</tag>
         <tag>神器</tag>
+        <tag>黑科技</tag>
       </tags>
   </entry>
   <entry>
@@ -484,8 +484,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>NPM</tag>
         <tag>LazyLoad</tag>
+        <tag>NPM</tag>
         <tag>奇淫巧技</tag>
         <tag>等待</tag>
         <tag>图片</tag>
@@ -500,12 +500,12 @@
         <category>好方法</category>
       </categories>
       <tags>
+        <tag>黑科技</tag>
         <tag>奇淫巧技</tag>
         <tag>头像</tag>
         <tag>壁纸</tag>
         <tag>素描</tag>
         <tag>填色</tag>
-        <tag>黑科技</tag>
       </tags>
   </entry>
   <entry>
@@ -516,12 +516,12 @@
         <category>爱折腾</category>
       </categories>
       <tags>
-        <tag>Github</tag>
         <tag>踩坑</tag>
         <tag>手动填坑</tag>
         <tag>评论系统</tag>
         <tag>评论</tag>
         <tag>Gitalk</tag>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -590,8 +590,8 @@
       </categories>
       <tags>
         <tag>插件</tag>
-        <tag>Chrome</tag>
         <tag>Google</tag>
+        <tag>Chrome</tag>
         <tag>破解</tag>
       </tags>
   </entry>
@@ -616,9 +616,9 @@
         <category>丆插件</category>
       </categories>
       <tags>
-        <tag>站长必备</tag>
-        <tag>Hexo</tag>
         <tag>评论</tag>
+        <tag>Hexo</tag>
+        <tag>站长必备</tag>
         <tag>Valine</tag>
       </tags>
   </entry>
@@ -630,8 +630,8 @@
         <category>爱学习</category>
       </categories>
       <tags>
-        <tag>站长必备</tag>
         <tag>Hexo</tag>
+        <tag>站长必备</tag>
         <tag>Live2D</tag>
         <tag>萌萌哒</tag>
         <tag>看板娘</tag>
@@ -727,19 +727,8 @@
         <tag>科学上网</tag>
         <tag>JavaScript</tag>
         <tag>Tampermonkey</tag>
-        <tag>奇淫巧技</tag>
         <tag>Google</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【公告】关于宕机]]></title>
-    <url>%2Fp%2F28f4c3b1.html</url>
-    <content type="text"><![CDATA[第二次:2019-08-13 17:30:xx - 2019-08-13 17:39:xx又一次迷人的小宕机。由于更换域名调试，我把CNAME到了Coding的原始界面,用的是CloudFlare给予的DNS.因为腾讯云本生就自带了CDN,我也没用CF的CDN.结果昨天香港线又宕机了.emmmmm，于是添加了多域名。第一次:2019-07-27 14:10:xx - 2019-07-28 12:50:03突然间我的博客不能访问了,刚开始以为是出发了关键字科学上网,接过删了也没有用.今天我ping了一下我的博客,结果:好吧，估计是香港区IP抽风吧，那我只好更改A成新加坡了。什么鬼？？？难不成不可告人的秘密又拦截了???我也不清楚啊啊啊o((&gt;ω&lt; ))o]]></content>
-      <categories>
-        <category>要公告</category>
-      </categories>
-      <tags>
-        <tag>宕机</tag>
+        <tag>奇淫巧技</tag>
       </tags>
   </entry>
   <entry>
