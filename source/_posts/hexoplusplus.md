@@ -415,6 +415,34 @@ if (path == "/hpp/admin/api/get_draftlist") { //判断路径
 }
 ```
 
+我们来做个小实验：
 
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612936420000.png)
+
+结构如下：
+
+```
+-source/_drafts
+  ~TEST.md
+  -TEST
+    ~TEST.md
+    -TEST
+      ~TEST.md
+      -TEST
+        ~TEST.md
+```
+
+那么CloudFlare会这样搜索:
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612937339000.jpg)
+
+
+~~其实我本来想这样的~~
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612937329000.jpg)
+
+【考虑到大多数人都没有建立文件夹的习惯，本来bfs的效率会更高的(´இ皿இ｀)】
 
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
+
+
