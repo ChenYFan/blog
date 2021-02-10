@@ -330,7 +330,7 @@ return new Response(re_html, {
 
 <span class="heimu">这种写法帮我省下精力重看代码</span>
 
-面板怎么说
+面板怎么说,其实直接用[material-dashboard](https://www.creative-tim.com/product/material-dashboard)套的
 
 # 实现 - 后端API的设计
 
@@ -520,6 +520,32 @@ await KVNAME.del("hpp_doc_draft_list_index")
 
 其实刚开始没想到这么多，后来[@MCSeekeri ](https://github.com/MCSeekeri)开了[#21](https://github.com/HexoPlusPlus/HexoPlusPlus/issues/21),其中提到了这一点,然后我就开了[#23](https://github.com/HexoPlusPlus/HexoPlusPlus/issues/23)。
 
-查一遍[CloudFlareAPI文档](https://api.cloudflare.com/#worker-script-upload-worker)，我们就会发现这做起来键值轻而易举：
+查一遍[CloudFlareAPI文档](https://api.cloudflare.com/#worker-script-upload-worker)，我们就会发现这做起来简直轻而易举：
 
 ![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612941346000.png)
+
+```curl
+curl -X PUT "https://api.cloudflare.com/client/v4/accounts/9a7806061c88ada191ed06f989cc3dac/workers/scripts/this-is_my_script-01" \
+     -H "X-Auth-Email: user@example.com" \
+     -H "X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41" \
+     -H "Content-Type: application/javascript" \
+--data "addEventListener('fetch', event => { event.respondWith(fetch(event.request)) })"
+```
+
+curl,我寻思fetch也能做到.
+
+```js
+const update_script = await (await fetch(`https://raw.githubusercontent.com/HexoPlusPlus/HexoPlusPlus/main/index.js`)).text() //获取更新脚本
+const up_init = {
+            body: update_script,//更新脚本内容
+            method: "PUT",//method是put
+            headers: {
+              "content-type": "application/javascript",//content-type和文档一样
+              "X-Auth-Key": hpp_CF_Auth_Key,//GlobalKey,账户最高Token
+              "X-Auth-Email": hpp_Auth_Email//登录邮箱
+            }
+}
+          const update_resul = await (await fetch(`https://api.cloudflare.com/client/v4/accounts/${hpp_account_identifier}/workers/scripts/${hpp_script_name}`, up_init)).text()//拼接workerid,请求url,上传
+          return new Response(JSON.parse(update_resul)["success"])//查询更新状态
+```
+
