@@ -5,6 +5,7 @@ tags:
   - 集成部署
 categories:
   - 好方法
+description: Worker是什么?开发者怎么使用Worker做的更好?难道Worker只能用JSproxy吗?作为HexoPlusPlus开发者,我想和大家谈谈我从一个小白开始慢慢写一个基于CloudFlareWorker程序的Hexo后台管理
 date: 2021-2-5 15:40
 index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612929292000.jpg
 banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612929292000.jpg
@@ -19,6 +20,10 @@ banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/16129
 2020年最后一个月，我总是在想如何解决这个问题，我的要求很简单，能弄个在线书写环境就好了。
 
 由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有**60次**，但一旦鉴权每个用户每小时就有**5000次**。这些api完全能够支撑起一个在线写作的环境,<https://developer.github.com/v3/guides/getting-started/>更是详细讲解并提供了数个例子。
+
+这篇文章,就是详细讲解我如何把这个梦想变成现实.具体步骤很多,请慢慢咀嚼![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896ece2ab57a.jpg)
+
+> **这篇不是[使用文档](https://hexoplusplus.js.org/),而是教程**
 
 # 原理 - GithubAPI
 
@@ -331,6 +336,21 @@ return new Response(re_html, {
 
 废话不说直接上代码。
 
+## 问题解决 - 存储问题
+
+KV是能存东西.配置是符合键值的,一个键名配对一个键值,这和KV的存储方式相同.但是这么多配置项,如果一个一个读过去,KV迟早比worker早读爆.缓存没用,还得赔一个清除缓存的APIKey,太亏了.
+
+所以HPP将所有配置`JSON.stringify`后存储到了一个键名为`hpp_config`的键.
+
+那关于账户密码,难道不能存KV吗?
+
+能,当然能,但是问题是如果在登录页面还要读KV,那被打了怎么办![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/67.jpg)
+
+况且,在粘贴代码完后到设置界面,中间有一段时间,万一有个人搞你咋办呢.![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/5.jpg)
+
+所以HPP学习Twikoo进行强鉴权,在保证不被盗取的情况下还能减少KV读取量,岂不美哉![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/stick_64.png)
+
+
 ## 问题解决 - 多层文件夹
 
 默认情况下，访问无文件名的`RESTURL`会列出当前文件夹下的所有文件,但列不出文件夹下的文件.我们先看获取示例，以`https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts?ref=master`为例子:
@@ -452,6 +472,42 @@ if (path == "/hpp/admin/api/get_draftlist") { //判断路径
 
 dfs完美解决嵌套问题。
 
-【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
 
 
+## 问题解决 - 缓存问题
+
+### 手机端POST之谜
+
+之前开发网页的时候，我总是希望缓存越长越好，因为有些资源从来没有变过却要重复使用。于是，我给博客加上了`ServiceWorker`<span class="heimu">~~这就是我咕咕咕的理由~~</span>
+
+但hpp不能进行太强的缓存,否则可能造成获取文件不够及时.
+
+于是，在文章获取这一块，我故意将`get`写成`post`,发送空值,电脑端乖乖的每次都把请求发出去,毫无异常.
+
+然后手机端炸了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5c53cee8422fc.jpg)
+
+万万没想到,safari会将post请求给缓存了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896ece29a8e0.jpg)
+
+缓存也就罢了,结果ajax连`onreadystatechange`都缓存了不返回,然后接下去的函数全炸了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896ece2a019f.jpg)
+
+没办法,只好在post里面加时间戳
+
+```js
+ajax.send(new Date().getTime());
+```
+
+### 文章索引问题
+
+然后是索引问题【本质上是把结果缓存在KV里】，因为在文件夹众多的情况下dfs会将每个文件夹找过去，先不说时间这个问题（毕竟一次子请求大约在60ms-150ms徘徊，文件夹多的情况下也尚能忍受），主要是文件夹一多，子请求跟着多起来了，worker子请求超时是30s（10ms是运算时间，我寻思只要没有上亿篇文章，加个数组应该不会炸10ms时间），并且子请求算总请求，要是这么搞一次，worker怕是不够用了，所以得加个KV强缓存：
+
+```js
+await KVNAME.put("hpp_doc_list_index", hpp_doc_list_index)
+await KVNAME.put("hpp_doc_draft_list_index", hpp_doc_draft_list_index)
+```
+
+在发布、删除等**可能**会导致缓存失效的情况下清除KV缓存：
+
+```js
+await KVNAME.del("hpp_doc_list_index")
+await KVNAME.del("hpp_doc_draft_list_index")
+```
