@@ -593,3 +593,138 @@ OK那没问题了,手动更新完成.
 HPPTALK配置也简单，后端配置可以直接缺省发布，而前段也只要传递4个变量。
 
 【但是我但是傻乎乎用了cookie记录，下次绝壁用LocalStr】
+
+## 功能实现 - TwikooPlus
+
+> 其实这个东西写的很粗糙,大家就看看行了哈
+
+Twikoo首次匿名登录实在把我看傻了,6个请求,放国外不得炸掉.
+
+然后就看,实际上只有前面几个有效的,后面其实是获取配置.
+
+首先规定一下`RESTURL`=`https://tcb-api.tencentcloudapi.com/web?env=${ENVID}`
+
+三步走:
+
+```
+1.空手拉refresh_token
+2.用refresh_token套access_token
+3.用access_token套评论
+```
+
+其中refresh_token两小时有效,access_token30天有效
+
+那就很有意思了同学们:
+
+```js
+async function get_refresh_token() {
+        /*第一步获得refresh_token*/
+        const step_1_body = {
+          action: "auth.signInAnonymously",
+          anonymous_uuid: "",
+          dataVersion: "1970-1-1",
+          env: env_id,
+          refresh_token: "",
+          seqId: ""
+        }
+        const step_1 = {
+          body: JSON.stringify(step_1_body),
+          method: "POST",
+          headers: {
+            "content-type": "application/json;charset=UTF-8"
+          }
+        }
+        /*refresh_token到手*/
+        //console.log(step_1_body)
+        return JSON.parse(await (await fetch(url, step_1)).text())["refresh_token"]
+      }
+      async function get_access_token(refresh_token) {
+        const step_2_body = {
+          action: "auth.fetchAccessTokenWithRefreshToken",
+          anonymous_uuid: "",
+          dataVersion: "1970-1-1",
+          env: env_id,
+          refresh_token: refresh_token,
+          seqId: ""
+        }
+        const step_2 = {
+          body: JSON.stringify(step_2_body),
+          method: "POST",
+          headers: {
+            "content-type": "application/json;charset=UTF-8"
+          }
+        }
+        /*access_token到手*/
+        return JSON.parse(await (await fetch(url, step_2)).text())["access_token"];
+      }
+      async function get_comment(access_token, path, before) {
+
+        const re_data = { "event": "COMMENT_GET", "url": path, "before": before }
+        const step_3_body = {
+          access_token: access_token,
+          action: "functions.invokeFunction",
+          dataVersion: "1970-1-1",//开始时间
+          env: env_id,
+          function_name: "twikoo",
+          request_data: JSON.stringify(re_data),
+          seqId: ""
+        }
+        const step_3 = {
+          body: JSON.stringify(step_3_body),
+          method: "POST",
+          headers: {
+            "content-type": "application/json;charset=UTF-8"
+          }
+        }
+        return (await (await fetch(url, step_3)).text())
+      }
+```
+
+这里要注意以下,套评论的时候要传递两个参数`path`和`before`,`path`是当前文章路径,`before`是上一条评论的创建时间戳`CreatedAt`
+
+然后使用的时候来一波:
+
+```js
+refresh_token = await get_refresh_token()
+access_token = await get_access_token(refresh_token)
+val = await get_comment(access_token, path, before)
+```
+
+同时用KV缓存
+
+```js
+await KVNAME.put("hpp_comment_refresh_token", refresh_token)
+await KVNAME.put("hpp_comment_access_token", access_token)
+```
+
+OK起飞
+
+## 问题解决 - EditorMD移动端问题
+
+本来HPP开始写的时候就是用EditorMD的,好康,功能多.
+
+但是很快手机端就炸出问题了:
+
+安卓:打一个字换一行
+苹果:打一个字复制一遍
+
+非常有问题,原仓库有一个Close的issues说把codemirror更新到最新版本就行,但是我更新到5.x最后一个版本问题仍复发.
+
+Github上面大多数编辑器也用的是CodeMirror.
+
+然后找了半天实在没有解决方案，就**花一个下午时间手写了一个编辑器**
+
+用的是最基础的**textarea**，这能出兼容性问题我把**Github整个吃了**
+
+预览功能是靠markedjs通过调整`display`在一个`div`里面预览,在1.1.0版本支持了代码高亮.
+
+~~话说手写一个很多功能就很好集成了诶~~
+
+
+# 结尾
+
+
+
+还有很多开发细节想不起来了,先水到这里了,<span class="heimu">滚回去修bug了</span>
+
+[QQ群:467731779](https://jq.qq.com/?_wv=1027&k=JPokmJdL)
