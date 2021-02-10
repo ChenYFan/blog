@@ -19,6 +19,8 @@ banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/16129
 
 2020年最后一个月，我总是在想如何解决这个问题，我的要求很简单，能弄个在线书写环境就好了。
 
+在当时，真的只是睡觉的时候想想，现在回头不禁感慨，这妄想真的实现了。
+
 由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有**60次**，但一旦鉴权每个用户每小时就有**5000次**。这些api完全能够支撑起一个在线写作的环境,<https://developer.github.com/v3/guides/getting-started/>更是详细讲解并提供了数个例子。
 
 这篇文章,就是详细讲解我如何把这个梦想变成现实.具体步骤很多,请慢慢咀嚼![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896ece2ab57a.jpg)
@@ -549,3 +551,45 @@ const up_init = {
           return new Response(JSON.parse(update_resul)["success"])//查询更新状态
 ```
 
+OK那没问题了,手动更新完成.
+
+那自动更新呢?
+
+目前自动更新理论上可以实现,使用CronJob每天定时执行函数.
+但我懒![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e8a408253.jpg)
+
+其实你也可以用其它什么能定时访问的带上cookie访问`/hpp/admin/api/update`就行![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896ece29a8e0.jpg)
+
+## 功能实现 - 文章管理&草稿
+
+其实就是上传文件![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/92.jpg)
+
+当然因为是hexo，本来就有`/source/_posts`和`/source/_drafts`两个草稿分区,所以在`1.1.0`版本,将`docpath`改为了`docroot`,通过定位hexo根目录来实现全站自适应管理.
+
+## 功能实现 - 图床
+
+我知道有很多人还是困扰于图床这个问题,PicGo虽然能实现上传,但是配置一大堆,麻烦,并且配置不能随意迁移;PicX也使用Github+JSD做图床,但是没有中继速度慢,国内难以上传.
+
+其实还是上传文件![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/162.jpg)
+
+但是我们必须知道,CFWorker单次执行最多10ms,正常图片三四百KB,在worker里base64,这能不超时我把CF吃了.
+
+没办法,我们只能在前端进行base64,然后将编码后的值直接上传,用Worker中继.
+
+## 功能实现 - 说说
+
+这个最早受[Artitalk](https://artitalk.js.org/)影响，在artitalk官方群里~~潜伏了~~一年，我明确知道说说这一块的用户需求是多么大，并且大多数都是小白，不想用太多配置。
+
+于是，HPP_TALK诞生了。诞生的初衷就是简化发布和配置流程，在1.1.2版本版本中自带了一个预览页面，实现了无域名也能使用说说。
+
+!['说说发布页面'](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612945005000.png)
+
+!['用户查看界面'](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612945225000.jpg)
+
+甚至支持自定义主题：
+
+!['由2X开发的说说主题'](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612945296000.jpg)
+
+HPPTALK配置也简单，后端配置可以直接缺省发布，而前段也只要传递4个变量。
+
+【但是我但是傻乎乎用了cookie记录，下次绝壁用LocalStr】
