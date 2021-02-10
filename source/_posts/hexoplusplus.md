@@ -398,7 +398,7 @@ KV是能存东西.配置是符合键值的,一个键名配对一个键值,这和
 
 文件夹是`dir`,文件是`file`,甚至可以通过`self`往下找,连路径都不用拼接了,那事情就好办了,写个搜索递归吧.
 
-> 这个地方在群里我一直和2X吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫`fetch_bfs`的函数![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg)
+> 这个地方在群里我一直和[2X](https://noionion.top/)吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫`fetch_bfs`的函数![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg)
 
 ```js
 async function fetch_bfs(arr, url, getinit) { //开始深搜
@@ -728,3 +728,14 @@ Github上面大多数编辑器也用的是CodeMirror.
 还有很多开发细节想不起来了,先水到这里了,<span class="heimu">滚回去修bug了</span>
 
 [QQ群:467731779](https://jq.qq.com/?_wv=1027&k=JPokmJdL)
+
+最后加一句，用HPP时CI强烈建议使用GithubAction并公开，~~我是也不明白我Travis-CI怎么把积分耗完的~~
+
+预计会添加的功能：
+
+- Hexo、主题配置修改
+- 输入框粘贴上传图片
+- 友链系统
+- 基于KV/IPFS的自动保存功能
+- 列表分页功能
+- 博主工具箱
