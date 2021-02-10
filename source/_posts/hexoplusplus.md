@@ -330,6 +330,8 @@ return new Response(re_html, {
 
 <span class="heimu">这种写法帮我省下精力重看代码</span>
 
+面板怎么说
+
 # 实现 - 后端API的设计
 
 后端API本质上是一个中继,简单如我![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/7EYyq1TcBKa3eQ2.jpg)
@@ -511,3 +513,13 @@ await KVNAME.put("hpp_doc_draft_list_index", hpp_doc_draft_list_index)
 await KVNAME.del("hpp_doc_list_index")
 await KVNAME.del("hpp_doc_draft_list_index")
 ```
+
+## 功能实现 - 自动更新
+
+这怕是所有Worker程序里面第一个实现自动更新的程序了~~【所以我最近发包很快啊】~~![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612940443000.gif)
+
+其实刚开始没想到这么多，后来[@MCSeekeri ](https://github.com/MCSeekeri)开了[#21](https://github.com/HexoPlusPlus/HexoPlusPlus/issues/21),其中提到了这一点,然后我就开了[#23](https://github.com/HexoPlusPlus/HexoPlusPlus/issues/23)。
+
+查一遍[CloudFlareAPI文档](https://api.cloudflare.com/#worker-script-upload-worker)，我们就会发现这做起来键值轻而易举：
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612941346000.png)
