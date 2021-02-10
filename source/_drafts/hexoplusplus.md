@@ -8,7 +8,6 @@ categories:
 date: 2021-2-5 15:40
 index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612828904000.jpg
 banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612828904000.jpg
-hide:true
 ---
 
 我一直都习惯在线写作，但因为口袋里没钱，不能买服务器用动态博客，使用Hexo，即使实现了集成部署，想要在github上直接书写，尤其是出门在外有所灵感，国内手机登陆github真的是极其糟糕的体验。博客本就是碎片化写作和高质量文章发布处，使用hexo却使我无法发挥博客的用处。
@@ -186,10 +185,118 @@ hash这一步逃不掉,用`DELETE`形式访问`RESTURL`,返回`200`说明删除�
 
 最最最早版本中,我是打算纯静态实现文章编辑和更改的，但很快我就遇到了和VBlog一样的缺陷，这逼使我切换了平台。
 
-好诶，既然直连效果那么差，我们就选择中继。利用服务器中继我们首先排除【用Hexo基本就是贪无服务器】。目前比较流行的无服务器平台有Heroku、CloudFlareWorker和Vercel，Heroku支持了多种服务器语言，CFWorker因为JSProxy在国内意外走红，Vercel在国内拥有较好的运营商线路。
+好诶，既然直连效果那么差，我们就选择中继。利用服务器中继我们首先排除【用Hexo基本就是贪无服务器】。目前比较流行的无服务器平台有Heroku、CloudFlareWorker和Vercel，Heroku支持了多种服务器语言，CFWorker基于GoogleV8，因为JSProxy在国内意外走红，Vercel在国内拥有较好的运营商线路。
 
 我们第一个排除heroku，冷启动唤醒需要10s，并且无法绑定域名【这里其实也可用worker反代（bushi】。目光看向worker和vercel，又有一个新问题出来，自定义配置存哪？![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e6ec1d528.jpg)
 
 存变量里当然是个好主意，但是很难修改。外部存储也不是什么大问题，mongodb、firebase、~~Leancloud~~都可以上手，但我个人终究不喜欢为了查询而发送子请求。![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/194.jpg)
 
-非常赞的是。去年11月
+由于我是OIer【虽然很差】，习惯使用C++的逻辑，因为JS的逻辑和C++其实差不多，所以我更倾向用WorkerJS书写。
+
+非常赞的是，去年11月，[CloudFlare官方宣布KV在一定额度内免费](https://blog.cloudflare.com/workers-kv-free-tier/)，并且免费额度喜人：
+
+```
+存：1GB大小
+读：10W次/天【注：这里和Worker免费版本调用次数相同】
+写：1k次/天
+删：1k次/天
+列：1k次/天
+单个限额：25MB
+```
+
+并且worker里面使用KV函数异常简单，绑定KVNAME后：
+
+```js
+async function FUNCNAME(){
+await KVNAME.get(INDEX) //读
+await KVNAME.put(INDEX,VALUE) //写
+await KVNAME.delete(INDEX) //删
+}
+```
+
+按照[官方文档](https://developers.cloudflare.com/workers/learning/how-kv-works)的说法，实际读取与读取静态页面差不多，我写了个简单测试函数，根据时间戳判断，单次读取只需要不超过2ms。
+
+并且worker有非常赞的fetch函数，无痛自定义header，拉取后端无压力。
+
+好，那么就开始吧。
+
+# 实现 - 迈出的第一步
+
+首先你要绑定个监听器：
+
+```js
+addEventListener("fetch", event => {
+  event.respondWith(handleRequest(event.request))
+})
+```
+
+由于`fetch`只能在`async`函数执行,于是我们写个`async`:
+
+```js
+async function handleRequest(request) {
+return new Response()
+}
+```
+
+可以，这样我们就简单实现了一个无服务器函数![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5c53d1904dcb2.gif)
+
+接下来的函数就应该在async这个主函数写。
+
+然后是最基本的fetch，fetch应该说是worker里最特色的函数了。
+
+如果直接返回，那么就不用加`await`,因为在`async`里面返回了一个`await`
+
+```js
+return fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')
+```
+
+如果要拉回来做运算，那么要加`await`
+
+```js
+const res = await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')
+```
+
+CFWorker能用`.text()`函数和`.json()`函数处理返回的内容：
+
+```js
+const first_name = await JSON.parse(await(await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')).text())[0]["name"]
+return new Response(first_name)
+```
+
+这个其实等价下面的：
+
+```js
+const first_name = (await(await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')).json())[0]["name"]
+return new Response(first_name)
+```
+
+当然显然是下面的好写,但我习惯测试方便都用上面的![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/stick_18.png)
+
+我们也可以通过自定义方式来自定义header完成鉴权和UA设置:
+
+```js
+const getinit = {
+          method: "GET",
+          headers: {
+            "content-type": "application/json;charset=UTF-8",
+            "user-agent": `${USERAGENT}`,
+            "Authorization": `token ${TOKEN}`
+          },
+}
+const first_name = await JSON.parse(await(await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts',getinit)).text())[0]["name"]
+return new Response(first_name)
+```
+
+那么接下来就很简单了。
+
+# 实现 - 面板的设计
+
+Worker支持返回数据的设置，我们可以通过修改`content-type`达到返回页面的效果,并且可以通过JS奇妙的语法完成PHP难以做到的事情。
+
+首先先定义一个网页：
+
+```js
+const re_html =  `<h1>Hello,World!</h1>`
+```
+
+【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
