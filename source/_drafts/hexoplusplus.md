@@ -47,7 +47,7 @@ https://api.github.com/repos/${Github用户名}/${Github仓库名字}/contents/$
 
 ## 拉取信息
 
-默认情况下，直接`GET``RESTURL`就能获取该文件/文件夹的信息,例如获取我`AVorBV.md`源文件,那么`RESTURL`如下:
+默认情况下，直接`GET` `RESTURL`就能获取该文件/文件夹的信息,例如获取我`AVorBV.md`源文件,那么`RESTURL`如下:
 
 ```
 https://api.github.com/repos/ChenYFan/blog/contents/source/_posts/AVorBV.md?ref=master
