@@ -122,26 +122,26 @@ baidu_url_submit:
   host: blog.cyfan.top
   token: QWQ
   path: baidu_urls.txt 
-neat_enable: true
+#neat_enable: true
 # 压缩html
-neat_html:
-  enable: true
-  exclude:
+#neat_html:
+#  enable: true
+#  exclude:
 # 压缩css  
-neat_css:
-  enable: true
-  exclude:
-    - '**/*.min.css'
+#neat_css:
+#  enable: true
+#  exclude:
+#    - '**/*.min.css'
 # 压缩js
-neat_js:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude:
-    - '**/*.min.js'
-    - '**/jquery.fancybox.pack.js'
-    - '**/index.js'  
+#neat_js:
+#  enable: true
+#  mangle: true
+#  output:
+#  compress:
+#  exclude:
+#    - '**/*.min.js'
+#    - '**/jquery.fancybox.pack.js'
+#    - '**/index.js'  
 feed:
   type: atom
   path: atom.xml
