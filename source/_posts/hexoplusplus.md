@@ -335,37 +335,38 @@ return new Response(re_html, {
 
 默认情况下，访问无文件名的`RESTURL`会列出当前文件夹下的所有文件,但列不出文件夹下的文件.我们先看获取示例，以`https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts?ref=master`为例子:
 
-```json[
+```json
+[
+    {
+        "name": "TEST.md",
+        "path": "source/_drafts/TEST.md",
+        "sha": "3b12464976a5fd9e07d67dd7d5cf4f0f10188410",
+        "size": 4,
+        "url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST.md?ref=master",
+        "html_url": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/TEST.md",
+        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/blobs/3b12464976a5fd9e07d67dd7d5cf4f0f10188410",
+        "download_url": "https://raw.githubusercontent.com/ChenYFan/blog/master/source/_drafts/TEST.md",
+        "type": "file",
+        "_links": {
+            "self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST.md?ref=master",
+            "git": "https://api.github.com/repos/ChenYFan/blog/git/blobs/3b12464976a5fd9e07d67dd7d5cf4f0f10188410",
+            "html": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/TEST.md"
+        }
+    },
     {
         "name": "TEST",
         "path": "source/_drafts/TEST",
-        "sha": "ee2157b661f15fac26fc9cee9416f843e6b64172",
+        "sha": "18391dac960bd390d4213818b7a79c63dcd2fb44",
         "size": 0,
         "url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST?ref=master",
         "html_url": "https://github.com/ChenYFan/blog/tree/master/source/_drafts/TEST",
-        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/trees/ee2157b661f15fac26fc9cee9416f843e6b64172",
+        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/trees/18391dac960bd390d4213818b7a79c63dcd2fb44",
         "download_url": null,
         "type": "dir",
         "_links": {
             "self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST?ref=master",
-            "git": "https://api.github.com/repos/ChenYFan/blog/git/trees/ee2157b661f15fac26fc9cee9416f843e6b64172",
+            "git": "https://api.github.com/repos/ChenYFan/blog/git/trees/18391dac960bd390d4213818b7a79c63dcd2fb44",
             "html": "https://github.com/ChenYFan/blog/tree/master/source/_drafts/TEST"
-        }
-    },
-    {
-        "name": "hexoplusplus.md",
-        "path": "source/_drafts/hexoplusplus.md",
-        "sha": "704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
-        "size": 14292,
-        "url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/hexoplusplus.md?ref=master",
-        "html_url": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/hexoplusplus.md",
-        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/blobs/704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
-        "download_url": "https://raw.githubusercontent.com/ChenYFan/blog/master/source/_drafts/hexoplusplus.md",
-        "type": "file",
-        "_links": {
-            "self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/hexoplusplus.md?ref=master",
-            "git": "https://api.github.com/repos/ChenYFan/blog/git/blobs/704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
-            "html": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/hexoplusplus.md"
         }
     }
 ]
