@@ -299,4 +299,99 @@ Worker支持返回数据的设置，我们可以通过修改`content-type`达到
 const re_html =  `<h1>Hello,World!</h1>`
 ```
 
+然后要返回吧：
+
+```js
+return new Response(re_html, {
+    headers: { "content-type": "text/html;charset=UTF-8" }
+})
+```
+
+这个地方`content-type`务必要设置,不然默认返回是文本形式
+
+然后打开预览就能看到了:
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612929973000.png)
+
+然后关于拼接,其实完全不必用`+`连接，可以用\`\`包裹,然后用`${变量名}`来代替
+
+```js
+const inner = `Hello,World!`
+const re_html =  `<h1>${inner}</h1>`
+return new Response(re_html, {
+    headers: { "content-type": "text/html;charset=UTF-8" }
+})
+```
+
+<span class="heimu">这种写法帮我省下精力重看代码</span>
+
+# 实现 - 后端API的设计
+
+后端API本质上是一个中继,简单如我![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/7EYyq1TcBKa3eQ2.jpg)
+
+废话不说直接上代码。
+
+## 问题解决 - 多层文件夹
+
+默认情况下，访问无文件名的`RESTURL`会列出当前文件夹下的所有文件,但列不出文件夹下的文件.我们先看获取示例，以`https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts?ref=master`为例子:
+
+```json[
+    {
+        "name": "TEST",
+        "path": "source/_drafts/TEST",
+        "sha": "ee2157b661f15fac26fc9cee9416f843e6b64172",
+        "size": 0,
+        "url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST?ref=master",
+        "html_url": "https://github.com/ChenYFan/blog/tree/master/source/_drafts/TEST",
+        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/trees/ee2157b661f15fac26fc9cee9416f843e6b64172",
+        "download_url": null,
+        "type": "dir",
+        "_links": {
+            "self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/TEST?ref=master",
+            "git": "https://api.github.com/repos/ChenYFan/blog/git/trees/ee2157b661f15fac26fc9cee9416f843e6b64172",
+            "html": "https://github.com/ChenYFan/blog/tree/master/source/_drafts/TEST"
+        }
+    },
+    {
+        "name": "hexoplusplus.md",
+        "path": "source/_drafts/hexoplusplus.md",
+        "sha": "704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
+        "size": 14292,
+        "url": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/hexoplusplus.md?ref=master",
+        "html_url": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/hexoplusplus.md",
+        "git_url": "https://api.github.com/repos/ChenYFan/blog/git/blobs/704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
+        "download_url": "https://raw.githubusercontent.com/ChenYFan/blog/master/source/_drafts/hexoplusplus.md",
+        "type": "file",
+        "_links": {
+            "self": "https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts/hexoplusplus.md?ref=master",
+            "git": "https://api.github.com/repos/ChenYFan/blog/git/blobs/704eb4ad403b0aa09afc9d009ed0f6c622509a0c",
+            "html": "https://github.com/ChenYFan/blog/blob/master/source/_drafts/hexoplusplus.md"
+        }
+    }
+]
+```
+
+文件夹是`dir`,文件是`file`,甚至可以通过`self`往下找,连路径都不用拼接了,那事情就好办了,写个搜索递归吧.
+
+> 这个地方在群里我一直和2X吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫`fetch_bfs`的函数![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg)
+
+```js
+async function fetch_bfs(arr, url, getinit) {
+          try {
+            const hpp_getlist = await JSON.parse(await (await fetch(url, hpp_githubgetdocinit)).text())
+            for (var i = 0; i < getJsonLength(hpp_getlist); i++) {
+              if (hpp_getlist[i]["type"] != "dir") {
+                arr.push(hpp_getlist[i])
+              } else {
+                await fetch_bfs(arr, hpp_getlist[i]["_links"]["self"], getinit)
+              }
+            }
+            return arr;
+          } catch (e) { return {} }
+}
+```
+
+代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span>
+
+
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
