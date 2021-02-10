@@ -6,7 +6,7 @@ on:
       - master 
 
 jobs:
-  download:
+  buildstatic:
     runs-on: ubuntu-latest
 
     steps:
