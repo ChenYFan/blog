@@ -1,0 +1,30 @@
+name: ChenYFanのHexoBlogBuild
+
+on: 
+  push:
+    branches: 
+      - master 
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: master
+
+    - name: Install
+      run: |
+        npm i
+        hexo g
+        curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
+        rm -rf ./public/CNAME
+        echo "blog.cyfan.top" >> ./public/CNAME
+        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        publish_dir: ./public
