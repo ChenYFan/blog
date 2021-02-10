@@ -24,7 +24,7 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Install
+    - name: Install & Build
       run: |
         npm install -g hexo-cli
         npm i
