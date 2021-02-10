@@ -1,4 +1,349 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="前言：19号我就要上学了，以后可能会突然失踪一段时间，9月1号正式开学后，我会恢复到2周一更新的频率。在这里对所有关注我博客的人说声抱歉。我寥寥无几的评论区里突然有人问我右下角的看板娘是怎么做到的：wpaladins •*********@163.com •2019-08-13 13:33:44你网"><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床"><meta name="author" content="CYF"><title>Live2D：为你的hexo博客添加萌萌哒看板娘 || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/chenyfan/cdn/assets/blog/bootstrap.min.css,npm/github-markdown-css@4.0.0/github-markdown.min.css,gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css,npm/highlight.js@10.0.0/styles/vs2015.css,gh/ChenYFan/blog@gh-pages/css/main.css,gh/ChenYFan/CDN/assets/blog/font_1749284_6peoq002giu.min.css,gh/ChenYFan/cdn/assets/blog/font_1736178_pjno9b9zyxs.min.css"><script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js"></script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><link href="https://artalk-mini.cyfan.top/index.php" rel="preconnect" crossorigin><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="../index.html" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../archives/">归档 </a><a class="dropdown-item" href="../categories/">分类 </a><a class="dropdown-item" href="../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../com/">留言板 </a><a class="dropdown-item" href="../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../about/">关于</a></div></li><li class="nav-item"><a class="nav-link" href="../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<svg t="1601864448019" class="icon" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/3.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2019-08-15 14:09" pubdate>2019年8月15日 下午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.4k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 17 分钟 </span><span id="post-meta-views"><i class="iconfont icon-rss"></i> <span id="pv-counter">loading</span> <span>阅读量</span></span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">Live2D：为你的hexo博客添加萌萌哒看板娘</h1><div class="markdown-body" id="post-body"><h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>19号我就要上学了，以后可能会突然失踪一段时间，9月1号正式开学后，我会恢复到2周一更新的频率。在这里对所有关注我博客的人说声抱歉。</p><p>我寥寥无几的评论区里突然有人问我右下角的看板娘是怎么做到的：</p><blockquote><p>wpaladins •*********@163.com •2019-08-13 13:33:44<br>你网站的各种东西确实很炫，只是打开你的博客之后我垃圾mba的风扇就一直转个不停😂我想知道左下角的妹子怎么搞？😁</p></blockquote><p>这让我感动了一分钟….</p><p>本来我就有写这一篇文章的感觉，只是没有这个打算，既然您问了，那我就写吧。</p><p>live2D for hexo 作者：<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">原作大大的博客</a></p><h1 id="材料："><a href="#材料：" class="headerlink" title="材料："></a>材料：</h1><ul><li>Hexo：如果你不是使用Hexo，那很抱歉，我们不会也没有提到其他博客的部署方法，不过这里添加几个链接：<ul><li>Wordpress用户看这里：<a href="https://www.mom1.cn/4231.html" target="_blank" rel="noopener">WordPress插件给博客加上live2d伊斯特瓦尔</a></li><li>Typecho用户试一试：<a href="https://qqdie.com/archives/l2d233.html" target="_blank" rel="noopener">Live2D看板娘来了！typecho插件</a></li><li>Jekll用户可以参考： <a href="https://done.moe/tutorial/2018/08/11/how-to-add-cute-live2d-in-jekyll-blog/" target="_blank" rel="noopener">如何给你的Jekyll博客添加可爱的二次元看板娘(Live2D)</a></li><li>野路子用户： （很抱歉没有教程）</li></ul></li><li>Node.js (&gt;=6.0)</li></ul><h1 id="简单开始："><a href="#简单开始：" class="headerlink" title="简单开始："></a>简单开始：</h1><h2 id="安装Live2D："><a href="#安装Live2D：" class="headerlink" title="安装Live2D："></a>安装Live2D：</h2><p>请先cd到你的hexo安装目录下！</p><p>如果你安装过低版本的Live2D，那先运行：<code>npm uninstall hexo-helper-live2d</code> 。<br>安装： <code>npm uninstall hexo-helper-live2d</code></p><blockquote><p>注意<br>中国用户由于<code>显而易见的原因</code>，速度超级慢，具体解决方案前往<a href="/2019/07/19/国内加快NPM下载速度/#more">我早年写的文章</a> 查看</p></blockquote><p>安装完成之后，就会在博客的根目录<code>package.json</code>文件中存在依赖,同时出现<code>node_moduels</code>文件夹</p><h2 id="选择模型："><a href="#选择模型：" class="headerlink" title="选择模型："></a>选择模型：</h2><p>原生模型：</p><ul><li>Epsilon2.1</li><li>Gantzert_Felixander</li><li>haru</li><li>miku</li><li>ni-j</li><li>nico</li><li>nietzche</li><li>nipsilon</li><li>nito</li><li>shizuku</li><li>tsumiki</li><li>wanko</li><li>z16</li><li>hibiki</li><li>koharu</li><li>haruto</li><li>Unitychan</li><li>tororo</li><li>hijiki</li></ul><p>额外模型：<br>可以前往<a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">summerscar大佬的Github</a>查看。</p><p>模型预览：<br>进入<a href="https://summerscar.me/live2dDemo/" target="_blank" rel="noopener">https://summerscar.me/live2dDemo/</a>，在<code>modelName:</code>键入模型名即可。</p><h2 id="安装模型："><a href="#安装模型：" class="headerlink" title="安装模型："></a>安装模型：</h2><p>原生模型： 在hexo文件夹根下键入<code>npm install --save live2d-widget-模型名</code>即可。<br>额外模型： 把文件夹下载到<code>node_moduels</code>下即可。</p><h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><p>打开<code>站点配置文件</code>,在末尾填上:</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">live2d:</span>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  
+    
+	
+	 
+	 	
+	    <meta name="description" content="前言：19号我就要上学了，以后可能会突然失踪一段时间，9月1号正式开学后，我会恢复到2周一更新的频率。在这里对所有关注我博客的人说声抱歉。
+我寥寥无几的评论区里突然有人问我右下角的看板娘是怎么做到的：
+
+wpaladins •*********@163.com •2019-08-13 13:33:4">
+	 
+
+	
+	 
+	 	
+	  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床">
+	 
+
+ 
+  
+  <meta name="author" content="CYF">
+  <title>Live2D：为你的hexo博客添加萌萌哒看板娘 || 陈YFの博客(￣▽￣)&#34;</title>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/chenyfan/cdn/assets/blog/bootstrap.min.css,npm/github-markdown-css@4.0.0/github-markdown.min.css,gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css,npm/highlight.js@10.0.0/styles/vs2015.css,gh/ChenYFan/blog@gh-pages/css/main.css,gh/ChenYFan/CDN/assets/blog/font_1749284_6peoq002giu.min.css,gh/ChenYFan/cdn/assets/blog/font_1736178_pjno9b9zyxs.min.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js">
+
+</script>
+<link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+
+<link href="https://artalk-mini.cyfan.top/index.php" rel="preconnect" crossorigin>
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="../index.html" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../archives/">
+                    
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../categories/">
+                    
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                页面
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../com/">
+                    
+                    留言板
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../随口胡说/ ">
+                    
+                    随口胡说
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../about/">
+                    
+                    关于
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+            <li class="nav-item" id="travellings-icon">
+            <a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<svg t="1601864448019" class="icon" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a>
+          </li>
+                  <li class="nav-item" id="tton">
+            <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+          </li>
+                  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-08-15 14:09" pubdate>
+      2019年8月15日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+      分钟
+    </span>
+  
+<span id="post-meta-views">
+<i class="iconfont icon-rss"></i>
+<span id="pv-counter">loading</span>
+       <span>阅读量</span>
+    </span>
+   
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Live2D：为你的hexo博客添加萌萌哒看板娘</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>19号我就要上学了，以后可能会突然失踪一段时间，9月1号正式开学后，我会恢复到2周一更新的频率。在这里对所有关注我博客的人说声抱歉。</p>
+<p>我寥寥无几的评论区里突然有人问我右下角的看板娘是怎么做到的：</p>
+<blockquote>
+<p>wpaladins •*********@163.com •2019-08-13 13:33:44<br>你网站的各种东西确实很炫，只是打开你的博客之后我垃圾mba的风扇就一直转个不停😂我想知道左下角的妹子怎么搞？😁</p>
+</blockquote>
+<p>这让我感动了一分钟….</p>
+<p>本来我就有写这一篇文章的感觉，只是没有这个打算，既然您问了，那我就写吧。</p>
+<p>live2D for hexo 作者：<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">原作大大的博客</a></p>
+<h1 id="材料："><a href="#材料：" class="headerlink" title="材料："></a>材料：</h1><ul>
+<li>Hexo：如果你不是使用Hexo，那很抱歉，我们不会也没有提到其他博客的部署方法，不过这里添加几个链接：<ul>
+<li>Wordpress用户看这里：<a href="https://www.mom1.cn/4231.html" target="_blank" rel="noopener">WordPress插件给博客加上live2d伊斯特瓦尔</a></li>
+<li>Typecho用户试一试：<a href="https://qqdie.com/archives/l2d233.html" target="_blank" rel="noopener">Live2D看板娘来了！typecho插件</a></li>
+<li>Jekll用户可以参考： <a href="https://done.moe/tutorial/2018/08/11/how-to-add-cute-live2d-in-jekyll-blog/" target="_blank" rel="noopener">如何给你的Jekyll博客添加可爱的二次元看板娘(Live2D)</a></li>
+<li>野路子用户： （很抱歉没有教程）</li>
+</ul>
+</li>
+<li>Node.js (&gt;=6.0)</li>
+</ul>
+<h1 id="简单开始："><a href="#简单开始：" class="headerlink" title="简单开始："></a>简单开始：</h1><h2 id="安装Live2D："><a href="#安装Live2D：" class="headerlink" title="安装Live2D："></a>安装Live2D：</h2><p>请先cd到你的hexo安装目录下！</p>
+<p>如果你安装过低版本的Live2D，那先运行：<code>npm uninstall hexo-helper-live2d</code> 。<br>安装： <code>npm uninstall hexo-helper-live2d</code></p>
+<blockquote>
+<p>注意<br>中国用户由于<code>显而易见的原因</code>，速度超级慢，具体解决方案前往<a href="/2019/07/19/国内加快NPM下载速度/#more">我早年写的文章</a> 查看</p>
+</blockquote>
+<p>安装完成之后，就会在博客的根目录<code>package.json</code>文件中存在依赖,同时出现<code>node_moduels</code>文件夹</p>
+<h2 id="选择模型："><a href="#选择模型：" class="headerlink" title="选择模型："></a>选择模型：</h2><p>原生模型：</p>
+<ul>
+<li>Epsilon2.1</li>
+<li>Gantzert_Felixander</li>
+<li>haru</li>
+<li>miku</li>
+<li>ni-j</li>
+<li>nico</li>
+<li>nietzche</li>
+<li>nipsilon</li>
+<li>nito</li>
+<li>shizuku</li>
+<li>tsumiki</li>
+<li>wanko</li>
+<li>z16</li>
+<li>hibiki</li>
+<li>koharu</li>
+<li>haruto</li>
+<li>Unitychan</li>
+<li>tororo</li>
+<li>hijiki</li>
+</ul>
+<p>额外模型：<br>可以前往<a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">summerscar大佬的Github</a>查看。</p>
+<p>模型预览：<br>进入<a href="https://summerscar.me/live2dDemo/" target="_blank" rel="noopener">https://summerscar.me/live2dDemo/</a>，在<code>modelName:</code>键入模型名即可。</p>
+<h2 id="安装模型："><a href="#安装模型：" class="headerlink" title="安装模型："></a>安装模型：</h2><p>原生模型： 在hexo文件夹根下键入<code>npm install --save live2d-widget-模型名</code>即可。<br>额外模型： 把文件夹下载到<code>node_moduels</code>下即可。</p>
+<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><p>打开<code>站点配置文件</code>,在末尾填上:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">live2d:</span>
 <span class="hljs-symbol">  model:</span>
 <span class="hljs-symbol">    scale:</span> <span class="hljs-number">1</span>
 <span class="hljs-symbol">    hHeadPos:</span> <span class="hljs-number">0.5</span>
@@ -16,7 +361,568 @@
 <span class="hljs-symbol">    scale:</span> <span class="hljs-number">0.5</span>
 <span class="hljs-symbol">  react:</span>
 <span class="hljs-symbol">    opacityDefault:</span> <span class="hljs-number">0.7</span>
-<span class="hljs-symbol">    opacityOnHover:</span> <span class="hljs-number">0.2</span></code></pre></div><p>接着<code>hexo server</code>看看吧!</p><h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶:"></a>进阶:</h1><p>你看到别人的的看板娘会说话,能拍照,还能打游戏?<br>那你也能!</p><blockquote><p>警告:<br>这会严重拖慢你的网站加载速度,并且功能比较鸡肋,并不建议添加.如果你的博客建立在Github Pages上,添加会造成加载困难以致无法加载!</p></blockquote><blockquote><p>由于我没有使用进阶版,本文以下部分转载来自<a href="https://blog.csdn.net/qq_39610915/article/details/90679768" target="_blank" rel="noopener">https://blog.csdn.net/qq_39610915/article/details/90679768</a></p></blockquote><p>使用大神定制作品<br><a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">https://github.com/stevenjoezhang/live2d-widget</a></p><p>按照教程<br><a href="https://blog.pangao.vip/Hexo博客NexT主题美化之新增看板娘(能说话、能换装)/" target="_blank" rel="noopener">https://blog.pangao.vip/Hexo博客NexT主题美化之新增看板娘(能说话、能换装)/</a><br>设定了一番<br>但网页中并没有出现看板娘<br>如果你和我一样是纯新手，而且完全按照上述教程进行，那么恭喜你，看板娘一定不会出现！<br>这是为什么呢？<br>首先我们去查看这个项目的说明</p><blockquote><h2 id="依赖-Dependencies"><a href="#依赖-Dependencies" class="headerlink" title="依赖 Dependencies"></a>依赖 Dependencies</h2><p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，例如在<code>&lt;head&gt;</code>中加入：<br>jQuery and font-awesome is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p></blockquote><div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"</span>&gt;</span></code></pre></div><blockquote><p>否则无法正常显示。（如果你的网页已经加载了jQuery，就不要重复加载了）</p></blockquote><p>而教程中并没有指出这一点，因此缺少依赖的博客，一定不会加载出看板娘。<br>其次是autoload.js的路径设置问题。</p><p>正确的步骤如下</p><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>下载大神项目，解压到本地博客目录的<code>themes/next/source</code>下，修改<code>autoload.js</code>文件，将其中</p><div class="hljs"><pre><code class="hljs undefined">const live2d_path = <span class="hljs-string">"https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/"</span><span class="hljs-comment">;</span></code></pre></div><p>改为</p><div class="hljs"><pre><code class="hljs undefined">const live2d_path = <span class="hljs-string">"/live2d/"</span><span class="hljs-comment">;</span></code></pre></div><p><code>autoload.js</code>中的注释的绝对地址指的是，将资源打包放到<code>hexo/theme/next/source</code>中后，以<code>hexo/theme/next/source</code>为根目录（/）的绝对路径，一般我们下载下来的是master分支，那么修改路径就是<code>/live2d-widget-master/xxx.js</code>，<code>autoload.js</code>的最后一个函数initWidget(“/live2d-widget-master/“, “<a href="https://api.fghrsh.net/live2d”" target="_blank" rel="noopener">https://api.fghrsh.net/live2d”</a>); 中的第二个参数不要变，是一个后台api。我选择将文件夹重命名为“live2d”，因此按照如上方式修改。</p><h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>在<code>/themes/next/layout/_layout.swing</code>中,<code>&lt;body&gt;</code>标签中新增如下内容，<code>########</code>为你自己的github账号：</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://########.github.io/live2d/autoload.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><p><code>&lt;head&gt;</code>标签中新增如下内容：一定一定要加上依赖！！！！！</p><div class="hljs"><pre><code class="hljs undefined">&lt;script <span class="hljs-attribute">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"</span>&gt;&lt;/script&gt;
-&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"</span>/&gt;</code></pre></div><h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>在主题配置文件<code>_config.yml</code> 中,新增如下内容：</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">live2d:</span>
-<span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></code></pre></div><p>想修改看板娘大小、位置、格式、文本内容等，可查看并修改 <code>waifu-tips.js</code> 、 <code>waifu-tips.json</code> 和 <code>waifu.css</code>。</p><p>最终效果如图：<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/KBN.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt title="最终效果"><br>后端API地址：<br><a href="https://github.com/fghrsh/live2d_api" target="_blank" rel="noopener">https://github.com/fghrsh/live2d_api</a></p><p>特别提醒！！！！！！<br>根据原作者反映，2018年十月，使用人数过多曾让该api暂时停止提供服务，更稳妥的方法是自建api。</p><hr></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../categories/爱学习/">爱学习</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../tags/Hexo/">Hexo</a> <a class="hover-with-bg" href="../tags/站长必备/">站长必备</a> <a class="hover-with-bg" href="../tags/Live2D/">Live2D</a> <a class="hover-with-bg" href="../tags/萌萌哒/">萌萌哒</a> <a class="hover-with-bg" href="../tags/看板娘/">看板娘</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="90e223e4.html"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">Valine：一款极简评论系统的安装到升级</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="58d8c071.html"><span class="hidden-mobile">【致歉】全能音乐搜索Bug修复</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="hpp_comment"><div class="grid__item theme-1"><a href="javascript:setTimeout('onclock();',1500);"><button class="action"></button> <button class="particles-button">点击加载评论</button></a></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.css"><script src="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script><script>function onclock(){new hpp_comment({id:"hpp_comment",envId:"blog-comment-6g821sad74db776c",region:"ap-shanghai",ver:"1.2.1-beta",domain:"blogadmin.cyfan.top",path:"window.location.pathname",cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",adminmail:"15359b6f2fe293366156959c8ab9476f",friendmail:["4627388bbef109f3345048262a595cd9","793c16e466509caf093e182eabecb7b4"],guestcolor:"#8080809e",friendcolor:"rgb(102 175 233 / 60%)",admincolor:"#ffd700",timelimit:200,mode:1})}</script><style>.el-input-group__prepend{border:1px solid transparent!important}.el-textarea__inner{border:1px solid transparent!important}.el-input__inner{border:1px solid transparent!important}.grid__item{position:relative;display:grid;grid-template-columns:100%;grid-template-rows:100%;justify-items:center;overflow:hidden;padding:4rem 1.5rem;background:var(--color-item-bg)}.grid__item-title{font-size:.85rem;color:var(--color-item-title);align-self:flex-start;margin:0}.action{position:absolute;top:0;right:0;background:0 0;margin:2rem;color:var(--color-action);border:0;padding:0;opacity:0;pointer-events:none}.action:focus{outline:0}.particles-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;border-radius:5px;border-radius:var(--radius-button);background:var(--color-button-bg);color:var(--color-button-text);border:0;border:var(--border-button);margin:0;padding:1.5rem 3rem;padding:var(--button-padding)}.particles-button:focus{outline:0}.no-js .particles-button{grid-area:1/1/2/2}.particles{position:relative;grid-area:1/1/2/2}.particles-canvas{position:absolute;pointer-events:none;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.particles-wrapper{position:relative;display:inline-block;overflow:hidden}.theme-1{--color-action:var(--board-bg-color);--color-button-bg:var(--text-color);--color-button-text:#fff;--button-padding:1.5rem 3rem;--radius-button:5px;--border-button:0}</style><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a>&&<a href="https://vercel.com">Vercel</a><br><a class="nav-link" href="javascript:lush(window.location.pathname);"><b>此页面的JSDelivr托管版</b></a><p id="showsectime"></p><a href="https://blogadmin.cyfan.top/hpp/admin"><p id="bloggeractivetime"></p></a><script type="text/javascript">document.onreadystatechange=function(){var e;"complete"==document.readyState&&((e=document.createElement("script")).src="https://blogadmin.cyfan.top/hpp/api/getblogeractive",document.body.appendChild(e),(e=document.createElement("script")).src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(e))}</script><script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn/js/retime.min.js" defer></script><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn@c84006e/js/getinfo.min.js"></script><p></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div></div></footer><script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script><script>window.post_views_api="https://ga-hit.chenyfan.xyz/api/ga"</script><script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js"></script><script src="https://cdn.jsdelivr.net/npm/tocbot@4.11.1/dist/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Live2D：为你的hexo博客添加萌萌哒看板娘&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js"></script><script>var path="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var a,o=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),a="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t;a&&a(),t=e,(e=r.createElement("div")).className="heart",o.push({el:e,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(e)},function e(){for(var t=0;t<o.length;t++)o[t].alpha<=0?(r.body.removeChild(o[t].el),o.splice(t,1)):(o[t].y--,o[t].scale+=.004,o[t].alpha-=.013,o[t].el.style.cssText="left:"+o[t].x+"px;top:"+o[t].y+"px;opacity:"+o[t].alpha+";transform:scale("+o[t].scale+","+o[t].scale+") rotate(45deg);background:"+o[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.ga_tid="UA-179044379-1",function(){var e=document.createElement("script");e.src="https://rmt.dogedoge.com/fetch/public/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:3,hoverDelay:50}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script>"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js")})</script><script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",model:{jsonPath:"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},display:{position:"left",width:150,height:300},mobile:{show:!1},log:!1,tagMode:!1})</script></body></html>
+<span class="hljs-symbol">    opacityOnHover:</span> <span class="hljs-number">0.2</span></code></pre></div>
+
+<p>接着<code>hexo server</code>看看吧!</p>
+<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶:"></a>进阶:</h1><p>你看到别人的的看板娘会说话,能拍照,还能打游戏?<br>那你也能!</p>
+<blockquote>
+<p>警告:<br>这会严重拖慢你的网站加载速度,并且功能比较鸡肋,并不建议添加.如果你的博客建立在Github Pages上,添加会造成加载困难以致无法加载!</p>
+</blockquote>
+<blockquote>
+<p>由于我没有使用进阶版,本文以下部分转载来自<a href="https://blog.csdn.net/qq_39610915/article/details/90679768" target="_blank" rel="noopener">https://blog.csdn.net/qq_39610915/article/details/90679768</a></p>
+</blockquote>
+<p>使用大神定制作品<br><a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">https://github.com/stevenjoezhang/live2d-widget</a></p>
+<p>按照教程<br><a href="https://blog.pangao.vip/Hexo博客NexT主题美化之新增看板娘(能说话、能换装)/" target="_blank" rel="noopener">https://blog.pangao.vip/Hexo博客NexT主题美化之新增看板娘(能说话、能换装)/</a><br>设定了一番<br>但网页中并没有出现看板娘<br>如果你和我一样是纯新手，而且完全按照上述教程进行，那么恭喜你，看板娘一定不会出现！<br>这是为什么呢？<br>首先我们去查看这个项目的说明</p>
+<blockquote>
+<h2 id="依赖-Dependencies"><a href="#依赖-Dependencies" class="headerlink" title="依赖 Dependencies"></a>依赖 Dependencies</h2><p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，例如在<code>&lt;head&gt;</code>中加入：<br>jQuery and font-awesome is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"</span>&gt;</span></code></pre></div>
+
+<blockquote>
+<p>否则无法正常显示。（如果你的网页已经加载了jQuery，就不要重复加载了）</p>
+</blockquote>
+<p>而教程中并没有指出这一点，因此缺少依赖的博客，一定不会加载出看板娘。<br>其次是autoload.js的路径设置问题。</p>
+<p>正确的步骤如下</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>下载大神项目，解压到本地博客目录的<code>themes/next/source</code>下，修改<code>autoload.js</code>文件，将其中</p>
+<div class="hljs"><pre><code class="hljs undefined">const live2d_path = <span class="hljs-string">"https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/"</span><span class="hljs-comment">;</span></code></pre></div>
+
+<p>改为</p>
+<div class="hljs"><pre><code class="hljs undefined">const live2d_path = <span class="hljs-string">"/live2d/"</span><span class="hljs-comment">;</span></code></pre></div>
+
+<p><code>autoload.js</code>中的注释的绝对地址指的是，将资源打包放到<code>hexo/theme/next/source</code>中后，以<code>hexo/theme/next/source</code>为根目录（/）的绝对路径，一般我们下载下来的是master分支，那么修改路径就是<code>/live2d-widget-master/xxx.js</code>，<code>autoload.js</code>的最后一个函数initWidget(“/live2d-widget-master/“, “<a href="https://api.fghrsh.net/live2d”" target="_blank" rel="noopener">https://api.fghrsh.net/live2d”</a>); 中的第二个参数不要变，是一个后台api。我选择将文件夹重命名为“live2d”，因此按照如上方式修改。</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>在<code>/themes/next/layout/_layout.swing</code>中,<code>&lt;body&gt;</code>标签中新增如下内容，<code>########</code>为你自己的github账号：</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://########.github.io/live2d/autoload.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
+
+<p><code>&lt;head&gt;</code>标签中新增如下内容：一定一定要加上依赖！！！！！</p>
+<div class="hljs"><pre><code class="hljs undefined">&lt;script <span class="hljs-attribute">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"</span>&gt;&lt;/script&gt;
+&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"</span>/&gt;</code></pre></div>
+
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>在主题配置文件<code>_config.yml</code> 中,新增如下内容：</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">live2d:</span>
+<span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></code></pre></div>
+
+<p>想修改看板娘大小、位置、格式、文本内容等，可查看并修改 <code>waifu-tips.js</code> 、 <code>waifu-tips.json</code> 和 <code>waifu.css</code>。</p>
+<p>最终效果如图：<br><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/KBN.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt title="最终效果"><br>后端API地址：<br><a href="https://github.com/fghrsh/live2d_api" target="_blank" rel="noopener">https://github.com/fghrsh/live2d_api</a></p>
+<p>特别提醒！！！！！！<br>根据原作者反映，2018年十月，使用人数过多曾让该api暂时停止提供服务，更稳妥的方法是自建api。</p>
+<hr>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/爱学习/">爱学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="../tags/站长必备/">站长必备</a>
+                    
+                      <a class="hover-with-bg" href="../tags/Live2D/">Live2D</a>
+                    
+                      <a class="hover-with-bg" href="../tags/萌萌哒/">萌萌哒</a>
+                    
+                      <a class="hover-with-bg" href="../tags/看板娘/">看板娘</a>
+                    
+                  
+                  
+                  </div>
+                  
+
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="90e223e4.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Valine：一款极简评论系统的安装到升级</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="58d8c071.html">
+                        <span class="hidden-mobile">【致歉】全能音乐搜索Bug修复</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+<div id="hpp_comment"><div class="grid__item theme-1">
+				<a href="javascript:setTimeout('onclock();',1500);">
+					<button class="action"></button>
+					<button class="particles-button">点击加载评论</button>
+					</a>
+				</div></div>
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.css" /> 
+<script src="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script>
+
+  <script>
+  function onclock(){
+new hpp_comment({
+id:"hpp_comment",
+envId:"blog-comment-6g821sad74db776c",
+region:"ap-shanghai",
+ver:"1.2.1-beta",
+domain: "blogadmin.cyfan.top",
+path: 'window.location.pathname',
+cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",
+adminmail: '15359b6f2fe293366156959c8ab9476f',
+friendmail: ['4627388bbef109f3345048262a595cd9','793c16e466509caf093e182eabecb7b4'],
+guestcolor: '#8080809e',
+friendcolor: 'rgb(102 175 233 / 60%)',
+admincolor: '#ffd700',
+timelimit: 200,
+mode:1
+})
+  }
+  </script>
+  <style>
+.el-input-group__prepend{
+border: 1px solid transparent!important;
+}
+.el-textarea__inner{
+border: 1px solid transparent!important;
+}
+.el-input__inner{
+border: 1px solid transparent!important;
+}
+	
+.grid__item {	
+	position: relative;	
+	display: grid;	
+	grid-template-columns: 100%;	
+	grid-template-rows: 100%;	
+	justify-items: center;	
+	overflow: hidden;	
+	padding: 4rem 1.5rem;	
+	background: var(--color-item-bg);	
+}	
+.grid__item-title {	
+	font-size: 0.85rem;	
+	color: var(--color-item-title);	
+	align-self: flex-start;	
+	margin: 0;	
+}	
+.action {	
+	position: absolute;	
+	top: 0;	
+	right: 0;	
+	background: none;	
+	margin: 2rem;	
+	color: var(--color-action);	
+	border: 0;	
+	padding: 0;	
+	opacity: 0;	
+	pointer-events: none;	
+}	
+.action:focus {	
+	outline: none;	
+}	
+.particles-button {	
+	-webkit-touch-callout: none;	
+	-webkit-user-select: none;	
+	-khtml-user-select: none;	
+	-moz-user-select: none;	
+	-ms-user-select: none;	
+	user-select: none;	
+	position: relative;	
+	border-radius: 5px;	
+	border-radius: var(--radius-button);	
+	background: var(--color-button-bg);	
+	color: var(--color-button-text);	
+	border: 0;	
+	border: var(--border-button);	
+	margin: 0;	
+	padding: 1.5rem 3rem;	
+	padding: var(--button-padding);	
+}	
+.particles-button:focus {	
+	outline: none;	
+}	
+.no-js .particles-button {	
+	grid-area: 1 / 1 / 2 / 2;	
+}	
+.particles {	
+	position: relative;	
+	grid-area: 1 / 1 / 2 / 2;	
+}	
+.particles-canvas {	
+	position: absolute;	
+	pointer-events: none;	
+	top: 50%;	
+	left: 50%;	
+	transform: translate3d(-50%,-50%,0);	
+}	
+.particles-wrapper {	
+	position: relative;	
+	display: inline-block;	
+    overflow: hidden;	
+}	
+.theme-1 {	
+	--color-action: var(--board-bg-color);	
+	--color-button-bg: var(--text-color);	
+	--color-button-text: #fff;	
+	--button-padding: 1.5rem 3rem;	
+	--radius-button: 5px;	
+	--border-button: 0;	
+}
+</style>
+ 
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a>&&<a href="https://vercel.com">Vercel</a></br><a class="nav-link" href="javascript:lush(window.location.pathname);"> <b>此页面的JSDelivr托管版</a></b><!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+	<p id="showsectime"></p>
+<a href="https://blogadmin.cyfan.top/hpp/admin">	
+	<p id="bloggeractivetime"></p></a>
+	<script type="text/javascript">
+document.onreadystatechange = function(){
+    if(document.readyState == "complete"){
+        var ele1 = document.createElement("script");
+        ele1.src = "https://blogadmin.cyfan.top/hpp/api/getblogeractive";
+        document.body.appendChild(ele1);
+        var ele2 = document.createElement("script");
+        ele2.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        document.body.appendChild(ele2);
+     }
+}  
+</script>
+<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn/js/retime.min.js" defer>
+</script>
+<p>
+当前CDN节点: <span id="cdn">【未知】</span> |
+你的ip: <span id="ip">【未知】</span> |
+你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn@c84006e/js/getinfo.min.js"></script></p></div>
+    
+
+      <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><!--这两个不能合并-->
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script>
+<script>
+  window.post_views_api = "https://ga-hit.chenyfan.xyz/api/ga";
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js"></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Live2D：为你的hexo博客添加萌萌哒看板娘&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js" ></script>
+  <script>
+    var path = "https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+<script>
+  window.ga_tid = 'UA-179044379-1';
+  (function() {
+    var dga = document.createElement("script");
+    dga.src = "https://rmt.dogedoge.com/fetch/public/ga.js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(dga, s);
+  })();
+</script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<script>
+  window.FPConfig = {
+    delay: 0,    // 浏览器空闲多少秒后开始预加载
+    ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+    maxRPS: 3,    // 每秒最大加载数
+    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+    // 上方数值未默认值
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script>
+// Check that service workers are registered
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
