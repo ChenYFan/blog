@@ -184,4 +184,12 @@ hash这一步逃不掉,用`DELETE`形式访问`RESTURL`,返回`200`说明删除�
 
 并且什么迁入迁出麻烦、token容易忘记等等问题
 
-最最最早版本中,我是打算纯
+最最最早版本中,我是打算纯静态实现文章编辑和更改的，但很快我就遇到了和VBlog一样的缺陷，这逼使我切换了平台。
+
+好诶，既然直连效果那么差，我们就选择中继。利用服务器中继我们首先排除【用Hexo基本就是贪无服务器】。目前比较流行的无服务器平台有Heroku、CloudFlareWorker和Vercel，Heroku支持了多种服务器语言，CFWorker因为JSProxy在国内意外走红，Vercel在国内拥有较好的运营商线路。
+
+我们第一个排除heroku，冷启动唤醒需要10s，并且无法绑定域名【这里其实也可用worker反代（bushi】。目光看向worker和vercel，又有一个新问题出来，自定义配置存哪？![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e6ec1d528.jpg)
+
+存变量里当然是个好主意，但是很难修改。外部存储也不是什么大问题，mongodb、firebase、~~Leancloud~~都可以上手，但我个人终究不喜欢为了查询而发送子请求。![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/194.jpg)
+
+非常赞的是。去年11月
