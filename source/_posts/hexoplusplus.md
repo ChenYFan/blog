@@ -376,14 +376,14 @@ return new Response(re_html, {
 > 这个地方在群里我一直和2X吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫`fetch_bfs`的函数![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg)
 
 ```js
-async function fetch_bfs(arr, url, getinit) {
+async function fetch_bfs(arr, url, getinit) { //开始深搜
           try {
-            const hpp_getlist = await JSON.parse(await (await fetch(url, hpp_githubgetdocinit)).text())
-            for (var i = 0; i < getJsonLength(hpp_getlist); i++) {
-              if (hpp_getlist[i]["type"] != "dir") {
-                arr.push(hpp_getlist[i])
-              } else {
-                await fetch_bfs(arr, hpp_getlist[i]["_links"]["self"], getinit)
+            const hpp_getlist = await JSON.parse(await (await fetch(url, hpp_githubgetdocinit)).text()) //拉取github列表
+            for (var i = 0; i < getJsonLength(hpp_getlist); i++) { //循环查找
+              if (hpp_getlist[i]["type"] != "dir") { //如果不是文件夹
+                arr.push(hpp_getlist[i])//弹到目标数组末尾
+              } else { //否则
+                await fetch_bfs(arr, hpp_getlist[i]["_links"]["self"], getinit) //进入该文件夹深搜
               }
             }
             return arr;
@@ -393,7 +393,28 @@ async function fetch_bfs(arr, url, getinit) {
 
 代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span>
 
-用`try`的原因是因为莫些人没有草稿,不用try的话这个函数就会炸
+用`try`的原因是因为莫些人没有草稿，不用try的话这个函数就会炸，没草稿返回空数组。
+
+然后就试试呗，以获取草稿列表为例：
+
+```js
+if (path == "/hpp/admin/api/get_draftlist") { //判断路径
+          let hpp_doc_draft_list_index = await KVNAME.get("hpp_doc_draft_list_index") //获取索引
+          if (hpp_doc_draft_list_index === null) {//如果没有索引
+            const filepath = githubdocdraftpath.substr(0, (githubdocdraftpath).length - 1) //分离路径
+            const url = `https://api.github.com/repos/${hpp_githubdocusername}/${hpp_githubdocrepo}/contents${filepath}?ref=${hpp_githubdocbranch}` //拼接RESTURL
+            hpp_doc_draft_list_index = await JSON.stringify(await fetch_bfs([], url, hpp_githubgetdocinit)) //开始深搜
+            await KVNAME.put("hpp_doc_draft_list_index", hpp_doc_draft_list_index) //保存索引
+          }
+          return new Response(hpp_doc_draft_list_index, { //返回路径
+            headers: {
+              "content-type": "application/json;charset=UTF-8",
+              "Access-Control-Allow-Origin": hpp_cors
+            }
+          })
+}
+```
+
 
 
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
