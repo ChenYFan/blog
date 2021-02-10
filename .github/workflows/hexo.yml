@@ -17,9 +17,9 @@ jobs:
 
     - name: Install
       run: |
-        npm i -g
-        hexo g
-        curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token={$BD_TOKEN}"
+        npm i
+        npm run build
+        curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
         rm -rf ./public/CNAME
         echo "blog.cyfan.top" >> ./public/CNAME
         
