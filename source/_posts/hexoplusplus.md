@@ -393,5 +393,7 @@ async function fetch_bfs(arr, url, getinit) {
 
 代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span>
 
+用`try`的原因是因为莫些人没有草稿,不用try的话这个函数就会炸
+
 
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
