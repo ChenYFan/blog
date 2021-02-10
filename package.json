@@ -35,7 +35,6 @@
     "xml-parser": "^1.2.1",
     "hexo-baidu-url-submit" : "0.0.6",
     "hexo-abbrlink": "2.2.1",
-    "hexo-neat": "1.0.9",
     "hexo-generator-feed": "3.0.0"
   },
   "devDependencies": {
