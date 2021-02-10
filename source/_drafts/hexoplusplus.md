@@ -393,46 +393,7 @@ async function fetch_bfs(arr, url, getinit) {
 
 代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span>
 
-用`try`的原因是因为莫些人没有草稿,不用try的话这个函数就会炸~~或者莫些人没有文章~~
-
-那么使用的时候调用即可：
-
-
-
-
-
-
-
-
-```js
-if (path.startsWith("/hpp/admin/api/adddoc/")) {
-          const file = await request.text() //拉取post上来的数据
-          const filename = path.substr(("/hpp/admin/api/adddoc/").length) //获得路径后面的文件名,用split容易出现异常
-          const url = `https://api.github.com/repos/${hpp_githubdocusername}/${hpp_githubdocrepo}/contents${githubdocpath}${filename}?ref=${hpp_githubdocbranch}` //拼接URL
-          const hpp_sha = (JSON.parse(await (await fetch(url, hpp_githubgetdocinit)).text())).sha //通过fetch获得hash
-          const hpp_body = {
-            branch: hpp_githubdocbranch, message: `Upload from ${hpp_ver} By ${hpp_githubdocusername}`, content: file, sha: hpp_sha
-          } //拼接body
-          const hpp_docputinit = {
-            body: JSON.stringify(hpp_body),
-            method: "PUT",
-            headers: {
-              "content-type": "application/json;charset=UTF-8",
-              "user-agent": hpp_ver,
-              "Authorization": "token " + hpp_githubdoctoken
-            }
-          }//拼接自定义获取
-          const hpp_r = await fetch(url, hpp_docputinit) //发送请求
-          const hpp_r_s = await hpp_r.status //获得状态码
-          if (hpp_r_s == 200 || hpp_r_s == 201) {
-            if (hpp_r_s == 201) { await KVNAME.delete("hpp_doc_list_index") } //删除索引
-            return new Response('Update Success', { status: hpp_r_s }) //返回成功
-          } else {
-            return new Response('Fail To Update', { status: hpp_r_s }) //返回失败
-          }
-
-}
-```
+用`try`的原因是因为莫些人没有草稿,不用try的话这个函数就会炸
 
 
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
