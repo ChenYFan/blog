@@ -433,7 +433,7 @@ if (path == "/hpp/admin/api/get_draftlist") { //判断路径
         ~TEST.md
 ```
 
-那么CloudFlare会这样搜索:
+那么CloudFlareWorker会这样搜索:
 
 ![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612937339000.jpg)
 
@@ -443,6 +443,14 @@ if (path == "/hpp/admin/api/get_draftlist") { //判断路径
 ![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612937329000.jpg)
 
 【考虑到大多数人都没有建立文件夹的习惯，本来bfs的效率会更高的(´இ皿இ｀)】
+
+【但其实两者子请求数目是一样的】
+
+我们去CloudFlare发一个请求啊，结果非常Amazing啊：
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612938453000.gif)
+
+dfs完美解决嵌套问题。
 
 【先咕咕咕，省得忘记这篇文章了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.8/5896e9710dfd5.jpg)】
 
