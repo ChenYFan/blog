@@ -137,7 +137,7 @@ navbar:
     	{ key: '留言板', link: '/com/'},
     	{ key: '随口胡说', link: '/随口胡说/ '},
     	{ key: '关于', link: '/about/'},
-{ key: '后台', link: 'https://blogadmin.cyfan.top/hpp/admin/dash/home'}
+      { key: '后台', link: 'https://blogadmin.cyfan.top/hpp/admin/dash/home'}
       ]
     }
     - { key: '朋友们', link: '/links/'}
