@@ -7,7 +7,7 @@ categories:
   - 好方法
 des: Worker是什么?开发者怎么使用Worker做的更好?难道Worker只能用JSproxy吗?作为HexoPlusPlus开发者,我想和大家谈谈我从一个小白开始慢慢写一个基于CloudFlareWorker程序的Hexo后台管理
 key: CloudFlare,CloudFlareWorker,Hexo,HexoPlus,云写作
-date: 2021-2-5 15:40
+date: 2021-2-11 15:40
 index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612929292000.jpg
 banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1612929292000.jpg
 ---
