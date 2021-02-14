@@ -459,13 +459,6 @@ links:
     domain: blog.jimmyho.net
     }
     - {        
-    title: 'godxiaolong',
-    link: 'https://muyiio.com',
-    intro: 智障程序猿,
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185639.jpg?q=45',
-    domain: muyiio.com
-    }
-    - {        
     title: 'WINKILLER',
     link: 'https://www.winkiller.cf',
     intro: 驱动爱好者集结地,
@@ -513,20 +506,6 @@ links:
     intro: 立即行动吧，未来要自己争取,
     image: 'https://rmt.dogedoge.com/fetch/Flexiston/storage/ava.jpg?q=45',
     domain: flesx.cn
-    }
-    - {        
-    title: 'Tajoy‘s blog',
-    link: 'https://tajoy.net/',
-    intro: 一个不会摄影的程序猿，不是一个好的艺术家。,
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190002.jpeg?q=45',
-    domain: tajoy.net
-    }
-    - {        
-    title: '布丁の基地',
-    link: 'https://longyuan.store/',
-    intro: 一个有梦想的咸鱼,
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926190029.png?q=45',
-    domain: longyuan.store
     }
     - {        
     title: 'QWQAQ',
