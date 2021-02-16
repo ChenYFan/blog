@@ -258,13 +258,15 @@ return new Response()
 return fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')
 ```
 
-如果要拉回来做运算，那么要加`await`
+如果要拉回来做运算，那么要加`await`，毕竟`fetch`返回的是`promise`
 
 ```js
 const res = await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')
 ```
 
 CFWorker能用`.text()`函数和`.json()`函数处理返回的内容：
+
+> 这地方我偷懒了,本来应该用`then`来获取`promise`的值,但是个人习惯了`await`嵌套写法,所以这地方写的其实不标准,轻喷![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/285.jpg)
 
 ```js
 const first_name = await JSON.parse(await(await fetch('https://api.github.com/repos/ChenYFan/blog/contents/source/_posts')).text())[0]["name"]
