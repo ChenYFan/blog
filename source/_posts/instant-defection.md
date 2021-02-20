@@ -1,4 +1,4 @@
-title: 瞬间叛逃！直接切到CloudFlarePage
+title: 光速叛逃！直接切到CloudFlarePage
 author: CYF
 tags:
   - Hexo
