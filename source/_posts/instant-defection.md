@@ -12,9 +12,10 @@ key: CloudFlare,CloudFlarePage,Hexo,Hexo
 date: 2021-2-20 9:24
 index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
 banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
+abbrlink: 363f2ff1
 ---
 
-众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！
+众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！可万万没想到，简单的迁移过程会出现如此问题
 
 <!--more-->
 
