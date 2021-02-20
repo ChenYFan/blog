@@ -1,4 +1,4 @@
-title: 光速叛逃！直接切到CloudFlarePage
+title: 失败的光速叛逃！直接切到CloudFlarePage
 author: CYF
 tags:
   - Hexo
@@ -128,3 +128,49 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 - 总大小：25MB【图片啥的都扔图床，其实也就5MB】
 
 - 带宽：无限制【！！！】
+
+# 然后我切回来了
+
+高高兴兴的搞完了CFPage部署，~~水了这篇文章~~去吃饭。吃完饭后回来一看谷歌统计，好家伙404的怎么这么多。
+
+还好之前的GithubPage没有删掉，去bnxb赶紧切了回来。
+
+~~完了我也经历了和Sukka大佬一样的问题~~
+
+问题很容易定位，所有的404来自cfpage而非vercel。
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613795675000.png)
+
+首先是Vercel，开代理的情况下国外访问均正确解析至vercel，可以在`x-vercel`头里看出来
+
+地址是`https://blog.cyfan.top/p/52382e42.html`，相应代码是`200`
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613795874000.jpg)
+
+关闭代理，将自动选择CloudFlareCDN+GithubPage，可以从`x-github-request-id`看出
+
+地址是`https://blog.cyfan.top/p/52382e42.html`，相应代码是`200`
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796163000.jpg)
+
+然后是有问题的CFPage，可以在`x-server`头里看出来
+
+地址是`https://blog-9una.pages.dev/p/52382e42.html`，相应代码是`308`**跳转**，跳向`https://blog-9una.pages.dev/p/52382e42`，**CFPage会把末尾.html抹掉**
+
+抹掉就罢了,结果在vercel这边又出问题
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796374000.jpg)
+
+但是最奇葩的是,githubpage是允许不带html裸访
+
+![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796456000.jpg)
+
+这就是整个经过,CFPage必须抹掉后缀,GithubPage保持无所谓,Vercel必须不能抹掉
+
+# 解决办法
+
+先从自己入手，CFPage和vercel不能共留，干掉vercel？好主意，毕竟国内cf节点有[短命](https://zmhhh.com)香港节点中继，国内访问并无大碍，但是有个大问题梗在面前，评论怎么办，之前的收录怎么办，首页链接不一致怎么办？
+
+我又不想抛弃CFpage，于是试图和Sukka大佬针对中文解码一样来个拯救计划，结果发现，CFPage不开源......
+
+的，切回Github+CFCDN，这一早上的折腾白费了( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃
