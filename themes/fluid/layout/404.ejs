@@ -18,8 +18,9 @@ page.banner_mask_alpha = theme.page404.banner_mask_alpha
 <script>
 swal({
   title: "非常抱歉！qwq",
-  text: "由于2020/9/22更换了文章永久链接，部分搜索引擎没有更新，请点击右上角放大镜重新输入关键词搜索，为您带来不便请谅解！【热门关键词：OneIndex、onedrive-cf-index、gdindex、picgo、ipfs gateway api、图床、图床的千层套路】",
+  text: "由于2020/9/22更换了文章永久链接，部分搜索引擎没有更新，请点击右上角放大镜重新输入关键词搜索，为您带来不便请谅解！【热门关键词：OneIndex、onedrive-cf-index、gdindex、picgo、ipfs gateway api、图床、图床的千层套路】五秒钟后将重定向至主页",
   icon: "warning",
-  button: "您能原谅我吗？QvQ",
-});
+  buttons: false,
+  timer: 3000
+}).then(() => redirect())
 </script>
