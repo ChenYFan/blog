@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="前言：转载警告该特效转载http://mlldxe.cn/archives/541,本来是仅仅支持wordpress的,但顺手被我抠出来放回javascript中了。(●’◡’●)好有成就感呢！绚烂警告该代码效果及其绚烂,注意安全!好吧好吧,乱解刨别人代码也是不对的.代码:原生代码:var sw ="><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床"><meta name="author" content="CYF"><title>JS特效：一个打字绚烂烟花的特效 || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/chenyfan/cdn/assets/blog/bootstrap.min.css,npm/github-markdown-css@4.0.0/github-markdown.min.css,gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css,npm/highlight.js@10.0.0/styles/vs2015.css,gh/ChenYFan/blog@gh-pages/css/main.css,gh/ChenYFan/CDN/assets/blog/font_1749284_6peoq002giu.min.css,gh/ChenYFan/cdn/assets/blog/font_1736178_pjno9b9zyxs.min.css"><script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js"></script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><link href="https://artalk-mini.cyfan.top/index.php" rel="preconnect" crossorigin><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="../index.html" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../archives/">归档 </a><a class="dropdown-item" href="../categories/">分类 </a><a class="dropdown-item" href="../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../com/">留言板 </a><a class="dropdown-item" href="../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../about/">关于 </a><a class="dropdown-item" href="https://admin.cyfan.top/hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<svg t="1601864448019" class="icon" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/3.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2019-07-25 16:05" pubdate>2019年7月25日 下午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.9k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 36 分钟 </span><span id="post-meta-views"><i class="iconfont icon-rss"></i> <span id="pv-counter">loading</span> <span>阅读量</span></span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">JS特效：一个打字绚烂烟花的特效</h1><div class="markdown-body" id="post-body"><h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><blockquote><p><strong>转载警告</strong><br>该特效转载<a href="http://mlldxe.cn/archives/541" target="_blank" rel="noopener">http://mlldxe.cn/archives/541</a>,本来是仅仅支持wordpress的,但顺手被我抠出来放回javascript中了。(●’◡’●)好有成就感呢！</p></blockquote><blockquote><p><strong>绚烂警告</strong><br>该代码效果及其绚烂,注意安全!</p></blockquote><p>好吧好吧,乱解刨别人代码也是不对的.</p><h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h1><h2 id="原生代码"><a href="#原生代码" class="headerlink" title="原生代码:"></a>原生代码:</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
+                <span class="hljs-built_in">module</span>.exports = factory();
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
+                define([], factory);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
+                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
+            <span class="hljs-keyword">else</span>
+                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
+        &#125;
+    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
+                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
+                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
+                        <span class="hljs-attr">exports</span>: &#123;&#125;,
+                        <span class="hljs-attr">id</span>: moduleId,
+                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
+                    &#125;;
+                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
+                &#125;
+                __webpack_require__.m = modules;
+                __webpack_require__.c = installedModules;
+                __webpack_require__.p = <span class="hljs-string">""</span>;
+                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
+            &#125;
+        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
+<span class="hljs-meta">                'use strict'</span>;
+                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
+                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
+                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
+                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
+                &#125;);
+                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
+                <span class="hljs-keyword">var</span> particles = [];
+                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
+                POWERMODE.shake = <span class="hljs-literal">true</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
+                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
+                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
+                    <span class="hljs-keyword">var</span> bcr;
+                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
+                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
+                        bcr = el.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
+                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(el)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
+                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
+                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
+                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
+                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
+                            startNode = startNode.parentNode
+                        &#125;
+                        bcr = range.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: bcr.left,
+                            <span class="hljs-attr">y</span>: bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(startNode)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: x,
+                        <span class="hljs-attr">y</span>: y,
+                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
+                        <span class="hljs-attr">color</span>: color,
+                        <span class="hljs-attr">velocity</span>: &#123;
+                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
+                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
+                        &#125;
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
+                    &#123;
+                        <span class="hljs-keyword">var</span> caret = getCaret();
+                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
+                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
+                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
+                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
+                        &#125;
+                    &#125;
+                    &#123;
+                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
+                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
+                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
+                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
+                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
+                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
+                            &#125;, <span class="hljs-number">75</span>)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">if</span> (!rendering) &#123;
+                        requestAnimationFrame(loop)
+                    &#125;
+                &#125;
+                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
+                    rendering = <span class="hljs-literal">true</span>;
+                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
+                        <span class="hljs-keyword">var</span> particle = particles[i];
+                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
+                            <span class="hljs-keyword">continue</span>;
+                        particle.velocity.y += <span class="hljs-number">0.075</span>;
+                        particle.x += particle.velocity.x;
+                        particle.y += particle.velocity.y;
+                        particle.alpha *= <span class="hljs-number">0.96</span>;
+                        context.globalAlpha = particle.alpha;
+                        context.fillStyle = particle.color;
+                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+                        rendered = <span class="hljs-literal">true</span>
+                    &#125;
+                    <span class="hljs-keyword">if</span> (rendered) &#123;
+                        requestAnimationFrame(loop)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        rendering = <span class="hljs-literal">false</span>
+                    &#125;
+                &#125;
+                <span class="hljs-built_in">module</span>.exports = POWERMODE
+            &#125;
+        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
+                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
+                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
+                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
+                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
+                            <span class="hljs-keyword">if</span> (el) &#123;
+                                el.parentNode.removeChild(el)
+                            &#125;
+                        &#125;
+                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
+                        <span class="hljs-built_in">document</span>.body.appendChild(div);
+                        <span class="hljs-keyword">var</span> style = div.style;
+                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
+                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
+                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
+                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
+                        style.position = <span class="hljs-string">'absolute'</span>;
+                        <span class="hljs-keyword">if</span> (!debug)
+                            style.visibility = <span class="hljs-string">'hidden'</span>;
+                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
+                            style[prop] = computed[prop]
+                        &#125;);
+                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
+                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
+                                style.overflowY = <span class="hljs-string">'scroll'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            style.overflow = <span class="hljs-string">'hidden'</span>
+                        &#125;
+                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
+                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
+                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
+                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
+                        div.appendChild(span);
+                        <span class="hljs-keyword">var</span> coordinates = &#123;
+                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
+                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
+                        &#125;;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            <span class="hljs-built_in">document</span>.body.removeChild(div)
+                        &#125;
+                        <span class="hljs-keyword">return</span> coordinates
+                    &#125;
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
+                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
+                    &#125;
+                &#125;())
+            &#125;
+        )])
+    &#125;)
+&#125;
+
+    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+        POWERMODE.colorful=<span class="hljs-literal">true</span>;
+        POWERMODE.shake=<span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+    &#125;</code></pre></div><h2 id="Tampermonkey用户有福了"><a href="#Tampermonkey用户有福了" class="headerlink" title="Tampermonkey用户有福了!"></a>Tampermonkey用户有福了!</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-comment">// ==UserScript==</span>
+<span class="hljs-comment">// @name         打字敲击特效</span>
+<span class="hljs-comment">// @namespace    /</span>
+<span class="hljs-comment">// @version      0.1</span>
+<span class="hljs-comment">// @description  ?</span>
+<span class="hljs-comment">// @author       CYF</span>
+<span class="hljs-comment">// @match        *://*/*</span>
+<span class="hljs-comment">// @grant        none</span>
+<span class="hljs-comment">// ==/UserScript==</span>
+
+<span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
+                <span class="hljs-built_in">module</span>.exports = factory();
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
+                define([], factory);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
+                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
+            <span class="hljs-keyword">else</span>
+                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
+        &#125;
+    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
+                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
+                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
+                        <span class="hljs-attr">exports</span>: &#123;&#125;,
+                        <span class="hljs-attr">id</span>: moduleId,
+                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
+                    &#125;;
+                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
+                &#125;
+                __webpack_require__.m = modules;
+                __webpack_require__.c = installedModules;
+                __webpack_require__.p = <span class="hljs-string">""</span>;
+                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
+            &#125;
+        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
+<span class="hljs-meta">                'use strict'</span>;
+                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
+                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
+                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
+                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
+                &#125;);
+                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
+                <span class="hljs-keyword">var</span> particles = [];
+                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
+                POWERMODE.shake = <span class="hljs-literal">true</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
+                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
+                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
+                    <span class="hljs-keyword">var</span> bcr;
+                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
+                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
+                        bcr = el.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
+                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(el)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
+                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
+                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
+                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
+                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
+                            startNode = startNode.parentNode
+                        &#125;
+                        bcr = range.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: bcr.left,
+                            <span class="hljs-attr">y</span>: bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(startNode)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: x,
+                        <span class="hljs-attr">y</span>: y,
+                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
+                        <span class="hljs-attr">color</span>: color,
+                        <span class="hljs-attr">velocity</span>: &#123;
+                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
+                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
+                        &#125;
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
+                    &#123;
+                        <span class="hljs-keyword">var</span> caret = getCaret();
+                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
+                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
+                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
+                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
+                        &#125;
+                    &#125;
+                    &#123;
+                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
+                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
+                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
+                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
+                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
+                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
+                            &#125;, <span class="hljs-number">75</span>)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">if</span> (!rendering) &#123;
+                        requestAnimationFrame(loop)
+                    &#125;
+                &#125;
+                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
+                    rendering = <span class="hljs-literal">true</span>;
+                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
+                        <span class="hljs-keyword">var</span> particle = particles[i];
+                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
+                            <span class="hljs-keyword">continue</span>;
+                        particle.velocity.y += <span class="hljs-number">0.075</span>;
+                        particle.x += particle.velocity.x;
+                        particle.y += particle.velocity.y;
+                        particle.alpha *= <span class="hljs-number">0.96</span>;
+                        context.globalAlpha = particle.alpha;
+                        context.fillStyle = particle.color;
+                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+                        rendered = <span class="hljs-literal">true</span>
+                    &#125;
+                    <span class="hljs-keyword">if</span> (rendered) &#123;
+                        requestAnimationFrame(loop)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        rendering = <span class="hljs-literal">false</span>
+                    &#125;
+                &#125;
+                <span class="hljs-built_in">module</span>.exports = POWERMODE
+            &#125;
+        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
+                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
+                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
+                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
+                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
+                            <span class="hljs-keyword">if</span> (el) &#123;
+                                el.parentNode.removeChild(el)
+                            &#125;
+                        &#125;
+                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
+                        <span class="hljs-built_in">document</span>.body.appendChild(div);
+                        <span class="hljs-keyword">var</span> style = div.style;
+                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
+                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
+                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
+                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
+                        style.position = <span class="hljs-string">'absolute'</span>;
+                        <span class="hljs-keyword">if</span> (!debug)
+                            style.visibility = <span class="hljs-string">'hidden'</span>;
+                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
+                            style[prop] = computed[prop]
+                        &#125;);
+                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
+                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
+                                style.overflowY = <span class="hljs-string">'scroll'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            style.overflow = <span class="hljs-string">'hidden'</span>
+                        &#125;
+                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
+                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
+                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
+                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
+                        div.appendChild(span);
+                        <span class="hljs-keyword">var</span> coordinates = &#123;
+                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
+                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
+                        &#125;;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            <span class="hljs-built_in">document</span>.body.removeChild(div)
+                        &#125;
+                        <span class="hljs-keyword">return</span> coordinates
+                    &#125;
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
+                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
+                    &#125;
+                &#125;())
+            &#125;
+        )])
+    &#125;)
+&#125;
+
+    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+        POWERMODE.colorful=<span class="hljs-literal">true</span>;
+        POWERMODE.shake=<span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+    &#125;</code></pre></div><h1 id="修改提示"><a href="#修改提示" class="headerlink" title="修改提示:"></a>修改提示:</h1><p>最后几行:</p><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+    POWERMODE.colorful=<span class="hljs-literal">true</span>; 
+    POWERMODE.shake=<span class="hljs-literal">true</span>;
+    <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+&#125;</code></pre></div><p>中<code>POWERMODE.colorful=true;</code>指是否开启多彩颜色。而<code>POWERMODE.shake=true;</code>指是否开启屏幕震荡.<br>默认全部开启.</p><hr></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../categories/屌代码/">屌代码</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../tags/JavaScript/">JavaScript</a> <a class="hover-with-bg" href="../tags/特效/">特效</a> <a class="hover-with-bg" href="../tags/Tampermonkey/">Tampermonkey</a> <a class="hover-with-bg" href="../tags/站长必备/">站长必备</a> <a class="hover-with-bg" href="../tags/萌哒哒/">萌哒哒</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="6708e52c"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">Github无法注册：Unable to verify your captcha response</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="6290e861"><span class="hidden-mobile">MarkDown语法详解（高级版）</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="hpp_comment"><div class="grid__item theme-1"><a href="javascript:setTimeout('onclock();',1500);"><button class="action"></button> <button class="particles-button">点击加载评论</button></a></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.css"><script src="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.js,gh/ChenYFan/CDN@master/js/button/anime.min.js,gh/ChenYFan/CDN@master/js/button/particles.js,gh/ChenYFan/CDN@master/js/button/demo.js"></script><script>function onclock(){new hpp_comment({id:"hpp_comment",envId:"blog-comment-6g821sad74db776c",region:"ap-shanghai",ver:"1.2.1-beta",domain:"admin.cyfan.top",path:"window.location.pathname",cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",adminmail:"15359b6f2fe293366156959c8ab9476f",friendmail:["4627388bbef109f3345048262a595cd9","793c16e466509caf093e182eabecb7b4"],guestcolor:"#8080809e",friendcolor:"rgb(102 175 233 / 60%)",admincolor:"#ffd700",timelimit:200,mode:1})}!function(){setTimeout(function(n){var a;"test"!==n&&(a=window.setTimeout,window.setTimeout=function(n,t){var e=Array.prototype.slice.call(arguments,2);return a(n instanceof Function?function(){n.apply(null,e)}:n,t)})},0,"test");var t=setInterval(function(n){var a;clearInterval(t),"test"!==n&&(a=window.setInterval,window.setInterval=function(n,t){var e=Array.prototype.slice.call(arguments,2);return a(n instanceof Function?function(){n.apply(null,e)}:n,t)})},0,"test")}()</script><style>.el-input-group__prepend{border:1px solid transparent!important}.el-textarea__inner{border:1px solid transparent!important}.el-input__inner{border:1px solid transparent!important}.grid__item{position:relative;display:grid;grid-template-columns:100%;grid-template-rows:100%;justify-items:center;overflow:hidden;padding:4rem 1.5rem;background:var(--color-item-bg)}.grid__item-title{font-size:.85rem;color:var(--color-item-title);align-self:flex-start;margin:0}.action{position:absolute;top:0;right:0;background:0 0;margin:2rem;color:var(--color-action);border:0;padding:0;opacity:0;pointer-events:none}.action:focus{outline:0}.particles-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;border-radius:5px;border-radius:var(--radius-button);background:var(--color-button-bg);color:var(--color-button-text);border:0;border:var(--border-button);margin:0;padding:1.5rem 3rem;padding:var(--button-padding)}.particles-button:focus{outline:0}.no-js .particles-button{grid-area:1/1/2/2}.particles{position:relative;grid-area:1/1/2/2}.particles-canvas{position:absolute;pointer-events:none;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.particles-wrapper{position:relative;display:inline-block;overflow:hidden}.theme-1{--color-action:var(--board-bg-color);--color-button-bg:var(--text-color);--color-button-text:#fff;--button-padding:1.5rem 3rem;--radius-button:5px;--border-button:0}</style><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/AP.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a>&&<a href="https://vercel.com">Vercel</a><br><a class="nav-link" href="javascript:lush(window.location.pathname);"><b>此页面的JSDelivr托管版</b></a><p id="showsectime"></p><a href="https://admin.cyfan.top/hpp/admin"><p id="bloggeractivetime"></p></a><script type="text/javascript">document.onreadystatechange=function(){var e;"complete"==document.readyState&&((e=document.createElement("script")).src="https://admin.cyfan.top/hpp/api/getblogeractive",document.body.appendChild(e),(e=document.createElement("script")).src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(e))}</script><script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn/js/retime.min.js" defer></script><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn@latest/js/getinfo.min.js"></script><p></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div></div></footer><script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script><script>window.post_views_api="https://ga-hit.chenyfan.xyz/api/ga"</script><script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js"></script><script src="https://cdn.jsdelivr.net/npm/tocbot@4.11.1/dist/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","JS特效：一个打字绚烂烟花的特效&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js"></script><script>var path="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var a,o=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),a="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t;a&&a(),t=e,(e=r.createElement("div")).className="heart",o.push({el:e,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(e)},function e(){for(var t=0;t<o.length;t++)o[t].alpha<=0?(r.body.removeChild(o[t].el),o.splice(t,1)):(o[t].y--,o[t].scale+=.004,o[t].alpha-=.013,o[t].el.style.cssText="left:"+o[t].x+"px;top:"+o[t].y+"px;opacity:"+o[t].alpha+";transform:scale("+o[t].scale+","+o[t].scale+") rotate(45deg);background:"+o[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.ga_tid="UA-179044379-1",function(){var e=document.createElement("script");e.src="https://rmt.dogedoge.com/fetch/public/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:3,hoverDelay:50}</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script>"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js")})</script><script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",model:{jsonPath:"https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/live2d-widget-model-z16/assets/z16.model.json"},display:{position:"left",width:150,height:300},mobile:{show:!1},log:!1,tagMode:!1})</script></body></html>
