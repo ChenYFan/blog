@@ -1,4 +1,4 @@
-title: 失败的光速叛逃！直接切到CloudFlarePage
+title: 失败的光速叛逃！CloudFlarePage初体验
 author: CYF
 tags:
   - Hexo
