@@ -108,6 +108,4 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 
 真的要说快多少，因为大部分静态资源切jsd上，所有经过cf的只有一个单html，至少我在国内大环境下，我还没体会出100ms能快多少(´இ皿இ｀)
 
-另外CloudFlarePage用的证书很奇怪，可能是为了CNAME兼容性，不用自己自家的证书，反而用Let’s Encrypt，鉴于OSCP在国内阻断，ios用户可能会出现首次访问白屏，这一点我有点担心。
-
 最好的一点莫过于完全贴合HexoPlusPlus了，以后我就有充分的理由宣传HPP了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/320.jpg)
