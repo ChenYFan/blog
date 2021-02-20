@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 url: https://blog.cyfan.top
 root: /
 #permalink: :year/:month/:day/:title/
-permalink: p/:abbrlink
+permalink: p/:abbrlink.html
 abbrlink:
   alg: crc32 
   rep: hex   
