@@ -174,4 +174,6 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 
 我又不想抛弃CFpage，于是试图和Sukka大佬针对中文解码一样来个拯救计划，结果发现，CFPage不开源......
 
+后来仔细翻了一遍[文档](https://developers.cloudflare.com/pages/platform/serving-pages#route-matching)才发现，这样是有意为之，故意删掉后缀名。
+
 的，切回Github+CFCDN，这一早上的折腾白费了( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃
