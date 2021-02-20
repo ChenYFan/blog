@@ -1,6 +1,13 @@
----
-title: {{ title }}
-date: {{ date }}
+title: 
+author: 
 tags:
-copyright: true
+  - 
+categories:
+  - 
+des: 
+key: 
+date: 
+index_img: 
+banner_img: 
+lushkey: 
 ---
