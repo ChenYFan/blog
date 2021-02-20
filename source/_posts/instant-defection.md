@@ -12,8 +12,11 @@ key: CloudFlare,CloudFlarePage,Hexo,Hexo
 date: 2021-2-20 9:24
 index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
 banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
-excerpt: 众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！
 ---
+
+众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！
+
+<!--more-->
 
 据我所知，使用CloudFlare做hexo无非以下两种：
 
