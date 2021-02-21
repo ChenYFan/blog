@@ -567,7 +567,7 @@ links:
     title: '小冰博客',
     link: 'https://zfe.one',
     intro: 咕咕咕,
-    image: 'https://zfe.space/images/headimage.png',
+    image: 'https://cdn.jsdelivr.net/gh/Zfour/zfe-2.0/images/headimage.png',
     domain: zfe.one
     }
     - {        
