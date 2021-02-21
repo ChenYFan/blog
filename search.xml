@@ -2293,6 +2293,154 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div><h2 id="�
       </tags>
   </entry>
   <entry>
+    <title>我们一起解题目吧！</title>
+    <url>/p/992e034c.html</url>
+    <content><![CDATA[<p>除夕快乐！<br>哎呀，作为一个贫困的<code>blogger</code>,我似乎没有什么礼物。<br>今天是己亥年的最后一日，快乐度过吧！</p><p>话题扯一下新型冠状病毒，大家一定要注意人身安全，假期家里蹲就好了！<br>中国加油！武汉加油！</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E7%96%AB%E6%83%85.JPG" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一定要挺过去！"></p><p>话题扯回来…</p><h1 id="正文！"><a href="#正文！" class="headerlink" title="正文！"></a>正文！</h1><p>整理书的时候看到了一张纸，突然想起来这是当天偷偷在数学课上写的代码，结果被班主任发现骂了一顿。<br>题目非常有趣，是这样的：</p><blockquote><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在f（x）=ax^2+bx+c中，若有两个不等的实数根且在-0.25至0.25间，求a+b+c的最小值。</p></blockquote><p>思维导图：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E8%A7%A3%E9%A2%98.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="思维导图↑自己做得有点丑(✿◡‿◡)"></p><p>当时写的代码：</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> i;
+	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;
+	a=b=c=<span class="hljs-number">1</span>;
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"在a=%lf ,b=%lf ,c=%lf 时"</span>,a,b,c);
+		delta=b*b<span class="hljs-number">-4</span>*a*c;
+		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;
+			mid=(-b/<span class="hljs-number">2</span>)/a;
+			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;
+			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;
+				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
+						a1=a;
+						b1=b;
+						c1=c;
+						<span class="hljs-built_in">min</span>=a+b+c;
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
+						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+		a++;
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+			a=<span class="hljs-number">1</span>;
+			b++;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+				b=<span class="hljs-number">1</span>;
+				c++;
+				&#125;	
+			&#125; 
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ &#125;</code></pre></div><p>代码的核心是枚举，从a=b=c=1开算解，不符合就C自加一，c达到当时最小之后,c回到起点，从b开加，以此类推，如果a加到最后超范围，则说明解完了！</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">编译结果...
+--------</span>
+<span class="hljs-bullet">- </span>错误: 0
+<span class="hljs-bullet">- </span>警告: 0
+<span class="hljs-bullet">- </span>输出文件名: C:\Users\CYF\Desktop\函数解题.exe
+<span class="hljs-bullet">- </span>输出大小: 1.83758735656738 MiB
+<span class="hljs-bullet">- </span>编译时间: 1.75s</code></pre></div><p>最后结果:</p><div class="hljs"><pre><code class="hljs undefined">在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">5.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">4.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">39.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+共循环 <span class="hljs-number">102937</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
+
+--------------------------------
+Process exited after <span class="hljs-number">160.06</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>后来发现从c开始加有点费劲，而且一边有<code>cout</code>,另一边用<code>printf</code>,有点不爽(当时没反应过来).<br>蛋疼的是输出结果还是双精度的…</p><p>改了一下,顺便附上解释:</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> i;<span class="hljs-comment">//定义循环 </span>
+	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;<span class="hljs-comment">//此处必须双精度，否则会算出3，5，2这一组 </span>
+	a=b=c=<span class="hljs-number">1</span>;<span class="hljs-comment">//设定起点 </span>
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;<span class="hljs-comment">//开始循环 </span>
+		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"在a="</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">"，b="</span>&lt;&lt;b&lt;&lt;<span class="hljs-string">"c="</span>&lt;&lt;c&lt;&lt;<span class="hljs-string">"，的情况下："</span>;<span class="hljs-comment">//头输出 </span>
+		delta=b*b<span class="hljs-number">-4</span>*a*c;<span class="hljs-comment">//定义delta </span>
+		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//有无双实根？ </span>
+			mid=(-b/<span class="hljs-number">2</span>)/a;
+			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;<span class="hljs-comment">//这两步就是算解 </span>
+			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x1范围？ </span>
+				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x2范围？ </span>
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
+						a1=a;
+						b1=b;
+						c1=c;
+						<span class="hljs-built_in">min</span>=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
+						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//不解释 </span>
+					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+		b++;<span class="hljs-comment">//还是b开加快一点 </span>
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+			b=<span class="hljs-number">1</span>;
+			c++;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+				c=<span class="hljs-number">1</span>;
+				a++;
+				&#125;	
+			&#125; 
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ &#125;</code></pre></div><div class="hljs"><pre><code class="hljs undefined">......
+在a=<span class="hljs-number">35</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">5</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">4</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">4</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">39</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+共循环 <span class="hljs-number">102347</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
+
+--------------------------------
+Process exited after <span class="hljs-number">142.5</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>果然快了不少！也少循环一段时间！</p><p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。撒花！落幕！！</p>]]></content>
+      <categories>
+        <category>爱折腾</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>题目</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>来，破解版的Google访问助手</title>
     <url>/p/2b9edbbb.html</url>
     <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>中秋快乐！</p><p>（迟到的祝福）o(￣┰￣*)ゞ</p><p>好吧好吧，那就给份中秋礼物吧！</p><p>在中国，访问Google是最蛋疼的事了，原因是显然易见的。</p><p>可是作为一个雪深+三流程序猿，上Google是相当重要的。</p><p>基本上自己都是白嫖我同学康哥的ss，白嫖总是麻烦，还要用ss客户端。</p><p>网上的谷歌访问助手，现在官网都挂了，虽然能用，但是让我强制改主页确实不爽，而且图标也死丑，看着恶心。</p><p>于是看看如何破解。</p><h1 id="Going："><a href="#Going：" class="headerlink" title="Going："></a>Going：</h1><p>既然它会检测有没有广告，那我干脆直接在所有页面上都加上被隐藏的广告链接，这样既不会视觉干扰，又可以破解。</p><p>然后我高高兴兴的在Github上搜索原版源代码，结果发现…好像…有人已经破解了</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GOG.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="好尴尬啊"></p><p>那我一不做，二不休，直接就用这个吧！</p><p>不过这位老兄的图标似乎没改，那我就改了一下，以下是我改动的：</p><ul><li><input checked disabled type="checkbox"> 去除Google+(今年四月Google把它关了)</li><li><input checked disabled type="checkbox"> 添加Google Earth(亲测速度爆表,酸爽!)</li><li><input checked disabled type="checkbox"> 更换Google全家古老的图标，换成新的。</li><li><input checked disabled type="checkbox"> 更换插件图标,换了个Google Studio的(加了个小星星和滤镜)</li><li><input checked disabled type="checkbox"> 厚颜无耻的加上了自己的名字.</li></ul><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GGFWZS.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一阵酸爽"></p><p>然而上Google是爽,加载速度极快:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GHS.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="速度不错"></p><p>1.1MB的网页在2.1秒内打开,和百度打开速度相比:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BHS.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="相差不多"></p><p>1.4秒内打开也挺小,只有0.7s的相差,也是不多,完全可以用Google当引擎啦!</p><p>然而缺点也很多,学术研究完全不能上,Youtube不支持,wikipedia也不行.</p><p>对于维基百科,完全可以用Google翻译当跳板曲线救国.</p><p>总之,能乐和几天十几天!(≧∀≦)ゞ</p><a class="btn" href="https://pan.cyfan.top/插件/crx/Google访问助手破解版.7z" target="_blank" rel="noopener">>>CYF的私有云</a><p>特征码：<code>glabchgbmippkhlcjkcmdmclmapehoha</code></p>]]></content>
@@ -2485,18 +2633,6 @@ Cape Neddick Light in York, Maine (© Haizhan Zheng/Getty Images)
       </tags>
   </entry>
   <entry>
-    <title>白菜价域名的问题</title>
-    <url>/p/2698fd57.html</url>
-    <content><![CDATA[<p>……………………………………………</p><h1 id="没有开头的开头"><a href="#没有开头的开头" class="headerlink" title="没有开头的开头"></a>没有开头的开头</h1><p>今天2020年3月12日早上去万网，发现<code>.top</code>域名首年只要9块钱.</p><p>真的只要9块钱,而且下一年续费也炒鸡便宜,只要26元,这点小钱还是付的起的.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-21.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>因为自己的.ga域名毕竟是免费域名,拿出去没牌面.Freenom半死不活,现在又不能重新购买白嫖撸羊毛,反正9元也不贵,买就买吧，就把.top换成永久站点名字也行.</p><p>然后手贱,一步一步点下去,支付宝一扫,就在那指纹按下去的一瞬间,我突然意识到一件事情,不用实名认证吗?</p><p>结果低头一看,支付成功.</p><p>emmmmmm…既然买了,那就看看吧.</p><p>点进去,默认的NS是阿里云,用这个很容易被ServerHold,而且不能用CFCDN.</p><p>国内备案你就让我别想了,你让我手持身份证拍照很抱歉我做不到,况且我服务器本来就是白嫖Github+CF高速香港CDN不在国内,也不需要备案.</p><p>于是我就换成了CoudFlare的NameServer:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-22.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>结果CloudFlare死活不肯接受:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-23.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>但是Whois已经确认绑定完成了.</p><p>…</p><p>我当时就无语了,NS解析已经删除了,人家whois也说可以了,怎么就你不行呢?</p><p>放ICANN Lookup上查:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-24.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>怎么就被serverHold了???????还有注册姓名全部是空的为什么????</p><p>前往ICANN帮助文档:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-26.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><div class="hljs"><pre><code class="hljs undefined">If you provided delegation information (name servers), this status may indicate <span class="hljs-keyword">an</span> issue <span class="hljs-keyword">with</span> your domain that needs resolution. If so, you should contact your registrar <span class="hljs-built_in">to</span> request more information. If your domain does <span class="hljs-keyword">not</span> have <span class="hljs-keyword">any</span> issues, but you need <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> <span class="hljs-built_in">resolve</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> DNS, you must <span class="hljs-keyword">first</span> contact your registrar <span class="hljs-keyword">in</span> order <span class="hljs-built_in">to</span> provide <span class="hljs-keyword">the</span> necessary delegation information.</code></pre></div><p>至少以我现在的英语水平,还是能勉强读懂的,大意就是注册商没有给予完整的注册人信息;</p><p>可是我在万网填的东西比当时Freenom填的东西还要多,怎么就没完整呢???</p><p>回到万网,我找了找帮助文档:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-25.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>行了行了,到这一步我也明白了,简单的说不给实名认证就故意不填写完整,故意Serverhold,目的就是要实名认证.</p><p>可是,问题是我身份证落在老家,现在疫情这么严重,你让我怎么回去拿????</p><p>(而且问题是我还是个学生,未成年…)</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>后来想一想,万网域名白菜价肯定是有它的原因的,毕竟不拿点用户隐私资料,不应付工信部压力,这饭真的没法恰了.</p><p>欸,算了, <code>.top</code> 买来也不算贵,而且 <code>cyfan.ga</code> 还有5个月余额,先吊这吧,有空再换站点.</p><p>说实话当时建立这个博客纯粹是试水,纯粹测试一下有没有写博客的毅力,大家看看我以前的博文就知道了,基本都是直接搬运的,这也是为什么用免费域名的原因,考试考完了仔细思考了一下,发现自己创作博文更加有趣,结果最近就入水了…</p><p>白菜价域名确实便宜,Godaddy上最经济的续费价格域名应该是<code>.de</code>,大概每年56RMB,其它的大都首年便宜,续费就令人望而止步了.</p><p>欸,还能说什么呢,既然买了,就更应该好好写.</p>]]></content>
-      <categories>
-        <category>随心记</category>
-      </categories>
-      <tags>
-        <tag>域名</tag>
-        <tag>便宜</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>移除000webhost右下角Powered by 000webhost字样</title>
     <url>/p/f3eb3ee1.html</url>
     <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>这几天都忙着部署私有云和工具页，忘记更新了，今天发一片干货。<br>由于资金周转困难（没钱），个人的私有云和在线工具全部部署在000webhost上，因为这是一个少有的免费php可视化部署云。<br>而且最最最好的是可以用CNAME绑定自定义域名,(heroku要信用卡验证)<br>当然了,由于<code>不可抗因素</code>,全程<code>爬城</code>,<br>结果在部署的时候发生了一件令我恶心的事。</p><h1 id="右下角广告："><a href="#右下角广告：" class="headerlink" title="右下角广告："></a>右下角广告：</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/000AD.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="广告" title="↑这是什么??????"></p><p>哇,这么一大块东西看的我恶心.<br>打广告也不能打的那么显眼吧?(((φ(◎ロ◎;)φ)))</p><h1 id="试图解决"><a href="#试图解决" class="headerlink" title="试图解决:"></a>试图解决:</h1><p>我登入三蛋空间后台,看看有没有可以去除广告选项:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/000ADE.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="广告不可抗" title="↑F**K,居然不给关"></p><p>可能大家不懂英语,google翻译一下:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/000ADC.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="广告不可抗" title="↑咳咳,怎么办?"></p><p>呵呵,居然威胁我升级高级版,我要是有钱还用得着说吗?</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h1><p>后来查看了一下源代码,在<code>&lt;/html&gt;</code>前面狠狠的插上了这么一段代码:</p><div class="hljs"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Hosted on free web hosting 000webhost.com. Host your own website for FREE."</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"www.000webhost.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCookie</span>(<span class="hljs-params">e</span>)</span>&#123;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> t=e+<span class="hljs-string">"="</span>,n=<span class="hljs-built_in">decodeURIComponent</span>(<span class="hljs-built_in">document</span>.cookie).split(<span class="hljs-string">";"</span>),o=<span class="hljs-number">0</span>;o&lt;n.length;o++)&#123;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=n[o];<span class="hljs-string">" "</span>==i.charAt(<span class="hljs-number">0</span>);)i=i.substring(<span class="hljs-number">1</span>);<span class="hljs-keyword">if</span>(<span class="hljs-number">0</span>==i.indexOf(t))<span class="hljs-keyword">return</span> i.substring(t.length,i.length)&#125;<span class="hljs-keyword">return</span><span class="hljs-string">""</span>&#125;getCookie(<span class="hljs-string">"hostinger"</span>)&amp;&amp;(<span class="hljs-built_in">document</span>.cookie=<span class="hljs-string">"hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"</span>,location.reload());<span class="hljs-keyword">var</span> notification=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"notice notice-success is-dismissible"</span>),hostingerLogo=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"hlogo"</span>),mainContent=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"notice_content"</span>)[<span class="hljs-number">0</span>],newList=[<span class="hljs-string">"Powerful and Easy-To-Use Control Panel."</span>,<span class="hljs-string">"1-Click Auto Installer and 24/7 Live Support."</span>,<span class="hljs-string">"Free Domain, Email and SSL Bundle."</span>,<span class="hljs-string">"5x faster WordPress performance"</span>,<span class="hljs-string">"Weekly Backups and Fast Response Time."</span>];<span class="hljs-keyword">if</span>(<span class="hljs-number">0</span>&lt;notification.length&amp;&amp;<span class="hljs-literal">null</span>!=mainContent)&#123;<span class="hljs-keyword">var</span> googleFont=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"link"</span>);googleFontHref=<span class="hljs-built_in">document</span>.createAttribute(<span class="hljs-string">"href"</span>),googleFontRel=<span class="hljs-built_in">document</span>.createAttribute(<span class="hljs-string">"rel"</span>),googleFontHref.value=<span class="hljs-string">"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"</span>,googleFontRel.value=<span class="hljs-string">"stylesheet"</span>,googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);<span class="hljs-keyword">var</span> css=<span class="hljs-string">"@media only screen and (max-width: 768px) &#123;.web-hosting-90-off-image-wrapper &#123;position: absolute;&#125; .notice_content &#123;justify-content: center;&#125; .web-hosting-90-off-image &#123;opacity: 0.3;&#125;&#125; @media only screen and (min-width: 769px) &#123;.notice_content &#123;justify-content: space-between;&#125; .web-hosting-90-off-image-wrapper &#123;padding: 0 5%&#125;&#125; .content-wrapper &#123;z-index: 5&#125; .notice_content &#123;display: flex; align-items: center;&#125; * &#123;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;&#125; .upgrade_button_red_sale&#123;border: 0; border-radius: 3px; background-color: #ff123a !important; padding: 15px 55px !important; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;&#125; .upgrade_button_red_sale:hover&#123;color: #ffffff !important; background: #d10303 !important;&#125;"</span>,style=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"style"</span>),sheet=<span class="hljs-built_in">window</span>.document.styleSheets[<span class="hljs-number">0</span>];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(<span class="hljs-built_in">document</span>.createTextNode(css)),<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].appendChild(style),<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].appendChild(googleFont);<span class="hljs-keyword">var</span> button=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"upgrade_button_red"</span>)[<span class="hljs-number">0</span>],link=button.parentElement;link.setAttribute(<span class="hljs-string">"href"</span>,<span class="hljs-string">"https://www.hostinger.com/special/000webhost?utm_source=000webhost&amp;utm_medium=panel&amp;utm_campaign=000-wp"</span>),link.innerHTML=<span class="hljs-string">'&lt;button class="upgrade_button_red_sale"&gt;TRANSFER NOW&lt;/button&gt;'</span>,(notification=notification[<span class="hljs-number">0</span>]).setAttribute(<span class="hljs-string">"style"</span>,<span class="hljs-string">"padding-bottom: 10px; padding-top: 5px; background-image: url(https://cdn.000webhost.com/000webhost/promotions/springsale/mountains-neon-background.jpg); background-color: #000000; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-color: #ff123a; border-width: 8px;"</span>),notification.className=<span class="hljs-string">"notice notice-error is-dismissible"</span>,(hostingerLogo=hostingerLogo[<span class="hljs-number">0</span>]).setAttribute(<span class="hljs-string">"src"</span>,<span class="hljs-string">"https://cdn.000webhost.com/000webhost/promotions/springsale/logo-hostinger-white.svg"</span>),hostingerLogo.setAttribute(<span class="hljs-string">"style"</span>,<span class="hljs-string">"float: none !important; height: auto; max-width: 100%; margin: 40px 20px 10px 30px;"</span>);<span class="hljs-keyword">var</span> h1Tag=notification.getElementsByTagName(<span class="hljs-string">"H1"</span>)[<span class="hljs-number">0</span>];h1Tag.remove();<span class="hljs-keyword">var</span> paragraph=notification.getElementsByTagName(<span class="hljs-string">"p"</span>)[<span class="hljs-number">0</span>];paragraph.innerHTML=<span class="hljs-string">"Fast &amp; Secure Web Hosting. &lt;br&gt;Limited time offer: get an SSL certificate for FREE"</span>,paragraph.setAttribute(<span class="hljs-string">"style"</span>,<span class="hljs-string">'max-width: 600px; margin-left: 30px; font-family: "Open Sans", sans-serif; font-size: 22px; font-weight: 600;'</span>);<span class="hljs-keyword">var</span> list=notification.getElementsByTagName(<span class="hljs-string">"UL"</span>)[<span class="hljs-number">0</span>];list.setAttribute(<span class="hljs-string">"style"</span>,<span class="hljs-string">"max-width: 675px;"</span>);<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> listElements=list.getElementsByTagName(<span class="hljs-string">"LI"</span>),i=<span class="hljs-number">0</span>;i&lt;newList.length;i++)listElements[i].setAttribute(<span class="hljs-string">"style"</span>,<span class="hljs-string">"color:#ffffff; list-style-type: disc; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.5;"</span>),listElements[i].innerHTML=newList[i];listElements[listElements.length<span class="hljs-number">-1</span>].remove();<span class="hljs-keyword">var</span> org_html=mainContent.innerHTML,new_html=<span class="hljs-string">'&lt;div class="content-wrapper"&gt;'</span>+mainContent.innerHTML+<span class="hljs-string">'&lt;/div&gt;&lt;div class="web-hosting-90-off-image-wrapper"&gt;&lt;img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/springsale/web-hosting-90-off.png"&gt;&lt;/div&gt;'</span>;mainContent.innerHTML=new_html;<span class="hljs-keyword">var</span> saleImage=mainContent.getElementsByClassName(<span class="hljs-string">"web-hosting-90-off-image"</span>)[<span class="hljs-number">0</span>];!<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<span class="hljs-keyword">var</span> t=<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">"body.wp-admin"</span>)[<span class="hljs-number">0</span>];<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">e</span>(<span class="hljs-params"></span>)</span>&#123;<span class="hljs-keyword">var</span> e=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"iframe"</span>);e.id=<span class="hljs-string">"hgr-promo-widget"</span>,e.setAttribute(<span class="hljs-string">"src"</span>,<span class="hljs-string">"https://www.hostinger.com/widgets/bottom-banner-sale/000_wp_admin"</span>),e.setAttribute(<span class="hljs-string">"allowfullscreen"</span>,!<span class="hljs-number">0</span>),e.setAttribute(<span class="hljs-string">"frameborder"</span>,<span class="hljs-number">0</span>),e.style.cssText=<span class="hljs-string">"z-index: 2147483000 !important;position: fixed !important;bottom: 0; width: 100%;!important; left: 0!important;"</span>,e.style.opacity=<span class="hljs-number">0</span>,e.onload=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;iFrameResize(&#123;&#125;,<span class="hljs-string">"#hgr-promo-widget"</span>),e.style.opacity=<span class="hljs-number">1</span>&#125;,t.insertAdjacentElement(<span class="hljs-string">"afterend"</span>,e)&#125;<span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.iFrameResize)e();<span class="hljs-keyword">else</span>&#123;<span class="hljs-keyword">var</span> n=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);n.type=<span class="hljs-string">"text/javascript"</span>,t.insertAdjacentElement(<span class="hljs-string">"afterend"</span>,n),n.onload=e,n.src=<span class="hljs-string">"https://unpkg.com/iframe-resizer@3.6.3/js/iframeResizer.min.js"</span>&#125;&#125;()&#125;</span></code></pre></div><p>这个真的恨,硬生生插在<code>&lt;/html&gt;</code>标签前.<br>注意一下,这说明广告代码被插了进去,而不是添加在后面.<br>后来细思熟虑了一下,干脆在不要最后的<code>&lt;/html&gt;</code>了,直接把它们全部变成注释得了.<br>在<code>&lt;/html&gt;</code>前直接填上<code>&lt;!--</code>,把广告代码变成了注释.<br>(￢︿̫̿￢☆),干脆把你变成注释算了!<br>修复结果: <a href="http://pan.cyfan.top" target="_blank" rel="noopener">http://pan.cyfan.top</a><br>搞定!</p><hr>]]></content>
@@ -2507,154 +2643,6 @@ Cape Neddick Light in York, Maine (© Haizhan Zheng/Getty Images)
         <tag>奇淫巧技</tag>
         <tag>广告</tag>
         <tag>000webhost</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我们一起解题目吧！</title>
-    <url>/p/992e034c.html</url>
-    <content><![CDATA[<p>除夕快乐！<br>哎呀，作为一个贫困的<code>blogger</code>,我似乎没有什么礼物。<br>今天是己亥年的最后一日，快乐度过吧！</p><p>话题扯一下新型冠状病毒，大家一定要注意人身安全，假期家里蹲就好了！<br>中国加油！武汉加油！</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E7%96%AB%E6%83%85.JPG" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一定要挺过去！"></p><p>话题扯回来…</p><h1 id="正文！"><a href="#正文！" class="headerlink" title="正文！"></a>正文！</h1><p>整理书的时候看到了一张纸，突然想起来这是当天偷偷在数学课上写的代码，结果被班主任发现骂了一顿。<br>题目非常有趣，是这样的：</p><blockquote><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在f（x）=ax^2+bx+c中，若有两个不等的实数根且在-0.25至0.25间，求a+b+c的最小值。</p></blockquote><p>思维导图：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E8%A7%A3%E9%A2%98.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="思维导图↑自己做得有点丑(✿◡‿◡)"></p><p>当时写的代码：</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
-	<span class="hljs-keyword">int</span> i;
-	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;
-	a=b=c=<span class="hljs-number">1</span>;
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;
-		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"在a=%lf ,b=%lf ,c=%lf 时"</span>,a,b,c);
-		delta=b*b<span class="hljs-number">-4</span>*a*c;
-		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;
-			mid=(-b/<span class="hljs-number">2</span>)/a;
-			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;
-			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;
-				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;
-					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
-						a1=a;
-						b1=b;
-						c1=c;
-						<span class="hljs-built_in">min</span>=a+b+c;
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
-						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-		a++;
-		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-			a=<span class="hljs-number">1</span>;
-			b++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-				b=<span class="hljs-number">1</span>;
-				c++;
-				&#125;	
-			&#125; 
-	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
- &#125;</code></pre></div><p>代码的核心是枚举，从a=b=c=1开算解，不符合就C自加一，c达到当时最小之后,c回到起点，从b开加，以此类推，如果a加到最后超范围，则说明解完了！</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">编译结果...
---------</span>
-<span class="hljs-bullet">- </span>错误: 0
-<span class="hljs-bullet">- </span>警告: 0
-<span class="hljs-bullet">- </span>输出文件名: C:\Users\CYF\Desktop\函数解题.exe
-<span class="hljs-bullet">- </span>输出大小: 1.83758735656738 MiB
-<span class="hljs-bullet">- </span>编译时间: 1.75s</code></pre></div><p>最后结果:</p><div class="hljs"><pre><code class="hljs undefined">在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">5.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">4.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">39.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-共循环 <span class="hljs-number">102937</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
-
---------------------------------
-Process exited after <span class="hljs-number">160.06</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>后来发现从c开始加有点费劲，而且一边有<code>cout</code>,另一边用<code>printf</code>,有点不爽(当时没反应过来).<br>蛋疼的是输出结果还是双精度的…</p><p>改了一下,顺便附上解释:</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
-	<span class="hljs-keyword">int</span> i;<span class="hljs-comment">//定义循环 </span>
-	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;<span class="hljs-comment">//此处必须双精度，否则会算出3，5，2这一组 </span>
-	a=b=c=<span class="hljs-number">1</span>;<span class="hljs-comment">//设定起点 </span>
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;<span class="hljs-comment">//开始循环 </span>
-		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"在a="</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">"，b="</span>&lt;&lt;b&lt;&lt;<span class="hljs-string">"c="</span>&lt;&lt;c&lt;&lt;<span class="hljs-string">"，的情况下："</span>;<span class="hljs-comment">//头输出 </span>
-		delta=b*b<span class="hljs-number">-4</span>*a*c;<span class="hljs-comment">//定义delta </span>
-		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//有无双实根？ </span>
-			mid=(-b/<span class="hljs-number">2</span>)/a;
-			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;<span class="hljs-comment">//这两步就是算解 </span>
-			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x1范围？ </span>
-				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x2范围？ </span>
-					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
-						a1=a;
-						b1=b;
-						c1=c;
-						<span class="hljs-built_in">min</span>=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
-						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//不解释 </span>
-					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-		b++;<span class="hljs-comment">//还是b开加快一点 </span>
-		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-			b=<span class="hljs-number">1</span>;
-			c++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-				c=<span class="hljs-number">1</span>;
-				a++;
-				&#125;	
-			&#125; 
-	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
- &#125;</code></pre></div><div class="hljs"><pre><code class="hljs undefined">......
-在a=<span class="hljs-number">35</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">5</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">4</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">4</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">39</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-共循环 <span class="hljs-number">102347</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
-
---------------------------------
-Process exited after <span class="hljs-number">142.5</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>果然快了不少！也少循环一段时间！</p><p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。撒花！落幕！！</p>]]></content>
-      <categories>
-        <category>爱折腾</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>题目</tag>
-        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -2745,6 +2733,18 @@ Process exited after <span class="hljs-number">142.5</span> seconds with return 
         <tag>京东</tag>
         <tag>劫持</tag>
         <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>白菜价域名的问题</title>
+    <url>/p/2698fd57.html</url>
+    <content><![CDATA[<p>……………………………………………</p><h1 id="没有开头的开头"><a href="#没有开头的开头" class="headerlink" title="没有开头的开头"></a>没有开头的开头</h1><p>今天2020年3月12日早上去万网，发现<code>.top</code>域名首年只要9块钱.</p><p>真的只要9块钱,而且下一年续费也炒鸡便宜,只要26元,这点小钱还是付的起的.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-21.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>因为自己的.ga域名毕竟是免费域名,拿出去没牌面.Freenom半死不活,现在又不能重新购买白嫖撸羊毛,反正9元也不贵,买就买吧，就把.top换成永久站点名字也行.</p><p>然后手贱,一步一步点下去,支付宝一扫,就在那指纹按下去的一瞬间,我突然意识到一件事情,不用实名认证吗?</p><p>结果低头一看,支付成功.</p><p>emmmmmm…既然买了,那就看看吧.</p><p>点进去,默认的NS是阿里云,用这个很容易被ServerHold,而且不能用CFCDN.</p><p>国内备案你就让我别想了,你让我手持身份证拍照很抱歉我做不到,况且我服务器本来就是白嫖Github+CF高速香港CDN不在国内,也不需要备案.</p><p>于是我就换成了CoudFlare的NameServer:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-22.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>结果CloudFlare死活不肯接受:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-23.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>但是Whois已经确认绑定完成了.</p><p>…</p><p>我当时就无语了,NS解析已经删除了,人家whois也说可以了,怎么就你不行呢?</p><p>放ICANN Lookup上查:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-24.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>怎么就被serverHold了???????还有注册姓名全部是空的为什么????</p><p>前往ICANN帮助文档:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-26.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><div class="hljs"><pre><code class="hljs undefined">If you provided delegation information (name servers), this status may indicate <span class="hljs-keyword">an</span> issue <span class="hljs-keyword">with</span> your domain that needs resolution. If so, you should contact your registrar <span class="hljs-built_in">to</span> request more information. If your domain does <span class="hljs-keyword">not</span> have <span class="hljs-keyword">any</span> issues, but you need <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> <span class="hljs-built_in">resolve</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> DNS, you must <span class="hljs-keyword">first</span> contact your registrar <span class="hljs-keyword">in</span> order <span class="hljs-built_in">to</span> provide <span class="hljs-keyword">the</span> necessary delegation information.</code></pre></div><p>至少以我现在的英语水平,还是能勉强读懂的,大意就是注册商没有给予完整的注册人信息;</p><p>可是我在万网填的东西比当时Freenom填的东西还要多,怎么就没完整呢???</p><p>回到万网,我找了找帮助文档:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-25.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>行了行了,到这一步我也明白了,简单的说不给实名认证就故意不填写完整,故意Serverhold,目的就是要实名认证.</p><p>可是,问题是我身份证落在老家,现在疫情这么严重,你让我怎么回去拿????</p><p>(而且问题是我还是个学生,未成年…)</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>后来想一想,万网域名白菜价肯定是有它的原因的,毕竟不拿点用户隐私资料,不应付工信部压力,这饭真的没法恰了.</p><p>欸,算了, <code>.top</code> 买来也不算贵,而且 <code>cyfan.ga</code> 还有5个月余额,先吊这吧,有空再换站点.</p><p>说实话当时建立这个博客纯粹是试水,纯粹测试一下有没有写博客的毅力,大家看看我以前的博文就知道了,基本都是直接搬运的,这也是为什么用免费域名的原因,考试考完了仔细思考了一下,发现自己创作博文更加有趣,结果最近就入水了…</p><p>白菜价域名确实便宜,Godaddy上最经济的续费价格域名应该是<code>.de</code>,大概每年56RMB,其它的大都首年便宜,续费就令人望而止步了.</p><p>欸,还能说什么呢,既然买了,就更应该好好写.</p>]]></content>
+      <categories>
+        <category>随心记</category>
+      </categories>
+      <tags>
+        <tag>域名</tag>
+        <tag>便宜</tag>
       </tags>
   </entry>
 </search>
