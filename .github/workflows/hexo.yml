@@ -24,11 +24,12 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-#        npm install -g hexo-cli
-#        npm i
+
 
     - name: Install & Build
       run: |
+        npm install -g hexo-cli
+        npm i
         hexo g
         curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
         rm -rf ./public/CNAME
