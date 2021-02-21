@@ -124,7 +124,7 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
             <span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_doc_draft_list_index"</span>, hpp_doc_draft_list_index) <span class="hljs-comment">//保存索引</span>
           &#125;
           <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(hpp_doc_draft_list_index, &#123; <span class="hljs-comment">//返回路径</span>
-            headers: &#123;
+            <span class="hljs-attr">headers</span>: &#123;
               <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/json;charset=UTF-8"</span>,
               <span class="hljs-string">"Access-Control-Allow-Origin"</span>: hpp_cors
             &#125;
@@ -145,8 +145,8 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
 --data &quot;addEventListener(&apos;fetch&apos;, event =&gt; &#123; event.respondWith(fetch(event.request)) &#125;)&quot;</code></pre></div><p>curl,我寻思fetch也能做到.</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> update_script = <span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">`https://raw.githubusercontent.com/HexoPlusPlus/HexoPlusPlus/main/index.js`</span>)).text() <span class="hljs-comment">//获取更新脚本</span>
 <span class="hljs-keyword">const</span> up_init = &#123;
             <span class="hljs-attr">body</span>: update_script,<span class="hljs-comment">//更新脚本内容</span>
-            method: <span class="hljs-string">"PUT"</span>,<span class="hljs-comment">//method是put</span>
-            headers: &#123;
+            <span class="hljs-attr">method</span>: <span class="hljs-string">"PUT"</span>,<span class="hljs-comment">//method是put</span>
+            <span class="hljs-attr">headers</span>: &#123;
               <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/javascript"</span>,<span class="hljs-comment">//content-type和文档一样</span>
               <span class="hljs-string">"X-Auth-Key"</span>: hpp_CF_Auth_Key,<span class="hljs-comment">//GlobalKey,账户最高Token</span>
               <span class="hljs-string">"X-Auth-Email"</span>: hpp_Auth_Email<span class="hljs-comment">//登录邮箱</span>
@@ -202,7 +202,7 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
           <span class="hljs-attr">access_token</span>: access_token,
           <span class="hljs-attr">action</span>: <span class="hljs-string">"functions.invokeFunction"</span>,
           <span class="hljs-attr">dataVersion</span>: <span class="hljs-string">"1970-1-1"</span>,<span class="hljs-comment">//开始时间</span>
-          env: env_id,
+          <span class="hljs-attr">env</span>: env_id,
           <span class="hljs-attr">function_name</span>: <span class="hljs-string">"twikoo"</span>,
           <span class="hljs-attr">request_data</span>: <span class="hljs-built_in">JSON</span>.stringify(re_data),
           <span class="hljs-attr">seqId</span>: <span class="hljs-string">""</span>

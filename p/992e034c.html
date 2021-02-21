@@ -3,11 +3,11 @@
 <span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
 <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> min=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
 	<span class="hljs-keyword">int</span> i;
 	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;
 	a=b=c=<span class="hljs-number">1</span>;
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=min;i++)&#123;
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;
 		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"在a=%lf ,b=%lf ,c=%lf 时"</span>,a,b,c);
 		delta=b*b<span class="hljs-number">-4</span>*a*c;
 		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;
@@ -15,27 +15,27 @@
 			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;
 			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;
 				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;
-					<span class="hljs-keyword">if</span>(a+b+c&lt;min)&#123;
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
 						a1=a;
 						b1=b;
 						c1=c;
-						min=a+b+c;
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,min); 
+						<span class="hljs-built_in">min</span>=a+b+c;
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
 						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
 					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
 				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
 			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
 		a++;
-		<span class="hljs-keyword">if</span>(a+b+c&gt;min)&#123;
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
 			a=<span class="hljs-number">1</span>;
 			b++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;min)&#123;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
 				b=<span class="hljs-number">1</span>;
 				c++;
 				&#125;	
 			&#125; 
 	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;min&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
 	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
  &#125;</code></pre></div><p>代码的核心是枚举，从a=b=c=1开算解，不符合就C自加一，c达到当时最小之后,c回到起点，从b开加，以此类推，如果a加到最后超范围，则说明解完了！</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">编译结果...
 --------</span>
@@ -74,11 +74,11 @@ Process exited after <span class="hljs-number">160.06</span> seconds with return
 <span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
 <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> min=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
 	<span class="hljs-keyword">int</span> i;<span class="hljs-comment">//定义循环 </span>
 	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;<span class="hljs-comment">//此处必须双精度，否则会算出3，5，2这一组 </span>
 	a=b=c=<span class="hljs-number">1</span>;<span class="hljs-comment">//设定起点 </span>
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=min;i++)&#123;<span class="hljs-comment">//开始循环 </span>
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;<span class="hljs-comment">//开始循环 </span>
 		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"在a="</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">"，b="</span>&lt;&lt;b&lt;&lt;<span class="hljs-string">"c="</span>&lt;&lt;c&lt;&lt;<span class="hljs-string">"，的情况下："</span>;<span class="hljs-comment">//头输出 </span>
 		delta=b*b<span class="hljs-number">-4</span>*a*c;<span class="hljs-comment">//定义delta </span>
 		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//有无双实根？ </span>
@@ -86,27 +86,27 @@ Process exited after <span class="hljs-number">160.06</span> seconds with return
 			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;<span class="hljs-comment">//这两步就是算解 </span>
 			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x1范围？ </span>
 				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x2范围？ </span>
-					<span class="hljs-keyword">if</span>(a+b+c&lt;min)&#123;
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
 						a1=a;
 						b1=b;
 						c1=c;
-						min=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,min); 
+						<span class="hljs-built_in">min</span>=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
 						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//不解释 </span>
 					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
 				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
 			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
 		b++;<span class="hljs-comment">//还是b开加快一点 </span>
-		<span class="hljs-keyword">if</span>(a+b+c&gt;min)&#123;
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
 			b=<span class="hljs-number">1</span>;
 			c++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;min)&#123;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
 				c=<span class="hljs-number">1</span>;
 				a++;
 				&#125;	
 			&#125; 
 	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;min&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
 	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
  &#125;</code></pre></div><div class="hljs"><pre><code class="hljs undefined">......
 在a=<span class="hljs-number">35</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">5</span>，的情况下：没有两不等实根！
