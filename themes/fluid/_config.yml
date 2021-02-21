@@ -571,6 +571,13 @@ links:
     domain: blog.imzjw.cn
     }
     - {        
+    title: '小冰博客',
+    link: 'https://zfe.one',
+    intro: 咕咕咕,
+    image: 'https://cdn.jsdelivr.net/gh/Zfour/zfe-2.0/images/headimage.png',
+    domain: zfe.one
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
