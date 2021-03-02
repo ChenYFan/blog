@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.cyfan.top/p/834823b0.html</loc>
-    
-    <lastmod>2021-03-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.cyfan.top/p/74e90c90.html</loc>
     
     <lastmod>2021-03-02</lastmod>
@@ -149,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://blog.cyfan.top/about/index.html</loc>
+    <loc>https://blog.cyfan.top/categories/index.html</loc>
     
     <lastmod>2021-03-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.cyfan.top/categories/index.html</loc>
+    <loc>https://blog.cyfan.top/about/index.html</loc>
     
     <lastmod>2021-03-02</lastmod>
     
@@ -465,6 +458,13 @@
   
   <url>
     <loc>https://blog.cyfan.top/p/de23d03f.html</loc>
+    
+    <lastmod>2021-03-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/p/834823b0.html</loc>
     
     <lastmod>2021-03-02</lastmod>
     
