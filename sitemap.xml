@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.cyfan.top/jump.html</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.cyfan.top/package.json</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -17,20 +10,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/vercel.json</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/categories/index.html</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/com/index.html</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -254,6 +233,13 @@
   </url>
   
   <url>
+    <loc>https://blog.cyfan.top/p/74e90c90.html</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/p/4c080f73.html</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -283,13 +269,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/p/a27d0f18.html</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/p/74e90c90.html</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -366,6 +345,13 @@
   </url>
   
   <url>
+    <loc>https://blog.cyfan.top/jump.html</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/about/ads.html</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -374,6 +360,20 @@
   
   <url>
     <loc>https://blog.cyfan.top/about/index.html</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/categories/index.html</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/com/index.html</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1348,6 +1348,34 @@
   </url>
   
   <url>
+    <loc>https://blog.cyfan.top/tags/%E5%B9%B2%E8%B4%A7/</loc>
+    <lastmod>2021-04-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/%E8%84%9A%E6%9C%AC/</loc>
+    <lastmod>2021-04-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/GoogleDrive/</loc>
+    <lastmod>2021-04-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2021-04-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/tags/%E5%A4%B4%E5%83%8F/</loc>
     <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
@@ -1461,34 +1489,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/tags/%E5%A4%A9%E4%BD%93%E8%BF%90%E5%8A%A8/</loc>
-    <lastmod>2021-04-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/%E5%B9%B2%E8%B4%A7/</loc>
-    <lastmod>2021-04-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2021-04-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/GoogleDrive/</loc>
-    <lastmod>2021-04-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/%E4%B8%8B%E8%BD%BD/</loc>
     <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
