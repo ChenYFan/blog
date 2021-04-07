@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>看毛片(KMP)算法小记</title>
+    <link href="/p/cef76c6c.html"/>
+    <url>/p/cef76c6c.html</url>
+    
+    <content type="html"><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：ABCDPOPO待匹配串：ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BCDPOPO</span><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'Q</span>AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>AB<span class="hljs-symbol">'Q</span>'不匹配，待匹配串向右移动一位A‘B’CDPOPO  ‘A’BQ不匹配，待匹配串向右移动一位AB’C‘DPOPO     ‘A’BQ不匹配，待匹配串向右移动一位...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>摸鱼小记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Euserv正确打开优化方式</title>
     <link href="/p/d788bdf3.html"/>
     <url>/p/d788bdf3.html</url>

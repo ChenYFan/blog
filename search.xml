@@ -1466,6 +1466,42 @@ https://unpkg.zhimg.com/chenyfan-oss@1.0.0/js/valine.min.js</code></pre></div><h
       </tags>
   </entry>
   <entry>
+    <title>看毛片(KMP)算法小记</title>
+    <url>/p/cef76c6c.html</url>
+    <content><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：
+ABCDPOPO
+待匹配串：
+ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BCDPOPO</span>
+<span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
+
+A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>
+A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'Q</span>
+
+AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>
+AB<span class="hljs-symbol">'Q</span>'
+
+不匹配，待匹配串向右移动一位
+
+A‘B’CDPOPO
+  ‘A’BQ
+
+不匹配，待匹配串向右移动一位
+
+AB’C‘DPOPO
+     ‘A’BQ
+
+不匹配，待匹配串向右移动一位
+
+...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p>]]></content>
+      <categories>
+        <category>摸鱼小记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多域名线程并发与DNS预解析</title>
     <url>/p/6ce8a474.html</url>
     <content><![CDATA[<p>军训结束,感想不多,就一句话</p><blockquote><p>【这就是个无限循环，每天重复训练一套动作，直到结束为止，毫无意义】</p></blockquote><p>回家之后我帮父母看店,顺便点开了浏览器,浏览器卡死了30s,终于完全加载出了一个花花绿绿的主页,是大名鼎鼎的2345主页.</p><p>虽然我很反感这种杂七杂八的傻逼导航,我也试图将主页换成magi或dogedoge,但是父亲就很不习惯,原因很难以接受:</p><div class="hljs"><pre><code class="hljs undefined">儿子啊，这样我怎么看天气啊。</code></pre></div><p>。。。</p><p>于是我顺手右键点开了源代码，闲着无聊看看，结果却刚看看就找到了好<del>康</del>看的东西：</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20175355.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><div class="hljs"><pre><code class="hljs undefined">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://union2.50bang.org"</span>&gt;
