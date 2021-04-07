@@ -8,7 +8,7 @@
     <link href="/p/cef76c6c.html"/>
     <url>/p/cef76c6c.html</url>
     
-    <content type="html"><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：ABCDPOPABQO待匹配串：ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined">ABCDPOPABQO↑ABQ↑ABCDPOPABQO ↑ABQ ↑ ABCDPOPABQO  ↑ABQ  ↑  ABCDPOPABQO ↑ ABQ ↑...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><h2 id="跳过已匹配字符"><a href="#跳过已匹配字符" class="headerlink" title="跳过已匹配字符"></a>跳过已匹配字符</h2><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>↑ABQ↑匹配，指针右移【以下未特殊表明均指针】ABCDPOPABQO ↑ABQ ↑ 匹配，右移ABCDPOPABQO  ↑ABQ  ↑</code></pre></div><p>这时候我们撞上了不匹配的情景，怎么办？右移一位？</p><p>不，我们发现原串里面的<code>C</code>在待匹配串里面根本没出现，并且原串[0]~[2]均不匹配，所以我们选择把匹配串整个向右移动三位</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>   ↑   ABQ   ↑   不匹配，字符串右移一位ABCDPOPABQO↑    ABQ    ↑   省略数步ABCDPOPABQO       ↑       ABQ       ↑   匹配，右移ABCDPOPABQO        ↑       ABQ        ↑匹配，右移ABCDPOPABQO         ↑       ABQ         ↑匹配，右移这时候待匹配串已匹配完毕，记录并将整个串移动到末尾ABCDPOPABQO          ↑          ABQ          ↑  待匹配串已超过原串长度，结束</code></pre></div><h2 id="部分匹配"><a href="#部分匹配" class="headerlink" title="部分匹配"></a>部分匹配</h2><p>上面的例子可能没有讲到重点，接下来换个例子，部分匹配才是KMP的核心</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABABABCAABABABA</span></code></pre></div>]]></content>
+    <content type="html"><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：ABCDPOPABQO待匹配串：ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined">ABCDPOPABQO↑ABQ↑ABCDPOPABQO ↑ABQ ↑ ABCDPOPABQO  ↑ABQ  ↑  ABCDPOPABQO ↑ ABQ ↑...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><h2 id="跳过已匹配字符"><a href="#跳过已匹配字符" class="headerlink" title="跳过已匹配字符"></a>跳过已匹配字符</h2><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>↑ABQ↑匹配，指针右移【以下未特殊表明均指针】ABCDPOPABQO ↑ABQ ↑ 匹配，右移ABCDPOPABQO  ↑ABQ  ↑</code></pre></div><p>这时候我们撞上了不匹配的情景，怎么办？右移一位？</p><p>不，我们发现原串里面的<code>C</code>在待匹配串里面根本没出现，并且原串[0]~[2]均不匹配，所以我们选择把匹配串整个向右移动三位</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>   ↑   ABQ   ↑   不匹配，字符串右移一位ABCDPOPABQO↑    ABQ    ↑   省略数步ABCDPOPABQO       ↑       ABQ       ↑   匹配，右移ABCDPOPABQO        ↑       ABQ        ↑匹配，右移ABCDPOPABQO         ↑       ABQ         ↑匹配，右移这时候待匹配串已匹配完毕，记录并将整个串移动到末尾ABCDPOPABQO          ↑          ABQ          ↑  待匹配串已超过原串长度，结束</code></pre></div><h2 id="部分匹配"><a href="#部分匹配" class="headerlink" title="部分匹配"></a>部分匹配</h2><p>上面的例子可能没有讲到重点，接下来换个例子，部分匹配才是KMP的核心</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCEABCABCDABDABCDABD</span></code></pre></div><p>OK我们开始匹配</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDABCDABDABCDABD</span>↑ABCDABD↑ABCDABCDABDABCDABD ↑ABCDABD ↑ ABCDABCDABDABCDABD  ↑ABCDABD  ↑ABCDABCDABDABCDABD   ↑ABCDABD   ↑   ABCDABCDABDABCDABD    ↑ABCDABD    ↑ABCDABCDABDABCDABD     ↑ABCDABD     ↑ABCDABCDABDABCDABD      ↑ABCDABD      ↑</code></pre></div><p>这个时候我们发现了原串[6]与比较串不符合,这时候怎么办?直接跳到后面去?</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDABCDABDABCDABD</span>       ↑       ABCDABD       ↑</code></pre></div><p>好家伙,你会直接丢掉[4]~[10],而这正是我们要匹配的</p><p>所以我们定个小规矩:</p><blockquote><p>移动位数 = 已匹配的字符数 - 对应的部分匹配值</p></blockquote><blockquote><p>换句话说,就是移动到下一个重复片段的地方</p></blockquote><p>所以这个时候我们应该移动<strong>4位</strong>而不是<strong>6位</strong></p><div class="hljs"><pre><code class="hljs undefined">ABCDABCDABDABCDABD<span class="hljs-code">      ↑</span><span class="hljs-code">    ABCDABD</span><span class="hljs-code">      ↑</span><span class="hljs-code">  </span><span class="hljs-bullet">...</span>ABCDABCDABDABCDABD<span class="hljs-code">          ↑</span><span class="hljs-code">    ABCDABD</span><span class="hljs-code">          ↑</span></code></pre></div><p>这个时候我们已经匹配到了一串,那么接下来怎么移?还是直接移动6位?</p><p>不,我们还是要用自己定下的规矩,移动<strong>4位</strong></p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDABCDABDABCDABD</span>          ↑        ABCDABD          ↑</code></pre></div><p>此时,我们才能将其整个向右移动<strong>2位</strong></p><div class="hljs"><pre><code class="hljs undefined">ABCDABCDABDABCDABD<span class="hljs-code">           ↑</span><span class="hljs-code">           ABCDABD</span><span class="hljs-code">           ↑</span><span class="hljs-code">   </span><span class="hljs-bullet">...</span>ABCDABCDABDABCDABD<span class="hljs-code">                 ↑</span><span class="hljs-code">           ABCDABD</span><span class="hljs-code">                 ↑</span></code></pre></div><p>OK我们将其匹配完毕,整个<code>ABCDABCDABDABCDABD</code>包含两处<code>ABCDABD</code></p><h2 id="部分匹配表"><a href="#部分匹配表" class="headerlink" title="部分匹配表"></a>部分匹配表</h2><p>这是一张神奇的表格</p><p>首先我们搞清楚前缀和后缀是什么</p><p><code>SHITER</code></p><ul><li>前缀[‘S’,’SH’,’SHI’,’SHIT’,’SHITE’]</li><li>后缀[‘HITER’,’ITER’,’TER’,’ER’,’R’]</li></ul>]]></content>
     
     
     <categories>
@@ -74,9 +74,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>Hexo</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>集成部署</tag>
       
@@ -496,11 +496,11 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>撸羊毛</tag>
       
       <tag>IPFS</tag>
+      
+      <tag>CloudFlare</tag>
       
     </tags>
     
@@ -643,9 +643,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>Github</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>网络</tag>
       
@@ -864,9 +864,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>撸羊毛</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>奇淫巧计</tag>
       
