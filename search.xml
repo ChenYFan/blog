@@ -1482,17 +1482,18 @@ AB<span class="hljs-symbol">'Q</span>'
 
 不匹配，待匹配串向右移动一位
 
-A‘B’CDPOPO
-  ‘A’BQ
+A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>
+  <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
 
 不匹配，待匹配串向右移动一位
 
-AB’C‘DPOPO
-     ‘A’BQ
+AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>
+     <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
 
 不匹配，待匹配串向右移动一位
 
-...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p>]]></content>
+...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+AAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p>]]></content>
       <categories>
         <category>摸鱼小记</category>
       </categories>
