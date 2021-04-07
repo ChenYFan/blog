@@ -1491,7 +1491,7 @@ ABCDPOPABQO
  ABQ
  ↑
 ...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
-AAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><h2 id="部分匹配"><a href="#部分匹配" class="headerlink" title="部分匹配"></a>部分匹配</h2><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>
+AAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><h2 id="跳过已匹配字符"><a href="#跳过已匹配字符" class="headerlink" title="跳过已匹配字符"></a>跳过已匹配字符</h2><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>
 ↑
 ABQ
 ↑
@@ -1551,8 +1551,8 @@ ABCDPOPABQO
           ABQ
           ↑
 		  
-待匹配串已超过原串长度，结束</code></pre></div><h2 id="前后缀长度重复匹配"><a href="#前后缀长度重复匹配" class="headerlink" title="前后缀长度重复匹配"></a>前后缀长度重复匹配</h2><p>上面的例子可能没有讲到重点，接下来换个例子，前后缀匹配才是KMP的核心</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABABABCAABAB
-ABA</span></code></pre></div><p>留坑，明天冲</p>]]></content>
+待匹配串已超过原串长度，结束</code></pre></div><h2 id="部分匹配"><a href="#部分匹配" class="headerlink" title="部分匹配"></a>部分匹配</h2><p>上面的例子可能没有讲到重点，接下来换个例子，部分匹配才是KMP的核心</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABABABCAABAB
+ABA</span></code></pre></div>]]></content>
       <categories>
         <category>摸鱼小记</category>
       </categories>
