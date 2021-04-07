@@ -8,7 +8,7 @@
     <link href="/p/cef76c6c.html"/>
     <url>/p/cef76c6c.html</url>
     
-    <content type="html"><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：ABCDPOPO待匹配串：ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BCDPOPO</span><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'Q</span>AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>AB<span class="hljs-symbol">'Q</span>'不匹配，待匹配串向右移动一位A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>  <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>不匹配，待匹配串向右移动一位AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>     <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>不匹配，待匹配串向右移动一位...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p>]]></content>
+    <content type="html"><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：ABCDPOPABQO待匹配串：ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined">ABCDPOPABQO↑ABQ↑ABCDPOPABQO ↑ABQ ↑ ABCDPOPABQO  ↑ABQ  ↑  ABCDPOPABQO ↑ ABQ ↑...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>↑ABQ↑匹配，指针右移【以下未特殊表明均指针】ABCDPOPABQO ↑ABQ ↑ 匹配，右移ABCDPOPABQO  ↑ABQ  ↑</code></pre></div><p>这时候我们撞上了不匹配的情景，怎么办？右移一位？</p><p>不，我们发现原串里面的<code>C</code>在待匹配串里面根本没出现，所以我们选择把匹配串整个向右移动三位</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>   ↑   ABQ   ↑   不匹配，字符串右移一位ABCDPOPABQO↑    ABQ    ↑   省略数步ABCDPOPABQO       ↑       ABQ       ↑   匹配，右移ABCDPOPABQO        ↑       ABQ        ↑匹配，右移ABCDPOPABQO         ↑       ABQ         ↑匹配，右移这时候待匹配串已匹配完毕，记录并将整个串移动到末尾ABCDPOPABQO          ↑          ABQ          ↑  待匹配串已超过原串长度，结束</code></pre></div>]]></content>
     
     
     <categories>
@@ -994,9 +994,9 @@
     
     <tags>
       
-      <tag>PHP</tag>
-      
       <tag>撸羊毛</tag>
+      
+      <tag>PHP</tag>
       
       <tag>免费</tag>
       

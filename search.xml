@@ -68,20 +68,6 @@ print(enc(<span class="hljs-number">882584971</span>))</code></pre></div><p>互�
       </tags>
   </entry>
   <entry>
-    <title>Bing美图与故事PHP正式上线</title>
-    <url>/p/20ca08a.html</url>
-    <content><![CDATA[<p>欸…自己挖的坑必须要自己填啊…</p><p>最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">，一旦进行 <code>hexo server -w</code> 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了…<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"></p><p>欸，最近逃课太频繁，理科全挂科了，甚至在这一次<span class="heimu" title="你知道的太多了">尖子班</span>考试里化学挂科了，不应该这样的啊，我以前化学老棒老棒的了，看起来要拾回学习的心了。所以以后站点维护估计不会那么频繁了。</p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这两天因为Heroku每月时间重置了，又可以接着用了，于是考虑了很长时间决定工具箱和私有云重新上线。</p><p>不过工具箱因为绝大部分都是静态，没几个是动态的，所以打算采用动静态前后分离，动态资源以接口形式接到静态页面上，这样可以尽可能减少动态Heroku的运行时间，同样由于前端CloudFlare缓存大大减少调用时间。而私有云静态不可能,所以完全动态,又因为Heroku的时间计算是一个没验证账户一个月600小时,上个月不知道分成两个应用运行…所以干脆私有云和接口并在了一起，加上CloudFlare2hours的缓存，600小时一个月应该够用了…</p><h2 id="关于bing接口"><a href="#关于bing接口" class="headerlink" title="关于bing接口"></a>关于bing接口</h2><p>以前我在博客上写过怎么用BingPHP,但当时是用缓存的方式写入,但换到heroku上缓存写入就不可能了,于是想想办法解决, <code>windows.location</code> 会导致强制https至bing,对于不支持http就很吃亏了,最终采用 <code>header</code> 注入方式.</p><p>由于如果没有获取版权总觉得空荡荡，所以又特地写了一个获取bingcopyright的PHP，同时好好恶补了一下正则获取和解析xml。</p><p>还有当时没空写UI,这次特地去淘了两个css3和html5漂亮的界面,同时解决了手机端莫名其妙的UI问题.采用js检测UA的方式实现移动端和桌面端分别跳转.</p><p>这是实际使用:</p><p>桌面端:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/8.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="实际使用" title="桌面端动图"></p><p>手机端:</p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/9.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" width="200%" height="200%"><p>解决手机端不兼容桌面端问题：</p><p>手机横屏bug（已修复）：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-40.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>以及我的头像版权镇压，保证没有bug（不要删除ヽ（≧□≦）ノ！）</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-41.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>已开源，<a href="https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher" target="_blank" rel="noopener">https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher</a><br>不过暂时不允许转载删除版权和头像,因为修改这个花费我太多精力了,感谢您的理解!</p><p>今日Bing美图：</p><p><img src="https://pan.cyfan.top/api/bing/bing.php" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="Bing" title="今日Bing美图"></p><p><img src="https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/213.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>]]></content>
-      <categories>
-        <category>屌代码</category>
-      </categories>
-      <tags>
-        <tag>PHP</tag>
-        <tag>Bing</tag>
-        <tag>美图</tag>
-        <tag>版权</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通过CloudFlareAPI获取用户侧信息</title>
     <url>/p/a7d0d7f8.html</url>
     <content><![CDATA[<p>噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E8%82%BF%E5%8C%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。</p><p>因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通过hexo+nginx实现访问，不过可能是人比较傻，一直没搞好，而且这种免费小鸡说炸就炸，不保险，还是跟着<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">hexo官方文档</a> 用Travis-ci+Github实现在线自动部署,以后更新也方便点<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%9D%90%E7%AD%89.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>好了好了，不说了，今天简单讲一下如何用CloudFlare自带的API获取用户信息。</p><h1 id="cdn-cgi-trace"><a href="#cdn-cgi-trace" class="headerlink" title="/cdn-cgi/trace"></a>/cdn-cgi/trace</h1><p>刚开始建立博客的时候，也是想过显示用户ip地址的，但网上的教程大多都是用搜狐新浪的js，而且很早就过期了。所以也就搁着迟迟没有解决。</p><p>后来偶然间知道CloudFlare有个比较神奇的技术，在部署在CloudFlare上的网站，域名后面加上<code>/cdn-cgi/trace</code>就可以获得用户侧信息，例如<code>https://blog.cyfan.top/cdn-cgi/trace</code>：</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">fl</span>=<span class="hljs-number">23</span>f2**
@@ -1118,6 +1104,20 @@ Control-C
       </tags>
   </entry>
   <entry>
+    <title>Bing美图与故事PHP正式上线</title>
+    <url>/p/20ca08a.html</url>
+    <content><![CDATA[<p>欸…自己挖的坑必须要自己填啊…</p><p>最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif">，一旦进行 <code>hexo server -w</code> 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了…<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif"></p><p>欸，最近逃课太频繁，理科全挂科了，甚至在这一次<span class="heimu" title="你知道的太多了">尖子班</span>考试里化学挂科了，不应该这样的啊，我以前化学老棒老棒的了，看起来要拾回学习的心了。所以以后站点维护估计不会那么频繁了。</p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这两天因为Heroku每月时间重置了，又可以接着用了，于是考虑了很长时间决定工具箱和私有云重新上线。</p><p>不过工具箱因为绝大部分都是静态，没几个是动态的，所以打算采用动静态前后分离，动态资源以接口形式接到静态页面上，这样可以尽可能减少动态Heroku的运行时间，同样由于前端CloudFlare缓存大大减少调用时间。而私有云静态不可能,所以完全动态,又因为Heroku的时间计算是一个没验证账户一个月600小时,上个月不知道分成两个应用运行…所以干脆私有云和接口并在了一起，加上CloudFlare2hours的缓存，600小时一个月应该够用了…</p><h2 id="关于bing接口"><a href="#关于bing接口" class="headerlink" title="关于bing接口"></a>关于bing接口</h2><p>以前我在博客上写过怎么用BingPHP,但当时是用缓存的方式写入,但换到heroku上缓存写入就不可能了,于是想想办法解决, <code>windows.location</code> 会导致强制https至bing,对于不支持http就很吃亏了,最终采用 <code>header</code> 注入方式.</p><p>由于如果没有获取版权总觉得空荡荡，所以又特地写了一个获取bingcopyright的PHP，同时好好恶补了一下正则获取和解析xml。</p><p>还有当时没空写UI,这次特地去淘了两个css3和html5漂亮的界面,同时解决了手机端莫名其妙的UI问题.采用js检测UA的方式实现移动端和桌面端分别跳转.</p><p>这是实际使用:</p><p>桌面端:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/8.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="实际使用" title="桌面端动图"></p><p>手机端:</p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/9.gif" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" width="200%" height="200%"><p>解决手机端不兼容桌面端问题：</p><p>手机横屏bug（已修复）：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-40.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>以及我的头像版权镇压，保证没有bug（不要删除ヽ（≧□≦）ノ！）</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-41.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="upload successful"></p><p>已开源，<a href="https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher" target="_blank" rel="noopener">https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher</a><br>不过暂时不允许转载删除版权和头像,因为修改这个花费我太多精力了,感谢您的理解!</p><p>今日Bing美图：</p><p><img src="https://pan.cyfan.top/api/bing/bing.php" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="Bing" title="今日Bing美图"></p><p><img src="https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/213.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>]]></content>
+      <categories>
+        <category>屌代码</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>Bing</tag>
+        <tag>美图</tag>
+        <tag>版权</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>打造一个可国内访问的Blogger（Blogspot）方法</title>
     <url>/p/620f3e8d.html</url>
     <content><![CDATA[<p>Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍‌‌‌​‌‍‌‌​‍‍‍​‍‍‌​​‍‌‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍​‍‍‍​‌‍‍‌ger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&amp;Wordpress高昂的服务器费用，避免了Hexo&amp;Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域名，界面干净，无广告【当然可以自己放自己的广告】。</p><p>实际上，当今写博客的软件数不胜数，主要分为一下三类：</p><ul><li>服务器部署：典型代表：Wordpress\Typecho</li><li>无服务器托管：典型代表：Hexo\Jekyll\Gidea\Hugo\Hola等等</li><li>集成型网站：Blogger、简书、CSDN、cnblog、wodemo等等</li></ul><p>上面所有软件，优缺点都有，具体看个人选择</p><p>当然，个人认为Typecho适合做个人博客，Hexo可以作为要求不高的人。集成性网站最主要的是只要安安心心写文章，不用管后端乱七八糟的代码。当然，最有问题的是大多数都不支持绑定域名，而且经常往网站上塞广告，自定义范围也不够。</p><p>接下来，我们扯扯集成博客中的一股清流：Blogger</p><blockquote><p>Blogger.com是由Pyra Labs公司创立，是目前全球用户数量最多的个人网志服务提供商。Pyra Labs和Blogger.com均被Google公司收购，成为其旗下的一项服务内容。<br>Blogger提供免费主机Blogspot.com存放博客，用户不必写任何代码或者安装服务器软件或脚本，通过所见即所得界面轻松地创建、发布、维护和修改自己的网志。<br>Blogger允许有经验的用户自行设计博客界面，其模板支持使用HTML和CSS进行编辑</p></blockquote><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20084428.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>实际上，由于Blogger托管于谷歌，写作域名 <code>www.blogger.com</code> 和托管域名 <code>*.blogspot.com</code> 均被MainLand所Ban。但是接下来来，我会讲讲如何打造一个能在国内大陆访问的Blogger</p><h1 id="1-注册Blogger"><a href="#1-注册Blogger" class="headerlink" title="1. 注册Blogger"></a>1. 注册Blogger</h1><blockquote><p>众所周知，请科学上网。</p></blockquote><p>用谷歌账号登录 (<a href="https://www.blogger.com" target="_blank" rel="noopener">https://www.blogger.com</a>) ，没有？不是⑧不是吧不是扒，都0202年了，还不会去注册一个谷歌账号？</p><p>进入控制台，新建一个博客：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20084652.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>绑定域名,这一步随意,因为我们还要绑定一个自定义域名.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20084847.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>点击确定,一个博客就搭建好了!快吧?</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>这时候,我们<strong>科学上网</strong>访问之前的域名,我这里是: <code>cyfblogger.blogspot.com</code>，打开：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>搞定！搞完之后才知道，Blogger真正做到了什么叫1分钟创建一个博客，但这还不够，中国访客实际上还是打不开这个网站<a href="大多被污染到莫名其妙的ip去了,例如Facebook和Twitter">1</a>。所以，接下来，我们要让这个网站能在中国访问。</p><p>目前我们有一下思路:</p><ul><li>选择一个未被官方屏蔽的Blogger节点,此方法几年前还是可用的,最近不大灵光了,被屏蔽的差不多了</li><li>使用服务器反向代理Blogger,不推荐,有这个闲工夫你还不如直接用Typecho呢</li><li>CloudFlareCDN反向代理,这似乎是唯一一个解决的办法.</li></ul><h1 id="2-绑定自定义域名"><a href="#2-绑定自定义域名" class="headerlink" title="2.绑定自定义域名"></a>2.绑定自定义域名</h1><p>由于 <code>*.blogspot.com</code> 泛域名被屏蔽,所以你必须要有一个自己的域名.</p><p>不推荐免费域名，因为免费域名无法自选CF节点，当然你也可以换别的方式。</p><p>这里推荐一个买域名的好网站：<code>https://namebeta.com/</code> namebeta并不是购买域名的地方,但是它可以帮你货比三家,让你跳出更优惠的方案,并且自带各种温馨提示,包括能不能备案,有没有被注册等等,比较适合刚入门想买域名的小白.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20090113.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>购买绑定NS不在谈论范围内,有域名的看下去</p><p>以下演示方便在CloudFlare官网里进行,采用免费域名演示,实际用笨牛CNAME解析为好.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20091514.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>点击【设置】-【正在发布】-【自定义域名】</p><p>接着会报错：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20092548.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>提示没验证，没关系，去CloudFlare加上CNAME，注意验证过程中切记把橙色云朵点灰<a href="实际上下面那条记录是为了验证你有没有主域名控制权。">2</a>：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20092736.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>回去，点击确定，勾选HTTPS可用性。</p><p>谷歌SSL验证和办法真的慢，没办法，喝杯茶，写点作业，过了10min，显示颁发成功：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20093118.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>回到CloudFlare，把访客访问的那条记录点亮橙色云朵，作为验证的记录不点亮.</p><p>国内访问试试？</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20094026.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>这时候我们发现，虽然国内能直连了，但是背景图加载不出来，整个网页加载缓慢。控制台以下，我们就会发现，Blogspot请求了国外谷歌边缘节点的内容，包括背景图片和部分js。</p><p>所以，我们还要对博客主题进行加工。</p><h1 id="3-更改主题"><a href="#3-更改主题" class="headerlink" title="3.更改主题"></a>3.更改主题</h1><blockquote><p>演示方便，用Contempo Light主题<br>实际上用其它主题也差不多的，注意替换掉外链即可</p></blockquote><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.1/2020-07-29%20094333.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>点击备份，下载主题:</p><p>用Notepad++打开，方便处理</p><h2 id="屏蔽加载"><a href="#屏蔽加载" class="headerlink" title="屏蔽加载"></a>屏蔽加载</h2><p>将<code>&lt;head&gt;</code>替换为<code>&amp;lt;!--&lt;head&gt;--&amp;gt;&amp;lt;head&amp;gt;</code></p><p>将<code>&lt;/head&gt;</code>替换为<code>&amp;lt;/head&amp;gt;&amp;lt;!--&lt;/head&gt;--&amp;gt;</code></p><p>将<code>&lt;/body&gt;</code>替换为<code>&amp;lt;!--&lt;/body&gt;--&amp;gt;&amp;lt;/body&amp;gt;</code></p><h2 id="替换背景"><a href="#替换背景" class="headerlink" title="替换背景"></a>替换背景</h2><p>在49行左右，有这么一段代码：</p><div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"body.background"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Background"</span>
@@ -1469,31 +1469,89 @@ https://unpkg.zhimg.com/chenyfan-oss@1.0.0/js/valine.min.js</code></pre></div><h
     <title>看毛片(KMP)算法小记</title>
     <url>/p/cef76c6c.html</url>
     <content><![CDATA[<p>一直摸鱼的CYF突然安静了下来,因为他想学学一个别人都会的算法。</p><a id="more"></a><p><del>我菜就是菜，只能学别人早就会的算法了</del></p><p>先贴维基链接【讲的比CSDN清楚，自己访问】</p><p><a href="https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/KMP%E7%AE%97%E6%B3%95</a></p><p>长串匹配短串，基本上DP打一遍就冲了。</p><p>DP本质简单的很：</p><div class="hljs"><pre><code class="hljs undefined">匹配串：
-ABCDPOPO
+ABCDPOPABQO
 待匹配串：
-ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-symbol">'A</span><span class="hljs-symbol">'BCDPOPO</span>
-<span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
+ABQ</code></pre></div><p>开始匹配</p><div class="hljs"><pre><code class="hljs undefined">ABCDPOPABQO
+↑
+ABQ
+↑
 
-A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>
-A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'Q</span>
-
-AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>
-AB<span class="hljs-symbol">'Q</span>'
-
-不匹配，待匹配串向右移动一位
-
-A<span class="hljs-symbol">'B</span><span class="hljs-symbol">'CDPOPO</span>
-  <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
-
-不匹配，待匹配串向右移动一位
-
-AB<span class="hljs-symbol">'C</span><span class="hljs-symbol">'DPOPO</span>
-     <span class="hljs-symbol">'A</span><span class="hljs-symbol">'BQ</span>
-
-不匹配，待匹配串向右移动一位
-
+ABCDPOPABQO
+ ↑
+ABQ
+ ↑
+ 
+ABCDPOPABQO
+  ↑
+ABQ
+  ↑
+  
+ABCDPOPABQO
+ ↑
+ ABQ
+ ↑
 ...</code></pre></div><p>显而易见，这种复杂度极高【O(m*n)】，当然，冲个入门级别的绝对没问题</p><p>然而类似基因匹配这种数量级恶心心的东西，DP绝对是不够的。</p><p>或者说一个恶心的数据</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
-AAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p>]]></content>
+AAB</span></code></pre></div><p>这样如果直接硬DP，那绝对TLE。</p><p>于是，我们选择一个简单的算法，<span class="heimu">看毛片</span> KMP算法，他可以很好的提升我们匹配的效率</p><h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>首先名字很有意思，之所以叫做KMP，是因为这个算法是由Knuth、Morris、Pratt三个提出来的，取了这三个人的名字的头一个字母。</p><p>扯远了，将匹配方式简单讲一下</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>
+↑
+ABQ
+↑
+
+匹配，指针右移【以下未特殊表明均指针】
+
+ABCDPOPABQO
+ ↑
+ABQ
+ ↑
+ 
+匹配，右移
+
+ABCDPOPABQO
+  ↑
+ABQ
+  ↑</code></pre></div><p>这时候我们撞上了不匹配的情景，怎么办？右移一位？</p><p>不，我们发现原串里面的<code>C</code>在待匹配串里面根本没出现，所以我们选择把匹配串整个向右移动三位</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">ABCDPOPABQO</span>
+   ↑
+   ABQ
+   ↑
+   
+不匹配，字符串右移一位
+
+
+ABCDPOPABQO
+	↑
+    ABQ
+    ↑
+   
+省略数步
+
+ABCDPOPABQO
+       ↑
+       ABQ
+       ↑
+	   
+匹配，右移
+
+ABCDPOPABQO
+        ↑
+       ABQ
+        ↑
+		
+匹配，右移
+
+ABCDPOPABQO
+         ↑
+       ABQ
+         ↑
+		
+匹配，右移
+
+这时候待匹配串已匹配完毕，记录并将整个串移动到末尾
+
+ABCDPOPABQO
+          ↑
+          ABQ
+          ↑
+		  
+待匹配串已超过原串长度，结束</code></pre></div>]]></content>
       <categories>
         <category>摸鱼小记</category>
       </categories>
@@ -2443,8 +2501,8 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div><h2 id="�
         <category>要公告</category>
       </categories>
       <tags>
-        <tag>PHP</tag>
         <tag>撸羊毛</tag>
+        <tag>PHP</tag>
         <tag>免费</tag>
         <tag>工具箱</tag>
         <tag>私有云</tag>
