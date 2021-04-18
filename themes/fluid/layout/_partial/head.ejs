@@ -1,0 +1,52 @@
+<%
+var joinStr = theme.title_join_string
+var title = config.title
+if (page.title) {
+  title = [page.title, title].join(joinStr)
+}
+%>
+
+<head>
+  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.apple_touch_icon) %>">
+  <link rel="icon" type="image/png" href="<%- url_for(theme.favicon) %>">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <% if (theme.force_https) { %>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <% } %>
+  <meta name="theme-color" content="<%- theme.color.navbar_bg_color %>">
+  <% if(!(is_post())) { %>
+    <meta name="description" content="<%= config.description %>">
+
+  <meta name="keywords" content="<%= config.keywords %>">
+  <% } %>
+    <% if(is_post()) { %>
+	<% if(page.des) { %>
+	    <meta name="description" content="<%= page.des %>">
+	 <% } %>
+	 
+	 	<% if(!(page.des)) { %>
+	    <meta name="description" content="<%= strip_html(page.content).substr(0, 150) %>">
+	 <% } %>
+
+	<% if(page.key) { %>
+	    <meta name="keywords" content="<%= page.key %>">
+	 <% } %>
+	 
+	 	<% if(!(page.key)) { %>
+	  <meta name="keywords" content="<%= config.keywords %>">
+	 <% } %>
+
+ 
+  <% } %>
+  <meta name="author" content="<%= config.author %>">
+  <title><%= title %></title>
+
+  <%- partial('_partial/css.ejs') %>
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js">
+
+</script>
+</head>

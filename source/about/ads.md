@@ -1,0 +1,328 @@
+---
+title: 广告页
+comments: false
+copyright: false
+---
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Re -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="1194965004"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+由于收入不足,本站与2019-08-16创建了本页,作为收入来源之一，其中大部分用于维护网页和购买域名，当然也有一部分买些棒棒糖，但我们不会再在其它网页明显位置（除了首页最后一栏）添加广告，只有这里才能添加。
+欢迎点击广告！
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ADS-IN-Tools -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="7951945047"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<img src="https://img.cyfan.top/pic/NOADS.png" class="full-image" alt="广告位置招租（原始版）">
+
+> 广告要求：
+> 拒绝反动\暴力\色情\宗教\伦理类广告,最好不要推销V·P·N，支持JPG/PNG/GIF外链（您可以随时更改），支持但不建议JS。
+> 注意：在您更改后，如果出现反动\暴力\色情\宗教\伦理类广告，则立刻删除，并不退还钱！
+> 大小：自适应缩小版：长度不可大于500px，原始版：长度不大于800px，宽度不大于1080px
+> 位招租面额（暂定）：
+> 图片外链：¥0.5/天
+> JS：¥0.3/天,每一次点击¥0.1/次
+> 以上以按月支付，具体和投放价格联系<chen2778754364@foxmail.com>,主题以`广告招租`,谢谢!
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1878991317600808"
+     data-ad-slot="6517667779"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+至于博主们，也不必失魂落魄到添加广告吧...可以到留言板留言交换友链。
+
+
+<link href="https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.css" rel="stylesheet">
+  <div id="ArtalkComments"></div>
+ 
+  <!-- ... -->
+  <script src="https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.js"></script>
+  <script>
+  new Artalk({
+    el: '#ArtalkComments', // 元素选择
+    placeholder: '开车不规范，亲人两行泪', // 占位符
+    noComment: '快来搬沙发！', // 无评论时显示
+    defaultAvatar: 'mp', // 参考 https://cn.gravatar.com/site/implement/images/#default-image
+    pageKey: location.pathname,
+    serverUrl: 'http://artalk-as.cyfan.top:31199/index.php',
+    readMore: { // 阅读更多配置
+      pageSize: 5, // 每次请求获取评论数
+      autoLoad: false // 滚动到底部自动加载
+    },
+	gravatar: {
+    cdn: 'https://dn-qiniu-avatar.qbox.me/avatar/'
+    },
+	emoticons: {	  
+		"滑稽":{"inputType":"image","container":{"原味稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d26b7ae13.png","还是算了":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/riySFlu75fJdG4p.png","蓝纹稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/jyh5IVzpqXsHuvU.jpg","随稽应变":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e6ec1d528.jpg","蠕动":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9712a3c1.gif","束手无稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/dF8sTOpgomj7qf5.jpg","微笑默叹以为妙绝":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53daa84f24a.png","喝嘤料":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d63d8c6af.jpg","暗中观察":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dd21a2e7b.jpg","高兴":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1b9e5f38.jpg","惊稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1e2ad89f.jpg","可这和我的帅有什么关系":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29a8e0.jpg","狱稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cUEQrVYGFiDjqhy.jpg","梆":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/TlAGjm6IvJSMVpq.jpg","吃鱼摆摆":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ec2cb7f39.gif","跃跃欲试 3":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2ac5a2.gif","突然滑稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53cf2a457f1.jpg","扶墙怂":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2ab57a.jpg","阔以":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7EYyq1TcBKa3eQ2.jpg","不得行":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/KoqBGauX7TEfeyn.jpg","少儿不宜":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/nt2ZWRozUNjBxAK.jpg","稽日可期":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/FmfYcoMJesi2Ddq.jpg","哎":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/ps7PTIANgSErqnU.jpg","别看丢人":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d4f89ea29.jpg","地稽 2":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbae85687.jpg","地稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/BnTMX35EPxleVmA.jpg","老阔有点扣":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/fhDXbA9T1zJPlKk.gif","啊哈哈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dc2947d84.jpg","无稽可奈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/UyxTzB2fS3LtH7Q.jpg","老实巴交":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7DgSoyqwtYBxchE.jpg","紧张":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e8a408253.jpg","摇摆稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1904dcb2.gif","又不是不能用":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg","一时滑稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d5d28e22c.jpg","无法接受":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53cee8422fc.jpg","嘤雄豪稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/sbtw6o7iKaM4Nmq.jpg","相视双稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d5a093149.jpg","稽皮发麻":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2a019f.jpg","地稽 3":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbe510bcf.jpg","地稽委屈":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d76e250da.jpg","地稽抚摸":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cavZ6nNzMPimLy7.gif","地稽捶打":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/vFVPynXaHR5sitk.gif","绝望":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dc0ba2303.jpg","气稽败坏":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d216f3c60.jpg","当场去世":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/sogxHMTFWbE2lrP.jpg","喝酒":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg","老衲摆摊算命":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29d8a5.gif","老哥，稳":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29ebb0.jpg","自闭稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d6603ee24.jpg","无话可说":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d6a77b7e4.jpg","跃跃欲试":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9710dfd5.jpg","跃跃欲试 2":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dcc057350.jpg","满脑子骚操作":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/xJXcUtO2BryHAsa.gif","稽之舞":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53de1a4d14d.gif","将稽就稽":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/KVwf8qCrZts6WOT.gif","吐血":"https://rmt.dogedoge.com/fetch/hi-c-oss/storage/tx.png","右滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/yhuaji.png","中滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/huaji.png","左滑稽": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/zhuaji.png",}},
+		"阿鲁":{"inputType":"image","container":{"不出所料.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不出所料.png",
+            "不说话.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不说话.png",
+            "不高兴.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/不高兴.png",
+            "中刀.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中刀.png",
+            "中指.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中指.png",
+            "中枪.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/中枪.png",
+            "亲亲.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/亲亲.png",
+            "便便.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/便便.png",
+            "内伤.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/内伤.png",
+            "击掌.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/击掌.png",
+            "口水.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/口水.png",
+            "吐.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐.png",
+            "吐舌.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐舌.png",
+            "吐血倒地.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/吐血倒地.png",
+            "呲牙.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/呲牙.png",
+            "咽气.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/咽气.png",
+            "哭泣.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/哭泣.png",
+            "喜极而泣.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喜极而泣.png",
+            "喷水.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喷水.png",
+            "喷血.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/喷血.png",
+            "坐等.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/坐等.png",
+            "害羞.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/害羞.png",
+            "小眼睛.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/小眼睛.png",
+            "尴尬.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/尴尬.png",
+            "得意.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/得意.png",
+            "惊喜.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/惊喜.png",
+            "想一想.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/想一想.png",
+            "愤怒.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/愤怒.png",
+            "扇耳光.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/扇耳光.png",
+            "投降.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/投降.png",
+            "抠鼻.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/抠鼻.png",
+            "抽烟.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/抽烟.png",
+            "无奈.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无奈.png",
+            "无所谓.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无所谓.png",
+            "无语.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/无语.png",
+            "暗地观察.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/暗地观察.png",
+            "期待.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/期待.png",
+            "欢呼.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/欢呼.png",
+            "汗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/汗.png",
+            "深思.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/深思.png",
+            "狂汗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/狂汗.png",
+            "献花.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/献花.png",
+            "献黄瓜.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/献黄瓜.png",
+            "皱眉.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/皱眉.png",
+            "看不见.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/看不见.png",
+            "看热闹.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/看热闹.png",
+            "瞅你.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/瞅你.png",
+            "肿包.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/肿包.png",
+            "脸红.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/脸红.png",
+            "蜡烛.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/蜡烛.png",
+            "装大款.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/装大款.png",
+            "观察.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/观察.png",
+            "赞一个.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/赞一个.png",
+            "邪恶.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/邪恶.png",
+            "锁眉.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/锁眉.png",
+            "长草.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/长草.png",
+            "阴暗.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/阴暗.png",
+            "高兴.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/高兴.png"}},
+	"猫羽雫":{"inputType":"image","container":{"stick_1.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_1.png",
+            "stick_10.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_10.png",
+            "stick_11.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_11.png",
+            "stick_12.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_12.png",
+            "stick_13.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_13.png",
+            "stick_14.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_14.png",
+            "stick_15.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_15.png",
+            "stick_16.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_16.png",
+            "stick_17.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_17.png",
+            "stick_18.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_18.png",
+            "stick_19.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_19.png",
+            "stick_2.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_2.png",
+            "stick_20.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_20.png",
+            "stick_21.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_21.png",
+            "stick_22.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_22.png",
+            "stick_23.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_23.png",
+            "stick_24.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_24.png",
+            "stick_25.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_25.png",
+            "stick_26.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_26.png",
+            "stick_27.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_27.png",
+            "stick_28.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_28.png",
+            "stick_29.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_29.png",
+            "stick_3.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_3.png",
+            "stick_30.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_30.png",
+            "stick_31.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png",
+            "stick_32.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_32.png",
+            "stick_33.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_33.png",
+            "stick_34.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png",
+            "stick_35.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_35.png",
+            "stick_36.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_36.png",
+            "stick_37.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_37.png",
+            "stick_38.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_38.png",
+            "stick_39.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_39.png",
+            "stick_4.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_4.png",
+            "stick_40.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_40.png",
+            "stick_41.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_41.png",
+            "stick_42.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_42.png",
+            "stick_43.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_43.png",
+            "stick_44.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_44.png",
+            "stick_45.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_45.png",
+            "stick_46.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_46.png",
+            "stick_47.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_47.png",
+            "stick_48.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_48.png",
+            "stick_49.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_49.png",
+            "stick_5.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_5.png",
+            "stick_50.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_50.png",
+            "stick_51.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_51.png",
+            "stick_52.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_52.png",
+            "stick_53.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_53.png",
+            "stick_54.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_54.png",
+            "stick_55.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_55.png",
+            "stick_56.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png",
+            "stick_57.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_57.png",
+            "stick_58.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_58.png",
+            "stick_59.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_59.png",
+            "stick_6.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_6.png",
+            "stick_60.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_60.png",
+            "stick_61.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_61.png",
+            "stick_62.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_62.png",
+            "stick_63.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_63.png",
+            "stick_64.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_64.png",
+            "stick_65.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_65.png",
+            "stick_66.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_66.png",
+            "stick_67.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_67.png",
+            "stick_68.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_68.png",
+            "stick_69.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_69.png",
+            "stick_7.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_7.png",
+            "stick_70.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_70.png",
+            "stick_71.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_71.png",
+            "stick_72.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_72.png",
+            "stick_73.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_73.png",
+            "stick_74.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_74.png",
+            "stick_75.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_75.png",
+            "stick_76.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_76.png",
+            "stick_77.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_77.png",
+            "stick_78.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_78.png",
+            "stick_79.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_79.png",
+            "stick_8.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_8.png",
+            "stick_80.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_80.png",
+            "stick_81.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_81.png",
+            "stick_9.png": "https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_9.png"}},
+			  "颜文字": {
+    "inputType": "emoticon",
+    "container": {
+      "Hi": "|´・ω・)ノ",
+      "开心": "ヾ(≧∇≦*)ゝ",
+      "星星眼": "(☆ω☆)",
+      "掀桌": "（╯‵□′）╯︵┴─┴",
+      "流口水": "￣﹃￣",
+      "捂脸": "(/ω＼)",
+      "给跪": "∠( ᐛ 」∠)＿",
+      "哈？": "(๑•̀ㅁ•́ฅ)",
+      "斜眼": "→_→",
+      "加油": "୧(๑•̀⌄•́๑)૭",
+      "有木有WiFi": "٩(ˊᗜˋ*)و",
+      "前方高能预警": "(ノ°ο°)ノ",
+      "纳尼": "(´இ皿இ｀)",
+      "吓死惹": "⌇●﹏●⌇",
+      "已阅留爪": "(ฅ´ω`ฅ)",
+      "去吧大师球": "(╯°A°)╯︵○○○",
+      "太萌惹": "φ(￣∇￣o)",
+      "咦咦咦": "ヾ(´･ ･｀｡)ノ\"",
+      "气呼呼": "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃",
+      "我受到了惊吓": "(ó﹏ò｡)",
+      "什么鬼": "Σ(っ °Д °;)っ",
+      "摸摸头": "( ,,´･ω･)ﾉ\"(´っω･｀｡)",
+      "无奈": "╮(╯▽╰)╭ ",
+      "脸红": "o(*////▽////*)q ",
+      "悲哀": "＞﹏＜",
+      "静静地看着你": "( ๑´•ω•) \"(ㆆᴗㆆ)",
+      "不要哇": "(｡•ˇ‸ˇ•｡)"
+    }
+  }
+	}
+  });
+  </script>
+<style>
+.artalk>.artalk-editor>.artalk-editor-textarea-wrap .artalk-editor-textarea{
+    background: var(--board-bg-color);
+	color: var(--text-color);
+	border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-header{
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-list-wrap {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+    border: 1px solid transparent;
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types>span.active, .artalk-editor-plug-emoticons .artalk-emoticons-types>span:hover {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-right {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-left {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk-editor-plug-preview {
+    background: var(--board-bg-color);
+	color: var(--text-color);
+}
+.artalk>.artalk-editor {
+    background: var(--board-bg-color);
+	border: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-bottom-part.artalk-right {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk-editor-plug-emoticons .artalk-emoticons-types {
+	border-top: 1px solid transparent;
+	color: var(--text-color);
+}
+.artalk-comment-wrap>.artalk-comment>.artalk-comment-main>.artalk-body>.artalk-content>p{
+	color: var(--text-color);
+	border: 1px solid transparent;
+}
+.artalk-comment-wrap {
+	border: 1px solid transparent;
+}
+.artalk>.artalk-list>.artalk-list-header {
+    border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-plug-wrap {
+    border: 1px solid transparent;
+}
+.artalk>.artalk-editor>.artalk-editor-bottom .artalk-editor-action:not(:last-child){
+    border: 1px solid transparent;
+	}
+.artalk>.artalk-list>.artalk-list-header .artalk-comment-count {
+	color: var(--text-color);
+}
+.artalk>.artalk-editor>.artalk-editor-textarea-wrap .artalk-editor-textarea{
+	color: var(--text-color);
+}
+</style>

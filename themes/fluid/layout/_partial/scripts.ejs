@@ -1,0 +1,39 @@
+<!-- Plugins -->
+
+
+
+
+
+<% if ((theme.footer.statistics.enable && theme.footer.statistics.source === 'busuanzi')
+  || (page.meta !== false && theme.post.meta.views.enable && theme.post.meta.views.source === 'busuanzi')) { %>
+  <%- js_ex(theme.static_prefix.busuanzi, 'busuanzi.pure.mini.js', 'defer') %>
+<% } else if ( theme.web_analytics.leancloud.app_id && theme.web_analytics.leancloud.app_key &&
+  ((theme.footer.statistics.enable && theme.footer.statistics.source === 'leancloud')
+    || (page.meta !== false && theme.post.meta.views.enable && theme.post.meta.views.source === 'leancloud'))) { %>
+  <%- partial('_partial/plugins/leancloud.ejs') %>
+<% } else if (theme.web_analytics.enable && theme.web_analytics.leancloud.app_id && theme.web_analytics.leancloud.app_key) { %>
+  <%- partial('_partial/plugins/leancloud.ejs') %>
+<% } %>
+
+<% if (theme.custom_js) { %>
+  <%- js(theme.custom_js) %>
+<% } %>
+<% if(is_post()) { %>
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/js/lush.js"></script><!--这两个不能合并-->
+<script src="https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/js/ga-hit/index.js"></script>
+<script>
+  window.post_views_api = "https://ga-hit.chenyfan.xyz/api/ga";
+</script>
+
+  <% } %>
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js"></script>
+<%- partial('_partial/plugins/tocjs.ejs') %>
+<%- partial('_partial/plugins/typed.ejs') %>
+<%- partial('_partial/plugins/anchor.ejs') %>
+<%- partial('_partial/plugins/local-search.ejs') %>
+<%- partial('_partial/plugins/fancybox.ejs') %>
+<%- partial('_partial/plugins/math.ejs') %>
+<%- partial('_partial/plugins/mouse-click.ejs') %>
+<%- partial('_partial/plugins/daovoice.ejs') %>
+<%- partial('_partial/plugins/mermaid.ejs') %>
+<%- partial('_partial/plugins/analytics.ejs') %>
