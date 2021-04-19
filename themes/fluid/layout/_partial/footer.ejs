@@ -22,15 +22,13 @@ document.onreadystatechange = function(){
      }
 }  
 </script>
-<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn@0.0.2/js/retime.min.js" defer>
 </script>
 <p>
 当前CDN节点: <span id="cdn">【未知】</span> |
 你的ip: <span id="ip">【未知】</span> |
 你的所在国家/地区: <span id="loc">【未知】 </span></p>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/chenyfan/cdn@0.0.2/js/getinfo.min.js"></script></p></div>
+<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js" defer></script></p></div>
     <%- partial('_partial/statistics.ejs') %>
     <%- partial('_partial/beian.ejs') %>
     <% if(theme.web_analytics.cnzz) { %>
@@ -54,7 +52,42 @@ document.onreadystatechange = function(){
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/chenyfan-oss@2.0.3"></script>
+<script>
+function loadScript(src, callback) {
+        var script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0];
+        script.type = 'text/javascript';
+        script.charset = 'UTF-8';
+        script.src = src;
+        if (script.addEventListener) {
+            script.addEventListener('load', function () {
+                callback();
+            }, false);
+        } else if (script.attachEvent) {
+            script.attachEvent('onreadystatechange', function () {
+                var target = window.event.srcElement;
+                if (target.readyState == 'loaded') {
+                    callback();
+                }
+            });
+        }
+        head.appendChild(script);
+    }
+    function loadlive2d() {
+        if (document.body.clientWidth > 600) {
+            document.onreadystatechange = function () {
+                if (document.readyState == "complete") {
+                    loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js',function(){
+                        loadModel();
+})
+                }
+            }
+        }
+    }
+    setTimeout(() => {loadlive2d();}, 0)
+
+
+</script>
 </footer>
 
 <!-- SCRIPTS -->
