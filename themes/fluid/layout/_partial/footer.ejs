@@ -1,93 +1,53 @@
 <footer class="mt-5">
   <div class="text-center py-3">
     <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link" href="javascript:lush(window.location.pathname);"> <b>此页面的JSDelivr托管版</a></b><!--
+      <div>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
+          href="javascript:lush(window.location.pathname);"> <b>此页面的JSDelivr托管版</a></b>
+        <!--
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
-	<p id="showsectime"></p>
-<a href="/hpp/admin">	
-	<p id="bloggeractivetime"></p></a>
-	<script type="text/javascript">
-document.onreadystatechange = function(){
-    if(document.readyState == "complete"){
-        var ele1 = document.createElement("script");
-        ele1.src = "/hpp/api/getblogeractive";
-        document.body.appendChild(ele1);
-        var ele2 = document.createElement("script");
-        ele2.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-        document.body.appendChild(ele2);
-     }
-}  
-</script>
-</script>
-<p>
-当前CDN节点: <span id="cdn">【未知】</span> |
-你的ip: <span id="ip">【未知】</span> |
-你的所在国家/地区: <span id="loc">【未知】 </span></p>
+        <p id="showsectime"></p>
+        <a href="/hpp/admin">
+          <p id="bloggeractivetime"></p>
+        </a>
+        </script>
+        <p>
+          当前CDN节点: <span id="cdn">【未知】</span> |
+          你的ip: <span id="ip">【未知】</span> |
+          你的所在国家/地区: <span id="loc">【未知】 </span></p>
 
-<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js" defer></script></p></div>
-    <%- partial('_partial/statistics.ejs') %>
-    <%- partial('_partial/beian.ejs') %>
-    <% if(theme.web_analytics.cnzz) { %>
-      <!-- cnzz Analytics Icon -->
-      <span id="cnzz_stat_icon_<%- theme.web_analytics.cnzz %>" style="display: none"></span>
-    <% } %>
-  </div>
-  <style>
-    .live2d {
+        </p>
+      </div>
+      <%- partial('_partial/statistics.ejs') %>
+        <%- partial('_partial/beian.ejs') %>
+          <% if(theme.web_analytics.cnzz) { %>
+            <!-- cnzz Analytics Icon -->
+            <span id="cnzz_stat_icon_<%- theme.web_analytics.cnzz %>" style="display: none"></span>
+            <% } %>
+    </div>
+    <style>
+      .live2d {
         position: fixed;
         left: -100px;
         bottom: -20px;
         width: 500px !important;
         height: 437.5px !important;
         z-index: 998;
-    }
-</style>
+      }
+    </style>
 
-<div id="live2d" class="live2d">
-    <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
-</div>
-
-
-<script>
-function loadScript(src, callback) {
-        var script = document.createElement('script'),
-            head = document.getElementsByTagName('head')[0];
-        script.type = 'text/javascript';
-        script.charset = 'UTF-8';
-        script.src = src;
-        if (script.addEventListener) {
-            script.addEventListener('load', function () {
-                callback();
-            }, false);
-        } else if (script.attachEvent) {
-            script.attachEvent('onreadystatechange', function () {
-                var target = window.event.srcElement;
-                if (target.readyState == 'loaded') {
-                    callback();
-                }
-            });
-        }
-        head.appendChild(script);
-    }
-    function loadlive2d() {
-        if (document.body.clientWidth > 600) {
-            document.onreadystatechange = function () {
-                if (document.readyState == "complete") {
-                    loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js',function(){
-                        loadModel();
-})
-                }
-            }
-        }
-    }
-    setTimeout(() => {loadlive2d();}, 0)
+    <div id="live2d" class="live2d">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
 
 
-</script>
+
 </footer>
 
 <!-- SCRIPTS -->

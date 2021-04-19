@@ -131,16 +131,7 @@ background-color:#bbb;
 
   <%- partial('_partial/footer', { data: { 'subtitle': subtitle } }) %>
 
-<script>
-  window.FPConfig = {
-    delay: 0,    // 浏览器空闲多少秒后开始预加载
-    ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
-    maxRPS: 3,    // 每秒最大加载数
-    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
-    // 上方数值未默认值
-  };
-</script>
-<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
 <script>
 // Check that service workers are registered
 if ('serviceWorker' in navigator) {

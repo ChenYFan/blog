@@ -1,3 +1,4 @@
+---
 title: 再见Z16，Hi Laffey！
 author: CYF
 tags:
@@ -8,10 +9,11 @@ categories:
   - 随心记
 des: 将live2d v2升级到v3小记
 key: live2d
-date: 2021-04-19 16:26:23
-index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png
-banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png
+index_img: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png'
+banner_img: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png'
 lushkey: update-live2d-to-v3-or-v4.md
+abbrlink: a12e0ab7
+date: 2021-04-19 16:26:23
 ---
 
 2019-7-16 本站建成，第二天，Z16进入了我的博客。今天，我更换了陪伴我641天的看板娘。
