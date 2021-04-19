@@ -1,1 +1,1197 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="挣扎在互联网角落的小小博客，喜欢介绍一些普通的知识"><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床"><meta name="author" content="CYF"><title>陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/chenyfan/cdn/assets/blog/bootstrap.min.css,npm/github-markdown-css@4.0.0/github-markdown.min.css,gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css,npm/highlight.js@10.0.0/styles/vs2015.css,gh/ChenYFan/blog@gh-pages/css/main.css,gh/ChenYFan/CDN/assets/blog/font_1749284_6peoq002giu.min.css,gh/ChenYFan/cdn/assets/blog/font_1736178_pjno9b9zyxs.min.css"><script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js"></script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../../archives/">归档 </a><a class="dropdown-item" href="../../categories/">分类 </a><a class="dropdown-item" href="../../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../../com/">留言板 </a><a class="dropdown-item" href="../../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../../about/">关于 </a><a class="dropdown-item" href="../../hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<svg t="1601864448019" class="icon" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/1.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container nopadding-md"><div class="py-5" id="board" style="margin-top:0"><div class="container"><div class="row"><div class="col-12 col-md-10 m-auto"><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/620f3e8d.html" target="_blank"><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/10.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="打造一个可国内访问的Blogger（Blogspot）方法"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/620f3e8d.html">打造一个可国内访问的Blogger（Blogspot）方法</a></h1><p class="index-excerpt"><a href="../../p/620f3e8d.html">Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍‌‌‌​‌‍‌‌​‍‍‍​‍‍‌​​‍‌‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍​‍‍‍​‌‍‍‌ger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&amp;Wordpress高昂的服务器费用，避免了Hexo&amp;Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-07-29 10:43" pubdate>2020-07-29</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/好方法/">好方法</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/Blogger/">Blogger</a> <a href="../../tags/Blogspot/">Blogspot</a> <a href="../../tags/谷歌/">谷歌</a> <a href="../../tags/博客/">博客</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/ce240368.html" target="_blank"><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-07-09%20110742.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="白嫖！10GB免流海外BackBlaze对象存储【可套CDN】"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/ce240368.html">白嫖！10GB免流海外BackBlaze对象存储【可套CDN】</a></h1><p class="index-excerpt"><a href="../../p/ce240368.html">腾讯云的COS就是个暗坑，进去的时候大肆宣扬用户前六个月免费，但实际上免费仅针对于存储于国内的bucket，而存储于国外的阶梯定价又极不合理，我的COS在一个月走了流量1.6GB。按照官方定价大概就是0.7左右。但是，腾讯云从来就是不满1GB按1GB计算的jier，我瞟了一下账单：不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊！很难让人理解，我CDN设置为一个月的超长缓存，但腾讯还是给我计</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-07-09 09:37" pubdate>2020-07-09</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/爱分享/">爱分享</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/图床/">图床</a> <a href="../../tags/COS/">COS</a> <a href="../../tags/对象存储/">对象存储</a> <a href="../../tags/免流/">免流</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/3854592e.html" target="_blank"><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200706170836.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="怎么才能让GoogleAdsense不拖慢速度"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/3854592e.html">怎么才能让GoogleAdsense不拖慢速度</a></h1><p class="index-excerpt"><a href="../../p/3854592e.html">GoogleAdsense嘛，著名的赚钱大师，虽然只给我40美分，但毕竟我没有做很好的优化嘛，这也不怪谷歌。由于以前用的是 .ga 的免费域名,在上一年将近4个月荒凉,基本日PV在没有和1之间徘徊.后来过年的时候买了一个 .top 总算撑起一层牌面,但是由于 COVID19 ,嗯,所以每次提交2星期就给我来这么一出:嗯,后来呢,六月初提交了一次,结果显示,到第13天,百度统计才接收到来自台湾的Go</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-07-06 14:19" pubdate>2020-07-06</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/好方法/">好方法</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/Google/">Google</a> <a href="../../tags/Adsense/">Adsense</a> <a href="../../tags/LazyLoad/">LazyLoad</a> <a href="../../tags/赚钱/">赚钱</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/e626cb30.html" target="_blank"><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920192014.png?q=45" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="利用Travis-CI实现在线更新Hexo"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/e626cb30.html">利用Travis-CI实现在线更新Hexo</a></h1><p class="index-excerpt"><a href="../../p/e626cb30.html">Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN毅然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 ChenYFan 打成 CehnYFan 真实事件 ，异或着是用手机查看自己的博客，突然发现：由于hexo基于nodejs+git，手机无法更新；同时如果换了台电脑，hex</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-06-29 13:31" pubdate>2020-06-29</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/好方法/">好方法</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/Hexo/">Hexo</a> <a href="../../tags/Travis-CI/">Travis-CI</a> <a href="../../tags/在线更新/">在线更新</a> <a href="../../tags/奇淫巧计/">奇淫巧计</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/a7d0d7f8.html" target="_blank"><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920193058.png?q=45" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="通过CloudFlareAPI获取用户侧信息"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/a7d0d7f8.html">通过CloudFlareAPI获取用户侧信息</a></h1><p class="index-excerpt"><a href="../../p/a7d0d7f8.html">噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，通</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-06-28 08:30" pubdate>2020-06-28</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/屌代码/">屌代码</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/CloudFlare/">CloudFlare</a> <a href="../../tags/API/">API</a> <a href="../../tags/IP/">IP</a> <a href="../../tags/用户信息/">用户信息</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/cc675020.html" target="_blank"><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/9.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="这一个半月，我干了什么"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/cc675020.html">这一个半月，我干了什么</a></h1><p class="index-excerpt"><a href="../../p/cc675020.html">啊，期中考试终于考完了，现在心里想的都是司马脸，距离上一次更新已经将近1个半月了，赶在5月小尾巴发一篇博文。当然，这个月维护还是做到了，只不过太忙没更新而已。过来扯扯这个月发生了什么。计算机方面网站方面VPS入手了一台德国VPS，还得感谢这位老兄：簞純-EUserv 德国永久免费VPS申请试了一下，性能略差，连IPV4都没有，就当是学习吧，现在就是拿来玩玩的，毕竟我大多数情况下基本是ServerL</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-05-30 16:06" pubdate>2020-05-30</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/随心记/">随心记</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/日常/">日常</a> <a href="../../tags/总结/">总结</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/1b33467f.html" target="_blank"><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/8.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="Pandownload:愿你归来仍是英雄"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/1b33467f.html">Pandownload:愿你归来仍是英雄</a></h1><p class="index-excerpt"><a href="../../p/1b33467f.html">PanDownload 21世纪的英雄，在几天前，死了。4月15日下午，扬州网警巡查执法官方微博发布通报称：“Pandownload软件开发嫌疑人已经被捕。”刘某：PanDownload有窃取用户隐私行为。嗯，来，你的证据呢？人性的毁灭百度网盘迟迟不对PanDownload限制，之前很奇怪，现在明白了，原来是等到“盈利”到30万，有了个证据，才死死咬住不放。百度阴险，由此可见。百度网盘限速，我就只</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-04-17 17:19" pubdate>2020-04-17</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/随心记/">随心记</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/百度/">百度</a> <a href="../../tags/网盘/">网盘</a> <a href="../../tags/PanDownload/">PanDownload</a> <a href="../../tags/悼文/">悼文</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/7fe9d99f.html" target="_blank"><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="IPFS+CloudFlare=ServerLessWebPage"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/7fe9d99f.html">IPFS+CloudFlare=ServerLessWebPage</a></h1><p class="index-excerpt"><a href="../../p/7fe9d99f.html">IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。IPFS是什么网上一大堆文绉绉气昂昂极富学术气息的营销号整天吹嘘着ipfs是跨时代下一时代的比特币，我只能说呵呵，真的想要了解ipfs是什么的，建议左转维基百科或百度百科。抄一下wikipedia上的介绍：（InterPlanetary File System，缩写I</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-04-07 16:29" pubdate>2020-04-07</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/爱学习/">爱学习</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/CloudFlare/">CloudFlare</a> <a href="../../tags/撸羊毛/">撸羊毛</a> <a href="../../tags/IPFS/">IPFS</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/536a1a2d.html" target="_blank"><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="在不支持ipv6的路由器下使用ipv6"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/536a1a2d.html">在不支持ipv6的路由器下使用ipv6</a></h1><p class="index-excerpt"><a href="../../p/536a1a2d.html">从奶奶家回到城里，立刻有个问题困扰着我，我将处于没有ipv6的环境下。拜托，都0202年了，你怎么连ipv6都没有？因为家里情况有点小特殊，有三个路由器：移动路由器网关：楼下。100Mbps。通常使用LAN口直接网线插进去，一般不用无线功能，实际上老早支持ipv6了。小米路由器：楼下。有线连接移动网关，因为支持5GHz的WiFi，所以在楼下一般手机都是接入小米路由器。水星路由器：楼上。有线链接移动</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-04-05 15:34" pubdate>2020-04-05</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/好方法/">好方法</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/奇淫巧技/">奇淫巧技</a> <a href="../../tags/网络/">网络</a> <a href="../../tags/ipv6/">ipv6</a> <a href="../../tags/代理/">代理</a> <a href="../../tags/SS/">SS</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="../../p/63180028.html" target="_blank"><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/7.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="愿逝者安息，愿生者坚强"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="../../p/63180028.html">愿逝者安息，愿生者坚强</a></h1><p class="index-excerpt"><a href="../../p/63180028.html">博客首页、项目首页将在2020年4月4日10：00至2020年4月5日10：00保持灰化界面，此篇博文永久保持灰化。2020年的清明，与众不同，在我的记忆里，清明，永远是伴随着那蒙蒙小雨和四处弥漫的寒意。今天，2020年地清明，却意外的是晴天，这很令人意外，但也似乎表达了什么。可能，老天的眼泪，早已哭干吧…今年的清明比往年更添一抹特殊的意义:一个不明源头的病毒使本应蒙上喜庆色彩的华夏大地变得毫无生</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2020-04-04 09:00" pubdate>2020-04-04</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="../../categories/随心记/">随心记</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="../../tags/悼念/">悼念</a> <a href="../../tags/疫情/">疫情</a></div></div></article></div><nav aria-label="navigation"><span class="pagination" id="pagination"><a class="extend prev" rel="prev" href="../../"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><span class="space">&hellip;</span><a class="page-number" href="../7/">7</a><a class="extend next" rel="next" href="../3/"><i class="iconfont icon-arrowright"></i></a></span></nav><script>for(ele of document.getElementById("pagination").getElementsByTagName("a"))ele.href+="#board"</script></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a><br><a class="nav-link" href="javascript:lush(window.location.pathname);"><b>此页面的JSDelivr托管版</b></a><p id="showsectime"></p><a href="/hpp/admin"><p id="bloggeractivetime"></p></a><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><p></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div><style>.live2d{position:fixed;left:-100px;bottom:-20px;width:500px!important;height:437.5px!important;z-index:998}</style><div id="live2d" class="live2d"><canvas id="live2dm" class="live2d" style="z-index:999!important"></canvas></div></div></footer><script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script><script>function loadScript(e,n){var t=document.createElement("script"),a=document.getElementsByTagName("head")[0];t.type="text/javascript",t.charset="UTF-8",t.src=e,t.addEventListener?t.addEventListener("load",function(){n()},!1):t.attachEvent&&t.attachEvent("onreadystatechange",function(){"loaded"==window.event.srcElement.readyState&&n()}),a.appendChild(t)}function loadlive2d(){600<document.body.clientWidth&&(document.onreadystatechange=function(){"complete"==document.readyState&&loadScript("https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js",function(){loadModel()})})}setTimeout(()=>{document.onreadystatechange=function(){"complete"==document.readyState&&(window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:3,hoverDelay:50},loadlive2d(),loadScript("/hpp/api/getblogeractive"),loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"),loadScript("https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@master/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"))}},0)</script><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","一个在互联网角落挣扎的小小博客，很小很小。&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js"></script><script>var path="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script>!function(e,r){var a,o=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),a="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t;a&&a(),t=e,(e=r.createElement("div")).className="heart",o.push({el:e,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(e)},function e(){for(var t=0;t<o.length;t++)o[t].alpha<=0?(r.body.removeChild(o[t].el),o.splice(t,1)):(o[t].y--,o[t].scale+=.004,o[t].alpha-=.013,o[t].el.style.cssText="left:"+o[t].x+"px;top:"+o[t].y+"px;opacity:"+o[t].alpha+";transform:scale("+o[t].scale+","+o[t].scale+") rotate(45deg);background:"+o[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.ga_tid="UA-179044379-1",window.ga_api="https://analytics.cyfan.top/xxx/",function(){var t=document.createElement("script");t.src="https://cdn.jsdelivr.net/npm/cfga@1.0.3";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}()</script><script>"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js")})</script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  
+    <meta name="description" content="挣扎在互联网角落的小小博客，喜欢介绍一些普通的知识">
+
+  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床">
+  
+    
+  <meta name="author" content="CYF">
+  <title>陈YFの博客(￣▽￣)&#34;</title>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/chenyfan/cdn/assets/blog/bootstrap.min.css,npm/github-markdown-css@4.0.0/github-markdown.min.css,gh/ChenYFan/blog@gh-pages/lib/hint/hint.min.css,npm/highlight.js@10.0.0/styles/vs2015.css,gh/ChenYFan/blog@gh-pages/css/main.css,gh/ChenYFan/CDN/assets/blog/font_1749284_6peoq002giu.min.css,gh/ChenYFan/cdn/assets/blog/font_1736178_pjno9b9zyxs.min.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js">
+
+</script>
+<link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+::-webkit-scrollbar-track-piece {
+background-color:#f8f8f8;
+}
+::-webkit-scrollbar {
+width:9px;
+height:9px;
+}
+::-webkit-scrollbar-thumb {
+background-color:#dddddd;
+background-clip:padding-box;
+min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#bbb;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../archives/">
+                    
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../categories/">
+                    
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                页面
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../com/">
+                    
+                    留言板
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../随口胡说/ ">
+                    
+                    随口胡说
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../about/">
+                    
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../../hpp/admin/dash/home">
+                    
+                    后台
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+            <li class="nav-item" id="travellings-icon">
+            <a class="nav-link" target="_blank" href="https://travellings.now.sh/">&nbsp;<svg t="1601864448019" class="icon" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a>
+          </li>
+                  <li class="nav-item" id="tton">
+            <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+          </li>
+                  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/1.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/620f3e8d.html" target="_blank">
+          <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/10.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="打造一个可国内访问的Blogger（Blogspot）方法">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/620f3e8d.html">打造一个可国内访问的Blogger（Blogspot）方法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/620f3e8d.html">
+          
+          
+            
+          
+          Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍‌‌‌​‌‍‌‌​‍‍‍​‍‍‌​​‍‌‍‌​‍‌‍‍​‌‌‍‌​‌‍​‍‌​​‍​‍‍‍​‌‍‍‌ger,一个干爽、免费的博客发布平台，作为主流的发布，提供免费的托管，免去了Typecho&amp;Wordpress高昂的服务器费用，避免了Hexo&amp;Jekyll静态博客无后台的缺陷，与CSDN、简书相比，可以绑定域
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-29 10:43" pubdate>
+              2020-07-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/好方法/">好方法</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/Blogger/">Blogger</a>
+            
+              <a href="../../tags/Blogspot/">Blogspot</a>
+            
+              <a href="../../tags/谷歌/">谷歌</a>
+            
+              <a href="../../tags/博客/">博客</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/ce240368.html" target="_blank">
+          <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-07-09%20110742.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="白嫖！10GB免流海外BackBlaze对象存储【可套CDN】">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/ce240368.html">白嫖！10GB免流海外BackBlaze对象存储【可套CDN】</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/ce240368.html">
+          
+          
+            
+          
+          腾讯云的COS就是个暗坑，进去的时候大肆宣扬用户前六个月免费，但实际上免费仅针对于存储于国内的bucket，而存储于国外的阶梯定价又极不合理，我的COS在一个月走了流量1.6GB。按照官方定价
+
+
+大概就是0.7左右。
+但是，腾讯云从来就是不满1GB按1GB计算的jier，我瞟了一下账单：
+
+不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊！
+很难让人理解，我CDN设置为一个月的超长缓存，但
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-09 09:37" pubdate>
+              2020-07-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/爱分享/">爱分享</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/图床/">图床</a>
+            
+              <a href="../../tags/COS/">COS</a>
+            
+              <a href="../../tags/对象存储/">对象存储</a>
+            
+              <a href="../../tags/免流/">免流</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/3854592e.html" target="_blank">
+          <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200706170836.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="怎么才能让GoogleAdsense不拖慢速度">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/3854592e.html">怎么才能让GoogleAdsense不拖慢速度</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/3854592e.html">
+          
+          
+            
+          
+          GoogleAdsense嘛，著名的赚钱大师，虽然只给我40美分，但毕竟我没有做很好的优化嘛，这也不怪谷歌。由于以前用的是 .ga 的免费域名,在上一年将近4个月荒凉,基本日PV在没有和1之间徘徊.后来过年的时候买了一个 .top 总算撑起一层牌面,但是由于 COVID19 ,嗯,所以每次提交2星期就给我来这么一出:
+
+嗯,
+后来呢,六月初提交了一次,结果显示,到第13天,百度统计才接收到来自台湾
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-06 14:19" pubdate>
+              2020-07-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/好方法/">好方法</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/Google/">Google</a>
+            
+              <a href="../../tags/Adsense/">Adsense</a>
+            
+              <a href="../../tags/LazyLoad/">LazyLoad</a>
+            
+              <a href="../../tags/赚钱/">赚钱</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/e626cb30.html" target="_blank">
+          <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920192014.png?q=45" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="利用Travis-CI实现在线更新Hexo">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/e626cb30.html">利用Travis-CI实现在线更新Hexo</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/e626cb30.html">
+          
+          
+            
+          
+          Hexo作为静态博客，好处相当明显，开销少，并且对于那种DDosS和CC套上CDN毅然不动。当然，最蛋疼的莫过于更新了，每次在自己电脑上辛辛苦苦码好字，一个push，hexo绿色光芒在命令提示符上闪烁着光芒，突然发现把仓库名字 ChenYFan 打成 CehnYFan 真实事件 ，异或着是用手机查看自己的博客，突然发现：
+
+
+由于hexo基于nodejs+git，手机无法更新；同时如果换了台电脑，
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-06-29 13:31" pubdate>
+              2020-06-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/好方法/">好方法</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/Hexo/">Hexo</a>
+            
+              <a href="../../tags/Travis-CI/">Travis-CI</a>
+            
+              <a href="../../tags/在线更新/">在线更新</a>
+            
+              <a href="../../tags/奇淫巧计/">奇淫巧计</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/a7d0d7f8.html" target="_blank">
+          <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200920193058.png?q=45" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="通过CloudFlareAPI获取用户侧信息">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/a7d0d7f8.html">通过CloudFlareAPI获取用户侧信息</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/a7d0d7f8.html">
+          
+          
+            
+          
+          噫，中考结束了，心中一块大石头总算碎了。虽然说考上提前批中考考不考无所谓，但是回去一次模拟考直接把我考傻了，太烂了,以前初一不学习的时候都没有这么烂。啊么学习两星期，中考一考，今年理科超级简单，欸，这样理科分数拉不开了，啧啧啧，理科生的末日。
+因为人大多数时间在学校，不太方便用自带hexopush到Github，一是博客文件同步不方便，二是如果有个小错误就很抓狂，所以呢，以前的打算是部署到vps，
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-06-28 08:30" pubdate>
+              2020-06-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/屌代码/">屌代码</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/CloudFlare/">CloudFlare</a>
+            
+              <a href="../../tags/API/">API</a>
+            
+              <a href="../../tags/IP/">IP</a>
+            
+              <a href="../../tags/用户信息/">用户信息</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/cc675020.html" target="_blank">
+          <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/9.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="这一个半月，我干了什么">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/cc675020.html">这一个半月，我干了什么</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/cc675020.html">
+          
+          
+            
+          
+          
+啊，期中考试终于考完了，现在心里想的都是司马脸，
+距离上一次更新已经将近1个半月了，赶在5月小尾巴发一篇博文。当然，这个月维护还是做到了，只不过太忙没更新而已。
+过来扯扯这个月发生了什么。
+计算机方面网站方面VPS入手了一台德国VPS，还得感谢这位老兄：
+簞純-EUserv 德国永久免费VPS申请
+试了一下，性能略差，连IPV4都没有，就当是学习吧，现在就是拿来玩玩的，毕竟我大多数情况下基本是S
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-30 16:06" pubdate>
+              2020-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/随心记/">随心记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/日常/">日常</a>
+            
+              <a href="../../tags/总结/">总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/1b33467f.html" target="_blank">
+          <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/8.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="Pandownload:愿你归来仍是英雄">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/1b33467f.html">Pandownload:愿你归来仍是英雄</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/1b33467f.html">
+          
+          
+            
+          
+          PanDownload 21世纪的英雄，在几天前，死了。
+4月15日下午，扬州网警巡查执法官方微博发布通报称：“Pandownload软件开发嫌疑人已经被捕。”
+刘某：PanDownload有窃取用户隐私行为。
+嗯，来，你的证据呢？
+人性的毁灭百度网盘迟迟不对PanDownload限制，之前很奇怪，现在明白了，原来是等到“盈利”到30万，有了个证据，才死死咬住不放。百度阴险，由此可见。
+百度网盘限
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-17 17:19" pubdate>
+              2020-04-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/随心记/">随心记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/百度/">百度</a>
+            
+              <a href="../../tags/网盘/">网盘</a>
+            
+              <a href="../../tags/PanDownload/">PanDownload</a>
+            
+              <a href="../../tags/悼文/">悼文</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/7fe9d99f.html" target="_blank">
+          <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/ipfs.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="IPFS+CloudFlare=ServerLessWebPage">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/7fe9d99f.html">IPFS+CloudFlare=ServerLessWebPage</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/7fe9d99f.html">
+          
+          
+            
+          
+          IPFS，这个2018年诞生出来的小东西，似乎掀起了一阵热潮，然后被忘性极大的互联网吃瓜群众所抛弃，但不得不说这个东西可玩度非常高。
+IPFS是什么网上一大堆文绉绉气昂昂极富学术气息的营销号整天吹嘘着ipfs是跨时代下一时代的比特币，我只能说呵呵，真的想要了解ipfs是什么的，建议左转维基百科或百度百科。
+抄一下wikipedia上的介绍：
+
+（InterPlanetary File System
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-07 16:29" pubdate>
+              2020-04-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/爱学习/">爱学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/CloudFlare/">CloudFlare</a>
+            
+              <a href="../../tags/撸羊毛/">撸羊毛</a>
+            
+              <a href="../../tags/IPFS/">IPFS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/536a1a2d.html" target="_blank">
+          <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="在不支持ipv6的路由器下使用ipv6">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/536a1a2d.html">在不支持ipv6的路由器下使用ipv6</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/536a1a2d.html">
+          
+          
+            
+          
+          从奶奶家回到城里，立刻有个问题困扰着我，我将处于没有ipv6的环境下。
+拜托，都0202年了，你怎么连ipv6都没有？
+因为家里情况有点小特殊，有三个路由器：
+
+移动路由器网关：楼下。100Mbps。通常使用LAN口直接网线插进去，一般不用无线功能，实际上老早支持ipv6了。
+小米路由器：楼下。有线连接移动网关，因为支持5GHz的WiFi，所以在楼下一般手机都是接入小米路由器。
+水星路由器：楼上。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-05 15:34" pubdate>
+              2020-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/好方法/">好方法</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/奇淫巧技/">奇淫巧技</a>
+            
+              <a href="../../tags/网络/">网络</a>
+            
+              <a href="../../tags/ipv6/">ipv6</a>
+            
+              <a href="../../tags/代理/">代理</a>
+            
+              <a href="../../tags/SS/">SS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="../../p/63180028.html" target="_blank">
+          <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/7.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="愿逝者安息，愿生者坚强">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="../../p/63180028.html">愿逝者安息，愿生者坚强</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="../../p/63180028.html">
+          
+          
+            
+          
+          博客首页、项目首页将在2020年4月4日10：00至2020年4月5日10：00保持灰化界面，此篇博文永久保持灰化。
+
+2020年的清明，与众不同，在我的记忆里，清明，永远是伴随着那蒙蒙小雨和四处弥漫的寒意。今天，2020年地清明，却意外的是晴天，这很令人意外，但也似乎表达了什么。
+可能，老天的眼泪，早已哭干吧…
+今年的清明比往年更添一抹特殊的意义:
+一个不明源头的病毒使本应蒙上喜庆色彩的华夏大地
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-04 09:00" pubdate>
+              2020-04-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="../../categories/随心记/">随心记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="../../tags/悼念/">悼念</a>
+            
+              <a href="../../tags/疫情/">疫情</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="../../"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><span class="space">&hellip;</span><a class="page-number" href="../7/">7</a><a class="extend next" rel="next" href="../3/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+      <div>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
+          href="javascript:lush(window.location.pathname);"> <b>此页面的JSDelivr托管版</a></b>
+        <!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+        <p id="showsectime"></p>
+        <a href="/hpp/admin">
+          <p id="bloggeractivetime"></p>
+        </a>
+        </script>
+        <p>
+          当前CDN节点: <span id="cdn">【未知】</span> |
+          你的ip: <span id="ip">【未知】</span> |
+          你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+        </p>
+      </div>
+      
+
+          <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+          
+    </div>
+    <style>
+      .live2d {
+        position: fixed;
+        left: -100px;
+        bottom: -20px;
+        width: 500px !important;
+        height: 437.5px !important;
+        z-index: 998;
+      }
+    </style>
+
+    <div id="live2d" class="live2d">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
+
+
+
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
+<script>
+  function loadScript(src, callback) {
+    var script = document.createElement('script'),
+      head = document.getElementsByTagName('head')[0];
+    script.type = 'text/javascript';
+    script.charset = 'UTF-8';
+    script.src = src;
+    if (script.addEventListener) {
+      script.addEventListener('load', function () {
+        callback();
+      }, false);
+    } else if (script.attachEvent) {
+      script.attachEvent('onreadystatechange', function () {
+        var target = window.event.srcElement;
+        if (target.readyState == 'loaded') {
+          callback();
+        }
+      });
+    }
+    head.appendChild(script);
+  }
+
+  setTimeout(() => {
+
+    window.FPConfig = {
+      delay: 0,    // 浏览器空闲多少秒后开始预加载
+      ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+      maxRPS: 3,    // 每秒最大加载数
+      hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+      // 上方数值未默认值
+    };
+    if (document.body.clientWidth > 600) {
+      loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js', function () {
+        loadModel();
+      })
+
+    }
+    document.onreadystatechange = function () {
+      if (document.readyState == "complete") {
+        loadScript('https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@master/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js', function () { })
+        loadScript('/hpp/api/getblogeractive', function () { });
+        loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
+      }
+    }
+  }, 0)
+
+
+</script>
+
+
+
+              
+                    
+                        
+
+                          
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "一个在互联网角落挣扎的小小博客，很小很小。&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+                            
+
+                              
+  <script  src="https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js/local-search.js" ></script>
+  <script>
+    var path = "https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+                                
+
+                                  
+
+
+
+                                    
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+                                      
+
+
+                                        
+
+
+
+                                          
+
+  
+
+  
+    <!-- Google Analytics -->
+<script>
+  window.ga_tid = 'UA-179044379-1';
+  window.ga_api = "https://analytics.cyfan.top/xxx/";
+  (function() {
+    var dga = document.createElement("script");
+    dga.src = "https://cdn.jsdelivr.net/npm/cfga@1.0.3";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(dga, s);
+  })();
+</script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script>
+// Check that service workers are registered
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
+</body>
+</html>
