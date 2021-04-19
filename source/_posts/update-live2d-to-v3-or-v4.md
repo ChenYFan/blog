@@ -9,8 +9,8 @@ categories:
 des: 将live2d v2升级到v3小记
 key: live2d
 date: 2021-04-19 16:26:23
-index_img: 
-banner_img: 
+index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png
+banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1618823392000.png
 lushkey: update-live2d-to-v3-or-v4.md
 ---
 
