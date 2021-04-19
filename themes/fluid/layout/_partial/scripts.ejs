@@ -1,6 +1,6 @@
 <!-- Plugins -->
 <script
-  src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
+  src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
 <script>
   function loadScript(src, callback) {
     var script = document.createElement('script'),
@@ -22,28 +22,27 @@
     }
     head.appendChild(script);
   }
-  function loadlive2d() {
-    if (document.body.clientWidth > 600) {
-      document.onreadystatechange = function () {
-        if (document.readyState == "complete") {
-          loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js', function () {
-            loadModel();
-          })
-        }
-      }
-    }
-  }
+
   setTimeout(() => {
+
+    window.FPConfig = {
+      delay: 0,    // 浏览器空闲多少秒后开始预加载
+      ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+      maxRPS: 3,    // 每秒最大加载数
+      hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+      // 上方数值未默认值
+    };
+    if (document.body.clientWidth > 600) {
+      loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js', function () {
+        loadModel();
+      })
+
+    }
     document.onreadystatechange = function () {
       if (document.readyState == "complete") {
-        window.FPConfig = {
-          delay: 0,    // 浏览器空闲多少秒后开始预加载
-          ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
-          maxRPS: 3,    // 每秒最大加载数
-          hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
-          // 上方数值未默认值
-        };
-        loadlive2d(); loadScript('/hpp/api/getblogeractive'); loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'); loadScript('https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@master/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js')
+        loadScript('https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@master/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js', function () { })
+        loadScript('/hpp/api/getblogeractive', function () { });
+        loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
       }
     }
   }, 0)
