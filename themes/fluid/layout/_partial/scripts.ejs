@@ -35,6 +35,7 @@
     if (document.body.clientWidth > 600) {
       loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js', function () {
         loadModel();
+        document.getElementById('live2d').style["display"] = ""
       })
 
     }
