@@ -2,6 +2,7 @@
 <script
   src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
 <script>
+window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
   function loadScript(src, callback) {
     var script = document.createElement('script'),
       head = document.getElementsByTagName('head')[0];
@@ -70,9 +71,6 @@
                   <% } %>
                     <% if(is_post()) { %>
 
-                      <script>
-                        window.post_views_api = "https://ga-hit.chenyfan.xyz/api/ga";
-                      </script>
 
                       <% } %>
                         <%- partial('_partial/plugins/tocjs.ejs') %>
