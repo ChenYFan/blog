@@ -44,7 +44,14 @@ if (page.title) {
   <% } %>
   <meta name="author" content="<%= config.author %>">
   <title><%= title %></title>
-
+<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>
   <%- partial('_partial/css.ejs') %>
 <script src="https://cdn.jsdelivr.net/combine/gh/ChenYFan/blog@gh-pages/js/color-schema.min.js,gh/ChenYFan/blog@gh-pages/js/utils.min.js">
 
