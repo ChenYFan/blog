@@ -595,7 +595,7 @@ links:
     title: 'YFun's Blog',
     link: 'https://blog.yfun.top',
     intro: '探寻一切有趣的事物！',
-    image: 'https://cdn.jsdelivr.net/gh/oCoke/cdn@master/favicons/32z32.png',
+    image: 'https://cdn.jsdelivr.net/gh/oCoke/cdn@master/favicons/32x32.png',
     domain: blog.yfun.top
     }
     - {        
