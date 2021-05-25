@@ -592,7 +592,7 @@ links:
     domain: notspr.com
     }
     - {        
-    title: 'YFun's Blog',
+    title: 'YFun‘s Blog',
     link: 'https://blog.yfun.top',
     intro: '探寻一切有趣的事物！',
     image: 'https://cdn.jsdelivr.net/gh/oCoke/cdn@master/favicons/200x200.png',
