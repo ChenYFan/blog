@@ -2,7 +2,7 @@
  * Modify by https://blog.skk.moe/post/hello-darkmode-my-old-friend/
  */
 // eslint-disable-next-line no-unused-expressions
-!(function(window, document) {
+!(function (window, document) {
   var rootElement = document.documentElement;
   var colorSchemaStorageKey = 'Fluid_Color_Scheme';
   var colorSchemaMediaQueryKey = '--color-mode';
@@ -14,13 +14,13 @@
   function setLS(k, v) {
     try {
       localStorage.setItem(k, v);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function removeLS(k) {
     try {
       localStorage.removeItem(k);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function getLS(k) {
@@ -47,7 +47,7 @@
   }
 
   var validColorSchemaKeys = {
-    dark : true,
+    dark: true,
     light: true
   };
 
@@ -90,10 +90,17 @@
 
     // 根据当前模式设置图标
     setButtonIcon(currentSetting);
+    //自定义暗色模式，settimeout是保证将其踢到DOM末尾避免底下没加载
+    try {
+      setTimeout(() => {
+        setCustom(currentSetting)
+      }, 0)
+
+    } catch (n) { }
   }
 
   var invertColorSchemaObj = {
-    dark : 'light',
+    dark: 'light',
     light: 'dark'
   };
 
@@ -132,7 +139,7 @@
       } else {
         // 如果图标不存在则说明图标还没加载出来，等到页面全部加载再尝试切换
         // eslint-disable-next-line no-undef
-        waitElementLoaded(colorToggleIconName, function() {
+        waitElementLoaded(colorToggleIconName, function () {
           var iconElement = document.getElementById(colorToggleIconName);
           if (iconElement) {
             iconElement.setAttribute(
@@ -149,7 +156,7 @@
   applyCustomColorSchemaSettings();
 
   var oldLoadCs = window.onload;
-  window.onload = function() {
+  window.onload = function () {
     oldLoadCs && oldLoadCs();
     document.getElementById(colorToggleButtonName).addEventListener('click', () => {
       // 当用户点击「开关」时，获得新的显示模式、写入 localStorage、并在页面上生效
