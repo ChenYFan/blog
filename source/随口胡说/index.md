@@ -13,20 +13,6 @@ new htalk.init({
     recaptcha: "6Lc6tp8aAAAAAO7y-YkhZQ3eYYt8FZnBi873CTGD"
 });
 
-(() => { 
-    htalk.dark({
-        id: "h",
-        dark: localStorage.Fluid_Color_Scheme === 'light' ? false : true
-    })
-
- })();
-document.getElementById('color-toggle-icon').addEventListener('click', () => {
-   htalk.dark({
-        id: "h",
-        dark: localStorage.Fluid_Color_Scheme === 'light' ? true : false
-    })
-    
-});
 
 
 </script>
