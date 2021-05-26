@@ -19,19 +19,28 @@ start: 0
 <div id="h"></div>
 <script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HTalk@f063390/dist/htalk.js"></script>
 <script>
-    new htalk.init({
-        id: "h",
-        domain: "hpt.cyfan.workers.dev",
-        love: true,
-        lg:"success",
-        recaptcha: "6Lc6tp8aAAAAAO7y-YkhZQ3eYYt8FZnBi873CTGD"
-    })
-    //Fluid暗色模式匹配
-    document.getElementById('color-toggle-icon').addEventListener('click',()=>{
+  new htalk.init({
+    id: "h",
+    domain: "hpt.cyfan.workers.dev",
+    love: true,
+    lg: "success",
+    recaptcha: "6Lc6tp8aAAAAAO7y-YkhZQ3eYYt8FZnBi873CTGD"
+})
+
+const trydark = () => {
     htalk.dark({
         id: "h",
-        dark:localStorage.Fluid_Color_Scheme==='light'?true:false
+        dark: localStorage.Fluid_Color_Scheme === 'light' ? false : true
     })
-    })
+}
+//Fluid暗色模式匹配
+document.getElementById('color-toggle-icon').addEventListener('click', () => {
+    trydark()
+});
+
+//Fluid页面刚刚加载的时候匹配暗色
+(() => { trydark() })()
+    
+
 </script>
 
