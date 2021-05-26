@@ -26,5 +26,12 @@ start: 0
         lg:"success",
         recaptcha: "6Lc6tp8aAAAAAO7y-YkhZQ3eYYt8FZnBi873CTGD"
     })
+    //Fluid暗色模式匹配
+    document.getElementById('color-toggle-icon').addEventListener('click',()=>{
+    htalk.dark({
+        id: "h",
+        dark:localStorage.Fluid_Color_Scheme==='light'?true:false
+    })
+    })
 </script>
 
