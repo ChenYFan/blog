@@ -17,7 +17,7 @@ start: 0
 
 
 <div id="h"></div>
-<script src="https://cdn.jsdelivr.net/npm/htalk@2.0.1-beta-1"></script>
+<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HTalk@f063390/dist/htalk.js"></script>
 <script>
     new htalk.init({
         id: "h",
