@@ -1705,6 +1705,20 @@ ABCDABD
       </tags>
   </entry>
   <entry>
+    <title>白嫖！10GB免流海外BackBlaze对象存储【可套CDN】</title>
+    <url>/p/ce240368.html</url>
+    <content><![CDATA[<p>腾讯云的COS就是个暗坑，进去的时候大肆宣扬用户前六个月免费，但实际上免费仅针对于存储于国内的bucket，而存储于国外的阶梯定价又极不合理，我的COS在一个月走了流量1.6GB。按照官方定价</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20094557.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20094840.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>大概就是0.7左右。</p><p>但是，腾讯云从来就是不满1GB按1GB计算的jier，我瞟了一下账单：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20095520.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%90%90.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>！</p><p>很难让人理解，我CDN设置为一个月的超长缓存，但腾讯还是给我计价1GB，和回源没什么区别。</p><p>后来F12看了一下，腾讯悄悄地在header里添加max-cache为43200s，12个小时强制清除缓存。Asir，赚钱不带这么玩吧。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E4%B8%AD%E6%9E%AA.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>最让我憋屈的是，<code>cyfan.top</code> 是没有备案的，使用国内的bucket就不给绑定域名，害的我只能用香港，但是香港的绑定域名是不给SSL的，偏要套一层CDN才行。可***腾讯云默认CDN是亚马逊的，速度渣的很，用来用去还是用回CloudFlare。可是，既然有CloudFlare，那我为什么不用免费的Github服务啊！<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%93%AD%E6%B3%A3.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>这就是逼着我要换一个图床啊么<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/qgbf.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>后来twitter上有人发推推荐 <code>backblaze</code> 的海外存储，使用了一下，发现完全满足需求。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="Backblaze"><a href="#Backblaze" class="headerlink" title="Backblaze"></a>Backblaze</h1><p>2015年9月，Backblaze推出了新产品B2 Cloud Storage。作为基础架构即服务（IaaS），它的目标是软件集成（尽管也提供Web前端和API）。它直接与类似服务Amazon S3，Microsoft Azure和Google Cloud竞争。在2018年4月，Backblaze宣布了云计算合作伙伴关系，它将直接将Backblaze的数据中心与其合作伙伴Packet和ServerCentral连接起来，为存储在B2 Cloud Storage中的数据提供高性能的云计算，而无需支付任何费用。</p><p>B2 Cloud Storage非常客气，有以下优点：</p><ul><li>用户永久免费<strong>10GB</strong>直链存储</li><li>每天<strong>1GB</strong>下行流量</li><li>无限量的上传流量</li><li>每天下载请求<strong>2500</strong>次免费</li><li>每天上传请求<strong>2500</strong>次免费</li><li>基于CloudFlareCDN</li></ul><p>而且超出免费额度的价钱也十分合理【不过我不会往里头冲一分钱的！】 <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20100931.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20100931.jpg"></p><p>然而我偶然得知，Backblaze加入了CloudFlare的 <a href="https://www.cloudflare.com/bandwidth-alliance/" target="_blank" rel="noopener">带宽联盟（ Bandwidth Alliance）</a> Backblaze与CloudFlare之间的流量直接免费，也就是每天<strong>无限量</strong>下行流量，配上CloudFlare超长缓存，每天下载请求无限次免费。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%BE%97%E6%84%8F.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>而且这样与我用COS的速度是差不多的，那我何必用付费的COS呢？</p><h1 id="注册："><a href="#注册：" class="headerlink" title="注册："></a>注册：</h1><p>去<a href="https://www.backblaze.com/zh_CN/cloud-storage.html" target="_blank" rel="noopener">B2 云存储</a>注册，可以用Google快捷登录：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20101845.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>注册之后可能会要求你绑定手机号，乖乖的绑定自己的中国手机号吧【可能会产生短信费用，大概0.1￥】，不要想什么歪门邪道<br>，毕竟很多公开的手机号是不能用的，而且GoogleVoice也被拒绝了。</p><p>新建一个桶，设置为公开：</p><p>上传一个文件，点击右边的信息按钮，我们要在这里获取一些信息：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20102255.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20102940.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>看到那个友好链接吗，这就是CloudFlare加速的链接，但这个不是我们想要的链接，我们要自定义域名，毕竟默认的加速相当蛋疼。</p><h1 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h1><p>这一步需要你有个域名，开个子域给图床：</p><p>由于我是bnxb接入的CloudFlare，所以我首先要去 <code>cdn.bnxb.com</code> ，将 <code>assets.cyfan.top</code> 指向 <code>f000.backblazeb2.com</code> 【每个人都可能不一样，自己看情况】，并开启CDN，然后在DNSPOD里CNAME负载均衡一下，这里就不放图了。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E6%9C%9F%E5%BE%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="缩短链接"><a href="#缩短链接" class="headerlink" title="缩短链接"></a>缩短链接</h1><p>默认即使绑定域名后，链接大概是这样滴：</p><div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>assets.cyfan.top<span class="hljs-regexp">/file/</span>CYF-PicBed<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div><p>可以看到,中间多了 <code>/file/CYF-PicBed/</code> ,这并不是我所需要的,所以我们要把它变成这样:</p><div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//img</span>.cyfan.top<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div><p>你要知道，我有一大堆图片都是直接以 <code>https://img.cyfan.top</code> 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>前往CloudFlare,设置页面规则,进行301转发:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20103634.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>其中 <code>$1</code> 是CloudFlare的匹配符号，此规则意思是将所有的 <code>https://img.cyfan.top/*</code> 跳转向 <code>https://assets.cyfan.top/file/CYF-PicBed/*</code></p><p>去 <code>cdn.bnxb.com</code> ，将 <code>img.cyfan.top</code> 指向 任意一ip,比如 <code>1.0.0.1</code> 并开启CDN，然后在DNSPOD里CNAME。</p><p>此后,所有访问图片都会在里头跳转一下,外面基本看不出来有什么差别.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20104238.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="开启CORS-加长缓存时间"><a href="#开启CORS-加长缓存时间" class="headerlink" title="开启CORS|加长缓存时间"></a>开启CORS|加长缓存时间</h1><p>就这样结束了么？没有，你会发现访问的链接里所有的资源都是MISS，这是因为Backblaze默认不缓存<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_65.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>所以，自己设置呗！</p><p>点击桶，进入桶设定：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20104802.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>里头写上:</p><div class="hljs"><pre><code class="hljs undefined">&#123;<span class="hljs-attr">"cache-control"</span>:<span class="hljs-string">"max-age=43200000"</span>&#125;</code></pre></div><p>这个意思是强制缓存 <code>43200000</code> ,大约是50天.然而这里注意一下，时间太长有个问题，你修改一张图片，外面可以能要50天才能更改，这样只能通过手动清除缓存做到了。</p><p>点击CORS设置,选择:</p><div class="hljs"><pre><code class="hljs undefined">与所有HTTPS来源共享此存储桶中的所有内容。</code></pre></div><p>即可.</p><h1 id="实测"><a href="#实测" class="headerlink" title="实测"></a>实测</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20105402.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>免费额度基本用不完.</p><p>可惜PicGo没有支持Backblaze，我只能通过网页端上传<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E8%A3%85%E5%A4%A7%E6%AC%BE.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>然而有一件事情非常蛋疼，你丫的根目录上传的时候是不会创建文件夹的，一次上传会把文件夹里的图片全部上传到根目录。所以，我只能手动创建文件夹，这个痛苦我真的是，<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/tx.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>嗯，用了一个晚上，感觉还是挺香的，鹅厂的COS收费确实不合理，也要学学外面人家收费啊！</p><hr><p>溜了溜了，作业还没写完呢<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E9%82%AA%E9%AD%85%E4%B8%80%E7%AC%91.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>]]></content>
+      <categories>
+        <category>爱分享</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>COS</tag>
+        <tag>对象存储</tag>
+        <tag>免流</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>致敬袁老，精神永在</title>
     <url>/p/4ee6384.html</url>
     <content><![CDATA[<p>“共和国勋章”获得者、中国工程院院士、国家杂交水稻工程技术研究中心主任、湖南省政协原副主席袁隆平，因多器官功能衰竭，于2021年5月22日13时07分在长沙逝世，享年91岁。</p><p>感谢袁老，让我们端的起饭碗，让我们00后的孩子至少吃得饱。一路走好。</p><style>html{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%)}</style>]]></content>
@@ -2725,154 +2739,6 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div><h2 id="�
       </tags>
   </entry>
   <entry>
-    <title>我们一起解题目吧！</title>
-    <url>/p/992e034c.html</url>
-    <content><![CDATA[<p>除夕快乐！<br>哎呀，作为一个贫困的<code>blogger</code>,我似乎没有什么礼物。<br>今天是己亥年的最后一日，快乐度过吧！</p><p>话题扯一下新型冠状病毒，大家一定要注意人身安全，假期家里蹲就好了！<br>中国加油！武汉加油！</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E7%96%AB%E6%83%85.JPG" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一定要挺过去！"></p><p>话题扯回来…</p><h1 id="正文！"><a href="#正文！" class="headerlink" title="正文！"></a>正文！</h1><p>整理书的时候看到了一张纸，突然想起来这是当天偷偷在数学课上写的代码，结果被班主任发现骂了一顿。<br>题目非常有趣，是这样的：</p><blockquote><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在f（x）=ax^2+bx+c中，若有两个不等的实数根且在-0.25至0.25间，求a+b+c的最小值。</p></blockquote><p>思维导图：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E8%A7%A3%E9%A2%98.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="思维导图↑自己做得有点丑(✿◡‿◡)"></p><p>当时写的代码：</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
-	<span class="hljs-keyword">int</span> i;
-	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;
-	a=b=c=<span class="hljs-number">1</span>;
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;
-		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"在a=%lf ,b=%lf ,c=%lf 时"</span>,a,b,c);
-		delta=b*b<span class="hljs-number">-4</span>*a*c;
-		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;
-			mid=(-b/<span class="hljs-number">2</span>)/a;
-			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;
-			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;
-				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;
-					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
-						a1=a;
-						b1=b;
-						c1=c;
-						<span class="hljs-built_in">min</span>=a+b+c;
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
-						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
-		a++;
-		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-			a=<span class="hljs-number">1</span>;
-			b++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-				b=<span class="hljs-number">1</span>;
-				c++;
-				&#125;	
-			&#125; 
-	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
- &#125;</code></pre></div><p>代码的核心是枚举，从a=b=c=1开算解，不符合就C自加一，c达到当时最小之后,c回到起点，从b开加，以此类推，如果a加到最后超范围，则说明解完了！</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">编译结果...
---------</span>
-<span class="hljs-bullet">- </span>错误: 0
-<span class="hljs-bullet">- </span>警告: 0
-<span class="hljs-bullet">- </span>输出文件名: C:\Users\CYF\Desktop\函数解题.exe
-<span class="hljs-bullet">- </span>输出大小: 1.83758735656738 MiB
-<span class="hljs-bullet">- </span>编译时间: 1.75s</code></pre></div><p>最后结果:</p><div class="hljs"><pre><code class="hljs undefined">在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">5.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">4.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-在a=<span class="hljs-number">39.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
-共循环 <span class="hljs-number">102937</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
-
---------------------------------
-Process exited after <span class="hljs-number">160.06</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>后来发现从c开始加有点费劲，而且一边有<code>cout</code>,另一边用<code>printf</code>,有点不爽(当时没反应过来).<br>蛋疼的是输出结果还是双精度的…</p><p>改了一下,顺便附上解释:</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
-<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
-	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
-	<span class="hljs-keyword">int</span> i;<span class="hljs-comment">//定义循环 </span>
-	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;<span class="hljs-comment">//此处必须双精度，否则会算出3，5，2这一组 </span>
-	a=b=c=<span class="hljs-number">1</span>;<span class="hljs-comment">//设定起点 </span>
-	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;<span class="hljs-comment">//开始循环 </span>
-		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"在a="</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">"，b="</span>&lt;&lt;b&lt;&lt;<span class="hljs-string">"c="</span>&lt;&lt;c&lt;&lt;<span class="hljs-string">"，的情况下："</span>;<span class="hljs-comment">//头输出 </span>
-		delta=b*b<span class="hljs-number">-4</span>*a*c;<span class="hljs-comment">//定义delta </span>
-		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//有无双实根？ </span>
-			mid=(-b/<span class="hljs-number">2</span>)/a;
-			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;<span class="hljs-comment">//这两步就是算解 </span>
-			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x1范围？ </span>
-				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x2范围？ </span>
-					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
-						a1=a;
-						b1=b;
-						c1=c;
-						<span class="hljs-built_in">min</span>=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
-						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
-						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//不解释 </span>
-					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
-		b++;<span class="hljs-comment">//还是b开加快一点 </span>
-		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-			b=<span class="hljs-number">1</span>;
-			c++;
-			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
-				c=<span class="hljs-number">1</span>;
-				a++;
-				&#125;	
-			&#125; 
-	&#125;
-	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
- &#125;</code></pre></div><div class="hljs"><pre><code class="hljs undefined">......
-在a=<span class="hljs-number">35</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">5</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">4</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">4</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
-在a=<span class="hljs-number">39</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
-共循环 <span class="hljs-number">102347</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
-
---------------------------------
-Process exited after <span class="hljs-number">142.5</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>果然快了不少！也少循环一段时间！</p><p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。撒花！落幕！！</p>]]></content>
-      <categories>
-        <category>爱折腾</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>题目</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>来，破解版的Google访问助手</title>
     <url>/p/2b9edbbb.html</url>
     <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>中秋快乐！</p><p>（迟到的祝福）o(￣┰￣*)ゞ</p><p>好吧好吧，那就给份中秋礼物吧！</p><p>在中国，访问Google是最蛋疼的事了，原因是显然易见的。</p><p>可是作为一个雪深+三流程序猿，上Google是相当重要的。</p><p>基本上自己都是白嫖我同学康哥的ss，白嫖总是麻烦，还要用ss客户端。</p><p>网上的谷歌访问助手，现在官网都挂了，虽然能用，但是让我强制改主页确实不爽，而且图标也死丑，看着恶心。</p><p>于是看看如何破解。</p><h1 id="Going："><a href="#Going：" class="headerlink" title="Going："></a>Going：</h1><p>既然它会检测有没有广告，那我干脆直接在所有页面上都加上被隐藏的广告链接，这样既不会视觉干扰，又可以破解。</p><p>然后我高高兴兴的在Github上搜索原版源代码，结果发现…好像…有人已经破解了</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GOG.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="好尴尬啊"></p><p>那我一不做，二不休，直接就用这个吧！</p><p>不过这位老兄的图标似乎没改，那我就改了一下，以下是我改动的：</p><ul><li><input checked disabled type="checkbox"> 去除Google+(今年四月Google把它关了)</li><li><input checked disabled type="checkbox"> 添加Google Earth(亲测速度爆表,酸爽!)</li><li><input checked disabled type="checkbox"> 更换Google全家古老的图标，换成新的。</li><li><input checked disabled type="checkbox"> 更换插件图标,换了个Google Studio的(加了个小星星和滤镜)</li><li><input checked disabled type="checkbox"> 厚颜无耻的加上了自己的名字.</li></ul><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GGFWZS.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一阵酸爽"></p><p>然而上Google是爽,加载速度极快:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/GHS.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="速度不错"></p><p>1.1MB的网页在2.1秒内打开,和百度打开速度相比:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BHS.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="相差不多"></p><p>1.4秒内打开也挺小,只有0.7s的相差,也是不多,完全可以用Google当引擎啦!</p><p>然而缺点也很多,学术研究完全不能上,Youtube不支持,wikipedia也不行.</p><p>对于维基百科,完全可以用Google翻译当跳板曲线救国.</p><p>总之,能乐和几天十几天!(≧∀≦)ゞ</p><a class="btn" href="https://pan.cyfan.top/插件/crx/Google访问助手破解版.7z" target="_blank" rel="noopener">>>CYF的私有云</a><p>特征码：<code>glabchgbmippkhlcjkcmdmclmapehoha</code></p>]]></content>
@@ -3180,17 +3046,151 @@ Cape Neddick Light in York, Maine (© Haizhan Zheng/Getty Images)
       </tags>
   </entry>
   <entry>
-    <title>白嫖！10GB免流海外BackBlaze对象存储【可套CDN】</title>
-    <url>/p/ce240368.html</url>
-    <content><![CDATA[<p>腾讯云的COS就是个暗坑，进去的时候大肆宣扬用户前六个月免费，但实际上免费仅针对于存储于国内的bucket，而存储于国外的阶梯定价又极不合理，我的COS在一个月走了流量1.6GB。按照官方定价</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20094557.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20094840.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>大概就是0.7左右。</p><p>但是，腾讯云从来就是不满1GB按1GB计算的jier，我瞟了一下账单：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20095520.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>不是吧啊Sir，一个月一块多，那我为什么要用你的东西啊<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%90%90.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>！</p><p>很难让人理解，我CDN设置为一个月的超长缓存，但腾讯还是给我计价1GB，和回源没什么区别。</p><p>后来F12看了一下，腾讯悄悄地在header里添加max-cache为43200s，12个小时强制清除缓存。Asir，赚钱不带这么玩吧。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E4%B8%AD%E6%9E%AA.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>最让我憋屈的是，<code>cyfan.top</code> 是没有备案的，使用国内的bucket就不给绑定域名，害的我只能用香港，但是香港的绑定域名是不给SSL的，偏要套一层CDN才行。可***腾讯云默认CDN是亚马逊的，速度渣的很，用来用去还是用回CloudFlare。可是，既然有CloudFlare，那我为什么不用免费的Github服务啊！<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%93%AD%E6%B3%A3.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>这就是逼着我要换一个图床啊么<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/qgbf.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>后来twitter上有人发推推荐 <code>backblaze</code> 的海外存储，使用了一下，发现完全满足需求。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_27.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="Backblaze"><a href="#Backblaze" class="headerlink" title="Backblaze"></a>Backblaze</h1><p>2015年9月，Backblaze推出了新产品B2 Cloud Storage。作为基础架构即服务（IaaS），它的目标是软件集成（尽管也提供Web前端和API）。它直接与类似服务Amazon S3，Microsoft Azure和Google Cloud竞争。在2018年4月，Backblaze宣布了云计算合作伙伴关系，它将直接将Backblaze的数据中心与其合作伙伴Packet和ServerCentral连接起来，为存储在B2 Cloud Storage中的数据提供高性能的云计算，而无需支付任何费用。</p><p>B2 Cloud Storage非常客气，有以下优点：</p><ul><li>用户永久免费<strong>10GB</strong>直链存储</li><li>每天<strong>1GB</strong>下行流量</li><li>无限量的上传流量</li><li>每天下载请求<strong>2500</strong>次免费</li><li>每天上传请求<strong>2500</strong>次免费</li><li>基于CloudFlareCDN</li></ul><p>而且超出免费额度的价钱也十分合理【不过我不会往里头冲一分钱的！】 <img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20100931.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20100931.jpg"></p><p>然而我偶然得知，Backblaze加入了CloudFlare的 <a href="https://www.cloudflare.com/bandwidth-alliance/" target="_blank" rel="noopener">带宽联盟（ Bandwidth Alliance）</a> Backblaze与CloudFlare之间的流量直接免费，也就是每天<strong>无限量</strong>下行流量，配上CloudFlare超长缓存，每天下载请求无限次免费。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%BE%97%E6%84%8F.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>而且这样与我用COS的速度是差不多的，那我何必用付费的COS呢？</p><h1 id="注册："><a href="#注册：" class="headerlink" title="注册："></a>注册：</h1><p>去<a href="https://www.backblaze.com/zh_CN/cloud-storage.html" target="_blank" rel="noopener">B2 云存储</a>注册，可以用Google快捷登录：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20101845.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>注册之后可能会要求你绑定手机号，乖乖的绑定自己的中国手机号吧【可能会产生短信费用，大概0.1￥】，不要想什么歪门邪道<br>，毕竟很多公开的手机号是不能用的，而且GoogleVoice也被拒绝了。</p><p>新建一个桶，设置为公开：</p><p>上传一个文件，点击右边的信息按钮，我们要在这里获取一些信息：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20102255.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20102940.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>看到那个友好链接吗，这就是CloudFlare加速的链接，但这个不是我们想要的链接，我们要自定义域名，毕竟默认的加速相当蛋疼。</p><h1 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h1><p>这一步需要你有个域名，开个子域给图床：</p><p>由于我是bnxb接入的CloudFlare，所以我首先要去 <code>cdn.bnxb.com</code> ，将 <code>assets.cyfan.top</code> 指向 <code>f000.backblazeb2.com</code> 【每个人都可能不一样，自己看情况】，并开启CDN，然后在DNSPOD里CNAME负载均衡一下，这里就不放图了。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E6%9C%9F%E5%BE%85.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="缩短链接"><a href="#缩短链接" class="headerlink" title="缩短链接"></a>缩短链接</h1><p>默认即使绑定域名后，链接大概是这样滴：</p><div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>assets.cyfan.top<span class="hljs-regexp">/file/</span>CYF-PicBed<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div><p>可以看到,中间多了 <code>/file/CYF-PicBed/</code> ,这并不是我所需要的,所以我们要把它变成这样:</p><div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//img</span>.cyfan.top<span class="hljs-regexp">/pic/</span>postpic<span class="hljs-regexp">/2020-07-09%20102255.jpg</span></code></pre></div><p>你要知道，我有一大堆图片都是直接以 <code>https://img.cyfan.top</code> 存在底下的，NotePad++可以批量改，但是我在外链也放了很多啊.所以只能改域名。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E5%90%90%E8%A1%80%E5%80%92%E5%9C%B0.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>前往CloudFlare,设置页面规则,进行301转发:</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20103634.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>其中 <code>$1</code> 是CloudFlare的匹配符号，此规则意思是将所有的 <code>https://img.cyfan.top/*</code> 跳转向 <code>https://assets.cyfan.top/file/CYF-PicBed/*</code></p><p>去 <code>cdn.bnxb.com</code> ，将 <code>img.cyfan.top</code> 指向 任意一ip,比如 <code>1.0.0.1</code> 并开启CDN，然后在DNSPOD里CNAME。</p><p>此后,所有访问图片都会在里头跳转一下,外面基本看不出来有什么差别.</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20104238.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><h1 id="开启CORS-加长缓存时间"><a href="#开启CORS-加长缓存时间" class="headerlink" title="开启CORS|加长缓存时间"></a>开启CORS|加长缓存时间</h1><p>就这样结束了么？没有，你会发现访问的链接里所有的资源都是MISS，这是因为Backblaze默认不缓存<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/stick_65.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>所以，自己设置呗！</p><p>点击桶，进入桶设定：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20104802.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>里头写上:</p><div class="hljs"><pre><code class="hljs undefined">&#123;<span class="hljs-attr">"cache-control"</span>:<span class="hljs-string">"max-age=43200000"</span>&#125;</code></pre></div><p>这个意思是强制缓存 <code>43200000</code> ,大约是50天.然而这里注意一下，时间太长有个问题，你修改一张图片，外面可以能要50天才能更改，这样只能通过手动清除缓存做到了。</p><p>点击CORS设置,选择:</p><div class="hljs"><pre><code class="hljs undefined">与所有HTTPS来源共享此存储桶中的所有内容。</code></pre></div><p>即可.</p><h1 id="实测"><a href="#实测" class="headerlink" title="实测"></a>实测</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/2020-07-09%20105402.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p><p>免费额度基本用不完.</p><p>可惜PicGo没有支持Backblaze，我只能通过网页端上传<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E8%A3%85%E5%A4%A7%E6%AC%BE.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>然而有一件事情非常蛋疼，你丫的根目录上传的时候是不会创建文件夹的，一次上传会把文件夹里的图片全部上传到根目录。所以，我只能手动创建文件夹，这个痛苦我真的是，<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/tx.png" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt>。</p><p>嗯，用了一个晚上，感觉还是挺香的，鹅厂的COS收费确实不合理，也要学学外面人家收费啊！</p><hr><p>溜了溜了，作业还没写完呢<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/%E9%82%AA%E9%AD%85%E4%B8%80%E7%AC%91.jpg" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt></p>]]></content>
+    <title>我们一起解题目吧！</title>
+    <url>/p/992e034c.html</url>
+    <content><![CDATA[<p>除夕快乐！<br>哎呀，作为一个贫困的<code>blogger</code>,我似乎没有什么礼物。<br>今天是己亥年的最后一日，快乐度过吧！</p><p>话题扯一下新型冠状病毒，大家一定要注意人身安全，假期家里蹲就好了！<br>中国加油！武汉加油！</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E7%96%AB%E6%83%85.JPG" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="一定要挺过去！"></p><p>话题扯回来…</p><h1 id="正文！"><a href="#正文！" class="headerlink" title="正文！"></a>正文！</h1><p>整理书的时候看到了一张纸，突然想起来这是当天偷偷在数学课上写的代码，结果被班主任发现骂了一顿。<br>题目非常有趣，是这样的：</p><blockquote><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在f（x）=ax^2+bx+c中，若有两个不等的实数根且在-0.25至0.25间，求a+b+c的最小值。</p></blockquote><p>思维导图：</p><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/%E8%A7%A3%E9%A2%98.bmp" srcset="https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif" alt="图片" title="思维导图↑自己做得有点丑(✿◡‿◡)"></p><p>当时写的代码：</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> i;
+	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;
+	a=b=c=<span class="hljs-number">1</span>;
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"在a=%lf ,b=%lf ,c=%lf 时"</span>,a,b,c);
+		delta=b*b<span class="hljs-number">-4</span>*a*c;
+		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;
+			mid=(-b/<span class="hljs-number">2</span>)/a;
+			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;
+			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;
+				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
+						a1=a;
+						b1=b;
+						c1=c;
+						<span class="hljs-built_in">min</span>=a+b+c;
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
+						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; 
+		a++;
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+			a=<span class="hljs-number">1</span>;
+			b++;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+				b=<span class="hljs-number">1</span>;
+				c++;
+				&#125;	
+			&#125; 
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; 		
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ &#125;</code></pre></div><p>代码的核心是枚举，从a=b=c=1开算解，不符合就C自加一，c达到当时最小之后,c回到起点，从b开加，以此类推，如果a加到最后超范围，则说明解完了！</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">编译结果...
+--------</span>
+<span class="hljs-bullet">- </span>错误: 0
+<span class="hljs-bullet">- </span>警告: 0
+<span class="hljs-bullet">- </span>输出文件名: C:\Users\CYF\Desktop\函数解题.exe
+<span class="hljs-bullet">- </span>输出大小: 1.83758735656738 MiB
+<span class="hljs-bullet">- </span>编译时间: 1.75s</code></pre></div><p>最后结果:</p><div class="hljs"><pre><code class="hljs undefined">在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">35.000000</span>,b=<span class="hljs-number">5.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">4.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">36.000000</span>,b=<span class="hljs-number">4.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">3.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">37.000000</span>,b=<span class="hljs-number">3.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">2.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">38.000000</span>,b=<span class="hljs-number">2.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+在a=<span class="hljs-number">39.000000</span>,b=<span class="hljs-number">1.000000</span>,c=<span class="hljs-number">1.000000</span>时,有没有两不等实根！
+共循环 <span class="hljs-number">102937</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
+
+--------------------------------
+Process exited after <span class="hljs-number">160.06</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>后来发现从c开始加有点费劲，而且一边有<code>cout</code>,另一边用<code>printf</code>,有点不爽(当时没反应过来).<br>蛋疼的是输出结果还是双精度的…</p><p>改了一下,顺便附上解释:</p><div class="hljs"><pre><code class="hljs C++"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>; 
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span>=<span class="hljs-number">100</span>;
+	<span class="hljs-keyword">int</span> i;<span class="hljs-comment">//定义循环 </span>
+	<span class="hljs-keyword">double</span> mid,root,a,b,c,a1,b1,c1,delta;<span class="hljs-comment">//此处必须双精度，否则会算出3，5，2这一组 </span>
+	a=b=c=<span class="hljs-number">1</span>;<span class="hljs-comment">//设定起点 </span>
+	<span class="hljs-keyword">for</span>(;a+b+c&lt;=<span class="hljs-built_in">min</span>;i++)&#123;<span class="hljs-comment">//开始循环 </span>
+		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"在a="</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">"，b="</span>&lt;&lt;b&lt;&lt;<span class="hljs-string">"c="</span>&lt;&lt;c&lt;&lt;<span class="hljs-string">"，的情况下："</span>;<span class="hljs-comment">//头输出 </span>
+		delta=b*b<span class="hljs-number">-4</span>*a*c;<span class="hljs-comment">//定义delta </span>
+		<span class="hljs-keyword">if</span>(delta&gt;<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//有无双实根？ </span>
+			mid=(-b/<span class="hljs-number">2</span>)/a;
+			root=((<span class="hljs-built_in">sqrt</span>(delta))/<span class="hljs-number">2</span>)/a;<span class="hljs-comment">//这两步就是算解 </span>
+			<span class="hljs-keyword">if</span>((mid+root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid+root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x1范围？ </span>
+				<span class="hljs-keyword">if</span>((mid-root)&gt;(<span class="hljs-number">-0.25</span>) <span class="hljs-keyword">and</span> (mid-root)&lt;<span class="hljs-number">0.25</span>)&#123;<span class="hljs-comment">//x2范围？ </span>
+					<span class="hljs-keyword">if</span>(a+b+c&lt;<span class="hljs-built_in">min</span>)&#123;
+						a1=a;
+						b1=b;
+						c1=c;
+						<span class="hljs-built_in">min</span>=a+b+c;<span class="hljs-comment">//重新设定阈值 </span>
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"有min=%d ！\n"</span>,<span class="hljs-built_in">min</span>); 
+						&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"a+b+c不是min值！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//不解释 </span>
+					&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较小值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+				&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"较大值超出范围！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+			&#125;<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"没有两不等实根！"</span>&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//同上 </span>
+		b++;<span class="hljs-comment">//还是b开加快一点 </span>
+		<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+			b=<span class="hljs-number">1</span>;
+			c++;
+			<span class="hljs-keyword">if</span>(a+b+c&gt;<span class="hljs-built_in">min</span>)&#123;
+				c=<span class="hljs-number">1</span>;
+				a++;
+				&#125;	
+			&#125; 
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"共循环 "</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">" 次,a+b+c的最小值是"</span>&lt;&lt;<span class="hljs-built_in">min</span>&lt;&lt;<span class="hljs-string">",此时a="</span>&lt;&lt;a1&lt;&lt;<span class="hljs-string">",b="</span>&lt;&lt;b1&lt;&lt;<span class="hljs-string">",c="</span>&lt;&lt;c1&lt;&lt;<span class="hljs-built_in">endl</span>; <span class="hljs-comment">//最后输出 </span>
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ &#125;</code></pre></div><div class="hljs"><pre><code class="hljs undefined">......
+在a=<span class="hljs-number">35</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">5</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">4</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">36</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">4</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">3</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">37</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">3</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">2</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">38</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">2</span>，的情况下：没有两不等实根！
+在a=<span class="hljs-number">39</span>，b=<span class="hljs-number">1</span>c=<span class="hljs-number">1</span>，的情况下：没有两不等实根！
+共循环 <span class="hljs-number">102347</span> 次,a+b+c的最小值是<span class="hljs-number">41</span>,此时a=<span class="hljs-number">29</span>,b=<span class="hljs-number">11</span>,c=<span class="hljs-number">1</span>
+
+--------------------------------
+Process exited after <span class="hljs-number">142.5</span> seconds with return value <span class="hljs-number">0</span></code></pre></div><p>果然快了不少！也少循环一段时间！</p><p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。撒花！落幕！！</p>]]></content>
       <categories>
-        <category>爱分享</category>
+        <category>爱折腾</category>
       </categories>
       <tags>
-        <tag>图床</tag>
-        <tag>COS</tag>
-        <tag>对象存储</tag>
-        <tag>免流</tag>
+        <tag>C++</tag>
+        <tag>题目</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
 </search>
