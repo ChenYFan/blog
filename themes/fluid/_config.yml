@@ -380,7 +380,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 好像是关于什么呢
-  avatar: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@e99421c/img/avatar.png # 头像
+  avatar: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@985268b/img/avatar.png # 头像
   name: CYF
   introduce:  一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
   icons: # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，class 代表图标的 css class
