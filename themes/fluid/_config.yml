@@ -187,7 +187,7 @@ scroll_top_arrow:  # 向顶部滚动的箭头
 # Index Page
 #---------------------------
 index:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/1.jpg  # 首页 Banner 头图，以下相同
+  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/b_top.jpg  # 首页 Banner 头图，以下相同
   banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100
   banner_mask_alpha: 0.3  # 头图黑色蒙版的透明度，available: 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明
   post_default_img: '' # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
@@ -380,7 +380,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 好像是关于什么呢
-  avatar: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/avatar.png # 头像
+  avatar: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@e99421c/img/avatar.png # 头像
   name: CYF
   introduce:  一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
   icons: # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，class 代表图标的 css class
