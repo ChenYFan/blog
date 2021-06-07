@@ -7,7 +7,7 @@ date: 2020-03-19 13:21:09
 <script>
 new htalk.init({
     id: "h",
-    domain: "hpt.cyfan.workers.dev",
+    domain: "hpt.cyfan.top",
     love: true,
     lg: "success",
     recaptcha: "6Lc6tp8aAAAAAO7y-YkhZQ3eYYt8FZnBi873CTGD"
