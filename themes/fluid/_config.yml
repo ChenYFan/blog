@@ -604,6 +604,7 @@ links:
     intro: 念念不忘，必有回响,
     image: 'https://blog.gd1214b.icu/images/avatar.png',
     domain: blog.gd1214b.icu
+    }
     - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
