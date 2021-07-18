@@ -28,7 +28,7 @@
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
+图像(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/CDN@985268b/img/avatar.png
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
 屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
 背景颜色(如果有): #F6B352
@@ -50,15 +50,7 @@
 
 + 8.如果因特殊原因而更换地址，请~~留言或~~PR。
 
-+ ~~9.1 添加方式：留言。格式如下：~~
-
-
-```
-求友链！
-标题: #尽可能简短，不得大于10字
-地址: https://
-```
-
++ 9.1 
 > **我们拒绝了留言的方式添加友链，任何以留言形式添加友链都将被我们拒绝，请采用PR形式添加友链**
 	
 + 9.2另一种添加方式：Pull Request:
@@ -71,7 +63,7 @@
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
     image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】',
-    domain: '博客主域名' 【这一条必须首先加入https://github.com/ChenYFan/ScreenShot/项目，请按照格式向https://github.com/ChenYFan/ScreenShot/blob/main/.github/workflows/get.yml提交PR，否则将驳回】
+    domain: '博客主域名'
     }
 ```
 
