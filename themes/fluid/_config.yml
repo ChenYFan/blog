@@ -469,15 +469,8 @@ links:
     title: 'TigerRoot',
     link: 'https://blog.tigerroot.cn',
     intro: 那有什么岁月静好，只是有人在替我们负重前行。,
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185710.png?q=45',
+    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185710.png',
     domain: blog.tigerroot.cn
-    }
-    - {        
-    title: '伊舍导航',
-    link: 'https://eesdh.com',
-    intro: 一个在互联网角落挣扎的小小导航，很小很小。,
-    image: 'https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200926185723.png?q=45',
-    domain: eesdh.com
     }
     - {        
     title: 'Sukka’s Blog',
@@ -567,7 +560,7 @@ links:
     title: '小嘉的部落格',
     link: 'https://blog.imzjw.cn/',
     intro: 好记性不如烂笔头,
-    image: 'https://cdn.jsdelivr.net/gh/zjwo/CDN/img/blog/avatar.jpg',
+    image: 'https://cdn.jsdelivr.net/npm/nanshen/avatar.jpg',
     domain: blog.imzjw.cn
     }
     - {        
