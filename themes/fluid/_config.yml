@@ -599,6 +599,13 @@ links:
     domain: blog.gd1214b.icu
     }
     - {        
+    title: 'JIXIEJIDIGUAN',
+    link: 'http://jixiejidiguan.top/',
+    intro: 不まじめなシロだ&#8230;,
+    image: 'http://q1.qlogo.cn/g?b=qq&nk=3549518275&s=640',
+    domain: jixiejidiguan.top
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
