@@ -599,6 +599,13 @@ links:
     domain: blog.gd1214b.icu
     }
     - {        
+    title: '无名小筑',
+    link: 'https://blog.rvvc.im',
+    intro: '一条咸鱼的碎碎念~',
+    image: 'https://blog.rvvc.im/imgs/avatar.jpg',
+    domain: blog.rvvc.im
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
