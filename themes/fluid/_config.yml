@@ -11,9 +11,9 @@
 # 全局
 # Site
 #---------------------------
-favicon: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/favicon.png # 网站标签页的 icon
+favicon: https://cdn.jsdelivr.net/npm/chenyfan-oss@3
 
-apple_touch_icon: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/ico/apple-touch-icon.png # 用于苹果设备的 icon
+apple_touch_icon: https://cdn.jsdelivr.net/npm/chenyfan-oss@3
 
 title_join_string: ' || '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
@@ -233,7 +233,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
       source: "busuanzi"  # 统计数据来源，可选：busuanzi | leancloud，使用 leancloud 需要在 web_analytics 中设置 api 参数，使用 busuanzi 注意可能间歇抽风
       format: "{}次"
   updated:  # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
-    enable: false
+    enable: true
     content: 本文最后更新于：  # 描述文字
     relative: true
   toc:  # 文章右侧目录
