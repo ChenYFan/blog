@@ -355,7 +355,8 @@ unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯
 【jsd出品，网宿国内节点】https://cdn.jsdelivr.net/npm/
 【知乎出品，网宿国内节点】https://unpkg.zhimg.com/
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
-【饿了么出品，网宿国内节点】https://shadow.elemecdn.com/npm/
+【饿了么出品，网宿国内节点，回源是Unpkg，建议用这个】https://npm.elemecdn.com/
+【饿了么出品，网宿国内节点，回源是JSdelivr，貌似可以用github，但是我用的时候大多无法正常回源，只能获取几个已缓存的热门库】https://shadow.elemecdn.com/npm/
 【怎么都是网宿的】
 ```
 
