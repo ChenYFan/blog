@@ -28,9 +28,9 @@
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/CDN@985268b/img/avatar.png
+图像(如果有): https://cdn.jsdelivr.net/npm/chenyfan-oss@3
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
-屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
+屏幕截图(如果有): https://api.cyfan.top/thumb?url=https://blog.cyfan.top
 背景颜色(如果有): #F6B352
 ```
 
