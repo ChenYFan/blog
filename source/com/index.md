@@ -17,24 +17,9 @@ update: 2020-02-27 08:48:09
 5. 我们现在不想，未来也不支持QQ头像的获取，为了保证前端用户隐私的安全【包括ip、邮箱、UserAgent】，这些数据在前端均被加密或没有传递到前端，除了博主，其他任何人都无法获取到你的隐私记录。
 
 
-# 垃圾评论处理
-
-最近出现的垃圾评论大概分这三种：
-
-1. 恶意留链接，发广告，什么话都不说：鸟都不鸟一眼直接删掉，屡犯不改同一网址封IP，封完了还来那可真不好意思，你的网站回经历什么我就不清楚了![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/TlAGjm6IvJSMVpq.jpg?q=45&fmt=webp)
-
-2. 打卡型，发无意义的留言，通过用户名链接网址发布广告：删掉用户链接【你不是要推广网址吗？那我让别人看不到你的网址不就行了】，并折叠，视情况严重采取封锁措施。![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/KoqBGauX7TEfeyn.jpg?q=45&fmt=webp)
-
-3. 彩虹屁型，把我吹上天，通过用户名链接网址发布广告：删掉用户链接，不折叠，运气好还有可能我来亲自留言回复QvQ![](https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2a019f.jpg?q=45&fmt=webp)
-
-> 关于判断的彩虹屁型：熟人的彩虹屁不算垃圾评论，路人的彩虹屁我会通过GoogleAnalytics追踪用户访问行动，根据用户所留网址访问判断是否为恶意发广告【实际上就是让你使劲吹】
-
-> 另外，评论区所有链接都会带上`NoFollow`标识【无论熟人还是路人】，所以想通过我这里提SEO的孩子还是另寻它明吧
 
 
-5. 欢迎添加友情链接!不过您可能需要注意以下几点:
-
-# 申请友链必知
+6. 关于友链
 
 + 0.首先确保有本站的友情链接:
 
@@ -42,9 +27,10 @@ update: 2020-02-27 08:48:09
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/BLOGER.jpg
+图像(如果有): https://cdn.jsdelivr.net/npm/chenyfan-oss@3
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
-屏幕截图(如果有): https://cdn.jsdelivr.net/gh/ChenYFan/ScreenShot@gh-pages/blog.cyfan.top.jpg
+屏幕截图(如果有): https://api.cyfan.top/thumb?url=https://blog.cyfan.top
+背景颜色(如果有): #F6B352
 ```
 
 + 1.存活时间不小于**3个月**。
@@ -63,15 +49,7 @@ update: 2020-02-27 08:48:09
 
 + 8.如果因特殊原因而更换地址，请~~留言或~~PR。
 
-+ ~~9.1 添加方式：留言。格式如下：~~
-
-
-```
-求友链！
-标题: #尽可能简短，不得大于10字
-地址: https://
-```
-
++ 9.1 
 > **我们拒绝了留言的方式添加友链，任何以留言形式添加友链都将被我们拒绝，请采用PR形式添加友链**
 	
 + 9.2另一种添加方式：Pull Request:
@@ -83,18 +61,15 @@ update: 2020-02-27 08:48:09
     title: '博客名字【不得大于9字，否则会被截断】',
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
-    image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】',
-    domain: '博客主域名' 【这一条必须首先加入https://github.com/ChenYFan/ScreenShot/项目，请按照格式向https://github.com/ChenYFan/ScreenShot/blob/main/.github/workflows/get.yml提交PR，否则将驳回】
+    image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】'
     }
 ```
 
+**点击PullRequest，向本仓库发起PR。**
+
+近期发现有些朋友fork了我的仓库但没有向我的仓库提交PullRequest，对于这些同学我只能说声抱歉，麻烦修改后重新前往本仓库看看有无新的PR，如果您连Github基本操作PR都不会的话，那麻烦还是先学习吧，学好了欢迎随时添加友链！
+
 由于PR的特殊性，没有遵守以上任何一条条款将无条件拒绝并ClosePR。同样，为了维护公平，我们**拒绝了**留言方式添加，~~除非你和CYF是好朋友~~
-
-# 封禁名单：	
-
- `IP:171.106.203.242` ：恶意发送广告、伪造昵称、伪造邮箱，**永久封禁**
- `IP:222.217.145.99` ： 恶意发送广告、伪造昵称、伪造邮箱，**永久封禁** 
- `IP:171.110.238.177` ： 恶意发送广告、伪造昵称、空邮箱，**封禁30天，必须接受CloudFlareCaptcha**
   
   
     
