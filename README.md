@@ -62,8 +62,7 @@
     title: '博客名字【不得大于9字，否则会被截断】',
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
-    image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】',
-    domain: '博客主域名'
+    image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】'
     }
 ```
 
