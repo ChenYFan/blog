@@ -11,9 +11,9 @@
 # 全局
 # Site
 #---------------------------
-favicon: https://cdn.jsdelivr.net/npm/chenyfan-oss@3
+favicon: https://cdn.jsdelivr.net/npm/chenyfan-oss@4/64.jpg
 
-apple_touch_icon: https://cdn.jsdelivr.net/npm/chenyfan-oss@3
+apple_touch_icon: https://cdn.jsdelivr.net/npm/chenyfan-oss@4/512.jpg
 
 title_join_string: ' || '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
