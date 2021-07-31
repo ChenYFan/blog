@@ -605,6 +605,13 @@ links:
     domain: blog.rvvc.im
     }
     - {        
+    title: 'Thun888's Blog',
+    link: 'https://blog.thun888.xyz',
+    intro: '心如止水，不可暴躁（￣︶￣）',
+    image: 'https://asstes.thun888.xyz/file/pic-bed/2021/07/3c09905fa076d1e9c2a0f216d68bc47f.webp',
+    domain: blog.thun888.xyz
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
