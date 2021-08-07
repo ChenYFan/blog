@@ -63,7 +63,7 @@ setTimeout(() => {
                 allFrameCount++;
                 frame++;
 
-                if (fps <= 100) {
+                if (fps <= 25) {
                     console.log(`FPS：${fps}，过低，禁用Live2d`);
                     window.localStorage.setItem('live2d_switch', 'false')
                     window.location.reload()
