@@ -1,139 +1,89 @@
 <!-- Plugins -->
 <script
-  src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
+    src="https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/chenyfan/cdn@0.0.2/js/retime.min.js,gh/ChenYFan/CDN/js/ttontran/ttontran.js,gh/chenyfan/CDN/assets/blog/bootstrap.min.js,gh/ChenYFan/blog@gh-pages/js/debouncer.js,gh/ChenYFan/blog@gh-pages/js/main.min.js,npm/clipboard@2.0.6/dist/clipboard.min.js,gh/ChenYFan/blog@gh-pages/js/clipboard-use.min.js,gh/ChenYFan/CDN/js/lush.js"></script>
 <script>
 
-window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
-function loadScript(src, callback) {
-    var script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0];
-    script.type = 'text/javascript';
-    script.charset = 'UTF-8';
-    script.src = src;
-    if (script.addEventListener) {
-        script.addEventListener('load', function () {
-            callback();
-        }, false);
-    } else if (script.attachEvent) {
-        script.attachEvent('onreadystatechange', function () {
-            var target = window.event.srcElement;
-            if (target.readyState == 'loaded') {
+    window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    function loadScript(src, callback) {
+        var script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0];
+        script.type = 'text/javascript';
+        script.charset = 'UTF-8';
+        script.src = src;
+        if (script.addEventListener) {
+            script.addEventListener('load', function () {
                 callback();
-            }
-        });
+            }, false);
+        } else if (script.attachEvent) {
+            script.attachEvent('onreadystatechange', function () {
+                var target = window.event.srcElement;
+                if (target.readyState == 'loaded') {
+                    callback();
+                }
+            });
+        }
+        head.appendChild(script);
     }
-    head.appendChild(script);
-}
 
-setTimeout(() => {
+    setTimeout(() => {
 
-    window.FPConfig = {
-        delay: 0,    // 浏览器空闲多少秒后开始预加载
-        ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
-        maxRPS: 3,    // 每秒最大加载数
-        hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
-        // 上方数值未默认值
-    };
-    if (document.body.clientWidth > 600) {
-        if (window.localStorage.getItem('live2d_switch') !== 'false') {
+        window.FPConfig = {
+            delay: 0,    // 浏览器空闲多少秒后开始预加载
+            ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+            maxRPS: 3,    // 每秒最大加载数
+            hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+            // 上方数值未默认值
+        };
+        if (document.body.clientWidth > 600) {
             loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js,gh/chenyfan/cdn@0.0.2/js/getinfo.min.js', function () {
                 loadModel();
                 document.getElementById('live2d').style["display"] = ""
             })
 
-
-
-            setTimeout(() => {
-
-                var rAF = function () {
-                    return (
-                        window.requestAnimationFrame ||
-                        window.webkitRequestAnimationFrame ||
-                        function (callback) {
-                            window.setTimeout(callback, 1000 / 60);
-                        }
-                    );
-                }();
-
-                var frame = 0;
-                var allFrameCount = 0;
-                var lastFameTime = Date.now();
-                var loop = function () {
-                    var now = Date.now();
-                    var fs = (now - lastFameTime);
-                    var fps = Math.round(1000 / fs);
-
-                    lastFameTime = now;
-                    allFrameCount++;
-                    frame++;
-
-                    if (fps <= 20) {
-                        console.log(`FPS：${fps}，过低，禁用Live2d`);
-                        window.localStorage.setItem('live2d_switch', 'false')
-                        window.location.reload()
-                    }
-                    rAF(loop);
-                }
-
-                rAF(loop);
-
-
-            }, 3000)
         }
-        else {
-            if (window.localStorage.getItem('live2d_close') !== 'false') {
-                loadScript('https://unpkg.zhimg.com/sweetalert/dist/sweetalert.min.js', () => {
-                    swal({
-                        title: "Oops!",
-                        text: "由于检测到您的浏览器不适合加载Live2D，我们禁用了拉菲！若要开启，请尝试在无痕模式打开",
-                        icon: "error",
-                        buttons: false,
-                        timer: 3000
-                    })
-                })
-                window.localStorage.setItem('live2d_close', 'false')//关闭提醒
-            }
+    }, 0)
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+
+            loadScript('https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@19b4cdf/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js', function () { })
+            loadScript('/hpp/api/getblogeractive', function () { });
+            loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
+
         }
     }
-}, 0)
-
-document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-
-        loadScript('https://cdn.jsdelivr.net/combine/gh/ChenYFan/CDN@19b4cdf/js/ga-hit/index.js,gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js,gh/ChenYFan/blog@gh-pages/js/lazyload.min.js', function () { })
-        loadScript('/hpp/api/getblogeractive', function () { });
-        loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
-
-    }
-}
 </script>
 
 <% if ((theme.footer.statistics.enable && theme.footer.statistics.source==='busuanzi' ) || (page.meta !==false &&
-  theme.post.meta.views.enable && theme.post.meta.views.source==='busuanzi' )) { %>
-  <%- js_ex(theme.static_prefix.busuanzi, 'busuanzi.pure.mini.js' , 'defer' ) %>
-    <% } else if ( theme.web_analytics.leancloud.app_id && theme.web_analytics.leancloud.app_key &&
-      ((theme.footer.statistics.enable && theme.footer.statistics.source==='leancloud' ) || (page.meta !==false &&
-      theme.post.meta.views.enable && theme.post.meta.views.source==='leancloud' ))) { %>
-      <%- partial('_partial/plugins/leancloud.ejs') %>
-        <% } else if (theme.web_analytics.enable && theme.web_analytics.leancloud.app_id &&
-          theme.web_analytics.leancloud.app_key) { %>
-          <%- partial('_partial/plugins/leancloud.ejs') %>
-            <% } %>
+    theme.post.meta.views.enable && theme.post.meta.views.source==='busuanzi' )) { %>
+    <%- js_ex(theme.static_prefix.busuanzi, 'busuanzi.pure.mini.js' , 'defer' ) %>
+        <% } else if ( theme.web_analytics.leancloud.app_id && theme.web_analytics.leancloud.app_key &&
+            ((theme.footer.statistics.enable && theme.footer.statistics.source==='leancloud' ) || (page.meta !==false &&
+            theme.post.meta.views.enable && theme.post.meta.views.source==='leancloud' ))) { %>
+            <%- partial('_partial/plugins/leancloud.ejs') %>
+                <% } else if (theme.web_analytics.enable && theme.web_analytics.leancloud.app_id &&
+                    theme.web_analytics.leancloud.app_key) { %>
+                    <%- partial('_partial/plugins/leancloud.ejs') %>
+                        <% } %>
 
-              <% if (theme.custom_js) { %>
-                <%- js(theme.custom_js) %>
-                  <% } %>
-                    <% if(is_post()) { %>
+                            <% if (theme.custom_js) { %>
+                                <%- js(theme.custom_js) %>
+                                    <% } %>
+                                        <% if(is_post()) { %>
 
 
-                      <% } %>
-                        <%- partial('_partial/plugins/tocjs.ejs') %>
-                          <%- partial('_partial/plugins/typed.ejs') %>
-                            <%- partial('_partial/plugins/anchor.ejs') %>
-                              <%- partial('_partial/plugins/local-search.ejs') %>
-                                <%- partial('_partial/plugins/fancybox.ejs') %>
-                                  <%- partial('_partial/plugins/math.ejs') %>
-                                    <%- partial('_partial/plugins/mouse-click.ejs') %>
-                                      <%- partial('_partial/plugins/daovoice.ejs') %>
-                                        <%- partial('_partial/plugins/mermaid.ejs') %>
-                                          <%- partial('_partial/plugins/analytics.ejs') %>
+                                            <% } %>
+                                                <%- partial('_partial/plugins/tocjs.ejs') %>
+                                                    <%- partial('_partial/plugins/typed.ejs') %>
+                                                        <%- partial('_partial/plugins/anchor.ejs') %>
+                                                            <%- partial('_partial/plugins/local-search.ejs') %>
+                                                                <%- partial('_partial/plugins/fancybox.ejs') %>
+                                                                    <%- partial('_partial/plugins/math.ejs') %>
+                                                                        <%- partial('_partial/plugins/mouse-click.ejs')
+                                                                            %>
+                                                                            <%- partial('_partial/plugins/daovoice.ejs')
+                                                                                %>
+                                                                                <%- partial('_partial/plugins/mermaid.ejs')
+                                                                                    %>
+                                                                                    <%- partial('_partial/plugins/analytics.ejs')
+                                                                                        %>
