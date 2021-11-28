@@ -618,6 +618,12 @@ links:
     image: 'https://cdn.jsdelivr.net/gh/imacte/blog/avatar.jpg'
     }
     - {        
+    title: 'TonyYin's Blog',
+    link: 'https://www.tonyyin.top',
+    intro: 'OIer',
+    image: 'https://cdn.tonyyin.top/avatar.jpeg'
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
