@@ -11,8 +11,8 @@
 # 全局
 # Site
 #---------------------------
-favicon: https://cdn.jsdelivr.net/npm/chenyfan-oss@6/32.png
-apple_touch_icon: https://cdn.jsdelivr.net/npm/chenyfan-oss@4/512.jpg
+favicon: https://unpkg.zhimg.com/chenyfan-oss@6/32.png
+apple_touch_icon: https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg
 
 title_join_string: ' || '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 
@@ -186,7 +186,7 @@ scroll_top_arrow:  # 向顶部滚动的箭头
 # Index Page
 #---------------------------
 index:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/b_top.jpg  # 首页 Banner 头图，以下相同
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/b_top.jpg  # 首页 Banner 头图，以下相同
   banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100
   banner_mask_alpha: 0.3  # 头图黑色蒙版的透明度，available: 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明
   post_default_img: '' # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
@@ -204,7 +204,7 @@ index:
 # 通过 hexo new page 命令创建的页面
 # Custom Page
 page:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/b2.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/b2.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
 
@@ -213,7 +213,7 @@ page:
 # Post Page
 #---------------------------
 post:  # 部分配置同时控制自定义页面，注意备注
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/3.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/3.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   meta:  # 文章标题下方的信息
@@ -246,7 +246,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
     enable: true
   custom:  # 文章底部自定义内容
     enable: true
-    content: '<img src="https://cdn.jsdelivr.net/npm/chenfyan-oss@6.0.3" class="rounded mx-auto d-block mt-5" style="width:40%">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
+    content: '<img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" class="rounded mx-auto d-block mt-5" style="width:40%">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
   image_zoom:  # 文章图片可点击放大
     enable: true  # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `image_zoom: true`，并且图片使用该格式插入：<img src="..." zoom />
   footnote:  # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
@@ -336,7 +336,7 @@ livere:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/1.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/1.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  归档 - 所有的所有都在这儿了
@@ -346,7 +346,7 @@ archive:
 # Categories Page
 #---------------------------
 category:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/5.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/5.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle:  分类 - 是不是比较杂?# 打字机内容
@@ -358,7 +358,7 @@ category:
 # Tags Page
 #---------------------------
 tag:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/6.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/6.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 标签 - 找找你想要的
@@ -375,11 +375,11 @@ tag:
 # About Page
 #---------------------------
 about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.com/docs/guide/#%E5%85%B3%E4%BA%8E%E9%A1%B5
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/7.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/7.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 好像是关于什么呢
-  avatar: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@985268b/img/avatar.png # 头像
+  avatar: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/avatar.png # 头像
   name: CYF
   introduce:  一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
   icons: # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，class 代表图标的 css class
@@ -393,7 +393,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
 # 404 Page
 #---------------------------
 page404:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/8.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/8.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: '咻~~页面飞走啦！！！！！'  # 打字机内容
@@ -403,7 +403,7 @@ page404:
 # Links Page
 #---------------------------
 links:
-  banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN/img/back/9.jpg
+  banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/9.jpg
   banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 我亲爱的小伙伴！
@@ -475,7 +475,7 @@ links:
     title: 'Sukka’s Blog',
     link: 'https://blog.skk.moe',
     intro: 童话只美在真实却从不续写,
-    image: 'https://cdn.jsdelivr.net/npm/skx@0.2.3/avatar/192x192.png',
+    image: 'https://unpkg.zhimg.com/skx@0.2.3/avatar/192x192.png',
     domain: blog.skk.moe
     }
     - {        
@@ -524,7 +524,7 @@ links:
     title: 'LOGI',
     link: 'https://logi.im',
     intro: 会点代码的强迫症,
-    image: 'https://cdn.jsdelivr.net/npm/logicdn@1.0.0/logi.im/usr/images/global/logo.webp',
+    image: 'https://unpkg.zhimg.com/logicdn@1.0.0/logi.im/usr/images/global/logo.webp',
     domain: logi.im
     }
     - {        
@@ -538,7 +538,7 @@ links:
     title: 'Water_tomato',
     link: 'https://www.watertomato.com/',
     intro: 纵横诗意,
-    image: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/plk.jpg',
+    image: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/plk.jpg',
     domain: www.watertomato.com
     }
     - {        
@@ -552,14 +552,14 @@ links:
     title: '贰猹的小窝',
     link: 'https://noionion.top/',
     intro: 用这生命中的每一秒，给自己一个不后悔的未来,
-    image: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/2X.jpg',
+    image: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/2X.jpg',
     domain: noionion.top
     }
     - {        
     title: '小嘉的部落格',
     link: 'https://blog.imzjw.cn/',
     intro: 好记性不如烂笔头,
-    image: 'https://cdn.jsdelivr.net/npm/nanshen/avatar.jpg',
+    image: 'https://unpkg.zhimg.com/nanshen/avatar.jpg',
     domain: blog.imzjw.cn
     }
     - {        

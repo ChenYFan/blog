@@ -67,4 +67,4 @@ date: 2020-03-16 10:44:00
 
 ![Bing](https://pan.cyfan.top/api/bing/bing.php "今日Bing美图")
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/213.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.11/213.jpg)

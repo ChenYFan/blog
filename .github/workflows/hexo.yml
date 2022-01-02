@@ -30,7 +30,15 @@ jobs:
         curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
         rm -rf ./public/CNAME
         echo "blog.cyfan.top" >> ./public/CNAME
-        
+
+    - name: 'Publish to the npm registry'
+      uses: primer/publish@3.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.NPM }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+      with:
+        default_branch: 'master'
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

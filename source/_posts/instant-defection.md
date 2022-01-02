@@ -10,8 +10,8 @@ categories:
 des: 直接切走！0ms回源的前端部署Hexo，实现国内加速访问
 key: CloudFlare,CloudFlarePage,Hexo,Hexo
 date: 2021-2-20 9:24
-index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
-banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613785796000.jpg
+index_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613785796000.jpg
+banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613785796000.jpg
 abbrlink: 363f2ff1
 ---
 
@@ -28,15 +28,15 @@ CloudFlare早先时候支持WorkerSite，当时KV照实没有免费，我也不�
 
 笑话，国内使用wrangler，那还不如CloudFlare+GithubPage。
 
-[苏卡卡大佬写的一篇文章](https://blog.skk.moe/post/deploy-blog-to-cf-workers-site/)讲述了自己部署WorkerSite的经历，[ChrAlpha's Blog](https://blog.ichr.me/post/cf-workers-site-deploy/)也曾提到过迁移的过程。不过我懒![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/62.jpg)，我觉得`100ms`回源不算什么，赔个Worker还是有点亏。
+[苏卡卡大佬写的一篇文章](https://blog.skk.moe/post/deploy-blog-to-cf-workers-site/)讲述了自己部署WorkerSite的经历，[ChrAlpha's Blog](https://blog.ichr.me/post/cf-workers-site-deploy/)也曾提到过迁移的过程。不过我懒![](https://unpkg.zhimg.com/chenyfan-oss@1.1.11/62.jpg)，我觉得`100ms`回源不算什么，赔个Worker还是有点亏。
 
 2020年11月份，偶然得知CFPage[正在公开招聘Pagebeta计划](https://www.cloudflare.com/zh-cn/pages-jamstack-platform-beta-sign-up/)，抱着试试看的心理，我简单写了些就交了上去。凭借着对CloudFlare发布新产品小心翼翼的态度，我揣摩估计很难申请到。果不其然，年都过了，连封邮件都没通知我。
 
 2021年2月20日，我先日常翻了遍邮件，0。正准备继续开发HexoPlusPlus，登陆CloudFlare，却发现右边多了个新玩意：
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613786871000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613786871000.png)
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/156.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.11/156.jpg)
 
 不愧是我，我一眼就看出来我的CFPage申请到了。
 
@@ -50,17 +50,17 @@ CloudFlare早先时候支持WorkerSite，当时KV照实没有免费，我也不�
 
 {% note warning %}
 非常操蛋的是，我无法删除已经添加的CloudFlarePage域名，所以我没有办法重新演示我如何安装，下面的截图是删除时的错误：
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613787919000.png)
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613787960000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787919000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787960000.png)
 {% endnote %}
 
 首先，进去，点击`创建项目`选择博客的github存储库，获得GithubAccess权限后跳转到这：
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613788198000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788198000.png)
 
 勾选需要接入的项目
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613788329000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788329000.png)
 
 - 构建设置 - 框架预设
 
@@ -68,21 +68,21 @@ CloudFlare早先时候支持WorkerSite，当时KV照实没有免费，我也不�
 
 选择之后，后面的构建命令和构建输出也直接填好了，保存并部署？
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613789246000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789246000.png)
 
 > 因为本博客使用了neat而不是gulp插件压缩html~~管他呢反正丢CI~~，所以构建时间会比较长。
 
 修改CNAME记录和TXT记录，分别去BNXB修改CNMAE和DNSPOD【NS所在处】修改TXT记录
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613790247000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790247000.png)
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613790482000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790482000.png)
 
 就好了？就好了。
 
 <span class="heimu">这是我最快的迁移速度</span>
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613789961000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789961000.png)
 
 NetWork选项卡里出`x-server: Cloudflare Pages`说明迁移完毕。
 
@@ -114,7 +114,7 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 
 另外CloudFlarePage用的证书很奇怪，可能是为了CNAME兼容性，不用自己自家的证书，反而用Let’s Encrypt，鉴于OSCP在国内阻断，ios用户可能会出现首次访问白屏，这一点我有点担心。
 
-最好的一点莫过于完全贴合HexoPlusPlus了，以后我就有充分的理由宣传HPP了![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/320.jpg)
+最好的一点莫过于完全贴合HexoPlusPlus了，以后我就有充分的理由宣传HPP了![](https://unpkg.zhimg.com/chenyfan-oss@1.1.11/320.jpg)
 
 # 额度
 
@@ -140,19 +140,19 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 
 问题很容易定位，所有的404来自cfpage而非vercel。
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613795675000.png)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795675000.png)
 
 首先是Vercel，开代理的情况下国外访问均正确解析至vercel，可以在`x-vercel`头里看出来
 
 地址是`https://blog.cyfan.top/p/52382e42.html`，相应代码是`200`
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613795874000.jpg)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795874000.jpg)
 
 关闭代理，将自动选择CloudFlareCDN+GithubPage，可以从`x-github-request-id`看出
 
 地址是`https://blog.cyfan.top/p/52382e42.html`，相应代码是`200`
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796163000.jpg)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796163000.jpg)
 
 然后是有问题的CFPage，可以在`x-server`头里看出来
 
@@ -160,11 +160,11 @@ CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。
 
 抹掉就罢了,结果在vercel这边又出问题
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796374000.jpg)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796374000.jpg)
 
 但是最奇葩的是,githubpage是允许不带html裸访
 
-![](https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/hpp_upload/1613796456000.jpg)
+![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796456000.jpg)
 
 这就是整个经过,CFPage必须抹掉后缀,GithubPage保持无所谓,Vercel必须不能抹掉
 

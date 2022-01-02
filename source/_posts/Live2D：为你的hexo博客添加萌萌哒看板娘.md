@@ -134,8 +134,8 @@ live2d:
 > 本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，例如在`<head>`中加入：  
 > jQuery and font-awesome is required for this plugin. You can add this to `<head>`:
 ```xml
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://unpkg.zhimg.com/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.zhimg.com/font-awesome/css/font-awesome.min.css">
 ```
 > 否则无法正常显示。（如果你的网页已经加载了jQuery，就不要重复加载了）
 
@@ -166,8 +166,8 @@ const live2d_path = "/live2d/";
 `<head>`标签中新增如下内容：一定一定要加上依赖！！！！！
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://unpkg.zhimg.com/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.zhimg.com/font-awesome/css/font-awesome.min.css"/>
 ```
 
 ### 第三步

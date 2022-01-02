@@ -1,8 +1,8 @@
 title: 留言板
 comments: true
 hide: true
-index_img: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/2k.jpg'
-banner_img: 'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@master/img/back/2k.jpg'
+index_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/2k.jpg'
+banner_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/back/2k.jpg'
 date: 1949-10-01 23:59:59
 update: 2020-02-27 08:48:09
 ---
@@ -27,7 +27,7 @@ update: 2020-02-27 08:48:09
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://cdn.jsdelivr.net/npm/chenyfan-oss@3
+图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@3
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
 屏幕截图(如果有): https://api.cyfan.top/thumb?url=https://blog.cyfan.top
 背景颜色(如果有): #F6B352

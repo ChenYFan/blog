@@ -10,8 +10,8 @@ categories:
 des:  关于国内各大厂商倾向于应用软件而非网页软件的想法
 key:  隐私,安全
 date: 2021-07-28 13:24:15
-index_img: https://cdn.jsdelivr.net/npm/chenyfan-oss@2.0.4
-banner_img: https://cdn.jsdelivr.net/npm/chenyfan-oss@2.0.4
+index_img: https://unpkg.zhimg.com/chenyfan-oss@2.0.4
+banner_img: https://unpkg.zhimg.com/chenyfan-oss@2.0.4
 lushkey: why-app-but-not-browser.md
 ---
 

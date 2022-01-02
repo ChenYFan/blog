@@ -2,8 +2,8 @@ title: 致敬袁老，精神永在
 author: CYF
 key: 袁隆平
 date: 2021-05-22 16:49:21
-index_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1621673305000.jpg
-banner_img: https://cdn.jsdelivr.net/gh/ChenYFan/CDN@img1/hpp_upload/1621673305000.jpg
+index_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1621673305000.jpg
+banner_img: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1621673305000.jpg
 lushkey: goodbye-yuan.md
 ---
 

@@ -64,8 +64,8 @@ Gitalk官方说明安装只有简单的几句话:
 
 
 ``` html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk@1/dist/gitalk.css">
+<script src="https://unpkg.zhimg.com/gitalk@1/dist/gitalk.min.js"></script>
 <!-- or -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>

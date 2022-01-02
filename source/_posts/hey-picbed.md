@@ -284,7 +284,7 @@ post参数：file
 
 
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@0.0.1/1.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@0.0.1/1.jpg)
 
 ![](https://unpkg.zhimg.com/chenyfan-oss@0.0.1/2.jpg)
 
@@ -352,7 +352,7 @@ unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯
 一些推荐的npm【or unpkg镜像】：
 
 ```markdown
-【jsd出品，网宿国内节点】https://cdn.jsdelivr.net/npm/
+【jsd出品，网宿国内节点】https://unpkg.zhimg.com/
 【知乎出品，网宿国内节点】https://unpkg.zhimg.com/
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点，回源是Unpkg，建议用这个】https://npm.elemecdn.com/

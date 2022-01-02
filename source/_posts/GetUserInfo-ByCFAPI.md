@@ -50,7 +50,7 @@ warp=off
 首先要引入Jquery，如果你的网页上已经有Jquery，那么就不必再次引入：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://unpkg.zhimg.com/jquery@3.2.1/dist/jquery.min.js"></script>
 ```
 
 接着加入JS[需在Jquery以下,否则会报错]:

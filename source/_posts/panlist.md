@@ -9,8 +9,8 @@ tags:
   - 薅羊毛
 categories:
   - 好方法
-index_img: 'https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/banner.jpg'
-banner_img: 'https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/banner.jpg'
+index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.1.5/banner.jpg'
+banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.1.5/banner.jpg'
 lushkey: panlist.md
 abbrlink: 32883f0c
 date: 2021-01-06 21:44:55
@@ -34,7 +34,7 @@ date: 2021-01-06 21:44:55
 
 最近这几天因为在写[HexoPlusPlus: A ServerLess Hexo Dashboard](https://github.com/HexoPlusPlus/HexoPlusPlus) 正在努力学习CloudFlareWorkers。由于评论模块需要数据结构有关知识，可惜这一块知识大都都被一些所谓白嫖CloudFlareWorkers的教程所淹没：
 
-!["Google上CloudFlareWorkers搜索结果"](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101043.jpg)
+!["Google上CloudFlareWorkers搜索结果"](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101043.jpg)
 
 在查询有关资料的时候，Github上一颗冉冉新星引起了我的注意，[PanList](https://github.com/teardr0p/PanList) ,根据其Commit显示,这个仓库仅仅是两天前刚刚开辟的,但是本文写是就有61Star和21Fork 【当然我也有Star】，可见其热门程度。不过简单的翻看了一下我就明白其为何如此热门，第一，它是专门对付令人头疼的百度网盘，第二，它是构建于CloudFlareWorkers。
 
@@ -42,11 +42,11 @@ date: 2021-01-06 21:44:55
 
 电脑登录百度网盘：
 
-!["百度网盘"](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101056.jpg)
+!["百度网盘"](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101056.jpg)
 
 按下F12进入开发者模式，选择`Application`模块，点击`Cookies`:
 
-!["Cookies"](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101101.jpg)
+!["Cookies"](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101101.jpg)
 
 在这里，我们需要获取两个Cookie：`BDUSS`和`STOKEN`
 
@@ -71,13 +71,13 @@ const PASSWORD = ''
 
 新建一个Worker，将处理好的代码直接复制进去：
 
-![复制代码](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101307.jpg)
+![复制代码](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101307.jpg)
 
 保存并部署，确定。
 
 # 绑定域名
 
-![绑定域名](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101107.jpg)
+![绑定域名](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101107.jpg)
 
 路由：`{待绑定的域名}/*` [后面\*的原理是覆盖该路径下所有文件]
 Worker：你新建的Worker名字
@@ -86,21 +86,21 @@ Worker：你新建的Worker名字
 
 登陆界面：
 
-![login](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101115.jpg)
+![login](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101115.jpg)
 
 打开后：
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101118.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101118.jpg)
 
 > 挺讽刺的是，去除了百度网盘原始界面乱七八糟的东西，CloudFlareWorkers的国外服务器打开速度都比百度网盘快
 
 Chrome直接下载速度
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101447.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101447.jpg)
 
 传递Cookie后IDM下载速度：
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101120.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101120.jpg)
 
 注：单线程下载速率最终取决于百度网盘的限制，也就是说无论如何你也无法逃避百度网盘对源头的遏制，就在我下完`Soul`这部将近2GB的电影后，我的账号就被百度拉入黑名单，现在即使用IDM也只有80kb/s <span class="heimu">但是还是比原来的客户端快</span>
 
@@ -110,8 +110,8 @@ Chrome直接下载速度
 
 另外，本人也在努力开发一款同样基于CloudFlareWorkers的评论系统，以下是截图：
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/101127.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101127.jpg)
 
 最后，来一句姗姗来迟的新年祝福：
 
-![](https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.5/happy.jpg)
+![](https://unpkg.zhimg.com/chenyfan-oss@1.1.5/happy.jpg)

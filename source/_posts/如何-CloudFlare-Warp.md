@@ -87,4 +87,4 @@ const sleepSeconds = 30;
 由于脚本用的是Nodejs,而heroku也有nodejs环境,所以.嗯,对,你懂的.
 
 嗯，又是一篇优雅的撸羊毛技巧。
-<img src="https://cdn.jsdelivr.net/npm/chenyfan-oss@1.1.11/186.jpg">
+<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/186.jpg">
