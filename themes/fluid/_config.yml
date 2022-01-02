@@ -11,7 +11,7 @@
 # 全局
 # Site
 #---------------------------
-favicon: https://unpkg.zhimg.com/chenyfan-oss@6/32.png
+favicon: https://npm.elemecdn.com/chenyfan-oss@6/32.png
 apple_touch_icon: https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg
 
 title_join_string: ' || '  # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名

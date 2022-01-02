@@ -9,8 +9,8 @@ tags:
   - 薅羊毛
 categories:
   - 好方法
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.1.5/banner.jpg'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.1.5/banner.jpg'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.1.5/banner.jpg'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.1.5/banner.jpg'
 lushkey: panlist.md
 abbrlink: 32883f0c
 date: 2021-01-06 21:44:55
