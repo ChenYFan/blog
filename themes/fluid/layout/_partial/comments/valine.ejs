@@ -1,131 +1,131 @@
+<div id="hpp_comment">
+	<div class="grid__item theme-1">
+		<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst"
+			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
+		</a>
+	</div>
+</div>
+<link rel="stylesheet"
+	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
 
-<div id="hpp_comment"><div class="grid__item theme-1">
-				<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst" style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
-					</a>
-				</div></div>
-				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" /> 
-<script src="https://cdn.jsdelivr.net/combine/gh/HexoPlusPlus/HexoComment_TwikooPlus@dev/dist/comment.js"></script>
-
-  <script>
-  function onclock(){
-new hpp_comment({
-id:"hpp_comment",
-envId:"blog-comment-6g821sad74db776c",
-region:"ap-shanghai",
-ver:"1.2.4-beta",
-domain: "blog.cyfan.top",
-path: 'window.location.pathname',
-cdn:"https://dn-qiniu-avatar.qbox.me/avatar/",
-adminmail: '15359b6f2fe293366156959c8ab9476f',
-friendmail: ['4627388bbef109f3345048262a595cd9','793c16e466509caf093e182eabecb7b4'],
-guestcolor: '#8080809e',
-friendcolor: 'rgb(102 175 233 / 60%)',
-admincolor: '#ffd700',
-timelimit: 200,
-mode:1
-})
-  }
-  </script>
-  <style>
-.el-input-group__prepend{
-border: 1px solid transparent!important;
-}
-.el-textarea__inner{
-border: 1px solid transparent!important;
-}
-.el-input__inner{
-border: 1px solid transparent!important;
-}
-	
-.grid__item {	
-	position: relative;	
-	display: grid;	
-	grid-template-columns: 100%;	
-	grid-template-rows: 100%;	
-	justify-items: center;	
-	overflow: hidden;	
-	padding: 4rem 1.5rem;	
-	background: var(--color-item-bg);	
-}	
-.grid__item-title {	
-	font-size: 0.85rem;	
-	color: var(--color-item-title);	
-	align-self: flex-start;	
-	margin: 0;	
-}	
-.action {	
-	position: absolute;	
-	top: 0;	
-	right: 0;	
-	background: none;	
-	margin: 2rem;	
-	color: var(--color-action);	
-	border: 0;	
-	padding: 0;	
-	opacity: 0;	
-	pointer-events: none;	
-}	
-.action:focus {	
-	outline: none;	
-}	
-.particles-button {	
-	-webkit-touch-callout: none;	
-	-webkit-user-select: none;	
-	-khtml-user-select: none;	
-	-moz-user-select: none;	
-	-ms-user-select: none;	
-	user-select: none;	
-	position: relative;	
-	border-radius: 5px;	
-	border-radius: var(--radius-button);	
-	background: var(--color-button-bg);	
-	color: var(--color-button-text);	
-	border: 0;	
-	border: var(--border-button);	
-	margin: 0;	
-	padding: 1.5rem 3rem;	
-	padding: var(--button-padding);	
-}	
-.particles-button:focus {	
-	outline: none;	
-}	
-.no-js .particles-button {	
-	grid-area: 1 / 1 / 2 / 2;	
-}	
-.particles {	
-	position: relative;	
-	grid-area: 1 / 1 / 2 / 2;	
-}	
-.particles-canvas {	
-	position: absolute;	
-	pointer-events: none;	
-	top: 50%;	
-	left: 50%;	
-	transform: translate3d(-50%,-50%,0);	
-}	
-.particles-wrapper {	
-	position: relative;	
-	display: inline-block;	
-    overflow: hidden;	
-}	
-.theme-1 {	
-	--color-action: var(--board-bg-color);	
-	--color-button-bg: var(--text-color);	
-	--color-button-text: #fff;	
-	--button-padding: 1.5rem 3rem;	
-	--radius-button: 5px;	
-	--border-button: 0;	
-}
-</style>
- 
-<!-- ADs-in-Blog-Under-Valine -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1878991317600808"
-     data-ad-slot="6517667779"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+	function onclock() {
+		twikoo.init({
+			envId: "blog-comment-6g821sad74db776c",
+			el: '#hpp_comment',
+			region: "ap-shanghai",
+			path: 'window.location.pathname'
+		})
+	}
 </script>
+<style>
+	.el-input-group__prepend {
+		border: 1px solid transparent !important;
+	}
 
+	.el-textarea__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.grid__item {
+		position: relative;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		justify-items: center;
+		overflow: hidden;
+		padding: 4rem 1.5rem;
+		background: var(--color-item-bg);
+	}
+
+	.grid__item-title {
+		font-size: 0.85rem;
+		color: var(--color-item-title);
+		align-self: flex-start;
+		margin: 0;
+	}
+
+	.action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		margin: 2rem;
+		color: var(--color-action);
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.action:focus {
+		outline: none;
+	}
+
+	.particles-button {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: relative;
+		border-radius: 5px;
+		border-radius: var(--radius-button);
+		background: var(--color-button-bg);
+		color: var(--color-button-text);
+		border: 0;
+		border: var(--border-button);
+		margin: 0;
+		padding: 1.5rem 3rem;
+		padding: var(--button-padding);
+	}
+
+	.particles-button:focus {
+		outline: none;
+	}
+
+	.no-js .particles-button {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles-canvas {
+		position: absolute;
+		pointer-events: none;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.particles-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.theme-1 {
+		--color-action: var(--board-bg-color);
+		--color-button-bg: var(--text-color);
+		--color-button-text: #fff;
+		--button-padding: 1.5rem 3rem;
+		--radius-button: 5px;
+		--border-button: 0;
+	}
+</style>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"
+	data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

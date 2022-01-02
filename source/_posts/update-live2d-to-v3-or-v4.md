@@ -204,8 +204,9 @@ function loadScript(src, callback) {
         if (document.body.clientWidth > 600) {
             document.onreadystatechange = function () {
                 if (document.readyState == "complete") {
-                    loadScript('https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismcore.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js,npm/chenyfan-oss@2.0.3/load.js',function(){
+                    loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/load.js',function(){
                         loadModel();
+
 })
                 }
             }

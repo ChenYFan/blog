@@ -148,7 +148,7 @@ navbar:
 
 search: # 搜索栏，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件。
   enable: true
-  path: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/local-search.xml # 文件引用地址，默认是下方生成位置，也可以将生成后的 local-search.xml 上传到其它位置引用，如：https://www.example.com/local-search.xml
+  path: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml # 文件引用地址，默认是下方生成位置，也可以将生成后的 local-search.xml 上传到其它位置引用，如：https://www.example.com/local-search.xml
   generate_path: /local-search.xml # 文件生成位置，必须为相对位置
   field: post
   content: true

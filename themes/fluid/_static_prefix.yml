@@ -23,9 +23,9 @@
 # Internal static
 #---------------------------
 
-internal_js: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/js
-internal_css: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/css
-internal_img: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/img
+internal_js: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js
+internal_css: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/css
+internal_img: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/img
 
 
 #---------------------------
@@ -43,7 +43,7 @@ github_markdown: https://unpkg.zhimg.com/github-markdown-css@4.0.0/
 
 jquery: https://unpkg.zhimg.com/jquery@3.4.1/dist/
 
-bootstrap: https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/
+bootstrap: https://unpkg.zhimg.com/bootstrap@5.1.3/dist/
 
 highlightjs: https://unpkg.zhimg.com/highlight.js@10.0.0/
 
@@ -73,4 +73,4 @@ blueimp_md5: https://cdn.staticfile.org/blueimp-md5/2.13.0/
 
 disqusjs: https://unpkg.zhimg.com/disqusjs@1.0/dist/
 
-hint: https://cdn.jsdelivr.net/gh/ChenYFan/blog@gh-pages/lib/hint/
+hint: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/lib/hint/

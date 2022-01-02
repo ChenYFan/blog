@@ -4,7 +4,7 @@ const joinPath = require('../../utils/join-path');
 
 module.exports = (hexo) => {
   var config = hexo.theme.config;
-  let loadingImage = 'https://cdn.jsdelivr.net/gh/ChenYFan/blog@master/themes/fluid/source/img/loading.gif';
+  let loadingImage = 'https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif';
   if (!config.lazyload || !config.lazyload.enable || !loadingImage) {
     return;
   }
