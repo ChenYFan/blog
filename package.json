@@ -1,7 +1,7 @@
 {
   "name": "chenyfan-blog",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "hexo": {
     "version": "3.9.0"
   },
