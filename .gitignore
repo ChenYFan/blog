@@ -2,7 +2,6 @@
 Thumbs.db
 db.json
 *.log
-public/
 .deploy*/
 tools/
 node_modules/
