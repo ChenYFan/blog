@@ -61,8 +61,8 @@ const blog = {
         "127.0.0.1:9999"
     ],
     plus: [
-        "119.91.80.151:59996",
         "blog.cyfan.top",
+        "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
     ]
 }
@@ -126,6 +126,7 @@ const lfetch = async (urls) => {
         return fetch(urls[0])
     }
 }
+
 
 /*
 const test_func = async () => {
