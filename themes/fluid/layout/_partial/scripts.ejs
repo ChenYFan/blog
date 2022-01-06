@@ -101,21 +101,17 @@
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
-                                                                                                                    if (window.localStorage.getItem('ChenBlogHelper')) {
-                                                                                                                        console.log('Yeah!ChenBlogHelper is Running')
-                                                                                                                    }
-                                                                                                                    else {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在五秒钟后刷新');
-                                                                                                                        window.localStorage.setItem('ChenBlogHelper', 1)
-                                                                                                                        setTimeout(() => {
-                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 5000)
-                                                                                                                    }
-
-
+                                                                                                                    notyf.success('ChenBlogHelper已安装!');
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
                                                                                                                 })
+                                                                                                            if (!await navigator.serviceWorker.ready["active"]) {
+                                                                                                                notyf.error('ChenBlogHelper未激活,将在五秒后自动刷新！');
+                                                                                                                
+                                                                                                                setTimeout(() => {
+                                                                                                                    window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                }, 5000)
+                                                                                                            } 
                                                                                                         });
                                                                                                     } else {
                                                                                                         notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')

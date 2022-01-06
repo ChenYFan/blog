@@ -1,7 +1,5 @@
 const CACHE_NAME = 'ICDNCache';
 let cachelist = [];
-const controller = new AbortController()
-const signal = controller.signal
 self.addEventListener('install', function (installEvent) {
     self.skipWaiting();
     installEvent.waitUntil(
@@ -43,9 +41,9 @@ let cdn = {
         unpkg: {
             "url": "https://unpkg.com"
         },
-        /*bdstatic: {
+        bdstatic: {
             "url": "https://code.bdstatic.com/npm"
-        },*/
+        },
         eleme: {
             "url": "https://npm.elemecdn.com"
         }
@@ -59,12 +57,12 @@ const testurl = {
 const blog = {
     origin: [
         "blog.cyfan.top",
-
         "127.0.0.1:9999"
     ],
     plus: [
         "119.91.80.151:59996",
-        "blog.cyfan.top"
+        "blog.cyfan.top",
+        "blog-six-iota.vercel.app"
     ]
 }
 const handle = async function (req) {
@@ -84,61 +82,45 @@ const handle = async function (req) {
         }
         return n
     })()
+    let urls = []
     for (let i in cdn) {
         for (let j in cdn[i]) {
             if (!!urlStr.match(cdn[i][j].url)) {
-                res = await Promise.any((() => {
-                    p = []
-                    for (let k in cdn[i]) {
-                        p.push(new Promise((resolve, reject) => {
-                            fetch(urlStr.replace(cdn[i][j].url, cdn[i][k].url), {
-                                signal: signal
-                            }).then(res => {
-                                if (res.status === 200) {
-                                    resolve(res)
-                                } else {
-                                    reject(res)
-                                }
-                            })
-                        }))
-                    }
-                    return p
-                })());
-                console.log("Origin:" + urlStr + " | " + "Get Source From:", res.url)
-                //controller.abort();
-                return res
-
+                urls = []
+                for (let k in cdn[i]) {
+                    urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
+                }
+                return lfetch(urls)
             }
         }
     }
     for (var i in blog.origin) {
         if (!!urlStr.match(blog.origin[i])) {
-            res = await Promise.any((() => {
-                p = []
-                for (let i in blog.plus) {
-                    p.push(new Promise((resolve, reject) => {
-                        fetch(urlStr.replace(domain, blog.plus[i]).replace(domain + ":" + port, blog.plus[i]).replace('http://',"https://"))
-                        .then(res => {
-                            if (res.status === 200) {
-                                resolve(res)
-                            } else {
-                                reject(res)
-                            }
-                        }).catch(err => {
-                            reject(err)
-                        })
-                    })
-                    )
-                }
-                return p
-            })());
-            console.log("Get Blog From:", res.url)
-            //controller.abort();
-            return res
+            urls = []
+            for (let k in blog.plus) {
+                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+            }
+            return lfetch(urls)
         }
     }
     return fetch(req)
 }
+
+const lfetch = async (urls) => {
+    console.log(urls)
+    let controller = new AbortController();
+    const PauseProgress = async (res) => {
+        return new Response(await (res).arrayBuffer(), { headers: res.headers });
+    };
+    let results = Promise.any(urls.map(urls => fetch(urls, {
+        signal: controller.signal
+    }).then(PauseProgress).then(res => {
+        controller.abort();
+        return res
+    })));
+    return results
+}
+
 /*
 const test_func = async () => {
     for (let i in cdn) {
