@@ -28,7 +28,7 @@
 ```
 标题: 陈YF的博客
 地址: https://blog.cyfan.top
-图像(如果有): https://unpkg.zhimg.com/chenyfan-oss@3
+图像(如果有): https://npm.elemecdn.com/chenyfan-oss@3
 简介(如果有): 一个在互联网角落挣扎的小小博客，很小很小
 屏幕截图(如果有): https://api.cyfan.top/thumb?url=https://blog.cyfan.top
 背景颜色(如果有): #F6B352
@@ -62,7 +62,7 @@
     title: '博客名字【不得大于9字，否则会被截断】',
     link: '网页链接，需进行主域名认证',
     intro: 'Slogan【不得大于15字，否则会被截断】',
-    image: 'icon图片链接【推荐使用jsdelivr加速链接，使用github直接做图床未经加速将受到警告】'
+    image: 'icon图片链接【推荐使用npm图床】'
     }
 ```
 
