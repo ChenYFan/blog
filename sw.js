@@ -31,6 +31,9 @@ let cdn = {
         }
     },
     "npm": {
+        eleme: {
+            "url": "https://npm.elemecdn.com"
+        },
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/npm"
 
@@ -43,10 +46,8 @@ let cdn = {
         },
         bdstatic: {
             "url": "https://code.bdstatic.com/npm"
-        },
-        eleme: {
-            "url": "https://npm.elemecdn.com"
         }
+
     }
 }
 const testurl = {
@@ -84,8 +85,8 @@ const handle = async function (req) {
         return n
     })()
     console.log(path)
-    if(path === '/status'){
-        return new Response(null,{status:999})
+    if (path === '/status') {
+        return new Response(null, { status: 999 })
     }
     let urls = []
     for (let i in cdn) {
@@ -113,17 +114,22 @@ const handle = async function (req) {
 
 const lfetch = async (urls) => {
     //console.log(urls)
-    let controller = new AbortController();
-    const PauseProgress = async (res) => {
-        return new Response(await (res).arrayBuffer(), { headers: res.headers });
-    };
-    let results = Promise.any(urls.map(urls => fetch(urls, {
-        signal: controller.signal
-    }).then(PauseProgress).then(res => {
-        controller.abort();
-        return res
-    })));
-    return results
+    try {
+        let controller = new AbortController();
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { headers: res.headers });
+        };
+        let results = Promise.any(urls.map(urls => fetch(urls, {
+            signal: controller.signal
+        }).then(PauseProgress).then(res => {
+            controller.abort();
+            return res
+        })));
+        return results
+    }
+    catch (err) {
+        return fetch(urls[0])
+    }
 }
 
 /*
