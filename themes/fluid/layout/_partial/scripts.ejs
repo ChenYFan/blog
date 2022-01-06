@@ -101,11 +101,14 @@
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
-                                                                                                                    notyf.success('ChenBlogHelper已安装!将在三秒后尝试激活!');
 
-                                                                                                                    setTimeout(() => {
-                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                    }, 3000)
+                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
+                                                                                                                        notyf.success('ChenBlogHelper已安装!将在三秒后尝试激活!');
+                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 3000)
+                                                                                                                    }
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
                                                                                                                 })
