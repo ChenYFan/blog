@@ -26,7 +26,6 @@
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-tag-dplayer": "^0.3.3",
     "hexo-wordcount": "^6.0.1",
     "live2d-widget-model-z16": "^1.0.5",
     "request": "^2.88.2",

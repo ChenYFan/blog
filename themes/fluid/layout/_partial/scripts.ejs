@@ -1,6 +1,6 @@
 <!-- Plugins -->
-<script
-    src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
 <script>
 
     window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
@@ -87,3 +87,38 @@
                                                                                     %>
                                                                                     <%- partial('_partial/plugins/analytics.ejs')
                                                                                         %>
+
+
+
+
+                                                                                        <script>
+                                                                                                (async () => {
+                                                                                                    function ranN(minNum, maxNum) {
+                                                                                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                                                                                    }
+                                                                                                    const notyf = new Notyf();
+                                                                                                    if ('serviceWorker' in navigator) {
+                                                                                                        window.addEventListener('load', async () => {
+                                                                                                            navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                                                                                .then(async reg => {
+                                                                                                                    if (window.localStorage.getItem('ChenBlogHelper')) {
+                                                                                                                        console.log('Yeah!ChenBlogHelper is Running')
+                                                                                                                    }
+                                                                                                                    else {
+                                                                                                                        notyf.success('ChenBlogHelper已安装!将在五秒钟后刷新');
+                                                                                                                        window.localStorage.setItem('ChenBlogHelper', 1)
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 5000)
+                                                                                                                    }
+
+
+                                                                                                                }).catch(err => {
+                                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                })
+                                                                                                        });
+                                                                                                    } else {
+                                                                                                        notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                                                                                    }
+                                                                                                })()
+                                                                                        </script>
