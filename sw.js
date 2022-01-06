@@ -60,6 +60,7 @@ const blog = {
         "127.0.0.1:9999"
     ],
     plus: [
+        "127.0.0.1:9999",
         "119.91.80.151:59996",
         "blog.cyfan.top",
         "blog-six-iota.vercel.app"
@@ -82,6 +83,10 @@ const handle = async function (req) {
         }
         return n
     })()
+    console.log(path)
+    if(path === '/status'){
+        return new Response(null,{status:999})
+    }
     let urls = []
     for (let i in cdn) {
         for (let j in cdn[i]) {
@@ -107,7 +112,7 @@ const handle = async function (req) {
 }
 
 const lfetch = async (urls) => {
-    console.log(urls)
+    //console.log(urls)
     let controller = new AbortController();
     const PauseProgress = async (res) => {
         return new Response(await (res).arrayBuffer(), { headers: res.headers });
