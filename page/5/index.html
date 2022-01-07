@@ -1207,6 +1207,7 @@ wpaladins •*********@163.com •2019-08-13 13:33:44你网站的各种东西确
                                                                                                                 resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
+                                                                                                                    dom: -1
 
                                                                                                                 }
                                                                                                             }
@@ -1215,7 +1216,7 @@ wpaladins •*********@163.com •2019-08-13 13:33:44你网站的各种东西确
                                                                                                                     ans.perform.paint[i.name] = i.startTime
                                                                                                                     continue;
                                                                                                                 }
-                                                                                                                ans.resouse.push({
+                                                                                                                ans.resource.push({
                                                                                                                     name: i.name,
                                                                                                                     time: {
                                                                                                                         connect: i.connectEnd - i.connectStart,
@@ -1226,8 +1227,11 @@ wpaladins •*********@163.com •2019-08-13 13:33:44你网站的各种东西确
                                                                                                                         loadevent: i.loadEventEnd - i.loadEventStart
                                                                                                                     }
                                                                                                                 })
+                                                                                                                if (!!i.domComplete && i.domComplete >= ans.perform.dom) {
+                                                                                                                    ans.perform.dom = i.domComplete
+                                                                                                                }
 
-                                                                                                                ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
+
                                                                                                             }
                                                                                                             document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)

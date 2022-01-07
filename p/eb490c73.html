@@ -1070,6 +1070,7 @@ npm publish</code></pre></div>
                                                                                                                 resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
+                                                                                                                    dom: -1
 
                                                                                                                 }
                                                                                                             }
@@ -1078,7 +1079,7 @@ npm publish</code></pre></div>
                                                                                                                     ans.perform.paint[i.name] = i.startTime
                                                                                                                     continue;
                                                                                                                 }
-                                                                                                                ans.resouse.push({
+                                                                                                                ans.resource.push({
                                                                                                                     name: i.name,
                                                                                                                     time: {
                                                                                                                         connect: i.connectEnd - i.connectStart,
@@ -1089,8 +1090,11 @@ npm publish</code></pre></div>
                                                                                                                         loadevent: i.loadEventEnd - i.loadEventStart
                                                                                                                     }
                                                                                                                 })
+                                                                                                                if (!!i.domComplete && i.domComplete >= ans.perform.dom) {
+                                                                                                                    ans.perform.dom = i.domComplete
+                                                                                                                }
 
-                                                                                                                ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
+
                                                                                                             }
                                                                                                             document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)

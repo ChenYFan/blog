@@ -268,7 +268,7 @@ background-color:#bbb;
                 
 
 <div class="page-content">
-  <p>有什么要说的可以写在这里<br>如果你想说悄悄话，发邮件到<a href="mailto:&#x63;&#104;&#101;&#110;&#121;&#x66;&#x40;&#x63;&#121;&#x66;&#97;&#x6e;&#x2e;&#116;&#x6f;&#112;" target="_blank" rel="noopener">&#x63;&#104;&#101;&#110;&#121;&#x66;&#x40;&#x63;&#121;&#x66;&#97;&#x6e;&#x2e;&#116;&#x6f;&#112;</a></p>
+  <p>有什么要说的可以写在这里<br>如果你想说悄悄话，发邮件到<a href="mailto:&#99;&#104;&#101;&#110;&#x79;&#102;&#x40;&#99;&#121;&#x66;&#97;&#110;&#x2e;&#116;&#x6f;&#x70;" target="_blank" rel="noopener">&#99;&#104;&#101;&#110;&#x79;&#102;&#x40;&#99;&#121;&#x66;&#97;&#110;&#x2e;&#116;&#x6f;&#x70;</a></p>
 <h1 id="留言须知："><a href="#留言须知：" class="headerlink" title="留言须知："></a>留言须知：</h1><ol>
 <li><span class="heimu" title="不堪回首的更换评论系统记录"> <del>来比力服务器部署于韩国，可能无法加载或长时间空白。在无法加载情况下请刷新，在空白情况下请耐心等待。如果手机SNS登陆方式被遮挡，请横屏选择登陆方式！</del> <del>加载太TM慢了！！！！换作Valine吧！评论时要注明自己的邮箱，头像会来自<a href="http://cn.gravatar.com" target="_blank" rel="noopener">Gravatar</a>，同时你也会收到邮件通知。一定要正确！  蛋疼的是LeanCloud出了点小问题,于是跳槽到Gitalk了.使用Gitalk需要Github账号,而且很有可能需要梯子!国内对于Github相当不友好,很有可能加载不出来或者是网络错误! ~</del> </span> Valine，我最终还是选择了你【吐血】</li>
 <li>拒绝包括但不限于色情、反动、低俗发言，拒绝抹黑当局的言论。</li>
@@ -774,6 +774,7 @@ image: <span class="hljs-string">'icon图片链接【推荐使用jsdelivr加速�
                                                                                                                 resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
+                                                                                                                    dom: -1
 
                                                                                                                 }
                                                                                                             }
@@ -782,7 +783,7 @@ image: <span class="hljs-string">'icon图片链接【推荐使用jsdelivr加速�
                                                                                                                     ans.perform.paint[i.name] = i.startTime
                                                                                                                     continue;
                                                                                                                 }
-                                                                                                                ans.resouse.push({
+                                                                                                                ans.resource.push({
                                                                                                                     name: i.name,
                                                                                                                     time: {
                                                                                                                         connect: i.connectEnd - i.connectStart,
@@ -793,8 +794,11 @@ image: <span class="hljs-string">'icon图片链接【推荐使用jsdelivr加速�
                                                                                                                         loadevent: i.loadEventEnd - i.loadEventStart
                                                                                                                     }
                                                                                                                 })
+                                                                                                                if (!!i.domComplete && i.domComplete >= ans.perform.dom) {
+                                                                                                                    ans.perform.dom = i.domComplete
+                                                                                                                }
 
-                                                                                                                ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
+
                                                                                                             }
                                                                                                             document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)
