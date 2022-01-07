@@ -19,12 +19,13 @@ self.addEventListener('fetch', event => {
     }
 });
 
-const uuid = (() => {
+const generate_uuid = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
-})()
+}
+self.uuid = generate_uuid()
 self.ws_sw = (config) => {
     switch (config.type) {
         case 'init':
@@ -159,7 +160,8 @@ const lfetch = async (urls, url) => {
                                         url: urls,
                                         origin_url: url,
                                         promise_any: true,
-                                        uuid: uuid
+                                        uuid: uuid,
+                                        request_uuid: generate_uuid()
                                     })
                                 })
                             }, 0);
@@ -183,6 +185,7 @@ const lfetch = async (urls, url) => {
                 type: 'fetch',
                 url: urls[0],
                 promise_any: false,
+                request_uuid: generate_uuid(),
                 uuid: uuid
             })
         })
