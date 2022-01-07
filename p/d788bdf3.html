@@ -1,4 +1,343 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg"><link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="一篇如何优化使用Euserv免费小鸡的文章"><meta name="keywords" content="白嫖"><meta name="author" content="CYF"><title>Euserv正确打开优化方式 || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css"><link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css"><script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js"></script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../archives/">归档 </a><a class="dropdown-item" href="../categories/">分类 </a><a class="dropdown-item" href="../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../com/">留言板 </a><a class="dropdown-item" href="../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../about/">关于 </a><a class="dropdown-item" href="../hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg t="1601864448019" class="icon" style="display:unset!important" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li><li class="nav-item" id="lush"><a class="nav-link" target="_blank" href="https://markdown-pre.cyfan.top/?url=https://unpkg.zhimg.com/chenyfan-blog/source/_posts/how-to-use-euserv.md">&nbsp;<i class="iconfont icon-stack-overflow-fill" id="color-icon-stack-overflow-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2021-03-14 11:12" pubdate>2021年3月14日 上午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 2k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 31 分钟 </span><span id="post-meta-views"><i class="iconfont icon-rss"></i> <span id="pv-counter">loading</span> <span>阅读量</span></span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">Euserv正确打开优化方式</h1><p class="note note-info">本文最后更新于：几秒前</p><div class="markdown-body" id="post-body"><p>Euserv，盛名远扬【老白嫖怪了】，但是如何合理打开它，却是一个难题。这篇文章就是简单讲讲合理使用其免费的纯IPv6小鸡</p><a id="more"></a><p>首先是bench测试普通小鸡</p><div class="hljs"><pre><code class="hljs sh">----------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  
+    
+	
+	    <meta name="description" content="一篇如何优化使用Euserv免费小鸡的文章">
+	 
+	 
+	 	
+
+	
+	    <meta name="keywords" content="白嫖">
+	 
+	 
+	 	
+
+ 
+  
+  <meta name="author" content="CYF">
+  <title>Euserv正确打开优化方式 || 陈YFの博客(￣▽￣)&#34;</title>
+<!--<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>-->
+  
+<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+
+
+
+<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+
+</script>
+<link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+::-webkit-scrollbar-track-piece {
+background-color:#f8f8f8;
+}
+::-webkit-scrollbar {
+width:9px;
+height:9px;
+}
+::-webkit-scrollbar-thumb {
+background-color:#dddddd;
+background-clip:padding-box;
+min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#bbb;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/" data-letters="陈YFの博客">&nbsp;<strong>陈YFの博客(￣▽￣)"</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../archives/">
+                    
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../categories/">
+                    
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                页面
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../com/">
+                    
+                    留言板
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../随口胡说/ ">
+                    
+                    随口胡说
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../about/">
+                    
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="../hpp/admin/dash/home">
+                    
+                    后台
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../links/">
+                
+                朋友们
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://cyfan.top">
+                
+                项目主页
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+            <li class="nav-item" id="travellings-icon">
+            <a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg t="1601864448019" class="icon" style="display: unset!important;" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a>
+          </li>
+                  <li class="nav-item" id="tton">
+            <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+          </li>
+                  
+                
+                 
+                     <li class="nav-item" id="lush">
+            <a class="nav-link" target="_blank" href="https://markdown-pre.cyfan.top/?url=https://unpkg.zhimg.com/chenyfan-blog/source/_posts/how-to-use-euserv.md">&nbsp;<i
+                class="iconfont icon-stack-overflow-fill" id="color-icon-stack-overflow-icon"></i>&nbsp;</a>
+          </li>
+                 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-03-14 11:12" pubdate>
+      2021年3月14日 上午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      32
+      分钟
+    </span>
+  
+<span id="post-meta-views">
+<i class="iconfont icon-rss"></i>
+<span id="pv-counter">loading</span>
+       <span>阅读量</span>
+    </span>
+   
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Euserv正确打开优化方式</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <p>Euserv，盛名远扬【老白嫖怪了】，但是如何合理打开它，却是一个难题。这篇文章就是简单讲讲合理使用其免费的纯IPv6小鸡</p>
+<a id="more"></a>
+
+<p>首先是bench测试普通小鸡</p>
+<div class="hljs"><pre><code class="hljs sh">----------------------------------------------------------------------
  CPU Model             : AMD Phenom(tm) II X6 1055T Processor
  CPU Cores             : 1
  CPU Frequency         : 3101.198 MHz
@@ -22,7 +361,10 @@
  Average I/O speed     : 27.3 MB/s
 ----------------------------------------------------------------------
  Node Name        Upload Speed      Download Speed      Latency     
- Speedtest.net    288.12 Mbps       350.72 Mbps         46.84 ms</code></pre></div><p>这是一张简单优化后的小鸡</p><div class="hljs"><pre><code class="hljs sh">----------------------------------------------------------------------
+ Speedtest.net    288.12 Mbps       350.72 Mbps         46.84 ms</code></pre></div>
+
+<p>这是一张简单优化后的小鸡</p>
+<div class="hljs"><pre><code class="hljs sh">----------------------------------------------------------------------
  CPU Model             : Intel(R) Xeon(R) CPU E3-1270 v3 @ 3.50GHz
  CPU Cores             : 1
  CPU Frequency         : 3740.322 MHz
@@ -56,20 +398,98 @@
  Hongkong   CN    81.69 Mbps        141.33 Mbps         274.20 ms   
  Singapore  SG    99.51 Mbps        108.96 Mbps         330.77 ms   
  Tokyo      JP    104.81 Mbps       85.70 Mbps          246.56 ms   
-----------------------------------------------------------------------</code></pre></div><h1 id="安装-Debian10"><a href="#安装-Debian10" class="headerlink" title="安装 - Debian10"></a>安装 - Debian10</h1><p>这里务必要安装Debian系统，不然后面可能会有点小问题</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692757000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>可能要很长一段时间，完毕后<code>ServerData</code>记录ipv6地址和密码备用</p><h1 id="链接SSH"><a href="#链接SSH" class="headerlink" title="链接SSH"></a>链接SSH</h1><p>由于次小鸡用的是纯ipv6,鉴于国内ipv6的部署情况您很有可能连接不上,请选择以下六种方式链接</p><ul><li>CloudFlareSpectrum + UcloudGlobalSSH</li><li>嘿哟终端</li><li>ZeroTier虚拟局域网</li><li>挂ipv6代理</li><li>使用另一台已安装宝塔的Euserv小鸡,用宝塔自带的终端ssh中继到另一台服务器</li><li>使用ipv4+ipv6双栈vps,用ssh链接</li></ul><p>篇幅所限,只讲第一种</p><h2 id="CloudFlareSpectrum-UcloudGlobalSSH"><a href="#CloudFlareSpectrum-UcloudGlobalSSH" class="headerlink" title="CloudFlareSpectrum + UcloudGlobalSSH"></a>CloudFlareSpectrum + UcloudGlobalSSH</h2><p><strong>这个方案比较推荐,就是需要白嫖一个CloudFlarePro</strong></p><p>UcloudGlobalSSH只能支持ipv4,所以你需要一个CloudFlareSpectrum中继</p><p>CloudFlareSpectrum每月5GB流量,仅SSH链接完全足够</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692972000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693007000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693064000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693130000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>这一步之后需要注意解析你的专属ip，CloudFlareSpectrum使用的ip不是供用的。</p><p>Windows命令提示符使用</p><div class="hljs"><pre><code class="hljs cmd">nslookup abc.cyfan.top.cdn.cloudflare.<span class="hljs-built_in">net</span></code></pre></div><p>或者使用我的DNS over HTTPS</p><div class="hljs"><pre><code class="hljs url">https://api.cyfan.top/ohhhdns?name=abc.cyfan.top.cdn.cloudflare.net&amp;host=true</code></pre></div><p>请自己更改abc.cyfan.top这个域名。</p><p>解析的ip形如<code>172.65.124.0</code>,但这个ip并不好,三网都很差,所以用UcloudGlobalSSH</p><p>UcloudGlobalSSH拥有免费版一天1GB,完全足矣</p><p><a href="https://console.ucloud.cn/upathx/globalssh" target="_blank" rel="noopener">https://console.ucloud.cn/upathx/globalssh</a></p><p>新建一个隧道</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693476000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>将之前解析的ip写入，区域建议香港，点击确定，生成专属域名</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693543000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693601000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>然后链接，我这里用的是XShell，其实客户端自己看喜好</p><p>域名就是ucloud的专属域名，<strong>端口是UC分配给你的而不是22</strong>，922是UC给我的端口，密码是Euserv的密码，用户直接用<code>root</code></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693743000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693767000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>然后就直接链接</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693951000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>使用此方式链接方式如下</p><div class="hljs"><pre><code class="hljs undefined">你 - 中国 &lt;=<span class="hljs-attribute">40ms</span>=&gt; Ucloud - 中国香港 &lt;=<span class="hljs-attribute">10ms</span>=&gt; CloudFlareSpectrum - AnyCast &lt;=Argo 横跨北半球,<span class="hljs-attribute">150ms</span>=&gt; Euserv - 德国</code></pre></div><p>也就是说链接直连可以与美国vps媲美</p><h1 id="DNS设置-DNS64"><a href="#DNS设置-DNS64" class="headerlink" title="DNS设置 -DNS64"></a>DNS设置 -DNS64</h1><p>Euserv只有一个ipv6地址,没有ipv4网卡,所以只能链接纯ipv6网站</p><p>使用DNS64可以强制把域名解析到ipv6地址,并且原来只有ipv4的也能通过算法解析到ipv6</p><p>由于你要安装Warp,为了下载来自外网的软件,需要使用DNS64</p><div class="hljs"><pre><code class="hljs undefined">nano <span class="hljs-regexp">/etc/</span>resolv.conf</code></pre></div><p>大概是这样的</p><div class="hljs"><pre><code class="hljs undefined">
+----------------------------------------------------------------------</code></pre></div>
+
+<h1 id="安装-Debian10"><a href="#安装-Debian10" class="headerlink" title="安装 - Debian10"></a>安装 - Debian10</h1><p>这里务必要安装Debian系统，不然后面可能会有点小问题</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692757000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>可能要很长一段时间，完毕后<code>ServerData</code>记录ipv6地址和密码备用</p>
+<h1 id="链接SSH"><a href="#链接SSH" class="headerlink" title="链接SSH"></a>链接SSH</h1><p>由于次小鸡用的是纯ipv6,鉴于国内ipv6的部署情况您很有可能连接不上,请选择以下六种方式链接</p>
+<ul>
+<li>CloudFlareSpectrum + UcloudGlobalSSH</li>
+<li>嘿哟终端</li>
+<li>ZeroTier虚拟局域网</li>
+<li>挂ipv6代理</li>
+<li>使用另一台已安装宝塔的Euserv小鸡,用宝塔自带的终端ssh中继到另一台服务器</li>
+<li>使用ipv4+ipv6双栈vps,用ssh链接</li>
+</ul>
+<p>篇幅所限,只讲第一种</p>
+<h2 id="CloudFlareSpectrum-UcloudGlobalSSH"><a href="#CloudFlareSpectrum-UcloudGlobalSSH" class="headerlink" title="CloudFlareSpectrum + UcloudGlobalSSH"></a>CloudFlareSpectrum + UcloudGlobalSSH</h2><p><strong>这个方案比较推荐,就是需要白嫖一个CloudFlarePro</strong></p>
+<p> UcloudGlobalSSH只能支持ipv4,所以你需要一个CloudFlareSpectrum中继</p>
+<p>CloudFlareSpectrum每月5GB流量,仅SSH链接完全足够</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692972000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693007000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693064000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693130000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>这一步之后需要注意解析你的专属ip，CloudFlareSpectrum使用的ip不是供用的。</p>
+<p>Windows命令提示符使用</p>
+<div class="hljs"><pre><code class="hljs cmd">nslookup abc.cyfan.top.cdn.cloudflare.<span class="hljs-built_in">net</span></code></pre></div>
+
+<p>或者使用我的DNS over HTTPS</p>
+<div class="hljs"><pre><code class="hljs url">https://api.cyfan.top/ohhhdns?name=abc.cyfan.top.cdn.cloudflare.net&amp;host=true</code></pre></div>
+
+<p>请自己更改abc.cyfan.top这个域名。</p>
+<p>解析的ip形如<code>172.65.124.0</code>,但这个ip并不好,三网都很差,所以用UcloudGlobalSSH</p>
+<p>UcloudGlobalSSH拥有免费版一天1GB,完全足矣</p>
+<p><a href="https://console.ucloud.cn/upathx/globalssh" target="_blank" rel="noopener">https://console.ucloud.cn/upathx/globalssh</a></p>
+<p>新建一个隧道</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693476000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>将之前解析的ip写入，区域建议香港，点击确定，生成专属域名</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693543000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693601000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>然后链接，我这里用的是XShell，其实客户端自己看喜好</p>
+<p>域名就是ucloud的专属域名，<strong>端口是UC分配给你的而不是22</strong>，922是UC给我的端口，密码是Euserv的密码，用户直接用<code>root</code></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693743000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693767000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>然后就直接链接</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693951000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>使用此方式链接方式如下</p>
+<div class="hljs"><pre><code class="hljs undefined">你 - 中国 &lt;=<span class="hljs-attribute">40ms</span>=&gt; Ucloud - 中国香港 &lt;=<span class="hljs-attribute">10ms</span>=&gt; CloudFlareSpectrum - AnyCast &lt;=Argo 横跨北半球,<span class="hljs-attribute">150ms</span>=&gt; Euserv - 德国</code></pre></div>
+
+<p>也就是说链接直连可以与美国vps媲美</p>
+<h1 id="DNS设置-DNS64"><a href="#DNS设置-DNS64" class="headerlink" title="DNS设置 -DNS64"></a>DNS设置 -DNS64</h1><p>Euserv只有一个ipv6地址,没有ipv4网卡,所以只能链接纯ipv6网站</p>
+<p>使用DNS64可以强制把域名解析到ipv6地址,并且原来只有ipv4的也能通过算法解析到ipv6</p>
+<p>由于你要安装Warp,为了下载来自外网的软件,需要使用DNS64</p>
+<div class="hljs"><pre><code class="hljs undefined">nano <span class="hljs-regexp">/etc/</span>resolv.conf</code></pre></div>
+
+<p>大概是这样的</p>
+<div class="hljs"><pre><code class="hljs undefined">
 <span class="hljs-selector-tag">search</span> <span class="hljs-selector-tag">blue</span><span class="hljs-selector-class">.kundencontroller</span><span class="hljs-selector-class">.de</span>
 <span class="hljs-selector-tag">options</span> <span class="hljs-selector-tag">rotate</span>
 <span class="hljs-selector-tag">nameserver</span> 2<span class="hljs-selector-tag">a02</span><span class="hljs-selector-pseudo">:180</span><span class="hljs-selector-pseudo">:6</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">::1c</span>
 <span class="hljs-selector-tag">nameserver</span> 2<span class="hljs-selector-tag">a02</span><span class="hljs-selector-pseudo">:180</span><span class="hljs-selector-pseudo">:6</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">::1e</span>
 <span class="hljs-selector-tag">nameserver</span> 2<span class="hljs-selector-tag">a02</span><span class="hljs-selector-pseudo">:180</span><span class="hljs-selector-pseudo">:6</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">::1d</span>
-<span class="hljs-selector-tag">nameserver</span> 2<span class="hljs-selector-tag">a02</span><span class="hljs-selector-pseudo">:180</span><span class="hljs-selector-pseudo">:6</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">::4</span></code></pre></div><p>删除最后4行nameserver,添加</p><div class="hljs"><pre><code class="hljs undefined">nameserver <span class="hljs-number">2001</span>:67c:<span class="hljs-number">2b0</span>::<span class="hljs-number">4</span>
-nameserver <span class="hljs-number">2001</span>:67c:<span class="hljs-number">2b0</span>::<span class="hljs-number">6</span></code></pre></div><h1 id="Warp安装-上IPv4地址"><a href="#Warp安装-上IPv4地址" class="headerlink" title="Warp安装 - 上IPv4地址"></a>Warp安装 - 上IPv4地址</h1><blockquote><p>Debian安装时若意外退出则需要相当麻烦解除锁定,所以建立一个稳定的隧道是必须的</p></blockquote><p>首先安装一些必要依赖</p><div class="hljs"><pre><code class="hljs sh">apt update
-apt install curl sudo lsb-release -y</code></pre></div><p>添加 back­ports 源,并安装wireguard</p><div class="hljs"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">"deb http://deb.debian.org/debian <span class="hljs-variable">$(lsb_release -sc)</span>-backports main"</span> | sudo tee /etc/apt/sources.list.d/backports.list
+<span class="hljs-selector-tag">nameserver</span> 2<span class="hljs-selector-tag">a02</span><span class="hljs-selector-pseudo">:180</span><span class="hljs-selector-pseudo">:6</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">::4</span></code></pre></div>
+
+<p>删除最后4行nameserver,添加</p>
+<div class="hljs"><pre><code class="hljs undefined">nameserver <span class="hljs-number">2001</span>:67c:<span class="hljs-number">2b0</span>::<span class="hljs-number">4</span>
+nameserver <span class="hljs-number">2001</span>:67c:<span class="hljs-number">2b0</span>::<span class="hljs-number">6</span></code></pre></div>
+
+<h1 id="Warp安装-上IPv4地址"><a href="#Warp安装-上IPv4地址" class="headerlink" title="Warp安装 - 上IPv4地址"></a>Warp安装 - 上IPv4地址</h1><blockquote>
+<p>Debian安装时若意外退出则需要相当麻烦解除锁定,所以建立一个稳定的隧道是必须的</p>
+</blockquote>
+<p>首先安装一些必要依赖</p>
+<div class="hljs"><pre><code class="hljs sh">apt update
+apt install curl sudo lsb-release -y</code></pre></div>
+
+<p>添加 back­ports 源,并安装wireguard</p>
+<div class="hljs"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">"deb http://deb.debian.org/debian <span class="hljs-variable">$(lsb_release -sc)</span>-backports main"</span> | sudo tee /etc/apt/sources.list.d/backports.list
 sudo apt update
 sudo apt install net-tools iproute2 openresolv dnsutils -y
-sudo apt install wireguard-tools --no-install-recommends</code></pre></div><p>然后因为是LXC虚拟内核,无奈之下只能使用go语言编译的内核</p><div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/wireguard-go.sh | sudo bash</code></pre></div><p>安装wgcf【第三方注册器】，注册并生成配置</p><div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/wgcf.sh | sudo bash
+sudo apt install wireguard-tools --no-install-recommends</code></pre></div>
+
+<p>然后因为是LXC虚拟内核,无奈之下只能使用go语言编译的内核</p>
+<div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/wireguard-go.sh | sudo bash</code></pre></div>
+
+<p>安装wgcf【第三方注册器】，注册并生成配置</p>
+<div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/wgcf.sh | sudo bash
 wgcf register
-wgcf generate</code></pre></div><p>修改配置</p><div class="hljs"><pre><code class="hljs sh">nano wgcf-profile.conf</code></pre></div><p>内容差不多这样：</p><div class="hljs"><pre><code class="hljs sh">[Interface]
+wgcf generate</code></pre></div>
+
+<p>修改配置</p>
+<div class="hljs"><pre><code class="hljs sh">nano wgcf-profile.conf</code></pre></div>
+
+<p>内容差不多这样：</p>
+<div class="hljs"><pre><code class="hljs sh">[Interface]
 PrivateKey = xxx
 Address = 172.16.0.2/32
 Address = fd01:5ca1:ab1e:89f5:9dfa:759c:9348:13e6/128
@@ -79,10 +499,31 @@ MTU = 1280
 PublicKey = xxx
 AllowedIPs = 0.0.0.0/0
 AllowedIPs = ::/0
-Endpoint = engage.cloudflareclient.com:2408</code></pre></div><p>几个关键配置</p><ul><li>第五行DNS改成</li></ul><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">DNS</span> = <span class="hljs-number">2606</span>:<span class="hljs-number">4700</span>:<span class="hljs-number">4700</span>::<span class="hljs-number">1111</span></code></pre></div><ul><li><p>删除第十行，否则Warp会托管ipv6</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">AllowedIPs</span> = ::/<span class="hljs-number">0</span></code></pre></div></li><li><p>修改第十一行为</p></li></ul><div class="hljs"><pre><code class="hljs undefined">Endpoint = [<span class="hljs-number">2606</span><span class="hljs-symbol">:</span><span class="hljs-number">4700</span><span class="hljs-symbol">:d0</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:a29f</span><span class="hljs-symbol">:c001</span>]<span class="hljs-symbol">:</span><span class="hljs-number">2408</span></code></pre></div><p>输入以下命令</p><div class="hljs"><pre><code class="hljs sh">sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+Endpoint = engage.cloudflareclient.com:2408</code></pre></div>
+
+<p>几个关键配置</p>
+<ul>
+<li>第五行DNS改成</li>
+</ul>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">DNS</span> = <span class="hljs-number">2606</span>:<span class="hljs-number">4700</span>:<span class="hljs-number">4700</span>::<span class="hljs-number">1111</span></code></pre></div>
+
+<ul>
+<li><p>删除第十行，否则Warp会托管ipv6</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">AllowedIPs</span> = ::/<span class="hljs-number">0</span></code></pre></div>
+</li>
+<li><p>修改第十一行为</p>
+</li>
+</ul>
+<div class="hljs"><pre><code class="hljs undefined">Endpoint = [<span class="hljs-number">2606</span><span class="hljs-symbol">:</span><span class="hljs-number">4700</span><span class="hljs-symbol">:d0</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:a29f</span><span class="hljs-symbol">:c001</span>]<span class="hljs-symbol">:</span><span class="hljs-number">2408</span></code></pre></div>
+
+<p>输入以下命令</p>
+<div class="hljs"><pre><code class="hljs sh">sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 sudo systemctl start wg-quick@wgcf
 sudo systemctl <span class="hljs-built_in">enable</span> wg-quick@wgcf
-<span class="hljs-built_in">echo</span> <span class="hljs-string">'precedence  ::ffff:0:0/96   100'</span> | sudo tee -a /etc/gai.conf</code></pre></div><p>然后ping一下baidu：</p><div class="hljs"><pre><code class="hljs undefined">root@srv10866:~#<span class="hljs-built_in"> ping </span>baidu.com<span class="hljs-built_in">
+<span class="hljs-built_in">echo</span> <span class="hljs-string">'precedence  ::ffff:0:0/96   100'</span> | sudo tee -a /etc/gai.conf</code></pre></div>
+
+<p>然后ping一下baidu：</p>
+<div class="hljs"><pre><code class="hljs undefined">root@srv10866:~#<span class="hljs-built_in"> ping </span>baidu.com<span class="hljs-built_in">
 PING </span>baidu.com (220.181.38.148) 56(84) bytes of data.
 64 bytes <span class="hljs-keyword">from</span> 220.181.38.148 (220.181.38.148): <span class="hljs-attribute">icmp_seq</span>=1 <span class="hljs-attribute">ttl</span>=50 <span class="hljs-attribute">time</span>=452 ms
 64 bytes <span class="hljs-keyword">from</span> 220.181.38.148 (220.181.38.148): <span class="hljs-attribute">icmp_seq</span>=2 <span class="hljs-attribute">ttl</span>=50 <span class="hljs-attribute">time</span>=300 ms
@@ -92,23 +533,38 @@ PING </span>baidu.com (220.181.38.148) 56(84) bytes of data.
 ^C
 --- baidu.com<span class="hljs-built_in"> ping </span>statistics ---
 26 packets transmitted, 23 received, 11.5385% packet loss, time 121ms
-rtt min/avg/max/mdev = 297.390/307.370/451.503/30.906 ms</code></pre></div><p>简单安装besttrace</p><div class="hljs"><pre><code class="hljs sh">wget https://cdn.ipip.net/17mon/besttrace4linux.zip
+rtt min/avg/max/mdev = 297.390/307.370/451.503/30.906 ms</code></pre></div>
+
+<p>简单安装besttrace</p>
+<div class="hljs"><pre><code class="hljs sh">wget https://cdn.ipip.net/17mon/besttrace4linux.zip
 apt-get install zip
 unzip besttrace4linux.zip
-chmod +x besttrace</code></pre></div><p>路由到CF网络都是一步到位</p><div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 1.0.0.1</span>
+chmod +x besttrace</code></pre></div>
+
+<p>路由到CF网络都是一步到位</p>
+<div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 1.0.0.1</span>
 traceroute to 1.0.0.1 (1.0.0.1), 30 hops max, 32 byte packets
  1  one.one.one.one (1.0.0.1)  9.61 ms  AS13335  CLOUDFLARE.COM, apnic.net
 
 root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 cloudflare.com</span>
 traceroute to cloudflare.com (104.16.133.229), 30 hops max, 32 byte packets
- 1  104.16.133.229  13.62 ms  AS13335  CLOUDFLARE.COM, cloudflare.com</code></pre></div><p>路由到谷歌，那就是穿透一层内网直接出去</p><div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 google.com</span>
+ 1  104.16.133.229  13.62 ms  AS13335  CLOUDFLARE.COM, cloudflare.com</code></pre></div>
+
+<p>路由到谷歌，那就是穿透一层内网直接出去</p>
+<div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 google.com</span>
 traceroute to google.com (142.250.186.46), 30 hops max, 32 byte packets
  1  172.16.0.1  9.45 ms  *  LAN Address
  2  162.158.82.1  18.34 ms  AS13335  Germany, Hesse, Frankfurt, cloudflare.com
  3  162.158.84.5  10.08 ms  AS13335  Germany, Hesse, Frankfurt, cloudflare.com
  4  108.170.251.129  28.06 ms  AS15169  United States, google.com
  5  172.253.71.89  11.58 ms  AS15169  United States, google.com
- 6  fra24s04-in-f14.1e100.net (142.250.186.46)  12.48 ms  AS15169  Germany, Hesse, Frankfurt, google.com</code></pre></div><p>路由到百度就很有意思，从HKG出去进入移动CMI北上北京</p><blockquote><p>去年10月移动在欧洲和cf做的对等互联,因为遵循路由链最短原则,电信和联通在欧洲没有比这个更短的,到联通是cf-gtt-联通,到电信是cf-level3-电信,到移动是cf-移动,所以会走移动<br>金句From – <a href="https://www.puresys.net/" target="_blank" rel="noopener">CLAM</a></p></blockquote><div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 baidu.com</span>
+ 6  fra24s04-in-f14.1e100.net (142.250.186.46)  12.48 ms  AS15169  Germany, Hesse, Frankfurt, google.com</code></pre></div>
+
+<p>路由到百度就很有意思，从HKG出去进入移动CMI北上北京</p>
+<blockquote>
+<p>去年10月移动在欧洲和cf做的对等互联,因为遵循路由链最短原则,电信和联通在欧洲没有比这个更短的,到联通是cf-gtt-联通,到电信是cf-level3-电信,到移动是cf-移动,所以会走移动<br>金句From – <a href="https://www.puresys.net/" target="_blank" rel="noopener">CLAM</a></p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs sh">root@srv10866:~<span class="hljs-comment"># ./besttrace -q 1 baidu.com</span>
 traceroute to baidu.com (39.156.69.79), 30 hops max, 32 byte packets
  1  172.16.0.1  9.50 ms  *  LAN Address
  2  162.158.82.1  10.37 ms  AS13335  Germany, Hesse, Frankfurt, cloudflare.com
@@ -123,8 +579,14 @@ traceroute to baidu.com (39.156.69.79), 30 hops max, 32 byte packets
 11  *
 12  *
 13  *
-14  39.156.69.79  259.35 ms  AS9808  China, Beijing, ChinaMobile</code></pre></div><p>Speedtest</p><div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/speedtest-cli.sh | sudo bash
-speedtest</code></pre></div><p>返回</p><div class="hljs"><pre><code class="hljs sh">
+14  39.156.69.79  259.35 ms  AS9808  China, Beijing, ChinaMobile</code></pre></div>
+
+<p>Speedtest</p>
+<div class="hljs"><pre><code class="hljs sh">curl -fsSL git.io/speedtest-cli.sh | sudo bash
+speedtest</code></pre></div>
+
+<p>返回</p>
+<div class="hljs"><pre><code class="hljs sh">
 
    Speedtest by Ookla
 
@@ -134,4 +596,630 @@ speedtest</code></pre></div><p>返回</p><div class="hljs"><pre><code class="hlj
    Download:   112.57 Mbps (data used: 101.0 MB)                               
      Upload:   127.19 Mbps (data used: 115.5 MB)                               
 Packet Loss:     0.0%
- Result URL: https://www.speedtest.net/result/c/556afff6-e56a-4d53-844b-fe88b562ceb8</code></pre></div><p>速度不快,但是起码上ipv4了</p></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../categories/白嫖怪/">白嫖怪</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../tags/白嫖/">白嫖</a> <a class="hover-with-bg" href="../tags/Euserv/">Euserv</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="cef76c6c.html"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">看毛片(KMP)算法小记</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="363f2ff1.html"><span class="hidden-mobile">失败的光速叛逃！CloudFlarePage初体验</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="hpp_comment"><div class="grid__item theme-1"><a href="javascript:onclock();" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">点击加载评论</a></div></div><link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css"><script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script><script>function onclock(){twikoo.init({envId:"blog-comment-6g821sad74db776c",el:"#hpp_comment",region:"ap-shanghai",path:"window.location.pathname"})}</script><style>.el-input-group__prepend{border:1px solid transparent!important}.el-textarea__inner{border:1px solid transparent!important}.el-input__inner{border:1px solid transparent!important}.grid__item{position:relative;display:grid;grid-template-columns:100%;grid-template-rows:100%;justify-items:center;overflow:hidden;padding:4rem 1.5rem;background:var(--color-item-bg)}.grid__item-title{font-size:.85rem;color:var(--color-item-title);align-self:flex-start;margin:0}.action{position:absolute;top:0;right:0;background:0 0;margin:2rem;color:var(--color-action);border:0;padding:0;opacity:0;pointer-events:none}.action:focus{outline:0}.particles-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;border-radius:5px;border-radius:var(--radius-button);background:var(--color-button-bg);color:var(--color-button-text);border:0;border:var(--border-button);margin:0;padding:1.5rem 3rem;padding:var(--button-padding)}.particles-button:focus{outline:0}.no-js .particles-button{grid-area:1/1/2/2}.particles{position:relative;grid-area:1/1/2/2}.particles-canvas{position:absolute;pointer-events:none;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.particles-wrapper{position:relative;display:inline-block;overflow:hidden}.theme-1{--color-action:var(--board-bg-color);--color-button-bg:var(--text-color);--color-button-text:#fff;--button-padding:1.5rem 3rem;--radius-button:5px;--border-button:0}</style><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a><br><a class="nav-link" href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"><b>此页面的JSDelivr托管版</b></a><p id="showsectime"></p><a href="/hpp/admin"><p id="bloggeractivetime"></p></a><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><p></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div><style>.live2d{position:fixed;left:-100px;bottom:-20px;width:500px!important;height:437.5px!important;z-index:998;pointer-events:none!important}</style><div id="live2d" class="live2d" style="display:none"><canvas id="live2dm" class="live2d" style="z-index:999!important"></canvas></div></div></footer><script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script><script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script><script>function loadScript(t,e){var n=document.createElement("script"),a=document.getElementsByTagName("head")[0];n.type="text/javascript",n.charset="UTF-8",n.src=t,n.addEventListener?n.addEventListener("load",function(){e()},!1):n.attachEvent&&n.attachEvent("onreadystatechange",function(){"loaded"==window.event.srcElement.readyState&&e()}),a.appendChild(n)}window.post_views_api="https://blog.cyfan.top/api/ga-hit",setTimeout(()=>{window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:3,hoverDelay:50},600<document.body.clientWidth&&loadScript("https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/getinfo.min.js",function(){loadModel(),document.getElementById("live2d").style.display=""})},0),document.onreadystatechange=function(){"complete"==document.readyState&&(loadScript("https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js",function(){}),loadScript("/hpp/api/getblogeractive",function(){}),loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",function(){}))}</script><script src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Euserv正确打开优化方式&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js"></script><script>var path="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var a,o=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),a="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t;a&&a(),t=e,(e=r.createElement("div")).className="heart",o.push({el:e,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(e)},function e(){for(var t=0;t<o.length;t++)o[t].alpha<=0?(r.body.removeChild(o[t].el),o.splice(t,1)):(o[t].y--,o[t].scale+=.004,o[t].alpha-=.013,o[t].el.style.cssText="left:"+o[t].x+"px;top:"+o[t].y+"px;opacity:"+o[t].alpha+";transform:scale("+o[t].scale+","+o[t].scale+") rotate(45deg);background:"+o[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.ga_tid="UA-179044379-1",window.ga_api="https://blog.cyfan.top/api/analytics/jquery.js",function(){var t=document.createElement("script");t.src="https://unpkg.zhimg.com/cfga@1.0.3";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}()</script><script>(async()=>{function r(e,r){return parseInt(Math.random()*(r-e+1)+e,10)}const o=new Notyf;"serviceWorker"in navigator?window.addEventListener("load",async()=>{navigator.serviceWorker.register("/sw.js?time="+r(1,8888888888888889e4)).then(async e=>{"1"!==window.localStorage.getItem("ChenBlogHelper")&&(o.success("ChenBlogHelper已安装!将在三秒后尝试激活!"),window.localStorage.setItem("ChenBlogHelper",1),setTimeout(()=>{window.location.search="?time="+r(1,8888888888888889e4)},3e3))}).catch(e=>{o.error("ChenBlogHelper安装失败！原因:"+e)})}):o.error("ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker")})()</script></body></html>
+ Result URL: https://www.speedtest.net/result/c/556afff6-e56a-4d53-844b-fe88b562ceb8</code></pre></div>
+
+<p>速度不快,但是起码上ipv4了</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/白嫖怪/">白嫖怪</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/白嫖/">白嫖</a>
+                    
+                      <a class="hover-with-bg" href="../tags/Euserv/">Euserv</a>
+                    
+                  
+                  
+                  </div>
+                  
+
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="cef76c6c.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">看毛片(KMP)算法小记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="363f2ff1.html">
+                        <span class="hidden-mobile">失败的光速叛逃！CloudFlarePage初体验</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                <div id="hpp_comment">
+	<div class="grid__item theme-1">
+		<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst"
+			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
+		</a>
+	</div>
+</div>
+<link rel="stylesheet"
+	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+
+<script>
+	function onclock() {
+		twikoo.init({
+			envId: "blog-comment-6g821sad74db776c",
+			el: '#hpp_comment',
+			region: "ap-shanghai",
+			path: 'window.location.pathname'
+		})
+	}
+</script>
+<style>
+	.el-input-group__prepend {
+		border: 1px solid transparent !important;
+	}
+
+	.el-textarea__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.grid__item {
+		position: relative;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		justify-items: center;
+		overflow: hidden;
+		padding: 4rem 1.5rem;
+		background: var(--color-item-bg);
+	}
+
+	.grid__item-title {
+		font-size: 0.85rem;
+		color: var(--color-item-title);
+		align-self: flex-start;
+		margin: 0;
+	}
+
+	.action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		margin: 2rem;
+		color: var(--color-action);
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.action:focus {
+		outline: none;
+	}
+
+	.particles-button {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: relative;
+		border-radius: 5px;
+		border-radius: var(--radius-button);
+		background: var(--color-button-bg);
+		color: var(--color-button-text);
+		border: 0;
+		border: var(--border-button);
+		margin: 0;
+		padding: 1.5rem 3rem;
+		padding: var(--button-padding);
+	}
+
+	.particles-button:focus {
+		outline: none;
+	}
+
+	.no-js .particles-button {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles-canvas {
+		position: absolute;
+		pointer-events: none;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.particles-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.theme-1 {
+		--color-action: var(--board-bg-color);
+		--color-button-bg: var(--text-color);
+		--color-button-text: #fff;
+		--button-padding: 1.5rem 3rem;
+		--radius-button: 5px;
+		--border-button: 0;
+	}
+</style>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"
+	data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+      <div>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
+          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+        <!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+        <p id="showsectime"></p>
+        <a href="/hpp/admin">
+          <p id="bloggeractivetime"></p>
+        </a>
+        </script>
+        <p>
+          当前CDN节点: <span id="cdn">【未知】</span> |
+          你的ip: <span id="ip">【未知】</span> |
+          你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+        </p>
+      </div>
+      
+
+          <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+          
+    </div>
+    <style>
+      .live2d {
+        position: fixed;
+        left: -100px;
+        bottom: -20px;
+        width: 500px !important;
+        height: 437.5px !important;
+        z-index: 998;
+        pointer-events:none!important;
+      }
+    </style>
+
+    <div id="live2d" class="live2d" style="display: none;">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
+
+
+
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script>
+
+    window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    function loadScript(src, callback) {
+        var script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0];
+        script.type = 'text/javascript';
+        script.charset = 'UTF-8';
+        script.src = src;
+        if (script.addEventListener) {
+            script.addEventListener('load', function () {
+                callback();
+            }, false);
+        } else if (script.attachEvent) {
+            script.attachEvent('onreadystatechange', function () {
+                var target = window.event.srcElement;
+                if (target.readyState == 'loaded') {
+                    callback();
+                }
+            });
+        }
+        head.appendChild(script);
+    }
+
+    setTimeout(() => {
+
+        window.FPConfig = {
+            delay: 0,    // 浏览器空闲多少秒后开始预加载
+            ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+            maxRPS: 3,    // 每秒最大加载数
+            hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+            // 上方数值未默认值
+        };
+        if (document.body.clientWidth > 600) {
+            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/getinfo.min.js', function () {
+                loadModel();
+                document.getElementById('live2d').style["display"] = ""
+            })
+
+        }
+    }, 0)
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+
+            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            loadScript('/hpp/api/getblogeractive', function () { });
+            loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
+
+        }
+    }
+</script>
+
+
+
+                            
+                                        
+
+
+                                            
+                                                
+  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+                                                    
+  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Euserv正确打开优化方式&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+                                                        
+
+                                                            
+  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script>
+    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+                                                                
+  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+                                                                    
+
+
+
+                                                                        
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+                                                                            
+
+
+                                                                                
+
+
+
+                                                                                    
+
+  
+
+  
+    <!-- Google Analytics -->
+<script>
+  window.ga_tid = 'UA-179044379-1';
+  window.ga_api = "https://blog.cyfan.top/api/analytics/jquery.js";
+  (function() {
+    var dga = document.createElement("script");
+    dga.src = "https://unpkg.zhimg.com/cfga@1.0.3";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(dga, s);
+  })();
+</script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+                                                                                        <script>
+                                                                                                (async () => {
+                                                                                                    function ranN(minNum, maxNum) {
+                                                                                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                                                                                    }
+                                                                                                    const notyf = new Notyf();
+                                                                                                    if ('serviceWorker' in navigator) {
+                                                                                                        window.addEventListener('load', async () => {
+                                                                                                            navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                                                                                .then(async reg => {
+
+                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
+                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
+                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 1000)
+                                                                                                                    }
+                                                                                                                }).catch(err => {
+                                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                })
+
+
+
+                                                                                                        });
+                                                                                                    } else {
+                                                                                                        notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                                                                                    }
+                                                                                                })();
+
+                                                                                            (async () => {
+                                                                                                document._onreadystatechange = document.onreadystatechange
+                                                                                                document.onreadystatechange = function () {
+                                                                                                    document._onreadystatechange()
+                                                                                                    if (document.readyState == 'complete') {
+                                                                                                        setTimeout(() => {
+                                                                                                            ans = {
+                                                                                                                ua: navigator.userAgent,
+                                                                                                                resouse: [],
+                                                                                                                perform: {
+                                                                                                                    paint: {},
+
+                                                                                                                }
+                                                                                                            }
+                                                                                                            for (var i of JSON.parse(JSON.stringify(performance.getEntries()))) {
+                                                                                                                if (i.entryType == 'paint') {
+                                                                                                                    ans.perform.paint[i.name] = i.startTime
+                                                                                                                    continue;
+                                                                                                                }
+                                                                                                                ans.resouse.push({
+                                                                                                                    name: i.name,
+                                                                                                                    time: {
+                                                                                                                        connect: i.connectEnd - i.connectStart,
+                                                                                                                        dns: i.domainLookupEnd - i.domainLookupStart,
+                                                                                                                        request: i.responseEnd - i.requestStart,
+                                                                                                                        response: i.responseEnd - i.responseStart,
+                                                                                                                        domcontent: i.domContentLoadedEventEnd - i.domContentLoadedEventStart,
+                                                                                                                        loadevent: i.loadEventEnd - i.loadEventStart
+                                                                                                                    }
+                                                                                                                })
+
+                                                                                                                ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
+                                                                                                            }
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?performance=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            console.log(ans)
+                                                                                                        }, 2000);
+                                                                                                    }
+                                                                                                }
+
+                                                                                            })()
+                                                                                        </script>
+
+
+
+
+</body>
+</html>
