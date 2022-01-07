@@ -19,8 +19,35 @@ self.addEventListener('fetch', event => {
     }
 });
 
+const uuid = (() => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+})()
+self.ws_sw = (config) => {
+    switch (config.type) {
+        case 'init':
+            self.wsc = new WebSocket(config.url)
+            break;
+        case 'send':
+            wsc.send(config.data)
+            break;
+        default:
+            break
+    }
+}
+
+ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+
+
+wsc.onclose = () => {
+    setTimeout(() => {
+        ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+    }, 1000);
+}
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>ICDN用户端错误</h2>
+    return new Response(`<h1>ChenBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
 
@@ -50,17 +77,13 @@ let cdn = {
 
     }
 }
-const testurl = {
-    gh: "/jquery/jquery@main/package.json",
-    npm: "/jquery@3.6.0/package.json"
-    //npm: "xx"
-}
 const blog = {
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:9999"
     ],
     plus: [
+        //"127.0.0.1:9999",
         "blog.cyfan.top",
         "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
@@ -75,54 +98,81 @@ const handle = async function (req) {
     //setItem('origin',pathname)
     const domain = (urlStr.split('/'))[2]
     const path = pathname.split('?')[0]
-    const query = (() => {
-        let n = {}
-        if (pathname.indexOf('?') === -1) { return {} }
-        for (let y of pathname.split('?')[1].split('&')) {
-            n[y.split('=')[0]] = y.split('=')[1]
-        }
-        return n
-    })()
+    const query = q => urlObj.searchParams.get(q)
     let urls = []
     for (let i in cdn) {
         for (let j in cdn[i]) {
-            if (!!urlStr.match(cdn[i][j].url)) {
+            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0]) {
                 urls = []
                 for (let k in cdn[i]) {
                     urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
                 }
-                return lfetch(urls)
+                return lfetch(urls, urlStr)
             }
         }
     }
     for (var i in blog.origin) {
-        if (!!urlStr.match(blog.origin[i])) {
+        if (domain == blog.origin[i].split(":")[0]) {
             urls = []
             for (let k in blog.plus) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
-            return lfetch(urls)
+            return lfetch(urls, urlStr)
         }
+    }
+    if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
+        ws_sw({
+            type: "send",
+            data: JSON.stringify({
+                type: 'info',
+                data: JSON.parse(decodeURIComponent(atob(query('performance')))),
+                uuid: uuid
+            })
+        })
+        return new Response(null, { status: 204 })
     }
     return fetch(req)
 }
 
-const lfetch = async (urls) => {
+const lfetch = async (urls, url) => {
     //console.log(urls)
     try {
         let controller = new AbortController();
         const PauseProgress = async (res) => {
             return new Response(await (res).arrayBuffer(), { headers: res.headers });
         };
-        let results = Promise.any(urls.map(urls => fetch(urls, {
-            signal: controller.signal
-        }).then(PauseProgress).then(res => {
-            controller.abort();
-            return res
-        })));
+        let results = Promise.any(urls.map(urls => {
+            ws_sw({
+                type: "send",
+                data: JSON.stringify({
+                    type: 'fetch',
+                    url: urls,
+                    origin_url: url,
+                    promise_any: true,
+                    uuid: uuid
+                })
+            })
+            return fetch(urls, {
+                signal: controller.signal
+            }).then(PauseProgress).then(res => {
+                controller.abort();
+                return res
+            })
+        }
+        ));
+
         return results
     }
     catch (err) {
+        ws_sw({
+            type: "send",
+            data: JSON.stringify({
+                type: 'fetch',
+                url: urls,
+                promise_any: false,
+                uuid: uuid
+            })
+        })
         return fetch(urls[0])
     }
 }

@@ -1,22 +1,24 @@
 ---
-title: Jsdelivr倒下后，何物能拯救我们博客静态资源
+title: JSDelivr倒下后，何物可救静态资源？
 author: ChenYFan
 tags:
-  - 应用
-  - 浏览器
-  - 隐私
-  - app
+  - JSdelivr
+  - 滥用
+  - ServiceWorker
+  - 黑科技
 categories:
-  - 叨叨念
-des: 关于国内各大厂商倾向于应用软件而非网页软件的想法
-key: '隐私,安全'
+  - 随心扯
+des: 唯一一个拥有国内节点能够加速海外资源的静态文件分发站JSDelivr因为各种滥用和敏感被封杀，此文将介绍如何巧用ServiceWorker黑科技前端智能分流CDN和绕备
+key: 'serviceworker,cdn,jsdelivr'
 index_img: 'https://npm.elemecdn.com/chenyfan-oss@2.0.4'
 banner_img: 'https://npm.elemecdn.com/chenyfan-oss@2.0.4'
-lushkey: why-app-but-not-browser.md
-abbrlink: c0af86a9
 date: 2021-07-28 13:24:15
 ---
 
-一个简单的功能，完全可以在浏览器内实现，凭什么国内某些软件这么希望你去下载，去使用他们的app？
+因为你是公益的、免费的分发站，所以各位就要做好被薅爆以至于倒台的结果？天下之大无奇不有。
 
 <!--more-->
+
+# 巨厦坍塌
+
+2021/12/20日，赶在旧年的末尾

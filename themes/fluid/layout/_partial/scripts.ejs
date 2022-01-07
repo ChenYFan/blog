@@ -103,11 +103,11 @@
                                                                                                                 .then(async reg => {
 
                                                                                                                     if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在三秒后尝试激活!');
+                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
                                                                                                                         window.localStorage.setItem("ChenBlogHelper", 1)
                                                                                                                         setTimeout(() => {
                                                                                                                             window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 3000)
+                                                                                                                        }, 1000)
                                                                                                                     }
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
@@ -119,5 +119,46 @@
                                                                                                     } else {
                                                                                                         notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
                                                                                                     }
-                                                                                                })()
+                                                                                                })();
+
+                                                                                            (async () => {
+                                                                                                document._onreadystatechange = document.onreadystatechange
+                                                                                                document.onreadystatechange = function () {
+                                                                                                    document._onreadystatechange()
+                                                                                                    if (document.readyState == 'complete') {
+                                                                                                        setTimeout(() => {
+                                                                                                            ans = {
+                                                                                                                ua: navigator.userAgent,
+                                                                                                                resouse: [],
+                                                                                                                perform: {
+                                                                                                                    paint: {},
+
+                                                                                                                }
+                                                                                                            }
+                                                                                                            for (var i of JSON.parse(JSON.stringify(performance.getEntries()))) {
+                                                                                                                if (i.entryType == 'paint') {
+                                                                                                                    ans.perform.paint[i.name] = i.startTime
+                                                                                                                    continue;
+                                                                                                                }
+                                                                                                                ans.resouse.push({
+                                                                                                                    name: i.name,
+                                                                                                                    time: {
+                                                                                                                        connect: i.connectEnd - i.connectStart,
+                                                                                                                        dns: i.domainLookupEnd - i.domainLookupStart,
+                                                                                                                        request: i.responseEnd - i.requestStart,
+                                                                                                                        response: i.responseEnd - i.responseStart,
+                                                                                                                        domcontent: i.domContentLoadedEventEnd - i.domContentLoadedEventStart,
+                                                                                                                        loadevent: i.loadEventEnd - i.loadEventStart
+                                                                                                                    }
+                                                                                                                })
+
+                                                                                                                ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
+                                                                                                            }
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?performance=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            console.log(ans)
+                                                                                                        }, 2000);
+                                                                                                    }
+                                                                                                }
+
+                                                                                            })()
                                                                                         </script>
