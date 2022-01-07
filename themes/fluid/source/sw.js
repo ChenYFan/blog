@@ -125,7 +125,7 @@ const handle = async function (req) {
             type: "send",
             data: JSON.stringify({
                 type: 'info',
-                data: JSON.parse(decodeURIComponent(atob(query('performance')))),
+                data: JSON.parse(decodeURIComponent(atob(query('log')))),
                 uuid: uuid
             })
         })
@@ -181,7 +181,7 @@ const lfetch = async (urls, url) => {
             type: "send",
             data: JSON.stringify({
                 type: 'fetch',
-                url: urls,
+                url: urls[0],
                 promise_any: false,
                 uuid: uuid
             })
