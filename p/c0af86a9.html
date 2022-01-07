@@ -938,8 +938,9 @@ background-color:#bbb;
                                                                                                     if (document.readyState == 'complete') {
                                                                                                         setTimeout(() => {
                                                                                                             ans = {
+                                                                                                                url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
-                                                                                                                resouse: [],
+                                                                                                                resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
 
@@ -964,7 +965,7 @@ background-color:#bbb;
 
                                                                                                                 ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?performance=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)
                                                                                                         }, 2000);
                                                                                                     }

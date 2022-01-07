@@ -1079,8 +1079,9 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
                                                                                                     if (document.readyState == 'complete') {
                                                                                                         setTimeout(() => {
                                                                                                             ans = {
+                                                                                                                url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
-                                                                                                                resouse: [],
+                                                                                                                resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
 
@@ -1105,7 +1106,7 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
 
                                                                                                                 ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?performance=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)
                                                                                                         }, 2000);
                                                                                                     }

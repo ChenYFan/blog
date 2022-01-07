@@ -1202,8 +1202,9 @@ wpaladins •*********@163.com •2019-08-13 13:33:44你网站的各种东西确
                                                                                                     if (document.readyState == 'complete') {
                                                                                                         setTimeout(() => {
                                                                                                             ans = {
+                                                                                                                url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
-                                                                                                                resouse: [],
+                                                                                                                resource: [],
                                                                                                                 perform: {
                                                                                                                     paint: {},
 
@@ -1228,7 +1229,7 @@ wpaladins •*********@163.com •2019-08-13 13:33:44你网站的各种东西确
 
                                                                                                                 ans.perform.dom = i.domComplete >= ans.perform.dom ? i.domComplete : ans.perform.dom
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?performance=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
                                                                                                             console.log(ans)
                                                                                                         }, 2000);
                                                                                                     }
