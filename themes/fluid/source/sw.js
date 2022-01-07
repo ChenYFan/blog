@@ -139,25 +139,38 @@ const lfetch = async (urls, url) => {
     try {
         let controller = new AbortController();
         const PauseProgress = async (res) => {
-            return new Response(await (res).arrayBuffer(), { headers: res.headers });
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
         };
         let results = Promise.any(urls.map(urls => {
-            ws_sw({
-                type: "send",
-                data: JSON.stringify({
-                    type: 'fetch',
-                    url: urls,
-                    origin_url: url,
-                    promise_any: true,
-                    uuid: uuid
+
+            return new Promise((resolve, reject) => {
+                fetch(urls, {
+                    signal: controller.signal
                 })
-            })
-            return fetch(urls, {
-                signal: controller.signal
-            }).then(PauseProgress).then(res => {
-                controller.abort();
-                return res
-            })
+                    .then(PauseProgress)
+                    .then(res => {
+
+                        if (res.status == 200) {
+                            setTimeout(() => {
+                                ws_sw({
+                                    type: "send",
+                                    data: JSON.stringify({
+                                        type: 'fetch',
+                                        url: urls,
+                                        origin_url: url,
+                                        promise_any: true,
+                                        uuid: uuid
+                                    })
+                                })
+                            }, 0);
+                            controller.abort();
+                            resolve(res)
+                        } else {
+                            reject(res)
+                        }
+                    })
+            }
+            )
         }
         ));
 
