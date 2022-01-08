@@ -216,6 +216,7 @@ const handle = async function (req) {
 
 const lfetch = async (urls, url) => {
     //console.log(urls)
+    const uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
     try {
         let controller = new AbortController();
         const PauseProgress = async (res) => {
