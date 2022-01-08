@@ -1,7 +1,82 @@
 const CACHE_NAME = 'ICDNCache';
 let cachelist = [];
-self.addEventListener('install', function (installEvent) {
+
+
+self.db = {
+    init: (dbname, Objname) => {
+        return new Promise((resolve, reject) => {
+            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
+            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
+            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
+            var db;
+            //self.indexedDB.deleteDatabase(dbname)
+            var DBOpenRequest = self.indexedDB.open(dbname);
+            DBOpenRequest.onsuccess = function (event) {
+                db = DBOpenRequest.result;
+            };
+
+            DBOpenRequest.onupgradeneeded = function (event) {
+                var db = event.target.result;
+                var objectStore = db.createObjectStore(Objname, { autoIncrement: true });
+
+
+                var transaction = event.target.transaction;
+
+                transaction.oncomplete = function (event) {
+                    self.db.db = db
+                    resolve()
+                }
+
+            };
+        })
+    },
+    read: (dbname, Objname, key) => {
+        return new Promise((resolve, reject) => {
+            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
+            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
+            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
+            var db;
+            var DBOpenRequest = self.indexedDB.open(dbname);
+            DBOpenRequest.onsuccess = function (event) {
+                db = DBOpenRequest.result;
+                const transaction = db.transaction(Objname, "readonly");
+                const objectStore = transaction.objectStore(Objname);
+                const request = objectStore.get(1)
+
+                request.onsuccess = function (event) {
+                    resolve(request.result[key])
+                }
+            };
+        })
+    },
+    write: (dbname, Objname, key, value) => {
+        return new Promise((resolve, reject) => {
+
+            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
+            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
+            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
+            var db;
+            var DBOpenRequest = self.indexedDB.open(dbname);
+            DBOpenRequest.onsuccess = function (event) {
+                db = DBOpenRequest.result;
+                const transaction = db.transaction(Objname, "readwrite");
+                const objectStore = transaction.objectStore(Objname);
+                const json = {}
+                json[key] = value
+                const request = objectStore.add(json)
+                request.onsuccess = function (event) {
+                    resolve(request.result)
+                }
+            };
+        })
+    }
+}
+
+self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
+    await db.init('ChenYFanBlog', 'UserInfo',)
+    await db.write('ChenYFanBlog', 'UserInfo', 'uuid', generate_uuid())
+    self.uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(function (cache) {
@@ -25,7 +100,11 @@ const generate_uuid = () => {
         return v.toString(16);
     });
 }
-self.uuid = generate_uuid()
+
+
+
+
+
 self.ws_sw = (config) => {
     switch (config.type) {
         case 'init':
@@ -81,15 +160,15 @@ let cdn = {
 const blog = {
     origin: [
         "blog.cyfan.top",
-        "127.0.0.1:9999"
+        "127.0.0.1:7777"
     ],
     plus: [
-        //"127.0.0.1:9999",
+        "127.0.0.1:7777",
         "blog.cyfan.top",
         "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
     ]
-}
+};
 const handle = async function (req) {
     const urlStr = req.url
     let urlObj = new URL(urlStr)
