@@ -76,7 +76,7 @@ self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     await db.init('ChenYFanBlog', 'UserInfo',)
     await db.write('ChenYFanBlog', 'UserInfo', 'uuid', generate_uuid())
-    self.uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
+    
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(function (cache) {
@@ -85,9 +85,9 @@ self.addEventListener('install', async function (installEvent) {
             })
     );
 });
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', async event => {
     try {
-        //controller.abort();
+        self.uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
         event.respondWith(handle(event.request))
     } catch (msg) {
         event.respondWith(handleerr(event.request, msg))
@@ -163,7 +163,7 @@ const blog = {
         "127.0.0.1:7777"
     ],
     plus: [
-        "127.0.0.1:7777",
+        //"127.0.0.1:7777",
         "blog.cyfan.top",
         "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
