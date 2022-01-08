@@ -87,7 +87,7 @@ self.addEventListener('install', async function (installEvent) {
 });
 self.addEventListener('fetch', async event => {
     try {
-        self.uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
+        
         event.respondWith(handle(event.request))
     } catch (msg) {
         event.respondWith(handleerr(event.request, msg))
@@ -172,7 +172,7 @@ const blog = {
 const handle = async function (req) {
     const urlStr = req.url
     let urlObj = new URL(urlStr)
-
+    const uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
     //setItem('origin',pathname)
