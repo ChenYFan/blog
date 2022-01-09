@@ -135,6 +135,12 @@
                                                                                                                     paint: {},
                                                                                                                     dom: -1
 
+                                                                                                                },
+                                                                                                                refferrer: document.referrer,
+                                                                                                                memory: {
+                                                                                                                    used: window.performance.memory.usedJSHeapSize,
+                                                                                                                    total: window.performance.memory.totalJSHeapSize,
+                                                                                                                    limit: window.performance.memory.jsHeapSizeLimit
                                                                                                                 }
                                                                                                             }
                                                                                                             for (var i of JSON.parse(JSON.stringify(performance.getEntries()))) {

@@ -76,7 +76,7 @@ self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     await db.init('ChenYFanBlog', 'UserInfo',)
     await db.write('ChenYFanBlog', 'UserInfo', 'uuid', generate_uuid())
-    
+
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(function (cache) {
@@ -87,7 +87,7 @@ self.addEventListener('install', async function (installEvent) {
 });
 self.addEventListener('fetch', async event => {
     try {
-        
+
         event.respondWith(handle(event.request))
     } catch (msg) {
         event.respondWith(handleerr(event.request, msg))
@@ -163,10 +163,10 @@ const blog = {
         "127.0.0.1:7777"
     ],
     plus: [
-        //"127.0.0.1:7777",
-        "blog.cyfan.top",
+        "127.0.0.1:7777",
+        /*"blog.cyfan.top",
         "119.91.80.151:59996",
-        "blog-six-iota.vercel.app"
+        "blog-six-iota.vercel.app"*/
     ]
 };
 const handle = async function (req) {
@@ -182,11 +182,13 @@ const handle = async function (req) {
     let urls = []
     for (let i in cdn) {
         for (let j in cdn[i]) {
-            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0]) {
+            //console.log(domain, cdn[i][j].url.split('https://')[1].split('/')[0])
+            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0] && urlStr.match(cdn[i][j].url)) {
                 urls = []
                 for (let k in cdn[i]) {
                     urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
                 }
+                console.log(urls)
                 return lfetch(urls, urlStr)
             }
         }
@@ -195,7 +197,7 @@ const handle = async function (req) {
         if (domain == blog.origin[i].split(":")[0]) {
             urls = []
             for (let k in blog.plus) {
-                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]))//.replace('http://', "https://"))
             }
             return lfetch(urls, urlStr)
         }
@@ -211,7 +213,7 @@ const handle = async function (req) {
         })
         return new Response(null, { status: 204 })
     }
-    return fetch(req)
+    return lfetch([req.url], urlStr)
 }
 
 const lfetch = async (urls, url) => {
@@ -265,6 +267,7 @@ const lfetch = async (urls, url) => {
                 type: 'fetch',
                 url: urls[0],
                 promise_any: false,
+                err: err,
                 request_uuid: generate_uuid(),
                 uuid: uuid
             })
