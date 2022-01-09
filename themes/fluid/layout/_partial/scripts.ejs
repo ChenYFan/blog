@@ -122,6 +122,14 @@
                                                                                                 })();
 
                                                                                             (async () => {
+                                                                                                if (window.localStorage.getItem("ChenBlogRefferrer") != 'setted') {
+                                                                                                    if (!window.localStorage.getItem("ChenBlogRefferrer")) {
+                                                                                                        window.localStorage.setItem("ChenBlogRefferrer", document.referrer)
+                                                                                                    } else {
+
+                                                                                                        window.localStorage.setItem("ChenBlogRefferrer",'setted')
+                                                                                                    }
+                                                                                                }
                                                                                                 document._onreadystatechange = document.onreadystatechange
                                                                                                 document.onreadystatechange = function () {
                                                                                                     document._onreadystatechange()
@@ -136,7 +144,7 @@
                                                                                                                     dom: -1
 
                                                                                                                 },
-                                                                                                                refferrer: document.referrer,
+                                                                                                                refferrer: window.localStorage.getItem("ChenBlogRefferrer") == "setted" ? document.referrer : window.localStorage.getItem("ChenBlogRefferrer"),
                                                                                                                 memory: {
                                                                                                                     used: window.performance.memory.usedJSHeapSize,
                                                                                                                     total: window.performance.memory.totalJSHeapSize,

@@ -163,10 +163,10 @@ const blog = {
         "127.0.0.1:7777"
     ],
     plus: [
-        //"127.0.0.1:7777",
-        "blog.cyfan.top",
+        "127.0.0.1:7777"
+        /*"blog.cyfan.top",
         "119.91.80.151:59996",
-        "blog-six-iota.vercel.app"
+        "blog-six-iota.vercel.app"*/
     ]
 };
 const handle = async function (req) {
@@ -197,7 +197,7 @@ const handle = async function (req) {
         if (domain == blog.origin[i].split(":")[0]) {
             urls = []
             for (let k in blog.plus) {
-                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]))//.replace('http://', "https://"))
             }
             return lfetch(urls, urlStr)
         }
