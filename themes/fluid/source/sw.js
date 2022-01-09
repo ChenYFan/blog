@@ -213,7 +213,7 @@ const handle = async function (req) {
         })
         return new Response(null, { status: 204 })
     }
-    return lfetch([req.url], urlStr)
+    return fetch(req)
 }
 
 const lfetch = async (urls, url) => {
