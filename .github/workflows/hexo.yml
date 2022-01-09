@@ -32,13 +32,13 @@ jobs:
         echo "blog.cyfan.top" >> ./public/CNAME
         npm version patch --no-git-tag-version
 
-    - name: 'Publish to the npm registry'
-      uses: primer/publish@3.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.NPM }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
-      with:
-        default_branch: 'master'
+#    - name: 'Publish to the npm registry'
+#      uses: primer/publish@3.0.0
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#        NPM_AUTH_TOKEN: ${{ secrets.NPM }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
+#      with:
+#        default_branch: 'master'
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
