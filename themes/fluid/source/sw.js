@@ -158,7 +158,7 @@ let cdn = {
     }
 }
 const blog = {
-    local: true,
+    local: false,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:7777"
