@@ -321,11 +321,11 @@ admin:
         <category>丆插件</category>
       </categories>
       <tags>
-        <tag>黑科技</tag>
         <tag>插件</tag>
         <tag>Hexo</tag>
         <tag>编辑</tag>
         <tag>神器</tag>
+        <tag>黑科技</tag>
       </tags>
   </entry>
   <entry>
@@ -2013,6 +2013,17 @@ npm publish</code></pre></div><p>请注意，如果你之前用过淘宝镜像�
         <tag>图床</tag>
         <tag>PicGo</tag>
         <tag>JSDelivr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2022新春小记</title>
+    <url>/p/7c7f6808.html</url>
+    <content><![CDATA[<p>这是一篇迟到的新春贺词（</p><a id="more"></a><p>首先呢，旧年总结是不可能做的，这辈子都不可能做的。我发这篇文章的首要目的就是证明我还活着，毕竟上一篇文章到现在已经快半年了（实际上确实有半年）</p><p>2021年是牛年，这一年过得很平淡，但却伴随着不少热点事件，刨去政治的，防沉迷、反诈、jsd掉备等等。这些热点我会在以后（maybe）一一热炒冷饭。</p><p>新文仍在赶工，可以<a href="/p/c0af86bb.html">戳我围观新文</a>（还没写完）</p><p>博客已经开启了自己写的ChenBlogHelper，在第一次进入博客的时候会自动安装并刷新激活。此helper能够在前端绕过备案、优选cdn以及统计。</p><p>博客现在在中国大陆有一个广州节点承载，希望这能够给你们带来更好的访问体验。</p><p>总之，新的一年，祝大家顺心顺意，愉快地享受新年的每一天！</p>]]></content>
+      <categories>
+        <category>随心扯</category>
+      </categories>
+      <tags>
+        <tag>新年贺词</tag>
       </tags>
   </entry>
   <entry>
