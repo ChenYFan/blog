@@ -158,12 +158,12 @@ let cdn = {
     }
 }
 const blog = {
+    local: false,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:7777"
     ],
     plus: [
-        //"127.0.0.1:7777"
         "blog.cyfan.top",
         "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
@@ -195,11 +195,16 @@ const handle = async function (req) {
     }
     for (var i in blog.origin) {
         if (domain == blog.origin[i].split(":")[0]) {
+            if (blog.local) { return fetch(req) }
             urls = []
             for (let k in blog.plus) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
-            return lfetch(urls, urlStr)
+            try {
+                return lfetch(urls, urlStr)
+            } catch (e) {
+                return new Response(`<h1>ChenBlogHelper</h1></h2>404Error</h2>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+            }
         }
     }
     if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
