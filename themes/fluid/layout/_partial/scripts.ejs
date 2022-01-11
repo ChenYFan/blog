@@ -53,7 +53,7 @@
             hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
             // 上方数值未默认值
         };
-        if (document.body.clientWidth > 600 && window.localStorage.getItem('ChenBlogLive2D') == 'true') {
+        if (document.body.clientWidth > 600 && window.localStorage.getItem('ChenBlogLive2D') != 'false') {
             loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r3/load.js', function () {
                 loadModel();
                 document.getElementById('live2d').style["display"] = ""
