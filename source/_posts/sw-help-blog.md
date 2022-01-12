@@ -44,7 +44,7 @@ jas并不是没有发布许可条款，但这并不能阻止白嫖大军的进�
 
 # Before Start
 
-## What Is ServiceWorker
+## What Is The ServiceWorker
 
 网上对于SW的解释比较模糊，在这里，我将其定义为`用户浏览器里的服务器`，功能强大到令人发指。是的，接下来的两张图你应该能显著的看到这一差距：
 
@@ -70,3 +70,90 @@ SW可以完全脱离PWA存在，当然，PWA可离不开SW ：）
 
 WorkBox是谷歌开发的一款基于SW的缓存控制器。核心依旧是SW，但还是没有SW原本的自定义程度高（
 
+# Start From Zero
+
+## 安装 / Install
+
+首先，SW的本质是JS脚本，要安装它必须要经过一个html。毕竟，只有拿到了html，JS才能运行于DOM上下文。
+
+剥离层层加成，安装的代码只有一行
+
+```JavaScript
+navigator.serviceWorker.register('/sw.js')
+```
+
+其中，`/sw.js`即为ServiceWorker脚本所在，由于安全性，你不能加载跨域的SW。
+
+例如，当前网页为`https://blog.cyfan.top`，以下加载位置是允许的
+
+```url
+/sw.js
+https://blog.cyfan.top/sw.js
+```
+
+以下加载是不允许的:
+
+```url
+http://blog.cyfan.top/sw.js#非HTTPS
+https://cyfan.top/sw.js#非同一域名，视为跨域
+https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视为跨域
+./sw.js#容易造成SW脚本获取路径不一致
+```
+
+在加载前，我们最好判断一下dom是否加载完了，不然安装sw可能会卡dom
+
+加载完成后，register函数将返回一个`Promise`，由于前端大多不适用于`异步`，我们通常以`同步`的方式`.then()`和`.catch()`来获取是否加载成功。
+
+为了方便判断脚本是否能够加载，我们还要判断navigator里有无sw这一属性`'serviceWorker' in navigator`。
+
+由于SW安装后，页面需要刷新后才能交给SW所宰割，同时为了避免浏览器缓存的影响，我通常采用修改`search`的方式强刷新，而不是通过`reload`函数。同样的，为了避免刚安装完就刷新的尴尬感，建议用`setTimeout`延迟一秒刷新。
+
+简易的完整安装代码如下:
+
+```index.html
+<script>
+window.addEventListener('load', async () => {
+    navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+        .then(async reg => {
+            //安装成功，建议此处强刷新以立刻执行SW
+            setTimeout(() => {
+                window.location.search = `?time=${new Date().getTime()}`
+            }, 1000)
+        }).catch(err => {
+            //安装失败，错误信息会由err传参
+        })
+});
+</script>
+```
+
+一刷新，世界就变成了ServiceWorker的瓮中之鳖，接下来，该是SW脚本正式登场的时候了。
+
+## SW安装初始化 / Installations
+
+首先，先尴尬的开一个空缓存：
+
+```js
+const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
+let cachelist = [];
+```
+
+同时监听sw安装时开启此缓存空间：
+
+```js
+self.addEventListener('install', async function (installEvent) {
+    self.skipWaiting();
+    installEvent.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(cachelist);
+            })
+    );
+});
+```
+
+由于SW完全没有办法访问DOM，因此对于全局变量，不应当用`window`，而是`self`指代自己。
+
+`addEventListener`这一监听器将监听`install`,也就是这一段代码只会在脚本首次安装和更新时运行.
+
+`skipWaiting`的作用是促进新版本sw跳过waiting这一阶段，直接active。
