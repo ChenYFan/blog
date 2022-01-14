@@ -201,11 +201,16 @@ let cdn = {
     }
 }
 
+const cache_url_list = [
+    /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
+    /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
+]
+
 const blog = {
     local: false,
     origin: [
         "blog.cyfan.top",
-        "127.0.0.1:8887"
+        "127.0.0.1:12121"
     ],
     plus: [
         "blog.cyfan.top",
@@ -307,6 +312,19 @@ const handle = async function (req) {
             })
         })
         return new Response(null, { status: 204 })
+    }
+    for (var i in cache_url_list) {
+        //console.log(urlStr.match(cache_url_list[i]))
+        if (urlStr.match(cache_url_list[i])) {
+            return caches.match(req).then(function (resp) {
+                return resp || fetch(req).then(function (res) {
+                    return caches.open(CACHE_NAME).then(function (cache) {
+                        cache.put(req, res.clone());
+                        return res;
+                    });
+                });
+            })
+        }
     }
     return fetch(req)
 }

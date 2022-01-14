@@ -8,8 +8,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
-  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -44,12 +44,12 @@ filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }</style>-->
   
-<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
-<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
 
 
 
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
 
 </script>
 <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
@@ -358,13 +358,13 @@ background-color:#bbb;
               <blockquote>
 <p><strong>写在最前面</strong><br>自从这篇博文发布后，OneIndex迎来了一次重大更新，去除了FireBase依赖，转用KV存储刷新令牌。本片教程已过时，具体会在春节前后更新最新版本。</p>
 </blockquote>
-<p>OneDrive，相信大家都不陌生，微软家的网盘，虽说有类似于OneManager一样的目录列表程序，但是直连海外总是会遭受严重的丢包，得到极其糟糕的体验。这时候CLoudFlare作为不那么好使的CDN就排上用场了，项目<a href="https://github.com/spencerwooo/onedrive-cf-index" target="_blank" rel="noopener">onedrive-cf-index</a> 解决了这个问题,但是据我观察,这个仓库作者应该是个中国人,但是readme文档可不是中文,这对一些使用者造成了一定的困扰,而且文档相当<strong>言简意赅</strong><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%B8%AD%E6%9E%AA.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>,这一篇文章相当于文档的中文翻译和使用教程.</p>
+<p>OneDrive，相信大家都不陌生，微软家的网盘，虽说有类似于OneManager一样的目录列表程序，但是直连海外总是会遭受严重的丢包，得到极其糟糕的体验。这时候CLoudFlare作为不那么好使的CDN就排上用场了，项目<a href="https://github.com/spencerwooo/onedrive-cf-index" target="_blank" rel="noopener">onedrive-cf-index</a> 解决了这个问题,但是据我观察,这个仓库作者应该是个中国人,但是readme文档可不是中文,这对一些使用者造成了一定的困扰,而且文档相当<strong>言简意赅</strong><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%B8%AD%E6%9E%AA.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>,这一篇文章相当于文档的中文翻译和使用教程.</p>
 <blockquote>
 <p><strong>使用前言</strong><br>部署此项目较为麻烦,请确保你满足以下俩个及以上想法后,才继续往下读:</p>
 <ol>
-<li>我非常需要搭建于CloudFlare的OneDrive目录列表吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E5%B0%8F%E7%9C%BC%E7%9D%9B.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
-<li>我非常需要这个版本的目录列表吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E8%82%BF%E5%8C%85.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
-<li>我有这个耐心吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%83%B3%E4%B8%80%E6%83%B3.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt><br>如果没有,那么我们建议你可以使用另一个功能和UI稍差的cf目录列表<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker" target="_blank" rel="noopener">OneDrive-Index-Cloudflare-Worker</a> 这个版本有不是很详尽的中文文档,并且较为简单,或者试试一步生成的GDIndex,可以参考我之前写的<a href="https://blog.cyfan.top/2020/03/18/%E5%85%8D%C2%B7%E7%88%AC%C2%B7%E5%9F%8E%C2%B7%E5%9B%BD%E5%86%85%E7%AE%A1%E7%90%86%E5%88%86%E4%BA%ABGoogleDrive/">GDIndex部署参考</a></li>
+<li>我非常需要搭建于CloudFlare的OneDrive目录列表吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E5%B0%8F%E7%9C%BC%E7%9D%9B.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
+<li>我非常需要这个版本的目录列表吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E8%82%BF%E5%8C%85.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
+<li>我有这个耐心吗?<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%83%B3%E4%B8%80%E6%83%B3.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt><br>如果没有,那么我们建议你可以使用另一个功能和UI稍差的cf目录列表<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker" target="_blank" rel="noopener">OneDrive-Index-Cloudflare-Worker</a> 这个版本有不是很详尽的中文文档,并且较为简单,或者试试一步生成的GDIndex,可以参考我之前写的<a href="https://blog.cyfan.top/2020/03/18/%E5%85%8D%C2%B7%E7%88%AC%C2%B7%E5%9F%8E%C2%B7%E5%9B%BD%E5%86%85%E7%AE%A1%E7%90%86%E5%88%86%E4%BA%ABGoogleDrive/">GDIndex部署参考</a></li>
 </ol>
 </blockquote>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>新功能</strong></p>
@@ -400,55 +400,55 @@ background-color:#bbb;
 <p>…<br>所有其他功能</p>
 <p>请参阅：<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker#-%E6%96%B0%E7%89%B9%E6%80%A7-v11" target="_blank" rel="noopener">新功能| OneDrive-Index-Cloudflare-Worker</a>。</p>
 <h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="导入此项目"><a href="#导入此项目" class="headerlink" title="导入此项目"></a>导入此项目</h2><blockquote>
-<p><strong>请注意!</strong><br>请不要Fork此项目<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_4.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>,<br>在这个过程中你将会获取到数串token,fork的仓库无法转为私有仓库,这将会对你的数据造成威胁.</p>
+<p><strong>请注意!</strong><br>请不要Fork此项目<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_4.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>,<br>在这个过程中你将会获取到数串token,fork的仓库无法转为私有仓库,这将会对你的数据造成威胁.</p>
 </blockquote>
 <p>点击右上角的 <code>+</code> 号选择Import项目</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065738.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065738.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>原先仓库地址填写<a href="https://github.com/spencerwooo/onedrive-cf-index" target="_blank" rel="noopener">https://github.com/spencerwooo/onedrive-cf-index</a>,新仓库名称随意,仓库类型必须改为Private私人,最后导入</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065831.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065831.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>导入成功,进入repo:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065940.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14065940.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <h2 id="获取Token"><a href="#获取Token" class="headerlink" title="获取Token"></a>获取Token</h2><p>进入<a href="https://heymind.github.io/tools/microsoft-graph-api-auth" target="_blank" rel="noopener">https://heymind.github.io/tools/microsoft-graph-api-auth</a> 开始准备你所需要的东西：</p>
 <p>进入<a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank" rel="noopener">https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade</a>，注册一个新app【使用微软账号】</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14070907.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14070907.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>几番跳转后，来到这样的界面：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071032.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071032.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <blockquote>
 <p>注意，我们强烈建议用英文界面，中文界面可能存在翻译错误产生误导</p>
 </blockquote>
 <p>点击OneIndex，进入应用详情</p>
 <p>点击 <code>Redirect URIs</code> 修改跳转链接:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071305.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071305.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>将此处改为 <code>https://heymind.github.io/tools/microsoft-graph-api-auth</code></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071416.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071416.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>设置API：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14091941.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14091941.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>至少选择 <code>offline_access, Files.Read, Files.Read.All .</code></p>
 <p>返回，获取 <code>Application (client) ID</code></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071558.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071558.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>在这里填上复制的client id，并点击AUTHORIZE验证</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071904.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14071904.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>你会发现跳转一段时间后又回到了拉取界面,不过多了一个提示框,上面写着已经获取到Code</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14072357.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14072357.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>接着我们获取Secrets,点击 <code>Certificates &amp; secrets</code>,进入该选项卡:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080315.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080315.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>新增一个:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080233.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080233.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>名字随意,期限为永久:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080315.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080315.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>复制生成的密钥,请注意此处密钥仅<strong>出现一次</strong>,以后就不会再出现了</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080438.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080438.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>将获得密钥粘贴进第五步:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080508.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080508.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>点击GetToken,将跳转至如下界面:</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080438.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14080438.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <blockquote>
 <p>此处若失败，请重试第四步</p>
 </blockquote>
 <p>将获得字段的refresh_token写入，重新制得token：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082011.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082011.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>取得token：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14081337.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14081337.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>妥善保管，接下来我们会用到。</p>
 <p>OneDriveToken完毕，接下来进入FireBase教程：</p>
 <blockquote>
@@ -456,27 +456,27 @@ background-color:#bbb;
 </blockquote>
 <p>进入<a href="https://firebase.google.com/" target="_blank" rel="noopener">https://firebase.google.com/</a></p>
 <p>开始创建项目：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082334.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082334.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>项目名字随意，下一步</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082421.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082421.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>一直下一步，稍后将进入管理界面</p>
 <p>选择Database，将其设置为发布模式，禁用写入权限，在数据一栏中添加key，名字为<code>value</code>,值为 <code>https://项目名.firebaseio.com/auth.json</code> ，如我的：<br><code>https://oneindex-chenyfan.firebaseio.com/auth.json</code></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082523.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082523.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>点击右上角的小齿轮-项目设置-服务账号-旧版凭据-数据库账号-显示密钥，复制密钥。</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082614.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14082614.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>FireBase教学完毕。</p>
 <h2 id="配置CloudFlare"><a href="#配置CloudFlare" class="headerlink" title="配置CloudFlare"></a>配置CloudFlare</h2><p>登录你的CloudFlare，点击右上角，账户设置：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083511.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083511.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>选择API令牌选项卡，生成新的API：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083707.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083707.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>选择自定义令牌：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083741.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083741.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>配置至少如下，可以选择增加</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083836.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083836.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>点击获取API令牌</p>
 <p>接着还要获取账户ID和区域ID</p>
 <p>进入任意一域名，右侧拦里头会有俩ID，复制：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083918.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14083918.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>到这里，你获取了以下所有密钥：</p>
 <ul>
 <li>Azure-refresh_token</li>
@@ -488,7 +488,7 @@ background-color:#bbb;
 <li>CloudFlare-ZoneID</li>
 <li>CloudFlare-AccountID</li>
 </ul>
-<p>八个Token，切勿丢失<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E5%92%BD%E6%B0%94.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt> 累死我了</p>
+<p>八个Token，切勿丢失<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E5%92%BD%E6%B0%94.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt> 累死我了</p>
 <h2 id="配置OneDrive"><a href="#配置OneDrive" class="headerlink" title="配置OneDrive"></a>配置OneDrive</h2><p>用微软账户登录OneDrive，新建文件夹，名字为“Public”</p>
 <h2 id="本地wrangler部署"><a href="#本地wrangler部署" class="headerlink" title="本地wrangler部署"></a>本地wrangler部署</h2><blockquote>
 <p>由于此篇教程具体将GithubAction实现无服务器部署，本块内容一笔带过，请直接看到GithubAction部署一块</p>
@@ -519,14 +519,14 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 <div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attribute">wrangler publish</span></code></pre></div>
 
 <h2 id="GithubAction部署"><a href="#GithubAction部署" class="headerlink" title="GithubAction部署"></a>GithubAction部署</h2><h3 id="GithubAction部署-1"><a href="#GithubAction部署-1" class="headerlink" title="GithubAction部署"></a>GithubAction部署</h3><p>进入你导入的仓库，点击 <code>wrangler.toml</code> </p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14084906.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14084906.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <ul>
 <li><code>name</code> ==&gt; 默认生成为&lt;#name&gt;.&lt;#User&gt;.workers.dev，随意</li>
 <li><code>account_id</code> ==&gt; CloudFlare-AccountID</li>
 <li><code>zone_id</code> ==&gt; CloudFlare-ZoneID</li>
 </ul>
 <p>进入<code>/src/config/default.js</code></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14085133.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14085133.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <ul>
 <li>refresh_token ==&gt; Azure-refresh_token</li>
 <li>client_id ==&gt; Azure-client_id</li>
@@ -536,25 +536,25 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 </ul>
 <h4 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h4><p><code>src/render/htmlWrapper.js</code> : 修改标题</p>
 <p><code>src/folderView.js</code> : 修改介绍</p>
-<h4 id="设置密钥"><a href="#设置密钥" class="headerlink" title="设置密钥"></a>设置密钥</h4><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14092907.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h4 id="设置密钥"><a href="#设置密钥" class="headerlink" title="设置密钥"></a>设置密钥</h4><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14092907.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>密钥名：<code>CF_API_TOKEN</code></p>
 <p>内容: ==&gt; CloudFlare-APIToken</p>
-<h4 id="激活Action："><a href="#激活Action：" class="headerlink" title="激活Action："></a>激活Action：</h4><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14085647.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h4 id="激活Action："><a href="#激活Action：" class="headerlink" title="激活Action："></a>激活Action：</h4><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14085647.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <h3 id="设置CloudFlare变量"><a href="#设置CloudFlare变量" class="headerlink" title="设置CloudFlare变量"></a>设置CloudFlare变量</h3><p>进入新创建的Worker：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090207.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090302.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090207.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090302.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <ul>
 <li>CLIENT_SECRET ==&gt; Azure-client_secret</li>
 <li>FIREBASE_TOKEN ==&gt; GoogleFireBase-firebase_token</li>
 <li>REFRESH_TOKEN ==&gt; Azure-refresh_token</li>
 </ul>
 <p>部署，发布，绑定域名【可选】：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090933.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14090933.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>成品：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14091129.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>Demo:<a href="https://onedrive.cyfan.top" target="_blank" rel="noopener">https://onedrive.cyfan.top</a> <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/huaji.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-14091129.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>Demo:<a href="https://onedrive.cyfan.top" target="_blank" rel="noopener">https://onedrive.cyfan.top</a> <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>其实默认才5GB，还不如GoogleDrive香，但是据说白嫖E5开发者还不错。</p>
-<p>OK就到这了，还不懂的欢迎评论区，或者去官方github地址发issues。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%AC%A2%E5%91%BC.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>OK就到这了，还不懂的欢迎评论区，或者去官方github地址发issues。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%AC%A2%E5%91%BC.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 
             </div>
             <hr>
@@ -625,8 +625,8 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 	</div>
 </div>
 <link rel="stylesheet"
-	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
-<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
 
 <script>
 	function onclock() {
@@ -770,7 +770,7 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -868,11 +868,66 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
 <!-- SCRIPTS -->
 <!-- Plugins -->
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
-<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
 <script>
 
     //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    window.cache_post = async (url, that) => {
+        const info = {};
+        info.len = 1
+        info.offlen = 0
+        that.innerText = `首页缓存中: ${info.offlen}/${info.len}`;
+        that.onclick = null;
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        let res = await (await fetch(url)).text()
+        res = res.match(/(http:\/\/|https:\/\/)((\w|=|\@|\?|\.|\/|&|-)+)/g)
+        info.len = res.length
+        try {
+            //throw ''
+            console.log('采用并行请求')
+            await Promise.all(res.map(async (url) => {
+                
+                return new Promise((resolve, reject) => {
+                    fetch(url)
+                        .then(PauseProgress)
+                        .then(resp => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
+                            
+                            resolve()
+                        })
+                        .catch(err => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 失败`)
+                            resolve()
+                        })
+                })
+            }))
+            that.innerText =`缓存成功√`;
+        } catch {
+            console.log('并行请求失败，采用串行请求')
+            for (var i in res) {
+                const u = res[i]
+                fetch(u).then(PauseProgress).then(resp => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 成功`)
+                }).catch(err => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
+                })
+            }
+            
+           
+        }
+        
+    }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
             head = document.getElementsByTagName('head')[0];
@@ -933,7 +988,7 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
             //loadScript('/hpp/api/getblogeractive', function () { });
             loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
 
@@ -949,7 +1004,7 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
                                             
                                                 
-  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
   <script>
     $(document).ready(function () {
       var boardCtn = $('#board-ctn');
@@ -976,7 +1031,7 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
 
                                                     
-  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
@@ -998,9 +1053,9 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
                                                         
 
                                                             
-  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
   <script>
-    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var path = "../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
       searchFunc(path, 'local-search-input', 'local-search-result');
@@ -1010,8 +1065,8 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
 
 
                                                                 
-  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
   <script>
     $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(

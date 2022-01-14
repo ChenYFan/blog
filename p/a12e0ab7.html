@@ -8,8 +8,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
-  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -41,12 +41,12 @@ filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }</style>-->
   
-<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
-<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
 
 
 
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
 
 </script>
 <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
@@ -270,7 +270,7 @@ background-color:#bbb;
   </div>
 </nav>
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png') no-repeat center center;
+         style="background: url('https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -357,7 +357,7 @@ background-color:#bbb;
 
 <p>越来越多的模型采用了最新版本的Live2d Cubism 3或4【以下简称Live2d V3/V4】，而我用的hexo live2d插件<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">hexo-helper-live2d</a>已经很久没更新了，直接使用v3模型显然是不行的。</p>
 <p>原来用的Z16【V2】模型地址：</p>
-<div class="hljs"><pre><code class="hljs url">https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/js/live2d-widget-model-z16/assets/z16.model.json</code></pre></div>
+<div class="hljs"><pre><code class="hljs url">https://npm.elemecdn.com/chenyfan-cdn@2.0.0/js/live2d-widget-model-z16/assets/z16.model.json</code></pre></div>
 
 <p>格式如下：</p>
 <div class="hljs"><pre><code class="hljs json">&#123;
@@ -433,14 +433,14 @@ background-color:#bbb;
 <p><a href="https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js" target="_blank" rel="noopener">https://cdn.jsdelivr.net/combine/npm/chenyfan-oss@2.0.3/pixi.min.js,npm/chenyfan-oss@2.0.3/live2dcubismframework.min.js,npm/chenyfan-oss@2.0.3/live2dcubismpixi.min.js</a></p>
 <h1 id="加载模型"><a href="#加载模型" class="headerlink" title="加载模型"></a>加载模型</h1><p>我选择白嫖<a href="https://github.com/Himehane/live2d_on_website/blob/master/loadModel.js" target="_blank" rel="noopener">https://github.com/Himehane/live2d_on_website/blob/master/loadModel.js</a></p>
 <p>当然这有一点点小问题，比如上面这么配置：</p>
-<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> baseModelPath = <span class="hljs-string">'https://unpkg.zhimg.com/chenyfan-oss@2.0.2'</span>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> baseModelPath = <span class="hljs-string">'https://npm.elemecdn.com/chenyfan-oss@2.0.2'</span>
 <span class="hljs-keyword">var</span> modelNames = [<span class="hljs-string">"lafei_4"</span>];</code></pre></div>
 
 <p>那么他会这么请求</p>
-<div class="hljs"><pre><code class="hljs url">https://unpkg.zhimg.com/chenyfan-oss@2.0.2/lafei_4/lafei_4.model3.json</code></pre></div>
+<div class="hljs"><pre><code class="hljs url">https://npm.elemecdn.com/chenyfan-oss@2.0.2/lafei_4/lafei_4.model3.json</code></pre></div>
 
 <p>可是问题是我没有加一层文件夹。。。我的位置是</p>
-<div class="hljs"><pre><code class="hljs url">https://unpkg.zhimg.com/chenyfan-oss@2.0.2/lafei_4.model3.json</code></pre></div>
+<div class="hljs"><pre><code class="hljs url">https://npm.elemecdn.com/chenyfan-oss@2.0.2/lafei_4.model3.json</code></pre></div>
 
 <p>修改loadModel 288行</p>
 <div class="hljs"><pre><code class="hljs undefined">- modelPath =  <span class="hljs-keyword">baseModelPath </span>+ modelName + <span class="hljs-string">"/"</span> + modelName + <span class="hljs-string">".model3.json"</span><span class="hljs-comment">;</span>
@@ -487,7 +487,7 @@ background-color:#bbb;
         <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.body.clientWidth &gt; <span class="hljs-number">600</span>) &#123;
             <span class="hljs-built_in">document</span>.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
                 <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.readyState == <span class="hljs-string">"complete"</span>) &#123;
-                    loadScript(<span class="hljs-string">'https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/load.js'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+                    loadScript(<span class="hljs-string">'https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/load.js'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
                         loadModel();
 
 &#125;)
@@ -512,10 +512,10 @@ loadlive2d()</code></pre></div>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"live2d"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"live2d"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"live2dm"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"live2d"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 999!important;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.zhimg.com/chenyfan-oss@2.0.3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://npm.elemecdn.com/chenyfan-oss@2.0.3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
 
-<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618822975000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>然后添加到Hexo就改模板吧…没什么好说的<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ec2cb7f39.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618822975000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>然后添加到Hexo就改模板吧…没什么好说的<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.8/5896ec2cb7f39.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 
             </div>
             <hr>
@@ -586,8 +586,8 @@ loadlive2d()</code></pre></div>
 	</div>
 </div>
 <link rel="stylesheet"
-	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
-<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
 
 <script>
 	function onclock() {
@@ -731,7 +731,7 @@ loadlive2d()</code></pre></div>
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -829,11 +829,66 @@ loadlive2d()</code></pre></div>
 
 <!-- SCRIPTS -->
 <!-- Plugins -->
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
-<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
 <script>
 
     //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    window.cache_post = async (url, that) => {
+        const info = {};
+        info.len = 1
+        info.offlen = 0
+        that.innerText = `首页缓存中: ${info.offlen}/${info.len}`;
+        that.onclick = null;
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        let res = await (await fetch(url)).text()
+        res = res.match(/(http:\/\/|https:\/\/)((\w|=|\@|\?|\.|\/|&|-)+)/g)
+        info.len = res.length
+        try {
+            //throw ''
+            console.log('采用并行请求')
+            await Promise.all(res.map(async (url) => {
+                
+                return new Promise((resolve, reject) => {
+                    fetch(url)
+                        .then(PauseProgress)
+                        .then(resp => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
+                            
+                            resolve()
+                        })
+                        .catch(err => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 失败`)
+                            resolve()
+                        })
+                })
+            }))
+            that.innerText =`缓存成功√`;
+        } catch {
+            console.log('并行请求失败，采用串行请求')
+            for (var i in res) {
+                const u = res[i]
+                fetch(u).then(PauseProgress).then(resp => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 成功`)
+                }).catch(err => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
+                })
+            }
+            
+           
+        }
+        
+    }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
             head = document.getElementsByTagName('head')[0];
@@ -894,7 +949,7 @@ loadlive2d()</code></pre></div>
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
             //loadScript('/hpp/api/getblogeractive', function () { });
             loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
 
@@ -910,7 +965,7 @@ loadlive2d()</code></pre></div>
 
                                             
                                                 
-  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
   <script>
     $(document).ready(function () {
       var boardCtn = $('#board-ctn');
@@ -937,7 +992,7 @@ loadlive2d()</code></pre></div>
 
 
                                                     
-  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
@@ -959,9 +1014,9 @@ loadlive2d()</code></pre></div>
                                                         
 
                                                             
-  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
   <script>
-    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var path = "../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
       searchFunc(path, 'local-search-input', 'local-search-result');
@@ -971,8 +1026,8 @@ loadlive2d()</code></pre></div>
 
 
                                                                 
-  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
   <script>
     $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(

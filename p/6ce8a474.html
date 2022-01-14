@@ -8,8 +8,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
-  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -46,12 +46,12 @@ filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }</style>-->
   
-<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
-<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
 
 
 
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
 
 </script>
 <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
@@ -367,7 +367,7 @@ background-color:#bbb;
 
 <p>。。。</p>
 <p>于是我顺手右键点开了源代码，闲着无聊看看，结果却刚看看就找到了好<del>康</del>看的东西：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20175355.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20175355.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <div class="hljs"><pre><code class="hljs undefined">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://union2.50bang.org"</span>&gt;
 &lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"//h.2345cdn.net"</span>&gt;
 &lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"//image.2345.com"</span>&gt;
@@ -426,9 +426,9 @@ background-color:#bbb;
 <p>好了公布答案了,很显然<span class="heimu">二</span>号加载更快。</p>
 <p>这时候有人就会问了，凭什么啊！不是说图片无限小吗？右边的反而会增加dns解析时间，难道不会更慢吗？</p>
 <p>好吧好吧，实际上，你以为的加载时间是这样的</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20180740.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20180740.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>可是实际上是这样子的：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20200044.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/2020-08-24%20200044.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>欸这就很有意思了同学们，为什么最后六张会出现Pending状态？</p>
 <p>实际上，浏览器是有并发请求数目限制【通常是2-8个】，虽然这种比较坑人，但这也是为了避免同时大量并发导致资源占用过度，并且只针对同一个域名的（例如向cdn.jsdelivr.net发送请求）。即一时间针对同一域名下的请求有一定数量限制。超过限制数目的请求会被阻塞并进入Pending状态。</p>
 <p>从用户的角度来说，浏览器不可能无限量的并发请求，因此衍生出来了并发限制和HTTP/1.1的Keep alive。 所以，IE6/7在HTTP/1.1下的并发才<strong>2</strong>，但HTTP/1.0却是<strong>4</strong>。 而随着技术的发展，负载均衡和各类NoSQL的大量应用，基本已经足以应对C10K的问题。 但却并不是每个网站都懂得利用domain hash也就是多域名来加速访问。因此，新的浏览器加大了并发数的限制，但却仍控制在8以内。</p>
@@ -545,8 +545,8 @@ background-color:#bbb;
 	</div>
 </div>
 <link rel="stylesheet"
-	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
-<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
 
 <script>
 	function onclock() {
@@ -690,7 +690,7 @@ background-color:#bbb;
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -788,11 +788,66 @@ background-color:#bbb;
 
 <!-- SCRIPTS -->
 <!-- Plugins -->
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
-<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
 <script>
 
     //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    window.cache_post = async (url, that) => {
+        const info = {};
+        info.len = 1
+        info.offlen = 0
+        that.innerText = `首页缓存中: ${info.offlen}/${info.len}`;
+        that.onclick = null;
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        let res = await (await fetch(url)).text()
+        res = res.match(/(http:\/\/|https:\/\/)((\w|=|\@|\?|\.|\/|&|-)+)/g)
+        info.len = res.length
+        try {
+            //throw ''
+            console.log('采用并行请求')
+            await Promise.all(res.map(async (url) => {
+                
+                return new Promise((resolve, reject) => {
+                    fetch(url)
+                        .then(PauseProgress)
+                        .then(resp => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
+                            
+                            resolve()
+                        })
+                        .catch(err => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 失败`)
+                            resolve()
+                        })
+                })
+            }))
+            that.innerText =`缓存成功√`;
+        } catch {
+            console.log('并行请求失败，采用串行请求')
+            for (var i in res) {
+                const u = res[i]
+                fetch(u).then(PauseProgress).then(resp => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 成功`)
+                }).catch(err => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
+                })
+            }
+            
+           
+        }
+        
+    }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
             head = document.getElementsByTagName('head')[0];
@@ -853,7 +908,7 @@ background-color:#bbb;
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
             //loadScript('/hpp/api/getblogeractive', function () { });
             loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
 
@@ -869,7 +924,7 @@ background-color:#bbb;
 
                                             
                                                 
-  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
   <script>
     $(document).ready(function () {
       var boardCtn = $('#board-ctn');
@@ -896,7 +951,7 @@ background-color:#bbb;
 
 
                                                     
-  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
@@ -918,9 +973,9 @@ background-color:#bbb;
                                                         
 
                                                             
-  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
   <script>
-    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var path = "../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
       searchFunc(path, 'local-search-input', 'local-search-result');
@@ -930,8 +985,8 @@ background-color:#bbb;
 
 
                                                                 
-  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
   <script>
     $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(

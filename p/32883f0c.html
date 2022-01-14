@@ -8,8 +8,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
-  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -46,12 +46,12 @@ filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }</style>-->
   
-<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
-<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
 
 
 
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
 
 </script>
 <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
@@ -368,12 +368,12 @@ background-color:#bbb;
 <p>比较讽刺的是，CloudFlareWorkers用的都是国外节点，但以上两个运行于此的目录列表程序支持的下载速度却远远大于国内有节点的百度网盘，不说是移动BGP走香港有多好，至少我在『电信』网络环境下的下载速度都远远大于百度网盘。很显然，百度网盘作为垄断国内网盘市场的资本，既然已经度过了烧钱的时间，那么现在自然是能剩多少省多少，这就是『吃相难看』。</p>
 <p>两年前，当微博上的人们开始质问突然『诈尸』的百度网盘微博账号，网友们才纷纷意识到自己的百度网盘被恶意限速了，紧接着，破解百度网盘限速的方式层出不穷。只是后来，这些方式一点一点被打压下去，最终戛然而止。</p>
 <p>最近这几天因为在写<a href="https://github.com/HexoPlusPlus/HexoPlusPlus" target="_blank" rel="noopener">HexoPlusPlus: A ServerLess Hexo Dashboard</a> 正在努力学习CloudFlareWorkers。由于评论模块需要数据结构有关知识，可惜这一块知识大都都被一些所谓白嫖CloudFlareWorkers的教程所淹没：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101043.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;Google上CloudFlareWorkers搜索结果&quot;"></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101043.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;Google上CloudFlareWorkers搜索结果&quot;"></p>
 <p>在查询有关资料的时候，Github上一颗冉冉新星引起了我的注意，<a href="https://github.com/teardr0p/PanList" target="_blank" rel="noopener">PanList</a> ,根据其Commit显示,这个仓库仅仅是两天前刚刚开辟的,但是本文写是就有61Star和21Fork 【当然我也有Star】，可见其热门程度。不过简单的翻看了一下我就明白其为何如此热门，第一，它是专门对付令人头疼的百度网盘，第二，它是构建于CloudFlareWorkers。</p>
 <h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><p>电脑登录百度网盘：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101056.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;百度网盘&quot;"></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101056.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;百度网盘&quot;"></p>
 <p>按下F12进入开发者模式，选择<code>Application</code>模块，点击<code>Cookies</code>:</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101101.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;Cookies&quot;"></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101101.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&quot;Cookies&quot;"></p>
 <p>在这里，我们需要获取两个Cookie：<code>BDUSS</code>和<code>STOKEN</code></p>
 <h1 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h1><table>
 <thead>
@@ -398,27 +398,27 @@ background-color:#bbb;
 <p>AnyWay，你也可以将这些写入到后台变量</p>
 </blockquote>
 <p>新建一个Worker，将处理好的代码直接复制进去：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101307.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="复制代码"></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101307.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="复制代码"></p>
 <p>保存并部署，确定。</p>
-<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101107.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="绑定域名"></p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101107.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="绑定域名"></p>
 <p>路由：<code>{待绑定的域名}/*</code> [后面*的原理是覆盖该路径下所有文件]<br>Worker：你新建的Worker名字</p>
 <h1 id="评测"><a href="#评测" class="headerlink" title="评测"></a>评测</h1><p>登陆界面：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101115.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="login"></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101115.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="login"></p>
 <p>打开后：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101118.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101118.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <blockquote>
 <p>挺讽刺的是，去除了百度网盘原始界面乱七八糟的东西，CloudFlareWorkers的国外服务器打开速度都比百度网盘快</p>
 </blockquote>
 <p>Chrome直接下载速度</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101447.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101447.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>传递Cookie后IDM下载速度：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101120.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101120.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>注：单线程下载速率最终取决于百度网盘的限制，也就是说无论如何你也无法逃避百度网盘对源头的遏制，就在我下完<code>Soul</code>这部将近2GB的电影后，我的账号就被百度拉入黑名单，现在即使用IDM也只有80kb/s <span class="heimu">但是还是比原来的客户端快</span></p>
 <h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>本质上panlist无非就是通过baidu没有公开的API通过Cookie鉴权来获取文件列表和下载，虽然依旧没有突破单线程下载限速，但至少实现了直链下载和多线程下载的功能，并且部署在CloudFlareWorkers上的方式确实大开眼界，无服务器应用的范围又扩展了一步，我十分看好这个项目。</p>
 <p>另外，本人也在努力开发一款同样基于CloudFlareWorkers的评论系统，以下是截图：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/101127.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/101127.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>最后，来一句姗姗来迟的新年祝福：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.5/happy.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.5/happy.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 
             </div>
             <hr>
@@ -493,8 +493,8 @@ background-color:#bbb;
 	</div>
 </div>
 <link rel="stylesheet"
-	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
-<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
 
 <script>
 	function onclock() {
@@ -638,7 +638,7 @@ background-color:#bbb;
 
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
     </div>
   </div>
 
@@ -736,11 +736,66 @@ background-color:#bbb;
 
 <!-- SCRIPTS -->
 <!-- Plugins -->
-<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
-<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
 <script>
 
     //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    window.cache_post = async (url, that) => {
+        const info = {};
+        info.len = 1
+        info.offlen = 0
+        that.innerText = `首页缓存中: ${info.offlen}/${info.len}`;
+        that.onclick = null;
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        let res = await (await fetch(url)).text()
+        res = res.match(/(http:\/\/|https:\/\/)((\w|=|\@|\?|\.|\/|&|-)+)/g)
+        info.len = res.length
+        try {
+            //throw ''
+            console.log('采用并行请求')
+            await Promise.all(res.map(async (url) => {
+                
+                return new Promise((resolve, reject) => {
+                    fetch(url)
+                        .then(PauseProgress)
+                        .then(resp => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
+                            
+                            resolve()
+                        })
+                        .catch(err => {
+                            info.offlen += 1
+                            that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                            console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 失败`)
+                            resolve()
+                        })
+                })
+            }))
+            that.innerText =`缓存成功√`;
+        } catch {
+            console.log('并行请求失败，采用串行请求')
+            for (var i in res) {
+                const u = res[i]
+                fetch(u).then(PauseProgress).then(resp => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 成功`)
+                }).catch(err => {
+                    info.offlen += 1
+                    that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
+                    console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
+                })
+            }
+            
+           
+        }
+        
+    }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
             head = document.getElementsByTagName('head')[0];
@@ -801,7 +856,7 @@ background-color:#bbb;
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
             //loadScript('/hpp/api/getblogeractive', function () { });
             loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
 
@@ -817,7 +872,7 @@ background-color:#bbb;
 
                                             
                                                 
-  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
   <script>
     $(document).ready(function () {
       var boardCtn = $('#board-ctn');
@@ -844,7 +899,7 @@ background-color:#bbb;
 
 
                                                     
-  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
@@ -866,9 +921,9 @@ background-color:#bbb;
                                                         
 
                                                             
-  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
   <script>
-    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var path = "../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
       searchFunc(path, 'local-search-input', 'local-search-result');
@@ -878,8 +933,8 @@ background-color:#bbb;
 
 
                                                                 
-  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
   <script>
     $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
