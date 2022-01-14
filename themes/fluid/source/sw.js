@@ -156,6 +156,23 @@ let cdn = {
     "gh": {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/gh"
+        },
+        pigax: {
+            "url": "https://u.pigax.cn/gh"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/gh"
+        }
+    },
+    "combine": {
+        jsdelivr: {
+            "url": "https://cdn.jsdelivr.net/combine"
+        },
+        pigax: {
+            "url": "https://u.pigax.cn/combine"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/combine"
         }
     },
     "npm": {
@@ -174,12 +191,17 @@ let cdn = {
         },
         bdstatic: {
             "url": "https://code.bdstatic.com/npm"
+        },
+        pigax: {
+            "url": "https://u.pigax.cn/npm"
         }
 
     }
 }
+
 const blog = {
-    local: false, origin: [
+    local: false,
+    origin: [
         "blog.cyfan.top",
         "127.0.0.1:8887"
     ],
@@ -233,7 +255,7 @@ const handle = async function (req) {
             }
 
             return lfetch(urls, urlStr).then(function (res) {
-                if(!res){throw 'error'}
+                if (!res) { throw 'error' }
                 return caches.open(CACHE_NAME).then(function (cache) {
                     cache.delete(req);
                     cache.put(req, res.clone());
@@ -243,7 +265,8 @@ const handle = async function (req) {
                 return caches.match(req).then(function (resp) {
                     return resp || new Response(`<h1>ChenBlogHelper Error:${err}</h1>`, { headers: { "content-type": "text/html; charset=utf-8" } })
                 }
-                )})/*
+                )
+            })/*
             if (!n) {
 
                 return new Response('<h1>ChenBlogHelper Error</h1>', { headers: { "content-type": "text/html; charset=utf-8" } })
@@ -255,96 +278,96 @@ const handle = async function (req) {
                 })
                 return n
             }*/
-                /* .then(async function (resp) {
-                    const res = await lfetch(urls, urlStr);
-                    if (!res) { return resp; }
-                    const cache = await caches.open(CACHE_NAME);
-                    cache.put(req, res.clone());
-                    return res;
-                })*//*
-                return lfetch(urls, urlStr).then((resp) => {
-                    return caches.open(CACHE_NAME).then(function (cache) {
-                        cache.put(req, resp.clone());
-                        return resp;
-                    })
-                })*/
-
-            }
-    }
-        if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
-            ws_sw({
-                type: "send",
-                data: JSON.stringify({
-                    type: 'info',
-                    data: JSON.parse(decodeURIComponent(atob(query('log')))),
-                    uuid: uuid
+            /* .then(async function (resp) {
+                const res = await lfetch(urls, urlStr);
+                if (!res) { return resp; }
+                const cache = await caches.open(CACHE_NAME);
+                cache.put(req, res.clone());
+                return res;
+            })*//*
+            return lfetch(urls, urlStr).then((resp) => {
+                return caches.open(CACHE_NAME).then(function (cache) {
+                    cache.put(req, resp.clone());
+                    return resp;
                 })
-            })
-            return new Response(null, { status: 204 })
-        }
-        return fetch(req)
-    }
+            })*/
 
-    const lfetch = async (urls, url) => {
-        //console.log(urls)
-        const uuid = await db.read('uuid')
-        try {
-            let controller = new AbortController();
-            const PauseProgress = async (res) => {
-                return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
-            };
-            let results = Promise.any(urls.map(urls => {
-                return new Promise((resolve, reject) => {
-                    fetch(urls, {
-                        signal: controller.signal
-                    })
-                        .then(PauseProgress)
-                        .then(res => {
-                            const resn = res.clone()
-                            if (resn.status == 200) {
-                                setTimeout(() => {
-                                    ws_sw({
-                                        type: "send",
-                                        data: JSON.stringify({
-                                            type: 'fetch',
-                                            url: urls,
-                                            origin_url: url,
-                                            promise_any: true,
-                                            uuid: uuid,
-                                            request_uuid: generate_uuid()
-                                        })
+        }
+    }
+    if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
+        ws_sw({
+            type: "send",
+            data: JSON.stringify({
+                type: 'info',
+                data: JSON.parse(decodeURIComponent(atob(query('log')))),
+                uuid: uuid
+            })
+        })
+        return new Response(null, { status: 204 })
+    }
+    return fetch(req)
+}
+
+const lfetch = async (urls, url) => {
+    //console.log(urls)
+    const uuid = await db.read('uuid')
+    try {
+        let controller = new AbortController();
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        let results = Promise.any(urls.map(urls => {
+            return new Promise((resolve, reject) => {
+                fetch(urls, {
+                    signal: controller.signal
+                })
+                    .then(PauseProgress)
+                    .then(res => {
+                        const resn = res.clone()
+                        if (resn.status == 200) {
+                            setTimeout(() => {
+                                ws_sw({
+                                    type: "send",
+                                    data: JSON.stringify({
+                                        type: 'fetch',
+                                        url: urls,
+                                        origin_url: url,
+                                        promise_any: true,
+                                        uuid: uuid,
+                                        request_uuid: generate_uuid()
                                     })
-                                }, 0);
-                                controller.abort();
-                                resolve(resn)
-                            } else {
-                                reject()
-                            }
-                        }).catch(() => {
+                                })
+                            }, 0);
+                            controller.abort();
+                            resolve(resn)
+                        } else {
                             reject()
-                        })
-                }
-                )
+                        }
+                    }).catch(() => {
+                        reject()
+                    })
             }
-            )).then(res => { return res }).catch(() => { return null })
+            )
+        }
+        )).then(res => { return res }).catch(() => { return null })
 
-            return results
-        }
-        catch (err) {
-            ws_sw({
-                type: "send",
-                data: JSON.stringify({
-                    type: 'fetch',
-                    url: urls[0],
-                    promise_any: false,
-                    err: err,
-                    request_uuid: generate_uuid(),
-                    uuid: uuid
-                })
-            })
-            return fetch(urls[0])
-        }
+        return results
     }
+    catch (err) {
+        ws_sw({
+            type: "send",
+            data: JSON.stringify({
+                type: 'fetch',
+                url: urls[0],
+                promise_any: false,
+                err: err,
+                request_uuid: generate_uuid(),
+                uuid: uuid
+            })
+        })
+        return fetch(urls[0])
+    }
+}
 
 
 /*
