@@ -1,5 +1,387 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg"><link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="Worker是什么?开发者怎么使用Worker做的更好?难道Worker只能用JSproxy吗?作为HexoPlusPlus开发者,我想和大家谈谈我从一个小白开始慢慢写一个基于CloudFlareWorker程序的Hexo后台管理"><meta name="keywords" content="CloudFlare,CloudFlareWorker,Hexo,HexoPlus,云写作"><meta name="author" content="CYF"><title>HexoPlusPlus-从一个妄想到现实 || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css"><link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css"><script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js"></script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong> 陈YFの博客(￣▽￣)" </strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../archives/">归档 </a><a class="dropdown-item" href="../categories/">分类 </a><a class="dropdown-item" href="../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../com/">留言板 </a><a class="dropdown-item" href="../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../about/">关于 </a><a class="dropdown-item" href="../hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg t="1601864448019" class="icon" style="display:unset!important" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li><li class="nav-item" id="superlive"><a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display:unset!important" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1215" width="18" height="18"><path d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z" p-id="1216" fill="#ffffff"></path></svg>&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612929292000.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2021-02-11 15:40" pubdate>2021年2月11日 下午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 5.6k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 70 分钟 </span><span id="post-meta-views"><i class="iconfont icon-rss"></i> <span id="pv-counter">loading</span> <span>阅读量</span></span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">HexoPlusPlus-从一个妄想到现实</h1><p class="note note-info">本文最后更新于：几秒前</p><div class="markdown-body" id="post-body"><p>我一直都习惯在线写作，但因为口袋里没钱，不能买服务器用动态博客，使用Hexo，即使实现了集成部署，想要在github上直接书写，尤其是出门在外有所灵感，国内手机登陆github真的是极其糟糕的体验。博客本就是碎片化写作和高质量文章发布处，使用hexo却使我无法发挥博客的用处。</p><a id="more"></a><p>先前，我曾使用白嫖的Euserv搭建的Typecho，也是用过wordpress.com白嫖的wordpress，但两个都不符合我对速度和可用性的追求，一个连CloudFlare能不能连上都是问题，另一个中国支持贼差【虽然可以用万能Worker可以替换加解决,但是就是不想用啊】。免空的选择又难以择手<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/194.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，弄来弄去还是用回Hexo。</p><p>但是Hexo就是有一点不爽，每次使用的时候就必须要在本地进行构建静态网页，然后上传到GithubPage。后来实现了集成部署【没想到折腾了很长时间的集成部署最后用到这里了】，方便了不少，直接在Github上面改源代码。但相较于Typecho和Wordpress，没有后台的写作总感觉有点难受<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e9710dfd5.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，每次更改源代码都要上Github<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2ab57a.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，在国内这种大环境下总是不太好使的。</p><p>2020年最后一个月，我总是在想如何解决这个问题，我的要求很简单，能弄个在线书写环境就好了。</p><p>在当时，真的只是睡觉的时候想想，现在回头不禁感慨，这妄想真的实现了。</p><p>由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有<strong>60次</strong>，但一旦鉴权每个用户每小时就有<strong>5000次</strong>。这些api完全能够支撑起一个在线写作的环境,<a href="https://developer.github.com/v3/guides/getting-started/" target="_blank" rel="noopener">https://developer.github.com/v3/guides/getting-started/</a>更是详细讲解并提供了数个例子。</p><p>这篇文章,就是详细讲解我如何把这个梦想变成现实.具体步骤很多,请慢慢咀嚼<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2ab57a.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><blockquote><p><strong>这篇不是<a href="https://hexoplusplus.js.org/" target="_blank" rel="noopener">使用文档</a>,而是教程</strong></p></blockquote><h1 id="原理-GithubAPI"><a href="#原理-GithubAPI" class="headerlink" title="原理 - GithubAPI"></a>原理 - GithubAPI</h1><p>譬如罢，上传一个文件，首先你要鉴权，在header中写入：</p><div class="hljs"><pre><code class="hljs url">content-type: &quot;application/json;charset=UTF-8&quot;
-Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre></div><blockquote><p>Anyone,你也可以在url后面加上<code>?access_token=</code>传参，但是这样不安全，Github官方也是提示将在明年彻底禁用传参鉴权</p></blockquote><p>但是记得GithubAPI不允许空User-Agent，所以你还得在header中加入UA：</p><div class="hljs"><pre><code class="hljs url">user-agent: &quot;GoogleChrome&quot;,</code></pre></div><p>OK这么一搞鉴权这一块就完毕了，接下来，我们要搞基本功能</p><p>Github更改一个文件的url是一样的，为了方便接下来的书写和表达，我们统一将以下url称为RESTURL：</p><div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/$&#123;Github用户名&#125;/$&#123;Github仓库名字&#125;/contents/$&#123;Github文件路径&#125;/$&#123;Github文件名&#125;?ref=$&#123;Github分支&#125;</code></pre></div><h2 id="拉取信息"><a href="#拉取信息" class="headerlink" title="拉取信息"></a>拉取信息</h2><p>默认情况下，直接<code>GET</code> <code>RESTURL</code>就能获取该文件/文件夹的信息,例如获取我<code>AVorBV.md</code>源文件,那么<code>RESTURL</code>如下:</p><div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>api.github.com<span class="hljs-regexp">/repos/</span>ChenYFan<span class="hljs-regexp">/blog/</span>contents<span class="hljs-regexp">/source/</span>_posts<span class="hljs-regexp">/AVorBV.md?ref=master</span></code></pre></div><p>直接<code>GET</code>[我的是公开仓库,不需要鉴权就能获取],得到数据如下:</p><div class="hljs"><pre><code class="hljs json">&#123;
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://unpkg.zhimg.com/chenyfan-oss@4/512.jpg">
+  <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6/32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F6B352">
+  
+    
+	
+	    <meta name="description" content="Worker是什么?开发者怎么使用Worker做的更好?难道Worker只能用JSproxy吗?作为HexoPlusPlus开发者,我想和大家谈谈我从一个小白开始慢慢写一个基于CloudFlareWorker程序的Hexo后台管理">
+	 
+	 
+	 	
+
+	
+	    <meta name="keywords" content="CloudFlare,CloudFlareWorker,Hexo,HexoPlus,云写作">
+	 
+	 
+	 	
+
+ 
+  
+  <meta name="author" content="CYF">
+  <title>HexoPlusPlus-从一个妄想到现实 || 陈YFの博客(￣▽￣)&#34;</title>
+<!--<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>-->
+  
+<link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://unpkg.zhimg.com/notyf@3/notyf.min.css">
+
+
+
+<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/utils.min.js">
+
+</script>
+<link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+::-webkit-scrollbar-track-piece {
+background-color:#f8f8f8;
+}
+::-webkit-scrollbar {
+width:9px;
+height:9px;
+}
+::-webkit-scrollbar-thumb {
+background-color:#dddddd;
+background-clip:padding-box;
+min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#bbb;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong>
+        陈YFの博客(￣▽￣)"
+      </strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        文章
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../archives/">
+                                
+                                  归档
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../categories/">
+                                
+                                  分类
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../tags/">
+                                
+                                  标签
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        页面
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../com/">
+                                
+                                  留言板
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../随口胡说/ ">
+                                
+                                  随口胡说
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../about/">
+                                
+                                  关于
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../hpp/admin/dash/home">
+                                
+                                  后台
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="../links/">
+                        
+                          朋友们
+                      </a>
+                    </li>
+                    
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://cyfan.top">
+                        
+                          项目主页
+                      </a>
+                    </li>
+                    
+                      
+                        
+                          <li class="nav-item" id="search-btn">
+                            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                                class="iconfont icon-search"></i>&nbsp;</a>
+                          </li>
+                          
+                            
+                              <li class="nav-item" id="color-toggle-btn">
+                                <a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark"
+                                    id="color-toggle-icon"></i>&nbsp;</a>
+                              </li>
+                              
+                                <li class="nav-item" id="travellings-icon">
+                                  <a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg
+                                      t="1601864448019" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="804" width="18" height="18">
+                                      <path
+                                        d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z"
+                                        p-id="805" fill="#ffffff"></path>
+                                      <path
+                                        d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z"
+                                        p-id="806" fill="#ffffff"></path>
+                                      <path
+                                        d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z"
+                                        p-id="807" fill="#ffffff"></path>
+                                      <path
+                                        d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z"
+                                        p-id="808" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="tton">
+                                  <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="superlive">
+                                  <a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="1215" width="18" height="18">
+                                      <path
+                                        d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z"
+                                        p-id="1216" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612929292000.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-02-11 15:40" pubdate>
+      2021年2月11日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.6k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      70
+      分钟
+    </span>
+  
+<span id="post-meta-views">
+<i class="iconfont icon-rss"></i>
+<span id="pv-counter">loading</span>
+       <span>阅读量</span>
+    </span>
+   
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">HexoPlusPlus-从一个妄想到现实</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <p>我一直都习惯在线写作，但因为口袋里没钱，不能买服务器用动态博客，使用Hexo，即使实现了集成部署，想要在github上直接书写，尤其是出门在外有所灵感，国内手机登陆github真的是极其糟糕的体验。博客本就是碎片化写作和高质量文章发布处，使用hexo却使我无法发挥博客的用处。</p>
+<a id="more"></a>
+<p>先前，我曾使用白嫖的Euserv搭建的Typecho，也是用过wordpress.com白嫖的wordpress，但两个都不符合我对速度和可用性的追求，一个连CloudFlare能不能连上都是问题，另一个中国支持贼差【虽然可以用万能Worker可以替换加解决,但是就是不想用啊】。免空的选择又难以择手<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/194.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，弄来弄去还是用回Hexo。</p>
+<p>但是Hexo就是有一点不爽，每次使用的时候就必须要在本地进行构建静态网页，然后上传到GithubPage。后来实现了集成部署【没想到折腾了很长时间的集成部署最后用到这里了】，方便了不少，直接在Github上面改源代码。但相较于Typecho和Wordpress，没有后台的写作总感觉有点难受<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e9710dfd5.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，每次更改源代码都要上Github<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2ab57a.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，在国内这种大环境下总是不太好使的。</p>
+<p>2020年最后一个月，我总是在想如何解决这个问题，我的要求很简单，能弄个在线书写环境就好了。</p>
+<p>在当时，真的只是睡觉的时候想想，现在回头不禁感慨，这妄想真的实现了。</p>
+<p>由于我的文件是存储在Github上，于是我第一个先去Github文档查找相关资料，果不其然，Github的API能够上传、删除、下载【废话】、列表文件，并且能通过base64上传，直接免去了手写头的问题.关于调用限制，没鉴权时每个ip每小时只有<strong>60次</strong>，但一旦鉴权每个用户每小时就有<strong>5000次</strong>。这些api完全能够支撑起一个在线写作的环境,<a href="https://developer.github.com/v3/guides/getting-started/" target="_blank" rel="noopener">https://developer.github.com/v3/guides/getting-started/</a>更是详细讲解并提供了数个例子。</p>
+<p>这篇文章,就是详细讲解我如何把这个梦想变成现实.具体步骤很多,请慢慢咀嚼<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2ab57a.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<blockquote>
+<p><strong>这篇不是<a href="https://hexoplusplus.js.org/" target="_blank" rel="noopener">使用文档</a>,而是教程</strong></p>
+</blockquote>
+<h1 id="原理-GithubAPI"><a href="#原理-GithubAPI" class="headerlink" title="原理 - GithubAPI"></a>原理 - GithubAPI</h1><p>譬如罢，上传一个文件，首先你要鉴权，在header中写入：</p>
+<div class="hljs"><pre><code class="hljs url">content-type: &quot;application/json;charset=UTF-8&quot;
+Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre></div>
+
+<blockquote>
+<p>Anyone,你也可以在url后面加上<code>?access_token=</code>传参，但是这样不安全，Github官方也是提示将在明年彻底禁用传参鉴权</p>
+</blockquote>
+<p>但是记得GithubAPI不允许空User-Agent，所以你还得在header中加入UA：</p>
+<div class="hljs"><pre><code class="hljs url">user-agent: &quot;GoogleChrome&quot;,</code></pre></div>
+
+<p>OK这么一搞鉴权这一块就完毕了，接下来，我们要搞基本功能</p>
+<p>Github更改一个文件的url是一样的，为了方便接下来的书写和表达，我们统一将以下url称为RESTURL：</p>
+<div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/$&#123;Github用户名&#125;/$&#123;Github仓库名字&#125;/contents/$&#123;Github文件路径&#125;/$&#123;Github文件名&#125;?ref=$&#123;Github分支&#125;</code></pre></div>
+
+<h2 id="拉取信息"><a href="#拉取信息" class="headerlink" title="拉取信息"></a>拉取信息</h2><p>默认情况下，直接<code>GET</code> <code>RESTURL</code>就能获取该文件/文件夹的信息,例如获取我<code>AVorBV.md</code>源文件,那么<code>RESTURL</code>如下:</p>
+<div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>api.github.com<span class="hljs-regexp">/repos/</span>ChenYFan<span class="hljs-regexp">/blog/</span>contents<span class="hljs-regexp">/source/</span>_posts<span class="hljs-regexp">/AVorBV.md?ref=master</span></code></pre></div>
+
+<p>直接<code>GET</code>[我的是公开仓库,不需要鉴权就能获取],得到数据如下:</p>
+<div class="hljs"><pre><code class="hljs json">&#123;
 <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AVorBV.md"</span>,
 <span class="hljs-attr">"path"</span>: <span class="hljs-string">"source/_posts/AVorBV.md"</span>,
 <span class="hljs-attr">"sha"</span>: <span class="hljs-string">"a0bd826f999a9bb73ac56251415f9e57199600a7"</span>,
@@ -16,7 +398,13 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
 <span class="hljs-attr">"git"</span>: <span class="hljs-string">"https://api.github.com/repos/ChenYFan/blog/git/blobs/a0bd826f999a9bb73ac56251415f9e57199600a7"</span>,
 <span class="hljs-attr">"html"</span>: <span class="hljs-string">"https://github.com/ChenYFan/blog/blob/master/source/_posts/AVorBV.md"</span>
 &#125;
-&#125;</code></pre></div><p>这样子,我们只要提取json中的sha,就能知道到hash,进而进行修改.<br>但这样子有个非常尴尬的一点,单文件获取会把<code>content</code>一口气拿过来<br>例如下面的<code>RESTURL</code></p><div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload/1612843011000.jpg?ref=master</code></pre></div><p>你获取的时候会发现返回了这个:</p><div class="hljs"><pre><code class="hljs json">&#123;
+&#125;</code></pre></div>
+
+<p>这样子,我们只要提取json中的sha,就能知道到hash,进而进行修改.<br>但这样子有个非常尴尬的一点,单文件获取会把<code>content</code>一口气拿过来<br>例如下面的<code>RESTURL</code></p>
+<div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload/1612843011000.jpg?ref=master</code></pre></div>
+
+<p>你获取的时候会发现返回了这个:</p>
+<div class="hljs"><pre><code class="hljs json">&#123;
 <span class="hljs-attr">"message"</span>: <span class="hljs-string">"This API returns blobs up to 1 MB in size. The requested blob is too large to fetch via the API, but you can use the Git Data API to request blobs up to 100 MB in size."</span>,
 <span class="hljs-attr">"errors"</span>: [
 &#123;
@@ -26,36 +414,108 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
 &#125;
 ],
 <span class="hljs-attr">"documentation_url"</span>: <span class="hljs-string">"https://docs.github.com/rest/reference/repos#get-repository-content"</span>
-&#125;</code></pre></div><p>很显然,直接用GithubAPI不能获取单个文件的hash值</p><p>那怎么办？</p><p>答：列表获取</p><p>我们把之前的<code>RESTURL</code>去掉小尾巴,变成这样:</p><div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload?ref=master</code></pre></div><p>这样就能获取这个目录下整个列表,然后用json循环查找遍历name,再通过name拉hash即可.</p><p>只是这样查询时间会略微变长.</p><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2><p>如果是新建,body中这么写</p><div class="hljs"><pre><code class="hljs json">&#123;
+&#125;</code></pre></div>
+
+<p>很显然,直接用GithubAPI不能获取单个文件的hash值</p>
+<p>那怎么办？</p>
+<p>答：列表获取</p>
+<p>我们把之前的<code>RESTURL</code>去掉小尾巴,变成这样:</p>
+<div class="hljs"><pre><code class="hljs url">https://api.github.com/repos/ChenYFan/CDN/contents/img/hpp_upload?ref=master</code></pre></div>
+
+<p>这样就能获取这个目录下整个列表,然后用json循环查找遍历name,再通过name拉hash即可.</p>
+<p>只是这样查询时间会略微变长.</p>
+<h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2><p>如果是新建,body中这么写</p>
+<div class="hljs"><pre><code class="hljs json">&#123;
     branch: $&#123;上传的分支&#125;,
     message: $&#123;上传的信息&#125;,
     content: $&#123;base64过的文件&#125;, 
     sha: ""
-&#125;</code></pre></div><p>接着使用<code>PUT</code>形式访问RESTURL</p><p>创建成功后状态码应该返回：</p><div class="hljs"><pre><code class="hljs status">201 Created</code></pre></div><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>body与新建类似，但是首先你要通过拉取信息获取该文件sha值.</p><div class="hljs"><pre><code class="hljs json">&#123;
+&#125;</code></pre></div>
+
+<p>接着使用<code>PUT</code>形式访问RESTURL</p>
+<p>创建成功后状态码应该返回：</p>
+<div class="hljs"><pre><code class="hljs status">201 Created</code></pre></div>
+
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>body与新建类似，但是首先你要通过拉取信息获取该文件sha值.</p>
+<div class="hljs"><pre><code class="hljs json">&#123;
     branch: $&#123;上传的分支&#125;,
     message: $&#123;上传的信息&#125;,
     content: $&#123;base64过的文件&#125;, 
     sha: "$&#123;此文件hash&#125;"
-&#125;</code></pre></div><p>接着使用<code>PUT</code>形式访问<code>RESTURL</code></p><p>更新成功后状态码应该返回：</p><div class="hljs"><pre><code class="hljs status">200 OK</code></pre></div><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>相对来说,删除就更简单了</p><div class="hljs"><pre><code class="hljs json">&#123;
+&#125;</code></pre></div>
+
+<p>接着使用<code>PUT</code>形式访问<code>RESTURL</code></p>
+<p>更新成功后状态码应该返回：</p>
+<div class="hljs"><pre><code class="hljs status">200 OK</code></pre></div>
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>相对来说,删除就更简单了</p>
+<div class="hljs"><pre><code class="hljs json">&#123;
     branch: $&#123;删除文件的分支&#125;,
     message: $&#123;删除的信息&#125;,
     sha: "$&#123;此文件hash&#125;"
-&#125;</code></pre></div><p>hash这一步逃不掉,用<code>DELETE</code>形式访问<code>RESTURL</code>,返回<code>200</code>说明删除成功</p><h1 id="原理-CloudFlareWorkers"><a href="#原理-CloudFlareWorkers" class="headerlink" title="原理 - CloudFlareWorkers"></a>原理 - CloudFlareWorkers</h1><p>之前看过<a href="https://github.com/GitHub-Laziji/VBlog" target="_blank" rel="noopener">Laziji-VBlog</a>项目,这个项目新颖的一点是将文章发布在gists,然后用户通过api访问获取.</p><p>但这样有两个致命问题:</p><p>1.API没鉴权，每小时单个ip只能访问60次，一开就爆<br>2.在国内受干扰，不稳定</p><p>并且什么迁入迁出麻烦、token容易忘记等等问题</p><p>最最最早版本中,我是打算纯静态实现文章编辑和更改的，但很快我就遇到了和VBlog一样的缺陷，这逼使我切换了平台。</p><p>好诶，既然直连效果那么差，我们就选择中继。利用服务器中继我们首先排除【用Hexo基本就是贪无服务器】。目前比较流行的无服务器平台有Heroku、CloudFlareWorker和Vercel，Heroku支持了多种服务器语言，CFWorker基于GoogleV8，因为JSProxy在国内意外走红，Vercel在国内拥有较好的运营商线路。</p><p>我们第一个排除heroku，冷启动唤醒需要10s，并且无法绑定域名【这里其实也可用worker反代（bushi】。目光看向worker和vercel，又有一个新问题出来，自定义配置存哪？<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e6ec1d528.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>存变量里当然是个好主意，但是很难修改。外部存储也不是什么大问题，mongodb、firebase、<del>Leancloud</del>都可以上手，但我个人终究不喜欢为了查询而发送子请求。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/194.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>由于我是OIer【虽然很差】，习惯使用C++的逻辑，因为JS的逻辑和C++其实差不多，所以我更倾向用WorkerJS书写。</p><p>非常赞的是，去年11月，<a href="https://blog.cloudflare.com/workers-kv-free-tier/" target="_blank" rel="noopener">CloudFlare官方宣布KV在一定额度内免费</a>，并且免费额度喜人：</p><div class="hljs"><pre><code class="hljs undefined">存：<span class="hljs-number">1</span>GB大小
+&#125;</code></pre></div>
+
+<p>hash这一步逃不掉,用<code>DELETE</code>形式访问<code>RESTURL</code>,返回<code>200</code>说明删除成功</p>
+<h1 id="原理-CloudFlareWorkers"><a href="#原理-CloudFlareWorkers" class="headerlink" title="原理 - CloudFlareWorkers"></a>原理 - CloudFlareWorkers</h1><p>之前看过<a href="https://github.com/GitHub-Laziji/VBlog" target="_blank" rel="noopener">Laziji-VBlog</a>项目,这个项目新颖的一点是将文章发布在gists,然后用户通过api访问获取.</p>
+<p>但这样有两个致命问题:</p>
+<p>1.API没鉴权，每小时单个ip只能访问60次，一开就爆<br>2.在国内受干扰，不稳定</p>
+<p>并且什么迁入迁出麻烦、token容易忘记等等问题</p>
+<p>最最最早版本中,我是打算纯静态实现文章编辑和更改的，但很快我就遇到了和VBlog一样的缺陷，这逼使我切换了平台。</p>
+<p>好诶，既然直连效果那么差，我们就选择中继。利用服务器中继我们首先排除【用Hexo基本就是贪无服务器】。目前比较流行的无服务器平台有Heroku、CloudFlareWorker和Vercel，Heroku支持了多种服务器语言，CFWorker基于GoogleV8，因为JSProxy在国内意外走红，Vercel在国内拥有较好的运营商线路。</p>
+<p>我们第一个排除heroku，冷启动唤醒需要10s，并且无法绑定域名【这里其实也可用worker反代（bushi】。目光看向worker和vercel，又有一个新问题出来，自定义配置存哪？<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e6ec1d528.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>存变量里当然是个好主意，但是很难修改。外部存储也不是什么大问题，mongodb、firebase、<del>Leancloud</del>都可以上手，但我个人终究不喜欢为了查询而发送子请求。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/194.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>由于我是OIer【虽然很差】，习惯使用C++的逻辑，因为JS的逻辑和C++其实差不多，所以我更倾向用WorkerJS书写。</p>
+<p>非常赞的是，去年11月，<a href="https://blog.cloudflare.com/workers-kv-free-tier/" target="_blank" rel="noopener">CloudFlare官方宣布KV在一定额度内免费</a>，并且免费额度喜人：</p>
+<div class="hljs"><pre><code class="hljs undefined">存：<span class="hljs-number">1</span>GB大小
 读：<span class="hljs-number">10</span>W次/天【注：这里和Worker免费版本调用次数相同】
 写：<span class="hljs-number">1</span>k次/天
 删：<span class="hljs-number">1</span>k次/天
 列：<span class="hljs-number">1</span>k次/天
-单个限额：<span class="hljs-number">25</span>MB</code></pre></div><p>并且worker里面使用KV函数异常简单，绑定KVNAME后：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FUNCNAME</span>(<span class="hljs-params"></span>)</span>&#123;
+单个限额：<span class="hljs-number">25</span>MB</code></pre></div>
+
+<p>并且worker里面使用KV函数异常简单，绑定KVNAME后：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FUNCNAME</span>(<span class="hljs-params"></span>)</span>&#123;
 <span class="hljs-keyword">await</span> KVNAME.get(INDEX) <span class="hljs-comment">//读</span>
 <span class="hljs-keyword">await</span> KVNAME.put(INDEX,VALUE) <span class="hljs-comment">//写</span>
 <span class="hljs-keyword">await</span> KVNAME.delete(INDEX) <span class="hljs-comment">//删</span>
-&#125;</code></pre></div><p>按照<a href="https://developers.cloudflare.com/workers/learning/how-kv-works" target="_blank" rel="noopener">官方文档</a>的说法，实际读取与读取静态页面差不多，我写了个简单测试函数，根据时间戳判断，单次读取只需要不超过2ms。</p><p>并且worker有非常赞的fetch函数，无痛自定义header，拉取后端无压力。</p><p>好，那么就开始吧。</p><h1 id="实现-迈出的第一步"><a href="#实现-迈出的第一步" class="headerlink" title="实现 - 迈出的第一步"></a>实现 - 迈出的第一步</h1><p>首先你要绑定个监听器：</p><div class="hljs"><pre><code class="hljs js">addEventListener(<span class="hljs-string">"fetch"</span>, event =&gt; &#123;
+&#125;</code></pre></div>
+
+<p>按照<a href="https://developers.cloudflare.com/workers/learning/how-kv-works" target="_blank" rel="noopener">官方文档</a>的说法，实际读取与读取静态页面差不多，我写了个简单测试函数，根据时间戳判断，单次读取只需要不超过2ms。</p>
+<p>并且worker有非常赞的fetch函数，无痛自定义header，拉取后端无压力。</p>
+<p>好，那么就开始吧。</p>
+<h1 id="实现-迈出的第一步"><a href="#实现-迈出的第一步" class="headerlink" title="实现 - 迈出的第一步"></a>实现 - 迈出的第一步</h1><p>首先你要绑定个监听器：</p>
+<div class="hljs"><pre><code class="hljs js">addEventListener(<span class="hljs-string">"fetch"</span>, event =&gt; &#123;
   event.respondWith(handleRequest(event.request))
-&#125;)</code></pre></div><p>由于<code>fetch</code>只能在<code>async</code>函数执行,于是我们写个<code>async</code>:</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRequest</span>(<span class="hljs-params">request</span>) </span>&#123;
+&#125;)</code></pre></div>
+
+<p>由于<code>fetch</code>只能在<code>async</code>函数执行,于是我们写个<code>async</code>:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRequest</span>(<span class="hljs-params">request</span>) </span>&#123;
 <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response()
-&#125;</code></pre></div><p>可以，这样我们就简单实现了一个无服务器函数<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5c53d1904dcb2.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>接下来的函数就应该在async这个主函数写。</p><p>然后是最基本的fetch，fetch应该说是worker里最特色的函数了。</p><p>如果直接返回，那么就不用加<code>await</code>,因为在<code>async</code>里面返回了一个<code>await</code></p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">return</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)</code></pre></div><p>如果要拉回来做运算，那么要加<code>await</code>，毕竟<code>fetch</code>返回的是<code>promise</code></p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)</code></pre></div><p>CFWorker能用<code>.text()</code>函数和<code>.json()</code>函数处理返回的内容：</p><blockquote><p>这地方我偷懒了,本来应该用<code>then</code>来获取<code>promise</code>的值,但是个人习惯了<code>await</code>嵌套写法,所以这地方写的其实不标准,轻喷<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/285.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p></blockquote><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> first_name = <span class="hljs-keyword">await</span> <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)).text())[<span class="hljs-number">0</span>][<span class="hljs-string">"name"</span>]
-<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div><p>这个其实等价下面的：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> first_name = (<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)).json())[<span class="hljs-number">0</span>][<span class="hljs-string">"name"</span>]
-<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div><p>当然显然是下面的好写,但我习惯测试方便都用上面的<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/stick_18.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>我们也可以通过自定义方式来自定义header完成鉴权和UA设置:</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> getinit = &#123;
+&#125;</code></pre></div>
+
+<p>可以，这样我们就简单实现了一个无服务器函数<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5c53d1904dcb2.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>接下来的函数就应该在async这个主函数写。</p>
+<p>然后是最基本的fetch，fetch应该说是worker里最特色的函数了。</p>
+<p>如果直接返回，那么就不用加<code>await</code>,因为在<code>async</code>里面返回了一个<code>await</code></p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">return</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)</code></pre></div>
+
+<p>如果要拉回来做运算，那么要加<code>await</code>，毕竟<code>fetch</code>返回的是<code>promise</code></p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)</code></pre></div>
+
+<p>CFWorker能用<code>.text()</code>函数和<code>.json()</code>函数处理返回的内容：</p>
+<blockquote>
+<p>这地方我偷懒了,本来应该用<code>then</code>来获取<code>promise</code>的值,但是个人习惯了<code>await</code>嵌套写法,所以这地方写的其实不标准,轻喷<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/285.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> first_name = <span class="hljs-keyword">await</span> <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)).text())[<span class="hljs-number">0</span>][<span class="hljs-string">"name"</span>]
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div>
+
+<p>这个其实等价下面的：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> first_name = (<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>)).json())[<span class="hljs-number">0</span>][<span class="hljs-string">"name"</span>]
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div>
+
+<p>当然显然是下面的好写,但我习惯测试方便都用上面的<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/stick_18.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>我们也可以通过自定义方式来自定义header完成鉴权和UA设置:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> getinit = &#123;
           <span class="hljs-attr">method</span>: <span class="hljs-string">"GET"</span>,
           <span class="hljs-attr">headers</span>: &#123;
             <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/json;charset=UTF-8"</span>,
@@ -64,13 +524,40 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
           &#125;,
 &#125;
 <span class="hljs-keyword">const</span> first_name = <span class="hljs-keyword">await</span> <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'https://api.github.com/repos/ChenYFan/blog/contents/source/_posts'</span>,getinit)).text())[<span class="hljs-number">0</span>][<span class="hljs-string">"name"</span>]
-<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div><p>那么接下来就很简单了。</p><h1 id="实现-面板的设计"><a href="#实现-面板的设计" class="headerlink" title="实现 - 面板的设计"></a>实现 - 面板的设计</h1><p>Worker支持返回数据的设置，我们可以通过修改<code>content-type</code>达到返回页面的效果,并且可以通过JS奇妙的语法完成PHP难以做到的事情。</p><p>首先先定义一个网页：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> re_html =  <span class="hljs-string">`&lt;h1&gt;Hello,World!&lt;/h1&gt;`</span></code></pre></div><p>然后要返回吧：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(re_html, &#123;
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(first_name)</code></pre></div>
+
+<p>那么接下来就很简单了。</p>
+<h1 id="实现-面板的设计"><a href="#实现-面板的设计" class="headerlink" title="实现 - 面板的设计"></a>实现 - 面板的设计</h1><p>Worker支持返回数据的设置，我们可以通过修改<code>content-type</code>达到返回页面的效果,并且可以通过JS奇妙的语法完成PHP难以做到的事情。</p>
+<p>首先先定义一个网页：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> re_html =  <span class="hljs-string">`&lt;h1&gt;Hello,World!&lt;/h1&gt;`</span></code></pre></div>
+
+<p>然后要返回吧：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(re_html, &#123;
     <span class="hljs-attr">headers</span>: &#123; <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"text/html;charset=UTF-8"</span> &#125;
-&#125;)</code></pre></div><p>这个地方<code>content-type</code>务必要设置,不然默认返回是文本形式</p><p>然后打开预览就能看到了:</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612929973000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>然后关于拼接,其实完全不必用<code>+</code>连接，可以用``包裹,然后用<code>${变量名}</code>来代替</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> inner = <span class="hljs-string">`Hello,World!`</span>
+&#125;)</code></pre></div>
+
+<p>这个地方<code>content-type</code>务必要设置,不然默认返回是文本形式</p>
+<p>然后打开预览就能看到了:</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612929973000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>然后关于拼接,其实完全不必用<code>+</code>连接，可以用``包裹,然后用<code>${变量名}</code>来代替</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> inner = <span class="hljs-string">`Hello,World!`</span>
 <span class="hljs-keyword">const</span> re_html =  <span class="hljs-string">`&lt;h1&gt;<span class="hljs-subst">$&#123;inner&#125;</span>&lt;/h1&gt;`</span>
 <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(re_html, &#123;
     <span class="hljs-attr">headers</span>: &#123; <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"text/html;charset=UTF-8"</span> &#125;
-&#125;)</code></pre></div><p><span class="heimu">这种写法帮我省下精力重看代码</span></p><p>面板怎么说,其实直接用<a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" rel="noopener">material-dashboard</a>套的</p><h1 id="实现-后端API的设计"><a href="#实现-后端API的设计" class="headerlink" title="实现 - 后端API的设计"></a>实现 - 后端API的设计</h1><p>后端API本质上是一个中继,简单如我<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/7EYyq1TcBKa3eQ2.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>废话不说直接上代码。</p><h2 id="问题解决-存储问题"><a href="#问题解决-存储问题" class="headerlink" title="问题解决 - 存储问题"></a>问题解决 - 存储问题</h2><p>KV是能存东西.配置是符合键的形式的,一个键名配对一个键值,这和KV的存储方式相同.但是这么多配置项,如果一个一个读过去,KV迟早比worker早读爆.缓存没用,还得赔一个清除缓存的APIKey,太亏了.</p><p>所以HPP将所有配置<code>JSON.stringify</code>后存储到了一个键名为<code>hpp_config</code>的键.</p><p>那关于账户密码,难道不能存KV吗?</p><p>能,当然能,但是问题是如果在登录页面还要读KV,那被打了怎么办<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/67.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>况且,在粘贴代码完后到设置界面,中间有一段时间,万一有个人搞你咋办呢.<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/5.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>所以HPP学习Twikoo进行强鉴权,在保证不被盗取的情况下还能减少KV读取量,岂不美哉<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/stick_64.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><h2 id="问题解决-多层文件夹"><a href="#问题解决-多层文件夹" class="headerlink" title="问题解决 - 多层文件夹"></a>问题解决 - 多层文件夹</h2><p>默认情况下，访问无文件名的<code>RESTURL</code>会列出当前文件夹下的所有文件,但列不出文件夹下的文件.我们先看获取示例，以<code>https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts?ref=master</code>为例子:</p><div class="hljs"><pre><code class="hljs json">[
+&#125;)</code></pre></div>
+
+<p><span class="heimu">这种写法帮我省下精力重看代码</span></p>
+<p>面板怎么说,其实直接用<a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" rel="noopener">material-dashboard</a>套的</p>
+<h1 id="实现-后端API的设计"><a href="#实现-后端API的设计" class="headerlink" title="实现 - 后端API的设计"></a>实现 - 后端API的设计</h1><p>后端API本质上是一个中继,简单如我<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/7EYyq1TcBKa3eQ2.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>废话不说直接上代码。</p>
+<h2 id="问题解决-存储问题"><a href="#问题解决-存储问题" class="headerlink" title="问题解决 - 存储问题"></a>问题解决 - 存储问题</h2><p>KV是能存东西.配置是符合键的形式的,一个键名配对一个键值,这和KV的存储方式相同.但是这么多配置项,如果一个一个读过去,KV迟早比worker早读爆.缓存没用,还得赔一个清除缓存的APIKey,太亏了.</p>
+<p>所以HPP将所有配置<code>JSON.stringify</code>后存储到了一个键名为<code>hpp_config</code>的键.</p>
+<p>那关于账户密码,难道不能存KV吗?</p>
+<p>能,当然能,但是问题是如果在登录页面还要读KV,那被打了怎么办<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/67.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>况且,在粘贴代码完后到设置界面,中间有一段时间,万一有个人搞你咋办呢.<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/5.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>所以HPP学习Twikoo进行强鉴权,在保证不被盗取的情况下还能减少KV读取量,岂不美哉<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/stick_64.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h2 id="问题解决-多层文件夹"><a href="#问题解决-多层文件夹" class="headerlink" title="问题解决 - 多层文件夹"></a>问题解决 - 多层文件夹</h2><p>默认情况下，访问无文件名的<code>RESTURL</code>会列出当前文件夹下的所有文件,但列不出文件夹下的文件.我们先看获取示例，以<code>https://api.github.com/repos/ChenYFan/blog/contents/source/_drafts?ref=master</code>为例子:</p>
+<div class="hljs"><pre><code class="hljs json">[
     &#123;
         <span class="hljs-attr">"name"</span>: <span class="hljs-string">"TEST.md"</span>,
         <span class="hljs-attr">"path"</span>: <span class="hljs-string">"source/_drafts/TEST.md"</span>,
@@ -103,7 +590,13 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
             <span class="hljs-attr">"html"</span>: <span class="hljs-string">"https://github.com/ChenYFan/blog/tree/master/source/_drafts/TEST"</span>
         &#125;
     &#125;
-]</code></pre></div><p>文件夹是<code>dir</code>,文件是<code>file</code>,甚至可以通过<code>self</code>往下找,连路径都不用拼接了,那事情就好办了,写个搜索递归吧.</p><blockquote><p>这个地方在群里我一直和<a href="https://noionion.top/" target="_blank" rel="noopener">2X</a>吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫<code>fetch_bfs</code>的函数<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p></blockquote><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch_bfs</span>(<span class="hljs-params">arr, url, getinit</span>) </span>&#123; <span class="hljs-comment">//开始深搜</span>
+]</code></pre></div>
+
+<p>文件夹是<code>dir</code>,文件是<code>file</code>,甚至可以通过<code>self</code>往下找,连路径都不用拼接了,那事情就好办了,写个搜索递归吧.</p>
+<blockquote>
+<p>这个地方在群里我一直和<a href="https://noionion.top/" target="_blank" rel="noopener">2X</a>吵架,因为我觉得此处用广搜比较好,然后我一直想写BFS,结果写着写着就成DFS了,你甚至现在还能看到一个叫<code>fetch_bfs</code>的函数<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/BnTMX35EPxleVmA.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch_bfs</span>(<span class="hljs-params">arr, url, getinit</span>) </span>&#123; <span class="hljs-comment">//开始深搜</span>
           <span class="hljs-keyword">try</span> &#123;
             <span class="hljs-keyword">const</span> hpp_getlist = <span class="hljs-keyword">await</span> <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(url, hpp_githubgetdocinit)).text()) <span class="hljs-comment">//拉取github列表</span>
             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; getJsonLength(hpp_getlist); i++) &#123; <span class="hljs-comment">//循环查找</span>
@@ -115,7 +608,12 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
             &#125;
             <span class="hljs-keyword">return</span> arr;
           &#125; <span class="hljs-keyword">catch</span> (e) &#123; <span class="hljs-keyword">return</span> &#123;&#125; &#125;
-&#125;</code></pre></div><p>代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span></p><p>用<code>try</code>的原因是因为莫些人没有草稿，不用try的话这个函数就会炸，没草稿返回空数组。</p><p>然后就试试呗，以获取草稿列表为例：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (path == <span class="hljs-string">"/hpp/admin/api/get_draftlist"</span>) &#123; <span class="hljs-comment">//判断路径</span>
+&#125;</code></pre></div>
+
+<p>代码本意很简单,传入一个空数组,抓取列表,循环递归,如果不是文件夹就扔到数组,是的话就向下搜索<span class="heimu">其实就是DFS嘛</span></p>
+<p>用<code>try</code>的原因是因为莫些人没有草稿，不用try的话这个函数就会炸，没草稿返回空数组。</p>
+<p>然后就试试呗，以获取草稿列表为例：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (path == <span class="hljs-string">"/hpp/admin/api/get_draftlist"</span>) &#123; <span class="hljs-comment">//判断路径</span>
           <span class="hljs-keyword">let</span> hpp_doc_draft_list_index = <span class="hljs-keyword">await</span> KVNAME.get(<span class="hljs-string">"hpp_doc_draft_list_index"</span>) <span class="hljs-comment">//获取索引</span>
           <span class="hljs-keyword">if</span> (hpp_doc_draft_list_index === <span class="hljs-literal">null</span>) &#123;<span class="hljs-comment">//如果没有索引</span>
             <span class="hljs-keyword">const</span> filepath = githubdocdraftpath.substr(<span class="hljs-number">0</span>, (githubdocdraftpath).length - <span class="hljs-number">1</span>) <span class="hljs-comment">//分离路径</span>
@@ -129,20 +627,58 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
               <span class="hljs-string">"Access-Control-Allow-Origin"</span>: hpp_cors
             &#125;
           &#125;)
-&#125;</code></pre></div><p>我们来做个小实验：</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612936420000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>结构如下：</p><div class="hljs"><pre><code class="hljs undefined">-<span class="ruby">source/_drafts
+&#125;</code></pre></div>
+
+<p>我们来做个小实验：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612936420000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>结构如下：</p>
+<div class="hljs"><pre><code class="hljs undefined">-<span class="ruby">source/_drafts
 </span>  ~TEST.md
   -<span class="ruby">TEST
 </span>    ~TEST.md
     -<span class="ruby">TEST
 </span>      ~TEST.md
       -<span class="ruby">TEST
-</span>        ~TEST.md</code></pre></div><p>那么CloudFlareWorker会这样搜索:</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612937339000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><del>其实我本来想这样的</del></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612937329000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>【考虑到大多数人都没有建立文件夹的习惯，本来bfs的效率会更高的(´இ皿இ｀)】</p><p>【但其实两者子请求数目是一样的】</p><p>我们去CloudFlare发一个请求啊，结果非常Amazing啊：</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612938453000.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>dfs完美解决嵌套问题。</p><h2 id="问题解决-缓存问题"><a href="#问题解决-缓存问题" class="headerlink" title="问题解决 - 缓存问题"></a>问题解决 - 缓存问题</h2><h3 id="手机端POST之谜"><a href="#手机端POST之谜" class="headerlink" title="手机端POST之谜"></a>手机端POST之谜</h3><p>之前开发网页的时候，我总是希望缓存越长越好，因为有些资源从来没有变过却要重复使用。于是，我给博客加上了<code>ServiceWorker</code><span class="heimu"><del>这就是我咕咕咕的理由</del></span></p><p>但hpp不能进行太强的缓存,否则可能造成获取文件不够及时.</p><p>于是，在文章获取这一块，我故意将<code>get</code>写成<code>post</code>,发送空值,电脑端乖乖的每次都把请求发出去,毫无异常.</p><p>然后手机端炸了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5c53cee8422fc.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>万万没想到,safari会将post请求给缓存了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece29a8e0.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>缓存也就罢了,结果ajax连<code>onreadystatechange</code>都缓存了不返回,然后接下去的函数全炸了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2a019f.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>没办法,只好在post里面加时间戳</p><div class="hljs"><pre><code class="hljs js">ajax.send(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime());</code></pre></div><h3 id="文章索引问题"><a href="#文章索引问题" class="headerlink" title="文章索引问题"></a>文章索引问题</h3><p>然后是索引问题【本质上是把结果缓存在KV里】，因为在文件夹众多的情况下dfs会将每个文件夹找过去，先不说时间这个问题（毕竟一次子请求大约在60ms-150ms徘徊，文件夹多的情况下也尚能忍受），主要是文件夹一多，子请求跟着多起来了，worker子请求超时是30s（10ms是运算时间，我寻思只要没有上亿篇文章，加个数组应该不会炸10ms时间），并且子请求算总请求，要是这么搞一次，worker怕是不够用了，所以得加个KV强缓存：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_doc_list_index"</span>, hpp_doc_list_index)
-<span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_doc_draft_list_index"</span>, hpp_doc_draft_list_index)</code></pre></div><p>在发布、删除等<strong>可能</strong>会导致缓存失效的情况下清除KV缓存：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.del(<span class="hljs-string">"hpp_doc_list_index"</span>)
-<span class="hljs-keyword">await</span> KVNAME.del(<span class="hljs-string">"hpp_doc_draft_list_index"</span>)</code></pre></div><h2 id="功能实现-自动更新"><a href="#功能实现-自动更新" class="headerlink" title="功能实现 - 自动更新"></a>功能实现 - 自动更新</h2><p>这怕是所有Worker程序里面第一个实现自动更新的程序了<del>【所以我最近发包很快啊】</del><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612940443000.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>其实刚开始没想到这么多，后来<a href="https://github.com/MCSeekeri" target="_blank" rel="noopener">@MCSeekeri </a>开了<a href="https://github.com/HexoPlusPlus/HexoPlusPlus/issues/21" target="_blank" rel="noopener">#21</a>,其中提到了这一点,然后我就开了<a href="https://github.com/HexoPlusPlus/HexoPlusPlus/issues/23" target="_blank" rel="noopener">#23</a>。</p><p>查一遍<a href="https://api.cloudflare.com/#worker-script-upload-worker" target="_blank" rel="noopener">CloudFlareAPI文档</a>，我们就会发现这做起来简直轻而易举：</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612941346000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><div class="hljs"><pre><code class="hljs curl">curl -X PUT &quot;https://api.cloudflare.com/client/v4/accounts/9a7806061c88ada191ed06f989cc3dac/workers/scripts/this-is_my_script-01&quot; \
+</span>        ~TEST.md</code></pre></div>
+
+<p>那么CloudFlareWorker会这样搜索:</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612937339000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><del>其实我本来想这样的</del></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612937329000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>【考虑到大多数人都没有建立文件夹的习惯，本来bfs的效率会更高的(´இ皿இ｀)】</p>
+<p>【但其实两者子请求数目是一样的】</p>
+<p>我们去CloudFlare发一个请求啊，结果非常Amazing啊：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612938453000.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>dfs完美解决嵌套问题。</p>
+<h2 id="问题解决-缓存问题"><a href="#问题解决-缓存问题" class="headerlink" title="问题解决 - 缓存问题"></a>问题解决 - 缓存问题</h2><h3 id="手机端POST之谜"><a href="#手机端POST之谜" class="headerlink" title="手机端POST之谜"></a>手机端POST之谜</h3><p>之前开发网页的时候，我总是希望缓存越长越好，因为有些资源从来没有变过却要重复使用。于是，我给博客加上了<code>ServiceWorker</code><span class="heimu"><del>这就是我咕咕咕的理由</del></span></p>
+<p>但hpp不能进行太强的缓存,否则可能造成获取文件不够及时.</p>
+<p>于是，在文章获取这一块，我故意将<code>get</code>写成<code>post</code>,发送空值,电脑端乖乖的每次都把请求发出去,毫无异常.</p>
+<p>然后手机端炸了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5c53cee8422fc.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>万万没想到,safari会将post请求给缓存了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece29a8e0.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>缓存也就罢了,结果ajax连<code>onreadystatechange</code>都缓存了不返回,然后接下去的函数全炸了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece2a019f.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>没办法,只好在post里面加时间戳</p>
+<div class="hljs"><pre><code class="hljs js">ajax.send(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime());</code></pre></div>
+
+<h3 id="文章索引问题"><a href="#文章索引问题" class="headerlink" title="文章索引问题"></a>文章索引问题</h3><p>然后是索引问题【本质上是把结果缓存在KV里】，因为在文件夹众多的情况下dfs会将每个文件夹找过去，先不说时间这个问题（毕竟一次子请求大约在60ms-150ms徘徊，文件夹多的情况下也尚能忍受），主要是文件夹一多，子请求跟着多起来了，worker子请求超时是30s（10ms是运算时间，我寻思只要没有上亿篇文章，加个数组应该不会炸10ms时间），并且子请求算总请求，要是这么搞一次，worker怕是不够用了，所以得加个KV强缓存：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_doc_list_index"</span>, hpp_doc_list_index)
+<span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_doc_draft_list_index"</span>, hpp_doc_draft_list_index)</code></pre></div>
+
+<p>在发布、删除等<strong>可能</strong>会导致缓存失效的情况下清除KV缓存：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.del(<span class="hljs-string">"hpp_doc_list_index"</span>)
+<span class="hljs-keyword">await</span> KVNAME.del(<span class="hljs-string">"hpp_doc_draft_list_index"</span>)</code></pre></div>
+
+<h2 id="功能实现-自动更新"><a href="#功能实现-自动更新" class="headerlink" title="功能实现 - 自动更新"></a>功能实现 - 自动更新</h2><p>这怕是所有Worker程序里面第一个实现自动更新的程序了<del>【所以我最近发包很快啊】</del><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612940443000.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>其实刚开始没想到这么多，后来<a href="https://github.com/MCSeekeri" target="_blank" rel="noopener">@MCSeekeri </a>开了<a href="https://github.com/HexoPlusPlus/HexoPlusPlus/issues/21" target="_blank" rel="noopener">#21</a>,其中提到了这一点,然后我就开了<a href="https://github.com/HexoPlusPlus/HexoPlusPlus/issues/23" target="_blank" rel="noopener">#23</a>。</p>
+<p>查一遍<a href="https://api.cloudflare.com/#worker-script-upload-worker" target="_blank" rel="noopener">CloudFlareAPI文档</a>，我们就会发现这做起来简直轻而易举：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612941346000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<div class="hljs"><pre><code class="hljs curl">curl -X PUT &quot;https://api.cloudflare.com/client/v4/accounts/9a7806061c88ada191ed06f989cc3dac/workers/scripts/this-is_my_script-01&quot; \
      -H &quot;X-Auth-Email: user@example.com&quot; \
      -H &quot;X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41&quot; \
      -H &quot;Content-Type: application/javascript&quot; \
---data &quot;addEventListener(&apos;fetch&apos;, event =&gt; &#123; event.respondWith(fetch(event.request)) &#125;)&quot;</code></pre></div><p>curl,我寻思fetch也能做到.</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> update_script = <span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">`https://raw.githubusercontent.com/HexoPlusPlus/HexoPlusPlus/main/index.js`</span>)).text() <span class="hljs-comment">//获取更新脚本</span>
+--data &quot;addEventListener(&apos;fetch&apos;, event =&gt; &#123; event.respondWith(fetch(event.request)) &#125;)&quot;</code></pre></div>
+
+<p>curl,我寻思fetch也能做到.</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> update_script = <span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">`https://raw.githubusercontent.com/HexoPlusPlus/HexoPlusPlus/main/index.js`</span>)).text() <span class="hljs-comment">//获取更新脚本</span>
 <span class="hljs-keyword">const</span> up_init = &#123;
             <span class="hljs-attr">body</span>: update_script,<span class="hljs-comment">//更新脚本内容</span>
             <span class="hljs-attr">method</span>: <span class="hljs-string">"PUT"</span>,<span class="hljs-comment">//method是put</span>
@@ -153,9 +689,40 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
             &#125;
 &#125;
           <span class="hljs-keyword">const</span> update_resul = <span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(<span class="hljs-string">`https://api.cloudflare.com/client/v4/accounts/<span class="hljs-subst">$&#123;hpp_account_identifier&#125;</span>/workers/scripts/<span class="hljs-subst">$&#123;hpp_script_name&#125;</span>`</span>, up_init)).text()<span class="hljs-comment">//拼接workerid,请求url,上传</span>
-          <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-built_in">JSON</span>.parse(update_resul)[<span class="hljs-string">"success"</span>])<span class="hljs-comment">//查询更新状态</span></code></pre></div><p>OK那没问题了,手动更新完成.</p><p>那自动更新呢?</p><p>目前自动更新理论上可以实现,使用CronJob每天定时执行函数.<br>但我懒<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e8a408253.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>其实你也可以用其它什么能定时访问的带上cookie访问<code>/hpp/admin/api/update</code>就行<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece29a8e0.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><h2 id="功能实现-文章管理-amp-草稿"><a href="#功能实现-文章管理-amp-草稿" class="headerlink" title="功能实现 - 文章管理&amp;草稿"></a>功能实现 - 文章管理&amp;草稿</h2><p>其实就是上传文件<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/92.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>当然因为是hexo，本来就有<code>/source/_posts</code>和<code>/source/_drafts</code>两个草稿分区,所以在<code>1.1.0</code>版本,将<code>docpath</code>改为了<code>docroot</code>,通过定位hexo根目录来实现全站自适应管理.</p><h2 id="功能实现-图床"><a href="#功能实现-图床" class="headerlink" title="功能实现 - 图床"></a>功能实现 - 图床</h2><p>我知道有很多人还是困扰于图床这个问题,PicGo虽然能实现上传,但是配置一大堆,麻烦,并且配置不能随意迁移;PicX也使用Github+JSD做图床,但是没有中继速度慢,国内难以上传.</p><p>其实还是上传文件<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/162.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>但是我们必须知道,CFWorker单次执行最多10ms,正常图片三四百KB,在worker里base64,这能不超时我把CF吃了.</p><p>没办法,我们只能在前端进行base64,然后将编码后的值直接上传,用Worker中继.</p><h2 id="功能实现-说说"><a href="#功能实现-说说" class="headerlink" title="功能实现 - 说说"></a>功能实现 - 说说</h2><p>这个最早受<a href="https://artitalk.js.org/" target="_blank" rel="noopener">Artitalk</a>影响，在artitalk官方群里<del>潜伏了</del>一年，我明确知道说说这一块的用户需求是多么大，并且大多数都是小白，不想用太多配置。</p><p>于是，HPP_TALK诞生了。诞生的初衷就是简化发布和配置流程，在1.1.2版本版本中自带了一个预览页面，实现了无域名也能使用说说。</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945005000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;说说发布页面&#39;"></p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945225000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;用户查看界面&#39;"></p><p>甚至支持自定义主题：</p><p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945296000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;由2X开发的说说主题&#39;"></p><p>HPPTALK配置也简单，后端配置可以直接缺省发布，而前段也只要传递4个变量。</p><p>【但是我但是傻乎乎用了cookie记录，下次绝壁用LocalStr】</p><h2 id="功能实现-TwikooPlus"><a href="#功能实现-TwikooPlus" class="headerlink" title="功能实现 - TwikooPlus"></a>功能实现 - TwikooPlus</h2><blockquote><p>其实这个东西写的很粗糙,大家就看看行了哈</p></blockquote><p>Twikoo首次匿名登录实在把我看傻了,6个请求,放国外不得炸掉.</p><p>然后就看,实际上只有前面几个有效的,后面其实是获取配置.</p><p>首先规定一下<code>RESTURL</code>=<code>https://tcb-api.tencentcloudapi.com/web?env=${ENVID}</code></p><p>三步走:</p><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-number">1.</span>空手拉refresh_token
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-built_in">JSON</span>.parse(update_resul)[<span class="hljs-string">"success"</span>])<span class="hljs-comment">//查询更新状态</span></code></pre></div>
+
+<p>OK那没问题了,手动更新完成.</p>
+<p>那自动更新呢?</p>
+<p>目前自动更新理论上可以实现,使用CronJob每天定时执行函数.<br>但我懒<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896e8a408253.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>其实你也可以用其它什么能定时访问的带上cookie访问<code>/hpp/admin/api/update</code>就行<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ece29a8e0.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h2 id="功能实现-文章管理-amp-草稿"><a href="#功能实现-文章管理-amp-草稿" class="headerlink" title="功能实现 - 文章管理&amp;草稿"></a>功能实现 - 文章管理&amp;草稿</h2><p>其实就是上传文件<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/92.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>当然因为是hexo，本来就有<code>/source/_posts</code>和<code>/source/_drafts</code>两个草稿分区,所以在<code>1.1.0</code>版本,将<code>docpath</code>改为了<code>docroot</code>,通过定位hexo根目录来实现全站自适应管理.</p>
+<h2 id="功能实现-图床"><a href="#功能实现-图床" class="headerlink" title="功能实现 - 图床"></a>功能实现 - 图床</h2><p>我知道有很多人还是困扰于图床这个问题,PicGo虽然能实现上传,但是配置一大堆,麻烦,并且配置不能随意迁移;PicX也使用Github+JSD做图床,但是没有中继速度慢,国内难以上传.</p>
+<p>其实还是上传文件<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/162.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>但是我们必须知道,CFWorker单次执行最多10ms,正常图片三四百KB,在worker里base64,这能不超时我把CF吃了.</p>
+<p>没办法,我们只能在前端进行base64,然后将编码后的值直接上传,用Worker中继.</p>
+<h2 id="功能实现-说说"><a href="#功能实现-说说" class="headerlink" title="功能实现 - 说说"></a>功能实现 - 说说</h2><p>这个最早受<a href="https://artitalk.js.org/" target="_blank" rel="noopener">Artitalk</a>影响，在artitalk官方群里<del>潜伏了</del>一年，我明确知道说说这一块的用户需求是多么大，并且大多数都是小白，不想用太多配置。</p>
+<p>于是，HPP_TALK诞生了。诞生的初衷就是简化发布和配置流程，在1.1.2版本版本中自带了一个预览页面，实现了无域名也能使用说说。</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945005000.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;说说发布页面&#39;"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945225000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;用户查看界面&#39;"></p>
+<p>甚至支持自定义主题：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1612945296000.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="&#39;由2X开发的说说主题&#39;"></p>
+<p>HPPTALK配置也简单，后端配置可以直接缺省发布，而前段也只要传递4个变量。</p>
+<p>【但是我但是傻乎乎用了cookie记录，下次绝壁用LocalStr】</p>
+<h2 id="功能实现-TwikooPlus"><a href="#功能实现-TwikooPlus" class="headerlink" title="功能实现 - TwikooPlus"></a>功能实现 - TwikooPlus</h2><blockquote>
+<p>其实这个东西写的很粗糙,大家就看看行了哈</p>
+</blockquote>
+<p>Twikoo首次匿名登录实在把我看傻了,6个请求,放国外不得炸掉.</p>
+<p>然后就看,实际上只有前面几个有效的,后面其实是获取配置.</p>
+<p>首先规定一下<code>RESTURL</code>=<code>https://tcb-api.tencentcloudapi.com/web?env=${ENVID}</code></p>
+<p>三步走:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-number">1.</span>空手拉refresh_token
 <span class="hljs-number">2.</span>用refresh_token套access_token
-<span class="hljs-number">3.</span>用access_token套评论</code></pre></div><p>其中refresh_token两小时有效,access_token30天有效</p><p>那就很有意思了同学们:</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_refresh_token</span>(<span class="hljs-params"></span>) </span>&#123;
+<span class="hljs-number">3.</span>用access_token套评论</code></pre></div>
+
+<p>其中refresh_token两小时有效,access_token30天有效</p>
+<p>那就很有意思了同学们:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_refresh_token</span>(<span class="hljs-params"></span>) </span>&#123;
         <span class="hljs-comment">/*第一步获得refresh_token*/</span>
         <span class="hljs-keyword">const</span> step_1_body = &#123;
           <span class="hljs-attr">action</span>: <span class="hljs-string">"auth.signInAnonymously"</span>,
@@ -215,7 +782,671 @@ Authorization: &quot;token  $&#123;hpp_githubimagetoken&#125;&quot;</code></pre>
           &#125;
         &#125;
         <span class="hljs-keyword">return</span> (<span class="hljs-keyword">await</span> (<span class="hljs-keyword">await</span> fetch(url, step_3)).text())
-      &#125;</code></pre></div><p>这里要注意以下,套评论的时候要传递两个参数<code>path</code>和<code>before</code>,<code>path</code>是当前文章路径,<code>before</code>是上一条评论的创建时间戳<code>CreatedAt</code></p><p>然后使用的时候来一波:</p><div class="hljs"><pre><code class="hljs js">refresh_token = <span class="hljs-keyword">await</span> get_refresh_token()
+      &#125;</code></pre></div>
+
+<p>这里要注意以下,套评论的时候要传递两个参数<code>path</code>和<code>before</code>,<code>path</code>是当前文章路径,<code>before</code>是上一条评论的创建时间戳<code>CreatedAt</code></p>
+<p>然后使用的时候来一波:</p>
+<div class="hljs"><pre><code class="hljs js">refresh_token = <span class="hljs-keyword">await</span> get_refresh_token()
 access_token = <span class="hljs-keyword">await</span> get_access_token(refresh_token)
-val = <span class="hljs-keyword">await</span> get_comment(access_token, path, before)</code></pre></div><p>同时用KV缓存</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_comment_refresh_token"</span>, refresh_token)
-<span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_comment_access_token"</span>, access_token)</code></pre></div><p>OK起飞</p><h2 id="问题解决-EditorMD移动端问题"><a href="#问题解决-EditorMD移动端问题" class="headerlink" title="问题解决 - EditorMD移动端问题"></a>问题解决 - EditorMD移动端问题</h2><p>本来HPP开始写的时候就是用EditorMD的,好康,功能多.</p><p>但是很快手机端就炸出问题了:</p><p>安卓:打一个字换一行<br>苹果:打一个字复制一遍</p><p>非常有问题,原仓库有一个Close的issues说把codemirror更新到最新版本就行,但是我更新到5.x最后一个版本问题仍复发.</p><p>Github上面大多数编辑器也用的是CodeMirror.</p><p>然后找了半天实在没有解决方案，就<strong>花一个下午时间手写了一个编辑器</strong></p><p>用的是最基础的<strong>textarea</strong>，这能出兼容性问题我把<strong>Github整个吃了</strong></p><p>预览功能是靠markedjs通过调整<code>display</code>在一个<code>div</code>里面预览,在1.1.0版本支持了代码高亮.</p><p><del>话说手写一个很多功能就很好集成了诶</del></p><h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>还有很多开发细节想不起来了,先水到这里了,<span class="heimu">滚回去修bug了</span></p><p><a href="https://jq.qq.com/?_wv=1027&k=JPokmJdL" target="_blank" rel="noopener">QQ群:467731779</a></p><p>最后加一句，用HPP时CI强烈建议使用GithubAction并公开，<del>我是也不明白我Travis-CI怎么把积分耗完的</del></p><p>预计会添加的功能：</p><ul><li>Hexo、主题配置修改</li><li>输入框粘贴上传图片</li><li>友链系统</li><li>基于KV/IPFS的自动保存功能</li><li>列表分页功能</li><li>博主工具箱</li></ul></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../categories/好方法/">好方法</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../tags/Hexo/">Hexo</a> <a class="hover-with-bg" href="../tags/集成部署/">集成部署</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="363f2ff1.html"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">失败的光速叛逃！CloudFlarePage初体验</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="32883f0c.html"><span class="hidden-mobile">PanList：ServerLess百度网盘列表直链程序</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="hpp_comment"><div class="grid__item theme-1"><a href="javascript:onclock();" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">点击加载评论</a></div></div><link rel="stylesheet" href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css"><script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script><script>function onclock(){twikoo.init({envId:"blog-comment-6g821sad74db776c",el:"#hpp_comment",region:"ap-shanghai",path:"window.location.pathname"})}</script><style>.el-input-group__prepend{border:1px solid transparent!important}.el-textarea__inner{border:1px solid transparent!important}.el-input__inner{border:1px solid transparent!important}.grid__item{position:relative;display:grid;grid-template-columns:100%;grid-template-rows:100%;justify-items:center;overflow:hidden;padding:4rem 1.5rem;background:var(--color-item-bg)}.grid__item-title{font-size:.85rem;color:var(--color-item-title);align-self:flex-start;margin:0}.action{position:absolute;top:0;right:0;background:0 0;margin:2rem;color:var(--color-action);border:0;padding:0;opacity:0;pointer-events:none}.action:focus{outline:0}.particles-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;border-radius:5px;border-radius:var(--radius-button);background:var(--color-button-bg);color:var(--color-button-text);border:0;border:var(--border-button);margin:0;padding:1.5rem 3rem;padding:var(--button-padding)}.particles-button:focus{outline:0}.no-js .particles-button{grid-area:1/1/2/2}.particles{position:relative;grid-area:1/1/2/2}.particles-canvas{position:absolute;pointer-events:none;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.particles-wrapper{position:relative;display:inline-block;overflow:hidden}.theme-1{--color-action:var(--board-bg-color);--color-button-bg:var(--text-color);--color-button-text:#fff;--button-padding:1.5rem 3rem;--radius-button:5px;--border-button:0}</style><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a><br><a class="nav-link" href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"><b>此页面的JSDelivr托管版</b></a><p id="showsectime"></p><a href="/hpp/admin"><p id="bloggeractivetime"></p></a><p>当前CDN节点: <span id="cdn">【未知】</span> | 你的ip: <span id="ip">【未知】</span> | 你的所在国家/地区: <span id="loc">【未知】</span></p><p></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div><style>.live2d{position:fixed;left:-100px;bottom:-20px;width:500px!important;height:437.5px!important;z-index:998;pointer-events:none!important}</style><div id="live2d" class="live2d" style="display:none"><canvas id="live2dm" class="live2d" style="z-index:999!important"></canvas></div></div></footer><script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script><script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script><script>function loadScript(e,t){var n=document.createElement("script"),o=document.getElementsByTagName("head")[0];n.type="text/javascript",n.charset="UTF-8",n.src=e,n.addEventListener?n.addEventListener("load",function(){t()},!1):n.attachEvent&&n.attachEvent("onreadystatechange",function(){"loaded"==window.event.srcElement.readyState&&t()}),o.appendChild(n)}document.getElementById("liveswitch").addEventListener("click",function(){document.getElementById("live2d")||notyf.error("找不到模型，请使用电脑浏览"),"true"==window.localStorage.getItem("ChenBlogLive2D")?(window.localStorage.setItem("ChenBlogLive2D","false"),document.getElementById("live2d").style.display="none",notyf.success("Live2D 已关闭")):(window.localStorage.setItem("ChenBlogLive2D","true"),notyf.success("Live2D 已开启")),setTimeout(()=>{window.location.reload()},1e3)}),setTimeout(()=>{window.FPConfig={delay:0,ignoreKeywords:[],maxRPS:3,hoverDelay:50},600<document.body.clientWidth&&"false"!=window.localStorage.getItem("ChenBlogLive2D")&&loadScript("https://npm.elemecdn.com/chenyfan-os@0.0.0-r3/load.js",function(){loadModel(),document.getElementById("live2d").style.display=""})},0),document.onreadystatechange=function(){"complete"==document.readyState&&(loadScript("https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js",function(){}),loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",function(){}))}</script><script src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","HexoPlusPlus-从一个妄想到现实&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js"></script><script>var path="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var a,o=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),a="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t;a&&a(),t=e,(e=r.createElement("div")).className="heart",o.push({el:e,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(e)},function e(){for(var t=0;t<o.length;t++)o[t].alpha<=0?(r.body.removeChild(o[t].el),o.splice(t,1)):(o[t].y--,o[t].scale+=.004,o[t].alpha-=.013,o[t].el.style.cssText="left:"+o[t].x+"px;top:"+o[t].y+"px;opacity:"+o[t].alpha+";transform:scale("+o[t].scale+","+o[t].scale+") rotate(45deg);background:"+o[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>(async()=>{function o(e,o){return parseInt(Math.random()*(o-e+1)+e,10)}window.notyf=new Notyf,"serviceWorker"in navigator?window.addEventListener("load",async()=>{navigator.serviceWorker.register("/sw.js?time="+o(1,8888888888888889e4)).then(async e=>{"1"!==window.localStorage.getItem("ChenBlogHelper")&&(notyf.success("ChenBlogHelper已安装!将在一秒后尝试激活!"),window.localStorage.setItem("ChenBlogHelper",1),setTimeout(()=>{window.location.search="?time="+o(1,8888888888888889e4)},1e3))}).catch(e=>{notyf.error("ChenBlogHelper安装失败！原因:"+e)})}):notyf.error("ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker")})(),(async()=>{"setted"!=window.localStorage.getItem("ChenBlogRefferrer")&&(window.localStorage.getItem("ChenBlogRefferrer")?window.localStorage.setItem("ChenBlogRefferrer","setted"):window.localStorage.setItem("ChenBlogRefferrer",document.referrer)),document._onreadystatechange=document.onreadystatechange,document.onreadystatechange=function(){document._onreadystatechange(),"complete"==document.readyState&&setTimeout(()=>{ans={url:window.location.href,ua:navigator.userAgent,resource:[],perform:{paint:{},dom:-1},refferrer:"setted"==window.localStorage.getItem("ChenBlogRefferrer")?document.referrer:window.localStorage.getItem("ChenBlogRefferrer"),memory:{used:window.performance.memory.usedJSHeapSize,total:window.performance.memory.totalJSHeapSize,limit:window.performance.memory.jsHeapSizeLimit}};for(var e of JSON.parse(JSON.stringify(performance.getEntries())))"paint"!=e.entryType?(ans.resource.push({name:e.name,time:{connect:e.connectEnd-e.connectStart,dns:e.domainLookupEnd-e.domainLookupStart,request:e.responseEnd-e.requestStart,response:e.responseEnd-e.responseStart,domcontent:e.domContentLoadedEventEnd-e.domContentLoadedEventStart,loadevent:e.loadEventEnd-e.loadEventStart}}),e.domComplete&&e.domComplete>=ans.perform.dom&&(ans.perform.dom=e.domComplete)):ans.perform.paint[e.name]=e.startTime;document.createElement("img").src="https://chenyfan-blog-counter/upload?log="+btoa(encodeURIComponent(JSON.stringify(ans))),console.log(ans)},2e3)}})()</script></body></html>
+val = <span class="hljs-keyword">await</span> get_comment(access_token, path, before)</code></pre></div>
+
+<p>同时用KV缓存</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_comment_refresh_token"</span>, refresh_token)
+<span class="hljs-keyword">await</span> KVNAME.put(<span class="hljs-string">"hpp_comment_access_token"</span>, access_token)</code></pre></div>
+
+<p>OK起飞</p>
+<h2 id="问题解决-EditorMD移动端问题"><a href="#问题解决-EditorMD移动端问题" class="headerlink" title="问题解决 - EditorMD移动端问题"></a>问题解决 - EditorMD移动端问题</h2><p>本来HPP开始写的时候就是用EditorMD的,好康,功能多.</p>
+<p>但是很快手机端就炸出问题了:</p>
+<p>安卓:打一个字换一行<br>苹果:打一个字复制一遍</p>
+<p>非常有问题,原仓库有一个Close的issues说把codemirror更新到最新版本就行,但是我更新到5.x最后一个版本问题仍复发.</p>
+<p>Github上面大多数编辑器也用的是CodeMirror.</p>
+<p>然后找了半天实在没有解决方案，就<strong>花一个下午时间手写了一个编辑器</strong></p>
+<p>用的是最基础的<strong>textarea</strong>，这能出兼容性问题我把<strong>Github整个吃了</strong></p>
+<p>预览功能是靠markedjs通过调整<code>display</code>在一个<code>div</code>里面预览,在1.1.0版本支持了代码高亮.</p>
+<p><del>话说手写一个很多功能就很好集成了诶</del></p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>还有很多开发细节想不起来了,先水到这里了,<span class="heimu">滚回去修bug了</span></p>
+<p><a href="https://jq.qq.com/?_wv=1027&k=JPokmJdL" target="_blank" rel="noopener">QQ群:467731779</a></p>
+<p>最后加一句，用HPP时CI强烈建议使用GithubAction并公开，<del>我是也不明白我Travis-CI怎么把积分耗完的</del></p>
+<p>预计会添加的功能：</p>
+<ul>
+<li>Hexo、主题配置修改</li>
+<li>输入框粘贴上传图片</li>
+<li>友链系统</li>
+<li>基于KV/IPFS的自动保存功能</li>
+<li>列表分页功能</li>
+<li>博主工具箱</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/好方法/">好方法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="../tags/集成部署/">集成部署</a>
+                    
+                  
+                  
+                  </div>
+                  
+
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="363f2ff1.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">失败的光速叛逃！CloudFlarePage初体验</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="32883f0c.html">
+                        <span class="hidden-mobile">PanList：ServerLess百度网盘列表直链程序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                <div id="hpp_comment">
+	<div class="grid__item theme-1">
+		<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst"
+			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
+		</a>
+	</div>
+</div>
+<link rel="stylesheet"
+	href="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://unpkg.zhimg.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+
+<script>
+	function onclock() {
+		twikoo.init({
+			envId: "blog-comment-6g821sad74db776c",
+			el: '#hpp_comment',
+			region: "ap-shanghai",
+			path: 'window.location.pathname'
+		})
+	}
+</script>
+<style>
+	.el-input-group__prepend {
+		border: 1px solid transparent !important;
+	}
+
+	.el-textarea__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.grid__item {
+		position: relative;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		justify-items: center;
+		overflow: hidden;
+		padding: 4rem 1.5rem;
+		background: var(--color-item-bg);
+	}
+
+	.grid__item-title {
+		font-size: 0.85rem;
+		color: var(--color-item-title);
+		align-self: flex-start;
+		margin: 0;
+	}
+
+	.action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		margin: 2rem;
+		color: var(--color-action);
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.action:focus {
+		outline: none;
+	}
+
+	.particles-button {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: relative;
+		border-radius: 5px;
+		border-radius: var(--radius-button);
+		background: var(--color-button-bg);
+		color: var(--color-button-text);
+		border: 0;
+		border: var(--border-button);
+		margin: 0;
+		padding: 1.5rem 3rem;
+		padding: var(--button-padding);
+	}
+
+	.particles-button:focus {
+		outline: none;
+	}
+
+	.no-js .particles-button {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles-canvas {
+		position: absolute;
+		pointer-events: none;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.particles-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.theme-1 {
+		--color-action: var(--board-bg-color);
+		--color-button-bg: var(--text-color);
+		--color-button-text: #fff;
+		--button-padding: 1.5rem 3rem;
+		--radius-button: 5px;
+		--border-button: 0;
+	}
+</style>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"
+	data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://unpkg.zhimg.com/chenfyan-oss@6.0.3" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+      <div>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
+          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+        <!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+        <p id="showsectime"></p>
+        <a href="/hpp/admin">
+          <p id="bloggeractivetime"></p>
+        </a>
+        </script>
+        <p>
+          当前CDN节点: <span id="cdn">【未知】</span> |
+          你的ip: <span id="ip">【未知】</span> |
+          你的所在国家/地区: <span id="loc">【未知】 </span></p>
+
+        </p>
+      </div>
+      
+
+          <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+          
+    </div>
+    <style>
+      .live2d {
+        position: fixed;
+        left: -100px;
+        bottom: -20px;
+        width: 500px !important;
+        height: 437.5px !important;
+        z-index: 998;
+        pointer-events:none!important;
+      }
+    </style>
+
+    <div id="live2d" class="live2d" style="display: none;">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
+
+
+
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+<script src="https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://unpkg.zhimg.com/notyf@3.10.0/notyf.min.js"></script>
+<script>
+
+    //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+    function loadScript(src, callback) {
+        var script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0];
+        script.type = 'text/javascript';
+        script.charset = 'UTF-8';
+        script.src = src;
+        if (script.addEventListener) {
+            script.addEventListener('load', function () {
+                callback();
+            }, false);
+        } else if (script.attachEvent) {
+            script.attachEvent('onreadystatechange', function () {
+                var target = window.event.srcElement;
+                if (target.readyState == 'loaded') {
+                    callback();
+                }
+            });
+        }
+        head.appendChild(script);
+    }
+
+    document.getElementById('liveswitch').addEventListener('click', function () {
+        if (!document.getElementById('live2d')) {
+            notyf.error('找不到模型，请使用电脑浏览');
+        }
+        if (window.localStorage.getItem('ChenBlogLive2D') != 'false') {
+            window.localStorage.setItem('ChenBlogLive2D', 'false');
+            document.getElementById('live2d').style["display"] = "none"
+            notyf.success('Live2D 已关闭');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } else {
+            window.localStorage.setItem('ChenBlogLive2D', 'true');
+            notyf.success('Live2D 已开启');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+    });
+    setTimeout(() => {
+
+        window.FPConfig = {
+            delay: 0,    // 浏览器空闲多少秒后开始预加载
+            ignoreKeywords: [],    // 不进行预加载的链接，例 ["#", "/about"]
+            maxRPS: 3,    // 每秒最大加载数
+            hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+            // 上方数值未默认值
+        };
+        if (document.body.clientWidth > 600 && window.localStorage.getItem('ChenBlogLive2D') != 'false') {
+            loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r3/load.js', function () {
+                loadModel();
+                document.getElementById('live2d').style["display"] = ""
+            })
+
+        }
+    }, 0)
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+            loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/lazyload.min.js', function () { })
+            //loadScript('/hpp/api/getblogeractive', function () { });
+            loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function () { });
+
+        }
+    }
+</script>
+
+
+
+                            
+                                        
+
+
+                                            
+                                                
+  <script  src="https://unpkg.zhimg.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+                                                    
+  <script  src="https://unpkg.zhimg.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "HexoPlusPlus-从一个妄想到现实&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+                                                        
+
+                                                            
+  <script  src="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script>
+    var path = "https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+                                                                
+  <script  src="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+                                                                    
+
+
+
+                                                                        
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+                                                                            
+
+
+                                                                                
+
+
+
+                                                                                    
+
+
+
+
+
+                                                                                        <script>
+                                                                                                (async () => {
+                                                                                                    function ranN(minNum, maxNum) {
+                                                                                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                                                                                    }
+                                                                                                    window.notyf = new Notyf();
+                                                                                                    if ('serviceWorker' in navigator) {
+                                                                                                        window.addEventListener('load', async () => {
+                                                                                                            navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                                                                                .then(async reg => {
+
+                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
+                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
+                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 1000)
+                                                                                                                    }
+                                                                                                                }).catch(err => {
+                                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                })
+
+
+
+                                                                                                        });
+                                                                                                    } else {
+                                                                                                        notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                                                                                    }
+                                                                                                })();
+
+                                                                                            (async () => {
+                                                                                                if (window.localStorage.getItem("ChenBlogRefferrer") != 'setted') {
+                                                                                                    if (!window.localStorage.getItem("ChenBlogRefferrer")) {
+                                                                                                        window.localStorage.setItem("ChenBlogRefferrer", document.referrer)
+                                                                                                    } else {
+
+                                                                                                        window.localStorage.setItem("ChenBlogRefferrer", 'setted')
+                                                                                                    }
+                                                                                                }
+                                                                                                document._onreadystatechange = document.onreadystatechange
+                                                                                                document.onreadystatechange = function () {
+                                                                                                    document._onreadystatechange()
+                                                                                                    if (document.readyState == 'complete') {
+                                                                                                        setTimeout(() => {
+                                                                                                            ans = {
+                                                                                                                url: window.location.href,
+                                                                                                                ua: navigator.userAgent,
+                                                                                                                resource: [],
+                                                                                                                perform: {
+                                                                                                                    paint: {},
+                                                                                                                    dom: -1
+
+                                                                                                                },
+                                                                                                                refferrer: window.localStorage.getItem("ChenBlogRefferrer") == "setted" ? document.referrer : window.localStorage.getItem("ChenBlogRefferrer"),
+                                                                                                                memory: {
+                                                                                                                    used: window.performance.memory.usedJSHeapSize,
+                                                                                                                    total: window.performance.memory.totalJSHeapSize,
+                                                                                                                    limit: window.performance.memory.jsHeapSizeLimit
+                                                                                                                }
+                                                                                                            }
+                                                                                                            for (var i of JSON.parse(JSON.stringify(performance.getEntries()))) {
+                                                                                                                if (i.entryType == 'paint') {
+                                                                                                                    ans.perform.paint[i.name] = i.startTime
+                                                                                                                    continue;
+                                                                                                                }
+                                                                                                                ans.resource.push({
+                                                                                                                    name: i.name,
+                                                                                                                    time: {
+                                                                                                                        connect: i.connectEnd - i.connectStart,
+                                                                                                                        dns: i.domainLookupEnd - i.domainLookupStart,
+                                                                                                                        request: i.responseEnd - i.requestStart,
+                                                                                                                        response: i.responseEnd - i.responseStart,
+                                                                                                                        domcontent: i.domContentLoadedEventEnd - i.domContentLoadedEventStart,
+                                                                                                                        loadevent: i.loadEventEnd - i.loadEventStart
+                                                                                                                    }
+                                                                                                                })
+                                                                                                                if (!!i.domComplete && i.domComplete >= ans.perform.dom) {
+                                                                                                                    ans.perform.dom = i.domComplete
+                                                                                                                }
+
+
+                                                                                                            }
+                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
+                                                                                                            console.log(ans)
+                                                                                                        }, 2000);
+                                                                                                    }
+                                                                                                }
+
+                                                                                            })()
+                                                                                        </script>
+
+
+
+
+</body>
+</html>
