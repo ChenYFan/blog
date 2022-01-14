@@ -1,10 +1,11 @@
 const CACHE_NAME = 'ChenBlogHelperCache';
 let cachelist = [];
 self.db = {
-    read: (key) => {
+    read: (key, config) => {
+        if (!config) { config = { type: "text" } }
         return new Promise((resolve, reject) => {
-            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (resp) {
-                resolve(resp.body)
+            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                res.text().then(text => resolve(text))
             }).catch(() => {
                 resolve(null)
             })
@@ -93,28 +94,6 @@ self.db = {
 }
 */
 
-self.addEventListener('install', async function (installEvent) {
-    self.skipWaiting();
-
-    installEvent.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(async function (cache) {
-                if (!await db.read('uuid')) {
-                    await db.write('uuid', generate_uuid())
-                }
-                return cache.addAll(cachelist);
-            })
-    );
-});
-self.addEventListener('fetch', async event => {
-    try {
-
-        event.respondWith(handle(event.request))
-    } catch (msg) {
-        event.respondWith(handleerr(event.request, msg))
-    }
-});
-
 const generate_uuid = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -139,14 +118,37 @@ self.ws_sw = (config) => {
     }
 }
 
-ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+
+self.addEventListener('install', async function (installEvent) {
+    self.skipWaiting();
+    ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+
+    wsc.onclose = () => {
+        setTimeout(() => {
+            ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+        }, 1000);
+    }
+    installEvent.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(async function (cache) {
+                if (!await db.read('uuid')) {
+                    await db.write('uuid', generate_uuid())
+                }
+                return cache.addAll(cachelist);
+            })
+    );
+});
+self.addEventListener('fetch', async event => {
+    try {
+
+        event.respondWith(handle(event.request))
+    } catch (msg) {
+        event.respondWith(handleerr(event.request, msg))
+    }
+});
 
 
-wsc.onclose = () => {
-    setTimeout(() => {
-        ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
-    }, 1000);
-}
+
 const handleerr = async (req, msg) => {
     return new Response(`<h1>ChenBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
@@ -215,6 +217,7 @@ const handle = async function (req) {
     const urlStr = req.url
     let urlObj = new URL(urlStr)
     const uuid = await db.read('uuid')
+    //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
     //setItem('origin',pathname)
