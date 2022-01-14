@@ -344,10 +344,10 @@ const lfetch = async (urls, url) => {
                             controller.abort();
                             resolve(resn)
                         } else {
-                            reject()
+                            reject(null)
                         }
                     }).catch(() => {
-                        reject()
+                        reject(null)
                     })
             }
             )
