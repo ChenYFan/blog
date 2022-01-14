@@ -157,3 +157,8 @@ self.addEventListener('install', async function (installEvent) {
 `addEventListener`这一监听器将监听`install`,也就是这一段代码只会在脚本首次安装和更新时运行.
 
 `skipWaiting`的作用是促进新版本sw跳过waiting这一阶段，直接active。
+
+> 关于SW的状态（waiting，installing，activing）将在文后详细解释。
+
+`installEvent.waitUntil`的作用是直接结束安装过程的等待，待会在后台完成开启缓存空间这一操作。
+

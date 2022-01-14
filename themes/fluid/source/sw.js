@@ -1,7 +1,27 @@
-const CACHE_NAME = 'ICDNCache';
+const CACHE_NAME = 'ChenBlogHelperCache';
 let cachelist = [];
-
-
+self.db = {
+    read: (key) => {
+        return new Promise((resolve, reject) => {
+            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (resp) {
+                resolve(resp.body)
+            }).catch(() => {
+                resolve(null)
+            })
+        })
+    },
+    write: (key, value) => {
+        return new Promise((resolve, reject) => {
+            caches.open(CACHE_NAME).then(function (cache) {
+                cache.put(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`), new Response(value));
+                resolve()
+            }).catch(() => {
+                reject()
+            })
+        })
+    }
+}
+/*
 self.db = {
     init: (dbname, Objname) => {
         return new Promise((resolve, reject) => {
@@ -71,16 +91,17 @@ self.db = {
         })
     }
 }
+*/
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
-    await db.init('ChenYFanBlog', 'UserInfo',)
-    await db.write('ChenYFanBlog', 'UserInfo', 'uuid', generate_uuid())
 
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
-            .then(function (cache) {
-                console.log('Opened cache');
+            .then(async function (cache) {
+                if (!await db.read('uuid')) {
+                    await db.write('uuid', generate_uuid())
+                }
                 return cache.addAll(cachelist);
             })
     );
@@ -158,10 +179,9 @@ let cdn = {
     }
 }
 const blog = {
-    local: false,
-    origin: [
+    local: false, origin: [
         "blog.cyfan.top",
-        "127.0.0.1:7777"
+        "127.0.0.1:8887"
     ],
     plus: [
         "blog.cyfan.top",
@@ -172,7 +192,7 @@ const blog = {
 const handle = async function (req) {
     const urlStr = req.url
     let urlObj = new URL(urlStr)
-    const uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
+    const uuid = await db.read('uuid')
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
     //setItem('origin',pathname)
@@ -188,98 +208,143 @@ const handle = async function (req) {
                 for (let k in cdn[i]) {
                     urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
                 }
-                //console.log(urls)
-                return lfetch(urls, urlStr)
+
+
+                return caches.match(req).then(function (resp) {
+                    return resp || lfetch(urls, urlStr).then(function (res) {
+                        return caches.open(CACHE_NAME).then(function (cache) {
+                            cache.put(req, res.clone());
+                            return res;
+                        });
+                    });
+                })
+
+
             }
         }
     }
     for (var i in blog.origin) {
-        if (domain == blog.origin[i].split(":")[0]) {
+        if (domain.split(":")[0] == blog.origin[i].split(":")[0]) {
             if (blog.local) { return fetch(req) }
+
             urls = []
             for (let k in blog.plus) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
-            try {
-                return lfetch(urls, urlStr)
-            } catch (e) {
-                return new Response(`<h1>ChenBlogHelper</h1></h2>404Error</h2>`, { headers: { "content-type": "text/html; charset=utf-8" } })
-            }
-        }
-    }
-    if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
-        ws_sw({
-            type: "send",
-            data: JSON.stringify({
-                type: 'info',
-                data: JSON.parse(decodeURIComponent(atob(query('log')))),
-                uuid: uuid
-            })
-        })
-        return new Response(null, { status: 204 })
-    }
-    return fetch(req)
-}
 
-const lfetch = async (urls, url) => {
-    //console.log(urls)
-    const uuid = await db.read('ChenYFanBlog', 'UserInfo', 'uuid')
-    try {
-        let controller = new AbortController();
-        const PauseProgress = async (res) => {
-            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
-        };
-        let results = Promise.any(urls.map(urls => {
+            return lfetch(urls, urlStr).then(function (res) {
+                if(!res){throw 'error'}
+                return caches.open(CACHE_NAME).then(function (cache) {
+                    cache.delete(req);
+                    cache.put(req, res.clone());
+                    return res;
+                });
+            }).catch(function (err) {
+                return caches.match(req).then(function (resp) {
+                    return resp || new Response(`<h1>ChenBlogHelper Error:${err}</h1>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+                }
+                )})/*
+            if (!n) {
 
-            return new Promise((resolve, reject) => {
-                fetch(urls, {
-                    signal: controller.signal
+                return new Response('<h1>ChenBlogHelper Error</h1>', { headers: { "content-type": "text/html; charset=utf-8" } })
+
+                return caches.match(req)
+            } else {
+                caches.open(CACHE_NAME).then(function (cache) {
+                    cache.put(req, n.clone());
                 })
-                    .then(PauseProgress)
-                    .then(res => {
-
-                        if (res.status == 200) {
-                            setTimeout(() => {
-                                ws_sw({
-                                    type: "send",
-                                    data: JSON.stringify({
-                                        type: 'fetch',
-                                        url: urls,
-                                        origin_url: url,
-                                        promise_any: true,
-                                        uuid: uuid,
-                                        request_uuid: generate_uuid()
-                                    })
-                                })
-                            }, 0);
-                            controller.abort();
-                            resolve(res)
-                        } else {
-                            reject(res)
-                        }
+                return n
+            }*/
+                /* .then(async function (resp) {
+                    const res = await lfetch(urls, urlStr);
+                    if (!res) { return resp; }
+                    const cache = await caches.open(CACHE_NAME);
+                    cache.put(req, res.clone());
+                    return res;
+                })*//*
+                return lfetch(urls, urlStr).then((resp) => {
+                    return caches.open(CACHE_NAME).then(function (cache) {
+                        cache.put(req, resp.clone());
+                        return resp;
                     })
-            }
-            )
-        }
-        ));
+                })*/
 
-        return results
+            }
     }
-    catch (err) {
-        ws_sw({
-            type: "send",
-            data: JSON.stringify({
-                type: 'fetch',
-                url: urls[0],
-                promise_any: false,
-                err: err,
-                request_uuid: generate_uuid(),
-                uuid: uuid
+        if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
+            ws_sw({
+                type: "send",
+                data: JSON.stringify({
+                    type: 'info',
+                    data: JSON.parse(decodeURIComponent(atob(query('log')))),
+                    uuid: uuid
+                })
             })
-        })
-        return fetch(urls[0])
+            return new Response(null, { status: 204 })
+        }
+        return fetch(req)
     }
-}
+
+    const lfetch = async (urls, url) => {
+        //console.log(urls)
+        const uuid = await db.read('uuid')
+        try {
+            let controller = new AbortController();
+            const PauseProgress = async (res) => {
+                return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+            };
+            let results = Promise.any(urls.map(urls => {
+                return new Promise((resolve, reject) => {
+                    fetch(urls, {
+                        signal: controller.signal
+                    })
+                        .then(PauseProgress)
+                        .then(res => {
+                            const resn = res.clone()
+                            if (resn.status == 200) {
+                                setTimeout(() => {
+                                    ws_sw({
+                                        type: "send",
+                                        data: JSON.stringify({
+                                            type: 'fetch',
+                                            url: urls,
+                                            origin_url: url,
+                                            promise_any: true,
+                                            uuid: uuid,
+                                            request_uuid: generate_uuid()
+                                        })
+                                    })
+                                }, 0);
+                                controller.abort();
+                                resolve(resn)
+                            } else {
+                                reject()
+                            }
+                        }).catch(() => {
+                            reject()
+                        })
+                }
+                )
+            }
+            )).then(res => { return res }).catch(() => { return null })
+
+            return results
+        }
+        catch (err) {
+            ws_sw({
+                type: "send",
+                data: JSON.stringify({
+                    type: 'fetch',
+                    url: urls[0],
+                    promise_any: false,
+                    err: err,
+                    request_uuid: generate_uuid(),
+                    uuid: uuid
+                })
+            })
+            return fetch(urls[0])
+        }
+    }
 
 
 /*

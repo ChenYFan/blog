@@ -29,7 +29,7 @@
         if (!document.getElementById('live2d')) {
             notyf.error('找不到模型，请使用电脑浏览');
         }
-        if (window.localStorage.getItem('ChenBlogLive2D') == 'true') {
+        if (window.localStorage.getItem('ChenBlogLive2D') != 'false') {
             window.localStorage.setItem('ChenBlogLive2D', 'false');
             document.getElementById('live2d').style["display"] = "none"
             notyf.success('Live2D 已关闭');
