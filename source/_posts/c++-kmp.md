@@ -7,8 +7,8 @@ tags:
 categories:
   - 摸鱼小记
 des: KMP算法小记
-index_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1617794851000.jpg'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1617794851000.jpg'
+index_img: 'https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1617794851000.jpg'
+banner_img: 'https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1617794851000.jpg'
 lushkey: how-to-use-euserv.md
 abbrlink: cef76c6c
 date: 2021-04-07 19:22:12

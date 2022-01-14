@@ -18,7 +18,7 @@ date: 2019-08-01 15:18:13
             </a>
 这可是百年难见的好东西啊！
 
-![旗舰店上的价格](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/ADOBE.png "旗舰店上的价格")
+![旗舰店上的价格](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/ADOBE.png "旗舰店上的价格")
 
 # 什么是Adobe CC?
 adobe是Photoshop的原始软件名称，CC即为：Creative Cloud ，也就是创意云。

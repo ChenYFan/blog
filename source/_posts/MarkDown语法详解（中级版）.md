@@ -44,17 +44,17 @@ updated: 2019-07-23 14:44:57
 
 例如:
 ```
-![刘老师](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
+![刘老师](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
 ```
 是相对地址,会得到:
-![刘老师](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
+![刘老师](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
 （这么帅气的脸只舍得打半边马赛克）
 而
 ```
-![刘老师](https://blog.cyfblog.gahttps://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
+![刘老师](https://blog.cyfblog.gahttps://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
 ```
 是绝对地址,会得到:
-![刘老师](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
+![刘老师](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容")
 
 其实结果是一样的.
 ### 另一种方法:
@@ -63,13 +63,13 @@ updated: 2019-07-23 14:44:57
 这个链接用 1 作为网址变量 [刘老师真容][1].
 然后在文档的结尾位变量赋值（网址）
 
-[1]: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg
+[1]: https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg
 ```
 会得到:
 这个链接用 1 作为网址变量 [刘老师真容][1].
 然后在文档的结尾位变量赋值（网址）
 
-[1]: https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/LLS.jpg
+[1]: https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg
 
 > **提示**
 > 如果你对大小比较在意,可以使用html语法来写.具体写法在高级玩法写出.

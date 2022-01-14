@@ -7,8 +7,8 @@ tags:
   - GooseDesktop
 categories:
   - 繡软件
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/5.png'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/5.png'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/cover/5.png'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/cover/5.png'
 abbrlink: 5b32ef71
 date: 2020-03-24 08:24:00
 ---
@@ -24,31 +24,31 @@ date: 2020-03-24 08:24:00
 
 
 - 会随机拖出一些~~治愈人心~~毒鸡汤(可以自定义)
-	![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/10.gif)
+	![](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/10.gif)
 - 会随机拖出一些你珍藏多年的图片(可以自定义)
-	![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/11.gif)
+	![](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/11.gif)
 - 关闭它拖出了来的图片会导致它追你的鼠标,追到就咬住,鼠标暂时失控.
 - 双击它也会追鼠标(可以关闭)
 - 自定义鸭子的颜色
 
 好的,也就这么多,更多的可以自己用VSCode写一些mod.
 
-试着想一下,这是不是特别适合网课的时候玩呢<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">?
+试着想一下,这是不是特别适合网课的时候玩呢<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">?
 
 # 配置
 
 下载下来,打开来应该是这样:
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-91.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-91.png)
 
 进入 `Assets`:
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-92.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-92.png)
 
-`Images\memes`,里面是鸭子随机拖出来的图片,我的版本里已经预置了10张美图+2张脖子以下不能看.jpg<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/bx.png">.注意不要在家长旁边打开!当然你也可以替换成别的,文件名随意.
+`Images\memes`,里面是鸭子随机拖出来的图片,我的版本里已经预置了10张美图+2张脖子以下不能看.jpg<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/bx.png">.注意不要在家长旁边打开!当然你也可以替换成别的,文件名随意.
 
-在 `/Assets/Text/NotepadMessages` 里是鸭子拖出来的文本,里面已经预置了1222句毒鸡汤,句句治愈人心<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png">.当然你也可以替换成别的,文件名随意.
+在 `/Assets/Text/NotepadMessages` 里是鸭子拖出来的文本,里面已经预置了1222句毒鸡汤,句句治愈人心<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png">.当然你也可以替换成别的,文件名随意.
 
 打开 `/config.ini` 应该是这样:
 

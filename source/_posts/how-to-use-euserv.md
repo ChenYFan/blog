@@ -9,9 +9,9 @@ categories:
 des: 一篇如何优化使用Euserv免费小鸡的文章
 key: 白嫖
 index_img: >-
-  https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png
+  https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png
 banner_img: >-
-  https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png
+  https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615695647000.png
 lushkey: how-to-use-euserv.md
 abbrlink: d788bdf3
 date: 2021-03-14 11:12:41
@@ -96,7 +96,7 @@ Euserv，盛名远扬【老白嫖怪了】，但是如何合理打开它，却�
 这里务必要安装Debian系统，不然后面可能会有点小问题
 
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692757000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692757000.png)
 
 可能要很长一段时间，完毕后`ServerData`记录ipv6地址和密码备用
 
@@ -121,13 +121,13 @@ Euserv，盛名远扬【老白嫖怪了】，但是如何合理打开它，却�
 
 CloudFlareSpectrum每月5GB流量,仅SSH链接完全足够
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692972000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615692972000.png)
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693007000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693007000.png)
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693064000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693064000.png)
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693130000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693130000.png)
 
 这一步之后需要注意解析你的专属ip，CloudFlareSpectrum使用的ip不是供用的。
 
@@ -153,26 +153,26 @@ UcloudGlobalSSH拥有免费版一天1GB,完全足矣
 
 新建一个隧道
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693476000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693476000.png)
 
 将之前解析的ip写入，区域建议香港，点击确定，生成专属域名
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693543000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693543000.png)
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693601000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693601000.png)
 
 然后链接，我这里用的是XShell，其实客户端自己看喜好
 
 域名就是ucloud的专属域名，**端口是UC分配给你的而不是22**，922是UC给我的端口，密码是Euserv的密码，用户直接用`root`
 
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693743000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693743000.png)
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693767000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693767000.png)
 
 然后就直接链接
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693951000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1615693951000.png)
 
 使用此方式链接方式如下
 

@@ -51,6 +51,7 @@ page.banner_mask_alpha = theme.index.banner_mask_alpha
             <% }) %>
           </div>
         <% } %>
+        <!--
         <% if(theme.index.post_meta.tag && post.tags.length > 0) { %>
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
@@ -58,7 +59,11 @@ page.banner_mask_alpha = theme.index.banner_mask_alpha
               <a href="<%= url_for(tag.path) %>"><%- tag.name %></a>
             <% }) %>
           </div>
-        <% } %>
+        <% } %>-->
+        <div class="post-meta">
+          <i class="iconfont icon-plan"></i>
+            <a onclick="cache_post('<%- post_url %>',this)">(重新)缓存此文章</a>
+        </div>
       </div>
     </article>
   </div>

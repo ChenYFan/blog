@@ -8,8 +8,8 @@ tags:
   - 奇淫巧计
 categories:
   - 撸羊毛
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png'
 abbrlink: 16d5e71e
 date: 2020-03-19 09:07:00
 ---
@@ -24,12 +24,12 @@ date: 2020-03-19 09:07:00
 就拿CFWorker来说,传统服务是这样的:
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-67.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-67.png)
 
 但是CloudFlare换了个思路,为什么所有数据都要一个中心节点算,在用户旁边的CDN不能算吗?
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-68.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-68.png)
 
 让用户身边的服务器进行相应,在用户与服务器的边缘计算,这就是边缘服务.
 
@@ -40,7 +40,7 @@ date: 2020-03-19 09:07:00
 那么,我现在告诉你我有多少流量:
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-69.png)
 
 这全都依赖这个脚本：
 
@@ -55,7 +55,7 @@ Ly8lMjBGYWtlJTIwcmVnaXN0ZXIlMjBmb3IlMjByZWZlcnJlciUyMHRvJTIwZ2V0JTIwd2FycCUyMHBs
 
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-70.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-70.png)
 
 解密脚本，前面四行是这样的：
 
@@ -87,4 +87,4 @@ const sleepSeconds = 30;
 由于脚本用的是Nodejs,而heroku也有nodejs环境,所以.嗯,对,你懂的.
 
 嗯，又是一篇优雅的撸羊毛技巧。
-<img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/186.jpg">
+<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/186.jpg">

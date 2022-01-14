@@ -23,9 +23,9 @@
 # Internal static
 #---------------------------
 
-internal_js: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/js
-internal_css: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/css
-internal_img: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/img
+internal_js: https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js
+internal_css: https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/css
+internal_img: https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/img
 
 
 #---------------------------
@@ -35,23 +35,23 @@ internal_img: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/img
 
 # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. Detail: https://hexo.fluid-dev.com/docs/en/icon/
-iconfont: https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/assets/blog/font_1736178_pjno9b9zyxs.css
+iconfont: https://npm.elemecdn.com/chenyfan-cdn@2.0.0/assets/blog/font_1736178_pjno9b9zyxs.css
 
 anchor: https://cdn.staticfile.org/anchor-js/4.2.2/
 
-github_markdown: https://unpkg.zhimg.com/github-markdown-css@4.0.0/
+github_markdown: https://npm.elemecdn.com/github-markdown-css@4.0.0/
 
-jquery: https://unpkg.zhimg.com/jquery@3.4.1/dist/
+jquery: https://npm.elemecdn.com/jquery@3.4.1/dist/
 
-bootstrap: https://unpkg.zhimg.com/bootstrap@5.1.3/dist/
+bootstrap: https://npm.elemecdn.com/bootstrap@5.1.3/dist/
 
-highlightjs: https://unpkg.zhimg.com/highlight.js@10.0.0/
+highlightjs: https://npm.elemecdn.com/highlight.js@10.0.0/
 
-tocbot: https://unpkg.zhimg.com/tocbot@4.11.1/dist/
+tocbot: https://npm.elemecdn.com/tocbot@4.11.1/dist/
 
-typed: https://unpkg.zhimg.com/typed.js@2.0.11/lib/
+typed: https://npm.elemecdn.com/typed.js@2.0.11/lib/
 
-fancybox: https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
+fancybox: https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/
 
 mathjax: https://cdn.staticfile.org/mathjax/3.0.5/es5/
 
@@ -61,7 +61,7 @@ aplayer: https://cdn.staticfile.org/aplayer/1.10.1/
 
 busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-clipboard: https://unpkg.zhimg.com/clipboard@2.0.6/dist/
+clipboard: https://npm.elemecdn.com/clipboard@2.0.6/dist/
 
 mermaid: https://cdn.staticfile.org/mermaid/8.5.0/
 
@@ -71,6 +71,6 @@ gitalk: https://cdn.staticfile.org/gitalk/1.6.2/
 
 blueimp_md5: https://cdn.staticfile.org/blueimp-md5/2.13.0/
 
-disqusjs: https://unpkg.zhimg.com/disqusjs@1.0/dist/
+disqusjs: https://npm.elemecdn.com/disqusjs@1.0/dist/
 
-hint: https://unpkg.zhimg.com/chenyfan-blog@1.0.1/public/lib/hint/
+hint: https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/lib/hint/

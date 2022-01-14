@@ -59,7 +59,7 @@ Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且�
 
 注册->绑定手机号（这一步逃不了的）->手持身份证拍照（海外版可以跳过这一步）->创建一个应用，选择开发板
 
-![创建应用](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/VALINE/CREATE.jpg "创建应用")
+![创建应用](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/VALINE/CREATE.jpg "创建应用")
 
 到此注册已完成了，确实很简单吧？
 
@@ -205,14 +205,14 @@ Valine主打无后台,虽然避免了种种麻烦的事,但为管理造成了一
 
 选择self-wake云函数，Cron表达式为`0 0/30 7-23 * * ?`，表示每天早7点到晚23点每隔30分钟访问云引擎，`ADMIN_URL`环境变量务必设置正确：
 
-![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/VALINE/SW.png "自唤醒")
+![](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/VALINE/SW.png "自唤醒")
 
 > 不建议添加该函数，这回导致你的评论系统在半夜无法正常运行。
 
 ### 邮件通知
 
 选择resend-mails云函数，Cron表达式为`0 0 8 * * ?`，表示每天早8点检查过去24小时内漏发的通知邮件并补发：
-![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/VALINE/MAIL.png "邮件通知")
+![](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/VALINE/MAIL.png "邮件通知")
 
 ~~**添加定时器后记得点击启动方可生效。**~~
 
@@ -227,7 +227,7 @@ Valine主打无后台,虽然避免了种种麻烦的事,但为管理造成了一
 
 简单地说就是赶人,拒绝自动唤醒.这可以理解,毕竟这么多人白嫖也不对;但同时还有一个问题,你一个LeanCloud商业版一天30￥，这怎么说我都觉得付不起，我认为，搞个0.1￥/日的套餐没准白嫖的人就少些呢
 
-![](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200606145909.png)
+![](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/postpic/20200606145909.png)
 
 所以,要么就不添加定时任务【此时评论依旧可以导入，只不过不会发邮件而已】，要么就外部自唤醒【可以试试GithubAction、CloudFlareWorkers、CronJob，甚至最简单的UpTimeRobot都可以】。至于我么，懒得自唤醒了，毕竟所有评论都是要我手动审核的，审核完了才发邮件，这个时候老早就唤醒了。
 
@@ -250,7 +250,7 @@ Valine主打无后台,虽然避免了种种麻烦的事,但为管理造成了一
 
 效果如下图：
 
-![mail-blue-template](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/VALINE/MB.png)
+![mail-blue-template](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/VALINE/MB.png)
 
 @通知模板中的可用变量如下（注，这是邮件模板变量，请勿与云引擎环境变量混淆）：
 
@@ -281,7 +281,7 @@ COMMENT | 新评论内容
 
 效果如图：
 
-![彩虹模板](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/VALINE/RB.png)
+![彩虹模板](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/VALINE/RB.png)
 
 
 ## 垃圾评论检测

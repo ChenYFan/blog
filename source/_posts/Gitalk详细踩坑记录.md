@@ -9,8 +9,8 @@ tags:
   - Github
 categories: 爱折腾
 copyright: true
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200701111700.JPG'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/postpic/20200701111700.JPG'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/postpic/20200701111700.JPG'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/postpic/20200701111700.JPG'
 abbrlink: 9f2a11d8
 date: 2020-02-26 09:11:17
 update: 2020-07-01 11:03:12
@@ -42,7 +42,7 @@ update: 2020-07-01 11:03:12
 
 结果今天早上登陆却发现：
 
-![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/gitalk/1.jpg "LeanCloud报错")
+![图片](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/1.jpg "LeanCloud报错")
 
 ...
 
@@ -64,8 +64,8 @@ Gitalk官方说明安装只有简单的几句话:
 
 
 ``` html
-<link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk@1/dist/gitalk.css">
-<script src="https://unpkg.zhimg.com/gitalk@1/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/gitalk@1/dist/gitalk.css">
+<script src="https://npm.elemecdn.com/gitalk@1/dist/gitalk.min.js"></script>
 <!-- or -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -253,7 +253,7 @@ Error:Validation Failed
 
 当然这个办法最终还是有效的:
 
-![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/gitalk/2.jpg "规避解码")
+![图片](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/2.jpg "规避解码")
 
 但是,但是,你还记得我有一篇文章的题目吗: `CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81`
 
@@ -272,7 +272,7 @@ Error:Validation Failed
 
 最终的lable会变成时间戳(还是毫秒级别的),时间戳就是目标时间距离1970-01-01 08:00:00(UTC +8)的毫秒
 
-![图片](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/gitalk/3.jpg "完结撒花")
+![图片](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/3.jpg "完结撒花")
 
 这个是创建时间,也就是说只要我不是故意去更改时间,是几乎不可能碰撞的<span class="heimu" title="你知道的太多了">废话,我怎么可能在同一时间内写好两篇博文</span>
 

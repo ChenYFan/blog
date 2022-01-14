@@ -284,9 +284,9 @@ post参数：file
 
 
 
-![](https://unpkg.zhimg.com/chenyfan-oss@0.0.1/1.jpg)
+![](https://npm.elemecdn.com/chenyfan-oss@0.0.1/1.jpg)
 
-![](https://unpkg.zhimg.com/chenyfan-oss@0.0.1/2.jpg)
+![](https://npm.elemecdn.com/chenyfan-oss@0.0.1/2.jpg)
 
 ![](https://code.bdstatic.com/npm/chenyfan-oss@0.0.1/3.jpg)
 
@@ -352,8 +352,8 @@ unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯
 一些推荐的npm【or unpkg镜像】：
 
 ```markdown
-【jsd出品，网宿国内节点】https://unpkg.zhimg.com/
-【知乎出品，网宿国内节点】https://unpkg.zhimg.com/
+【jsd出品，网宿国内节点】https://npm.elemecdn.com/
+【知乎出品，网宿国内节点】https://npm.elemecdn.com/
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点，回源是Unpkg，建议用这个】https://npm.elemecdn.com/
 【饿了么出品，网宿国内节点，回源是JSdelivr，貌似可以用github，但是我用的时候大多无法正常回源，只能获取几个已缓存的热门库】https://shadow.elemecdn.com/npm/

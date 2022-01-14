@@ -6,8 +6,8 @@ tags:
   - 网盘
   - PanDownload
   - 悼文
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/8.jpg'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/cover/8.jpg'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/cover/8.jpg'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/cover/8.jpg'
 categories:
   - 随心记
 abbrlink: 1b33467f
@@ -46,7 +46,7 @@ PanDownload窃取用户隐私？你可能没搞懂，PanDownload，作用就是�
 # 漏洞百出的被捕声明
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-195.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-195.png)
 
 首先，PanDownload核心就是获取个直链，你需要反编译解剖软件结构，一盯几个小时？民警办案效率挺高的嘛。
 

@@ -9,8 +9,8 @@ categories:
   - 随心记
 des: 将live2d v2升级到v3小记
 key: live2d
-index_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png'
+index_img: 'https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png'
+banner_img: 'https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618823392000.png'
 lushkey: update-live2d-to-v3-or-v4.md
 abbrlink: a12e0ab7
 date: 2021-04-19 16:26:23
@@ -25,7 +25,7 @@ date: 2021-04-19 16:26:23
 原来用的Z16【V2】模型地址：
 
 ```url
-https://unpkg.zhimg.com/chenyfan-cdn@2.0.0/js/live2d-widget-model-z16/assets/z16.model.json	
+https://npm.elemecdn.com/chenyfan-cdn@2.0.0/js/live2d-widget-model-z16/assets/z16.model.json	
 ```
 
 格式如下：
@@ -127,20 +127,20 @@ live2dcubismpixi.js
 当然这有一点点小问题，比如上面这么配置：
 
 ```js
-var baseModelPath = 'https://unpkg.zhimg.com/chenyfan-oss@2.0.2'
+var baseModelPath = 'https://npm.elemecdn.com/chenyfan-oss@2.0.2'
 var modelNames = ["lafei_4"];
 ```
 
 那么他会这么请求
 
 ```url
-https://unpkg.zhimg.com/chenyfan-oss@2.0.2/lafei_4/lafei_4.model3.json
+https://npm.elemecdn.com/chenyfan-oss@2.0.2/lafei_4/lafei_4.model3.json
 ```
 
 可是问题是我没有加一层文件夹。。。我的位置是
 
 ```url
-https://unpkg.zhimg.com/chenyfan-oss@2.0.2/lafei_4.model3.json
+https://npm.elemecdn.com/chenyfan-oss@2.0.2/lafei_4.model3.json
 ```
 
 修改loadModel 288行
@@ -204,7 +204,7 @@ function loadScript(src, callback) {
         if (document.body.clientWidth > 600) {
             document.onreadystatechange = function () {
                 if (document.readyState == "complete") {
-                    loadScript('https://unpkg.zhimg.com/chenyfan-os@0.0.0-r1/load.js',function(){
+                    loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/load.js',function(){
                         loadModel();
 
 })
@@ -233,9 +233,9 @@ loadlive2d()
 <div id="live2d" class="live2d">
     <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
 </div>
-<script src="https://unpkg.zhimg.com/chenyfan-oss@2.0.3"></script>
+<script src="https://npm.elemecdn.com/chenyfan-oss@2.0.3"></script>
 ```
 
-![](https://unpkg.zhimg.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618822975000.png)
+![](https://npm.elemecdn.com/chenyfan-cdn@2.0.0-img/hpp_upload/1618822975000.png)
 
-然后添加到Hexo就改模板吧...没什么好说的![](https://unpkg.zhimg.com/chenyfan-oss@1.1.8/5896ec2cb7f39.gif)
+然后添加到Hexo就改模板吧...没什么好说的![](https://npm.elemecdn.com/chenyfan-oss@1.1.8/5896ec2cb7f39.gif)

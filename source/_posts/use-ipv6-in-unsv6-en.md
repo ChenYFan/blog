@@ -9,8 +9,8 @@ tags:
   - 奇淫巧技
 categories:
   - 好方法
-index_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png'
-banner_img: 'https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png'
+index_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png'
+banner_img: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png'
 abbrlink: 536a1a2d
 date: 2020-04-05 15:34:00
 ---
@@ -21,7 +21,7 @@ date: 2020-04-05 15:34:00
 因为家里情况有点小特殊，有三个路由器：
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-127.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-127.png)
 
 移动路由器网关：楼下。100Mbps。通常使用LAN口直接网线插进去，一般不用无线功能，实际上老早支持ipv6了。
 
@@ -34,15 +34,15 @@ date: 2020-04-05 15:34:00
 恼火的是，由于是2008年的产物，这破玩意是不支持ipv6的。
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-128.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-128.png)
 
 问题是，没有公网ipv6就意味着我的BTSYNC将处于疯狂的中继服务器，欸，不可忍耐。
 
 以至于百度的ipv6都上不去。
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-129.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-129.png)
 
-甚至连自己ipv6站点都上不去。<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">
+甚至连自己ipv6站点都上不去。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png">
 
 这谁忍得住啊。
 
@@ -59,7 +59,7 @@ date: 2020-04-05 15:34:00
 刷固件？我不知道这种行不行的通，刚才问了一下 [winkiller](https://winkiller.jamjams.xyz) 刷硬件的大佬,回答是应该不行.
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-130.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-130.png)
 
 不行就不行吧,反正我也没指望刷硬件.
 
@@ -121,7 +121,7 @@ VPN?算了吧,配置太麻烦,还是SS好.
 运行,出现个黑色框框碍眼,还报错?
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-132.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-132.png)
 
 不要紧,因为没有指定配置,在底下新建 `Start.vbs` 里面填上：
 
@@ -144,16 +144,16 @@ ws.run "shadowsocks-libqss.exe  -c config.json -S",vbhide
 
 # 测试
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-133.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-133.png)
 
 添加浏览器代理.
 
 于是出现封面如此不可思议的景象.
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-134.png)
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-188.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-188.png)
 
 完成!
 
@@ -162,7 +162,7 @@ ws.run "shadowsocks-libqss.exe  -c config.json -S",vbhide
 实际上原理是这样的:
 
 
-![upload successful](https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-135.png)
+![upload successful](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-135.png)
 
 另外,不知道是不是楼下360杀毒的锅,http链接经常不能跳转成https,导致一些网页没办法好好运行,emmm,加个HTTPSEverywhere解决问题。
 
