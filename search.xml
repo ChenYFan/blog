@@ -40,6 +40,65 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
       </tags>
   </entry>
   <entry>
+    <title>Adobe2019年Windows全家桶</title>
+    <url>/p/e464ba8a.html</url>
+    <content><![CDATA[<h1 id="警告："><a href="#警告：" class="headerlink" title="警告："></a>警告：</h1><p>文件过大，故放在百度网盘上。<br>先贴链接：</p>
+<a class="btn" href="https://pan.baidu.com/s/1YUwQCaov_fPEmbHi7BH0lQ" target="_blank" rel="noopener">
+              >>百度网盘 提取码: rxx1
+            </a>
+这可是百年难见的好东西啊！
+
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/ADOBE.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="旗舰店上的价格" title="旗舰店上的价格"></p>
+<h1 id="什么是Adobe-CC"><a href="#什么是Adobe-CC" class="headerlink" title="什么是Adobe CC?"></a>什么是Adobe CC?</h1><p>adobe是Photoshop的原始软件名称，CC即为：Creative Cloud ，也就是创意云。<br>所有Adobe创意相关的服务和软件工具都是通过CC服务体系交付给设计师、客户和开发者。CC不仅能够提供Adobe旗下所有的创意软件，还具有一定大小的云存储服务，所有软件工具的升级、下载和安装均能够在CC内的Adobe Application manager内完成。Creative Cloud 集成了用户创作作品所需要的所有元素，能够带给用户最棒、最新的 Adobe 创意工具和服务，Creative Cloud 将用户需要的所有元素集中整合到一个平台，简化了整个创意过程，为用户的使用带来便利。</p>
+<h1 id="我有这些有什么用"><a href="#我有这些有什么用" class="headerlink" title="我有这些有什么用?"></a>我有这些有什么用?</h1><p>…….<br>此处不做回答</p>
+]]></content>
+      <categories>
+        <category>繡软件</category>
+      </categories>
+      <tags>
+        <tag>Adobe</tag>
+        <tag>全家桶</tag>
+        <tag>年度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bing美图与故事PHP正式上线</title>
+    <url>/p/20ca08a.html</url>
+    <content><![CDATA[<p>欸…自己挖的坑必须要自己填啊…</p>
+<p>最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">，一旦进行 <code>hexo server -w</code> 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了…<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
+<p>欸，最近逃课太频繁，理科全挂科了，甚至在这一次<span class="heimu" title="你知道的太多了">尖子班</span>考试里化学挂科了，不应该这样的啊，我以前化学老棒老棒的了，看起来要拾回学习的心了。所以以后站点维护估计不会那么频繁了。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这两天因为Heroku每月时间重置了，又可以接着用了，于是考虑了很长时间决定工具箱和私有云重新上线。</p>
+<p>不过工具箱因为绝大部分都是静态，没几个是动态的，所以打算采用动静态前后分离，动态资源以接口形式接到静态页面上，这样可以尽可能减少动态Heroku的运行时间，同样由于前端CloudFlare缓存大大减少调用时间。而私有云静态不可能,所以完全动态,又因为Heroku的时间计算是一个没验证账户一个月600小时,上个月不知道分成两个应用运行…所以干脆私有云和接口并在了一起，加上CloudFlare2hours的缓存，600小时一个月应该够用了…</p>
+<h2 id="关于bing接口"><a href="#关于bing接口" class="headerlink" title="关于bing接口"></a>关于bing接口</h2><p>以前我在博客上写过怎么用BingPHP,但当时是用缓存的方式写入,但换到heroku上缓存写入就不可能了,于是想想办法解决, <code>windows.location</code> 会导致强制https至bing,对于不支持http就很吃亏了,最终采用 <code>header</code> 注入方式.</p>
+<p>由于如果没有获取版权总觉得空荡荡，所以又特地写了一个获取bingcopyright的PHP，同时好好恶补了一下正则获取和解析xml。</p>
+<p>还有当时没空写UI,这次特地去淘了两个css3和html5漂亮的界面,同时解决了手机端莫名其妙的UI问题.采用js检测UA的方式实现移动端和桌面端分别跳转.</p>
+<p>这是实际使用:</p>
+<p>桌面端:</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/8.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="实际使用" title="桌面端动图"></p>
+<p>手机端:</p>
+<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/9.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" width="200%" height="200%">
+
+<p>解决手机端不兼容桌面端问题：</p>
+<p>手机横屏bug（已修复）：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-40.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>以及我的头像版权镇压，保证没有bug（不要删除ヽ（≧□≦）ノ！）</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-41.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>已开源，<a href="https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher" target="_blank" rel="noopener">https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher</a><br>不过暂时不允许转载删除版权和头像,因为修改这个花费我太多精力了,感谢您的理解!</p>
+<p>今日Bing美图：</p>
+<p><img src="https://pan.cyfan.top/api/bing/bing.php" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="Bing" title="今日Bing美图"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/213.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+]]></content>
+      <categories>
+        <category>屌代码</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>Bing</tag>
+        <tag>美图</tag>
+        <tag>版权</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AV?BV!</title>
     <url>/p/b94b19d4.html</url>
     <content><![CDATA[<h1 id><a href="#" class="headerlink" title=":("></a>:(</h1><p>Bilibili在2020/3/23公布要将av号全面换成BV号：<a href="https://www.bilibili.com/read/cv5167957" target="_blank" rel="noopener">公告地址</a></p>
@@ -189,65 +248,6 @@ print(enc(<span class="hljs-number">882584971</span>))</code></pre></div>
         <tag>Bilibili</tag>
         <tag>AV</tag>
         <tag>BV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Adobe2019年Windows全家桶</title>
-    <url>/p/e464ba8a.html</url>
-    <content><![CDATA[<h1 id="警告："><a href="#警告：" class="headerlink" title="警告："></a>警告：</h1><p>文件过大，故放在百度网盘上。<br>先贴链接：</p>
-<a class="btn" href="https://pan.baidu.com/s/1YUwQCaov_fPEmbHi7BH0lQ" target="_blank" rel="noopener">
-              >>百度网盘 提取码: rxx1
-            </a>
-这可是百年难见的好东西啊！
-
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/ADOBE.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="旗舰店上的价格" title="旗舰店上的价格"></p>
-<h1 id="什么是Adobe-CC"><a href="#什么是Adobe-CC" class="headerlink" title="什么是Adobe CC?"></a>什么是Adobe CC?</h1><p>adobe是Photoshop的原始软件名称，CC即为：Creative Cloud ，也就是创意云。<br>所有Adobe创意相关的服务和软件工具都是通过CC服务体系交付给设计师、客户和开发者。CC不仅能够提供Adobe旗下所有的创意软件，还具有一定大小的云存储服务，所有软件工具的升级、下载和安装均能够在CC内的Adobe Application manager内完成。Creative Cloud 集成了用户创作作品所需要的所有元素，能够带给用户最棒、最新的 Adobe 创意工具和服务，Creative Cloud 将用户需要的所有元素集中整合到一个平台，简化了整个创意过程，为用户的使用带来便利。</p>
-<h1 id="我有这些有什么用"><a href="#我有这些有什么用" class="headerlink" title="我有这些有什么用?"></a>我有这些有什么用?</h1><p>…….<br>此处不做回答</p>
-]]></content>
-      <categories>
-        <category>繡软件</category>
-      </categories>
-      <tags>
-        <tag>Adobe</tag>
-        <tag>全家桶</tag>
-        <tag>年度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bing美图与故事PHP正式上线</title>
-    <url>/p/20ca08a.html</url>
-    <content><![CDATA[<p>欸…自己挖的坑必须要自己填啊…</p>
-<p>最近听信了某个·大佬·<span class="heimu" title="你知道的太多了">其实是把我做实验的</span>,在Hexo环境安装了dplayer,结果装到一半,断网了,重新安装就疯狂报错,以至于想要npm卸载都卸不了,结果手贱，手动删除了几个npm依赖，结果导致整个Hexo环境崩溃了<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">，一旦进行 <code>hexo server -w</code> 就会冒出一大片红海。害的我不得不备份文章和主题后删除了整个Hexo环境，从头安装Hexo，结果忘记了我还安装了一大堆插件，只好一个一个安装回去，期间的痛苦我真的再也不想回忆一遍,新手可以自己安装一遍Hexo+数十个插件，体验一下。问题是还把鼠标按坏了,现在打字变成异常困难的事情了…<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-5.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
-<p>欸，最近逃课太频繁，理科全挂科了，甚至在这一次<span class="heimu" title="你知道的太多了">尖子班</span>考试里化学挂科了，不应该这样的啊，我以前化学老棒老棒的了，看起来要拾回学习的心了。所以以后站点维护估计不会那么频繁了。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这两天因为Heroku每月时间重置了，又可以接着用了，于是考虑了很长时间决定工具箱和私有云重新上线。</p>
-<p>不过工具箱因为绝大部分都是静态，没几个是动态的，所以打算采用动静态前后分离，动态资源以接口形式接到静态页面上，这样可以尽可能减少动态Heroku的运行时间，同样由于前端CloudFlare缓存大大减少调用时间。而私有云静态不可能,所以完全动态,又因为Heroku的时间计算是一个没验证账户一个月600小时,上个月不知道分成两个应用运行…所以干脆私有云和接口并在了一起，加上CloudFlare2hours的缓存，600小时一个月应该够用了…</p>
-<h2 id="关于bing接口"><a href="#关于bing接口" class="headerlink" title="关于bing接口"></a>关于bing接口</h2><p>以前我在博客上写过怎么用BingPHP,但当时是用缓存的方式写入,但换到heroku上缓存写入就不可能了,于是想想办法解决, <code>windows.location</code> 会导致强制https至bing,对于不支持http就很吃亏了,最终采用 <code>header</code> 注入方式.</p>
-<p>由于如果没有获取版权总觉得空荡荡，所以又特地写了一个获取bingcopyright的PHP，同时好好恶补了一下正则获取和解析xml。</p>
-<p>还有当时没空写UI,这次特地去淘了两个css3和html5漂亮的界面,同时解决了手机端莫名其妙的UI问题.采用js检测UA的方式实现移动端和桌面端分别跳转.</p>
-<p>这是实际使用:</p>
-<p>桌面端:</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/8.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="实际使用" title="桌面端动图"></p>
-<p>手机端:</p>
-<img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/9.gif" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" width="200%" height="200%">
-
-<p>解决手机端不兼容桌面端问题：</p>
-<p>手机横屏bug（已修复）：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-40.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>以及我的头像版权镇压，保证没有bug（不要删除ヽ（≧□≦）ノ！）</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-41.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>已开源，<a href="https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher" target="_blank" rel="noopener">https://github.com/ChenYFan/Bing_Pic_and_Copyright_Catcher</a><br>不过暂时不允许转载删除版权和头像,因为修改这个花费我太多精力了,感谢您的理解!</p>
-<p>今日Bing美图：</p>
-<p><img src="https://pan.cyfan.top/api/bing/bing.php" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="Bing" title="今日Bing美图"></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.1.11/213.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-]]></content>
-      <categories>
-        <category>屌代码</category>
-      </categories>
-      <tags>
-        <tag>PHP</tag>
-        <tag>Bing</tag>
-        <tag>美图</tag>
-        <tag>版权</tag>
       </tags>
   </entry>
   <entry>
@@ -6263,104 +6263,6 @@ RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$<span class="hljs-number">1</span>]
       </tags>
   </entry>
   <entry>
-    <title>免·爬·城·国内管理分享GoogleDrive</title>
-    <url>/p/74e90c90.html</url>
-    <content><![CDATA[<p>昨天网上早早写完作业在Github上瞎逛，话说回来Github Explorer有时候真的很神奇给我推荐一些稀奇好用或正好急缺的东西，比如Accesser、MusicPlayer2、PHPProxy等等等等。结果昨天搜罗了这么一个极棒的玩意：<a href="https://github.com/maple3142/GDIndex" target="_blank" rel="noopener">GDIndex</a>。</p>
-<h2 id="这个是拿过来干什么的"><a href="#这个是拿过来干什么的" class="headerlink" title="这个是拿过来干什么的"></a>这个是拿过来干什么的</h2><p>基于rClone和CFWorkers的脚本，可以免F下载上传管理GoogleDrive。</p>
-<p>国内访问GoogleDrive总会被…咳咳…那个…对了…嗯…你懂的东西干掉,所以只能隔洋兴叹.说实话个人使用googledrive真的不频繁,当时注册的时候只有4GB,2017年注册至今,我就放了一部400MB的视频,根本没有用多少. 至于当时为什么不用,这是后面的事情了,这里暂时不讲.<br>只是不知道为什么,现在我的谷歌硬盘变成15GB了,emmmm,也不差.</p>
-<p>这个脚本有两个作用:1.在国内管理GoogleDrive2.快速分享给国内用户.</p>
-<p>说实话,这个正好填充我的缺陷,小文件我直接扔在Heroku+CF Always Online,静态文件缓存我调到一星期,勉强支撑私有云的下载;太大的文件直接放百度网盘上,虽然下载速度慢了点,但对于分享还是可以的;</p>
-<p>但那种不大不小的文件,比如一个80MB的安装包,你让我放哪?放heroku?由于它有500MB的限制,似乎不可能;放百度网盘?就因此要启动一个客户端,还那么慢,我觉得估计没人会下载.</p>
-<p>因此,原先准备放OneDrive上,但OneIndex脚本运行在Heroku上失败了…这个时候我看到了GDIndex.</p>
-<p>…<br>简直上天!这是我搭好的公开分享:<br>[<a href="https://drive.cyfan.top" target="_blank" rel="noopener">https://drive.cyfan.top</a> ]<br>避免和谐,有用户密码,均为User.主要分享一些不是特别大的安装包,当然不会<br>放那些违反中国大陆法律的东西,某些人就省省心吧.</p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建:"></a>搭建:</h2><p>搭建过程变得异常简单:</p>
-<p>准备:</p>
-<ul>
-<li>Google账号(没有可以注册一个)</li>
-<li>CloudFlare账号(可以没有自己的域名)</li>
-</ul>
-<h3 id="1-代码生成"><a href="#1-代码生成" class="headerlink" title="1:代码生成"></a>1:代码生成</h3><p>(确保在代理情况下进行,因为要登入googledrive)</p>
-<p>进入[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ],</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-52.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful" title="界面"></p>
-<p>点击<kbd>Click me</kbd></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-53.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>点击登入,允许(此时需要你的谷歌账号授权,如果你觉得这对你的账号造成了危险,可以换一个不常用的谷歌账号,反正我个人使用时没有问题)</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-54.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"><br>获取密钥:<br>回到[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ]，粘贴密钥</p>
-<p>关于 <code>Default Root ID</code> 如果你只是管理自己个人网盘,私有使用,那么请保持默认,但如果和我一样是公开的,而且只希望访问其中一个文件夹内容,那么:</p>
-<p>登入自己的谷歌drive</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-55.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>进入希望分享的文件夹,比如 <code>Public</code></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-56.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>那么地址栏就会变成这样:</p>
-<div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>drive.google.com<span class="hljs-regexp">/drive/</span>folders<span class="hljs-regexp">/1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx</span></code></pre></div>
-
-<p>folders后面就是文件夹ID,我这里是 <code>1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx</code></p>
-<p>回到[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ]，粘贴ID</p>
-<p><code>Enable authentication</code> 强烈建议开启,如果你不希望自己搭起来的GDIndex被和谐,请听信我的话!即使是公开分享,也最好设置一个!</p>
-<p><code>Enable file uploading</code> 如果只是个人使用,请开启,如果公开分享…你肯定不希望你的网盘被拿来做公开网盘.</p>
-<p>点击<kbd>Get Code</kbd>,底下会生成代码,这里就不公开展示了</p>
-<h3 id="2-部署代码"><a href="#2-部署代码" class="headerlink" title="2.部署代码"></a>2.部署代码</h3><p>回到cloudflare,点击workers,新建,粘贴代码,重命名workers（比如pdrive）,点击部署,完成!</p>
-<p>(我甚至都懒得贴图了,这一步真的没什么技术含量可言)</p>
-<p>这个时候的地址是：<code>https://#WorkersName.#UserName.workers.dev</code> 把它输入地址栏直接访问，看看行不行。</p>
-<h3 id="3-自选CDN-可选"><a href="#3-自选CDN-可选" class="headerlink" title="3.自选CDN(可选)"></a>3.自选CDN(可选)</h3><p>实际上到这一部已经完成了,直接访问workers网址就可以使用了,但速度很慢，而且搞不好某一天 <code>「羲农去我久」1PjT8X/2TCX3i。</code> 发威，把workers全盘封禁怎么办？</p>
-<p>（这一步需要有你自己的域名，没有自己域名的可以不做，但速度就很慢了）</p>
-<p>进入cloudflare，点击workers,新建路由，选择之前新建的Workers，写入需要绑定的域名：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-57.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-58.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>确定，回到DNS，添加A记录，名字为刚刚绑定的那个，ip地址请去我博客-关于界面查看所有CFIPv4地址，这里比较推荐1.0.0.* CN2线路，速度不错。</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-59.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>最好在加个ipv6，这样对于ipv4小水管比较好解决问题，本站暂时不添加，因为国内ipv6环境真的不是很好。</p>
-<p>完成，试试自己的谷歌硬盘吧！</p>
-<h2 id="一些比较棒的功能"><a href="#一些比较棒的功能" class="headerlink" title="一些比较棒的功能"></a>一些比较棒的功能</h2><h3 id="支持密码保护"><a href="#支持密码保护" class="headerlink" title="支持密码保护"></a>支持密码保护</h3><p>此处不详解。</p>
-<h3 id="支持直接上传"><a href="#支持直接上传" class="headerlink" title="支持直接上传"></a>支持直接上传</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-60.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>自选CDN，上传速度很可观</p>
-<p>但是有个问题，上传大于100MB的文件会随机失败，这应该是Workers的限制，因为免费Workers每分钟最多支持1000次，超过了就会暂时宕机</p>
-<h3 id="支持离线下载"><a href="#支持离线下载" class="headerlink" title="支持离线下载"></a>支持离线下载</h3><p>这是我远远没有想到的，没想到还可以从网址获取，可惜不支持种子磁力电驴，也许可以和WebTorrent结合。</p>
-<p>打开Upload From Url，输入网址：</p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-61.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-62.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-63.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-64.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>不过上面也写的很清楚，由于CFWorkers的限制，下载大文件有可能会失败。</p>
-<h3 id="支持免F下载"><a href="#支持免F下载" class="headerlink" title="支持免F下载"></a>支持免F下载</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-65.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>速度很可观，将近1.5MB/s，但请不要使用IDM！本来速度就可以了，如果使用IDM多线程，会导致CFWorkers提早达到每分钟阈值导致无法下载！</p>
-<h3 id="支持在线预览视频文档音乐"><a href="#支持在线预览视频文档音乐" class="headerlink" title="支持在线预览视频文档音乐"></a>支持在线预览视频文档音乐</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-66.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<h3 id="支持放一些XXX福利的东西"><a href="#支持放一些XXX福利的东西" class="headerlink" title="支持放一些XXX福利的东西"></a>支持放一些XXX福利的东西</h3><p>这就是谷歌硬盘和百度网盘最大的区别（笑）<br>但我绝对不会在公开云上放这些的！（认真脸！）</p>
-<h2 id="一些比较严重的缺陷"><a href="#一些比较严重的缺陷" class="headerlink" title="一些比较严重的缺陷"></a>一些比较严重的缺陷</h2><h3 id="上传很容易失败"><a href="#上传很容易失败" class="headerlink" title="上传很容易失败"></a>上传很容易失败</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-78.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>这个问题是在我试图上传htmlDesigner时发现的，上传上传就卡住了，原来是达到100MB,CloudFlare免费计划最多上传100MB限制，而且有时候上传完成却没有出现等等。这个就比较影响用户体验了。</p>
-<h3 id="没有新建文件夹功能"><a href="#没有新建文件夹功能" class="headerlink" title="没有新建文件夹功能"></a>没有新建文件夹功能</h3><p>这个还行</p>
-<h3 id="没有删除功能"><a href="#没有删除功能" class="headerlink" title="没有删除功能"></a>没有删除功能</h3><p>这个就比较糟心了</p>
-<h3 id="水管有限"><a href="#水管有限" class="headerlink" title="水管有限"></a>水管有限</h3><p>这个倒还好，只要不太过分就行</p>
-<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>至少我已经很满意了，起码可以充分利用那15GB空间，而且可以外链，所以拿来当图床还行，只是延迟大了点。更棒的是只要不大规模分享，放些XXX还是可以滴…..</p>
-<p>至于为什么以前不用GD原因:</p>
-<ul>
-<li>任何操作(哪怕是删除)就要F一次,我真的没这个耐心.</li>
-<li>上传个大文件就很糟心了,免费代理的上传速度就…而且丢包断线常有,经常上传失败</li>
-<li>4GB(GoogleDrive)&lt;2TB(BaiduDrive)</li>
-<li>没有离线下载功能</li>
-<li>当时百度限速还没有这么严重,哪怕是油猴脚本+IDM轻松跑满速(12.5MB/s),下部4GB电影6分钟完成</li>
-</ul>
-<p>现在百度网盘下载速度真的是…PanDownload是很聪明,采用Aria2多线程尽可能突破百度单线程限速,采用分享下载绕开账号限制,采用打包下载绕开IP限制…架不住百度网盘铁了心收费，现在单线程下载只有可怜的10kb/s…  </p>
-<p>网上很多在疯传除了PanDownload的下载器,都是声称不限速,其实还没有pandownload聪明,有的用cookie登陆其实和账号密码登陆一样,只是多了个障眼法,让用户感觉安全一些;  </p>
-<p>有的说爱奇艺播放器…好吧我这个不能驳回，但当时我下载了两部哈利波特电影将近12GB后又被限速了…</p>
-<p>或者还有一个还可以说机智的下载器:ENFI下载器,采用P2P下载,这样从根本解决源头慢的问题,但是有流量限制,而且资源不热门时就根本没有加速效果了..</p>
-<p>甚至现在百度网盘变本加利,多了个临时下载加速流量券,所以百度网盘这是侧面承认限速了吗???</p>
-<p>欸,毕竟百度网盘采用新用户2TB本身就是个错误,虽然采用哈希储存的方式,架不住下载人多速度快.</p>
-]]></content>
-      <categories>
-        <category>撸羊毛</category>
-      </categories>
-      <tags>
-        <tag>CloudFlare</tag>
-        <tag>Workers</tag>
-        <tag>网盘</tag>
-        <tag>干货</tag>
-        <tag>脚本</tag>
-        <tag>GoogleDrive</tag>
-        <tag>下载</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>听说你喜欢盗头像？_私人独一无二彩色头像养成详解</title>
     <url>/p/4c080f73.html</url>
     <content><![CDATA[<p>【图片比较多！国内用户建议在使用代理情况下查看，否则有些图片没办法正常加载！】<br>咳咳，实际上这个博文不是水的。  </p>
@@ -6580,24 +6482,6 @@ RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$<span class="hljs-number">1</span>]
         <tag>字体</tag>
         <tag>关键字</tag>
         <tag>寒蝉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>回形针 真的辱华了吗？</title>
-    <url>/p/b621976b.html</url>
-    <content><![CDATA[<p>写这篇文章的时候可能有些糊涂吧，没有分清楚谎言、真话、不完整的真话的区别，现在看看这篇文章确实耻于早年的拙劣文笔。</p>
-<a id="more"></a>
-
-<p>就先删掉吧，不知道你们是否能原谅我。</p>
-]]></content>
-      <categories>
-        <category>随心记</category>
-      </categories>
-      <tags>
-        <tag>回形针</tag>
-        <tag>台湾</tag>
-        <tag>辱华</tag>
-        <tag>国家</tag>
       </tags>
   </entry>
   <entry>
@@ -7128,6 +7012,104 @@ Process exited after <span class="hljs-number">142.5</span> seconds with return 
         <tag>C++</tag>
         <tag>题目</tag>
         <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免·爬·城·国内管理分享GoogleDrive</title>
+    <url>/p/74e90c90.html</url>
+    <content><![CDATA[<p>昨天网上早早写完作业在Github上瞎逛，话说回来Github Explorer有时候真的很神奇给我推荐一些稀奇好用或正好急缺的东西，比如Accesser、MusicPlayer2、PHPProxy等等等等。结果昨天搜罗了这么一个极棒的玩意：<a href="https://github.com/maple3142/GDIndex" target="_blank" rel="noopener">GDIndex</a>。</p>
+<h2 id="这个是拿过来干什么的"><a href="#这个是拿过来干什么的" class="headerlink" title="这个是拿过来干什么的"></a>这个是拿过来干什么的</h2><p>基于rClone和CFWorkers的脚本，可以免F下载上传管理GoogleDrive。</p>
+<p>国内访问GoogleDrive总会被…咳咳…那个…对了…嗯…你懂的东西干掉,所以只能隔洋兴叹.说实话个人使用googledrive真的不频繁,当时注册的时候只有4GB,2017年注册至今,我就放了一部400MB的视频,根本没有用多少. 至于当时为什么不用,这是后面的事情了,这里暂时不讲.<br>只是不知道为什么,现在我的谷歌硬盘变成15GB了,emmmm,也不差.</p>
+<p>这个脚本有两个作用:1.在国内管理GoogleDrive2.快速分享给国内用户.</p>
+<p>说实话,这个正好填充我的缺陷,小文件我直接扔在Heroku+CF Always Online,静态文件缓存我调到一星期,勉强支撑私有云的下载;太大的文件直接放百度网盘上,虽然下载速度慢了点,但对于分享还是可以的;</p>
+<p>但那种不大不小的文件,比如一个80MB的安装包,你让我放哪?放heroku?由于它有500MB的限制,似乎不可能;放百度网盘?就因此要启动一个客户端,还那么慢,我觉得估计没人会下载.</p>
+<p>因此,原先准备放OneDrive上,但OneIndex脚本运行在Heroku上失败了…这个时候我看到了GDIndex.</p>
+<p>…<br>简直上天!这是我搭好的公开分享:<br>[<a href="https://drive.cyfan.top" target="_blank" rel="noopener">https://drive.cyfan.top</a> ]<br>避免和谐,有用户密码,均为User.主要分享一些不是特别大的安装包,当然不会<br>放那些违反中国大陆法律的东西,某些人就省省心吧.</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建:"></a>搭建:</h2><p>搭建过程变得异常简单:</p>
+<p>准备:</p>
+<ul>
+<li>Google账号(没有可以注册一个)</li>
+<li>CloudFlare账号(可以没有自己的域名)</li>
+</ul>
+<h3 id="1-代码生成"><a href="#1-代码生成" class="headerlink" title="1:代码生成"></a>1:代码生成</h3><p>(确保在代理情况下进行,因为要登入googledrive)</p>
+<p>进入[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ],</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-52.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful" title="界面"></p>
+<p>点击<kbd>Click me</kbd></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-53.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>点击登入,允许(此时需要你的谷歌账号授权,如果你觉得这对你的账号造成了危险,可以换一个不常用的谷歌账号,反正我个人使用时没有问题)</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-54.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"><br>获取密钥:<br>回到[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ]，粘贴密钥</p>
+<p>关于 <code>Default Root ID</code> 如果你只是管理自己个人网盘,私有使用,那么请保持默认,但如果和我一样是公开的,而且只希望访问其中一个文件夹内容,那么:</p>
+<p>登入自己的谷歌drive</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-55.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>进入希望分享的文件夹,比如 <code>Public</code></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-56.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>那么地址栏就会变成这样:</p>
+<div class="hljs"><pre><code class="hljs undefined">https:<span class="hljs-regexp">//</span>drive.google.com<span class="hljs-regexp">/drive/</span>folders<span class="hljs-regexp">/1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx</span></code></pre></div>
+
+<p>folders后面就是文件夹ID,我这里是 <code>1Gv9Un9FGJtbpVY4-xuxI3ELsUzAlxwrx</code></p>
+<p>回到[<a href="https://gdindex-code-builder.glitch.me/" target="_blank" rel="noopener">https://gdindex-code-builder.glitch.me/</a> ]，粘贴ID</p>
+<p><code>Enable authentication</code> 强烈建议开启,如果你不希望自己搭起来的GDIndex被和谐,请听信我的话!即使是公开分享,也最好设置一个!</p>
+<p><code>Enable file uploading</code> 如果只是个人使用,请开启,如果公开分享…你肯定不希望你的网盘被拿来做公开网盘.</p>
+<p>点击<kbd>Get Code</kbd>,底下会生成代码,这里就不公开展示了</p>
+<h3 id="2-部署代码"><a href="#2-部署代码" class="headerlink" title="2.部署代码"></a>2.部署代码</h3><p>回到cloudflare,点击workers,新建,粘贴代码,重命名workers（比如pdrive）,点击部署,完成!</p>
+<p>(我甚至都懒得贴图了,这一步真的没什么技术含量可言)</p>
+<p>这个时候的地址是：<code>https://#WorkersName.#UserName.workers.dev</code> 把它输入地址栏直接访问，看看行不行。</p>
+<h3 id="3-自选CDN-可选"><a href="#3-自选CDN-可选" class="headerlink" title="3.自选CDN(可选)"></a>3.自选CDN(可选)</h3><p>实际上到这一部已经完成了,直接访问workers网址就可以使用了,但速度很慢，而且搞不好某一天 <code>「羲农去我久」1PjT8X/2TCX3i。</code> 发威，把workers全盘封禁怎么办？</p>
+<p>（这一步需要有你自己的域名，没有自己域名的可以不做，但速度就很慢了）</p>
+<p>进入cloudflare，点击workers,新建路由，选择之前新建的Workers，写入需要绑定的域名：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-57.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-58.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>确定，回到DNS，添加A记录，名字为刚刚绑定的那个，ip地址请去我博客-关于界面查看所有CFIPv4地址，这里比较推荐1.0.0.* CN2线路，速度不错。</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-59.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>最好在加个ipv6，这样对于ipv4小水管比较好解决问题，本站暂时不添加，因为国内ipv6环境真的不是很好。</p>
+<p>完成，试试自己的谷歌硬盘吧！</p>
+<h2 id="一些比较棒的功能"><a href="#一些比较棒的功能" class="headerlink" title="一些比较棒的功能"></a>一些比较棒的功能</h2><h3 id="支持密码保护"><a href="#支持密码保护" class="headerlink" title="支持密码保护"></a>支持密码保护</h3><p>此处不详解。</p>
+<h3 id="支持直接上传"><a href="#支持直接上传" class="headerlink" title="支持直接上传"></a>支持直接上传</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-60.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>自选CDN，上传速度很可观</p>
+<p>但是有个问题，上传大于100MB的文件会随机失败，这应该是Workers的限制，因为免费Workers每分钟最多支持1000次，超过了就会暂时宕机</p>
+<h3 id="支持离线下载"><a href="#支持离线下载" class="headerlink" title="支持离线下载"></a>支持离线下载</h3><p>这是我远远没有想到的，没想到还可以从网址获取，可惜不支持种子磁力电驴，也许可以和WebTorrent结合。</p>
+<p>打开Upload From Url，输入网址：</p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-61.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-62.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-63.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-64.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>不过上面也写的很清楚，由于CFWorkers的限制，下载大文件有可能会失败。</p>
+<h3 id="支持免F下载"><a href="#支持免F下载" class="headerlink" title="支持免F下载"></a>支持免F下载</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-65.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>速度很可观，将近1.5MB/s，但请不要使用IDM！本来速度就可以了，如果使用IDM多线程，会导致CFWorkers提早达到每分钟阈值导致无法下载！</p>
+<h3 id="支持在线预览视频文档音乐"><a href="#支持在线预览视频文档音乐" class="headerlink" title="支持在线预览视频文档音乐"></a>支持在线预览视频文档音乐</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-66.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<h3 id="支持放一些XXX福利的东西"><a href="#支持放一些XXX福利的东西" class="headerlink" title="支持放一些XXX福利的东西"></a>支持放一些XXX福利的东西</h3><p>这就是谷歌硬盘和百度网盘最大的区别（笑）<br>但我绝对不会在公开云上放这些的！（认真脸！）</p>
+<h2 id="一些比较严重的缺陷"><a href="#一些比较严重的缺陷" class="headerlink" title="一些比较严重的缺陷"></a>一些比较严重的缺陷</h2><h3 id="上传很容易失败"><a href="#上传很容易失败" class="headerlink" title="上传很容易失败"></a>上传很容易失败</h3><p><img src="https://unpkg.zhimg.com/chenyfan-oss@1.0.0/pic/post/pasted-78.png" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>这个问题是在我试图上传htmlDesigner时发现的，上传上传就卡住了，原来是达到100MB,CloudFlare免费计划最多上传100MB限制，而且有时候上传完成却没有出现等等。这个就比较影响用户体验了。</p>
+<h3 id="没有新建文件夹功能"><a href="#没有新建文件夹功能" class="headerlink" title="没有新建文件夹功能"></a>没有新建文件夹功能</h3><p>这个还行</p>
+<h3 id="没有删除功能"><a href="#没有删除功能" class="headerlink" title="没有删除功能"></a>没有删除功能</h3><p>这个就比较糟心了</p>
+<h3 id="水管有限"><a href="#水管有限" class="headerlink" title="水管有限"></a>水管有限</h3><p>这个倒还好，只要不太过分就行</p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>至少我已经很满意了，起码可以充分利用那15GB空间，而且可以外链，所以拿来当图床还行，只是延迟大了点。更棒的是只要不大规模分享，放些XXX还是可以滴…..</p>
+<p>至于为什么以前不用GD原因:</p>
+<ul>
+<li>任何操作(哪怕是删除)就要F一次,我真的没这个耐心.</li>
+<li>上传个大文件就很糟心了,免费代理的上传速度就…而且丢包断线常有,经常上传失败</li>
+<li>4GB(GoogleDrive)&lt;2TB(BaiduDrive)</li>
+<li>没有离线下载功能</li>
+<li>当时百度限速还没有这么严重,哪怕是油猴脚本+IDM轻松跑满速(12.5MB/s),下部4GB电影6分钟完成</li>
+</ul>
+<p>现在百度网盘下载速度真的是…PanDownload是很聪明,采用Aria2多线程尽可能突破百度单线程限速,采用分享下载绕开账号限制,采用打包下载绕开IP限制…架不住百度网盘铁了心收费，现在单线程下载只有可怜的10kb/s…  </p>
+<p>网上很多在疯传除了PanDownload的下载器,都是声称不限速,其实还没有pandownload聪明,有的用cookie登陆其实和账号密码登陆一样,只是多了个障眼法,让用户感觉安全一些;  </p>
+<p>有的说爱奇艺播放器…好吧我这个不能驳回，但当时我下载了两部哈利波特电影将近12GB后又被限速了…</p>
+<p>或者还有一个还可以说机智的下载器:ENFI下载器,采用P2P下载,这样从根本解决源头慢的问题,但是有流量限制,而且资源不热门时就根本没有加速效果了..</p>
+<p>甚至现在百度网盘变本加利,多了个临时下载加速流量券,所以百度网盘这是侧面承认限速了吗???</p>
+<p>欸,毕竟百度网盘采用新用户2TB本身就是个错误,虽然采用哈希储存的方式,架不住下载人多速度快.</p>
+]]></content>
+      <categories>
+        <category>撸羊毛</category>
+      </categories>
+      <tags>
+        <tag>CloudFlare</tag>
+        <tag>Workers</tag>
+        <tag>网盘</tag>
+        <tag>干货</tag>
+        <tag>脚本</tag>
+        <tag>GoogleDrive</tag>
+        <tag>下载</tag>
       </tags>
   </entry>
   <entry>

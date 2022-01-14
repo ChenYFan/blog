@@ -365,7 +365,7 @@ background-color:#bbb;
 <p>总之，不管怎样，JSDelivr在决定将节点设置为<code>NearChina</code>，可以肯定的是，在最近很长一段时间内，我们都无法享受国内外双料同时加速的快感，换句话说，jsd在中国就被永久地打入了冷宫。</p>
 <p>视线转向国内，jsd的替代品并不少。早在我写<a href="https://blog.cyfan.top/p/eb490c73.html">图床的千层套路</a>我就试着假想jsd不可用时，我们该用什么。最终我给出的一份较为完美的答案-npm图床，优点无非就是镜像多速度快，许可条款较为宽松，缺点也很明显，需要安装node，用专门的客户端上传。</p>
 <p>那事情就逐渐变得扑朔迷离起来了，我们应当如何选择合理的CDN加速器呢。</p>
-<p>这时候，我想起了前端黑科技Serviceworker。是的，这种情况下使用SW最为巧妙不过，它可以在后台自动优选最佳的CDN，甚至可以用黑中黑<code>Promise.any</code>打出一套漂亮的并行拳。经过两天的完善，我终于写出了一套具有离线可达、绕备、优选CDN、跟踪统计合一的SW脚本。<img src="/sw.js" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="此博客使用的SW"></p>
+<p>这时候，我想起了前端黑科技Serviceworker。是的，这种情况下使用SW最为巧妙不过，它可以在后台自动优选最佳的CDN，甚至可以用黑中黑<code>Promise.any</code>打出一套漂亮的并行拳。经过两天的完善，我终于写出了一套具有离线可达、绕备、优选CDN、跟踪统计合一的SW脚本。<a href="/sw.js">此博客使用的SW</a></p>
 <p>接下来我将从头开始讲述ServiceWorker的妙用。</p>
 <h1 id="Before-Start"><a href="#Before-Start" class="headerlink" title="Before Start"></a>Before Start</h1><h2 id="What-Is-The-ServiceWorker"><a href="#What-Is-The-ServiceWorker" class="headerlink" title="What Is The ServiceWorker"></a>What Is The ServiceWorker</h2><p>网上对于SW的解释比较模糊，在这里，我将其定义为<code>用户浏览器里的服务器</code>，功能强大到令人发指。是的，接下来的两张图你应该能显著的看到这一差距：</p>
 <p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r5/1.jpg" srcset="https://unpkg.zhimg.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="没有ServiceWorker中继，平淡无奇"></p>
