@@ -1083,7 +1083,6 @@ Drawing attention <span class="hljs-keyword">to</span> ads is a<span class="hljs
                                                                                                 window.send_msg = (data) => {
                                                                                                     return new Promise((resolve, reject) => {
                                                                                                         try {
-                                                                                                            //throw ''
                                                                                                             const broadcast = new BroadcastChannel('count-channel');
                                                                                                             broadcast.postMessage(data);
                                                                                                             broadcast.onmessage = (event) => {
