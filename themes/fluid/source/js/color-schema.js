@@ -91,12 +91,13 @@
     // 根据当前模式设置图标
     setButtonIcon(currentSetting);
     //自定义暗色模式，settimeout是保证将其踢到DOM末尾避免底下没加载
-    try {
-      setTimeout(() => {
-        setCustom(currentSetting)
-      }, 0)
 
-    } catch (n) { }
+    setTimeout(() => {
+      try {
+        setCustom(currentSetting)
+      } catch (n) { }
+    }, 0)
+
   }
 
   var invertColorSchemaObj = {

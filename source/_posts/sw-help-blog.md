@@ -68,7 +68,13 @@ SW可以完全脱离PWA存在，当然，PWA可离不开SW ：）
 
 ## And WorkBox ?
 
-WorkBox是谷歌开发的一款基于SW的缓存控制器。核心依旧是SW，但还是没有SW原本的自定义程度高（
+WorkBox是谷歌开发的一款基于SW的缓存控制器，其主要目的是方便维护PWA。核心依旧是SW，但还是没有SW原本的自定义程度高（
+
+## Why Not WorkBox ?
+
+首先，博客呢，是没有必要用PWA，有SW做中间件足矣。同时，WorkBox只能简单的缓存数据，并不能做到拦截篡改请求的功能，尤其不能精准把握每一个资源的缓存情况，自定义程度并不高。
+
+~~自己编写SW，格局就打开了~~
 
 # Start From Zero
 
@@ -200,7 +206,7 @@ const handle = async(req)=>{
 
 > 以下所有内容均针对handle修改
 
-#### 透明代理 / Transparent Proxy
+### 透明代理 / Transparent Proxy
 
 顾名思义，此实战脚本的作用是SW代理目前的所有流量但不进行修改，仿佛SW不存在一般。
 
@@ -218,7 +224,7 @@ const handle = async(req)=>{
 
 由于SW冷启动【即页面关闭后SW】处于暂停状态是从硬盘读取的，这会导致第一次请求有少许性能延迟[~10ms]。
 
-#### 篡改请求 / Edit Requset
+### 篡改请求 / Edit Requset
 
 对于一张图片，有时候服务端会变态到让你必须用`POST`协议才能获得，此时用SW篡改最为方便。
 
@@ -236,7 +242,7 @@ const handle = async (req) => {
 
 > 注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链
 
-#### 篡改响应 / Edit Response
+### 篡改响应 / Edit Response
 
 这个例子会检测返回内容，若为html，将把所有的"TEST"都替换成"SHIT"
 
@@ -262,7 +268,7 @@ const handle = async (req) => {
 
 返回的内容必须是`Response`对象，所以`new Response`构建一个新对象，并直接返回。不匹配html头将直接原封不动地透明代理。
 
-#### 移花接木 / Graft Request To Another Server
+### 移花接木 / Graft Request To Another Server
 
 `unpkg.zhimg.com`是`unpkg.com`的镜像网站。此脚本将会把所有的`unpkg.com`流量直接拦截到`unpkg.zhimg.com`，用于中国大陆内CDN加速。
 
@@ -282,7 +288,7 @@ const handle = async (req) => {
 
 `domain.match`捕获请求中是否有待替换域名，检查出来后直接`replace`掉域名，如果没有匹配到，直接透明代理走掉。
 
-#### 持久化缓存 / Cache Persistently
+### 持久化缓存 / Cache Persistently
 
 对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。
 
@@ -338,4 +344,45 @@ for (var i in cache_url_list) {
 ```
 
 
-#### 离线化缓存 / Cache For Offline
+### 离线化缓存 / Cache For Offline
+
+对于博客来说，并不是所有内容都是一成不变的。传统PWA采用SW更新同时刷新缓存，这样不够灵活，同时刷新缓存的版本号管理也存在着很大的漏洞，长时间访问极易造成庞大的缓存冗余。因此，对于博客的缓存，我们要保证用户每次获取都是最新的版本，但也要保证用户在离线时能看到最后一个版本的内容。
+
+因此，针对博客来说，策略应该是先获取最新内容，然后更新本地缓存，最后返回最新内容；离线的时候，尝试访问最新内容会回退到缓存，如果缓存也没有，就回退到错误页面。
+
+即：
+
+```
+Online:
+发起Request => 发起fetch => 更新Cache => 返回Response
+Offline:
+发起Request => 获取Cache => 返回Response
+```
+
+
+```js
+const handle = async (req) => {
+    return fetch(req.url).then(function (res) {
+        if (!res) { throw 'error' } //1
+        return caches.open(CACHE_NAME).then(function (cache) {
+            cache.delete(req);
+            cache.put(req, res.clone());
+            return res;
+        });
+    }).catch(function (err) {
+        return caches.match(req).then(function (resp) {
+            return resp || caches.match(new Request('/offline.html')) //2
+        })
+    })
+}
+```
+
+`if (!res) { throw 'error' }` 如果没有返回值，直接抛出错误，会被下面的Catch捕获，返回缓存或错误页面
+
+`return resp || caches.match(new Request('/offline.html'))` 返回缓存获得的内容。如果没有，就返回从缓存中拿到的错误网页。此处offline.html应该在最开始的时候就缓存好
+
+
+
+### 并行请求 / Request Parallelly
+
+> **正在施工**

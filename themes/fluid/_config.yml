@@ -232,7 +232,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
       source: "busuanzi"  # 统计数据来源，可选：busuanzi | leancloud，使用 leancloud 需要在 web_analytics 中设置 api 参数，使用 busuanzi 注意可能间歇抽风
       format: "{}次"
   updated:  # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
-    enable: true
+    enable: false
     content: 本文最后更新于：  # 描述文字
     relative: true
   toc:  # 文章右侧目录
