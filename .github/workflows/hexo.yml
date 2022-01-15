@@ -47,7 +47,7 @@ jobs:
         publish_dir: ./public
 
     - name: Mirror the Github organization repos to Gitee.
-      uses: Yikun/gitee-mirror-action@v0.01
+      uses: Yikun/gitee-mirror-action@master
       with:
         # 必选，需要同步的Github用户（源）
         src: github/ChenYFan
