@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      30
+      31
       分钟
     </span>
   
@@ -483,11 +483,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <blockquote>
 <p>注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链</p>
 </blockquote>
-<!--
-#### 篡改响应 / Edit Response
-
-这个例子会检测返回内容，若为html，将把所有的"TEST"都替换成"SHIT"
-
+<h4 id="篡改响应-Edit-Response"><a href="#篡改响应-Edit-Response" class="headerlink" title="篡改响应 / Edit Response"></a>篡改响应 / Edit Response</h4><p>这个例子会检测返回内容，若为html，将把所有的”TEST”都替换成”SHIT”</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">if</span> ((req.url.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>].match(<span class="hljs-string">'xxx.com'</span>)) &#123;
         <span class="hljs-comment">//xxx.com为图片所在域名</span>
@@ -498,8 +494,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
     <span class="hljs-keyword">return</span> fetch(req)
 &#125;</code></pre></div>
 
-<p>–&gt;</p>
--->
+
             </div>
             <hr>
             <div>
