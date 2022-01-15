@@ -8,20 +8,19 @@
           <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
           href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
           href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
-          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+          href="/blog-cgi"> <b>博客用户端管理</b></a>
         <!--
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
         <p id="showsectime"></p>
-        <a href="/hpp/admin">
-          <p id="bloggeractivetime"></p>
-        </a>
         </script>
         <p>
-          当前CDN节点: <span id="cdn">【未知】</span> |
+          <b>
+          当前在线用户: <span id="user_count">【未知】</span> |
           你的ip: <span id="ip">【未知】</span> |
-          你的所在国家/地区: <span id="loc">【未知】 </span></p>
-
+          你的所在国家/地区: <span id="loc">【未知】 </span> |
+          统计服务器通讯延迟：<span id="delay">【未知】</span>
+        </b>
         </p>
       </div>
       <%- partial('_partial/statistics.ejs') %>
@@ -39,7 +38,7 @@
         width: 500px !important;
         height: 437.5px !important;
         z-index: 998;
-        pointer-events:none!important;
+        pointer-events: none !important;
       }
     </style>
 

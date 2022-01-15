@@ -20,7 +20,7 @@
             //throw ''
             console.log('采用并行请求')
             await Promise.all(res.map(async (url) => {
-                
+
                 return new Promise((resolve, reject) => {
                     fetch(url)
                         .then(PauseProgress)
@@ -28,7 +28,7 @@
                             info.offlen += 1
                             that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
                             console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
-                            
+
                             resolve()
                         })
                         .catch(err => {
@@ -39,7 +39,7 @@
                         })
                 })
             }))
-            that.innerText =`缓存成功√`;
+            that.innerText = `缓存成功√`;
         } catch {
             console.log('并行请求失败，采用串行请求')
             for (var i in res) {
@@ -54,10 +54,10 @@
                     console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
                 })
             }
-            
-           
+
+
         }
-        
+
     }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
@@ -170,14 +170,29 @@
                                                                                                         return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
                                                                                                     }
                                                                                                     window.notyf = new Notyf();
+                                                                                                    window.send_msg = (data) => {
+                                                                                                        return new Promise((resolve, reject) => {
+                                                                                                            try {
+                                                                                                                const broadcast = new BroadcastChannel('count-channel');
+                                                                                                                broadcast.postMessage(data);
+                                                                                                                broadcast.onmessage = (event) => {
+                                                                                                                    resolve(event.data)
+                                                                                                                }
+                                                                                                            } catch (n) {
+                                                                                                                reject({ ok: false })
+                                                                                                            }
+                                                                                                        })
+                                                                                                    }
                                                                                                     if ('serviceWorker' in navigator) {
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
 
-                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
-                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                    const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.ok) {
+                                                                                                                        console.log('ChenBlogHelper已安装!')
+                                                                                                                    } else {
+                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
                                                                                                                         setTimeout(() => {
                                                                                                                             window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                                                                                         }, 1000)
@@ -246,8 +261,16 @@
 
 
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
-                                                                                                            console.log(ans)
+                                                                                                            send_msg({
+                                                                                                                type: "upload",
+                                                                                                                data: ans
+                                                                                                            }).then(data => {
+                                                                                                                console.log(data)
+                                                                                                                document.getElementById('user_count').innerText = data.user
+                                                                                                                document.getElementById('ip').innerText = data.ip
+                                                                                                                document.getElementById('loc').innerText = data.addr
+                                                                                                                document.getElementById('delay').innerText = data.delay + "ms"
+                                                                                                            })
                                                                                                         }, 2000);
                                                                                                     }
                                                                                                 }
