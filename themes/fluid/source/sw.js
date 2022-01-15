@@ -1,5 +1,8 @@
 const CACHE_NAME = 'ChenBlogHelperCache';
-let cachelist = [];
+let cachelist = [
+    '/offline.html',
+    'https://npm.elemecdn.com/chenyfan-os@0.0.0-r6'
+];
 self.db = {
     read: (key, config) => {
         if (!config) { config = { type: "text" } }
@@ -309,7 +312,7 @@ const handle = async function (req) {
                 });
             }).catch(function (err) {
                 return caches.match(req).then(function (resp) {
-                    return resp || new Response(`<h1>ChenBlogHelper Error:${err}</h1>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+                    return resp || caches.match(new Request('/offline.html'))
                 }
                 )
             })/*
