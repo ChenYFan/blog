@@ -347,12 +347,6 @@ background-color:#bbb;
             <!-- SEO header -->
             <h1 style="display: none">一次“修”冰箱的经历</h1>
             
-              <p class="note note-info">
-                
-                  本文最后更新于：几秒前
-                
-              </p>
-            
             <div class="markdown-body" id="post-body">
               <p>奶奶家有一台2年前买到的美的智能冰箱，当时买过来时因为在清仓，花了800块。后来出了点小问题停用了，闲置了1年。今年疫情，我只能窝在奶奶家，<span class="heimu">这个孙子又特别能吃</span>,所以只能重新启用了这台冰箱.</p>
 <p>但是开始用的时候就出了点问题,不知道是不是放久了,冰箱两个按键短路了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">.</p>
@@ -985,59 +979,60 @@ background-color:#bbb;
 
 
                                                                                         <script>
-                                                                                                (async () => {
-                                                                                                    function ranN(minNum, maxNum) {
-                                                                                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
-                                                                                                    }
-                                                                                                    window.notyf = new Notyf();
-                                                                                                    window.send_msg = (data) => {
-                                                                                                        return new Promise((resolve, reject) => {
-                                                                                                            try {
-                                                                                                                //throw ''
-                                                                                                                const broadcast = new BroadcastChannel('count-channel');
-                                                                                                                broadcast.postMessage(data);
-                                                                                                                broadcast.onmessage = (event) => {
-                                                                                                                    resolve(event.data)
-                                                                                                                }
-                                                                                                            } catch (n) {
-                                                                                                                resolve({ error: true, ok: true })
+                                                                                            window.setCustom = () => { };
+                                                                                            (async () => {
+                                                                                                function ranN(minNum, maxNum) {
+                                                                                                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                                                                                }
+                                                                                                window.notyf = new Notyf();
+                                                                                                window.send_msg = (data) => {
+                                                                                                    return new Promise((resolve, reject) => {
+                                                                                                        try {
+                                                                                                            //throw ''
+                                                                                                            const broadcast = new BroadcastChannel('count-channel');
+                                                                                                            broadcast.postMessage(data);
+                                                                                                            broadcast.onmessage = (event) => {
+                                                                                                                resolve(event.data)
                                                                                                             }
-                                                                                                        })
-                                                                                                    }
-                                                                                                    if ('serviceWorker' in navigator) {
-                                                                                                        window.addEventListener('load', async () => {
-                                                                                                            navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
-                                                                                                                .then(async reg => {
+                                                                                                        } catch (n) {
+                                                                                                            resolve({ error: true, ok: true })
+                                                                                                        }
+                                                                                                    })
+                                                                                                }
+                                                                                                if ('serviceWorker' in navigator) {
+                                                                                                    window.addEventListener('load', async () => {
+                                                                                                        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                                                                            .then(async reg => {
 
-                                                                                                                    const p = await send_msg({ type: "test" })
-                                                                                                                    if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
-                                                                                                                        notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
-                                                                                                                        window.localStorage.setItem('ChenBlogHelper_Error', 'true')
-                                                                                                                        setTimeout(() => {
-                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 1000)
+                                                                                                                const p = await send_msg({ type: "test" })
+                                                                                                                if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                    notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                    window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                                                                                    setTimeout(() => {
+                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                    }, 1000)
 
-                                                                                                                    }
-                                                                                                                    if (p.ok) {
-                                                                                                                        console.log('ChenBlogHelper已安装!')
-                                                                                                                    } else {
-                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
-                                                                                                                        setTimeout(() => {
-                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 1000)
-                                                                                                                    }
-                                                                                                                }).catch(err => {
-                                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:' + err);
-                                                                                                                    //console.log(err)
-                                                                                                                })
+                                                                                                                }
+                                                                                                                if (p.ok) {
+                                                                                                                    console.log('ChenBlogHelper已安装!')
+                                                                                                                } else {
+                                                                                                                    notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
+                                                                                                                    setTimeout(() => {
+                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                    }, 1000)
+                                                                                                                }
+                                                                                                            }).catch(err => {
+                                                                                                                notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                //console.log(err)
+                                                                                                            })
 
 
 
-                                                                                                        });
-                                                                                                    } else {
-                                                                                                        notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
-                                                                                                    }
-                                                                                                })();
+                                                                                                    });
+                                                                                                } else {
+                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                                                                                }
+                                                                                            })();
 
                                                                                             (async () => {
                                                                                                 if (window.localStorage.getItem("ChenBlogRefferrer") != 'setted') {
@@ -1057,7 +1052,7 @@ background-color:#bbb;
                                                                                                                 url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
                                                                                                                 resource: [],
-                                                                                                                time:new Date().getTime(),
+                                                                                                                time: new Date().getTime(),
                                                                                                                 perform: {
                                                                                                                     paint: {},
                                                                                                                     dom: -1

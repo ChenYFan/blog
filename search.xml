@@ -339,6 +339,161 @@ $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"
       </tags>
   </entry>
   <entry>
+    <title>GithubのUnlimited Private Repo有感</title>
+    <url>/p/36dee3d7.html</url>
+    <content><![CDATA[<p>Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/k.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/s.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">？？？顿时感觉失去了关爱….</p>
+<p><span class="heimu"><del>欸没错这篇又是水文</del></span>今天讲讲关于这件事以及对于github的心理感想。</p>
+<h1 id="收购"><a href="#收购" class="headerlink" title="收购"></a>收购</h1><p>微软<del>爸爸</del>2018年末收购Github这件事情我是知道的。</p>
+<p>哦，知道就知道呗，我当时的心理想法是这样的。</p>
+<p>确实是这样，我虽然知道网上很多人对这件事褒贬不一，可我确实是心中毫无波澜。</p>
+<p>因为很多人认为，有那么一个大靠山，就可以接着<del>薅</del>撸羊毛。</p>
+<p>也有一些程序员觉得，这样Github就丧失了它开源（OpenSource）的初衷。</p>
+<p>甚至还有Gitlab公然在底下挑衅。</p>
+<p>（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
+<p>我为什么当时毫无波澜呢，说实话原因有下：</p>
+<p>1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/h.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>2.感觉收购后和收购前没什么不同。（大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/m.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
+<p>嗯<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。</p>
+<h1 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h1><p>渐渐的，用到Github多了，虽然是个学生，但还是有抽出心思写写无聊的程序，对于一些吊炸天的repo一个star，对于一些有版权风险的一个fork…逐渐对于github熟悉起来,也渐渐喜欢上了github,虽然后面使用过coding和gitee,但用户体验就没做那么好(个人感想),最终还是没有抛弃github…</p>
+<p>Github附加功能有些真的没法比,光是那pages我就觉得好上天了,用过codingpages,A记录绑定的ip过几天就要换一次,CNAME绑定的又不会宕机时自动切换,有时候速度还不如Github.</p>
+<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p>
+<p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
+<p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p>
+<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的科学上网法则有些时候也能发现.</p>
+<p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p>
+<h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p>
+<h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p>
+<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 默默自己写着repo ==&gt; 有一天有人把你的repo分享到了知乎 ==&gt; Star过一千 ==&gt; <del>接到局里喝茶(大大雾)</del><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"> ==&gt; 删除repo</p>
+<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 归档,不想写了 ==&gt; 一个人看到了,测试了一下,发了一个issues ==&gt; 一群人被吸引过来,发了一堆issues ==&gt;被迫续更</p>
+<p>开了一个Public坑 ==&gt; 吸引了一群人 ==&gt;没空写了,转给社区,自己去悠哉悠哉了 ==&gt;社区继续维护</p>
+<p>开了一个Public坑 ==&gt; 然后就没有然后了…</p>
+<h3 id="Private坑"><a href="#Private坑" class="headerlink" title="Private坑"></a>Private坑</h3><p>开了一个Private Repo ==&gt; 哎呀自己写的怎么这么烂,欸,幸好没有开源 ==&gt; 清空repo重新写</p>
+<p>开了一个Private Repo ==&gt; 欸我写的这么好,赶紧开源 ==&gt;跳回public坑 ==&gt;结局与前四个一样</p>
+<p>开了一个Private Repo ==&gt; 欸我写的这么好,怎么没人Star呢 ==&gt;四处宣扬自己的项目 ==&gt; 最后发现开成私人坑了 ==&gt; 转回public ==&gt; 结局相同</p>
+<p>开了一个Private Repo ==&gt; 做网盘 ==&gt; 这特么什么神速度 ==&gt; 退坑</p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>至少现在看来Private Repo似乎没有被滥用的很厉害,当然,善用免费服务才能让服务变得更加长久,多了微软<del>爸爸</del>,相信Github会做的更好!</p>
+]]></content>
+      <categories>
+        <category>瞎扯淡</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Repository</tag>
+        <tag>撸羊毛</tag>
+        <tag>私人</tag>
+        <tag>无限制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github无法注册：Unable to verify your captcha response</title>
+    <url>/p/6708e52c.html</url>
+    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>前几天就想注册一个Github账号，话说回来早就该注册了。<br>前面注册时也是正常的，结果在人机验证（Github Captcha）卡住了。<br>点击<kbd>Create an Account</kbd>,结果…</p>
+<h1 id="注册时报错："><a href="#注册时报错：" class="headerlink" title="注册时报错："></a>注册时报错：</h1><div class="hljs"><pre><code class="hljs undefined">Unable to verify your captcha response. 
+Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/help.github.com/articles</span><span class="hljs-regexp">/troubleshooting-connectivity-problems/</span><span class="hljs-comment">#troubleshooting-the-captcha</span>
+<span class="hljs-keyword">for</span> troubleshooting information.</code></pre></div>
+
+<p>一脸懵逼…<br>什么鬼,可是在按下之前人机验证不都是打钩了吗？U•ェ•*<br>???</p>
+<h1 id="试图解决："><a href="#试图解决：" class="headerlink" title="试图解决："></a>试图解决：</h1><p>网上查了一下，也有很多类似的事，如<a href="https://blog.csdn.net/m0_37617778/article/details/83098985" target="_blank" rel="noopener">https://blog.csdn.net/m0_37617778/article/details/83098985</a><br>其中博主提出解决方案：</p>
+<blockquote>
+<p>使用IE就可以了.</p>
+</blockquote>
+<p>(/≧▽≦)/,笑死我了,连Chrome都做不到,怎么可能在IE中做到?<br>后来在评论中看到这样的话:</p>
+<blockquote>
+<p><strong>欧二lord：</strong><br>科学上网吧，我换了三个浏览器都不行，后来科学上网用chrome就可以了.</p>
+</blockquote>
+<p>科学上网么…<br>我挂上代理后再次进入,结果还是老样子:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="老样子" title="还是老样子啊"></p>
+<p>…</p>
+<h1 id="最后解决"><a href="#最后解决" class="headerlink" title="最后解决:"></a>最后解决:</h1><p>然后我一直点着<kbd>Create an Account</kbd>,一直报错.大概点了5下后:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_CAPTCHA.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="新样子" title="=_=换了个样子"><br>终于报出真正的人机验证了!点进去,人机验证的方式是旋转小狗小牛到正确的位置.<br>人机验证完成,我就直接被跳到邮箱验证了.<br>^3^,终于解决了!</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h1><ol>
+<li>浏览器:<ul>
+<li><input checked disabled type="checkbox"> Chrome</li>
+<li><input checked disabled type="checkbox"> Firefox</li>
+<li><input checked disabled type="checkbox"> Chromium</li>
+<li><input disabled type="checkbox"> IE</li>
+</ul>
+</li>
+<li>网络状态<ul>
+<li><input checked disabled type="checkbox"> 科学上网</li>
+</ul>
+</li>
+<li>连续点击直到出现真正的人机验证<br>OK!</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>干问题</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>错误</tag>
+        <tag>人机验证</tag>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GooseDesktop桌面鸭_网课好宠物</title>
+    <url>/p/5b32ef71.html</url>
+    <content><![CDATA[<h1 id="GooseDesktop"><a href="#GooseDesktop" class="headerlink" title="GooseDesktop"></a>GooseDesktop</h1><a class="btn" href="https://g.cyfan.ga/Public/DesktopGoose%2520v0.3.7z" target="_blank" rel="noopener">
+              >>点我去下载
+            </a>
+
+
+
+<p>可玩性非常高:</p>
+<ul>
+<li>会随机拖出一些<del>治愈人心</del>毒鸡汤(可以自定义)<br>  <img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/10.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
+<li>会随机拖出一些你珍藏多年的图片(可以自定义)<br>  <img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/11.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
+<li>关闭它拖出了来的图片会导致它追你的鼠标,追到就咬住,鼠标暂时失控.</li>
+<li>双击它也会追鼠标(可以关闭)</li>
+<li>自定义鸭子的颜色</li>
+</ul>
+<p>好的,也就这么多,更多的可以自己用VSCode写一些mod.</p>
+<p>试着想一下,这是不是特别适合网课的时候玩呢<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">?</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>下载下来,打开来应该是这样:</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-91.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>进入 <code>Assets</code>:</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-92.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p><code>Images\memes</code>,里面是鸭子随机拖出来的图片,我的版本里已经预置了10张美图+2张脖子以下不能看.jpg<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/bx.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">.注意不要在家长旁边打开!当然你也可以替换成别的,文件名随意.</p>
+<p>在 <code>/Assets/Text/NotepadMessages</code> 里是鸭子拖出来的文本,里面已经预置了1222句毒鸡汤,句句治愈人心<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">.当然你也可以替换成别的,文件名随意.</p>
+<p>打开 <code>/config.ini</code> 应该是这样:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">Version_DoNotEdit</span>=<span class="hljs-number">1</span>
+<span class="hljs-attr">EnableMods</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attr">SilenceSounds</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attr">Task_CanAttackMouse</span>=<span class="hljs-literal">True</span>
+<span class="hljs-attr">AttackRandomly</span>=<span class="hljs-literal">False</span>
+<span class="hljs-attr">UseCustomColors</span>=<span class="hljs-literal">true</span>
+<span class="hljs-attr">GooseDefaultWhite</span>=<span class="hljs-comment">#ffffff</span>
+<span class="hljs-attr">GooseDefaultOrange</span>=<span class="hljs-comment">#ffa500</span>
+<span class="hljs-attr">GooseDefaultOutline</span>=<span class="hljs-comment">#d3d3d3</span>
+<span class="hljs-attr">MinWanderingTimeSeconds</span>=<span class="hljs-number">10</span>
+<span class="hljs-attr">MaxWanderingTimeSeconds</span>=<span class="hljs-number">10</span>
+<span class="hljs-attr">FirstWanderTimeSeconds</span>=<span class="hljs-number">1</span></code></pre></div>
+
+<p>第二行指开不开启mod,目前它还没有很多mod,保持false即可.</p>
+<p><code>SilenceSounds</code> 指鸭子发布发出声音,false表示发出,默认false.</p>
+<p><code>Task_CanAttackMous</code> 指点击它会不会咬,默认为true(否则桌面鸭意义何在)</p>
+<p><code>AttackRandomly</code> 指会不会随机咬,默认保持false,这个最好不要开起来(否则后果难以想象)</p>
+<p><code>UseCustomColors</code> 使用自定义颜色,默认false</p>
+<p>下面三行是颜色自定义.</p>
+<p><code>MinWanderingTimeSeconds</code> 鸭子随机拖出文件等待时间最小值,单位秒,建议:30<br><code>MaxWanderingTimeSeconds</code> 鸭子随机拖出文件等待时间最小值,单位秒,建议:120</p>
+<p><code>FirstWanderTimeSeconds</code> 第一次打开鸭子后多久开始拖,随意</p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><p><strong>回到桌面</strong> 其他应用无效,长按Esc即可.</p>
+<p>或双击运行 <code>Close Goose.bat</code> 快速关闭</p>
+<p>或直接运行: <code>taskkill/f /im goosedesktop.exe</code> 也行.</p>
+<h2 id="静音"><a href="#静音" class="headerlink" title="静音"></a>静音</h2><p>配置文件 <code>SilenceSounds=true</code> 即可</p>
+<h2 id="惹怒"><a href="#惹怒" class="headerlink" title="惹怒"></a>惹怒</h2><p>双击它,它就会追着你的鼠标,咬到了就是将近5秒鼠标失控时间,鼠标就会被这只鸭子叼着走.</p>
+<p>或关闭它拖出来的文件,也是同样的效果.</p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>这篇水的有点彻底啊….QWQ</p>
+]]></content>
+      <categories>
+        <category>繡软件</category>
+      </categories>
+      <tags>
+        <tag>宠物</tag>
+        <tag>桌面</tag>
+        <tag>GooseDesktop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Gitalk详细踩坑记录</title>
     <url>/p/9f2a11d8.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>没想到怎么快就更新一篇了。</p>
@@ -529,167 +684,12 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
         <category>爱折腾</category>
       </categories>
       <tags>
+        <tag>Github</tag>
         <tag>踩坑</tag>
         <tag>手动填坑</tag>
         <tag>评论系统</tag>
         <tag>评论</tag>
         <tag>Gitalk</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GithubのUnlimited Private Repo有感</title>
-    <url>/p/36dee3d7.html</url>
-    <content><![CDATA[<p>Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/k.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/s.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">？？？顿时感觉失去了关爱….</p>
-<p><span class="heimu"><del>欸没错这篇又是水文</del></span>今天讲讲关于这件事以及对于github的心理感想。</p>
-<h1 id="收购"><a href="#收购" class="headerlink" title="收购"></a>收购</h1><p>微软<del>爸爸</del>2018年末收购Github这件事情我是知道的。</p>
-<p>哦，知道就知道呗，我当时的心理想法是这样的。</p>
-<p>确实是这样，我虽然知道网上很多人对这件事褒贬不一，可我确实是心中毫无波澜。</p>
-<p>因为很多人认为，有那么一个大靠山，就可以接着<del>薅</del>撸羊毛。</p>
-<p>也有一些程序员觉得，这样Github就丧失了它开源（OpenSource）的初衷。</p>
-<p>甚至还有Gitlab公然在底下挑衅。</p>
-<p>（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
-<p>我为什么当时毫无波澜呢，说实话原因有下：</p>
-<p>1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/h.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>2.感觉收购后和收购前没什么不同。（大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/m.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
-<p>嗯<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。</p>
-<h1 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h1><p>渐渐的，用到Github多了，虽然是个学生，但还是有抽出心思写写无聊的程序，对于一些吊炸天的repo一个star，对于一些有版权风险的一个fork…逐渐对于github熟悉起来,也渐渐喜欢上了github,虽然后面使用过coding和gitee,但用户体验就没做那么好(个人感想),最终还是没有抛弃github…</p>
-<p>Github附加功能有些真的没法比,光是那pages我就觉得好上天了,用过codingpages,A记录绑定的ip过几天就要换一次,CNAME绑定的又不会宕机时自动切换,有时候速度还不如Github.</p>
-<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p>
-<p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
-<p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p>
-<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的科学上网法则有些时候也能发现.</p>
-<p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p>
-<h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p>
-<h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p>
-<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 默默自己写着repo ==&gt; 有一天有人把你的repo分享到了知乎 ==&gt; Star过一千 ==&gt; <del>接到局里喝茶(大大雾)</del><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"> ==&gt; 删除repo</p>
-<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 归档,不想写了 ==&gt; 一个人看到了,测试了一下,发了一个issues ==&gt; 一群人被吸引过来,发了一堆issues ==&gt;被迫续更</p>
-<p>开了一个Public坑 ==&gt; 吸引了一群人 ==&gt;没空写了,转给社区,自己去悠哉悠哉了 ==&gt;社区继续维护</p>
-<p>开了一个Public坑 ==&gt; 然后就没有然后了…</p>
-<h3 id="Private坑"><a href="#Private坑" class="headerlink" title="Private坑"></a>Private坑</h3><p>开了一个Private Repo ==&gt; 哎呀自己写的怎么这么烂,欸,幸好没有开源 ==&gt; 清空repo重新写</p>
-<p>开了一个Private Repo ==&gt; 欸我写的这么好,赶紧开源 ==&gt;跳回public坑 ==&gt;结局与前四个一样</p>
-<p>开了一个Private Repo ==&gt; 欸我写的这么好,怎么没人Star呢 ==&gt;四处宣扬自己的项目 ==&gt; 最后发现开成私人坑了 ==&gt; 转回public ==&gt; 结局相同</p>
-<p>开了一个Private Repo ==&gt; 做网盘 ==&gt; 这特么什么神速度 ==&gt; 退坑</p>
-<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>至少现在看来Private Repo似乎没有被滥用的很厉害,当然,善用免费服务才能让服务变得更加长久,多了微软<del>爸爸</del>,相信Github会做的更好!</p>
-]]></content>
-      <categories>
-        <category>瞎扯淡</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>Repository</tag>
-        <tag>撸羊毛</tag>
-        <tag>私人</tag>
-        <tag>无限制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github无法注册：Unable to verify your captcha response</title>
-    <url>/p/6708e52c.html</url>
-    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>前几天就想注册一个Github账号，话说回来早就该注册了。<br>前面注册时也是正常的，结果在人机验证（Github Captcha）卡住了。<br>点击<kbd>Create an Account</kbd>,结果…</p>
-<h1 id="注册时报错："><a href="#注册时报错：" class="headerlink" title="注册时报错："></a>注册时报错：</h1><div class="hljs"><pre><code class="hljs undefined">Unable to verify your captcha response. 
-Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/help.github.com/articles</span><span class="hljs-regexp">/troubleshooting-connectivity-problems/</span><span class="hljs-comment">#troubleshooting-the-captcha</span>
-<span class="hljs-keyword">for</span> troubleshooting information.</code></pre></div>
-
-<p>一脸懵逼…<br>什么鬼,可是在按下之前人机验证不都是打钩了吗？U•ェ•*<br>???</p>
-<h1 id="试图解决："><a href="#试图解决：" class="headerlink" title="试图解决："></a>试图解决：</h1><p>网上查了一下，也有很多类似的事，如<a href="https://blog.csdn.net/m0_37617778/article/details/83098985" target="_blank" rel="noopener">https://blog.csdn.net/m0_37617778/article/details/83098985</a><br>其中博主提出解决方案：</p>
-<blockquote>
-<p>使用IE就可以了.</p>
-</blockquote>
-<p>(/≧▽≦)/,笑死我了,连Chrome都做不到,怎么可能在IE中做到?<br>后来在评论中看到这样的话:</p>
-<blockquote>
-<p><strong>欧二lord：</strong><br>科学上网吧，我换了三个浏览器都不行，后来科学上网用chrome就可以了.</p>
-</blockquote>
-<p>科学上网么…<br>我挂上代理后再次进入,结果还是老样子:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="老样子" title="还是老样子啊"></p>
-<p>…</p>
-<h1 id="最后解决"><a href="#最后解决" class="headerlink" title="最后解决:"></a>最后解决:</h1><p>然后我一直点着<kbd>Create an Account</kbd>,一直报错.大概点了5下后:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_CAPTCHA.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="新样子" title="=_=换了个样子"><br>终于报出真正的人机验证了!点进去,人机验证的方式是旋转小狗小牛到正确的位置.<br>人机验证完成,我就直接被跳到邮箱验证了.<br>^3^,终于解决了!</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h1><ol>
-<li>浏览器:<ul>
-<li><input checked disabled type="checkbox"> Chrome</li>
-<li><input checked disabled type="checkbox"> Firefox</li>
-<li><input checked disabled type="checkbox"> Chromium</li>
-<li><input disabled type="checkbox"> IE</li>
-</ul>
-</li>
-<li>网络状态<ul>
-<li><input checked disabled type="checkbox"> 科学上网</li>
-</ul>
-</li>
-<li>连续点击直到出现真正的人机验证<br>OK!</li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>干问题</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>错误</tag>
-        <tag>人机验证</tag>
-        <tag>科学上网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GooseDesktop桌面鸭_网课好宠物</title>
-    <url>/p/5b32ef71.html</url>
-    <content><![CDATA[<h1 id="GooseDesktop"><a href="#GooseDesktop" class="headerlink" title="GooseDesktop"></a>GooseDesktop</h1><a class="btn" href="https://g.cyfan.ga/Public/DesktopGoose%2520v0.3.7z" target="_blank" rel="noopener">
-              >>点我去下载
-            </a>
-
-
-
-<p>可玩性非常高:</p>
-<ul>
-<li>会随机拖出一些<del>治愈人心</del>毒鸡汤(可以自定义)<br>  <img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/10.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
-<li>会随机拖出一些你珍藏多年的图片(可以自定义)<br>  <img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/11.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></li>
-<li>关闭它拖出了来的图片会导致它追你的鼠标,追到就咬住,鼠标暂时失控.</li>
-<li>双击它也会追鼠标(可以关闭)</li>
-<li>自定义鸭子的颜色</li>
-</ul>
-<p>好的,也就这么多,更多的可以自己用VSCode写一些mod.</p>
-<p>试着想一下,这是不是特别适合网课的时候玩呢<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">?</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>下载下来,打开来应该是这样:</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-91.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>进入 <code>Assets</code>:</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-92.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p><code>Images\memes</code>,里面是鸭子随机拖出来的图片,我的版本里已经预置了10张美图+2张脖子以下不能看.jpg<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/bx.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">.注意不要在家长旁边打开!当然你也可以替换成别的,文件名随意.</p>
-<p>在 <code>/Assets/Text/NotepadMessages</code> 里是鸭子拖出来的文本,里面已经预置了1222句毒鸡汤,句句治愈人心<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/yhuaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">.当然你也可以替换成别的,文件名随意.</p>
-<p>打开 <code>/config.ini</code> 应该是这样:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-attr">Version_DoNotEdit</span>=<span class="hljs-number">1</span>
-<span class="hljs-attr">EnableMods</span>=<span class="hljs-literal">false</span>
-<span class="hljs-attr">SilenceSounds</span>=<span class="hljs-literal">false</span>
-<span class="hljs-attr">Task_CanAttackMouse</span>=<span class="hljs-literal">True</span>
-<span class="hljs-attr">AttackRandomly</span>=<span class="hljs-literal">False</span>
-<span class="hljs-attr">UseCustomColors</span>=<span class="hljs-literal">true</span>
-<span class="hljs-attr">GooseDefaultWhite</span>=<span class="hljs-comment">#ffffff</span>
-<span class="hljs-attr">GooseDefaultOrange</span>=<span class="hljs-comment">#ffa500</span>
-<span class="hljs-attr">GooseDefaultOutline</span>=<span class="hljs-comment">#d3d3d3</span>
-<span class="hljs-attr">MinWanderingTimeSeconds</span>=<span class="hljs-number">10</span>
-<span class="hljs-attr">MaxWanderingTimeSeconds</span>=<span class="hljs-number">10</span>
-<span class="hljs-attr">FirstWanderTimeSeconds</span>=<span class="hljs-number">1</span></code></pre></div>
-
-<p>第二行指开不开启mod,目前它还没有很多mod,保持false即可.</p>
-<p><code>SilenceSounds</code> 指鸭子发布发出声音,false表示发出,默认false.</p>
-<p><code>Task_CanAttackMous</code> 指点击它会不会咬,默认为true(否则桌面鸭意义何在)</p>
-<p><code>AttackRandomly</code> 指会不会随机咬,默认保持false,这个最好不要开起来(否则后果难以想象)</p>
-<p><code>UseCustomColors</code> 使用自定义颜色,默认false</p>
-<p>下面三行是颜色自定义.</p>
-<p><code>MinWanderingTimeSeconds</code> 鸭子随机拖出文件等待时间最小值,单位秒,建议:30<br><code>MaxWanderingTimeSeconds</code> 鸭子随机拖出文件等待时间最小值,单位秒,建议:120</p>
-<p><code>FirstWanderTimeSeconds</code> 第一次打开鸭子后多久开始拖,随意</p>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><p><strong>回到桌面</strong> 其他应用无效,长按Esc即可.</p>
-<p>或双击运行 <code>Close Goose.bat</code> 快速关闭</p>
-<p>或直接运行: <code>taskkill/f /im goosedesktop.exe</code> 也行.</p>
-<h2 id="静音"><a href="#静音" class="headerlink" title="静音"></a>静音</h2><p>配置文件 <code>SilenceSounds=true</code> 即可</p>
-<h2 id="惹怒"><a href="#惹怒" class="headerlink" title="惹怒"></a>惹怒</h2><p>双击它,它就会追着你的鼠标,咬到了就是将近5秒鼠标失控时间,鼠标就会被这只鸭子叼着走.</p>
-<p>或关闭它拖出来的文件,也是同样的效果.</p>
-<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>这篇水的有点彻底啊….QWQ</p>
-]]></content>
-      <categories>
-        <category>繡软件</category>
-      </categories>
-      <tags>
-        <tag>宠物</tag>
-        <tag>桌面</tag>
-        <tag>GooseDesktop</tag>
       </tags>
   </entry>
   <entry>
@@ -2161,128 +2161,110 @@ Control-C
       </tags>
   </entry>
   <entry>
-    <title>MarkDown语法详解（中级版）</title>
-    <url>/p/45f10239.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><blockquote>
+    <title>MarkDown语法详解（初级版）</title>
+    <url>/p/9ecd8772.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><h2 id="什么是MarkDown"><a href="#什么是MarkDown" class="headerlink" title="什么是MarkDown?"></a>什么是MarkDown?</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。<br>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/JG.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="约翰·格鲁伯" title="约翰·格鲁伯"><br>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。<br>Markdown 编写的文档后缀为 .md, .markdown。<br>由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。甚至Markdown能被使用来撰写电子书。因此,很多博客把它当作语法来写,比如WordPress,Hexo,或者是Typecho.<br>常见的编辑器有<a href="https://typora.io/" target="_blank" rel="noopener">Typora</a>,还有萌萌哒编辑器<a href="https://yosoro.coolecho.net/" target="_blank" rel="noopener">Yosoro</a><br>下面开始讲</p>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h1><blockquote>
 <p><strong>注意</strong><br>文章内所有名字纯属虚构,如有雷同,纯属巧合!</p>
 </blockquote>
-<blockquote>
-<p>这是第二篇MarkDown语法详解（中级版），如果你想要学习第一篇，请前往<a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a></p>
-</blockquote>
-<p>下面开始授课:</p>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接:"></a>超链接:</h2><p>格式如下:</p>
-<div class="hljs"><pre><code class="hljs undefined">[<span class="hljs-string">MarkDown语法详解（初级版）</span>](<span class="hljs-link">/2019/07/21/MarkDown语法详解（初级版）</span>)</code></pre></div>
-
-<p>你会得到:<br><a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a><br>第一个方括号内填标题,后一个圆括号内写链接.<br>这个比较简单.<br>当然你也可以这样：</p>
-<div class="hljs"><pre><code class="hljs undefined">&lt;<span class="hljs-string">https:</span><span class="hljs-comment">//baidu.com&gt;</span></code></pre></div>
-
-<p>结果是：<br><a href="https://baidu.com" target="_blank" rel="noopener">https://baidu.com</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片:"></a>图片:</h2><h3 id="一种方法"><a href="#一种方法" class="headerlink" title="一种方法:"></a>一种方法:</h3><p>格式如下:</p>
-<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">图片标题</span>](<span class="hljs-link">图片地址 "图片ALT"</span>)</code></pre></div>
-
-<p>其中<code>图片alt</code>可不填.图片地址可以是绝对地址,也可以是相对地址.</p>
-<p>例如:</p>
-<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
-
-<p>是相对地址,会得到:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"><br>（这么帅气的脸只舍得打半边马赛克）<br>而</p>
-<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://blog.cyfblog.gahttps://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
-
-<p>是绝对地址,会得到:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"></p>
-<p>其实结果是一样的.</p>
-<h3 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法:"></a>另一种方法:</h3><p>当然，你也可以像网址那样对图片网址使用变量:</p>
-<div class="hljs"><pre><code class="hljs undefined">这个链接用 1 作为网址变量 [<span class="hljs-string">刘老师真容</span>][<span class="hljs-symbol">1</span>].
-然后在文档的结尾位变量赋值（网址）
-
-[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg</span></code></pre></div>
-
-<p>会得到:<br>这个链接用 1 作为网址变量 <a href="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" target="_blank" rel="noopener">刘老师真容</a>.<br>然后在文档的结尾位变量赋值（网址）</p>
-<blockquote>
-<p><strong>提示</strong><br>如果你对大小比较在意,可以使用html语法来写.具体写法在高级玩法写出.</p>
-</blockquote>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="无序排序"><a href="#无序排序" class="headerlink" title="无序排序:"></a>无序排序:</h3><p>使用<code>+</code>或<code>-</code>或<code>*</code>来做首标题<br>实例如下:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">+ </span>科学作业:无
-<span class="hljs-bullet">+ </span>语文作业:翻倍
-<span class="hljs-bullet">+ </span>数学作业:超级加倍</code></pre></div>
+<h2 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h2><p>MarkDown的文字直接书写，与正常无区别<br>书写</p>
+<div class="hljs"><pre><code class="hljs undefined">我是刘老师.</code></pre></div>
 
 <p>会得到:</p>
-<ul>
-<li>科学作业:无</li>
-<li>语文作业:翻倍</li>
-<li>数学作业:超级加倍</li>
-</ul>
-<blockquote>
-<p><strong>注意</strong><br>无论是<code>+</code>或<code>-</code>或<code>*</code>,使用时与要列表的文字空一格空格!</p>
-</blockquote>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表:"></a>有序列表:</h3><p>使用<code>数字</code>+<code>.</code>+<code>空格</code>+<code>文字</code>代替,如:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">1. </span>写试卷
-<span class="hljs-bullet">2. </span>写两张试卷
-<span class="hljs-bullet">3. </span>写三张试卷</code></pre></div>
+<p>我是刘老师.</p>
+<h2 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h2><p>基本上标题分两种：</p>
+<h3 id="分隔符标题："><a href="#分隔符标题：" class="headerlink" title="分隔符标题："></a>分隔符标题：</h3><p>以<code>-</code>和<code>=</code>分隔成一级和二级标题:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">我是一级刘老师
+---</span>
+<span class="hljs-section">我是二级刘老师
+===</span></code></pre></div>
 
 <p>会得到:</p>
-<ol>
-<li>写试卷</li>
-<li>写两张试卷</li>
-<li>写三张试卷</li>
-</ol>
-<blockquote>
-<p><strong>警告</strong><br>一定要加空格!</p>
+<h2 id="我是一级刘老师"><a href="#我是一级刘老师" class="headerlink" title="我是一级刘老师"></a>我是一级刘老师</h2><h1 id="我是二级刘老师"><a href="#我是二级刘老师" class="headerlink" title="我是二级刘老师"></a>我是二级刘老师</h1><blockquote>
+<p><strong>注意:</strong><br>无论是<code>-</code>还是<code>=</code>,只要三个及以上即可!</p>
 </blockquote>
-<h2 id="列表镶嵌"><a href="#列表镶嵌" class="headerlink" title="列表镶嵌:"></a>列表镶嵌:</h2><p>如实例:在第二列前加上<kbd>Tab</kbd>一个即可!</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">+ </span>一级无序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">
-- </span>一级无序列表内容
-<span class="hljs-bullet">	1. </span>二级有序列表内容
-<span class="hljs-bullet">	2. </span>二级有序列表内容
-<span class="hljs-bullet">	3. </span>二级有序列表内容
-<span class="hljs-bullet">
-1. </span>一级有序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">	+ </span>二级无序列表内容
-<span class="hljs-bullet">
-
-1. </span>一级有序列表内容
-<span class="hljs-bullet">	1. </span>二级有序列表内容
-<span class="hljs-bullet">	2. </span>二级有序列表内容
-<span class="hljs-bullet">	3. </span>二级有序列表内容</code></pre></div>
+<h3 id="字符标题"><a href="#字符标题" class="headerlink" title="字符标题:"></a>字符标题:</h3><p>以<code>#</code>代替标识,<code>#</code>越多`,标题级别越低:<br>例子:</p>
+<div class="hljs"><pre><code class="hljs undefined"># 我是一级刘老师
+## 我是二级刘老师
+### 我是三级刘老师
+#### 我是四级刘老师
+##### 我是五级刘老师
+###### 我是六级刘老师</code></pre></div>
 
 <p>会得到:</p>
-<ul>
-<li>一级无序列表内容<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>一级无序列表内容<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>一级有序列表内容<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>一级有序列表内容<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ol>
-<h2 id="分隔符："><a href="#分隔符：" class="headerlink" title="分隔符："></a>分隔符：</h2><p>以<code>- - -</code>为例子:<br>中级教程完.</p>
+<h1 id="我是一级刘老师-1"><a href="#我是一级刘老师-1" class="headerlink" title="我是一级刘老师"></a>我是一级刘老师</h1><h2 id="我是二级刘老师-1"><a href="#我是二级刘老师-1" class="headerlink" title="我是二级刘老师"></a>我是二级刘老师</h2><h3 id="我是三级刘老师"><a href="#我是三级刘老师" class="headerlink" title="我是三级刘老师"></a>我是三级刘老师</h3><h4 id="我是四级刘老师"><a href="#我是四级刘老师" class="headerlink" title="我是四级刘老师"></a>我是四级刘老师</h4><h5 id="我是五级刘老师"><a href="#我是五级刘老师" class="headerlink" title="我是五级刘老师"></a>我是五级刘老师</h5><h6 id="我是六级刘老师"><a href="#我是六级刘老师" class="headerlink" title="我是六级刘老师"></a>我是六级刘老师</h6><blockquote>
+<p><strong>注意</strong><br>以#来做标题不得超过6个！</p>
+</blockquote>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落:"></a>段落:</h2><p>MarkDown的段落直接换行，与正常无区别.</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体:"></a>字体:</h2><p>MarkDown可用字体如下:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-emphasis">*我是斜着的刘老师*</span>
+<span class="hljs-emphasis">_我也是斜着的刘老师_</span>
+<span class="hljs-strong">**我是粗粗的刘老师**</span>
+<span class="hljs-strong">__我也是粗粗的刘老师__</span>
+<span class="hljs-strong">***我是又粗又斜的刘老师**</span>*
+<span class="hljs-strong">___我也是又粗又斜的刘老师__</span>_</code></pre></div>
+
+<p>你会得到:<br><em>我是斜着的刘老师</em><br><em>我也是斜着的刘老师</em><br><strong>我是粗粗的刘老师</strong><br><strong>我也是粗粗的刘老师</strong><br><strong><em>我是又粗又斜的刘老师</em></strong><br><strong><em>我也是又粗又斜的刘老师</em></strong></p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>用<code>~~</code>把要删除的文字包起来</p>
+<div class="hljs"><pre><code class="hljs undefined">刘老师:今天试卷加~~三张~~ 四张!</code></pre></div>
+
+<p>会得到:</p>
+<p>刘老师:今天试卷加<del>三张</del> 四张!</p>
+<h2 id="引用-有时可做警告"><a href="#引用-有时可做警告" class="headerlink" title="引用(有时可做警告)"></a>引用(有时可做警告)</h2><p>语法:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-quote">&gt; 刘：YRWS,ZSWF</span></code></pre></div>
+
+<p>得到:</p>
+<blockquote>
+<p>刘：YRWS,ZSWF</p>
+</blockquote>
+<p>还可以多级引用:</p>
+<div class="hljs"><pre><code class="hljs undefined">&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span> 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.
+<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.</code></pre></div>
+
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+<blockquote>
+<p>我是被引用的刘老师.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>好像可以一直下去</p>
+<blockquote>
+<p><strong>注意</strong><br>如果你想要跳出引用,请换行再写!</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码:"></a>单行代码:</h3><p>用`包裹</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块:"></a>代码块:</h3><p>用```把代码包裹<br>此处不好举例,不再举例了.</p>
+<blockquote>
+<p><strong>提示</strong><br>在```后加上代码类型可以给予代码高亮欧!</p>
+</blockquote>
+<p>初级教程完,接下来请去中级教程.</p>
 <hr>
 ]]></content>
       <categories>
@@ -2491,6 +2473,139 @@ Control-C
       </tags>
   </entry>
   <entry>
+    <title>MarkDown语法详解（中级版）</title>
+    <url>/p/45f10239.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><blockquote>
+<p><strong>注意</strong><br>文章内所有名字纯属虚构,如有雷同,纯属巧合!</p>
+</blockquote>
+<blockquote>
+<p>这是第二篇MarkDown语法详解（中级版），如果你想要学习第一篇，请前往<a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a></p>
+</blockquote>
+<p>下面开始授课:</p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接:"></a>超链接:</h2><p>格式如下:</p>
+<div class="hljs"><pre><code class="hljs undefined">[<span class="hljs-string">MarkDown语法详解（初级版）</span>](<span class="hljs-link">/2019/07/21/MarkDown语法详解（初级版）</span>)</code></pre></div>
+
+<p>你会得到:<br><a href="/2019/07/21/MarkDown语法详解（初级版）">MarkDown语法详解（初级版）</a><br>第一个方括号内填标题,后一个圆括号内写链接.<br>这个比较简单.<br>当然你也可以这样：</p>
+<div class="hljs"><pre><code class="hljs undefined">&lt;<span class="hljs-string">https:</span><span class="hljs-comment">//baidu.com&gt;</span></code></pre></div>
+
+<p>结果是：<br><a href="https://baidu.com" target="_blank" rel="noopener">https://baidu.com</a></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片:"></a>图片:</h2><h3 id="一种方法"><a href="#一种方法" class="headerlink" title="一种方法:"></a>一种方法:</h3><p>格式如下:</p>
+<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">图片标题</span>](<span class="hljs-link">图片地址 "图片ALT"</span>)</code></pre></div>
+
+<p>其中<code>图片alt</code>可不填.图片地址可以是绝对地址,也可以是相对地址.</p>
+<p>例如:</p>
+<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
+
+<p>是相对地址,会得到:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"><br>（这么帅气的脸只舍得打半边马赛克）<br>而</p>
+<div class="hljs"><pre><code class="hljs undefined">![<span class="hljs-string">刘老师</span>](<span class="hljs-link">https://blog.cyfblog.gahttps://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg "刘老师真容"</span>)</code></pre></div>
+
+<p>是绝对地址,会得到:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="刘老师" title="刘老师真容"></p>
+<p>其实结果是一样的.</p>
+<h3 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法:"></a>另一种方法:</h3><p>当然，你也可以像网址那样对图片网址使用变量:</p>
+<div class="hljs"><pre><code class="hljs undefined">这个链接用 1 作为网址变量 [<span class="hljs-string">刘老师真容</span>][<span class="hljs-symbol">1</span>].
+然后在文档的结尾位变量赋值（网址）
+
+[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg</span></code></pre></div>
+
+<p>会得到:<br>这个链接用 1 作为网址变量 <a href="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/LLS.jpg" target="_blank" rel="noopener">刘老师真容</a>.<br>然后在文档的结尾位变量赋值（网址）</p>
+<blockquote>
+<p><strong>提示</strong><br>如果你对大小比较在意,可以使用html语法来写.具体写法在高级玩法写出.</p>
+</blockquote>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="无序排序"><a href="#无序排序" class="headerlink" title="无序排序:"></a>无序排序:</h3><p>使用<code>+</code>或<code>-</code>或<code>*</code>来做首标题<br>实例如下:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">+ </span>科学作业:无
+<span class="hljs-bullet">+ </span>语文作业:翻倍
+<span class="hljs-bullet">+ </span>数学作业:超级加倍</code></pre></div>
+
+<p>会得到:</p>
+<ul>
+<li>科学作业:无</li>
+<li>语文作业:翻倍</li>
+<li>数学作业:超级加倍</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong><br>无论是<code>+</code>或<code>-</code>或<code>*</code>,使用时与要列表的文字空一格空格!</p>
+</blockquote>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表:"></a>有序列表:</h3><p>使用<code>数字</code>+<code>.</code>+<code>空格</code>+<code>文字</code>代替,如:</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">1. </span>写试卷
+<span class="hljs-bullet">2. </span>写两张试卷
+<span class="hljs-bullet">3. </span>写三张试卷</code></pre></div>
+
+<p>会得到:</p>
+<ol>
+<li>写试卷</li>
+<li>写两张试卷</li>
+<li>写三张试卷</li>
+</ol>
+<blockquote>
+<p><strong>警告</strong><br>一定要加空格!</p>
+</blockquote>
+<h2 id="列表镶嵌"><a href="#列表镶嵌" class="headerlink" title="列表镶嵌:"></a>列表镶嵌:</h2><p>如实例:在第二列前加上<kbd>Tab</kbd>一个即可!</p>
+<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-bullet">+ </span>一级无序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">
+- </span>一级无序列表内容
+<span class="hljs-bullet">	1. </span>二级有序列表内容
+<span class="hljs-bullet">	2. </span>二级有序列表内容
+<span class="hljs-bullet">	3. </span>二级有序列表内容
+<span class="hljs-bullet">
+1. </span>一级有序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">	+ </span>二级无序列表内容
+<span class="hljs-bullet">
+
+1. </span>一级有序列表内容
+<span class="hljs-bullet">	1. </span>二级有序列表内容
+<span class="hljs-bullet">	2. </span>二级有序列表内容
+<span class="hljs-bullet">	3. </span>二级有序列表内容</code></pre></div>
+
+<p>会得到:</p>
+<ul>
+<li>一级无序列表内容<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>一级无序列表内容<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>一级有序列表内容<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>一级有序列表内容<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ol>
+<h2 id="分隔符："><a href="#分隔符：" class="headerlink" title="分隔符："></a>分隔符：</h2><p>以<code>- - -</code>为例子:<br>中级教程完.</p>
+<hr>
+]]></content>
+      <categories>
+        <category>爱学习</category>
+      </categories>
+      <tags>
+        <tag>MarkDown</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Momentum：一款美化你Chrome新标签页的插件</title>
     <url>/p/3d76e8ac.html</url>
     <content><![CDATA[<p>最近在折腾站点收录，有点忙，今天就过来水一片吧。</p>
@@ -2518,320 +2633,6 @@ Control-C
         <tag>标签页</tag>
         <tag>美化</tag>
         <tag>Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MarkDown语法详解（初级版）</title>
-    <url>/p/9ecd8772.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h1><h2 id="什么是MarkDown"><a href="#什么是MarkDown" class="headerlink" title="什么是MarkDown?"></a>什么是MarkDown?</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。<br>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/JG.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="约翰·格鲁伯" title="约翰·格鲁伯"><br>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。<br>Markdown 编写的文档后缀为 .md, .markdown。<br>由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。甚至Markdown能被使用来撰写电子书。因此,很多博客把它当作语法来写,比如WordPress,Hexo,或者是Typecho.<br>常见的编辑器有<a href="https://typora.io/" target="_blank" rel="noopener">Typora</a>,还有萌萌哒编辑器<a href="https://yosoro.coolecho.net/" target="_blank" rel="noopener">Yosoro</a><br>下面开始讲</p>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h1><blockquote>
-<p><strong>注意</strong><br>文章内所有名字纯属虚构,如有雷同,纯属巧合!</p>
-</blockquote>
-<h2 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h2><p>MarkDown的文字直接书写，与正常无区别<br>书写</p>
-<div class="hljs"><pre><code class="hljs undefined">我是刘老师.</code></pre></div>
-
-<p>会得到:</p>
-<p>我是刘老师.</p>
-<h2 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h2><p>基本上标题分两种：</p>
-<h3 id="分隔符标题："><a href="#分隔符标题：" class="headerlink" title="分隔符标题："></a>分隔符标题：</h3><p>以<code>-</code>和<code>=</code>分隔成一级和二级标题:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-section">我是一级刘老师
----</span>
-<span class="hljs-section">我是二级刘老师
-===</span></code></pre></div>
-
-<p>会得到:</p>
-<h2 id="我是一级刘老师"><a href="#我是一级刘老师" class="headerlink" title="我是一级刘老师"></a>我是一级刘老师</h2><h1 id="我是二级刘老师"><a href="#我是二级刘老师" class="headerlink" title="我是二级刘老师"></a>我是二级刘老师</h1><blockquote>
-<p><strong>注意:</strong><br>无论是<code>-</code>还是<code>=</code>,只要三个及以上即可!</p>
-</blockquote>
-<h3 id="字符标题"><a href="#字符标题" class="headerlink" title="字符标题:"></a>字符标题:</h3><p>以<code>#</code>代替标识,<code>#</code>越多`,标题级别越低:<br>例子:</p>
-<div class="hljs"><pre><code class="hljs undefined"># 我是一级刘老师
-## 我是二级刘老师
-### 我是三级刘老师
-#### 我是四级刘老师
-##### 我是五级刘老师
-###### 我是六级刘老师</code></pre></div>
-
-<p>会得到:</p>
-<h1 id="我是一级刘老师-1"><a href="#我是一级刘老师-1" class="headerlink" title="我是一级刘老师"></a>我是一级刘老师</h1><h2 id="我是二级刘老师-1"><a href="#我是二级刘老师-1" class="headerlink" title="我是二级刘老师"></a>我是二级刘老师</h2><h3 id="我是三级刘老师"><a href="#我是三级刘老师" class="headerlink" title="我是三级刘老师"></a>我是三级刘老师</h3><h4 id="我是四级刘老师"><a href="#我是四级刘老师" class="headerlink" title="我是四级刘老师"></a>我是四级刘老师</h4><h5 id="我是五级刘老师"><a href="#我是五级刘老师" class="headerlink" title="我是五级刘老师"></a>我是五级刘老师</h5><h6 id="我是六级刘老师"><a href="#我是六级刘老师" class="headerlink" title="我是六级刘老师"></a>我是六级刘老师</h6><blockquote>
-<p><strong>注意</strong><br>以#来做标题不得超过6个！</p>
-</blockquote>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落:"></a>段落:</h2><p>MarkDown的段落直接换行，与正常无区别.</p>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体:"></a>字体:</h2><p>MarkDown可用字体如下:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-emphasis">*我是斜着的刘老师*</span>
-<span class="hljs-emphasis">_我也是斜着的刘老师_</span>
-<span class="hljs-strong">**我是粗粗的刘老师**</span>
-<span class="hljs-strong">__我也是粗粗的刘老师__</span>
-<span class="hljs-strong">***我是又粗又斜的刘老师**</span>*
-<span class="hljs-strong">___我也是又粗又斜的刘老师__</span>_</code></pre></div>
-
-<p>你会得到:<br><em>我是斜着的刘老师</em><br><em>我也是斜着的刘老师</em><br><strong>我是粗粗的刘老师</strong><br><strong>我也是粗粗的刘老师</strong><br><strong><em>我是又粗又斜的刘老师</em></strong><br><strong><em>我也是又粗又斜的刘老师</em></strong></p>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>用<code>~~</code>把要删除的文字包起来</p>
-<div class="hljs"><pre><code class="hljs undefined">刘老师:今天试卷加~~三张~~ 四张!</code></pre></div>
-
-<p>会得到:</p>
-<p>刘老师:今天试卷加<del>三张</del> 四张!</p>
-<h2 id="引用-有时可做警告"><a href="#引用-有时可做警告" class="headerlink" title="引用(有时可做警告)"></a>引用(有时可做警告)</h2><p>语法:</p>
-<div class="hljs"><pre><code class="hljs undefined"><span class="hljs-quote">&gt; 刘：YRWS,ZSWF</span></code></pre></div>
-
-<p>得到:</p>
-<blockquote>
-<p>刘：YRWS,ZSWF</p>
-</blockquote>
-<p>还可以多级引用:</p>
-<div class="hljs"><pre><code class="hljs undefined">&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span> 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.
-<span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 我是被引用的刘老师.</code></pre></div>
-
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-<blockquote>
-<p>我是被引用的刘老师.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>好像可以一直下去</p>
-<blockquote>
-<p><strong>注意</strong><br>如果你想要跳出引用,请换行再写!</p>
-</blockquote>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码:"></a>单行代码:</h3><p>用`包裹</p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块:"></a>代码块:</h3><p>用```把代码包裹<br>此处不好举例,不再举例了.</p>
-<blockquote>
-<p><strong>提示</strong><br>在```后加上代码类型可以给予代码高亮欧!</p>
-</blockquote>
-<p>初级教程完,接下来请去中级教程.</p>
-<hr>
-]]></content>
-      <categories>
-        <category>爱学习</category>
-      </categories>
-      <tags>
-        <tag>MarkDown</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无服务器搭建Artalk评论系统后端</title>
-    <url>/p/480ab6ed.html</url>
-    <content><![CDATA[<blockquote>
-<p>这篇的无服务器部署Artalk，指的是NoServer而不是Serverless</p>
-</blockquote>
-<blockquote>
-<p>这篇所写的是部署后端，关于前端部署十分简单，这里不多阐述</p>
-</blockquote>
-<p><a href="https://artalk.js.org/" target="_blank" rel="noopener">Artalk</a>，一款简洁有趣的自托管评论系统。此时，Valine作为老大哥就不得不跳出来了。但是，作为Valine的Leancloud作为第三方托管，数据放在别人那里总是不舒服的，譬如<a href="https://status.leancloud.cn/" target="_blank" rel="noopener">2020/9/24Leancloud华北节点云引擎被 DDoS 攻击</a><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1e2ad89f.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001071558.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001071514956"></p>
-<p>或者说LeanCloud将开发版限额一限在限，亦或者leancloud多次宕机,作为自由开放的我自然不舒服。加上leancloud开发版的SLA实在令人担忧【不包括休眠时间，一个月内宕机超过20次（不过leancloud开发版确实没有保证SLA）】，以及比较严重的管理员冒充。我一直再找一个能用自己服务器托管评论系统，真巧，我找到了Artalk。Artalk的优点：</p>
-<ul>
-<li><p>轻量简洁 (~23kB gzipped)</p>
-</li>
-<li><p>有趣有爱</p>
-</li>
-<li><p>自托管</p>
-</li>
-<li><p>Markdown</p>
-</li>
-<li><p>表情自定</p>
-</li>
-<li><p>滑稽表情包</p>
-</li>
-<li><p><strong>管理员密码，防冒名</strong></p>
-</li>
-<li><p>验证码，提交频率限制</p>
-</li>
-<li><p><strong>通知中心</strong>，邮件提醒</p>
-</li>
-<li><p>自定义某些页面<strong>仅管理员可评论</strong></p>
-</li>
-<li><p>无限层级回复</p>
-</li>
-<li><p>滚动加载更多</p>
-</li>
-<li><p><strong>评论折叠</strong></p>
-</li>
-<li><p>一页多个评论</p>
-</li>
-<li><p>TypeScript</p>
-</li>
-<li><p><strong>提交频繁验证码</strong></p>
-</li>
-<li><p><strong>无数据库</strong></p>
-<p><span class="heimu">当然没有垃圾评论检测就很蛋疼</span></p>
-</li>
-</ul>
-<p>有服务器部署起来相当简单，宝塔【虽然被炸0day，不过修修补补还能用】+Artalk能实现5分钟部署完毕<a href="https://blog.jalenchuh.cn/posts/artalk-api-php/" target="_blank" rel="noopener">【Jalen的Artalk 自托管评论系统的后端部署】</a>，但是，习惯Valine的群友一看到后端部署就立刻皱起了眉头：我没有服务器，怎么办？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/BnTMX35EPxleVmA.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>Artalk的后端是PHP的，虽然作者也承诺了会开发别的后端<code>Go API / Node API / Python API</code>，但迟迟没有写出来，考虑到<a href="https://github.com/qwqcode" target="_blank" rel="noopener">QWQCODE</a>是个学生【我也是】，那么咕咕咕就情有可原了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>实际上，我用的是Euserv白嫖的，至少SLA还是过的去【&gt;=99%】，但是无论是申请还是部署都非常麻烦。此时，我就在想，既然有免费的php托管商，何苦不用呢？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9712a3c1.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>目前找到两个：Gearhost和000webhost</p>
-<blockquote>
-<p>注意，heroku虽然也有免费容器部署php，但是heroku是沙盒制度，一个评论存储为文件后会删除，所以heroku并不适合作为artalk后端。</p>
-</blockquote>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="设置Artalk"><a href="#设置Artalk" class="headerlink" title="设置Artalk"></a>设置Artalk</h2><p>与其它评论系统不同，artalk本身并没有做到开箱即用这一特点，所以，你还要做一些事先准备。</p>
-<h3 id="GithubAction-Composer安装"><a href="#GithubAction-Composer安装" class="headerlink" title="GithubAction+Composer安装"></a>GithubAction+Composer安装</h3><p>Artalk为了缩小原文件大小，并没有安装好依赖，依赖需要你自己安装。</p>
-<p>如果你本地有composer，那就直接克隆本地运行composer。但不论其便携性还是效率都不高【composer安装起来比较麻烦】，所以，我建议此处用GithubAction实现composer安装。当然你有composer环境就可以直接clone在本地安装。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29d8a5.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>进入<a href="https://github.com/qwqcode/Artalk-API-PHP" target="_blank" rel="noopener">原项目</a>，Fork到你自己的账户</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001073813.png?a=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001073812407"></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001073914.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001073913581"></p>
-<p>新建一个文件，文件名为：<code>.github/workflows/composer.yml</code></p>
-<p>内容为：</p>
-<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">name:</span> <span class="hljs-string">composer</span>
-
-<span class="hljs-attr">on:</span> 
-  <span class="hljs-attr">push:</span>
-    <span class="hljs-attr">branches:</span> 
-      <span class="hljs-bullet">-</span> <span class="hljs-string">master</span> <span class="hljs-comment"># build master branch only</span>
-
-<span class="hljs-attr">jobs:</span>
-  <span class="hljs-attr">download:</span>
-    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
-
-    <span class="hljs-attr">steps:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>
-      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
-      <span class="hljs-attr">with:</span>
-        <span class="hljs-attr">ref:</span> <span class="hljs-string">master</span>
-
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span>
-      <span class="hljs-attr">run:</span> <span class="hljs-string">|
-        npm install composer
-        composer install
-</span>        
-        
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>
-      <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span>
-      <span class="hljs-attr">with:</span>
-        <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.TOKEN</span> <span class="hljs-string">&#125;&#125;</span>
-        <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./</span></code></pre></div>
-
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001074024.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001074023800"></p>
-<p>设置Secret，NAME为<code>TOKEN</code>,内容为你的GithubTOKEN.【Token的获取与这篇文章关联不大】，请自行百度。</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001081903.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001081902077"></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001081942.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001081941932"></p>
-<p>回到仓库，<strong>新建一个空白的<code>.htaccess 文件夹，里面什么都不写</code></strong><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="此处不写.htaccess，gearhost就会莫名其妙炸500错误
-">[1]</span></a></sup>，并删除根目录底下的<code>.gitignore</code>触发GithubAction<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%83%B3%E4%B8%80%E6%83%B3.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<blockquote>
-<p>此处必须删除<code>.gitignore</code>【或者你自行修改】，否则接下来出错一律不管</p>
-</blockquote>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001082247.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>稍后即部署完毕</p>
-<h3 id="本地修改配置文件"><a href="#本地修改配置文件" class="headerlink" title="本地修改配置文件"></a>本地修改配置文件</h3><p>Clone你的仓库，指定为gh-pages分支</p>
-<div class="hljs"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> -b gh-pages https://github.com/ChenYFan-Tester/Artalk-API-PHP.git</code></pre></div>
-
-<blockquote>
-<p>-b是强制指定分支的意思</p>
-</blockquote>
-<blockquote>
-<p>速度慢试试github.com.cnpmjs.org，阿里github镜像</p>
-</blockquote>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001082654.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001082653387"></p>
-<p>打开并修改<code>Config.example.php</code> 具体参照<a href="https://github.com/qwqcode/Artalk-API-PHP" target="_blank" rel="noopener">官方文档</a></p>
-<p>完毕后退出，将<code>Config.example.php</code>重命名为<code>Config.php</code></p>
-<p>此时,你的artalk安装终于告一段落,但是,你还没有将他们部署上去.</p>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="Gearhost"><a href="#Gearhost" class="headerlink" title="Gearhost"></a>Gearhost</h2><p>Gearhost其实是一个小有名气的托管商，Free计划提供了最高一线程、每小时256MB内存、每小时5%CPU周期和每月1GB流量，作为评论托管是完全足够的。并且不需要信用卡。</p>
-<p>进入<a href="https://www.gearhost.com/" target="_blank" rel="noopener">Gearhost</a>注册一个账号,新建一个免费的CloudSite。</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083231.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083231112"></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083259.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083258674"></p>
-<p>构建完毕后稍等片刻，进入面板设置：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083743.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083743275"></p>
-<p>PHP版本设置为7.1</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001085603.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001085602629"></p>
-<p><code>Virtual Directories</code>网址设置为<code>/</code>路径设置为<code>site\wwwroot\public\</code></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001084000.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083959803"></p>
-<p>进入<code>Publish</code>选项卡，勾选<code>Local Git</code>，<code>Activate</code>这个方式</p>
-<blockquote>
-<p>注意，我强烈不推荐你使用FTP上传，FTP看起来有图形化很方便，但是请注意，Composer后的文件将近<strong>300+</strong>，FTP最致命的上传方式是<strong>每上传一个文件就会握一次手</strong>，这样子会严重浪费你的时间。而是用Github链接的同学我就要考虑你的危险的想法了，如果<strong>没有</strong>将仓库设置为Private，那么用Github链接是一个非常<strong>不明智</strong>的选择</p>
-</blockquote>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001084334.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001084334323"></p>
-<p>绑定git，上传三步走，<code>git init &amp;&amp; git add . &amp;&amp; git commit -m &quot;OHH&quot; &amp;&amp; git push website master</code></p>
-<p>绑定域名什么不多说了，建议套一层CloudFlare。</p>
-<p>Gearhost所用的共享ip，来自美国 科罗拉多州 丹佛，三网优化都不好。当然回源CloudFlare还是不错的。</p>
-<p>DEMO：<code>https://artalk-pub1.cyfan.top/</code></p>
-<p>SLA：还在测试，大约95%，你可以前往<a href="https://status.cyfan.top" target="_blank" rel="noopener">https://status.cyfan.top</a>查看详情<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1904dcb2.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>在页面id为12345有几个测试评论，你可以去测试一下，跨域均设置为’*‘。</p>
-<p>管理员用户名：admin</p>
-<p>管理员邮箱：<a href="mailto:admin@admin.admin" target="_blank" rel="noopener">admin@admin.admin</a></p>
-<p>管理员密码：admin</p>
-<h2 id="000webhost"><a href="#000webhost" class="headerlink" title="000webhost"></a>000webhost</h2><p><a href="https://www.000webhost.com/" target="_blank" rel="noopener">000webhost</a>也是个著名的免费php托管商，虽然早年的种种行为看着十分恶心，但是好歹也是个能白嫖的托管商。000webhost提供了每个账户一个免费的容器，每个容器每月3GB流量、300MB空间、1w个文件和每天25次邮箱发送。</p>
-<p>000webhost的部署相对简单些，直接将所有文件拖拽上传【因为它不支持git上传】，稍等即可</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001150747.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001150747082"></p>
-<p>上传至<code>public_html</code>子文件夹下：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001151010.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001151009729"></p>
-<p>000webhost不支持设置运行目录，这意味着data文件夹将会被曝光，但是我们可以设置000webhost的但目录密码保护：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001151720.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001151719382"></p>
-<p>这样，当有人试图访问<code>data/comments.data.json</code> 时，就会遭到密码拦截。</p>
-<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>由于000webhost域名验证需要一段时间，请先前往域名托管商设置记录。比如我的app名字是XXX.000webhostapp.com，我要绑定的是artalk-pub2.cyfan.top，就应该这样设置：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152945.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152944348"></p>
-<blockquote>
-<p>请注意000webhost验证域名是通过dns记录来验证的，在验证完毕前请不要开启CDN！</p>
-</blockquote>
-<p>绑定域名，请鼠标移至卡片上，点击QuickActions，点击Details</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152258.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152257105"></p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152417.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152417027"></p>
-<p>点击My Domains,进入设置界面：</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153113.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153112150"></p>
-<p>点击Add domain</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153038.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153038499"></p>
-<p>选择PointDomain【毕竟把ns改到000webhost是不可能的】</p>
-<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153224.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153224077"></p>
-<p>如实填写，稍等即可。</p>
-<p>DEMO:<a href="https://artalk-pub2.cyfan.top/public/" target="_blank" rel="noopener">https://artalk-pub2.cyfan.top/public/</a></p>
-<p>SLA：还在测试，大约90%，你可以前往<a href="https://status.cyfan.top" target="_blank" rel="noopener">https://status.cyfan.top</a>查看详情</p>
-<p>000webhost默认线路烂的和shit一样，强烈建议套CloudFlare</p>
-<p>和另一个demo一样在页面id为12345有几个测试评论，你可以去测试一下，跨域为’*‘。</p>
-<p>管理员用户名：admin</p>
-<p>管理员邮箱：<a href="mailto:admin@admin.admin" target="_blank" rel="noopener">admin@admin.admin</a></p>
-<p>管理员密码：admin</p>
-<p>000webhost对于这些不能展现他的广告徽标的账户可能会存在限制处理，请注意【老恶心了】。</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>国庆作业有点多，这篇要不是被我<del>亲爱</del>的群友催的要紧，我也不会水这一篇啊呜呜呜。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2a019f.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>如果你的artalk卡在了转圈圈的问题上，你可以在html前面加上这一句</p>
-<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://XXX.XXX.XXX/index.php"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">crossorigin</span>&gt;</span></code></pre></div>
-
-<p><code>preconnect</code>可以强制在渲染页面试并发一个请求，可以有效解决5s超时问题和并发过多不稳定导致cancel问题。</p>
-<p>另外你也可以用我的artalk脚本：</p>
-<div class="hljs"><pre><code class="hljs http">https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.js
-https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.css</code></pre></div>
-
-<ul>
-<li>修改超时时间为60s</li>
-<li>掩盖artalk标识</li>
-<li><strong>杰哥</strong>提示语</li>
-</ul>
-<p>如果你觉得不放心，你可以亲自检查<a href="https://github.com/ChenYFan-Tester/Artalk/commits/master" target="_blank" rel="noopener">我做了什么</a>，我会尽量保证与原仓库同步。</p>
-<p><del>国庆快乐！</del>写作业去了<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbe510bcf.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>此处不写.htaccess，gearhost就会莫名其妙炸500错误
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
-      <categories>
-        <category>随心记</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>Artalk</tag>
-        <tag>无服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -3045,6 +2846,205 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
         <tag>CloudFlare</tag>
         <tag>Workers</tag>
         <tag>目录列表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无服务器搭建Artalk评论系统后端</title>
+    <url>/p/480ab6ed.html</url>
+    <content><![CDATA[<blockquote>
+<p>这篇的无服务器部署Artalk，指的是NoServer而不是Serverless</p>
+</blockquote>
+<blockquote>
+<p>这篇所写的是部署后端，关于前端部署十分简单，这里不多阐述</p>
+</blockquote>
+<p><a href="https://artalk.js.org/" target="_blank" rel="noopener">Artalk</a>，一款简洁有趣的自托管评论系统。此时，Valine作为老大哥就不得不跳出来了。但是，作为Valine的Leancloud作为第三方托管，数据放在别人那里总是不舒服的，譬如<a href="https://status.leancloud.cn/" target="_blank" rel="noopener">2020/9/24Leancloud华北节点云引擎被 DDoS 攻击</a><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1e2ad89f.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001071558.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001071514956"></p>
+<p>或者说LeanCloud将开发版限额一限在限，亦或者leancloud多次宕机,作为自由开放的我自然不舒服。加上leancloud开发版的SLA实在令人担忧【不包括休眠时间，一个月内宕机超过20次（不过leancloud开发版确实没有保证SLA）】，以及比较严重的管理员冒充。我一直再找一个能用自己服务器托管评论系统，真巧，我找到了Artalk。Artalk的优点：</p>
+<ul>
+<li><p>轻量简洁 (~23kB gzipped)</p>
+</li>
+<li><p>有趣有爱</p>
+</li>
+<li><p>自托管</p>
+</li>
+<li><p>Markdown</p>
+</li>
+<li><p>表情自定</p>
+</li>
+<li><p>滑稽表情包</p>
+</li>
+<li><p><strong>管理员密码，防冒名</strong></p>
+</li>
+<li><p>验证码，提交频率限制</p>
+</li>
+<li><p><strong>通知中心</strong>，邮件提醒</p>
+</li>
+<li><p>自定义某些页面<strong>仅管理员可评论</strong></p>
+</li>
+<li><p>无限层级回复</p>
+</li>
+<li><p>滚动加载更多</p>
+</li>
+<li><p><strong>评论折叠</strong></p>
+</li>
+<li><p>一页多个评论</p>
+</li>
+<li><p>TypeScript</p>
+</li>
+<li><p><strong>提交频繁验证码</strong></p>
+</li>
+<li><p><strong>无数据库</strong></p>
+<p><span class="heimu">当然没有垃圾评论检测就很蛋疼</span></p>
+</li>
+</ul>
+<p>有服务器部署起来相当简单，宝塔【虽然被炸0day，不过修修补补还能用】+Artalk能实现5分钟部署完毕<a href="https://blog.jalenchuh.cn/posts/artalk-api-php/" target="_blank" rel="noopener">【Jalen的Artalk 自托管评论系统的后端部署】</a>，但是，习惯Valine的群友一看到后端部署就立刻皱起了眉头：我没有服务器，怎么办？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/BnTMX35EPxleVmA.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>Artalk的后端是PHP的，虽然作者也承诺了会开发别的后端<code>Go API / Node API / Python API</code>，但迟迟没有写出来，考虑到<a href="https://github.com/qwqcode" target="_blank" rel="noopener">QWQCODE</a>是个学生【我也是】，那么咕咕咕就情有可原了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>实际上，我用的是Euserv白嫖的，至少SLA还是过的去【&gt;=99%】，但是无论是申请还是部署都非常麻烦。此时，我就在想，既然有免费的php托管商，何苦不用呢？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e9712a3c1.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>目前找到两个：Gearhost和000webhost</p>
+<blockquote>
+<p>注意，heroku虽然也有免费容器部署php，但是heroku是沙盒制度，一个评论存储为文件后会删除，所以heroku并不适合作为artalk后端。</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="设置Artalk"><a href="#设置Artalk" class="headerlink" title="设置Artalk"></a>设置Artalk</h2><p>与其它评论系统不同，artalk本身并没有做到开箱即用这一特点，所以，你还要做一些事先准备。</p>
+<h3 id="GithubAction-Composer安装"><a href="#GithubAction-Composer安装" class="headerlink" title="GithubAction+Composer安装"></a>GithubAction+Composer安装</h3><p>Artalk为了缩小原文件大小，并没有安装好依赖，依赖需要你自己安装。</p>
+<p>如果你本地有composer，那就直接克隆本地运行composer。但不论其便携性还是效率都不高【composer安装起来比较麻烦】，所以，我建议此处用GithubAction实现composer安装。当然你有composer环境就可以直接clone在本地安装。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29d8a5.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>进入<a href="https://github.com/qwqcode/Artalk-API-PHP" target="_blank" rel="noopener">原项目</a>，Fork到你自己的账户</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001073813.png?a=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001073812407"></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001073914.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001073913581"></p>
+<p>新建一个文件，文件名为：<code>.github/workflows/composer.yml</code></p>
+<p>内容为：</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">name:</span> <span class="hljs-string">composer</span>
+
+<span class="hljs-attr">on:</span> 
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> 
+      <span class="hljs-bullet">-</span> <span class="hljs-string">master</span> <span class="hljs-comment"># build master branch only</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">download:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+
+    <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">ref:</span> <span class="hljs-string">master</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span>
+      <span class="hljs-attr">run:</span> <span class="hljs-string">|
+        npm install composer
+        composer install
+</span>        
+        
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.TOKEN</span> <span class="hljs-string">&#125;&#125;</span>
+        <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./</span></code></pre></div>
+
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001074024.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001074023800"></p>
+<p>设置Secret，NAME为<code>TOKEN</code>,内容为你的GithubTOKEN.【Token的获取与这篇文章关联不大】，请自行百度。</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001081903.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001081902077"></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001081942.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001081941932"></p>
+<p>回到仓库，<strong>新建一个空白的<code>.htaccess 文件夹，里面什么都不写</code></strong><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="此处不写.htaccess，gearhost就会莫名其妙炸500错误
+">[1]</span></a></sup>，并删除根目录底下的<code>.gitignore</code>触发GithubAction<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E6%83%B3%E4%B8%80%E6%83%B3.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<blockquote>
+<p>此处必须删除<code>.gitignore</code>【或者你自行修改】，否则接下来出错一律不管</p>
+</blockquote>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001082247.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>稍后即部署完毕</p>
+<h3 id="本地修改配置文件"><a href="#本地修改配置文件" class="headerlink" title="本地修改配置文件"></a>本地修改配置文件</h3><p>Clone你的仓库，指定为gh-pages分支</p>
+<div class="hljs"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> -b gh-pages https://github.com/ChenYFan-Tester/Artalk-API-PHP.git</code></pre></div>
+
+<blockquote>
+<p>-b是强制指定分支的意思</p>
+</blockquote>
+<blockquote>
+<p>速度慢试试github.com.cnpmjs.org，阿里github镜像</p>
+</blockquote>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001082654.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001082653387"></p>
+<p>打开并修改<code>Config.example.php</code> 具体参照<a href="https://github.com/qwqcode/Artalk-API-PHP" target="_blank" rel="noopener">官方文档</a></p>
+<p>完毕后退出，将<code>Config.example.php</code>重命名为<code>Config.php</code></p>
+<p>此时,你的artalk安装终于告一段落,但是,你还没有将他们部署上去.</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="Gearhost"><a href="#Gearhost" class="headerlink" title="Gearhost"></a>Gearhost</h2><p>Gearhost其实是一个小有名气的托管商，Free计划提供了最高一线程、每小时256MB内存、每小时5%CPU周期和每月1GB流量，作为评论托管是完全足够的。并且不需要信用卡。</p>
+<p>进入<a href="https://www.gearhost.com/" target="_blank" rel="noopener">Gearhost</a>注册一个账号,新建一个免费的CloudSite。</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083231.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083231112"></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083259.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083258674"></p>
+<p>构建完毕后稍等片刻，进入面板设置：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001083743.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083743275"></p>
+<p>PHP版本设置为7.1</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001085603.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001085602629"></p>
+<p><code>Virtual Directories</code>网址设置为<code>/</code>路径设置为<code>site\wwwroot\public\</code></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001084000.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001083959803"></p>
+<p>进入<code>Publish</code>选项卡，勾选<code>Local Git</code>，<code>Activate</code>这个方式</p>
+<blockquote>
+<p>注意，我强烈不推荐你使用FTP上传，FTP看起来有图形化很方便，但是请注意，Composer后的文件将近<strong>300+</strong>，FTP最致命的上传方式是<strong>每上传一个文件就会握一次手</strong>，这样子会严重浪费你的时间。而是用Github链接的同学我就要考虑你的危险的想法了，如果<strong>没有</strong>将仓库设置为Private，那么用Github链接是一个非常<strong>不明智</strong>的选择</p>
+</blockquote>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001084334.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001084334323"></p>
+<p>绑定git，上传三步走，<code>git init &amp;&amp; git add . &amp;&amp; git commit -m &quot;OHH&quot; &amp;&amp; git push website master</code></p>
+<p>绑定域名什么不多说了，建议套一层CloudFlare。</p>
+<p>Gearhost所用的共享ip，来自美国 科罗拉多州 丹佛，三网优化都不好。当然回源CloudFlare还是不错的。</p>
+<p>DEMO：<code>https://artalk-pub1.cyfan.top/</code></p>
+<p>SLA：还在测试，大约95%，你可以前往<a href="https://status.cyfan.top" target="_blank" rel="noopener">https://status.cyfan.top</a>查看详情<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d1904dcb2.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>在页面id为12345有几个测试评论，你可以去测试一下，跨域均设置为’*‘。</p>
+<p>管理员用户名：admin</p>
+<p>管理员邮箱：<a href="mailto:admin@admin.admin" target="_blank" rel="noopener">admin@admin.admin</a></p>
+<p>管理员密码：admin</p>
+<h2 id="000webhost"><a href="#000webhost" class="headerlink" title="000webhost"></a>000webhost</h2><p><a href="https://www.000webhost.com/" target="_blank" rel="noopener">000webhost</a>也是个著名的免费php托管商，虽然早年的种种行为看着十分恶心，但是好歹也是个能白嫖的托管商。000webhost提供了每个账户一个免费的容器，每个容器每月3GB流量、300MB空间、1w个文件和每天25次邮箱发送。</p>
+<p>000webhost的部署相对简单些，直接将所有文件拖拽上传【因为它不支持git上传】，稍等即可</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001150747.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001150747082"></p>
+<p>上传至<code>public_html</code>子文件夹下：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001151010.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001151009729"></p>
+<p>000webhost不支持设置运行目录，这意味着data文件夹将会被曝光，但是我们可以设置000webhost的但目录密码保护：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001151720.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001151719382"></p>
+<p>这样，当有人试图访问<code>data/comments.data.json</code> 时，就会遭到密码拦截。</p>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>由于000webhost域名验证需要一段时间，请先前往域名托管商设置记录。比如我的app名字是XXX.000webhostapp.com，我要绑定的是artalk-pub2.cyfan.top，就应该这样设置：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152945.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152944348"></p>
+<blockquote>
+<p>请注意000webhost验证域名是通过dns记录来验证的，在验证完毕前请不要开启CDN！</p>
+</blockquote>
+<p>绑定域名，请鼠标移至卡片上，点击QuickActions，点击Details</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152258.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152257105"></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001152417.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001152417027"></p>
+<p>点击My Domains,进入设置界面：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153113.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153112150"></p>
+<p>点击Add domain</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153038.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153038499"></p>
+<p>选择PointDomain【毕竟把ns改到000webhost是不可能的】</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20201001153224.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="image-20201001153224077"></p>
+<p>如实填写，稍等即可。</p>
+<p>DEMO:<a href="https://artalk-pub2.cyfan.top/public/" target="_blank" rel="noopener">https://artalk-pub2.cyfan.top/public/</a></p>
+<p>SLA：还在测试，大约90%，你可以前往<a href="https://status.cyfan.top" target="_blank" rel="noopener">https://status.cyfan.top</a>查看详情</p>
+<p>000webhost默认线路烂的和shit一样，强烈建议套CloudFlare</p>
+<p>和另一个demo一样在页面id为12345有几个测试评论，你可以去测试一下，跨域为’*‘。</p>
+<p>管理员用户名：admin</p>
+<p>管理员邮箱：<a href="mailto:admin@admin.admin" target="_blank" rel="noopener">admin@admin.admin</a></p>
+<p>管理员密码：admin</p>
+<p>000webhost对于这些不能展现他的广告徽标的账户可能会存在限制处理，请注意【老恶心了】。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>国庆作业有点多，这篇要不是被我<del>亲爱</del>的群友催的要紧，我也不会水这一篇啊呜呜呜。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece2a019f.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>如果你的artalk卡在了转圈圈的问题上，你可以在html前面加上这一句</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://XXX.XXX.XXX/index.php"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">crossorigin</span>&gt;</span></code></pre></div>
+
+<p><code>preconnect</code>可以强制在渲染页面试并发一个请求，可以有效解决5s超时问题和并发过多不稳定导致cancel问题。</p>
+<p>另外你也可以用我的artalk脚本：</p>
+<div class="hljs"><pre><code class="hljs http">https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.js
+https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.css</code></pre></div>
+
+<ul>
+<li>修改超时时间为60s</li>
+<li>掩盖artalk标识</li>
+<li><strong>杰哥</strong>提示语</li>
+</ul>
+<p>如果你觉得不放心，你可以亲自检查<a href="https://github.com/ChenYFan-Tester/Artalk/commits/master" target="_blank" rel="noopener">我做了什么</a>，我会尽量保证与原仓库同步。</p>
+<p><del>国庆快乐！</del>写作业去了<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53dbe510bcf.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>此处不写.htaccess，gearhost就会莫名其妙炸500错误
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+      <categories>
+        <category>随心记</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>Artalk</tag>
+        <tag>无服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -5034,6 +5034,112 @@ npm publish</code></pre></div>
       </tags>
   </entry>
   <entry>
+    <title>失败的光速叛逃！CloudFlarePage初体验</title>
+    <url>/p/363f2ff1.html</url>
+    <content><![CDATA[<p>众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！可万万没想到，简单的迁移过程会出现如此问题</p>
+<a id="more"></a>
+
+<p>据我所知，使用CloudFlare做hexo无非以下两种：</p>
+<ul>
+<li>GithubPage+CloudFlareCDN</li>
+<li>CloudFlareWorkerKV+ClouFlareWorkerSite</li>
+</ul>
+<p>CloudFlare早先时候支持WorkerSite，当时KV照实没有免费，我也不想为了<code>100ms</code>的回源耗时而花费金钱。不过后来KV在一定额度上免费了，打开WorkerSite的文档，第一步wrangler直接把我劝退。</p>
+<p>笑话，国内使用wrangler，那还不如CloudFlare+GithubPage。</p>
+<p><a href="https://blog.skk.moe/post/deploy-blog-to-cf-workers-site/" target="_blank" rel="noopener">苏卡卡大佬写的一篇文章</a>讲述了自己部署WorkerSite的经历，<a href="https://blog.ichr.me/post/cf-workers-site-deploy/" target="_blank" rel="noopener">ChrAlpha’s Blog</a>也曾提到过迁移的过程。不过我懒<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/62.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，我觉得<code>100ms</code>回源不算什么，赔个Worker还是有点亏。</p>
+<p>2020年11月份，偶然得知CFPage<a href="https://www.cloudflare.com/zh-cn/pages-jamstack-platform-beta-sign-up/" target="_blank" rel="noopener">正在公开招聘Pagebeta计划</a>，抱着试试看的心理，我简单写了些就交了上去。凭借着对CloudFlare发布新产品小心翼翼的态度，我揣摩估计很难申请到。果不其然，年都过了，连封邮件都没通知我。</p>
+<p>2021年2月20日，我先日常翻了遍邮件，0。正准备继续开发HexoPlusPlus，登陆CloudFlare，却发现右边多了个新玩意：</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613786871000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/156.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>不愧是我，我一眼就看出来我的CFPage申请到了。</p>
+<h1 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h1><p>由于我的博客源码在Github上，而CFPage只能从Github上获取源码。<br>我面向中国大陆CDN有一部分用的也是CloudFlare，通过BNXB第三方接入。<br>因为之前用的就是GithubAction的集成部署，所以<code>package.json</code>已经配置完成了。</p>
+<p>那么我看起来确实是最佳的接入选择。</p>
+<div class="note note-warning">
+            <p>非常操蛋的是，我无法删除已经添加的CloudFlarePage域名，所以我没有办法重新演示我如何安装，下面的截图是删除时的错误：<br><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787919000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt><br><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787960000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+          </div>
+
+<p>首先，进去，点击<code>创建项目</code>选择博客的github存储库，获得GithubAccess权限后跳转到这：</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788198000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>勾选需要接入的项目</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788329000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<ul>
+<li>构建设置 - 框架预设</li>
+</ul>
+<p>由于之前吃过Vercel的亏，不想选Hexo，但是抱着试试看的心态，还是选择了内置的hexo。</p>
+<p>选择之后，后面的构建命令和构建输出也直接填好了，保存并部署？</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789246000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<blockquote>
+<p>因为本博客使用了neat而不是gulp插件压缩html<del>管他呢反正丢CI</del>，所以构建时间会比较长。</p>
+</blockquote>
+<p>修改CNAME记录和TXT记录，分别去BNXB修改CNMAE和DNSPOD【NS所在处】修改TXT记录</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790247000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790482000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>就好了？就好了。</p>
+<p><span class="heimu">这是我最快的迁移速度</span></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789961000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>NetWork选项卡里出<code>x-server: Cloudflare Pages</code>说明迁移完毕。</p>
+<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>简洁，加载速度快，这是我第一个感受。</p>
+<p>用GithubAction老是卡在同一个界面不会动，要手动刷新一下才能出来，而且加载的东西贼多，我这台破笔记本有点卡。</p>
+<p>CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。</p>
+<p>无缝切换，这是我的第二个体验。</p>
+<p>以前换CI换CDN的时候，非得断掉先然后才能切换回来，现在两步走之后，直接在dns平台修改无缝迁移，体验良好，总耗时不超过10分钟。</p>
+<p>鉴于CloudFlare在国内的连接情况，电信这一条线我还是切回vercel【也是0回源】，其他的走CloudFlarePage</p>
+<p>平台还是beta，这是第三个感受。</p>
+<p>我删不掉已经添加的域名，这是我最纳闷的一点。</p>
+<p>然后我不想让cfpage检测我的<code>gh-pages</code>分支，因为GithubAction还有存在的必要，但是CFpage每每还是检测pages分支，然后扔出部署失败，提示错误。</p>
+<p>这两个问题<a href="https://community.cloudflare.com/t/cloudflarepagebug-i-cannot-delete-my-site/246093" target="_blank" rel="noopener">我已经丢论坛里了</a>，目前还未回复</p>
+<p>至于快多少，因为没有免费版本Argo做对比，也没有大量数据做对比，<strong>目前</strong>无法得出结论。</p>
+<p>真的要说快多少，因为大部分静态资源切jsd上，所有经过cf的只有一个单html，至少我在国内大环境下，我还没体会出100ms能快多少(´இ皿இ｀)</p>
+<p>另外CloudFlarePage用的证书很奇怪，可能是为了CNAME兼容性，不用自己自家的证书，反而用Let’s Encrypt，鉴于OSCP在国内阻断，ios用户可能会出现首次访问白屏，这一点我有点担心。</p>
+<p>最好的一点莫过于完全贴合HexoPlusPlus了，以后我就有充分的理由宣传HPP了<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/320.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h1 id="额度"><a href="#额度" class="headerlink" title="额度"></a>额度</h1><ul>
+<li>每月构建次数：500次</li>
+</ul>
+<p>【用了HPP，构建次数再多也不够500/mo，这一点我还是放心的，再说我常年咕咕咕】</p>
+<ul>
+<li><p>自定义域名：10个 【我也没这么多域名】</p>
+</li>
+<li><p>文件：2w个【绝对用不完】</p>
+</li>
+<li><p>总大小：25MB【图片啥的都扔图床，其实也就5MB】</p>
+</li>
+<li><p>带宽：无限制【！！！】</p>
+</li>
+</ul>
+<h1 id="然后我切回来了"><a href="#然后我切回来了" class="headerlink" title="然后我切回来了"></a>然后我切回来了</h1><p>高高兴兴的搞完了CFPage部署，<del>水了这篇文章</del>去吃饭。吃完饭后回来一看谷歌统计，好家伙404的怎么这么多。</p>
+<p>还好之前的GithubPage没有删掉，去bnxb赶紧切了回来。</p>
+<p><del>完了我也经历了和Sukka大佬一样的问题</del></p>
+<p>问题很容易定位，所有的404来自cfpage而非vercel。</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795675000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>首先是Vercel，开代理的情况下国外访问均正确解析至vercel，可以在<code>x-vercel</code>头里看出来</p>
+<p>地址是<code>https://blog.cyfan.top/p/52382e42.html</code>，相应代码是<code>200</code></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795874000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>关闭代理，将自动选择CloudFlareCDN+GithubPage，可以从<code>x-github-request-id</code>看出</p>
+<p>地址是<code>https://blog.cyfan.top/p/52382e42.html</code>，相应代码是<code>200</code></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796163000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>然后是有问题的CFPage，可以在<code>x-server</code>头里看出来</p>
+<p>地址是<code>https://blog-9una.pages.dev/p/52382e42.html</code>，相应代码是<code>308</code><strong>跳转</strong>，跳向<code>https://blog-9una.pages.dev/p/52382e42</code>，<strong>CFPage会把末尾.html抹掉</strong></p>
+<p>抹掉就罢了,结果在vercel这边又出问题</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796374000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>但是最奇葩的是,githubpage是允许不带html裸访</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796456000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>这就是整个经过,CFPage必须抹掉后缀,GithubPage保持无所谓,Vercel必须不能抹掉</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>先从自己入手，CFPage和vercel不能共留，干掉vercel？好主意，毕竟国内访问CF并无大碍，但是有个大问题梗在面前，评论怎么办，之前的收录怎么办，首页链接不一致怎么办？</p>
+<p>我又不想抛弃CFpage，于是试图和Sukka大佬针对中文解码一样来个拯救计划，结果发现，CFPage不开源……</p>
+<p>后来仔细翻了一遍<a href="https://developers.cloudflare.com/pages/platform/serving-pages#route-matching" target="_blank" rel="noopener">文档</a>才发现，这样是有意为之，故意删掉后缀名。</p>
+<p>的，切回Github+CFCDN，这一早上的折腾白费了( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</p>
+]]></content>
+      <categories>
+        <category>好方法</category>
+      </categories>
+      <tags>
+        <tag>CloudFlare</tag>
+        <tag>Hexo</tag>
+        <tag>集成部署</tag>
+        <tag>CloudFlarePage</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Euserv正确打开优化方式</title>
     <url>/p/d788bdf3.html</url>
     <content><![CDATA[<p>Euserv，盛名远扬【老白嫖怪了】，但是如何合理打开它，却是一个难题。这篇文章就是简单讲讲合理使用其免费的纯IPv6小鸡</p>
@@ -5309,112 +5415,6 @@ Packet Loss:     0.0%
       <tags>
         <tag>白嫖</tag>
         <tag>Euserv</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>失败的光速叛逃！CloudFlarePage初体验</title>
-    <url>/p/363f2ff1.html</url>
-    <content><![CDATA[<p>众所周知，CloudFlare曾开放CloudFlarePage内测资格申请，如今我获得了资格，免费享受边缘部署岂不美哉！可万万没想到，简单的迁移过程会出现如此问题</p>
-<a id="more"></a>
-
-<p>据我所知，使用CloudFlare做hexo无非以下两种：</p>
-<ul>
-<li>GithubPage+CloudFlareCDN</li>
-<li>CloudFlareWorkerKV+ClouFlareWorkerSite</li>
-</ul>
-<p>CloudFlare早先时候支持WorkerSite，当时KV照实没有免费，我也不想为了<code>100ms</code>的回源耗时而花费金钱。不过后来KV在一定额度上免费了，打开WorkerSite的文档，第一步wrangler直接把我劝退。</p>
-<p>笑话，国内使用wrangler，那还不如CloudFlare+GithubPage。</p>
-<p><a href="https://blog.skk.moe/post/deploy-blog-to-cf-workers-site/" target="_blank" rel="noopener">苏卡卡大佬写的一篇文章</a>讲述了自己部署WorkerSite的经历，<a href="https://blog.ichr.me/post/cf-workers-site-deploy/" target="_blank" rel="noopener">ChrAlpha’s Blog</a>也曾提到过迁移的过程。不过我懒<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/62.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>，我觉得<code>100ms</code>回源不算什么，赔个Worker还是有点亏。</p>
-<p>2020年11月份，偶然得知CFPage<a href="https://www.cloudflare.com/zh-cn/pages-jamstack-platform-beta-sign-up/" target="_blank" rel="noopener">正在公开招聘Pagebeta计划</a>，抱着试试看的心理，我简单写了些就交了上去。凭借着对CloudFlare发布新产品小心翼翼的态度，我揣摩估计很难申请到。果不其然，年都过了，连封邮件都没通知我。</p>
-<p>2021年2月20日，我先日常翻了遍邮件，0。正准备继续开发HexoPlusPlus，登陆CloudFlare，却发现右边多了个新玩意：</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613786871000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p><img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/156.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>不愧是我，我一眼就看出来我的CFPage申请到了。</p>
-<h1 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h1><p>由于我的博客源码在Github上，而CFPage只能从Github上获取源码。<br>我面向中国大陆CDN有一部分用的也是CloudFlare，通过BNXB第三方接入。<br>因为之前用的就是GithubAction的集成部署，所以<code>package.json</code>已经配置完成了。</p>
-<p>那么我看起来确实是最佳的接入选择。</p>
-<div class="note note-warning">
-            <p>非常操蛋的是，我无法删除已经添加的CloudFlarePage域名，所以我没有办法重新演示我如何安装，下面的截图是删除时的错误：<br><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787919000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt><br><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613787960000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-          </div>
-
-<p>首先，进去，点击<code>创建项目</code>选择博客的github存储库，获得GithubAccess权限后跳转到这：</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788198000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>勾选需要接入的项目</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613788329000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<ul>
-<li>构建设置 - 框架预设</li>
-</ul>
-<p>由于之前吃过Vercel的亏，不想选Hexo，但是抱着试试看的心态，还是选择了内置的hexo。</p>
-<p>选择之后，后面的构建命令和构建输出也直接填好了，保存并部署？</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789246000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<blockquote>
-<p>因为本博客使用了neat而不是gulp插件压缩html<del>管他呢反正丢CI</del>，所以构建时间会比较长。</p>
-</blockquote>
-<p>修改CNAME记录和TXT记录，分别去BNXB修改CNMAE和DNSPOD【NS所在处】修改TXT记录</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790247000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613790482000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>就好了？就好了。</p>
-<p><span class="heimu">这是我最快的迁移速度</span></p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613789961000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>NetWork选项卡里出<code>x-server: Cloudflare Pages</code>说明迁移完毕。</p>
-<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>简洁，加载速度快，这是我第一个感受。</p>
-<p>用GithubAction老是卡在同一个界面不会动，要手动刷新一下才能出来，而且加载的东西贼多，我这台破笔记本有点卡。</p>
-<p>CloudFlarePage则轻巧的多，并且部署状况很快就能体现出来。</p>
-<p>无缝切换，这是我的第二个体验。</p>
-<p>以前换CI换CDN的时候，非得断掉先然后才能切换回来，现在两步走之后，直接在dns平台修改无缝迁移，体验良好，总耗时不超过10分钟。</p>
-<p>鉴于CloudFlare在国内的连接情况，电信这一条线我还是切回vercel【也是0回源】，其他的走CloudFlarePage</p>
-<p>平台还是beta，这是第三个感受。</p>
-<p>我删不掉已经添加的域名，这是我最纳闷的一点。</p>
-<p>然后我不想让cfpage检测我的<code>gh-pages</code>分支，因为GithubAction还有存在的必要，但是CFpage每每还是检测pages分支，然后扔出部署失败，提示错误。</p>
-<p>这两个问题<a href="https://community.cloudflare.com/t/cloudflarepagebug-i-cannot-delete-my-site/246093" target="_blank" rel="noopener">我已经丢论坛里了</a>，目前还未回复</p>
-<p>至于快多少，因为没有免费版本Argo做对比，也没有大量数据做对比，<strong>目前</strong>无法得出结论。</p>
-<p>真的要说快多少，因为大部分静态资源切jsd上，所有经过cf的只有一个单html，至少我在国内大环境下，我还没体会出100ms能快多少(´இ皿இ｀)</p>
-<p>另外CloudFlarePage用的证书很奇怪，可能是为了CNAME兼容性，不用自己自家的证书，反而用Let’s Encrypt，鉴于OSCP在国内阻断，ios用户可能会出现首次访问白屏，这一点我有点担心。</p>
-<p>最好的一点莫过于完全贴合HexoPlusPlus了，以后我就有充分的理由宣传HPP了<img src="https://npm.elemecdn.com/chenyfan-oss@1.1.11/320.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<h1 id="额度"><a href="#额度" class="headerlink" title="额度"></a>额度</h1><ul>
-<li>每月构建次数：500次</li>
-</ul>
-<p>【用了HPP，构建次数再多也不够500/mo，这一点我还是放心的，再说我常年咕咕咕】</p>
-<ul>
-<li><p>自定义域名：10个 【我也没这么多域名】</p>
-</li>
-<li><p>文件：2w个【绝对用不完】</p>
-</li>
-<li><p>总大小：25MB【图片啥的都扔图床，其实也就5MB】</p>
-</li>
-<li><p>带宽：无限制【！！！】</p>
-</li>
-</ul>
-<h1 id="然后我切回来了"><a href="#然后我切回来了" class="headerlink" title="然后我切回来了"></a>然后我切回来了</h1><p>高高兴兴的搞完了CFPage部署，<del>水了这篇文章</del>去吃饭。吃完饭后回来一看谷歌统计，好家伙404的怎么这么多。</p>
-<p>还好之前的GithubPage没有删掉，去bnxb赶紧切了回来。</p>
-<p><del>完了我也经历了和Sukka大佬一样的问题</del></p>
-<p>问题很容易定位，所有的404来自cfpage而非vercel。</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795675000.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>首先是Vercel，开代理的情况下国外访问均正确解析至vercel，可以在<code>x-vercel</code>头里看出来</p>
-<p>地址是<code>https://blog.cyfan.top/p/52382e42.html</code>，相应代码是<code>200</code></p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613795874000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>关闭代理，将自动选择CloudFlareCDN+GithubPage，可以从<code>x-github-request-id</code>看出</p>
-<p>地址是<code>https://blog.cyfan.top/p/52382e42.html</code>，相应代码是<code>200</code></p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796163000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>然后是有问题的CFPage，可以在<code>x-server</code>头里看出来</p>
-<p>地址是<code>https://blog-9una.pages.dev/p/52382e42.html</code>，相应代码是<code>308</code><strong>跳转</strong>，跳向<code>https://blog-9una.pages.dev/p/52382e42</code>，<strong>CFPage会把末尾.html抹掉</strong></p>
-<p>抹掉就罢了,结果在vercel这边又出问题</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796374000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>但是最奇葩的是,githubpage是允许不带html裸访</p>
-<p><img src="https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/hpp_upload/1613796456000.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>这就是整个经过,CFPage必须抹掉后缀,GithubPage保持无所谓,Vercel必须不能抹掉</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>先从自己入手，CFPage和vercel不能共留，干掉vercel？好主意，毕竟国内访问CF并无大碍，但是有个大问题梗在面前，评论怎么办，之前的收录怎么办，首页链接不一致怎么办？</p>
-<p>我又不想抛弃CFpage，于是试图和Sukka大佬针对中文解码一样来个拯救计划，结果发现，CFPage不开源……</p>
-<p>后来仔细翻了一遍<a href="https://developers.cloudflare.com/pages/platform/serving-pages#route-matching" target="_blank" rel="noopener">文档</a>才发现，这样是有意为之，故意删掉后缀名。</p>
-<p>的，切回Github+CFCDN，这一早上的折腾白费了( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</p>
-]]></content>
-      <categories>
-        <category>好方法</category>
-      </categories>
-      <tags>
-        <tag>CloudFlare</tag>
-        <tag>Hexo</tag>
-        <tag>集成部署</tag>
-        <tag>CloudFlarePage</tag>
       </tags>
   </entry>
   <entry>
@@ -6837,6 +6837,23 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div>
       </tags>
   </entry>
   <entry>
+    <title>巧妙去除百度首页广告</title>
+    <url>/p/c226bfa5.html</url>
+    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>百度首页有<del>新闻</del>广告，虽然声称新闻，实际上就是你会发现其中有大量广告。<br>好吧好吧，如果你一直坚定认为它是新闻，我也没办法。<br>下面说说如何去除</p>
+<h2 id="去除前："><a href="#去除前：" class="headerlink" title="去除前："></a>去除前：</h2><p>这是你输入<a href="https://baidu.com" target="_blank" rel="noopener">https://baidu.com</a>时的场景：<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/BAIDUADS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="百度首页广告" title="去除前"></p>
+<h2 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h2><p>在baidu.com 后跟上<code>/?tn=simple</code>,变成<a href="https://baidu.com/?tn=simple" target="_blank" rel="noopener">https://baidu.com?tn=simple</a><br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/BAIDUNOADS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="百度首页广告" title="去除后"></p>
+<h3 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h3><hr>
+]]></content>
+      <categories>
+        <category>好方法</category>
+      </categories>
+      <tags>
+        <tag>奇淫巧技</tag>
+        <tag>百度</tag>
+        <tag>广告</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工具箱和私有云恢复！顺便讨论一下免费php供应商怎么选=&gt;</title>
     <url>/p/d72d7290.html</url>
     <content><![CDATA[<h1 id="所有"><a href="#所有" class="headerlink" title="所有"></a>所有</h1><p>早上折腾了3个小时，终于完美恢复了两个因为heroku宕机而失效的php网站。</p>
@@ -6912,23 +6929,6 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div>
         <tag>工具箱</tag>
         <tag>私有云</tag>
         <tag>恢复</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>巧妙去除百度首页广告</title>
-    <url>/p/c226bfa5.html</url>
-    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>百度首页有<del>新闻</del>广告，虽然声称新闻，实际上就是你会发现其中有大量广告。<br>好吧好吧，如果你一直坚定认为它是新闻，我也没办法。<br>下面说说如何去除</p>
-<h2 id="去除前："><a href="#去除前：" class="headerlink" title="去除前："></a>去除前：</h2><p>这是你输入<a href="https://baidu.com" target="_blank" rel="noopener">https://baidu.com</a>时的场景：<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/BAIDUADS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="百度首页广告" title="去除前"></p>
-<h2 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h2><p>在baidu.com 后跟上<code>/?tn=simple</code>,变成<a href="https://baidu.com/?tn=simple" target="_blank" rel="noopener">https://baidu.com?tn=simple</a><br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/BAIDUNOADS.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="百度首页广告" title="去除后"></p>
-<h3 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h3><hr>
-]]></content>
-      <categories>
-        <category>好方法</category>
-      </categories>
-      <tags>
-        <tag>奇淫巧技</tag>
-        <tag>百度</tag>
-        <tag>广告</tag>
       </tags>
   </entry>
   <entry>

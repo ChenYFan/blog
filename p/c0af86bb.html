@@ -294,7 +294,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.5k字
+      4k字
     </span>
   
 
@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      42
+      47
       分钟
     </span>
   
@@ -345,12 +345,6 @@ background-color:#bbb;
             <!-- SEO header -->
             <h1 style="display: none">欲善其事，必利其器 - 论如何善用ServiceWorker</h1>
             
-              <p class="note note-info">
-                
-                  本文最后更新于：几秒前
-                
-              </p>
-            
             <div class="markdown-body" id="post-body">
               <p>ServiceWorker作为前端革命领袖，毫不夸张地被誉为前端黑科技，此文将阐述如何巧妙的使用它来实现一些看起来匪夷所思的事情。</p>
 <a id="more"></a>
@@ -378,7 +372,9 @@ background-color:#bbb;
 </blockquote>
 <h2 id="What-Relationship-Between-ServiceWorker-and-PWA"><a href="#What-Relationship-Between-ServiceWorker-and-PWA" class="headerlink" title="What Relationship Between ServiceWorker and PWA"></a>What Relationship Between ServiceWorker and PWA</h2><p>很多人看到sw，第一反应是PWA，即渐进式Web应用。实际上，SW确实是PWA的核心与灵魂，但SW在PWA中起的主要作用是缓存文件，提供给离线访问。并没有完整地发挥出SW的巧妙用法。</p>
 <p>SW可以完全脱离PWA存在，当然，PWA可离不开SW ：）</p>
-<h2 id="And-WorkBox"><a href="#And-WorkBox" class="headerlink" title="And WorkBox ?"></a>And WorkBox ?</h2><p>WorkBox是谷歌开发的一款基于SW的缓存控制器。核心依旧是SW，但还是没有SW原本的自定义程度高（</p>
+<h2 id="And-WorkBox"><a href="#And-WorkBox" class="headerlink" title="And WorkBox ?"></a>And WorkBox ?</h2><p>WorkBox是谷歌开发的一款基于SW的缓存控制器，其主要目的是方便维护PWA。核心依旧是SW，但还是没有SW原本的自定义程度高（</p>
+<h2 id="Why-Not-WorkBox"><a href="#Why-Not-WorkBox" class="headerlink" title="Why Not WorkBox ?"></a>Why Not WorkBox ?</h2><p>首先，博客呢，是没有必要用PWA，有SW做中间件足矣。同时，WorkBox只能简单的缓存数据，并不能做到拦截篡改请求的功能，尤其不能精准把握每一个资源的缓存情况，自定义程度并不高。</p>
+<p><del>自己编写SW，格局就打开了</del></p>
 <h1 id="Start-From-Zero"><a href="#Start-From-Zero" class="headerlink" title="Start From Zero"></a>Start From Zero</h1><h2 id="安装-Install"><a href="#安装-Install" class="headerlink" title="安装 / Install"></a>安装 / Install</h2><p>首先，SW的本质是JS脚本，要安装它必须要经过一个html。毕竟，只有拿到了html，JS才能运行于DOM上下文。</p>
 <p>剥离层层加成，安装的代码只有一行</p>
 <div class="hljs"><pre><code class="hljs JavaScript">navigator.serviceWorker.register(<span class="hljs-string">'/sw.js'</span>)</code></pre></div>
@@ -460,7 +456,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <blockquote>
 <p>以下所有内容均针对handle修改</p>
 </blockquote>
-<h4 id="透明代理-Transparent-Proxy"><a href="#透明代理-Transparent-Proxy" class="headerlink" title="透明代理 / Transparent Proxy"></a>透明代理 / Transparent Proxy</h4><p>顾名思义，此实战脚本的作用是SW代理目前的所有流量但不进行修改，仿佛SW不存在一般。</p>
+<h3 id="透明代理-Transparent-Proxy"><a href="#透明代理-Transparent-Proxy" class="headerlink" title="透明代理 / Transparent Proxy"></a>透明代理 / Transparent Proxy</h3><p>顾名思义，此实战脚本的作用是SW代理目前的所有流量但不进行修改，仿佛SW不存在一般。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span>(req)=&gt;&#123;
     <span class="hljs-keyword">return</span> fetch(req)
 &#125;</code></pre></div>
@@ -469,7 +465,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <p><code>fetch</code>只能传递<code>Requset</code>对象,而<code>Requset</code>对象有两个参数<code>(url,[option])</code>,第一个参数是网址,第二个参数为<code>Request</code>的内容,例如<code>body</code>或<code>header</code>。</p>
 <p>此脚本适用于卸载<code>ServiceWorker</code>的替换脚本。因为sw在无法拉取新版本时不会主动卸载，依旧保持运行，填入一个透明代理sw即可。</p>
 <p>由于SW冷启动【即页面关闭后SW】处于暂停状态是从硬盘读取的，这会导致第一次请求有少许性能延迟[~10ms]。</p>
-<h4 id="篡改请求-Edit-Requset"><a href="#篡改请求-Edit-Requset" class="headerlink" title="篡改请求 / Edit Requset"></a>篡改请求 / Edit Requset</h4><p>对于一张图片，有时候服务端会变态到让你必须用<code>POST</code>协议才能获得，此时用SW篡改最为方便。</p>
+<h3 id="篡改请求-Edit-Requset"><a href="#篡改请求-Edit-Requset" class="headerlink" title="篡改请求 / Edit Requset"></a>篡改请求 / Edit Requset</h3><p>对于一张图片，有时候服务端会变态到让你必须用<code>POST</code>协议才能获得，此时用SW篡改最为方便。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">if</span> ((req.url.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>].match(<span class="hljs-string">'xxx.com'</span>)) &#123;
         <span class="hljs-comment">//xxx.com为图片所在域名</span>
@@ -483,7 +479,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <blockquote>
 <p>注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链</p>
 </blockquote>
-<h4 id="篡改响应-Edit-Response"><a href="#篡改响应-Edit-Response" class="headerlink" title="篡改响应 / Edit Response"></a>篡改响应 / Edit Response</h4><p>这个例子会检测返回内容，若为html，将把所有的”TEST”都替换成”SHIT”</p>
+<h3 id="篡改响应-Edit-Response"><a href="#篡改响应-Edit-Response" class="headerlink" title="篡改响应 / Edit Response"></a>篡改响应 / Edit Response</h3><p>这个例子会检测返回内容，若为html，将把所有的”TEST”都替换成”SHIT”</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(req)
     <span class="hljs-keyword">const</span> resp = res.clone()
@@ -501,7 +497,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <p><code>const resp = res.clone()</code>由于<code>Response</code>的<code>body</code>一旦被读取，这个<code>body</code>就会被锁死，再也无法读取。<code>clone()</code>能够创造出响应的副本用于处理。</p>
 <p><code>resp.headers.get(&#39;content-type&#39;)</code>通过读取响应的头，判断是否包含<code>text/html</code>，如果是，将响应以<code>text()</code>异步流的方式读取，然后正则替换掉响应内容，并还原头和响应Code。</p>
 <p>返回的内容必须是<code>Response</code>对象，所以<code>new Response</code>构建一个新对象，并直接返回。不匹配html头将直接原封不动地透明代理。</p>
-<h4 id="移花接木-Graft-Request-To-Another-Server"><a href="#移花接木-Graft-Request-To-Another-Server" class="headerlink" title="移花接木 / Graft Request To Another Server"></a>移花接木 / Graft Request To Another Server</h4><p><code>unpkg.zhimg.com</code>是<code>unpkg.com</code>的镜像网站。此脚本将会把所有的<code>unpkg.com</code>流量直接拦截到<code>unpkg.zhimg.com</code>，用于中国大陆内CDN加速。</p>
+<h3 id="移花接木-Graft-Request-To-Another-Server"><a href="#移花接木-Graft-Request-To-Another-Server" class="headerlink" title="移花接木 / Graft Request To Another Server"></a>移花接木 / Graft Request To Another Server</h3><p><code>unpkg.zhimg.com</code>是<code>unpkg.com</code>的镜像网站。此脚本将会把所有的<code>unpkg.com</code>流量直接拦截到<code>unpkg.zhimg.com</code>，用于中国大陆内CDN加速。</p>
 <p>由于npm镜像固定为GET请求方式并且没有其他鉴权需求，所以我们没有必要还原<code>Request</code>其他数据。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">const</span> domain = req.url.split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">2</span>];
@@ -514,7 +510,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 &#125;</code></pre></div>
 
 <p><code>domain.match</code>捕获请求中是否有待替换域名，检查出来后直接<code>replace</code>掉域名，如果没有匹配到，直接透明代理走掉。</p>
-<h4 id="持久化缓存-Cache-Persistently"><a href="#持久化缓存-Cache-Persistently" class="headerlink" title="持久化缓存 / Cache Persistently"></a>持久化缓存 / Cache Persistently</h4><p>对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。</p>
+<h3 id="持久化缓存-Cache-Persistently"><a href="#持久化缓存-Cache-Persistently" class="headerlink" title="持久化缓存 / Cache Persistently"></a>持久化缓存 / Cache Persistently</h3><p>对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">const</span> cache_url_list = [
         <span class="hljs-regexp">/(http:\/\/|https:\/\/)cdn\.jsdelivr\.net/g</span>,
@@ -556,7 +552,35 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
     &#125;
 &#125;</code></pre></div>
 
-<h4 id="离线化缓存-Cache-For-Offline"><a href="#离线化缓存-Cache-For-Offline" class="headerlink" title="离线化缓存 / Cache For Offline"></a>离线化缓存 / Cache For Offline</h4>
+<h3 id="离线化缓存-Cache-For-Offline"><a href="#离线化缓存-Cache-For-Offline" class="headerlink" title="离线化缓存 / Cache For Offline"></a>离线化缓存 / Cache For Offline</h3><p>对于博客来说，并不是所有内容都是一成不变的。传统PWA采用SW更新同时刷新缓存，这样不够灵活，同时刷新缓存的版本号管理也存在着很大的漏洞，长时间访问极易造成庞大的缓存冗余。因此，对于博客的缓存，我们要保证用户每次获取都是最新的版本，但也要保证用户在离线时能看到最后一个版本的内容。</p>
+<p>因此，针对博客来说，策略应该是先获取最新内容，然后更新本地缓存，最后返回最新内容；离线的时候，尝试访问最新内容会回退到缓存，如果缓存也没有，就回退到错误页面。</p>
+<p>即：</p>
+<div class="hljs"><pre><code class="hljs undefined">Online:
+发起Request =&gt; 发起fetch =&gt; 更新Cache =&gt; 返回Response
+Offline:
+发起Request =&gt; 获取Cache =&gt; 返回Response</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">return</span> fetch(req.url).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (!res) &#123; <span class="hljs-keyword">throw</span> <span class="hljs-string">'error'</span> &#125; <span class="hljs-comment">//1</span>
+        <span class="hljs-keyword">return</span> caches.open(CACHE_NAME).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cache</span>) </span>&#123;
+            cache.delete(req);
+            cache.put(req, res.clone());
+            <span class="hljs-keyword">return</span> res;
+        &#125;);
+    &#125;).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> caches.match(req).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>&#123;
+            <span class="hljs-keyword">return</span> resp || caches.match(<span class="hljs-keyword">new</span> Request(<span class="hljs-string">'/offline.html'</span>)) <span class="hljs-comment">//2</span>
+        &#125;)
+    &#125;)
+&#125;</code></pre></div>
+
+<p><code>if (!res) { throw &#39;error&#39; }</code> 如果没有返回值，直接抛出错误，会被下面的Catch捕获，返回缓存或错误页面</p>
+<p><code>return resp || caches.match(new Request(&#39;/offline.html&#39;))</code> 返回缓存获得的内容。如果没有，就返回从缓存中拿到的错误网页。此处offline.html应该在最开始的时候就缓存好</p>
+<h3 id="并行请求-Request-Parallelly"><a href="#并行请求-Request-Parallelly" class="headerlink" title="并行请求 / Request Parallelly"></a>并行请求 / Request Parallelly</h3><blockquote>
+<p><strong>正在施工</strong></p>
+</blockquote>
+
             </div>
             <hr>
             <div>
@@ -1128,59 +1152,60 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 
 
                                                                                         <script>
-                                                                                                (async () => {
-                                                                                                    function ranN(minNum, maxNum) {
-                                                                                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
-                                                                                                    }
-                                                                                                    window.notyf = new Notyf();
-                                                                                                    window.send_msg = (data) => {
-                                                                                                        return new Promise((resolve, reject) => {
-                                                                                                            try {
-                                                                                                                //throw ''
-                                                                                                                const broadcast = new BroadcastChannel('count-channel');
-                                                                                                                broadcast.postMessage(data);
-                                                                                                                broadcast.onmessage = (event) => {
-                                                                                                                    resolve(event.data)
-                                                                                                                }
-                                                                                                            } catch (n) {
-                                                                                                                resolve({ error: true, ok: true })
+                                                                                            window.setCustom = () => { };
+                                                                                            (async () => {
+                                                                                                function ranN(minNum, maxNum) {
+                                                                                                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                                                                                }
+                                                                                                window.notyf = new Notyf();
+                                                                                                window.send_msg = (data) => {
+                                                                                                    return new Promise((resolve, reject) => {
+                                                                                                        try {
+                                                                                                            //throw ''
+                                                                                                            const broadcast = new BroadcastChannel('count-channel');
+                                                                                                            broadcast.postMessage(data);
+                                                                                                            broadcast.onmessage = (event) => {
+                                                                                                                resolve(event.data)
                                                                                                             }
-                                                                                                        })
-                                                                                                    }
-                                                                                                    if ('serviceWorker' in navigator) {
-                                                                                                        window.addEventListener('load', async () => {
-                                                                                                            navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
-                                                                                                                .then(async reg => {
+                                                                                                        } catch (n) {
+                                                                                                            resolve({ error: true, ok: true })
+                                                                                                        }
+                                                                                                    })
+                                                                                                }
+                                                                                                if ('serviceWorker' in navigator) {
+                                                                                                    window.addEventListener('load', async () => {
+                                                                                                        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                                                                            .then(async reg => {
 
-                                                                                                                    const p = await send_msg({ type: "test" })
-                                                                                                                    if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
-                                                                                                                        notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
-                                                                                                                        window.localStorage.setItem('ChenBlogHelper_Error', 'true')
-                                                                                                                        setTimeout(() => {
-                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 1000)
+                                                                                                                const p = await send_msg({ type: "test" })
+                                                                                                                if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                    notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                    window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                                                                                    setTimeout(() => {
+                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                    }, 1000)
 
-                                                                                                                    }
-                                                                                                                    if (p.ok) {
-                                                                                                                        console.log('ChenBlogHelper已安装!')
-                                                                                                                    } else {
-                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
-                                                                                                                        setTimeout(() => {
-                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                        }, 1000)
-                                                                                                                    }
-                                                                                                                }).catch(err => {
-                                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:' + err);
-                                                                                                                    //console.log(err)
-                                                                                                                })
+                                                                                                                }
+                                                                                                                if (p.ok) {
+                                                                                                                    console.log('ChenBlogHelper已安装!')
+                                                                                                                } else {
+                                                                                                                    notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
+                                                                                                                    setTimeout(() => {
+                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                    }, 1000)
+                                                                                                                }
+                                                                                                            }).catch(err => {
+                                                                                                                notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                //console.log(err)
+                                                                                                            })
 
 
 
-                                                                                                        });
-                                                                                                    } else {
-                                                                                                        notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
-                                                                                                    }
-                                                                                                })();
+                                                                                                    });
+                                                                                                } else {
+                                                                                                    notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                                                                                }
+                                                                                            })();
 
                                                                                             (async () => {
                                                                                                 if (window.localStorage.getItem("ChenBlogRefferrer") != 'setted') {
@@ -1200,7 +1225,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
                                                                                                                 url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
                                                                                                                 resource: [],
-                                                                                                                time:new Date().getTime(),
+                                                                                                                time: new Date().getTime(),
                                                                                                                 perform: {
                                                                                                                     paint: {},
                                                                                                                     dom: -1
