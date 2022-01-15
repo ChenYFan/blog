@@ -242,12 +242,100 @@ const handle = async (req) => {
 
 ```js
 const handle = async (req) => {
-    if ((req.url.split('/'))[2].match('xxx.com')) {
-        //xxx.com为图片所在域名
-        return fetch(req.url, {
-            method: "POST"
-        })
+    const res = await fetch(req)
+    const resp = res.clone()
+    if (!!resp.headers.get('content-type')) {
+        if (resp.headers.get('content-type').includes('text/html')) {
+            return new Response((await resp.text()).replace(/TEST/g, 'SHIT'), {
+                headers: resp.headers,
+                status: resp.status
+            })
+        }
+    }
+    return resp
+}
+```
+
+`const resp = res.clone()`由于`Response`的`body`一旦被读取，这个`body`就会被锁死，再也无法读取。`clone()`能够创造出响应的副本用于处理。
+
+`resp.headers.get('content-type')`通过读取响应的头，判断是否包含`text/html`，如果是，将响应以`text()`异步流的方式读取，然后正则替换掉响应内容，并还原头和响应Code。
+
+返回的内容必须是`Response`对象，所以`new Response`构建一个新对象，并直接返回。不匹配html头将直接原封不动地透明代理。
+
+#### 移花接木 / Graft Request To Another Server
+
+`unpkg.zhimg.com`是`unpkg.com`的镜像网站。此脚本将会把所有的`unpkg.com`流量直接拦截到`unpkg.zhimg.com`，用于中国大陆内CDN加速。
+
+由于npm镜像固定为GET请求方式并且没有其他鉴权需求，所以我们没有必要还原`Request`其他数据。
+
+```js
+const handle = async (req) => {
+    const domain = req.url.split('/')[2];
+    if (domain.match("unpkg.com")) {
+        return fetch(req.url.replace("https://unpkg.com", "https://zhimg.unpkg.com"));
+    }
+    else {
+        return fetch(req)
+    }
+}
+```
+
+`domain.match`捕获请求中是否有待替换域名，检查出来后直接`replace`掉域名，如果没有匹配到，直接透明代理走掉。
+
+#### 持久化缓存 / Cache Persistently
+
+对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。
+
+```js
+const handle = async (req) => {
+    const cache_url_list = [
+        /(http:\/\/|https:\/\/)cdn\.jsdelivr\.net/g,
+        /(http:\/\/|https:\/\/)cdn\.bootcss\.com/g,
+        /(http:\/\/|https:\/\/)zhimg\.unpkg\.com/g,
+        /(http:\/\/|https:\/\/)unpkg\.com/g
+    ]
+    for (var i in cache_url_list) {
+        if (req.url.match(cache_url_list[i])) {
+            return caches.match(req).then(function (resp) {
+                return resp || fetch(req).then(function (res) {
+                    return caches.open(CACHE_NAME).then(function (cache) {
+                        cache.put(req, res.clone());
+                        return res;
+                    });
+                });
+            })
+        }
     }
     return fetch(req)
 }
 ```
+
+`cache_url_list`列出所有待匹配的域名(包括http/https头是为了避免误杀其他url)，然后`for`开始遍历待列表，如果url中匹配到了，开始执行返回缓存操作。
+
+cache是一个近似于Key/Value(键名/键值)，只要有对应的`Request`(`KEY`)，就能匹配到响应的`Response`(`VALUE`)。
+
+`caches.match(req)`将会试图在CacheStorage中匹配请求的url获取值，然后丢给管道同步函数`then`，传参`resp`为Cache匹配到的值。
+
+此时管道内将尝试返回resp，如果resp为`null`或`undefined`[即获取不到对应的缓存]，将执行fetch操作，fetch成功后将`open`打开CacheStorage，并`put`放入缓存。此时如果`fetch`失败将直接报错，不写入缓存。
+
+在下一次获取同一个URL的时候，缓存匹配到的将不再是空白值，此时`fetch`不执行，直接返回缓存，大大提升了速度。
+
+由于npm的cdn对于latest缓存并不是持久有效的，所以我们最好还是判断一下url版本中是否以@latest为结尾。
+
+```js
+const is_latest = (url) => {
+    return url.replace('https://', '').split('/')[1].split('@')[1] === 'latest'
+}
+//...
+for (var i in cache_url_list) {
+    if (is_latest(req.url)) { return fetch(req) }
+    if (req.url.match(cache_url_list[i])) {
+        return caches.match(req).then(function (resp) {
+            //...
+        })
+    }
+}
+```
+
+
+#### 离线化缓存 / Cache For Offline
