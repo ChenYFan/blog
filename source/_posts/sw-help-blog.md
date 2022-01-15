@@ -110,7 +110,7 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 
 简易的完整安装代码如下:
 
-```index.html
+```html
 <script>
 window.addEventListener('load', async () => {
     navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
@@ -130,14 +130,23 @@ window.addEventListener('load', async () => {
 
 ## SW安装初始化 / Installations
 
-首先，先尴尬的开一个空缓存：
+首先，先尴尬的开一个空缓存列表：
 
 ```js
 const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导致缓存冗余累积
 let cachelist = [];
 ```
 
-`cachelist`里面填写的是预缓存
+`cachelist`里面填写的是预缓存网址，例如在离线时返回的错误页面。此处不宜添加过多网址，此处点名@一下Akilar。
+
+此处我建议只缓存离线页面展示的内容:
+
+```js
+let cachelist = [
+    '/offline.html',
+    'https://npm.elemecdn.com/chenyfan-os@0.0.0-r6'
+];
+```
 
 同时监听sw安装时开启此缓存空间：
 
@@ -164,3 +173,82 @@ self.addEventListener('install', async function (installEvent) {
 
 `installEvent.waitUntil`的作用是直接结束安装过程的等待，待会在后台完成开启缓存空间这一操作。
 
+
+`cache.addAll`将会直接获取`cachelist`里面所有的网址并直接缓存到CacheStorage。如果此处网址过多，将在页面加载时疯狂请求所有的url~~(例如1k个)~~
+
+现在，SW初始化已经完成了。接下来，我将讲述SW如何捕获页面的请求。
+
+## 捕获请求 / Fetch Event
+
+### 添加监听器 / AddEventListener
+
+```js
+self.addEventListener('fetch', async event => {
+    event.respondWith(handle(event.request))
+});
+
+const handle = async(req)=>{
+    //do something
+}
+```
+
+第一行很简单，绑定一个监听器，监听`fetch`事件，即网页向服务器获取请求，也就是相当于前端的`XMLHTTPRequest`
+
+`event.respondWith`即设定返回内容，交给`handle`主函数处理，传参`event.request`。这是一个`Request`对象，里面包含了请求的详细信息。
+
+接下来，我们开始实战吧。
+
+> 以下所有内容均针对handle修改
+
+#### 透明代理 / Transparent Proxy
+
+顾名思义，此实战脚本的作用是SW代理目前的所有流量但不进行修改，仿佛SW不存在一般。
+
+```js
+const handle = async(req)=>{
+    return fetch(req)
+}
+```
+
+`fetch`这个函数相当于前端的`ajax`或者`XMLHTTPRequest`，作用是发起一个请求，获得一个返回值。由于sw不可访问`window`，在sw中是无法使用`ajax`或`XMLHTTPRequest`。同时，`fetch`是一个异步函数，直接调用它会返回一个`Promise`。
+
+`fetch`只能传递`Requset`对象,而`Requset`对象有两个参数`(url,[option])`,第一个参数是网址,第二个参数为`Request`的内容,例如`body`或`header`。
+
+此脚本适用于卸载`ServiceWorker`的替换脚本。因为sw在无法拉取新版本时不会主动卸载，依旧保持运行，填入一个透明代理sw即可。
+
+由于SW冷启动【即页面关闭后SW】处于暂停状态是从硬盘读取的，这会导致第一次请求有少许性能延迟[~10ms]。
+
+#### 篡改请求 / Edit Requset
+
+对于一张图片，有时候服务端会变态到让你必须用`POST`协议才能获得，此时用SW篡改最为方便。
+
+```js
+const handle = async (req) => {
+    if ((req.url.split('/'))[2].match('xxx.com')) {
+        //xxx.com为图片所在域名
+        return fetch(req.url, {
+            method: "POST"
+        })
+    }
+    return fetch(req)
+}
+```
+
+> 注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链
+<!--
+#### 篡改响应 / Edit Response
+
+这个例子会检测返回内容，若为html，将把所有的"TEST"都替换成"SHIT"
+
+```js
+const handle = async (req) => {
+    if ((req.url.split('/'))[2].match('xxx.com')) {
+        //xxx.com为图片所在域名
+        return fetch(req.url, {
+            method: "POST"
+        })
+    }
+    return fetch(req)
+}
+```
+-->

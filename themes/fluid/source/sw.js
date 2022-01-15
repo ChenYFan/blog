@@ -152,8 +152,25 @@ self.addEventListener('fetch', async event => {
         event.respondWith(handleerr(event.request, msg))
     }
 });
+(async()=>{
+    try {
+        self.broadcast = new BroadcastChannel('count-channel');
+    } catch (e) {
+        console.log("Broadcast无法建立，原因:" + e)
+        ws_sw({
+            type: "send",
+            data: JSON.stringify({
+                type: 'info',
+                data: {
+                    error: true,
+                    msg: e
+                },
+                uuid: await db.read('uuid')
+            })
+        })
+    }
+})()
 
-const broadcast = new BroadcastChannel('count-channel');
 broadcast.onmessage = async (event) => {
     switch (event.data.type) {
         case 'upload':
@@ -164,13 +181,13 @@ broadcast.onmessage = async (event) => {
                     data: event.data.data,
                     uuid: await db.read('uuid')
                 })
-            })
+            });
             wsc.addEventListener('message', (event) => {
                 const data = JSON.parse(event.data)
                 broadcast.postMessage({
                     ip: data.data.ip,
                     addr: data.data.addr,
-                    user:data.data.user,
+                    user: data.data.user,
                     delay: new Date().getTime() - data.data.time,
                 })
 
