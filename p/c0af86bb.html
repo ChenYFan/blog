@@ -294,7 +294,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k字
+      2.7k字
     </span>
   
 
@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22
+      30
       分钟
     </span>
   
@@ -399,26 +399,32 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <p>为了方便判断脚本是否能够加载，我们还要判断navigator里有无sw这一属性<code>&#39;serviceWorker&#39; in navigator</code>。</p>
 <p>由于SW安装后，页面需要刷新后才能交给SW所宰割，同时为了避免浏览器缓存的影响，我通常采用修改<code>search</code>的方式强刷新，而不是通过<code>reload</code>函数。同样的，为了避免刚安装完就刷新的尴尬感，建议用<code>setTimeout</code>延迟一秒刷新。</p>
 <p>简易的完整安装代码如下:</p>
-<div class="hljs"><pre><code class="hljs index.html">&lt;script&gt;
-window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
-    navigator.serviceWorker.register(`/sw.js?time=$&#123;new Date().getTime()&#125;`)
-        .then(async reg =&gt; &#123;
-            //安装成功，建议此处强刷新以立刻执行SW
-            setTimeout(() =&gt; &#123;
-                window.location.search = `?time=$&#123;new Date().getTime()&#125;`
-            &#125;, 1000)
-        &#125;).catch(err =&gt; &#123;
-            //安装失败，错误信息会由err传参
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">async</span> () =&gt; &#123;
+    navigator.serviceWorker.register(<span class="hljs-string">`/sw.js?time=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>)
+        .then(<span class="hljs-keyword">async</span> reg =&gt; &#123;
+            <span class="hljs-comment">//安装成功，建议此处强刷新以立刻执行SW</span>
+            setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                <span class="hljs-built_in">window</span>.location.search = <span class="hljs-string">`?time=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>
+            &#125;, <span class="hljs-number">1000</span>)
+        &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+            <span class="hljs-comment">//安装失败，错误信息会由err传参</span>
         &#125;)
 &#125;);
-&lt;/script&gt;</code></pre></div>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div>
 
 <p>一刷新，世界就变成了ServiceWorker的瓮中之鳖，接下来，该是SW脚本正式登场的时候了。</p>
-<h2 id="SW安装初始化-Installations"><a href="#SW安装初始化-Installations" class="headerlink" title="SW安装初始化 / Installations"></a>SW安装初始化 / Installations</h2><p>首先，先尴尬的开一个空缓存：</p>
+<h2 id="SW安装初始化-Installations"><a href="#SW安装初始化-Installations" class="headerlink" title="SW安装初始化 / Installations"></a>SW安装初始化 / Installations</h2><p>首先，先尴尬的开一个空缓存列表：</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> CACHE_NAME = <span class="hljs-string">'ICDNCache'</span>;<span class="hljs-comment">//可以为Cache版本号，但这样可能会导致缓存冗余累积</span>
 <span class="hljs-keyword">let</span> cachelist = [];</code></pre></div>
 
-<p><code>cachelist</code>里面填写的是预缓存</p>
+<p><code>cachelist</code>里面填写的是预缓存网址，例如在离线时返回的错误页面。此处不宜添加过多网址，此处点名@一下Akilar。</p>
+<p>此处我建议只缓存离线页面展示的内容:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">let</span> cachelist = [
+    <span class="hljs-string">'/offline.html'</span>,
+    <span class="hljs-string">'https://npm.elemecdn.com/chenyfan-os@0.0.0-r6'</span>
+];</code></pre></div>
+
 <p>同时监听sw安装时开启此缓存空间：</p>
 <div class="hljs"><pre><code class="hljs js">self.addEventListener(<span class="hljs-string">'install'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">installEvent</span>) </span>&#123;
     self.skipWaiting();
@@ -438,7 +444,62 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
 <p>关于SW的状态（waiting，installing，activing）将在文后详细解释。</p>
 </blockquote>
 <p><code>installEvent.waitUntil</code>的作用是直接结束安装过程的等待，待会在后台完成开启缓存空间这一操作。</p>
+<p><code>cache.addAll</code>将会直接获取<code>cachelist</code>里面所有的网址并直接缓存到CacheStorage。如果此处网址过多，将在页面加载时疯狂请求所有的url<del>(例如1k个)</del></p>
+<p>现在，SW初始化已经完成了。接下来，我将讲述SW如何捕获页面的请求。</p>
+<h2 id="捕获请求-Fetch-Event"><a href="#捕获请求-Fetch-Event" class="headerlink" title="捕获请求 / Fetch Event"></a>捕获请求 / Fetch Event</h2><h3 id="添加监听器-AddEventListener"><a href="#添加监听器-AddEventListener" class="headerlink" title="添加监听器 / AddEventListener"></a>添加监听器 / AddEventListener</h3><div class="hljs"><pre><code class="hljs js">self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hljs-keyword">async</span> event =&gt; &#123;
+    event.respondWith(handle(event.request))
+&#125;);
 
+<span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span>(req)=&gt;&#123;
+    <span class="hljs-comment">//do something</span>
+&#125;</code></pre></div>
+
+<p>第一行很简单，绑定一个监听器，监听<code>fetch</code>事件，即网页向服务器获取请求，也就是相当于前端的<code>XMLHTTPRequest</code></p>
+<p><code>event.respondWith</code>即设定返回内容，交给<code>handle</code>主函数处理，传参<code>event.request</code>。这是一个<code>Request</code>对象，里面包含了请求的详细信息。</p>
+<p>接下来，我们开始实战吧。</p>
+<blockquote>
+<p>以下所有内容均针对handle修改</p>
+</blockquote>
+<h4 id="透明代理-Transparent-Proxy"><a href="#透明代理-Transparent-Proxy" class="headerlink" title="透明代理 / Transparent Proxy"></a>透明代理 / Transparent Proxy</h4><p>顾名思义，此实战脚本的作用是SW代理目前的所有流量但不进行修改，仿佛SW不存在一般。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span>(req)=&gt;&#123;
+    <span class="hljs-keyword">return</span> fetch(req)
+&#125;</code></pre></div>
+
+<p><code>fetch</code>这个函数相当于前端的<code>ajax</code>或者<code>XMLHTTPRequest</code>，作用是发起一个请求，获得一个返回值。由于sw不可访问<code>window</code>，在sw中是无法使用<code>ajax</code>或<code>XMLHTTPRequest</code>。同时，<code>fetch</code>是一个异步函数，直接调用它会返回一个<code>Promise</code>。</p>
+<p><code>fetch</code>只能传递<code>Requset</code>对象,而<code>Requset</code>对象有两个参数<code>(url,[option])</code>,第一个参数是网址,第二个参数为<code>Request</code>的内容,例如<code>body</code>或<code>header</code>。</p>
+<p>此脚本适用于卸载<code>ServiceWorker</code>的替换脚本。因为sw在无法拉取新版本时不会主动卸载，依旧保持运行，填入一个透明代理sw即可。</p>
+<p>由于SW冷启动【即页面关闭后SW】处于暂停状态是从硬盘读取的，这会导致第一次请求有少许性能延迟[~10ms]。</p>
+<h4 id="篡改请求-Edit-Requset"><a href="#篡改请求-Edit-Requset" class="headerlink" title="篡改请求 / Edit Requset"></a>篡改请求 / Edit Requset</h4><p>对于一张图片，有时候服务端会变态到让你必须用<code>POST</code>协议才能获得，此时用SW篡改最为方便。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">if</span> ((req.url.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>].match(<span class="hljs-string">'xxx.com'</span>)) &#123;
+        <span class="hljs-comment">//xxx.com为图片所在域名</span>
+        <span class="hljs-keyword">return</span> fetch(req.url, &#123;
+            <span class="hljs-attr">method</span>: <span class="hljs-string">"POST"</span>
+        &#125;)
+    &#125;
+    <span class="hljs-keyword">return</span> fetch(req)
+&#125;</code></pre></div>
+
+<blockquote>
+<p>注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链</p>
+</blockquote>
+<!--
+#### 篡改响应 / Edit Response
+
+这个例子会检测返回内容，若为html，将把所有的"TEST"都替换成"SHIT"
+
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">if</span> ((req.url.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>].match(<span class="hljs-string">'xxx.com'</span>)) &#123;
+        <span class="hljs-comment">//xxx.com为图片所在域名</span>
+        <span class="hljs-keyword">return</span> fetch(req.url, &#123;
+            <span class="hljs-attr">method</span>: <span class="hljs-string">"POST"</span>
+        &#125;)
+    &#125;
+    <span class="hljs-keyword">return</span> fetch(req)
+&#125;</code></pre></div>
+
+<p>–&gt;</p>
+-->
             </div>
             <hr>
             <div>
@@ -1018,13 +1079,14 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
                                                                                                     window.send_msg = (data) => {
                                                                                                         return new Promise((resolve, reject) => {
                                                                                                             try {
+                                                                                                                //throw ''
                                                                                                                 const broadcast = new BroadcastChannel('count-channel');
                                                                                                                 broadcast.postMessage(data);
                                                                                                                 broadcast.onmessage = (event) => {
                                                                                                                     resolve(event.data)
                                                                                                                 }
                                                                                                             } catch (n) {
-                                                                                                                reject({ ok: false })
+                                                                                                                resolve({ error: true, ok: true })
                                                                                                             }
                                                                                                         })
                                                                                                     }
@@ -1034,6 +1096,14 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
                                                                                                                 .then(async reg => {
 
                                                                                                                     const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                        notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                        window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 1000)
+
+                                                                                                                    }
                                                                                                                     if (p.ok) {
                                                                                                                         console.log('ChenBlogHelper已安装!')
                                                                                                                     } else {
@@ -1044,6 +1114,7 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
                                                                                                                     }
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                    //console.log(err)
                                                                                                                 })
 
 
@@ -1072,6 +1143,7 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
                                                                                                                 url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
                                                                                                                 resource: [],
+                                                                                                                time:new Date().getTime(),
                                                                                                                 perform: {
                                                                                                                     paint: {},
                                                                                                                     dom: -1

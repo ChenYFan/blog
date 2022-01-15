@@ -1219,13 +1219,14 @@ Packet Loss:     0.0%
                                                                                                     window.send_msg = (data) => {
                                                                                                         return new Promise((resolve, reject) => {
                                                                                                             try {
+                                                                                                                //throw ''
                                                                                                                 const broadcast = new BroadcastChannel('count-channel');
                                                                                                                 broadcast.postMessage(data);
                                                                                                                 broadcast.onmessage = (event) => {
                                                                                                                     resolve(event.data)
                                                                                                                 }
                                                                                                             } catch (n) {
-                                                                                                                reject({ ok: false })
+                                                                                                                resolve({ error: true, ok: true })
                                                                                                             }
                                                                                                         })
                                                                                                     }
@@ -1235,6 +1236,14 @@ Packet Loss:     0.0%
                                                                                                                 .then(async reg => {
 
                                                                                                                     const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                        notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                        window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 1000)
+
+                                                                                                                    }
                                                                                                                     if (p.ok) {
                                                                                                                         console.log('ChenBlogHelper已安装!')
                                                                                                                     } else {
@@ -1245,6 +1254,7 @@ Packet Loss:     0.0%
                                                                                                                     }
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                    //console.log(err)
                                                                                                                 })
 
 
@@ -1273,6 +1283,7 @@ Packet Loss:     0.0%
                                                                                                                 url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
                                                                                                                 resource: [],
+                                                                                                                time:new Date().getTime(),
                                                                                                                 perform: {
                                                                                                                     paint: {},
                                                                                                                     dom: -1

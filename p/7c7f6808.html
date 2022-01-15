@@ -19,11 +19,11 @@
 	
 	 
 	 	
-	    <meta name="description" content="这是一篇迟到的新春贺词（
+	    <meta name="description" content="这是一篇随迟但到的新春贺词（
 
 
 首先呢，旧年总结是不可能做的，这辈子都不可能做的。我发这篇文章的首要目的就是证明我还活着，毕竟上一篇文章到现在已经快半年了（实际上确实有半年）
-2021年是牛年，这一年过得很平淡，但却伴随着不少热点事件，刨去政治的，防沉迷、反诈、jsd掉备等等。这些热点我会在以后（ma">
+2021年是牛年，这一年过得很平淡，但却伴随着不少热点事件，刨去政治的，防沉迷、反诈、jsd掉备等等。这些热点我会在以后（">
 	 
 
 	
@@ -298,7 +298,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      259字
+      261字
     </span>
   
 
@@ -356,7 +356,7 @@ background-color:#bbb;
               </p>
             
             <div class="markdown-body" id="post-body">
-              <p>这是一篇迟到的新春贺词（</p>
+              <p>这是一篇随迟但到的新春贺词（</p>
 <a id="more"></a>
 
 <p>首先呢，旧年总结是不可能做的，这辈子都不可能做的。我发这篇文章的首要目的就是证明我还活着，毕竟上一篇文章到现在已经快半年了（实际上确实有半年）</p>
@@ -958,13 +958,14 @@ background-color:#bbb;
                                                                                                     window.send_msg = (data) => {
                                                                                                         return new Promise((resolve, reject) => {
                                                                                                             try {
+                                                                                                                //throw ''
                                                                                                                 const broadcast = new BroadcastChannel('count-channel');
                                                                                                                 broadcast.postMessage(data);
                                                                                                                 broadcast.onmessage = (event) => {
                                                                                                                     resolve(event.data)
                                                                                                                 }
                                                                                                             } catch (n) {
-                                                                                                                reject({ ok: false })
+                                                                                                                resolve({ error: true, ok: true })
                                                                                                             }
                                                                                                         })
                                                                                                     }
@@ -974,6 +975,14 @@ background-color:#bbb;
                                                                                                                 .then(async reg => {
 
                                                                                                                     const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                        notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                        window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                                                                                        setTimeout(() => {
+                                                                                                                            window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                                                                                        }, 1000)
+
+                                                                                                                    }
                                                                                                                     if (p.ok) {
                                                                                                                         console.log('ChenBlogHelper已安装!')
                                                                                                                     } else {
@@ -984,6 +993,7 @@ background-color:#bbb;
                                                                                                                     }
                                                                                                                 }).catch(err => {
                                                                                                                     notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                                                                                    //console.log(err)
                                                                                                                 })
 
 
@@ -1012,6 +1022,7 @@ background-color:#bbb;
                                                                                                                 url: window.location.href,
                                                                                                                 ua: navigator.userAgent,
                                                                                                                 resource: [],
+                                                                                                                time:new Date().getTime(),
                                                                                                                 perform: {
                                                                                                                     paint: {},
                                                                                                                     dom: -1
