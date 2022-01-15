@@ -479,7 +479,7 @@ background-color:#bbb;
 </details>
 
 <h1 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h1><p><del>由于本人是在校住宿学生,学校禁止带手机,学期间平均下来一月两更吧。</del><br><del>有时候考试时就可能人间蒸发了.</del><br>学业繁忙，<strong>学校禁止家里使用手机</strong>，在学校每天晚上可以使用电脑但主要用于信息竞赛，留言基本会回复但这段时间不可能写博文。<br>当然,我会在寒暑假使劲补的!</p>
-<h1 id="版权©："><a href="#版权©：" class="headerlink" title="版权©："></a>版权©：</h1><p>若是转载立刻注明。<br>同时提醒转载我的博客时请注明。<br>本站的<em>Logo</em>是早年在一个公开的网站找来的，虽然没有版权限制，但我依然想找到作者表示感谢。<br>如果你是作者，请联系<a href="mailto:&#x63;&#104;&#101;&#x6e;&#121;&#102;&#64;&#x63;&#121;&#x66;&#97;&#x6e;&#46;&#x74;&#111;&#x70;" target="_blank" rel="noopener">&#x63;&#104;&#101;&#x6e;&#121;&#102;&#64;&#x63;&#121;&#x66;&#97;&#x6e;&#46;&#x74;&#111;&#x70;</a>。谢谢！</p>
+<h1 id="版权©："><a href="#版权©：" class="headerlink" title="版权©："></a>版权©：</h1><p>若是转载立刻注明。<br>同时提醒转载我的博客时请注明。<br>本站的<em>Logo</em>是早年在一个公开的网站找来的，虽然没有版权限制，但我依然想找到作者表示感谢。<br>如果你是作者，请联系<a href="mailto:&#x63;&#104;&#x65;&#110;&#121;&#x66;&#x40;&#99;&#x79;&#102;&#x61;&#x6e;&#46;&#x74;&#x6f;&#112;" target="_blank" rel="noopener">&#x63;&#104;&#x65;&#110;&#121;&#x66;&#x40;&#99;&#x79;&#102;&#x61;&#x6e;&#46;&#x74;&#x6f;&#112;</a>。谢谢！</p>
 <h1 id="《关于中国的互联网》"><a href="#《关于中国的互联网》" class="headerlink" title="《关于中国的互联网》"></a>《关于中国的互联网》</h1><p>网络审查在各个国家都普遍存在着，它并不仅存在于中国。在全球的局势对中国都不利的当下，当局会过滤掉影响、危害到中国长远发展的信息，此时国家安全的意义更加重大。</p>
 <p>互联网上存在着大量终究不现实的、不客观的，甚至自相矛盾的抹黑当局政府言论，它们背后一般有西方政府或非政府组织资金支持。这些媒体包括但不限于一些港媒、境外网站。</p>
 <p>我们希望您能在遇到此类言论和见解时，不要不加思考地、情绪一度被煽动而不能克制地、盲目地相信这些片面或者歪曲事实的东西，而是要事实求是地思考，要摆脱情绪绑架的怪诞思维去理解。</p>
@@ -597,20 +597,19 @@ mode:0
           <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
           href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
           href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
-          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+          href="/blog-cgi"> <b>博客用户端管理</b></a>
         <!--
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
         <p id="showsectime"></p>
-        <a href="/hpp/admin">
-          <p id="bloggeractivetime"></p>
-        </a>
         </script>
         <p>
-          当前CDN节点: <span id="cdn">【未知】</span> |
+          <b>
+          当前在线用户: <span id="user_count">【未知】</span> |
           你的ip: <span id="ip">【未知】</span> |
-          你的所在国家/地区: <span id="loc">【未知】 </span></p>
-
+          你的所在国家/地区: <span id="loc">【未知】 </span> |
+          统计服务器通讯延迟：<span id="delay">【未知】</span>
+        </b>
         </p>
       </div>
       
@@ -629,7 +628,7 @@ mode:0
         width: 500px !important;
         height: 437.5px !important;
         z-index: 998;
-        pointer-events:none!important;
+        pointer-events: none !important;
       }
     </style>
 
@@ -664,7 +663,7 @@ mode:0
             //throw ''
             console.log('采用并行请求')
             await Promise.all(res.map(async (url) => {
-                
+
                 return new Promise((resolve, reject) => {
                     fetch(url)
                         .then(PauseProgress)
@@ -672,7 +671,7 @@ mode:0
                             info.offlen += 1
                             that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
                             console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
-                            
+
                             resolve()
                         })
                         .catch(err => {
@@ -683,7 +682,7 @@ mode:0
                         })
                 })
             }))
-            that.innerText =`缓存成功√`;
+            that.innerText = `缓存成功√`;
         } catch {
             console.log('并行请求失败，采用串行请求')
             for (var i in res) {
@@ -698,10 +697,10 @@ mode:0
                     console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
                 })
             }
-            
-           
+
+
         }
-        
+
     }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
@@ -889,14 +888,29 @@ mode:0
                                                                                                         return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
                                                                                                     }
                                                                                                     window.notyf = new Notyf();
+                                                                                                    window.send_msg = (data) => {
+                                                                                                        return new Promise((resolve, reject) => {
+                                                                                                            try {
+                                                                                                                const broadcast = new BroadcastChannel('count-channel');
+                                                                                                                broadcast.postMessage(data);
+                                                                                                                broadcast.onmessage = (event) => {
+                                                                                                                    resolve(event.data)
+                                                                                                                }
+                                                                                                            } catch (n) {
+                                                                                                                reject({ ok: false })
+                                                                                                            }
+                                                                                                        })
+                                                                                                    }
                                                                                                     if ('serviceWorker' in navigator) {
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
 
-                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
-                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                    const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.ok) {
+                                                                                                                        console.log('ChenBlogHelper已安装!')
+                                                                                                                    } else {
+                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
                                                                                                                         setTimeout(() => {
                                                                                                                             window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                                                                                         }, 1000)
@@ -965,15 +979,22 @@ mode:0
 
 
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
-                                                                                                            console.log(ans)
+                                                                                                            send_msg({
+                                                                                                                type: "upload",
+                                                                                                                data: ans
+                                                                                                            }).then(data => {
+                                                                                                                console.log(data)
+                                                                                                                document.getElementById('user_count').innerText = data.user
+                                                                                                                document.getElementById('ip').innerText = data.ip
+                                                                                                                document.getElementById('loc').innerText = data.addr
+                                                                                                                document.getElementById('delay').innerText = data.delay + "ms"
+                                                                                                            })
                                                                                                         }, 2000);
                                                                                                     }
                                                                                                 }
 
                                                                                             })()
                                                                                         </script>
-
 
 
 

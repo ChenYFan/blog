@@ -970,20 +970,19 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
           <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
           href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
           href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
-          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+          href="/blog-cgi"> <b>博客用户端管理</b></a>
         <!--
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
         <p id="showsectime"></p>
-        <a href="/hpp/admin">
-          <p id="bloggeractivetime"></p>
-        </a>
         </script>
         <p>
-          当前CDN节点: <span id="cdn">【未知】</span> |
+          <b>
+          当前在线用户: <span id="user_count">【未知】</span> |
           你的ip: <span id="ip">【未知】</span> |
-          你的所在国家/地区: <span id="loc">【未知】 </span></p>
-
+          你的所在国家/地区: <span id="loc">【未知】 </span> |
+          统计服务器通讯延迟：<span id="delay">【未知】</span>
+        </b>
         </p>
       </div>
       
@@ -1002,7 +1001,7 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
         width: 500px !important;
         height: 437.5px !important;
         z-index: 998;
-        pointer-events:none!important;
+        pointer-events: none !important;
       }
     </style>
 
@@ -1037,7 +1036,7 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
             //throw ''
             console.log('采用并行请求')
             await Promise.all(res.map(async (url) => {
-                
+
                 return new Promise((resolve, reject) => {
                     fetch(url)
                         .then(PauseProgress)
@@ -1045,7 +1044,7 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
                             info.offlen += 1
                             that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
                             console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
-                            
+
                             resolve()
                         })
                         .catch(err => {
@@ -1056,7 +1055,7 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
                         })
                 })
             }))
-            that.innerText =`缓存成功√`;
+            that.innerText = `缓存成功√`;
         } catch {
             console.log('并行请求失败，采用串行请求')
             for (var i in res) {
@@ -1071,10 +1070,10 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
                     console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
                 })
             }
-            
-           
+
+
         }
-        
+
     }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
@@ -1262,14 +1261,29 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
                                                                                                         return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
                                                                                                     }
                                                                                                     window.notyf = new Notyf();
+                                                                                                    window.send_msg = (data) => {
+                                                                                                        return new Promise((resolve, reject) => {
+                                                                                                            try {
+                                                                                                                const broadcast = new BroadcastChannel('count-channel');
+                                                                                                                broadcast.postMessage(data);
+                                                                                                                broadcast.onmessage = (event) => {
+                                                                                                                    resolve(event.data)
+                                                                                                                }
+                                                                                                            } catch (n) {
+                                                                                                                reject({ ok: false })
+                                                                                                            }
+                                                                                                        })
+                                                                                                    }
                                                                                                     if ('serviceWorker' in navigator) {
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
 
-                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
-                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                    const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.ok) {
+                                                                                                                        console.log('ChenBlogHelper已安装!')
+                                                                                                                    } else {
+                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
                                                                                                                         setTimeout(() => {
                                                                                                                             window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                                                                                         }, 1000)
@@ -1338,15 +1352,22 @@ Artalk，一款简洁有趣的自托管评论系统。此时，Valine作为老�
 
 
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
-                                                                                                            console.log(ans)
+                                                                                                            send_msg({
+                                                                                                                type: "upload",
+                                                                                                                data: ans
+                                                                                                            }).then(data => {
+                                                                                                                console.log(data)
+                                                                                                                document.getElementById('user_count').innerText = data.user
+                                                                                                                document.getElementById('ip').innerText = data.ip
+                                                                                                                document.getElementById('loc').innerText = data.addr
+                                                                                                                document.getElementById('delay').innerText = data.delay + "ms"
+                                                                                                            })
                                                                                                         }, 2000);
                                                                                                     }
                                                                                                 }
 
                                                                                             })()
                                                                                         </script>
-
 
 
 

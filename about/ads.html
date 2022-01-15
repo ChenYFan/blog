@@ -310,7 +310,7 @@ background-color:#bbb;
 <img src="https://img.cyfan.top/pic/NOADS.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="full-image" alt="广告位置招租（原始版）">
 
 <blockquote>
-<p>广告要求：<br>拒绝反动\暴力\色情\宗教\伦理类广告,最好不要推销V·P·N，支持JPG/PNG/GIF外链（您可以随时更改），支持但不建议JS。<br>注意：在您更改后，如果出现反动\暴力\色情\宗教\伦理类广告，则立刻删除，并不退还钱！<br>大小：自适应缩小版：长度不可大于500px，原始版：长度不大于800px，宽度不大于1080px<br>位招租面额（暂定）：<br>图片外链：¥0.5/天<br>JS：¥0.3/天,每一次点击¥0.1/次<br>以上以按月支付，具体和投放价格联系<a href="mailto:&#x63;&#x68;&#x65;&#110;&#50;&#55;&#55;&#x38;&#55;&#x35;&#52;&#x33;&#54;&#52;&#x40;&#102;&#111;&#x78;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;" target="_blank" rel="noopener">&#x63;&#x68;&#x65;&#110;&#50;&#55;&#55;&#x38;&#55;&#x35;&#52;&#x33;&#54;&#52;&#x40;&#102;&#111;&#x78;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a>,主题以<code>广告招租</code>,谢谢!</p>
+<p>广告要求：<br>拒绝反动\暴力\色情\宗教\伦理类广告,最好不要推销V·P·N，支持JPG/PNG/GIF外链（您可以随时更改），支持但不建议JS。<br>注意：在您更改后，如果出现反动\暴力\色情\宗教\伦理类广告，则立刻删除，并不退还钱！<br>大小：自适应缩小版：长度不可大于500px，原始版：长度不大于800px，宽度不大于1080px<br>位招租面额（暂定）：<br>图片外链：¥0.5/天<br>JS：¥0.3/天,每一次点击¥0.1/次<br>以上以按月支付，具体和投放价格联系<a href="mailto:&#x63;&#x68;&#101;&#x6e;&#x32;&#x37;&#x37;&#x38;&#55;&#x35;&#x34;&#x33;&#54;&#x34;&#x40;&#102;&#x6f;&#120;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;" target="_blank" rel="noopener">&#x63;&#x68;&#101;&#x6e;&#x32;&#x37;&#x37;&#x38;&#55;&#x35;&#x34;&#x33;&#54;&#x34;&#x40;&#102;&#x6f;&#120;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a>,主题以<code>广告招租</code>,谢谢!</p>
 </blockquote>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ADs-in-Blog-Under-Valine -->
@@ -783,20 +783,19 @@ background-color:#bbb;
           <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
           href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
           href="https://cloudflare.com">CloudFlare</a></br><a class="nav-link"
-          href="javascript:window.location.host = 'blog-jsdelivr.cyfan.top'"> <b>此页面的JSDelivr托管版</a></b>
+          href="/blog-cgi"> <b>博客用户端管理</b></a>
         <!--
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
         <p id="showsectime"></p>
-        <a href="/hpp/admin">
-          <p id="bloggeractivetime"></p>
-        </a>
         </script>
         <p>
-          当前CDN节点: <span id="cdn">【未知】</span> |
+          <b>
+          当前在线用户: <span id="user_count">【未知】</span> |
           你的ip: <span id="ip">【未知】</span> |
-          你的所在国家/地区: <span id="loc">【未知】 </span></p>
-
+          你的所在国家/地区: <span id="loc">【未知】 </span> |
+          统计服务器通讯延迟：<span id="delay">【未知】</span>
+        </b>
         </p>
       </div>
       
@@ -815,7 +814,7 @@ background-color:#bbb;
         width: 500px !important;
         height: 437.5px !important;
         z-index: 998;
-        pointer-events:none!important;
+        pointer-events: none !important;
       }
     </style>
 
@@ -850,7 +849,7 @@ background-color:#bbb;
             //throw ''
             console.log('采用并行请求')
             await Promise.all(res.map(async (url) => {
-                
+
                 return new Promise((resolve, reject) => {
                     fetch(url)
                         .then(PauseProgress)
@@ -858,7 +857,7 @@ background-color:#bbb;
                             info.offlen += 1
                             that.innerText = `资源缓存中: ${info.offlen}/${info.len}`;
                             console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${url} | 成功`)
-                            
+
                             resolve()
                         })
                         .catch(err => {
@@ -869,7 +868,7 @@ background-color:#bbb;
                         })
                 })
             }))
-            that.innerText =`缓存成功√`;
+            that.innerText = `缓存成功√`;
         } catch {
             console.log('并行请求失败，采用串行请求')
             for (var i in res) {
@@ -884,10 +883,10 @@ background-color:#bbb;
                     console.log(`资源缓存中: ${info.offlen}/${info.len} | URL: ${u} | 失败`)
                 })
             }
-            
-           
+
+
         }
-        
+
     }
     function loadScript(src, callback) {
         var script = document.createElement('script'),
@@ -1075,14 +1074,29 @@ background-color:#bbb;
                                                                                                         return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
                                                                                                     }
                                                                                                     window.notyf = new Notyf();
+                                                                                                    window.send_msg = (data) => {
+                                                                                                        return new Promise((resolve, reject) => {
+                                                                                                            try {
+                                                                                                                const broadcast = new BroadcastChannel('count-channel');
+                                                                                                                broadcast.postMessage(data);
+                                                                                                                broadcast.onmessage = (event) => {
+                                                                                                                    resolve(event.data)
+                                                                                                                }
+                                                                                                            } catch (n) {
+                                                                                                                reject({ ok: false })
+                                                                                                            }
+                                                                                                        })
+                                                                                                    }
                                                                                                     if ('serviceWorker' in navigator) {
                                                                                                         window.addEventListener('load', async () => {
                                                                                                             navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                                 .then(async reg => {
 
-                                                                                                                    if (window.localStorage.getItem("ChenBlogHelper") !== '1') {
-                                                                                                                        notyf.success('ChenBlogHelper已安装!将在一秒后尝试激活!');
-                                                                                                                        window.localStorage.setItem("ChenBlogHelper", 1)
+                                                                                                                    const p = await send_msg({ type: "test" })
+                                                                                                                    if (p.ok) {
+                                                                                                                        console.log('ChenBlogHelper已安装!')
+                                                                                                                    } else {
+                                                                                                                        notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
                                                                                                                         setTimeout(() => {
                                                                                                                             window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                                                                                         }, 1000)
@@ -1151,15 +1165,22 @@ background-color:#bbb;
 
 
                                                                                                             }
-                                                                                                            document.createElement('img').src = "https://chenyfan-blog-counter/upload?log=" + btoa(encodeURIComponent(JSON.stringify(ans)))
-                                                                                                            console.log(ans)
+                                                                                                            send_msg({
+                                                                                                                type: "upload",
+                                                                                                                data: ans
+                                                                                                            }).then(data => {
+                                                                                                                console.log(data)
+                                                                                                                document.getElementById('user_count').innerText = data.user
+                                                                                                                document.getElementById('ip').innerText = data.ip
+                                                                                                                document.getElementById('loc').innerText = data.addr
+                                                                                                                document.getElementById('delay').innerText = data.delay + "ms"
+                                                                                                            })
                                                                                                         }, 2000);
                                                                                                     }
                                                                                                 }
 
                                                                                             })()
                                                                                         </script>
-
 
 
 

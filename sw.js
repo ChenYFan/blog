@@ -119,6 +119,8 @@ self.ws_sw = (config) => {
 }
 
 
+
+
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
@@ -128,6 +130,7 @@ self.addEventListener('install', async function (installEvent) {
             ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
         }, 1000);
     }
+
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(async function (cache) {
@@ -147,8 +150,43 @@ self.addEventListener('fetch', async event => {
     }
 });
 
+const broadcast = new BroadcastChannel('count-channel');
+broadcast.onmessage = async (event) => {
+    switch (event.data.type) {
+        case 'upload':
+            ws_sw({
+                type: "send",
+                data: JSON.stringify({
+                    type: 'info',
+                    data: event.data.data,
+                    uuid: await db.read('uuid')
+                })
+            })
+            wsc.addEventListener('message', (event) => {
+                const data = JSON.parse(event.data)
+                broadcast.postMessage({
+                    ip: data.data.ip,
+                    addr: data.data.addr,
+                    user:data.data.user,
+                    delay: new Date().getTime() - data.data.time,
+                })
 
+            })
 
+            break;
+        default:
+            if (await db.read('sw_install') == 'true') {
+                broadcast.postMessage({ ok: true })
+            } else {
+                await db.write('sw_install', 'true')
+                broadcast.postMessage({ ok: false })
+
+            }
+
+            break;
+        //event.postMessage({ ok:true})
+    }
+}
 const handleerr = async (req, msg) => {
     return new Response(`<h1>ChenBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
@@ -207,7 +245,7 @@ const cache_url_list = [
 ]
 
 const blog = {
-    local: false,
+    local: 1,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:12121"
@@ -302,7 +340,7 @@ const handle = async function (req) {
 
         }
     }
-    if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
+    /*if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
         ws_sw({
             type: "send",
             data: JSON.stringify({
@@ -312,7 +350,7 @@ const handle = async function (req) {
             })
         })
         return new Response(null, { status: 204 })
-    }
+    }*/
     for (var i in cache_url_list) {
         //console.log(urlStr.match(cache_url_list[i]))
         if (urlStr.match(cache_url_list[i])) {
