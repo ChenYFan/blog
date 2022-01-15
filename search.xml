@@ -557,7 +557,7 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
 <h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p>
 <p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
 <p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p>
-<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的科学上网法则有些时候也能发现.</p>
+<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的善用技术上网法则有些时候也能发现.</p>
 <p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p>
 <h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p>
 <h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p>
@@ -597,9 +597,9 @@ Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/
 </blockquote>
 <p>(/≧▽≦)/,笑死我了,连Chrome都做不到,怎么可能在IE中做到?<br>后来在评论中看到这样的话:</p>
 <blockquote>
-<p><strong>欧二lord：</strong><br>科学上网吧，我换了三个浏览器都不行，后来科学上网用chrome就可以了.</p>
+<p><strong>欧二lord：</strong><br>善用技术上网吧，我换了三个浏览器都不行，后来善用技术上网用chrome就可以了.</p>
 </blockquote>
-<p>科学上网么…<br>我挂上代理后再次进入,结果还是老样子:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="老样子" title="还是老样子啊"></p>
+<p>善用技术上网么…<br>我挂上代理后再次进入,结果还是老样子:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="老样子" title="还是老样子啊"></p>
 <p>…</p>
 <h1 id="最后解决"><a href="#最后解决" class="headerlink" title="最后解决:"></a>最后解决:</h1><p>然后我一直点着<kbd>Create an Account</kbd>,一直报错.大概点了5下后:<br><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_CAPTCHA.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="新样子" title="=_=换了个样子"><br>终于报出真正的人机验证了!点进去,人机验证的方式是旋转小狗小牛到正确的位置.<br>人机验证完成,我就直接被跳到邮箱验证了.<br>^3^,终于解决了!</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h1><ol>
@@ -611,7 +611,7 @@ Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/
 </ul>
 </li>
 <li>网络状态<ul>
-<li><input checked disabled type="checkbox"> 科学上网</li>
+<li><input checked disabled type="checkbox"> 善用技术上网</li>
 </ul>
 </li>
 <li>连续点击直到出现真正的人机验证<br>OK!</li>
@@ -625,7 +625,7 @@ Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/
         <tag>Github</tag>
         <tag>错误</tag>
         <tag>人机验证</tag>
-        <tag>科学上网</tag>
+        <tag>善用技术上网</tag>
       </tags>
   </entry>
   <entry>
@@ -930,7 +930,7 @@ admin:
 <p>如果你只是单个文件网页，此处比较建议使用ipfs，ipns可能离线时间过长导致无法下载。具体看个人所好。</p>
 <p>ipfs链接获取：点击 <code>···</code> ,选择复制哈希，在前面加上网关域名即可。</p>
 <p>ipns连接获取：点击 <code>···</code> ,选择分享，复制链接即可。</p>
-<p>在科学上网的前提下访问 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> 显示目标界面</p>
+<p>在善用技术上网的前提下访问 <code>https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL</code> 显示目标界面</p>
 <p><img src="https://ipfs.cyfan.top/ipfs/QmSGR6p5PxFJqQdEbDySG9QUpBx4WnQcVfxDPohgQ4pDoL" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <blockquote>
 <p>请注意，每次上传后一定要先访问一遍资源，否则文件是不会上传到ipfs服务器的！</p>
@@ -2022,7 +2022,7 @@ Control-C
 <p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20084428.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>实际上，由于Blogger托管于谷歌，写作域名 <code>www.blogger.com</code> 和托管域名 <code>*.blogspot.com</code> 均被MainLand所Ban。但是接下来来，我会讲讲如何打造一个能在国内大陆访问的Blogger</p>
 <h1 id="1-注册Blogger"><a href="#1-注册Blogger" class="headerlink" title="1. 注册Blogger"></a>1. 注册Blogger</h1><blockquote>
-<p>众所周知，请科学上网。</p>
+<p>众所周知，请善用技术上网。</p>
 </blockquote>
 <p>用谷歌账号登录 (<a href="https://www.blogger.com" target="_blank" rel="noopener">https://www.blogger.com</a>) ，没有？不是⑧不是吧不是扒，都0202年了，还不会去注册一个谷歌账号？</p>
 <p>进入控制台，新建一个博客：</p>
@@ -2031,7 +2031,7 @@ Control-C
 <p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20084847.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>点击确定,一个博客就搭建好了!快吧?</p>
 <p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
-<p>这时候,我们<strong>科学上网</strong>访问之前的域名,我这里是: <code>cyfblogger.blogspot.com</code>，打开：</p>
+<p>这时候,我们<strong>善用技术上网</strong>访问之前的域名,我这里是: <code>cyfblogger.blogspot.com</code>，打开：</p>
 <p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
 <p>搞定！搞完之后才知道，Blogger真正做到了什么叫1分钟创建一个博客，但这还不够，中国访客实际上还是打不开这个网站<a href="大多被污染到莫名其妙的ip去了,例如Facebook和Twitter">1</a>。所以，接下来，我们要让这个网站能在中国访问。</p>
 <p>目前我们有一下思路:</p>
@@ -6829,7 +6829,7 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div>
       </categories>
       <tags>
         <tag>人机验证</tag>
-        <tag>科学上网</tag>
+        <tag>善用技术上网</tag>
         <tag>JavaScript</tag>
         <tag>Tampermonkey</tag>
         <tag>Google</tag>
