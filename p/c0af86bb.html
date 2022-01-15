@@ -294,7 +294,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.7k字
+      3.5k字
     </span>
   
 
@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      31
+      42
       分钟
     </span>
   
@@ -485,16 +485,78 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 </blockquote>
 <h4 id="篡改响应-Edit-Response"><a href="#篡改响应-Edit-Response" class="headerlink" title="篡改响应 / Edit Response"></a>篡改响应 / Edit Response</h4><p>这个例子会检测返回内容，若为html，将把所有的”TEST”都替换成”SHIT”</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
-    <span class="hljs-keyword">if</span> ((req.url.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>].match(<span class="hljs-string">'xxx.com'</span>)) &#123;
-        <span class="hljs-comment">//xxx.com为图片所在域名</span>
-        <span class="hljs-keyword">return</span> fetch(req.url, &#123;
-            <span class="hljs-attr">method</span>: <span class="hljs-string">"POST"</span>
-        &#125;)
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(req)
+    <span class="hljs-keyword">const</span> resp = res.clone()
+    <span class="hljs-keyword">if</span> (!!resp.headers.get(<span class="hljs-string">'content-type'</span>)) &#123;
+        <span class="hljs-keyword">if</span> (resp.headers.get(<span class="hljs-string">'content-type'</span>).includes(<span class="hljs-string">'text/html'</span>)) &#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response((<span class="hljs-keyword">await</span> resp.text()).replace(<span class="hljs-regexp">/TEST/g</span>, <span class="hljs-string">'SHIT'</span>), &#123;
+                <span class="hljs-attr">headers</span>: resp.headers,
+                <span class="hljs-attr">status</span>: resp.status
+            &#125;)
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> resp
+&#125;</code></pre></div>
+
+<p><code>const resp = res.clone()</code>由于<code>Response</code>的<code>body</code>一旦被读取，这个<code>body</code>就会被锁死，再也无法读取。<code>clone()</code>能够创造出响应的副本用于处理。</p>
+<p><code>resp.headers.get(&#39;content-type&#39;)</code>通过读取响应的头，判断是否包含<code>text/html</code>，如果是，将响应以<code>text()</code>异步流的方式读取，然后正则替换掉响应内容，并还原头和响应Code。</p>
+<p>返回的内容必须是<code>Response</code>对象，所以<code>new Response</code>构建一个新对象，并直接返回。不匹配html头将直接原封不动地透明代理。</p>
+<h4 id="移花接木-Graft-Request-To-Another-Server"><a href="#移花接木-Graft-Request-To-Another-Server" class="headerlink" title="移花接木 / Graft Request To Another Server"></a>移花接木 / Graft Request To Another Server</h4><p><code>unpkg.zhimg.com</code>是<code>unpkg.com</code>的镜像网站。此脚本将会把所有的<code>unpkg.com</code>流量直接拦截到<code>unpkg.zhimg.com</code>，用于中国大陆内CDN加速。</p>
+<p>由于npm镜像固定为GET请求方式并且没有其他鉴权需求，所以我们没有必要还原<code>Request</code>其他数据。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">const</span> domain = req.url.split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">if</span> (domain.match(<span class="hljs-string">"unpkg.com"</span>)) &#123;
+        <span class="hljs-keyword">return</span> fetch(req.url.replace(<span class="hljs-string">"https://unpkg.com"</span>, <span class="hljs-string">"https://zhimg.unpkg.com"</span>));
+    &#125;
+    <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">return</span> fetch(req)
+    &#125;
+&#125;</code></pre></div>
+
+<p><code>domain.match</code>捕获请求中是否有待替换域名，检查出来后直接<code>replace</code>掉域名，如果没有匹配到，直接透明代理走掉。</p>
+<h4 id="持久化缓存-Cache-Persistently"><a href="#持久化缓存-Cache-Persistently" class="headerlink" title="持久化缓存 / Cache Persistently"></a>持久化缓存 / Cache Persistently</h4><p>对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">const</span> cache_url_list = [
+        <span class="hljs-regexp">/(http:\/\/|https:\/\/)cdn\.jsdelivr\.net/g</span>,
+        /(http:\/\/|https:\/\/)cdn\.bootcss\.com/g,
+        /(http:\/\/|https:\/\/)zhimg\.unpkg\.com/g,
+        /(http:\/\/|https:\/\/)unpkg\.com/g
+    ]
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> cache_url_list) &#123;
+        <span class="hljs-keyword">if</span> (req.url.match(cache_url_list[i])) &#123;
+            <span class="hljs-keyword">return</span> caches.match(req).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>&#123;
+                <span class="hljs-keyword">return</span> resp || fetch(req).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> caches.open(CACHE_NAME).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cache</span>) </span>&#123;
+                        cache.put(req, res.clone());
+                        <span class="hljs-keyword">return</span> res;
+                    &#125;);
+                &#125;);
+            &#125;)
+        &#125;
     &#125;
     <span class="hljs-keyword">return</span> fetch(req)
 &#125;</code></pre></div>
 
+<p><code>cache_url_list</code>列出所有待匹配的域名(包括http/https头是为了避免误杀其他url)，然后<code>for</code>开始遍历待列表，如果url中匹配到了，开始执行返回缓存操作。</p>
+<p>cache是一个近似于Key/Value(键名/键值)，只要有对应的<code>Request</code>(<code>KEY</code>)，就能匹配到响应的<code>Response</code>(<code>VALUE</code>)。</p>
+<p><code>caches.match(req)</code>将会试图在CacheStorage中匹配请求的url获取值，然后丢给管道同步函数<code>then</code>，传参<code>resp</code>为Cache匹配到的值。</p>
+<p>此时管道内将尝试返回resp，如果resp为<code>null</code>或<code>undefined</code>[即获取不到对应的缓存]，将执行fetch操作，fetch成功后将<code>open</code>打开CacheStorage，并<code>put</code>放入缓存。此时如果<code>fetch</code>失败将直接报错，不写入缓存。</p>
+<p>在下一次获取同一个URL的时候，缓存匹配到的将不再是空白值，此时<code>fetch</code>不执行，直接返回缓存，大大提升了速度。</p>
+<p>由于npm的cdn对于latest缓存并不是持久有效的，所以我们最好还是判断一下url版本中是否以@latest为结尾。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> is_latest = <span class="hljs-function">(<span class="hljs-params">url</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span> url.replace(<span class="hljs-string">'https://'</span>, <span class="hljs-string">''</span>).split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">'@'</span>)[<span class="hljs-number">1</span>] === <span class="hljs-string">'latest'</span>
+&#125;
+<span class="hljs-comment">//...</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> cache_url_list) &#123;
+    <span class="hljs-keyword">if</span> (is_latest(req.url)) &#123; <span class="hljs-keyword">return</span> fetch(req) &#125;
+    <span class="hljs-keyword">if</span> (req.url.match(cache_url_list[i])) &#123;
+        <span class="hljs-keyword">return</span> caches.match(req).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>&#123;
+            <span class="hljs-comment">//...</span>
+        &#125;)
+    &#125;
+&#125;</code></pre></div>
 
+<h4 id="离线化缓存-Cache-For-Offline"><a href="#离线化缓存-Cache-For-Offline" class="headerlink" title="离线化缓存 / Cache For Offline"></a>离线化缓存 / Cache For Offline</h4>
             </div>
             <hr>
             <div>
