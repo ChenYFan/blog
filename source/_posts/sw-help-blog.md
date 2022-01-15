@@ -137,6 +137,8 @@ const CACHE_NAME = 'ICDNCache';//可以为Cache版本号，但这样可能会导
 let cachelist = [];
 ```
 
+`cachelist`里面填写的是预缓存
+
 同时监听sw安装时开启此缓存空间：
 
 ```js
