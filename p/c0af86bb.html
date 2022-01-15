@@ -418,6 +418,7 @@ window.addEventListener(&apos;load&apos;, async () =&gt; &#123;
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> CACHE_NAME = <span class="hljs-string">'ICDNCache'</span>;<span class="hljs-comment">//可以为Cache版本号，但这样可能会导致缓存冗余累积</span>
 <span class="hljs-keyword">let</span> cachelist = [];</code></pre></div>
 
+<p><code>cachelist</code>里面填写的是预缓存</p>
 <p>同时监听sw安装时开启此缓存空间：</p>
 <div class="hljs"><pre><code class="hljs js">self.addEventListener(<span class="hljs-string">'install'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">installEvent</span>) </span>&#123;
     self.skipWaiting();
