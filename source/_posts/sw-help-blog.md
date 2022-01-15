@@ -235,7 +235,7 @@ const handle = async (req) => {
 ```
 
 > 注意，在ServiceWorker里面，header头是不能修改refferer和origin的，因此此方法无法绕开新浪图床反盗链
-<!--
+
 #### 篡改响应 / Edit Response
 
 这个例子会检测返回内容，若为html，将把所有的"TEST"都替换成"SHIT"
@@ -251,4 +251,3 @@ const handle = async (req) => {
     return fetch(req)
 }
 ```
--->
