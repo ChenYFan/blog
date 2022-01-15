@@ -266,7 +266,7 @@ const cache_url_list = [
 ]
 
 const blog = {
-    local: 1,
+    local: 0,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:12121"
