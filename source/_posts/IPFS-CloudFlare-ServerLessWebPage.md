@@ -195,7 +195,7 @@ ipfs链接获取：点击 `···` ,选择复制哈希，在前面加上网关�
 
 ipns连接获取：点击 `···` ,选择分享，复制链接即可。
 
-在科学上网的前提下访问 `https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL` 显示目标界面
+在善用技术上网的前提下访问 `https://ipfs.io/ipfs/QmZCvMHrE56VqsejmG53xd9bW4RZjtFpLz46QMQjA81orL` 显示目标界面
 
 ![](https://ipfs.cyfan.top/ipfs/QmSGR6p5PxFJqQdEbDySG9QUpBx4WnQcVfxDPohgQ4pDoL)
 

@@ -38,7 +38,7 @@ Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​�
 
 # 1. 注册Blogger
 
-> 众所周知，请科学上网。
+> 众所周知，请善用技术上网。
 
 用谷歌账号登录 (https://www.blogger.com) ，没有？不是⑧不是吧不是扒，都0202年了，还不会去注册一个谷歌账号？
 
@@ -56,7 +56,7 @@ Blog‍‌‍‌​‌‌‌‌​‌​‍‌​‍‌‍‍​‌‌‍‌​�
 ![](https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg)
 
 
-这时候,我们**科学上网**访问之前的域名,我这里是: `cyfblogger.blogspot.com`，打开：
+这时候,我们**善用技术上网**访问之前的域名,我这里是: `cyfblogger.blogspot.com`，打开：
 
 ![](https://npm.elemecdn.com/chenyfan-oss@1.0.1/2020-07-29%20085021.jpg)
 

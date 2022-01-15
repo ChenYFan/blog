@@ -1,7 +1,7 @@
 ---
 title: 如何在中国以免【爬城】的体位下使用Google的reCAPTCHA
 tags:
-  - 科学上网
+  - 善用技术上网
   - Google
   - 人机验证
   - 奇淫巧技

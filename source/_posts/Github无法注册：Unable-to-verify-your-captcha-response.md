@@ -4,7 +4,7 @@ tags:
   - Github
   - 错误
   - 人机验证
-  - 科学上网
+  - 善用技术上网
 categories: 干问题
 copyright: true
 abbrlink: 6708e52c
@@ -32,9 +32,9 @@ for troubleshooting information.
 后来在评论中看到这样的话:
 
 > **欧二lord：**
-> 科学上网吧，我换了三个浏览器都不行，后来科学上网用chrome就可以了.
+> 善用技术上网吧，我换了三个浏览器都不行，后来善用技术上网用chrome就可以了.
 
-科学上网么...
+善用技术上网么...
 我挂上代理后再次进入,结果还是老样子:
 ![老样子](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GITHUB_ERROR.jpg "还是老样子啊")
 
@@ -53,7 +53,7 @@ for troubleshooting information.
 	- [x] Chromium
 	- [ ] IE
 2. 网络状态
-	- [x] 科学上网
+	- [x] 善用技术上网
 3. 连续点击直到出现真正的人机验证
 OK!
 - - -
