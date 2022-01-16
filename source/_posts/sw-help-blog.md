@@ -8,7 +8,7 @@ tags:
 categories:
   - 随心扯
 des: 从唯一一个拥有国内节点能够加速海外资源的静态文件分发站JSDelivr因为各种滥用和敏感被封杀这一事件讲起，谈谈关于ServiceWorker奇技淫巧
-hide: true
+hide: false
 key: 'serviceworker,sw'
 abbrlink: c0af86bb
 index_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r2'
@@ -288,6 +288,298 @@ const handle = async (req) => {
 
 `domain.match`捕获请求中是否有待替换域名，检查出来后直接`replace`掉域名，如果没有匹配到，直接透明代理走掉。
 
+
+
+
+### 并行请求 / Request Parallelly
+
+SW中又一大黑科技隆重登场=>`Promise.any`，这个函数拥有另外两个衍生兄弟`Promise.all`&`Promise.race`。下面我将简单介绍这三种方式
+
+#### Promose.all
+
+当列表中所有的`Promise`都`resolve`[即成功]后，这个函数才会返回`resolve`，只要有一个返回`reject`，整个函数都会`reject`。
+
+```js
+Promise.all([
+    fetch('https://unpkg.com/jquery'),
+    fetch('https://cdn.jsdelivr.net/npm/jquery'),
+    fetch('https://unpkg.zhimg.com/jquery')
+])
+```
+
+这个函数将会请求三个网址，当每一个网址都链接联通后，整个函数将会返回一个列表：
+
+```js
+[Response1,Response2,Response3]
+```
+
+当任何一个`fetch`失败[即`reject`]后，整个`Promise.any`函数都会直接`reject`并报错。
+
+此函数可以检测网络连通性，由于采取并行处理，相比以前的循环效率要高不少。
+
+这是一段检测国内国外网络连通性的测试。
+
+没有采用`Promise.any`的代码和效果：
+
+```js
+const test = async () => {
+    const url = [
+        
+        "https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json",
+        "https://unpkg.com/jquery@3.6.0/package.json",
+        "https://unpkg.zhimg.com/jquery@3.6.0/package.json"
+    ]
+    flag = true
+    for (var i in url) {
+        try {
+            const res = await fetch(url[i])
+            if (res.status !== 200) {
+                flag = false
+            }
+        }catch(n){
+            return false
+        }
+    }
+    return flag
+}
+```
+
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/1.png)
+
+采用循环，`await`会堵塞循环，直到这次请求完成后才能执行下一个。如果有任何一个url长时间无法联通，将会导致极长的检测时间浪费。
+
+
+```js
+
+const test = () => {
+    const url = [
+        "https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json",
+        "https://unpkg.com/jquery@3.6.0/package.json",
+        "https://unpkg.zhimg.com/jquery@3.6.0/package.json"
+    ]
+    return Promise.all(url.map(url => {
+        return new Promise((resolve, reject) => {
+            fetch(url)
+                .then(res => {
+                    if (res.status == 200) {
+                        resolve(true)
+                    } else {
+
+                        reject(false)
+                    }
+                })
+                .catch(err => {
+                    reject(false)
+                })
+        })
+
+    }
+    )).then(res => {
+        return true
+    }).catch(err => {
+        return false
+    })
+}
+```
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/2.png)
+
+`Promise.all`几乎在一瞬间请求所有的url，其请求时并行，每一个请求并不会堵塞其他请求，函数总耗时为最长请求耗时。
+
+#### Promise.race
+
+此函数也是并行执行，不过与all不同的是，只要有任何一个函数完成，就立刻返回，无论其是否`reject`或者`resolve`。
+
+这个函数比较适合用于同时请求一些不关心结果，只要访问达到了即可，例如统计、签到等应用场景。
+
+#### Promise.any
+
+这个函数非常的有用，其作用和`race`接近，不过与之不同的是，`any`会同时检测结果是否`resolve`。其并行处理后，只要有任何一个返回正确，就直接返回哪个最快的请求结果，返回错误的直接忽视，除非所有的请求都失败了，才会返回`reject`
+
+这是一段同时请求`jquery`的`package.json`代码，它将从四个镜像同时请求：
+
+```js
+const get_json = () => {
+    return new Promise((resolve, reject) => {
+        const urllist = [
+            "https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json",
+            "https://unpkg.com/jquery@3.6.0/package.json",
+            "https://unpkg.zhimg.com/jquery@3.6.0/package.json",
+            "https://npm.elemecdn.com/jquery@3.6.0/package.json"
+        ]
+        Promise.any(urllist.map(url => {
+            fetch(url)
+                .then(res => {
+                    if (res.status == 200) {
+                        resolve(res)
+                    } else {
+                        reject()
+                    }
+                }).catch(err => {
+                    reject()
+                })
+        }))
+    })
+}
+
+console.log(await(await get_json()).text())
+```
+
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/3.png)
+
+函数将会在`21ms`上下返回json中的数据。
+
+此函数的好处在于可以在用户客户端判断哪一个镜像发挥速度最快，并保证用户每一次获取都能达到最大速度。同时，任何一个镜像站崩溃了都不会造成太大的影响，脚本将自动从其他源拉取信息。
+
+除非所有源都炸了，否则此请求不会失败。
+
+但是，我们会额外地发现，当知乎镜像返回最新版本后，其余的请求依旧在继续，只是没有被利用到而已。
+
+这会堵塞浏览器并发线程数，并且会造成额外的流量浪费。所以我们应该在其中任何一个请求完成后就打断其余请求。
+
+`fetch`有一个`abort`对象，只要刚开始`new AbortController()`指定控制器，在`init`的里面指定控制器的`signal`即可将其标记为待打断函数，最后`controller.abort()`即可打断。
+
+那么，很多同学就会开始这么写了:
+
+```js
+const get_json = () => {
+    return new Promise((resolve, reject) => {
+        const controller = new AbortController();
+        const urllist = [
+            "https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json",
+            "https://unpkg.com/jquery@3.6.0/package.json",
+            "https://unpkg.zhimg.com/jquery@3.6.0/package.json",
+            "https://npm.elemecdn.com/jquery@3.6.0/package.json"
+        ]
+        Promise.any(urllist.map(url => {
+            fetch(url,{
+                signal: controller.signal
+            })
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject()
+                    }
+                }).catch(err => {
+                    reject()
+                })
+        }))
+    })
+}
+
+console.log(await(await get_json()).text())
+```
+
+但很快，你就会发现它报错了：`Uncaught DOMException: The user aborted a request.`，并且没有任何数据输出。
+
+让我们看一下Network选项卡：
+
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/4.png)
+
+
+其中，知乎返回的最快，但他并没有完整的返回文件[源文件1.8KB，但他只返回了1.4KB]。这也直接导致了整个函数的`fail`。
+
+原因出在`fetch`上，这个函数在获得响应之后就立刻`resolve`了`Response`，但这个时候`body`并没有下载完成，即`fetch`的返回基于状态的而非基于响应内容，当其中`fetch`已经拿到了完整的状态代码，它就立刻把`Response`丢给了下一个管道函数，而此时`status`正确，`abort`打断了包括这一个`fetch`的所有请求，`fetch`就直接工作不正常。
+ 
+我个人采取的方式是读取`arrayBuffer`，阻塞`fetch`函数直到把整个文件下载下来。函数名为`PauseProgress`
+
+```js
+const get_json = () => {
+    return new Promise((resolve, reject) => {
+        const controller = new AbortController();
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        const urllist = [
+            "https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json",
+            "https://unpkg.com/jquery@3.6.0/package.json",
+            "https://unpkg.zhimg.com/jquery@3.6.0/package.json",
+            "https://npm.elemecdn.com/jquery@3.6.0/package.json"
+        ]
+        Promise.any(urllist.map(url => {
+            fetch(url, {
+                signal: controller.signal
+            })
+                .then(PauseProgress)
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject()
+                    }
+                }).catch(err => {
+                    reject()
+                })
+        }))
+    })
+}
+
+console.log(await(await get_json()).text())
+```
+
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/5.png)
+
+在这其中通过`arrayBuffer()`方法异步读取`res`的`body`，将其读取为二进制文件，并新建一个新的`Response`，还原状态和头，然后丢给管道函数同步处理。
+
+在这里，我们就实现了暴力并发，以流量换速度的方式。同时也获得了一个高可用的SW负载均衡器。
+
+这一段函数可以这样写在SW中：
+
+
+```js
+//...
+const lfetch = (urllist) => {
+    return new Promise((resolve, reject) => {
+        const controller = new AbortController();
+        const PauseProgress = async (res) => {
+            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+        };
+        Promise.any(urllist.map(url => {
+            fetch(url, {
+                signal: controller.signal
+            })
+                .then(PauseProgress)
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject()
+                    }
+                }).catch(err => {
+                    reject()
+                })
+        }))
+    })
+}
+const handle = async (req) => {
+    const npm_mirror = [
+        'https://cdn.jsdelivr.net/npm/',
+        'https://unpkg.com/',
+        'https://npm.elemecdn.com/',
+        'https://unpkg.zhimg.com/'
+    ]
+    for (var k in npm_mirror) {
+        if (req.url.match(npm_mirror[k]) && req.url.replace('https://', '').split('/')[0] == npm_mirror[k].replace('https://', '').split('/')[0]) {
+            return lfetch((() => {
+                let l = []
+                for (let i = 0; i < npm_mirror.length; i++) {
+                    l.push(npm_mirror[i] + req.url.split('/')[3])
+                }
+                return l
+            })())
+        }
+    }
+    return fetch(req)
+}
+```
+
+
+## 缓存控制 / Cache
+
+
 ### 持久化缓存 / Cache Persistently
 
 对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。
@@ -381,8 +673,75 @@ const handle = async (req) => {
 
 `return resp || caches.match(new Request('/offline.html'))` 返回缓存获得的内容。如果没有，就返回从缓存中拿到的错误网页。此处offline.html应该在最开始的时候就缓存好
 
+## 持久化存储 / Storage Persistently
+
+由于sw中无`window`，我们不能使用`localStorage`和`sessionStorage`。SW脚本会在所有页面都关闭或重载的时候丢失原先的数据。因此，如果想要使用持久化存储，我们只能使用`CacheAPI`和`IndexdDB`。
+
+### IndexdDB
+
+这货结构表类型类似于`SQL`，能够存储JSON对象和数据内容，但版本更新及其操作非常麻烦，因此本文不对此做过多解释。
+
+### CacheAPI
+
+这东西原本是用来缓存响应，但其本身的特性我们可以将其改造成一个简易的Key/Value数据表，可以存储文本/二进制，可扩展性远远比IndexdDB要好。
+
+```js
+self.CACHE_NAME = 'SWHelperCache';
+self.db = {
+    read: (key) => {
+        return new Promise((resolve, reject) => {
+            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                res.text().then(text => resolve(text))
+            }).catch(() => {
+                resolve(null)
+            })
+        })
+    },
+    read_arrayBuffer: (key) => {
+        return new Promise((resolve, reject) => {
+            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                res.arrayBuffer().then(aB => resolve(aB))
+            }).catch(() => {
+                resolve(null)
+            })
+        })
+    },
+    write: (key, value) => {
+        return new Promise((resolve, reject) => {
+            caches.open(CACHE_NAME).then(function (cache) {
+                cache.put(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`), new Response(value));
+                resolve()
+            }).catch(() => {
+                reject()
+            })
+        })
+    }
+}
+```
+
+使用操作：
+
+写入key，value:
+
+```js
+await db.wtite(key,value)
+```
+
+以文本方式读取key：
+
+```js
+await db.read(key)
+```
+
+以二进制方式读取key：
+
+```js
+await db.read_arrayBuffer(key)
+```
+
+其余的blob读取、delete操作此处不过多阐述。
 
 
-### 并行请求 / Request Parallelly
+## 页面与SW通信 / Build Communication with Page and ServiceWorker
 
-> **正在施工**
+> 施工中
