@@ -13,7 +13,7 @@ key: 'serviceworker,sw'
 abbrlink: c0af86bb
 index_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r2'
 banner_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r2'
-date: 2022-01-08 21:57:45
+date: 2022-01-16 21:57:45
 ---
 
 ServiceWorker作为前端革命领袖，毫不夸张地被誉为前端黑科技，此文将阐述如何巧妙的使用它来实现一些看起来匪夷所思的事情。
