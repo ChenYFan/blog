@@ -294,7 +294,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4k字
+      6.2k字
     </span>
   
 
@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      47
+      78
       分钟
     </span>
   
@@ -510,7 +510,233 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 &#125;</code></pre></div>
 
 <p><code>domain.match</code>捕获请求中是否有待替换域名，检查出来后直接<code>replace</code>掉域名，如果没有匹配到，直接透明代理走掉。</p>
-<h3 id="持久化缓存-Cache-Persistently"><a href="#持久化缓存-Cache-Persistently" class="headerlink" title="持久化缓存 / Cache Persistently"></a>持久化缓存 / Cache Persistently</h3><p>对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。</p>
+<h3 id="并行请求-Request-Parallelly"><a href="#并行请求-Request-Parallelly" class="headerlink" title="并行请求 / Request Parallelly"></a>并行请求 / Request Parallelly</h3><p>SW中又一大黑科技隆重登场=&gt;<code>Promise.any</code>，这个函数拥有另外两个衍生兄弟<code>Promise.all</code>&amp;<code>Promise.race</code>。下面我将简单介绍这三种方式</p>
+<h4 id="Promose-all"><a href="#Promose-all" class="headerlink" title="Promose.all"></a>Promose.all</h4><p>当列表中所有的<code>Promise</code>都<code>resolve</code>[即成功]后，这个函数才会返回<code>resolve</code>，只要有一个返回<code>reject</code>，整个函数都会<code>reject</code>。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">Promise</span>.all([
+    fetch(<span class="hljs-string">'https://unpkg.com/jquery'</span>),
+    fetch(<span class="hljs-string">'https://cdn.jsdelivr.net/npm/jquery'</span>),
+    fetch(<span class="hljs-string">'https://unpkg.zhimg.com/jquery'</span>)
+])</code></pre></div>
+
+<p>这个函数将会请求三个网址，当每一个网址都链接联通后，整个函数将会返回一个列表：</p>
+<div class="hljs"><pre><code class="hljs js">[Response1,Response2,Response3]</code></pre></div>
+
+<p>当任何一个<code>fetch</code>失败[即<code>reject</code>]后，整个<code>Promise.any</code>函数都会直接<code>reject</code>并报错。</p>
+<p>此函数可以检测网络连通性，由于采取并行处理，相比以前的循环效率要高不少。</p>
+<p>这是一段检测国内国外网络连通性的测试。</p>
+<p>没有采用<code>Promise.any</code>的代码和效果：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> test = <span class="hljs-keyword">async</span> () =&gt; &#123;
+    <span class="hljs-keyword">const</span> url = [
+        
+        <span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json"</span>,
+        <span class="hljs-string">"https://unpkg.com/jquery@3.6.0/package.json"</span>,
+        <span class="hljs-string">"https://unpkg.zhimg.com/jquery@3.6.0/package.json"</span>
+    ]
+    flag = <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> url) &#123;
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(url[i])
+            <span class="hljs-keyword">if</span> (res.status !== <span class="hljs-number">200</span>) &#123;
+                flag = <span class="hljs-literal">false</span>
+            &#125;
+        &#125;<span class="hljs-keyword">catch</span>(n)&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> flag
+&#125;</code></pre></div>
+
+<p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/1.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>采用循环，<code>await</code>会堵塞循环，直到这次请求完成后才能执行下一个。如果有任何一个url长时间无法联通，将会导致极长的检测时间浪费。</p>
+<div class="hljs"><pre><code class="hljs js">
+<span class="hljs-keyword">const</span> test = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> url = [
+        <span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json"</span>,
+        <span class="hljs-string">"https://unpkg.com/jquery@3.6.0/package.json"</span>,
+        <span class="hljs-string">"https://unpkg.zhimg.com/jquery@3.6.0/package.json"</span>
+    ]
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(url.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+            fetch(url)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        resolve(<span class="hljs-literal">true</span>)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+
+                        reject(<span class="hljs-literal">false</span>)
+                    &#125;
+                &#125;)
+                .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+                    reject(<span class="hljs-literal">false</span>)
+                &#125;)
+        &#125;)
+
+    &#125;
+    )).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    &#125;)
+&#125;</code></pre></div>
+
+<p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/2.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><code>Promise.all</code>几乎在一瞬间请求所有的url，其请求时并行，每一个请求并不会堵塞其他请求，函数总耗时为最长请求耗时。</p>
+<h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h4><p>此函数也是并行执行，不过与all不同的是，只要有任何一个函数完成，就立刻返回，无论其是否<code>reject</code>或者<code>resolve</code>。</p>
+<p>这个函数比较适合用于同时请求一些不关心结果，只要访问达到了即可，例如统计、签到等应用场景。</p>
+<h4 id="Promise-any"><a href="#Promise-any" class="headerlink" title="Promise.any"></a>Promise.any</h4><p>这个函数非常的有用，其作用和<code>race</code>接近，不过与之不同的是，<code>any</code>会同时检测结果是否<code>resolve</code>。其并行处理后，只要有任何一个返回正确，就直接返回哪个最快的请求结果，返回错误的直接忽视，除非所有的请求都失败了，才会返回<code>reject</code></p>
+<p>这是一段同时请求<code>jquery</code>的<code>package.json</code>代码，它将从四个镜像同时请求：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> get_json = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> urllist = [
+            <span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.zhimg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://npm.elemecdn.com/jquery@3.6.0/package.json"</span>
+        ]
+        <span class="hljs-built_in">Promise</span>.any(urllist.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> &#123;
+            fetch(url)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        resolve(res)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        reject()
+                    &#125;
+                &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+                    reject()
+                &#125;)
+        &#125;))
+    &#125;)
+&#125;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> get_json()).text())</code></pre></div>
+
+<p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/3.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>函数将会在<code>21ms</code>上下返回json中的数据。</p>
+<p>此函数的好处在于可以在用户客户端判断哪一个镜像发挥速度最快，并保证用户每一次获取都能达到最大速度。同时，任何一个镜像站崩溃了都不会造成太大的影响，脚本将自动从其他源拉取信息。</p>
+<p>除非所有源都炸了，否则此请求不会失败。</p>
+<p>但是，我们会额外地发现，当知乎镜像返回最新版本后，其余的请求依旧在继续，只是没有被利用到而已。</p>
+<p>这会堵塞浏览器并发线程数，并且会造成额外的流量浪费。所以我们应该在其中任何一个请求完成后就打断其余请求。</p>
+<p><code>fetch</code>有一个<code>abort</code>对象，只要刚开始<code>new AbortController()</code>指定控制器，在<code>init</code>的里面指定控制器的<code>signal</code>即可将其标记为待打断函数，最后<code>controller.abort()</code>即可打断。</p>
+<p>那么，很多同学就会开始这么写了:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> get_json = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> controller = <span class="hljs-keyword">new</span> AbortController();
+        <span class="hljs-keyword">const</span> urllist = [
+            <span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.zhimg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://npm.elemecdn.com/jquery@3.6.0/package.json"</span>
+        ]
+        <span class="hljs-built_in">Promise</span>.any(urllist.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> &#123;
+            fetch(url,&#123;
+                <span class="hljs-attr">signal</span>: controller.signal
+            &#125;)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        controller.abort();
+                        resolve(res)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        reject()
+                    &#125;
+                &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+                    reject()
+                &#125;)
+        &#125;))
+    &#125;)
+&#125;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> get_json()).text())</code></pre></div>
+
+<p>但很快，你就会发现它报错了：<code>Uncaught DOMException: The user aborted a request.</code>，并且没有任何数据输出。</p>
+<p>让我们看一下Network选项卡：</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/4.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>其中，知乎返回的最快，但他并没有完整的返回文件[源文件1.8KB，但他只返回了1.4KB]。这也直接导致了整个函数的<code>fail</code>。</p>
+<p>原因出在<code>fetch</code>上，这个函数在获得响应之后就立刻<code>resolve</code>了<code>Response</code>，但这个时候<code>body</code>并没有下载完成，即<code>fetch</code>的返回基于状态的而非基于响应内容，当其中<code>fetch</code>已经拿到了完整的状态代码，它就立刻把<code>Response</code>丢给了下一个管道函数，而此时<code>status</code>正确，<code>abort</code>打断了包括这一个<code>fetch</code>的所有请求，<code>fetch</code>就直接工作不正常。</p>
+<p>我个人采取的方式是读取<code>arrayBuffer</code>，阻塞<code>fetch</code>函数直到把整个文件下载下来。函数名为<code>PauseProgress</code></p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> get_json = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> controller = <span class="hljs-keyword">new</span> AbortController();
+        <span class="hljs-keyword">const</span> PauseProgress = <span class="hljs-keyword">async</span> (res) =&gt; &#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-keyword">await</span> (res).arrayBuffer(), &#123; <span class="hljs-attr">status</span>: res.status, <span class="hljs-attr">headers</span>: res.headers &#125;);
+        &#125;;
+        <span class="hljs-keyword">const</span> urllist = [
+            <span class="hljs-string">"https://cdn.jsdelivr.net/npm/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://unpkg.zhimg.com/jquery@3.6.0/package.json"</span>,
+            <span class="hljs-string">"https://npm.elemecdn.com/jquery@3.6.0/package.json"</span>
+        ]
+        <span class="hljs-built_in">Promise</span>.any(urllist.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> &#123;
+            fetch(url, &#123;
+                <span class="hljs-attr">signal</span>: controller.signal
+            &#125;)
+                .then(PauseProgress)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        controller.abort();
+                        resolve(res)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        reject()
+                    &#125;
+                &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+                    reject()
+                &#125;)
+        &#125;))
+    &#125;)
+&#125;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span>(<span class="hljs-keyword">await</span> get_json()).text())</code></pre></div>
+
+<p><img src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r7/5.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>在这其中通过<code>arrayBuffer()</code>方法异步读取<code>res</code>的<code>body</code>，将其读取为二进制文件，并新建一个新的<code>Response</code>，还原状态和头，然后丢给管道函数同步处理。</p>
+<p>在这里，我们就实现了暴力并发，以流量换速度的方式。同时也获得了一个高可用的SW负载均衡器。</p>
+<p>这一段函数可以这样写在SW中：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">//...</span>
+<span class="hljs-keyword">const</span> lfetch = <span class="hljs-function">(<span class="hljs-params">urllist</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> controller = <span class="hljs-keyword">new</span> AbortController();
+        <span class="hljs-keyword">const</span> PauseProgress = <span class="hljs-keyword">async</span> (res) =&gt; &#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-keyword">await</span> (res).arrayBuffer(), &#123; <span class="hljs-attr">status</span>: res.status, <span class="hljs-attr">headers</span>: res.headers &#125;);
+        &#125;;
+        <span class="hljs-built_in">Promise</span>.any(urllist.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> &#123;
+            fetch(url, &#123;
+                <span class="hljs-attr">signal</span>: controller.signal
+            &#125;)
+                .then(PauseProgress)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        controller.abort();
+                        resolve(res)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        reject()
+                    &#125;
+                &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
+                    reject()
+                &#125;)
+        &#125;))
+    &#125;)
+&#125;
+<span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
+    <span class="hljs-keyword">const</span> npm_mirror = [
+        <span class="hljs-string">'https://cdn.jsdelivr.net/npm/'</span>,
+        <span class="hljs-string">'https://unpkg.com/'</span>,
+        <span class="hljs-string">'https://npm.elemecdn.com/'</span>,
+        <span class="hljs-string">'https://unpkg.zhimg.com/'</span>
+    ]
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> npm_mirror) &#123;
+        <span class="hljs-keyword">if</span> (req.url.match(npm_mirror[k]) &amp;&amp; req.url.replace(<span class="hljs-string">'https://'</span>, <span class="hljs-string">''</span>).split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">0</span>] == npm_mirror[k].replace(<span class="hljs-string">'https://'</span>, <span class="hljs-string">''</span>).split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">0</span>]) &#123;
+            <span class="hljs-keyword">return</span> lfetch(<span class="hljs-function">(<span class="hljs-params">(</span>) =&gt;</span> &#123;
+                <span class="hljs-keyword">let</span> l = []
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; npm_mirror.length; i++) &#123;
+                    l.push(npm_mirror[i] + req.url.split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">3</span>])
+                &#125;
+                <span class="hljs-keyword">return</span> l
+            &#125;)())
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> fetch(req)
+&#125;</code></pre></div>
+
+<h2 id="缓存控制-Cache"><a href="#缓存控制-Cache" class="headerlink" title="缓存控制 / Cache"></a>缓存控制 / Cache</h2><h3 id="持久化缓存-Cache-Persistently"><a href="#持久化缓存-Cache-Persistently" class="headerlink" title="持久化缓存 / Cache Persistently"></a>持久化缓存 / Cache Persistently</h3><p>对于来自CDN的流量，大部分是持久不变的，因此，如果我们将文件获得后直接填入缓存，之后访问也直接从本地缓存中读取，那将大大提升访问速度。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> (req) =&gt; &#123;
     <span class="hljs-keyword">const</span> cache_url_list = [
         <span class="hljs-regexp">/(http:\/\/|https:\/\/)cdn\.jsdelivr\.net/g</span>,
@@ -577,8 +803,54 @@ Offline:
 
 <p><code>if (!res) { throw &#39;error&#39; }</code> 如果没有返回值，直接抛出错误，会被下面的Catch捕获，返回缓存或错误页面</p>
 <p><code>return resp || caches.match(new Request(&#39;/offline.html&#39;))</code> 返回缓存获得的内容。如果没有，就返回从缓存中拿到的错误网页。此处offline.html应该在最开始的时候就缓存好</p>
-<h3 id="并行请求-Request-Parallelly"><a href="#并行请求-Request-Parallelly" class="headerlink" title="并行请求 / Request Parallelly"></a>并行请求 / Request Parallelly</h3><blockquote>
-<p><strong>正在施工</strong></p>
+<h2 id="持久化存储-Storage-Persistently"><a href="#持久化存储-Storage-Persistently" class="headerlink" title="持久化存储 / Storage Persistently"></a>持久化存储 / Storage Persistently</h2><p>由于sw中无<code>window</code>，我们不能使用<code>localStorage</code>和<code>sessionStorage</code>。SW脚本会在所有页面都关闭或重载的时候丢失原先的数据。因此，如果想要使用持久化存储，我们只能使用<code>CacheAPI</code>和<code>IndexdDB</code>。</p>
+<h3 id="IndexdDB"><a href="#IndexdDB" class="headerlink" title="IndexdDB"></a>IndexdDB</h3><p>这货结构表类型类似于<code>SQL</code>，能够存储JSON对象和数据内容，但版本更新及其操作非常麻烦，因此本文不对此做过多解释。</p>
+<h3 id="CacheAPI"><a href="#CacheAPI" class="headerlink" title="CacheAPI"></a>CacheAPI</h3><p>这东西原本是用来缓存响应，但其本身的特性我们可以将其改造成一个简易的Key/Value数据表，可以存储文本/二进制，可扩展性远远比IndexdDB要好。</p>
+<div class="hljs"><pre><code class="hljs js">self.CACHE_NAME = <span class="hljs-string">'SWHelperCache'</span>;
+self.db = &#123;
+    <span class="hljs-attr">read</span>: <span class="hljs-function">(<span class="hljs-params">key</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+            caches.match(<span class="hljs-keyword">new</span> Request(<span class="hljs-string">`https://LOCALCACHE/<span class="hljs-subst">$&#123;<span class="hljs-built_in">encodeURIComponent</span>(key)&#125;</span>`</span>)).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+                res.text().then(<span class="hljs-function"><span class="hljs-params">text</span> =&gt;</span> resolve(text))
+            &#125;).catch(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                resolve(<span class="hljs-literal">null</span>)
+            &#125;)
+        &#125;)
+    &#125;,
+    <span class="hljs-attr">read_arrayBuffer</span>: <span class="hljs-function">(<span class="hljs-params">key</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+            caches.match(<span class="hljs-keyword">new</span> Request(<span class="hljs-string">`https://LOCALCACHE/<span class="hljs-subst">$&#123;<span class="hljs-built_in">encodeURIComponent</span>(key)&#125;</span>`</span>)).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+                res.arrayBuffer().then(<span class="hljs-function"><span class="hljs-params">aB</span> =&gt;</span> resolve(aB))
+            &#125;).catch(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                resolve(<span class="hljs-literal">null</span>)
+            &#125;)
+        &#125;)
+    &#125;,
+    <span class="hljs-attr">write</span>: <span class="hljs-function">(<span class="hljs-params">key, value</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+            caches.open(CACHE_NAME).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cache</span>) </span>&#123;
+                cache.put(<span class="hljs-keyword">new</span> Request(<span class="hljs-string">`https://LOCALCACHE/<span class="hljs-subst">$&#123;<span class="hljs-built_in">encodeURIComponent</span>(key)&#125;</span>`</span>), <span class="hljs-keyword">new</span> Response(value));
+                resolve()
+            &#125;).catch(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                reject()
+            &#125;)
+        &#125;)
+    &#125;
+&#125;</code></pre></div>
+
+<p>使用操作：</p>
+<p>写入key，value:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> db.wtite(key,value)</code></pre></div>
+
+<p>以文本方式读取key：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> db.read(key)</code></pre></div>
+
+<p>以二进制方式读取key：</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> db.read_arrayBuffer(key)</code></pre></div>
+
+<p>其余的blob读取、delete操作此处不过多阐述。</p>
+<h2 id="页面与SW通信-Build-Communication-with-Page-and-ServiceWorker"><a href="#页面与SW通信-Build-Communication-with-Page-and-ServiceWorker" class="headerlink" title="页面与SW通信 / Build Communication with Page and ServiceWorker"></a>页面与SW通信 / Build Communication with Page and ServiceWorker</h2><blockquote>
+<p>施工中</p>
 </blockquote>
 
             </div>
@@ -612,6 +884,29 @@ Offline:
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="7c7f6808.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022新春小记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="c0af86a9.html">
+                        <span class="hidden-mobile">为什么是APP而不是网页</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
