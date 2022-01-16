@@ -604,6 +604,13 @@ links:
     image: 'https://cdn.jsdelivr.net/gh/imacte/blog/avatar.jpg'
     }
     - {        
+    title: 'yiyun‘s Blog',
+    link: 'https://moeci.com',
+    intro: 'The stupid one is me',
+    image: 'https://moeci.com/images/avatar.png',
+    domain: moeci.com
+    }
+    - {        
     title: '友链还有空位！',
     link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
     intro: 点我跑去提交PR！,
