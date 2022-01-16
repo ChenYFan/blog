@@ -5506,7 +5506,7 @@ Packet Loss:     0.0%
 <h1 id="起因-巨厦坍塌"><a href="#起因-巨厦坍塌" class="headerlink" title="起因 - 巨厦坍塌"></a>起因 - 巨厦坍塌</h1><p>2021/12/20日，赶在旧年的末尾，一则<code>JSdelivrSSL证书错误</code>缓缓上了v2ex论坛热点。</p>
 <p>此前JSD由于各种原因,曾经不正常了一段时间,所以大家并未对此感冒.正当人们以为这只是JSdelivr每年一度的<code>年经</code>阵痛,发个issue,过一段时间就好了的时候.官方直接爆出大料:<strong>JSDelivr had lost their ICP license</strong></p>
 <p>由此可见,过去的几年里,当人们发现JSD对个人面向国内加速拥有者无与伦比的效果时,各种滥用方式层出不穷:图床曾一阵流行,国内搜索引擎JSdelivr十有八九都是作为图床的,连PicGo插件都出了Github+JSdelivr图床;猛一点的,直接做视频床,甚至为了突破单文件20M限制开发了一套ts切片m3u8一条龙服务;作妖的,托管了不少突破网络审查的脚本和规则集;寻死的,添加了大量的政治宗教敏感,有些甚至不配称为宗教,直接上来就是骗钱的.</p>
-<p>jas并不是没有发布许可条款，但这并不能阻止白嫖大军的进程。在羊毛大军中，只要是你是免费的、公益的，你就要做好被薅爆的结果。但是薅羊毛的前提是羊还活着，倘若羊被薅死了，哪来的羊毛给诸君所薅？</p>
+<p>jsd并不是没有发布许可条款，但这并不能阻止白嫖大军的进程。在羊毛大军中，只要是你是免费的、公益的，你就要做好被薅爆的结果。但是薅羊毛的前提是羊还活着，倘若羊被薅死了，哪来的羊毛给诸君所薅？</p>
 <p>总之，不管怎样，JSDelivr在决定将节点设置为<code>NearChina</code>，可以肯定的是，在最近很长一段时间内，我们都无法享受国内外双料同时加速的快感，换句话说，jsd在中国就被永久地打入了冷宫。</p>
 <p>视线转向国内，jsd的替代品并不少。早在我写<a href="https://blog.cyfan.top/p/eb490c73.html">图床的千层套路</a>我就试着假想jsd不可用时，我们该用什么。最终我给出的一份较为完美的答案-npm图床，优点无非就是镜像多速度快，许可条款较为宽松，缺点也很明显，需要安装node，用专门的客户端上传。</p>
 <p>那事情就逐渐变得扑朔迷离起来了，我们应当如何选择合理的CDN加速器呢。</p>
@@ -5551,9 +5551,12 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
     navigator.serviceWorker.register(<span class="hljs-string">`/sw.js?time=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>)
         .then(<span class="hljs-keyword">async</span> reg =&gt; &#123;
             <span class="hljs-comment">//安装成功，建议此处强刷新以立刻执行SW</span>
-            setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
-                <span class="hljs-built_in">window</span>.location.search = <span class="hljs-string">`?time=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>
-            &#125;, <span class="hljs-number">1000</span>)
+            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.localStorage.getItem(<span class="hljs-string">'install'</span>) != <span class="hljs-string">'true'</span>) &#123;
+                <span class="hljs-built_in">window</span>.localStorage.setItem(<span class="hljs-string">'install'</span>, <span class="hljs-string">'true'</span>);
+                setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                    <span class="hljs-built_in">window</span>.location.search = <span class="hljs-string">`?time=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>
+                &#125;, <span class="hljs-number">1000</span>)
+            &#125;
         &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;
             <span class="hljs-comment">//安装失败，错误信息会由err传参</span>
         &#125;)
@@ -5672,10 +5675,10 @@ https://119.91.80.151:59996/sw.js#虽然为同一文件,但非同一域名，视
 <p>这个函数将会请求三个网址，当每一个网址都链接联通后，整个函数将会返回一个列表：</p>
 <div class="hljs"><pre><code class="hljs js">[Response1,Response2,Response3]</code></pre></div>
 
-<p>当任何一个<code>fetch</code>失败[即<code>reject</code>]后，整个<code>Promise.any</code>函数都会直接<code>reject</code>并报错。</p>
+<p>当任何一个<code>fetch</code>失败[即<code>reject</code>]后，整个<code>Promise.all</code>函数都会直接<code>reject</code>并报错。</p>
 <p>此函数可以检测网络连通性，由于采取并行处理，相比以前的循环效率要高不少。</p>
 <p>这是一段检测国内国外网络连通性的测试。</p>
-<p>没有采用<code>Promise.any</code>的代码和效果：</p>
+<p>没有采用<code>Promise.all</code>的代码和效果：</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> test = <span class="hljs-keyword">async</span> () =&gt; &#123;
     <span class="hljs-keyword">const</span> url = [
         

@@ -275,6 +275,7 @@ const blog = {
         "blog.cyfan.top",
         "119.91.80.151:59996",
         "blog-six-iota.vercel.app"
+        //"blogr.cyfan.top"
     ]
 };
 const handle = async function (req) {
