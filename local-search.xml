@@ -292,9 +292,9 @@
     
     <tags>
       
-      <tag>Artalk</tag>
-      
       <tag>评论</tag>
+      
+      <tag>Artalk</tag>
       
       <tag>无服务器</tag>
       
@@ -1257,17 +1257,17 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
-      <tag>评论</tag>
-      
       <tag>踩坑</tag>
       
       <tag>手动填坑</tag>
       
       <tag>评论系统</tag>
       
+      <tag>评论</tag>
+      
       <tag>Gitalk</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
@@ -1449,11 +1449,11 @@
     
     <tags>
       
+      <tag>评论</tag>
+      
       <tag>Hexo</tag>
       
       <tag>站长必备</tag>
-      
-      <tag>评论</tag>
       
       <tag>Valine</tag>
       
