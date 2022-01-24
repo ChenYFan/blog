@@ -611,9 +611,9 @@ links:
     domain: moeci.com
     }
     - {        
-    title: '友链还有空位！',
-    link: 'https://github.com/ChenYFan/blog/blob/master/themes/fluid/_config.yml',
-    intro: 点我跑去提交PR！,
-    image: 'https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/%EF%BC%9F.jpg',
-    domain: blog.cyfan.top
+    title: 'Chuan‘s B10g',
+    link: 'https://www.scitbb.top/',
+    intro: '现在开始，永远不算晚',
+    image: 'https://s2.loli.net/2022/01/04/1DCTS7sH3om6rXU.jpg',
+    domain: scitbb.top
     }
