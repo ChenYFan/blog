@@ -294,7 +294,7 @@ background-color:#bbb;
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.2k字
+      7.1k字
     </span>
   
 
@@ -304,7 +304,7 @@ background-color:#bbb;
       <i class="iconfont icon-clock-fill"></i>
       
       
-      79
+      91
       分钟
     </span>
   
@@ -852,7 +852,154 @@ self.db = &#123;
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">await</span> db.read_arrayBuffer(key)</code></pre></div>
 
 <p>其余的blob读取、delete操作此处不过多阐述。</p>
-<h2 id="页面与SW通信-Build-Communication-with-Page-and-ServiceWorker"><a href="#页面与SW通信-Build-Communication-with-Page-and-ServiceWorker" class="headerlink" title="页面与SW通信 / Build Communication with Page and ServiceWorker"></a>页面与SW通信 / Build Communication with Page and ServiceWorker</h2><blockquote>
+<h2 id="页面与SW通信-Build-Communication-with-Page-and-ServiceWorker"><a href="#页面与SW通信-Build-Communication-with-Page-and-ServiceWorker" class="headerlink" title="页面与SW通信 / Build Communication with Page and ServiceWorker"></a>页面与SW通信 / Build Communication with Page and ServiceWorker</h2><h3 id="单向连接-Unidirectional-Connect"><a href="#单向连接-Unidirectional-Connect" class="headerlink" title="单向连接 / Unidirectional Connect"></a>单向连接 / Unidirectional Connect</h3><h3 id="Clients-To-SW"><a href="#Clients-To-SW" class="headerlink" title="Clients To SW"></a>Clients To SW</h3><p>浏览器 =&gt; SW</p>
+<p>ServiceWorker中有一个非常简单的API<code>postMessage</code>,全路径为<code>navigator.serviceWorker.controller.postMessage</code>.</p>
+<p>因此,如果你只是作为页面单方面传递给SW,此api是个不错的选择.</p>
+<p>前端写法</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> data = <span class="hljs-number">123</span>
+navigator.serviceWorker.controller.postMessage(data)
+<span class="hljs-comment">//发送123</span></code></pre></div>
+
+<p>SW接收</p>
+<div class="hljs"><pre><code class="hljs js">self.addEventListener(<span class="hljs-string">'message'</span>, (event) =&gt; &#123;
+  <span class="hljs-built_in">console</span>.log(event.data)
+  <span class="hljs-comment">//输出123</span>
+&#125;);</code></pre></div>
+
+<p>此方法可用于单方面向SW提交数据,但无需返回值.比如提示SW可以SkipWaiting,或者提交前端统计数据等等.</p>
+<h4 id="SW-To-Clients"><a href="#SW-To-Clients" class="headerlink" title="SW To Clients"></a>SW To Clients</h4><p>首先,Clients必须要从SW中的一个event事件中获取,比如<code>fetch</code>.无法从<code>message</code>事件中获取client.</p>
+<div class="hljs"><pre><code class="hljs js">addEventListener(<span class="hljs-string">'fetch'</span>, event =&gt; &#123;
+    event.waitUntil(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (!event.clientId) <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">await</span> clients.get(event.clientId);
+        <span class="hljs-keyword">if</span> (!client) <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">const</span> data = <span class="hljs-number">123</span>;
+        client.postMessage(data);
+    &#125;());
+&#125;);</code></pre></div>
+
+<h3 id="双向通讯-Connect-Each"><a href="#双向通讯-Connect-Each" class="headerlink" title="双向通讯 / Connect Each"></a>双向通讯 / Connect Each</h3><p>浏览器 &lt;=&gt; SW</p>
+<p>我们拥有两种方式双向通讯:</p>
+<ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API" target="_blank" rel="noopener">Broadcast Channel API</a> 多对多,广播形式.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel" target="_blank" rel="noopener">Message Channel</a> 一对一</li>
+</ol>
+<h4 id="MessageChannel"><a href="#MessageChannel" class="headerlink" title="MessageChannel"></a>MessageChannel</h4><p>顾名思义，MessageChannel API 设置了一个可以发送消息的通道。</p>
+<p>该实现可以归结为3个步骤。</p>
+<p>1.在两侧设置事件侦听器以接收<code>message</code> 事件<br>2.通过发送<code>port</code>并将其存储在SW中，建立与SW的连接。<br>3.使用存储的<code>port</code>回复客户端</p>
+<p>前端写法</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> messageChannel = <span class="hljs-keyword">new</span> MessageChannel();
+navigator.serviceWorker.controller.postMessage(&#123;
+  <span class="hljs-attr">type</span>: <span class="hljs-string">'INIT'</span>,<span class="hljs-comment">//发送init信息,表示以port2为接收端[即SW的发送端]</span>
+&#125;, [messageChannel.port2]);
+messageChannel.port1.onmessage = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;
+  <span class="hljs-comment">//监听port1</span>
+  navigator.serviceWorker.controller.postMessage(&#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'PING'</span><span class="hljs-comment">//发送PING</span>
+  &#125;);
+&#125;;</code></pre></div>
+
+<p>SW端写法</p>
+<div class="hljs"><pre><code class="hljs js">self.addEventListener(<span class="hljs-string">"message"</span>, event =&gt; &#123;
+    <span class="hljs-keyword">const</span> data = event.data;
+    <span class="hljs-keyword">if</span> (!!data) &#123;
+        <span class="hljs-keyword">switch</span> (data.type) &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'INIT'</span>:
+                self.ClientPort = event.ports[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">default</span>:
+                self.ClientPort.postMessage(&#123;
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'DATA'</span>,
+                    <span class="hljs-attr">data</span>: <span class="hljs-string">'pong'</span>
+                &#125;);
+        &#125;
+    &#125;
+&#125;)</code></pre></div>
+
+<p>然后查看控制台,你就会看到里面一直在乒乒乓乓,说明成功了.</p>
+<p>我们简单的改写一下,变成异步形式传输数据:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mCh = &#123;
+        <span class="hljs-attr">init</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+            <span class="hljs-built_in">window</span>.messageChannel = <span class="hljs-keyword">new</span> MessageChannel();
+            navigator.serviceWorker.controller.postMessage(&#123;
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'INIT'</span>,
+            &#125;, [messageChannel.port2]);
+        &#125;,
+        <span class="hljs-attr">send</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> &#123;
+
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+                <span class="hljs-keyword">const</span> uuid = <span class="hljs-function">(<span class="hljs-params">(</span>) =&gt;</span> &#123;
+                    <span class="hljs-keyword">return</span> <span class="hljs-string">'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'</span>.replace(<span class="hljs-regexp">/[xy]/g</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">c</span>) </span>&#123;
+                        <span class="hljs-keyword">var</span> r = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">16</span> | <span class="hljs-number">0</span>, v = c == <span class="hljs-string">'x'</span> ? r : (r &amp; <span class="hljs-number">0x3</span> | <span class="hljs-number">0x8</span>);
+                        <span class="hljs-keyword">return</span> v.toString(<span class="hljs-number">16</span>);
+                    &#125;);
+                &#125;)()
+                navigator.serviceWorker.controller.postMessage(&#123;
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'DATA'</span>,
+                    <span class="hljs-attr">data</span>: data,
+                    <span class="hljs-attr">id</span>: uuid
+                &#125;);
+                setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+                    reject(&#123;
+                        <span class="hljs-attr">message</span>: <span class="hljs-string">'timeout'</span>,
+                        <span class="hljs-attr">ok</span>: <span class="hljs-literal">false</span>
+                    &#125;)
+                &#125;, <span class="hljs-number">2000</span>);
+                messageChannel.port1.onmessage = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (event.data.id === uuid) &#123;
+                        resolve(&#123;
+                            <span class="hljs-attr">message</span>: event.data.data,
+                            <span class="hljs-attr">ok</span>: <span class="hljs-literal">true</span>
+                        &#125;)
+                    &#125;;
+                &#125;
+            &#125;)
+        &#125;
+    &#125;</code></pre></div>
+
+<p>由于MessageChannel特性,一个port只要不是连续传输数据就会被断开.所以每次传输时我们要先初始化,后发送数据.</p>
+<p>由于传输时无状态的,我们将每一个包都打上特定的uuid,返回包里也写上对应的uuid即可判断那个包是哪个对应的返回值.</p>
+<p>SW端也要做一点点相应的改动</p>
+<div class="hljs"><pre><code class="hljs js">self.ClientPort.postMessage(&#123;
+<span class="hljs-comment">//...</span>
+<span class="hljs-attr">id</span>: data.id
+&#125;);</code></pre></div>
+
+<p>这样,一个兼容性较好的SW双向传输就解决了.</p>
+<h4 id="Broadcast-Channel"><a href="#Broadcast-Channel" class="headerlink" title="Broadcast Channel"></a>Broadcast Channel</h4><blockquote>
+<p>请注意,BroadCast虽然写法建议,但是对浏览器兼容性要求非常高[Chrome 54,IOS Safari全线不支持].用此api请三思.</p>
+</blockquote>
+<blockquote>
+<p>另外,由于是广播形式,一个页面如果有多个SW,他们会同时收到消息.</p>
+</blockquote>
+<p>前端</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> broadcast = <span class="hljs-keyword">new</span> BroadcastChannel(<span class="hljs-string">'Channel Name'</span>);
+<span class="hljs-keyword">const</span> send_ping = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+    broadcast.postMessage(&#123;
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'PING'</span>
+    &#125;);
+&#125;
+broadcast.onmessage = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'PONG'</span>)
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
+        send_ping()
+    &#125;, <span class="hljs-number">500</span>);
+&#125;;
+send_ping()</code></pre></div>
+
+<p>SW端</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> broadcast = <span class="hljs-keyword">new</span> BroadcastChannel(<span class="hljs-string">'Channel Name'</span>);
+broadcast.onmessage = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;
+    broadcast.postMessage(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">"PONG"</span> &#125;)
+&#125;;</code></pre></div>
+
+<p>只要ChannelName对应,即可在里面顺利传输消息.</p>
+<h2 id="细节与注意-Something-Small-But-Need-to-Be-Mentioned"><a href="#细节与注意-Something-Small-But-Need-to-Be-Mentioned" class="headerlink" title="细节与注意 / Something Small But Need to Be Mentioned"></a>细节与注意 / Something Small But Need to Be Mentioned</h2><blockquote>
+<p>施工中</p>
+</blockquote>
+<h1 id="代码白嫖处"><a href="#代码白嫖处" class="headerlink" title="代码白嫖处"></a>代码白嫖处</h1><blockquote>
+<p>此处我将粘贴出一些开箱即用的代码.但请注意,这些代码可能并不是完全适合你.</p>
+</blockquote>
+<blockquote>
 <p>施工中</p>
 </blockquote>
 
@@ -1446,44 +1593,61 @@ self.db = &#123;
                                                                                         <script>
                                                                                             window.setCustom = () => { };
                                                                                             (async () => {
+
+                                                                                                window.mCh = {
+                                                                                                    init: () => {
+                                                                                                        window.messageChannel = new MessageChannel();
+                                                                                                        navigator.serviceWorker.controller.postMessage({
+                                                                                                            type: 'INIT',
+                                                                                                        }, [messageChannel.port2]);
+                                                                                                    },
+                                                                                                    send: (data) => {
+
+                                                                                                        return new Promise((resolve, reject) => {
+                                                                                                            const uuid = (() => {
+                                                                                                                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                                                                                                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                                                                                                    return v.toString(16);
+                                                                                                                });
+                                                                                                            })()
+                                                                                                            navigator.serviceWorker.controller.postMessage({
+                                                                                                                type: 'DATA',
+                                                                                                                data: data,
+                                                                                                                id: uuid
+                                                                                                            });
+                                                                                                            setTimeout(() => {
+                                                                                                                reject({
+                                                                                                                    message: 'timeout',
+                                                                                                                    ok: false
+                                                                                                                })
+                                                                                                            }, 2000);
+                                                                                                            messageChannel.port1.onmessage = (event) => {
+                                                                                                                if (event.data.id === uuid) {
+                                                                                                                    resolve({
+                                                                                                                        data: event.data.data,
+                                                                                                                        ok: true
+                                                                                                                    })
+                                                                                                                };
+                                                                                                            }
+                                                                                                        })
+                                                                                                    }
+                                                                                                }
                                                                                                 function ranN(minNum, maxNum) {
                                                                                                     return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
                                                                                                 }
                                                                                                 window.notyf = new Notyf();
-                                                                                                window.send_msg = (data) => {
-                                                                                                    return new Promise((resolve, reject) => {
-                                                                                                        try {
-                                                                                                            const broadcast = new BroadcastChannel('count-channel');
-                                                                                                            broadcast.postMessage(data);
-                                                                                                            broadcast.onmessage = (event) => {
-                                                                                                                resolve(event.data)
-                                                                                                            }
-                                                                                                        } catch (n) {
-                                                                                                            resolve({ error: true, ok: true })
-                                                                                                        }
-                                                                                                    })
-                                                                                                }
                                                                                                 if ('serviceWorker' in navigator) {
                                                                                                     window.addEventListener('load', async () => {
                                                                                                         navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                                                                                             .then(async reg => {
 
-                                                                                                                const p = await send_msg({ type: "test" })
-                                                                                                                if (p.error && window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
-                                                                                                                    notyf.error('浏览器不支持Broadcast，\n但ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                                                                                if (window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                                                                                    notyf.success('ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
                                                                                                                     window.localStorage.setItem('ChenBlogHelper_Error', 'true')
                                                                                                                     setTimeout(() => {
                                                                                                                         window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                                                                                     }, 1000)
 
-                                                                                                                }
-                                                                                                                if (p.ok) {
-                                                                                                                    console.log('ChenBlogHelper已安装!')
-                                                                                                                } else {
-                                                                                                                    notyf.success('ChenBlogHelper安装成功\n将在一秒后尝试激活!')
-                                                                                                                    setTimeout(() => {
-                                                                                                                        window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                                                                                    }, 1000)
                                                                                                                 }
                                                                                                             }).catch(err => {
                                                                                                                 notyf.error('ChenBlogHelper安装失败！原因:' + err);
@@ -1551,10 +1715,8 @@ self.db = &#123;
 
 
                                                                                                             }
-                                                                                                            send_msg({
-                                                                                                                type: "upload",
-                                                                                                                data: ans
-                                                                                                            }).then(data => {
+                                                                                                            mCh.init()
+                                                                                                            mCh.send(ans).then(data => data.data).then(data => {
                                                                                                                 console.log(data)
                                                                                                                 document.getElementById('user_count').innerText = data.user
                                                                                                                 document.getElementById('ip').innerText = data.ip

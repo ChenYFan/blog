@@ -25,77 +25,6 @@ self.db = {
         })
     }
 }
-/*
-self.db = {
-    init: (dbname, Objname) => {
-        return new Promise((resolve, reject) => {
-            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
-            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
-            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
-            var db;
-            //self.indexedDB.deleteDatabase(dbname)
-            var DBOpenRequest = self.indexedDB.open(dbname);
-            DBOpenRequest.onsuccess = function (event) {
-                db = DBOpenRequest.result;
-            };
-
-            DBOpenRequest.onupgradeneeded = function (event) {
-                var db = event.target.result;
-                var objectStore = db.createObjectStore(Objname, { autoIncrement: true });
-
-
-                var transaction = event.target.transaction;
-
-                transaction.oncomplete = function (event) {
-                    self.db.db = db
-                    resolve()
-                }
-
-            };
-        })
-    },
-    read: (dbname, Objname, key) => {
-        return new Promise((resolve, reject) => {
-            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
-            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
-            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
-            var db;
-            var DBOpenRequest = self.indexedDB.open(dbname);
-            DBOpenRequest.onsuccess = function (event) {
-                db = DBOpenRequest.result;
-                const transaction = db.transaction(Objname, "readonly");
-                const objectStore = transaction.objectStore(Objname);
-                const request = objectStore.get(1)
-
-                request.onsuccess = function (event) {
-                    resolve(request.result[key])
-                }
-            };
-        })
-    },
-    write: (dbname, Objname, key, value) => {
-        return new Promise((resolve, reject) => {
-
-            self.indexedDB = self.indexedDB || self.mozIndexedDB || self.webkitIndexedDB || self.msIndexedDB;
-            self.IDBTransaction = self.IDBTransaction || self.webkitIDBTransaction || self.msIDBTransaction;
-            self.IDBKeyRange = self.IDBKeyRange || self.webkitIDBKeyRange || self.msIDBKeyRange
-            var db;
-            var DBOpenRequest = self.indexedDB.open(dbname);
-            DBOpenRequest.onsuccess = function (event) {
-                db = DBOpenRequest.result;
-                const transaction = db.transaction(Objname, "readwrite");
-                const objectStore = transaction.objectStore(Objname);
-                const json = {}
-                json[key] = value
-                const request = objectStore.add(json)
-                request.onsuccess = function (event) {
-                    resolve(request.result)
-                }
-            };
-        })
-    }
-}
-*/
 
 const generate_uuid = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -152,6 +81,42 @@ self.addEventListener('fetch', async event => {
         event.respondWith(handleerr(event.request, msg))
     }
 });
+
+self.addEventListener("message", async event => {
+    const data = event.data;
+    if (!!data) {
+        switch (data.type) {
+            case 'INIT':
+                self.ClientPort = event.ports[0];
+                break;
+            default:
+                const event_data = event.data.id
+                ws_sw({
+                    type: "send",
+                    data: JSON.stringify({
+                        type: 'info',
+                        data: event.data.data,
+                        uuid: await db.read('uuid')
+                    })
+                });
+                wsc.addEventListener('message', (event) => {
+                    const data = JSON.parse(event.data)
+                    self.ClientPort.postMessage({
+                        id: event_data,
+                        data: {
+                            ip: data.data.ip,
+                            addr: data.data.addr,
+                            user: data.data.user,
+                            delay: new Date().getTime() - data.data.time,
+                        }
+                    })
+
+                })
+                break;
+        }
+    }
+})
+/*
 (async () => {
     try {
         self.broadcast = new BroadcastChannel('count-channel');
@@ -207,7 +172,7 @@ self.addEventListener('fetch', async event => {
         })
     }
 })()
-
+*/
 const handleerr = async (req, msg) => {
     return new Response(`<h1>ChenBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
@@ -218,8 +183,11 @@ let cdn = {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/gh"
         },
-        pigax: {
+        pigax_jsd: {
             "url": "https://u.pigax.cn/gh"
+        },
+        pigax_chenyfan_jsd: {
+            "url": "https://cdn-jsd.pigax.cn/gh"
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/gh"
@@ -229,8 +197,11 @@ let cdn = {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/combine"
         },
-        pigax: {
+        pigax_jsd: {
             "url": "https://u.pigax.cn/combine"
+        },
+        pigax_chenyfan_jsd: {
+            "url": "https://cdn-jsd.pigax.cn/combine"
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/combine"
@@ -253,8 +224,17 @@ let cdn = {
         bdstatic: {
             "url": "https://code.bdstatic.com/npm"
         },
-        pigax: {
+        pigax_jsd: {
             "url": "https://u.pigax.cn/npm"
+        },
+        pigax_unpkg: {
+            "url": "https://unpkg.pigax.cn/"
+        },
+        pigax_chenyfan_jsd: {
+            "url": "https://cdn-jsd.pigax.cn/npm"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/combine"
         }
 
     }
