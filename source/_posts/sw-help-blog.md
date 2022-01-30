@@ -747,4 +747,210 @@ await db.read_arrayBuffer(key)
 
 ## 页面与SW通信 / Build Communication with Page and ServiceWorker
 
+### 单向连接 / Unidirectional Connect
+
+### Clients To SW
+
+浏览器 => SW
+
+ServiceWorker中有一个非常简单的API`postMessage`,全路径为`navigator.serviceWorker.controller.postMessage`.
+
+因此,如果你只是作为页面单方面传递给SW,此api是个不错的选择.
+
+前端写法
+
+```js
+const data = 123
+navigator.serviceWorker.controller.postMessage(data)
+//发送123
+```
+
+SW接收
+
+```js
+self.addEventListener('message', (event) => {
+  console.log(event.data)
+  //输出123
+});
+```
+
+此方法可用于单方面向SW提交数据,但无需返回值.比如提示SW可以SkipWaiting,或者提交前端统计数据等等.
+
+
+#### SW To Clients
+
+首先,Clients必须要从SW中的一个event事件中获取,比如`fetch`.无法从`message`事件中获取client.
+
+```js
+addEventListener('fetch', event => {
+    event.waitUntil(async function () {
+        if (!event.clientId) return;
+        const client = await clients.get(event.clientId);
+        if (!client) return;
+        const data = 123;
+        client.postMessage(data);
+    }());
+});
+```
+
+### 双向通讯 / Connect Each
+
+浏览器 <=> SW
+
+我们拥有两种方式双向通讯:
+
+1. [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) 多对多,广播形式.
+2. [Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel) 一对一
+
+
+
+#### MessageChannel
+
+顾名思义，MessageChannel API 设置了一个可以发送消息的通道。
+
+该实现可以归结为3个步骤。
+
+1.在两侧设置事件侦听器以接收`message` 事件
+2.通过发送`port`并将其存储在SW中，建立与SW的连接。
+3.使用存储的`port`回复客户端
+
+前端写法
+
+```js
+const messageChannel = new MessageChannel();
+navigator.serviceWorker.controller.postMessage({
+  type: 'INIT',//发送init信息,表示以port2为接收端[即SW的发送端]
+}, [messageChannel.port2]);
+messageChannel.port1.onmessage = (event) => {
+  //监听port1
+  navigator.serviceWorker.controller.postMessage({
+    type: 'PING'//发送PING
+  });
+};
+```
+
+
+SW端写法
+
+```js
+self.addEventListener("message", event => {
+    const data = event.data;
+    if (!!data) {
+        switch (data.type) {
+            case 'INIT':
+                self.ClientPort = event.ports[0];
+            default:
+                self.ClientPort.postMessage({
+                    type: 'DATA',
+                    data: 'pong'
+                });
+        }
+    }
+})
+```
+
+然后查看控制台,你就会看到里面一直在乒乒乓乓,说明成功了.
+
+我们简单的改写一下,变成异步形式传输数据:
+
+```js
+const mCh = {
+        init: () => {
+            window.messageChannel = new MessageChannel();
+            navigator.serviceWorker.controller.postMessage({
+                type: 'INIT',
+            }, [messageChannel.port2]);
+        },
+        send: (data) => {
+
+            return new Promise((resolve, reject) => {
+                const uuid = (() => {
+                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                        return v.toString(16);
+                    });
+                })()
+                navigator.serviceWorker.controller.postMessage({
+                    type: 'DATA',
+                    data: data,
+                    id: uuid
+                });
+                setTimeout(() => {
+                    reject({
+                        message: 'timeout',
+                        ok: false
+                    })
+                }, 2000);
+                messageChannel.port1.onmessage = (event) => {
+                    if (event.data.id === uuid) {
+                        resolve({
+                            message: event.data.data,
+                            ok: true
+                        })
+                    };
+                }
+            })
+        }
+    }
+```
+
+由于MessageChannel特性,一个port只要不是连续传输数据就会被断开.所以每次传输时我们要先初始化,后发送数据.
+
+由于传输时无状态的,我们将每一个包都打上特定的uuid,返回包里也写上对应的uuid即可判断那个包是哪个对应的返回值.
+
+SW端也要做一点点相应的改动
+
+```js
+self.ClientPort.postMessage({
+//...
+id: data.id
+});
+```
+
+这样,一个兼容性较好的SW双向传输就解决了.
+
+#### Broadcast Channel 
+
+> 请注意,BroadCast虽然写法建议,但是对浏览器兼容性要求非常高[Chrome 54,IOS Safari全线不支持].用此api请三思.
+
+> 另外,由于是广播形式,一个页面如果有多个SW,他们会同时收到消息.
+
+前端
+
+```js
+const broadcast = new BroadcastChannel('Channel Name');
+const send_ping = () => {
+    broadcast.postMessage({
+        type: 'PING'
+    });
+}
+broadcast.onmessage = (event) => {
+    console.log('PONG')
+    setTimeout(() => {
+        send_ping()
+    }, 500);
+};
+send_ping()
+```
+
+SW端
+
+```js
+const broadcast = new BroadcastChannel('Channel Name');
+broadcast.onmessage = (event) => {
+    broadcast.postMessage({ type: "PONG" })
+};
+```
+
+只要ChannelName对应,即可在里面顺利传输消息.
+
+
+## 细节与注意 / Something Small But Need to Be Mentioned
+
+> 施工中
+
+# 代码白嫖处
+
+> 此处我将粘贴出一些开箱即用的代码.但请注意,这些代码可能并不是完全适合你.
+
 > 施工中
