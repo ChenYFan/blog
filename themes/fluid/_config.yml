@@ -617,3 +617,9 @@ links:
     image: 'https://s2.loli.net/2022/01/04/1DCTS7sH3om6rXU.jpg',
     domain: scitbb.top
     }
+    - {        
+    title: 'Fox Home',
+    link: 'https://foolishfox.cn',
+    intro: 'foolish fox',
+    image: 'https://sdn.geekzu.org/avatar/53bc457fbba563ce1ce80edda8310241?d=identicon'
+    }
