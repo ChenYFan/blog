@@ -234,7 +234,7 @@ let cdn = {
             "url": "https://cdn-jsd.pigax.cn/npm"
         },
         tianli: {
-            "url": "https://cdn1.tianli0.top/combine"
+            "url": "https://cdn1.tianli0.top/npm"
         }
 
     }
@@ -372,62 +372,68 @@ const handle = async function (req) {
 const lfetch = async (urls, url) => {
     //console.log(urls)
     const uuid = await db.read('uuid')
-    try {
-        let controller = new AbortController();
-        const PauseProgress = async (res) => {
-            return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
-        };
-        let results = Promise.any(urls.map(urls => {
+    if (!Promise.any) {
+        Promise.any = function (promises) {
             return new Promise((resolve, reject) => {
-                fetch(urls, {
-                    signal: controller.signal
-                })
-                    .then(PauseProgress)
-                    .then(res => {
-                        const resn = res.clone()
-                        if (resn.status == 200) {
-                            setTimeout(() => {
-                                ws_sw({
-                                    type: "send",
-                                    data: JSON.stringify({
-                                        type: 'fetch',
-                                        url: urls,
-                                        origin_url: url,
-                                        promise_any: true,
-                                        uuid: uuid,
-                                        request_uuid: generate_uuid()
-                                    })
-                                })
-                            }, 0);
-                            controller.abort();
-                            resolve(resn)
-                        } else {
-                            reject(null)
+                promises = Array.isArray(promises) ? promises : []
+                let len = promises.length
+                let errs = []
+                if (len === 0) return reject(new AggregateError('All promises were rejected'))
+                promises.forEach((promise) => {
+                    promise.then(value => {
+                        resolve(value)
+                    }, err => {
+                        len--
+                        errs.push(err)
+                        if (len === 0) {
+                            reject(new AggregateError(errs))
                         }
-                    }).catch(() => {
-                        reject(null)
                     })
-            }
-            )
-        }
-        )).then(res => { return res }).catch(() => { return null })
-
-        return results
-    }
-    catch (err) {
-        ws_sw({
-            type: "send",
-            data: JSON.stringify({
-                type: 'fetch',
-                url: urls[0],
-                promise_any: false,
-                err: err,
-                request_uuid: generate_uuid(),
-                uuid: uuid
+                })
             })
-        })
-        return fetch(urls[0])
+        }
     }
+    let controller = new AbortController();
+    const PauseProgress = async (res) => {
+        return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+    };
+    let results = Promise.any(urls.map(urls => {
+        return new Promise((resolve, reject) => {
+            fetch(urls, {
+                signal: controller.signal
+            })
+                .then(PauseProgress)
+                .then(res => {
+                    const resn = res.clone()
+                    if (resn.status == 200) {
+                        setTimeout(() => {
+                            ws_sw({
+                                type: "send",
+                                data: JSON.stringify({
+                                    type: 'fetch',
+                                    url: urls,
+                                    origin_url: url,
+                                    promise_any: true,
+                                    uuid: uuid,
+                                    request_uuid: generate_uuid()
+                                })
+                            })
+                        }, 0);
+                        controller.abort();
+                        resolve(resn)
+                    } else {
+                        reject(null)
+                    }
+                }).catch(() => {
+                    reject(null)
+                })
+        }
+        )
+    }
+    )).then(res => { return res }).catch(() => { return null })
+
+    return results
+
 }
 
 
