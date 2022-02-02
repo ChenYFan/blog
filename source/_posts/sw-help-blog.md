@@ -20,7 +20,8 @@ ServiceWorker作为前端革命领袖，毫不夸张地被誉为前端黑科技�
 
 <!--more-->
 
-> 从2022/1/8开始，本文将持续更新。当前状态：更新中
+> **Warning**
+> 此文为最基本的SW使用基础,如果你只是想来白嫖代码的建议退出选择下一篇实操文章.
 
 # 起因 - 巨厦坍塌
 
@@ -579,6 +580,35 @@ const handle = async (req) => {
 }
 ```
 
+另外,`Promise.any`,兼容性比较差:
+
+![](https://npm.elemecdn.com/chenyfan-os@0.0.0-r9/1.png)
+
+因此,我的解决办法是判断浏览器如果不支持,就提前polyfill一下:
+
+```js
+if (!Promise.any) {
+        Promise.any = function (promises) {
+            return new Promise((resolve, reject) => {
+                promises = Array.isArray(promises) ? promises : []
+                let len = promises.length
+                let errs = []
+                if (len === 0) return reject(new AggregateError('All promises were rejected'))
+                promises.forEach((promise) => {
+                    promise.then(value => {
+                        resolve(value)
+                    }, err => {
+                        len--
+                        errs.push(err)
+                        if (len === 0) {
+                            reject(new AggregateError(errs))
+                        }
+                    })
+                })
+            })
+        }
+    }
+```
 
 ## 缓存控制 / Cache
 
@@ -947,10 +977,44 @@ broadcast.onmessage = (event) => {
 
 ## 细节与注意 / Something Small But Need to Be Mentioned
 
-> 施工中
+### 无法修改的 Header
 
-# 代码白嫖处
+由于ServiceWorker本质上仍然属于浏览器,因此,你无法控制例如header中的`Host`\\`Refferer`\\`Access-Control-Allow-Origin`用于绕过防盗链\CORS\指定host选择ip
 
-> 此处我将粘贴出一些开箱即用的代码.但请注意,这些代码可能并不是完全适合你.
 
-> 施工中
+### 难以卸载的 SW
+
+SW一大特性,一旦被安装,就不能通过传统方式卸载掉.
+
+如果你直接删除`sw.js`文件并删除安装代码,那么,新用户是不会被安装的,但是原先已经安装过的用户sw会继续劫持这他们的网页,导致老用户网页不更新或者出现异常.
+
+正确的删除方法是将安装代码改成卸载代码:
+
+```
+navigator.serviceWorker.getRegistrations().then(function(registrations) {
+ for(let registration of registrations) {
+  registration.unregister()
+} })
+```
+
+并将sw内容改成透明代理,方便没有卸载的用户正常使用.
+
+
+### 堵塞整个浏览器的代码
+
+由于SW运行在DOM上下文,如果在sw中执行一些消耗资源的代码会直接耗尽浏览器资源,与dom不同的是,dom耗资源代码只会堵塞一个线程,另一个线程依旧可以正常工作,而sw一旦堵塞会将整个浏览器堵死.因此sw固然可以更快的计算,但万不可将一些极易死机的代码交给sw处理.
+
+
+
+
+# End
+
+这篇文章结尾的很仓促,毕竟已经快拖了一个月了,也有很多东西没有讲清楚,未来可能会小修小改.
+
+篇幅所限,一些sw其他功能并没有详细讲述,比如后台更新或者推送通知.这些功能在实际开发中并不是特别有用,或者在国内大环境下并不适合.可能这些功能会在下一篇文章,sw的实操中讲述.
+
+停下笔的时候,hexo统计这篇文章已经将近1万字,阅读时间近100分钟.不过我认为这值得,毕竟sw就是这么一个凭借着奇思妙想就能绽放出Spark的事物.唯有独特的创造力才能激发无限可能.
+
+当然,这篇文章讲述的都是些非常基础的东西,那在下一篇文章,我会贴出一个个demo,希望你们能对这些充满着智慧的样例激发你们的灵感.
+
+另外,在祝贺你们,虎年大吉,新年快乐!
