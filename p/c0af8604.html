@@ -15,13 +15,23 @@
   
   <meta name="theme-color" content="#F6B352">
   
-    <meta name="description" content="挣扎在互联网角落的小小博客，喜欢介绍一些普通的知识">
-
-  <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床">
-  
     
+	
+	    <meta name="description" content="从各种奇葩的目的和案例中挖掘sw是如何做到这些看起来匪夷所思的事物">
+	 
+	 
+	 	
+
+	
+	    <meta name="keywords" content="serviceworker,sw">
+	 
+	 
+	 	
+
+ 
+  
   <meta name="author" content="CYF">
-  <title>归档 || 陈YFの博客(￣▽￣)&#34;</title>
+  <title>艹,你怎么能这样 - SWの奇技淫巧 || 陈YFの博客(￣▽￣)&#34;</title>
 <!--<style>html{
 filter: grayscale(100%);
 -webkit-filter: grayscale(100%);
@@ -115,7 +125,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../archives/">
+                              <a class="dropdown-item" href="../archives/">
                                 
                                   归档
                               </a>
@@ -123,7 +133,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../categories/">
+                              <a class="dropdown-item" href="../categories/">
                                 
                                   分类
                               </a>
@@ -131,7 +141,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../tags/">
+                              <a class="dropdown-item" href="../tags/">
                                 
                                   标签
                               </a>
@@ -155,7 +165,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../com/">
+                              <a class="dropdown-item" href="../com/">
                                 
                                   留言板
                               </a>
@@ -163,7 +173,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../随口胡说/ ">
+                              <a class="dropdown-item" href="../随口胡说/ ">
                                 
                                   随口胡说
                               </a>
@@ -171,7 +181,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../about/">
+                              <a class="dropdown-item" href="../about/">
                                 
                                   关于
                               </a>
@@ -179,7 +189,7 @@ background-color:#bbb;
                         
                           
                             
-                              <a class="dropdown-item" href="../../../hpp/admin/dash/home">
+                              <a class="dropdown-item" href="../hpp/admin/dash/home">
                                 
                                   后台
                               </a>
@@ -193,7 +203,7 @@ background-color:#bbb;
               
                 
                     <li class="nav-item">
-                      <a class="nav-link" href="../../../links/">
+                      <a class="nav-link" href="../links/">
                         
                           朋友们
                       </a>
@@ -260,7 +270,7 @@ background-color:#bbb;
   </div>
 </nav>
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/back/1.jpg') no-repeat center center;
+         style="background: url('https://npm.elemecdn.com/chenyfan-os@0.0.0-r11/1.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -268,6 +278,45 @@ background-color:#bbb;
             <span class="h2" id="subtitle">
               
             </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2022-02-02 13:57" pubdate>
+      2022年2月2日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+      分钟
+    </span>
+  
+<span id="post-meta-views">
+<i class="iconfont icon-rss"></i>
+<span id="pv-counter">loading</span>
+       <span>阅读量</span>
+    </span>
+   
+  
+  
+</div>
 
             
           </div>
@@ -284,43 +333,417 @@ background-color:#bbb;
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 65 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="../../../p/c0af86bb.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">欲善其事，必利其器 - 论如何善用ServiceWorker</span>
-      <time style="float: right;">01-16</time>
-    </a>
-  
-    
-    <a href="../../../p/7c7f6808.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022新春小记</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">艹,你怎么能这样 - SWの奇技淫巧</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>ServiceWorker很厉害,那他能干什么?这篇文章我将写出几个我写的\我在用的\我看到的几个奇葩但很有用处的小项目,希望这些能够帮到你.</p>
+<a id="more"></a>
 
+<blockquote>
+<p>本文所标记的内容,大多是直接复制粘贴即可实现的.但依然会存在这和您的服务存在冲突这一情况.请阅读上一篇基础文章<a href="/p/c0af86bb.html">欲善其事，必利其器 - 论如何善用ServiceWorker</a>进行合理的修改.</p>
+</blockquote>
+<h1 id="前端智能切换NPM-Github-CDN节点计划"><a href="#前端智能切换NPM-Github-CDN节点计划" class="headerlink" title="前端智能切换NPM/Github CDN节点计划"></a>前端智能切换NPM/Github CDN节点计划</h1><p>众所周知,jsd国内掉备案,能用的节点几乎不存在.这个脚本将在SW端通过Promise.any的方式,在用户界面上劫持所有著名的CDN托管服务,并并发访问其他所有CDN,优选选择最快的节点并返回内容,同时可以避免部分CDN单点故障,提升页面静态资源加载速度和加载可用性.</p>
+<p>同时,这个脚本还会将非latest资源永久缓存,提升二次访问速度.</p>
+<blockquote>
+<p>注意,此方法是以流量换速度的方式进行的,虽然在任何一个节点返回正确内容后会打断其余请求,但依然会造成不可避免的流量消耗(+~20%).如果你面向的是手机流量用户,请三思而后行</p>
+</blockquote>
+<blockquote>
+<p>在这其中,<code>pigax_chenyfan</code>为我赞助的JP海外二次落地+pigax国内流量分发,此节点屏蔽色情与政治;<code>tianli</code>有自己的许可条款,建议前往<a href="https://tianli-blog.club/2022/01/26/cdn/" target="_blank" rel="noopener">Tianli免费JSD镜像申请页</a>查看详细</p>
+</blockquote>
+<blockquote>
+<p>此代码与<a href="https://github.com/EtherDream/freecdn-js" target="_blank" rel="noopener">freecdn-js</a>核心功能相似,但实现方法并不同,并且完全支持动态网页.</p>
+</blockquote>
+<blockquote>
+<p>此脚本仅加速npm\gh\jsd上的combine内容;WP加速原理类似,请自行更改.</p>
+</blockquote>
+<p>代码:</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> CACHE_NAME = <span class="hljs-string">'ICDNCache'</span>;
+<span class="hljs-keyword">let</span> cachelist = [];
+self.addEventListener(<span class="hljs-string">'install'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">installEvent</span>) </span>&#123;
+    self.skipWaiting();
+    installEvent.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cache</span>) </span>&#123;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Opened cache'</span>);
+                <span class="hljs-keyword">return</span> cache.addAll(cachelist);
+            &#125;)
+    );
+&#125;);
+self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hljs-keyword">async</span> event =&gt; &#123;
+    <span class="hljs-keyword">try</span> &#123;
+        event.respondWith(handle(event.request))
+    &#125; <span class="hljs-keyword">catch</span> (msg) &#123;
+        event.respondWith(handleerr(event.request, msg))
+    &#125;
+&#125;);
+<span class="hljs-keyword">const</span> handleerr = <span class="hljs-keyword">async</span> (req, msg) =&gt; &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-string">`&lt;h1&gt;CDN分流器遇到了致命错误&lt;/h1&gt;
+    &lt;b&gt;<span class="hljs-subst">$&#123;msg&#125;</span>&lt;/b&gt;`</span>, &#123; <span class="hljs-attr">headers</span>: &#123; <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"text/html; charset=utf-8"</span> &#125; &#125;)
+&#125;
+<span class="hljs-keyword">let</span> cdn = &#123;
+    <span class="hljs-string">"gh"</span>: &#123;
+        <span class="hljs-attr">jsdelivr</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn.jsdelivr.net/gh"</span>
+        &#125;,
+        <span class="hljs-attr">jsdelivr_fastly</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://fastly.jsdelivr.net/gh"</span>
+        &#125;,
+        <span class="hljs-attr">jsdelivr_gcore</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://gcore.jsdelivr.net/gh"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://u.pigax.cn/gh"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_chenyfan_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn-jsd.pigax.cn/gh"</span>
+        &#125;,
+        <span class="hljs-attr">tianli</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn1.tianli0.top/gh"</span>
+        &#125;
+    &#125;,
+    <span class="hljs-string">"combine"</span>: &#123;
+        <span class="hljs-attr">jsdelivr</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn.jsdelivr.net/combine"</span>
+        &#125;,
+        <span class="hljs-attr">jsdelivr_fastly</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://fastly.jsdelivr.net/combine"</span>
+        &#125;,
+        <span class="hljs-attr">jsdelivr_gcore</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://gcore.jsdelivr.net/combine"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://u.pigax.cn/combine"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_chenyfan_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn-jsd.pigax.cn/combine"</span>
+        &#125;,
+        <span class="hljs-attr">tianli</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn1.tianli0.top/combine"</span>
+        &#125;
+    &#125;,
+    <span class="hljs-string">"npm"</span>: &#123;
+        <span class="hljs-attr">eleme</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://npm.elemecdn.com"</span>
+        &#125;,
+        <span class="hljs-attr">jsdelivr</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn.jsdelivr.net/npm"</span>
+        &#125;,
+        <span class="hljs-attr">zhimg</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://unpkg.zhimg.com"</span>
+        &#125;,
+        <span class="hljs-attr">unpkg</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://unpkg.com"</span>
+        &#125;,
+        <span class="hljs-attr">bdstatic</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://code.bdstatic.com/npm"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://u.pigax.cn/npm"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_unpkg</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://unpkg.pigax.cn/"</span>
+        &#125;,
+        <span class="hljs-attr">pigax_chenyfan_jsd</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn-jsd.pigax.cn/npm"</span>
+        &#125;,
+        <span class="hljs-attr">tianli</span>: &#123;
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://cdn1.tianli0.top/npm"</span>
+        &#125;
+
+    &#125;
+&#125;
+<span class="hljs-keyword">const</span> handle = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> urlStr = req.url
+    <span class="hljs-keyword">const</span> domain = (urlStr.split(<span class="hljs-string">'/'</span>))[<span class="hljs-number">2</span>]
+    <span class="hljs-keyword">let</span> urls = []
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> cdn) &#123;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j <span class="hljs-keyword">in</span> cdn[i]) &#123;
+            <span class="hljs-keyword">if</span> (domain == cdn[i][j].url.split(<span class="hljs-string">'https://'</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">0</span>] &amp;&amp; urlStr.match(cdn[i][j].url)) &#123;
+                urls = []
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k <span class="hljs-keyword">in</span> cdn[i]) &#123;
+                    urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
+                &#125;
+                <span class="hljs-keyword">if</span> (urlStr.indexOf(<span class="hljs-string">'@latest/'</span>) &gt; <span class="hljs-number">-1</span>) &#123;
+                    <span class="hljs-keyword">return</span> lfetch(urls, urlStr)
+                &#125; <span class="hljs-keyword">else</span> &#123;
+                    <span class="hljs-keyword">return</span> caches.match(req).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>&#123;
+                        <span class="hljs-keyword">return</span> resp || lfetch(urls, urlStr).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+                            <span class="hljs-keyword">return</span> caches.open(CACHE_NAME).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cache</span>) </span>&#123;
+                                cache.put(req, res.clone());
+                                <span class="hljs-keyword">return</span> res;
+                            &#125;);
+                        &#125;);
+                    &#125;)
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> fetch(req)
+&#125;
+<span class="hljs-keyword">const</span> lfetch = <span class="hljs-keyword">async</span> (urls, url) =&gt; &#123;
+    <span class="hljs-keyword">let</span> controller = <span class="hljs-keyword">new</span> AbortController();
+    <span class="hljs-keyword">const</span> PauseProgress = <span class="hljs-keyword">async</span> (res) =&gt; &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Response(<span class="hljs-keyword">await</span> (res).arrayBuffer(), &#123; <span class="hljs-attr">status</span>: res.status, <span class="hljs-attr">headers</span>: res.headers &#125;);
+    &#125;;
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Promise</span>.any) &#123;
+        <span class="hljs-built_in">Promise</span>.any = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">promises</span>) </span>&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+                promises = <span class="hljs-built_in">Array</span>.isArray(promises) ? promises : []
+                <span class="hljs-keyword">let</span> len = promises.length
+                <span class="hljs-keyword">let</span> errs = []
+                <span class="hljs-keyword">if</span> (len === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> reject(<span class="hljs-keyword">new</span> AggregateError(<span class="hljs-string">'All promises were rejected'</span>))
+                promises.forEach(<span class="hljs-function">(<span class="hljs-params">promise</span>) =&gt;</span> &#123;
+                    promise.then(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> &#123;
+                        resolve(value)
+                    &#125;, err =&gt; &#123;
+                        len--
+                        errs.push(err)
+                        <span class="hljs-keyword">if</span> (len === <span class="hljs-number">0</span>) &#123;
+                            reject(<span class="hljs-keyword">new</span> AggregateError(errs))
+                        &#125;
+                    &#125;)
+                &#125;)
+            &#125;)
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.any(urls.map(<span class="hljs-function"><span class="hljs-params">urls</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
+            fetch(urls, &#123;
+                <span class="hljs-attr">signal</span>: controller.signal
+            &#125;)
+                .then(PauseProgress)
+                .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+                    <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">200</span>) &#123;
+                        controller.abort();
+                        resolve(res)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        reject(res)
+                    &#125;
+                &#125;)
+        &#125;)
+    &#125;))
+&#125;</code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/随心扯/">随心扯</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/黑科技/">黑科技</a>
+                    
+                      <a class="hover-with-bg" href="../tags/ServiceWorker/">ServiceWorker</a>
+                    
+                  
+                  
+                  </div>
+                  
 
               </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="c0af86bb.html">
+                        <span class="hidden-mobile">欲善其事，必利其器 - 论如何善用ServiceWorker</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
-          </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                <div id="hpp_comment">
+	<div class="grid__item theme-1">
+		<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst"
+			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
+		</a>
+	</div>
+</div>
+<link rel="stylesheet"
+	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+
+<script>
+	function onclock() {
+		twikoo.init({
+			envId: "blog-comment-6g821sad74db776c",
+			el: '#hpp_comment',
+			region: "ap-shanghai",
+			path: 'window.location.pathname'
+		})
+	}
+</script>
+<style>
+	.el-input-group__prepend {
+		border: 1px solid transparent !important;
+	}
+
+	.el-textarea__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.grid__item {
+		position: relative;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		justify-items: center;
+		overflow: hidden;
+		padding: 4rem 1.5rem;
+		background: var(--color-item-bg);
+	}
+
+	.grid__item-title {
+		font-size: 0.85rem;
+		color: var(--color-item-title);
+		align-self: flex-start;
+		margin: 0;
+	}
+
+	.action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		margin: 2rem;
+		color: var(--color-action);
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.action:focus {
+		outline: none;
+	}
+
+	.particles-button {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: relative;
+		border-radius: 5px;
+		border-radius: var(--radius-button);
+		background: var(--color-button-bg);
+		color: var(--color-button-text);
+		border: 0;
+		border: var(--border-button);
+		margin: 0;
+		padding: 1.5rem 3rem;
+		padding: var(--button-padding);
+	}
+
+	.particles-button:focus {
+		outline: none;
+	}
+
+	.no-js .particles-button {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles-canvas {
+		position: absolute;
+		pointer-events: none;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.particles-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.theme-1 {
+		--color-action: var(--board-bg-color);
+		--color-button-bg: var(--text-color);
+		--color-button-text: #fff;
+		--button-padding: 1.5rem 3rem;
+		--radius-button: 5px;
+		--border-button: 0;
+	}
+</style>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"
+	data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -545,7 +968,35 @@ background-color:#bbb;
 
                             
                                         
+
+
+                                            
                                                 
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
                                                     
   <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
@@ -553,7 +1004,7 @@ background-color:#bbb;
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档 - 所有的所有都在这儿了&nbsp;",
+        "艹,你怎么能这样 - SWの奇技淫巧&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,
@@ -572,7 +1023,7 @@ background-color:#bbb;
                                                             
   <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
   <script>
-    var path = "../../../local-search.xml";
+    var path = "../local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
       searchFunc(path, 'local-search-input', 'local-search-result');
@@ -582,6 +1033,20 @@ background-color:#bbb;
 
 
                                                                 
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
 
                                                                     
 
