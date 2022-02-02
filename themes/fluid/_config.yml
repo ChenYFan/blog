@@ -623,3 +623,10 @@ links:
     intro: 'foolish fox',
     image: 'https://sdn.geekzu.org/avatar/53bc457fbba563ce1ce80edda8310241?d=identicon'
     }
+    - {
+    title: 'Gahotx',
+    link: 'https://gahotx.cn/',
+    intro: Don't repeat yourself,
+    image: 'https://pub.gahotx.cn/photo/cat.jpg',
+    domain: gahotx.cn
+    }
