@@ -626,7 +626,7 @@ links:
     - {
     title: 'Gahotx',
     link: 'https://gahotx.cn/',
-    intro: Don't repeat yourself,
+    intro: 'Do not repeat yourself',
     image: 'https://pub.gahotx.cn/photo/cat.jpg',
     domain: gahotx.cn
     }
