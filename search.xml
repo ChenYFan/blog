@@ -6204,7 +6204,7 @@ broadcast.onmessage = <span class="hljs-function">(<span class="hljs-params">eve
 <blockquote>
 <p>本文所标记的内容,大多是直接复制粘贴即可实现的.但依然会存在这和您的服务存在冲突这一情况.请阅读上一篇基础文章<a href="/p/c0af86bb.html">欲善其事，必利其器 - 论如何善用ServiceWorker</a>进行合理的修改.</p>
 </blockquote>
-<h1 id="前端智能切换NPM-Github-CDN节点计划"><a href="#前端智能切换NPM-Github-CDN节点计划" class="headerlink" title="前端智能切换NPM/Github CDN节点计划"></a>前端智能切换NPM/Github CDN节点计划</h1><p>众所周知,jsd国内掉备案,能用的节点几乎不存在.这个脚本将在SW端通过Promise.any的方式,在用户界面上劫持所有著名的CDN托管服务,并并发访问其他所有CDN,优选选择最快的节点并返回内容,同时可以避免部分CDN单点故障,提升页面静态资源加载速度和加载可用性.</p>
+<h1 id="前端智能切换NPM-Github-CDN节点-IntelligentCDN计划"><a href="#前端智能切换NPM-Github-CDN节点-IntelligentCDN计划" class="headerlink" title="前端智能切换NPM/Github CDN节点 - IntelligentCDN计划"></a>前端智能切换NPM/Github CDN节点 - IntelligentCDN计划</h1><p>众所周知,jsd国内掉备案,能用的节点几乎不存在.这个脚本将在SW端通过Promise.any的方式,在用户界面上劫持所有著名的CDN托管服务,并并发访问其他所有CDN,优选选择最快的节点并返回内容,同时可以避免部分CDN单点故障,提升页面静态资源加载速度和加载可用性.</p>
 <p>同时,这个脚本还会将非latest资源永久缓存,提升二次访问速度.</p>
 <blockquote>
 <p>注意,此方法是以流量换速度的方式进行的,虽然在任何一个节点返回正确内容后会打断其余请求,但依然会造成不可避免的流量消耗(+~20%).如果你面向的是手机流量用户,请三思而后行</p>
@@ -6384,7 +6384,10 @@ self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hlj
                 &#125;)
         &#125;)
     &#125;))
-&#125;</code></pre></div>]]></content>
+&#125;</code></pre></div>
+
+<p>额外的,这个功能还可以与CloudFlare新出的<code>Zaraz</code>插件完美匹配.<code>Zaraz</code>可以为托管在CF的网站上的网页添加一段html代码,配合CloudFlareWorker虚拟化sw脚本路径,即可做到每一个页面都用此脚本加速,无需手动一个一个适配.</p>
+<h2 id="Zaraz-IntelligentCDN"><a href="#Zaraz-IntelligentCDN" class="headerlink" title="Zaraz + IntelligentCDN"></a>Zaraz + IntelligentCDN</h2>]]></content>
       <categories>
         <category>随心扯</category>
       </categories>
