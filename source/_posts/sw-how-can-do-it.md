@@ -24,7 +24,7 @@ ServiceWorker很厉害,那他能干什么?这篇文章我将写出几个我写�
 > 本文所标记的内容,大多是直接复制粘贴即可实现的.但依然会存在这和您的服务存在冲突这一情况.请阅读上一篇基础文章[欲善其事，必利其器 - 论如何善用ServiceWorker](/p/c0af86bb.html)进行合理的修改.
 
 
-# 前端智能切换NPM/Github CDN节点计划
+# 前端智能切换NPM/Github CDN节点 - IntelligentCDN计划
 
 众所周知,jsd国内掉备案,能用的节点几乎不存在.这个脚本将在SW端通过Promise.any的方式,在用户界面上劫持所有著名的CDN托管服务,并并发访问其他所有CDN,优选选择最快的节点并返回内容,同时可以避免部分CDN单点故障,提升页面静态资源加载速度和加载可用性.
 
@@ -209,3 +209,7 @@ const lfetch = async (urls, url) => {
     }))
 }
 ```
+
+额外的,这个功能还可以与CloudFlare新出的`Zaraz`插件完美匹配.`Zaraz`可以为托管在CF的网站上的网页添加一段html代码,配合CloudFlareWorker虚拟化sw脚本路径,即可做到每一个页面都用此脚本加速,无需手动一个一个适配.
+
+## Zaraz + IntelligentCDN
