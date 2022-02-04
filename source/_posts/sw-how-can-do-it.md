@@ -213,3 +213,5 @@ const lfetch = async (urls, url) => {
 额外的,这个功能还可以与CloudFlare新出的`Zaraz`插件完美匹配.`Zaraz`可以为托管在CF的网站上的网页添加一段html代码,配合CloudFlareWorker虚拟化sw脚本路径,即可做到每一个页面都用此脚本加速,无需手动一个一个适配.
 
 ## Zaraz + IntelligentCDN
+
+
