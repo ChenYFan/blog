@@ -39,8 +39,9 @@ ServiceWorker很厉害,那他能干什么?这篇文章我将写出几个我写�
 
 > 此脚本仅加速npm\gh\jsd上的combine内容;WP加速原理类似,请自行更改.
 
-代码:
-
+<details>
+    <summary>ServiceWorker完整代码:</summary>
+    
 ```js
 const CACHE_NAME = 'ICDNCache';
 let cachelist = [];
@@ -209,9 +210,237 @@ const lfetch = async (urls, url) => {
     }))
 }
 ```
+</details>
+
+
+
+# ServiceWorker隐形代理
+
+纵使这样,如果源服务器在CloudFlare,国内访问效果依旧不尽人意.此时如果我们能够加速所有链接,岂不是更上一层楼?
+
+我们可以在自己的服务器上写一个反代脚本,然后劫持白名单内流量加速:
+
+> **请修改白名单内容**
+
+<details>
+    <summary>服务端代码[CloudFlareWorker样例]:</summary>
+
+```js
+const white_list = /^([a-zA-Z\d-_\*@]+\.|)+(cyfan\.top|eurekac\.cn|stackoverflow\.com|github\.com)$/g
+//白名单,正则写法
+const handler = async (req) => {
+    const urlStr = req.url;
+    const urlObj = new URL(urlStr);
+    const domain = urlObj.hostname;
+    const origin_domain = req.headers.get('c-origin')
+    if (req.method == "OPTIONS") {
+        console.log('OPTIONS')
+        return handleOptions(req)
+    }
+    if (!origin_domain) {
+        return new Response("No Such Endpoint", { status: 500 });
+    } else {
+        if (origin_domain.match(white_list)) {
+
+            if (req.headers.get('c-type') === "CORS") {
+
+                const res = await fetch(urlStr.replace(domain, origin_domain), {
+                    method: req.method,
+                    headers: req.headers,
+                    body: req.body
+                })
+                return new Response(await res.arrayBuffer(), {
+                    headers: {
+                        "content-type": res.headers.get("content-type"),
+                        "Access-Control-Allow-Origin": "*",
+                        "x-server": "Chen's Invisible Proxy"
+                    },
+                    status: await res.status
+                })
+            } else {
+                return fetch(urlStr.replace(domain, origin_domain), {
+                    method: req.method,
+                    headers: req.headers,
+                    body: req.body
+                })
+            }
+        } else {
+            return new Response("Endpoint Is Not Allowed", { status: 403 });
+        }
+
+    }
+
+}
+const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+    "Access-Control-Max-Age": "86400",
+}
+
+function handleOptions(request) {
+    let headers = request.headers;
+    if (
+        headers.get("Origin") !== null &&
+        headers.get("Access-Control-Request-Method") !== null &&
+        headers.get("Access-Control-Request-Headers") !== null
+    ) {
+        let respHeaders = {
+            ...corsHeaders,
+            "Access-Control-Allow-Headers": request.headers.get("Access-Control-Request-Headers"),
+        }
+
+        return new Response(null, {
+            headers: respHeaders,
+        })
+    }
+    else {
+        return new Response(null, {
+            headers: {
+                Allow: "GET, HEAD, POST, OPTIONS",
+            },
+        })
+    }
+}
+addEventListener('fetch', event => {
+    event.respondWith(handler(event.request))
+})
+```
+</details>
+
+
+> 请注意修改白名单内容和EndPoint
+
+<details>
+    <summary>ServiceWorker完整代码:</summary>
+
+```js
+const white_list = /^([a-zA-Z\d-_\*@]+\.|)+(cyfan\.top|eurekac\.cn|stackoverflow\.com|github\.com)$/g
+
+const proxy_endpoint = [
+    'cnk.cyfan.workers.dev'
+]
+
+//修改上面两个变量
+
+
+const CACHE_NAME = 'IProxyCache';
+let cachelist = [];
+self.addEventListener('install', async function (installEvent) {
+    self.skipWaiting();
+    installEvent.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(cachelist);
+            })
+    );
+});
+self.addEventListener('fetch', async event => {
+    try {
+        event.respondWith(handle(event.request))
+    } catch (msg) {
+        event.respondWith(handleerr(event.request, msg))
+    }
+});
+const handleerr = async (req, msg) => {
+    return new Response(`<h1>IProxy遇到了致命错误</h1>
+    <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+}
+//固定头
+
+const lfetch = async (urls, url, init) => {
+    let controller = new AbortController();
+    const PauseProgress = async (res) => {
+        return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+    };
+    if (!Promise.any) {
+        Promise.any = function (promises) {
+            return new Promise((resolve, reject) => {
+                promises = Array.isArray(promises) ? promises : []
+                let len = promises.length
+                let errs = []
+                if (len === 0) return reject(new AggregateError('All promises were rejected'))
+                promises.forEach((promise) => {
+                    promise.then(value => {
+                        resolve(value)
+                    }, err => {
+                        len--
+                        errs.push(err)
+                        if (len === 0) {
+                            reject(new AggregateError(errs))
+                        }
+                    })
+                })
+            })
+        }
+    }
+    return Promise.any(urls.map(urls => {
+        init = init || {}
+        init.signal = controller.signal
+        return new Promise((resolve, reject) => {
+            fetch(urls, init)
+                .then(PauseProgress)
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject(res)
+                    }
+                })
+        })
+    }))
+}
+//支持自定义Init的并发fetch
+
+
+const handle = async function (req) {
+    const urlStr = req.url
+    const domain = (urlStr.split('/'))[2]
+    if (domain.match(white_list)) {
+        let proxy_url = []
+        for (let i in proxy_endpoint) {
+            proxy_url.push(urlStr.replace(domain, proxy_endpoint[i]))
+        }
+        const proxy_header = new Headers()
+
+        for (let [key, value] of req.headers) {
+            proxy_header.set(key, value)
+        }
+        proxy_header.set('c-origin', domain)
+        //在header中指定实际域名
+        proxy_header.set('c-type', 'CORS')
+        //还原整个fetch
+        return lfetch(proxy_url, urlStr, {
+            method: req.method,
+            headers: proxy_header,
+            body: req.body
+        }).then(function (res) {
+            if (!res) { throw 'error' }
+            return caches.open(CACHE_NAME).then(function (cache) {
+                cache.delete(req);
+                cache.put(req, res.clone());
+                return res;
+            });
+        }).catch(function (err) {
+            return caches.match(req).then(function (resp) {
+                return resp || new Response(null,{status:500)
+            })
+        })
+    }
+
+    return fetch(req)
+}
+```
+
+</details>
+
+> 我的反代Endpoint已开启了白名单,暂时不接受申请.
+
+# Zaraz + IntelligentCDN
 
 额外的,这个功能还可以与CloudFlare新出的`Zaraz`插件完美匹配.`Zaraz`可以为托管在CF的网站上的网页添加一段html代码,配合CloudFlareWorker虚拟化sw脚本路径,即可做到每一个页面都用此脚本加速,无需手动一个一个适配.
 
-## Zaraz + IntelligentCDN
+> 施工中
 
 
