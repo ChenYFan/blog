@@ -51,7 +51,9 @@ self.ws_sw = (config) => {
 }
 
 
-
+self.addEventListener('active', async function (installEvent) {
+    ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+})
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
@@ -116,63 +118,6 @@ self.addEventListener("message", async event => {
         }
     }
 })
-/*
-(async () => {
-    try {
-        self.broadcast = new BroadcastChannel('count-channel');
-
-        broadcast.onmessage = async (event) => {
-            switch (event.data.type) {
-                case 'upload':
-                    ws_sw({
-                        type: "send",
-                        data: JSON.stringify({
-                            type: 'info',
-                            data: event.data.data,
-                            uuid: await db.read('uuid')
-                        })
-                    });
-                    wsc.addEventListener('message', (event) => {
-                        const data = JSON.parse(event.data)
-                        broadcast.postMessage({
-                            ip: data.data.ip,
-                            addr: data.data.addr,
-                            user: data.data.user,
-                            delay: new Date().getTime() - data.data.time,
-                        })
-
-                    })
-
-                    break;
-                default:
-                    if (await db.read('sw_install') == 'true') {
-                        broadcast.postMessage({ ok: true })
-                    } else {
-                        await db.write('sw_install', 'true')
-                        broadcast.postMessage({ ok: false })
-
-                    }
-
-                    break;
-                //event.postMessage({ ok:true})
-            }
-        }
-    } catch (e) {
-        console.log("Broadcast无法建立，原因:" + e)
-        ws_sw({
-            type: "send",
-            data: JSON.stringify({
-                type: 'info',
-                data: {
-                    error: true,
-                    msg: e
-                },
-                uuid: await db.read('uuid')
-            })
-        })
-    }
-})()
-*/
 const handleerr = async (req, msg) => {
     return new Response(`<h1>ChenBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
@@ -253,9 +198,10 @@ const blog = {
     ],
     plus: [
         "blog.cyfan.top",
-        "119.91.80.151:59996",
-        "blog-six-iota.vercel.app",
-        "cblog.deno.dev"
+        "119.91.80.151:59996",//GuangZhou.blog.cyfan.top
+        "vercel.blog.cyfan.top",
+        "deno.blog.cyfan.top",
+        "gcore.blog.cyfan.top"
     ]
 };
 const handle = async function (req) {
