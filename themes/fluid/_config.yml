@@ -630,3 +630,9 @@ links:
     image: 'https://pub.gahotx.cn/photo/cat.jpg',
     domain: gahotx.cn
     }
+    - {        
+    title: '小N同学',
+    link: 'https://www.nesxc.com',
+    intro: '青石落晚巷 故人未还乡',
+    image: 'https://public.cdn.nesxc.com/avatar.jpg'
+    }
