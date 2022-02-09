@@ -636,3 +636,9 @@ links:
     intro: '青石落晚巷 故人未还乡',
     image: 'https://public.cdn.nesxc.com/avatar.jpg'
     }
+    - {        
+    title: 'xinxin',
+    link: 'https://xinxin-l.github.io',
+    intro: 'Everything is gonna be fine',
+    image: 'https://raw.githubusercontent.com/xinxin-l/blog_img/main/img/tx.jpg'
+    }
