@@ -598,7 +598,7 @@ links:
     domain: blog.thun888.xyz
     }
     - {        
-    title: 'Steve's Blog',
+    title: 'Steve‘s Blog',
     link: 'https://www.istevec.com',
     intro: 'Follow Your Heart',
     image: 'https://cdn.jsdelivr.net/gh/imacte/blog/avatar.jpg'
