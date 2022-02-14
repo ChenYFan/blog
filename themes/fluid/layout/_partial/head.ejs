@@ -1,50 +1,48 @@
-<%
-var joinStr = theme.title_join_string
-var title = config.title
-if (page.title) {
-  title = [page.title, title].join(joinStr)
-}
-%>
+<% var joinStr=theme.title_join_string; var title=config.title; if (page.title) { title=[page.title,
+  title].join(joinStr) } %>
 
-<head>
-  <meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.cyfan.top/">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.apple_touch_icon) %>">
-  <link rel="icon" type="image/png" href="<%- url_for(theme.favicon) %>">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <% if (theme.force_https) { %>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <% } %>
-  <meta name="theme-color" content="<%- theme.color.navbar_bg_color %>">
-  <% if(!(is_post())) { %>
-    <meta name="description" content="<%= config.description %>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.apple_touch_icon) %>">
+    <link rel="icon" type="image/png" href="<%- url_for(theme.favicon) %>">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <% if (theme.force_https) { %>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+      <% } %>
+        <meta name="theme-color" content="<%- theme.color.navbar_bg_color %>">
+        <% if(!(is_post())) { %>
+          <meta name="description" content="<%= config.description %>">
 
-  <meta name="keywords" content="<%= config.keywords %>">
-  <% } %>
-    <% if(is_post()) { %>
-	<% if(page.des) { %>
-	    <meta name="description" content="<%= page.des %>">
-	 <% } %>
-	 
-	 	<% if(!(page.des)) { %>
-	    <meta name="description" content="<%= strip_html(page.content).substr(0, 150) %>">
-	 <% } %>
+          <meta name="keywords" content="<%= config.keywords %>">
+          <% } %>
+            <% if(is_post()) { %>
+              <% if(page.des) { %>
+                <meta name="description" content="<%= page.des %>">
+                <% } %>
 
-	<% if(page.key) { %>
-	    <meta name="keywords" content="<%= page.key %>">
-	 <% } %>
-	 
-	 	<% if(!(page.key)) { %>
-	  <meta name="keywords" content="<%= config.keywords %>">
-	 <% } %>
+                  <% if(!(page.des)) { %>
+                    <meta name="description" content="<%= strip_html(page.content).substr(0, 150) %>">
+                    <% } %>
 
- 
-  <% } %>
-  <meta name="author" content="<%= config.author %>">
-  <title><%= title %></title>
-<!--<style>html{
+                      <% if(page.key) { %>
+                        <meta name="keywords" content="<%= page.key %>">
+                        <% } %>
+
+                          <% if(!(page.key)) { %>
+                            <meta name="keywords" content="<%= config.keywords %>">
+                            <% } %>
+
+
+                              <% } %>
+                                <meta name="author" content="<%= config.author %>">
+                                <title>
+                                  <%= title %>
+                                </title>
+                                <!--<style>html{
 filter: grayscale(100%);
 -webkit-filter: grayscale(100%);
 -moz-filter: grayscale(100%);
@@ -52,8 +50,110 @@ filter: grayscale(100%);
 -o-filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }</style>-->
-  <%- partial('_partial/css.ejs') %>
-<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
+                                <%- partial('_partial/css.ejs') %>
+                                  <script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
 
-</script>
-</head>
+                                  </script>
+                                  <script>
+                                    window.setCustom = () => { };
+                                    (async () => {
+
+                                      window.mCh = {
+                                        init: () => {
+                                          window.messageChannel = new MessageChannel();
+                                          navigator.serviceWorker.controller.postMessage({
+                                            type: 'INIT',
+                                          }, [messageChannel.port2]);
+                                        },
+                                        send: (data) => {
+
+                                          return new Promise((resolve, reject) => {
+                                            const uuid = (() => {
+                                              return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                                                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                                return v.toString(16);
+                                              });
+                                            })()
+                                            navigator.serviceWorker.controller.postMessage({
+                                              type: 'DATA',
+                                              data: data,
+                                              id: uuid
+                                            });
+                                            setTimeout(() => {
+                                              reject({
+                                                message: 'timeout',
+                                                ok: false
+                                              })
+                                            }, 2000);
+                                            messageChannel.port1.onmessage = (event) => {
+                                              if (event.data.id === uuid) {
+                                                resolve({
+                                                  data: event.data.data,
+                                                  ok: true
+                                                })
+                                              };
+                                            }
+                                          })
+                                        }
+                                      }
+                                      function ranN(minNum, maxNum) {
+                                        return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+                                      }
+
+
+                                      if ('serviceWorker' in navigator) {
+                                        if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
+                                          console.log('检测到您的浏览器没有安装ChenBlogHelper，开始注册')
+                                          window.stop()
+                                          window.localStorage.setItem('ChenBlogHelper_Set', 1)
+                                          document.write(`稍安勿躁,我们正在安装ChenBlogHelper插件,这大概需要几百毫秒...`)
+                                        }
+                                        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                          .then(async () => {
+                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
+                                              console.log('ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+
+                                              setTimeout(() => {
+                                                window.localStorage.setItem('ChenBlogHelper_Set', 2)
+                                                window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                              }, 100)
+                                            }
+                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) == 2) {
+                                              await Promise.all([
+                                                fetch('/offline.html'),
+                                                fetch('https://npm.elemecdn.com/chenyfan-os@0.0.0-r6')
+                                              ]);
+                                              window.localStorage.setItem('ChenBlogHelper_Set', 3)
+                                            }
+                                          })
+                                          .catch(err => console.error(`ChenBlogHelperError:${err}`))
+                                      } else { console.error(`Oops, your browser doesn't support ServiceWorker!`) }
+                                      /*
+                                      window.notyf = new Notyf();
+                                      if ('serviceWorker' in navigator) {
+                                          window.addEventListener('load', async () => {
+                                              navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
+                                                  .then(async reg => {
+                                  
+                                                      if (window.localStorage.getItem('ChenBlogHelper_Error') != "true") {
+                                                          notyf.success('ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                                          window.localStorage.setItem('ChenBlogHelper_Error', 'true')
+                                                          setTimeout(() => {
+                                                              window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                          }, 1000)
+                                  
+                                                      }
+                                                  }).catch(err => {
+                                                      notyf.error('ChenBlogHelper安装失败！原因:' + err);
+                                                      //console.log(err)
+                                                  })
+                                  
+                                  
+                                  
+                                          });
+                                      } else {
+                                          notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
+                                      }*/
+                                    })();
+                                  </script>
+  </head>
