@@ -1,8 +1,5 @@
 const CACHE_NAME = 'ChenBlogHelperCache';
-let cachelist = [
-    '/offline.html',
-    'https://npm.elemecdn.com/chenyfan-os@0.0.0-r6'
-];
+let cachelist = [];
 self.db = {
     read: (key, config) => {
         if (!config) { config = { type: "text" } }
@@ -194,11 +191,12 @@ const blog = {
     local: 0,
     origin: [
         "blog.cyfan.top",
-        "127.0.0.1:12121"
+        "127.0.0.1:33333"
     ],
     plus: [
         "blog.cyfan.top",
         "119.91.80.151:59996",//GuangZhou.blog.cyfan.top
+        "cfworker.blog.cyfan.top",
         "vercel.blog.cyfan.top",
         "deno.blog.cyfan.top",
         "gcore.blog.cyfan.top"
@@ -248,19 +246,45 @@ const handle = async function (req) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
 
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    caches.match(req).then(function (resp) {
+                        if (!!resp && query('forceupdate') != 'true') {
+                            console.log('Had Cache:' + urlStr)
+                            setTimeout(() => {
+                                resolve(resp)
+                            }, 200);
+                            setTimeout(() => {
+                                lfetch(urls, urlStr).then(function (res) {
+                                    return caches.open(CACHE_NAME).then(function (cache) {
+                                        cache.delete(req);
+                                        cache.put(req, res.clone());
+                                        resolve(res);
+                                    });
+                                });
+                            }, 0);
+                        } else {
+                            lfetch(urls, urlStr).then(function (res) {
+                                return caches.open(CACHE_NAME).then(function (cache) {
+                                    cache.put(req, res.clone());
+                                    resolve(res);
+                                });
+                            }).catch(function (err) {
+                                return caches.match(new Request('/offline.html'))
+                            })
+                        }
+                    })
+                }, 0);
+            })
+            /*
             return lfetch(urls, urlStr).then(function (res) {
                 if (!res) { throw 'error' }
                 return caches.open(CACHE_NAME).then(function (cache) {
-                    cache.delete(req);
+                    
                     cache.put(req, res.clone());
                     return res;
                 });
-            }).catch(function (err) {
-                return caches.match(req).then(function (resp) {
-                    return resp || caches.match(new Request('/offline.html'))
-                }
-                )
-            })/*
+            })*//*
             if (!n) {
 
                 return new Response('<h1>ChenBlogHelper Error</h1>', { headers: { "content-type": "text/html; charset=utf-8" } })
