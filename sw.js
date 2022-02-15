@@ -496,7 +496,7 @@ const handlecgi = async (req) => {
     //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const query = q => urlObj.searchParams.get(q)
-    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.3/"
+    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.4/"
     //const endpoint = "http://127.0.0.1:9393/"
     let dash_main = await (await fetch(endpoint + 'index.html')).text()
 
