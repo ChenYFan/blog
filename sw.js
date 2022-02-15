@@ -134,7 +134,18 @@ let cdn = {
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/gh"
+        },
+
+        //白嫖
+
+        //cdn.cnortles.top jsd.hin.cool
+        cnortles: {
+            "url": "https://cdn.cnortles.top/gh"
+        },
+        hin_cool: {
+            "url": "https://jsd.hin.cool/gh"
         }
+
     },
     "combine": {
         jsdelivr: {
@@ -148,6 +159,13 @@ let cdn = {
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/combine"
+        },
+        //cdn.cnortles.top jsd.hin.cool
+        cnortles: {
+            "url": "https://cdn.cnortles.top/combine"
+        },
+        hin_cool: {
+            "url": "https://jsd.hin.cool/combine"
         }
     },
     "npm": {
@@ -178,6 +196,13 @@ let cdn = {
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
+        },
+        //cdn.cnortles.top jsd.hin.cool
+        cnortles: {
+            "url": "https://cdn.cnortles.top/npm"
+        },
+        hin_cool: {
+            "url": "https://jsd.hin.cool/npm"
         }
 
     }
