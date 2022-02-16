@@ -338,14 +338,19 @@ const handle = async function (req) {
                                 });
                             }, 0);
                         } else {
-                            lfetch(urls, urlStr).then(function (res) {
-                                return caches.open(CACHE_NAME).then(function (cache) {
-                                    cache.put(req, res.clone());
-                                    resolve(res);
-                                });
-                            }).catch(function (err) {
-                                return caches.match(new Request('/offline.html'))
-                            })
+                            setTimeout(() => {
+                                lfetch(urls, urlStr).then(function (res) {
+                                    return caches.open(CACHE_NAME).then(function (cache) {
+                                        cache.put(req, res.clone());
+                                        resolve(res);
+                                    });
+                                }).catch(function (err) {
+                                    resolve(caches.match(new Request('/offline.html')))
+                                })
+                            }, 0);
+                            setTimeout(() => {
+                                resolve(caches.match(new Request('/offline.html')))
+                            }, 5000);
                         }
                     })
                 }, 0);
