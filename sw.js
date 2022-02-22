@@ -222,6 +222,7 @@ const blog = {
     plus: [
         "blog.cyfan.top",
         "119.91.80.151:59996",//GuangZhou.blog.cyfan.top
+        "blog-cyfan-top-upcdn.oplog.cn",//Own upyun cdn.Thanks to abudu's subdomain!
         "cfworker.blog.cyfan.top",
         "vercel.blog.cyfan.top",
         "deno.blog.cyfan.top",
