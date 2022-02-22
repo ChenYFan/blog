@@ -26,6 +26,8 @@ jobs:
       run: |
         npm install -g hexo-cli
         npm i
+        # Restore last modified time
+        git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
         hexo g
         curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
         rm -rf ./public/CNAME
