@@ -731,6 +731,20 @@
 
   
   <url>
+    <loc>https://blog.cyfan.top/tags/%E7%99%BD%E5%AB%96/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/Euserv/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/tags/%E5%9B%9E%E5%BD%A2%E9%92%88/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -767,20 +781,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/tags/%E7%96%AB%E6%83%85/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/%E7%99%BD%E5%AB%96/</loc>
-    <lastmod>2022-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/Euserv/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1930,14 +1930,14 @@
 
   
   <url>
-    <loc>https://blog.cyfan.top/categories/%E9%9A%8F%E5%BF%83%E8%AE%B0/</loc>
+    <loc>https://blog.cyfan.top/categories/%E7%99%BD%E5%AB%96%E6%80%AA/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.cyfan.top/categories/%E7%99%BD%E5%AB%96%E6%80%AA/</loc>
+    <loc>https://blog.cyfan.top/categories/%E9%9A%8F%E5%BF%83%E8%AE%B0/</loc>
     <lastmod>2022-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
