@@ -1,67 +1,46 @@
 name: ChenYFanのHexoBlogBuild
-
-on: [push, repository_dispatch,workflow_dispatch]
-  
-
+'on':
+  - workflow_dispatch
 jobs:
   buildstatic:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install & Build
+        run: >
+          npm install -g hexo-cli
 
+          npm i
 
+          # Restore last modified time
 
-    - name: Install & Build
-      run: |
-        npm install -g hexo-cli
-        npm i
-        # Restore last modified time
-        git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
-        hexo g
-        curl -H 'Content-Type:text/plain' --data-binary @./public/baidu_urls.txt "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
-        rm -rf ./public/CNAME
-        echo "blog.cyfan.top" >> ./public/CNAME
-        npm version patch --no-git-tag-version
+          git ls-files -z | while read -d '' path; do touch -d "$(git log -1
+          --format="@%ct" "$path")" "$path"; done
 
-#    - name: 'Publish to the npm registry'
-#      uses: primer/publish@3.0.0
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-#        NPM_AUTH_TOKEN: ${{ secrets.NPM }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
-#      with:
-#        default_branch: 'master'
+          hexo g
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./public
+          curl -H 'Content-Type:text/plain' --data-binary
+          @./public/baidu_urls.txt
+          "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{
+          secrets.BD_TOKEN }}"
 
-#    - name: Mirror the Github organization repos to Gitee.
-#      uses: Yikun/gitee-mirror-action@master
-#      with:
-#        # 必选，需要同步的Github用户（源）
-#        src: github/ChenYFan
-#        # 必选，需要同步到的Gitee的用户（目的）
-#        dst: gitee/eurekac
-#        # 必选，Gitee公钥对应的私钥，https://gitee.com/profile/sshkeys
-#        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-#        # 必选，Gitee对应的用于创建仓库的token，https://gitee.com/profile/personal_access_tokens
-#        dst_token:  ${{ secrets.GITEE_TOKEN }}
-#        # 如果是组织，指定组织即可，默认为用户user
-#        # account_type: org
-#        # 还有黑、白名单，静态名单机制，可以用于更新某些指定库
-#        # static_list: repo_name
-#        # black_list: 'repo_name,repo_name2'
-#        white_list: 'blog'
+          rm -rf ./public/CNAME
+
+          echo "blog.cyfan.top" >> ./public/CNAME
+
+          npm version patch --no-git-tag-version
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./public
