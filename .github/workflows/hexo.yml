@@ -1,6 +1,7 @@
 name: ChenYFanのHexoBlogBuild
 'on':
   - workflow_dispatch
+  - push
 jobs:
   buildstatic:
     runs-on: ubuntu-latest
