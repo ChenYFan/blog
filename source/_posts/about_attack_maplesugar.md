@@ -18,7 +18,7 @@ key: 'maplesugar,valine'
 
 abbrlink: c0af8fff
 
-hide: true
+hide: false
 
 #index_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r11/1.jpg'
 
