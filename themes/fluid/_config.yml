@@ -381,7 +381,7 @@ about:  # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.co
   subtitle: 好像是关于什么呢
   avatar: https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/avatar.png # 头像
   name: CYF
-  introduce:  一个在互联网角落挣扎的小站点  /  CYF  /  Live In China
+  introduce:  一个在互联网角落挣扎的小站点  /  CYF  /  Living In China
   icons: # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，class 代表图标的 css class
     - { class: 'iconfont icon-github-fill', link: 'https://github.com/ChenYFan', tip: 'GitHub' }
     - { class: 'iconfont icon-twitter-fill', link: 'https://twitter.com/ChenYF_OHHH', tip: 'Twitter' }
