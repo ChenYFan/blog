@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
+  - 10
 cache: npm
 branches:
   only:
