@@ -654,3 +654,9 @@ links:
     intro: 'One plus one equals two!!!',
     image: 'https://www.clzczh.top/medias/avatar.png'
     }
+    - {        
+    title: 'MJ’s Blog',
+    link: 'https://blog.justlovesmile.top/',
+    intro: '醒亦念卿，梦亦念卿',
+    image: 'https://blog.justlovesmile.top/img/logo.jpg'
+    }
