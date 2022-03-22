@@ -1,4 +1,4 @@
-name: ChenYFannHexoBlogBuild
+name: ChenYFanのHexoBlogBuild
 'on':
   - workflow_dispatch
 jobs:
