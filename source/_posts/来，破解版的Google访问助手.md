@@ -12,7 +12,8 @@ date: 2019-09-14 13:14:46
 ---
 # 前言：
 
-中秋快乐！
+已失效！
+
 
 （迟到的祝福）o(￣┰￣*)ゞ
 
@@ -40,11 +41,11 @@ date: 2019-09-14 13:14:46
 
 不过这位老兄的图标似乎没改，那我就改了一下，以下是我改动的：
 
-- [x] 去除Google+(今年四月Google把它关了)
-- [x] 添加Google Earth(亲测速度爆表,酸爽!)
-- [x] 更换Google全家古老的图标，换成新的。
-- [x] 更换插件图标,换了个Google Studio的(加了个小星星和滤镜)
-- [x] 厚颜无耻的加上了自己的名字.
+- [X]  去除Google+(今年四月Google把它关了)
+- [X]  添加Google Earth(亲测速度爆表,酸爽!)
+- [X]  更换Google全家古老的图标，换成新的。
+- [X]  更换插件图标,换了个Google Studio的(加了个小星星和滤镜)
+- [X]  厚颜无耻的加上了自己的名字.
 
 ![图片](https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/GGFWZS.png "一阵酸爽")
 
@@ -67,7 +68,5 @@ date: 2019-09-14 13:14:46
 <a class="btn" href="https://pan.cyfan.top/插件/crx/Google访问助手破解版.7z">
               >>CYF的私有云 
             </a>
-
-
 
 特征码：`glabchgbmippkhlcjkcmdmclmapehoha`
