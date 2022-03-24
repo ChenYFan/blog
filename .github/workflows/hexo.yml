@@ -31,8 +31,7 @@ jobs:
 
           curl -H 'Content-Type:text/plain' --data-binary
           @./public/baidu_urls.txt
-          "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{
-          secrets.BD_TOKEN }}"
+          "http://data.zz.baidu.com/urls?site=https://blog.cyfan.top&token=${{ secrets.BD_TOKEN }}"
 
           rm -rf ./public/CNAME
 
