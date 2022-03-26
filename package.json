@@ -34,9 +34,5 @@
     "hexo-abbrlink": "2.2.1",
     "hexo-neat": "1.0.9",
     "hexo-generator-feed": "3.0.0"
-  },
-  "devDependencies": {
-    "hexo-generator-baidu-sitemap": "^0.1.9",
-    "hexo-generator-sitemap": "^2.1.0"
   }
 }
