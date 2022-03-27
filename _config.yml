@@ -1,4 +1,4 @@
-﻿# Hexo Configuration
+# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -130,4 +130,4 @@ neat_js:
 feed:
   type: atom
   path: atom.xml
-  limit: 20
+  limit: 50
