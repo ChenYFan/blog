@@ -229,15 +229,32 @@ const blog = {
         "gcore.blog.cyfan.top"
     ]
 };
+
+const blacklist = [
+    '9b5aee25-1d5b-4be8-9ea6-55651bfef4bc',//maplesugar闭麦
+    '0e7e3e61-20b4-414b-ae6b-577b6f25ee54',//测试
+]
+
 const handle = async function (req) {
     const urlStr = req.url
     let urlObj = new URL(urlStr)
     const uuid = await db.read('uuid')
-    //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
     //setItem('origin',pathname)
     const domain = (urlStr.split('/'))[2]
+    try {
+        if (blacklist.includes(uuid) && domain === 'blog-comment-6g821sad74db776c.ap-shanghai.tcb-api.tencentcloudapi.com') {
+            const comdata = await req.json()
+            const uploaddata = JSON.parse(comdata.request_data)
+            if (uploaddata.event === "COMMENT_SUBMIT") {
+                return new Response(JSON.stringify(
+                    { "requestId": "", "data": { "response_data": "{\"id\":\"\"}" } }
+                ))
+            }
+
+        }
+    } catch (e) { }
     const path = pathname.split('?')[0]
     const query = q => urlObj.searchParams.get(q)
     let urls = []
