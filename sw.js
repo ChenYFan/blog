@@ -4,11 +4,13 @@ self.db = {
     read: (key, config) => {
         if (!config) { config = { type: "text" } }
         return new Promise((resolve, reject) => {
-            caches.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
-                if (!res) resolve(null)
-                res.text().then(text => resolve(text))
-            }).catch(() => {
-                resolve(null)
+            caches.open(CACHE_NAME).then(cache => {
+                cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                    if (!res) resolve(null)
+                    res.text().then(text => resolve(text))
+                }).catch(() => {
+                    resolve(null)
+                })
             })
         })
     },
@@ -236,6 +238,7 @@ const blacklist = [
 ]
 
 const handle = async function (req) {
+    const reqdata = await req.clone()
     const urlStr = req.url
     let urlObj = new URL(urlStr)
     const uuid = await db.read('uuid')
@@ -245,7 +248,7 @@ const handle = async function (req) {
     const domain = (urlStr.split('/'))[2]
     try {
         if (blacklist.includes(uuid) && domain === 'blog-comment-6g821sad74db776c.ap-shanghai.tcb-api.tencentcloudapi.com') {
-            const comdata = await req.json()
+            const comdata = await reqdata.json()
             const uploaddata = JSON.parse(comdata.request_data)
             if (uploaddata.event === "COMMENT_SUBMIT") {
                 return new Response(JSON.stringify(
