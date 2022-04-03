@@ -252,7 +252,7 @@ const handle = async function (req) {
             const uploaddata = JSON.parse(comdata.request_data)
             if (uploaddata.event === "COMMENT_SUBMIT") {
                 return new Response(JSON.stringify(
-                    { "requestId": "", "data": { "response_data": "{\"id\":\"\"}" } }
+                    {"requestId":"6d8607bd-4294-4c27-b808-cae4c64ffd75","data":{"response_data":"{\"id\":\"d2fe6f206249276c04849cdb30f62771\"}"}}
                 ))
             }
 
