@@ -326,9 +326,9 @@
     <category term="随心记" scheme="https://blog.cyfan.top/categories/随心记/"/>
     
     
-    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
-    
     <category term="Artalk" scheme="https://blog.cyfan.top/tags/Artalk/"/>
+    
+    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
     
     <category term="无服务器" scheme="https://blog.cyfan.top/tags/无服务器/"/>
     
@@ -1234,17 +1234,17 @@
     <category term="爱折腾" scheme="https://blog.cyfan.top/categories/爱折腾/"/>
     
     
+    <category term="Github" scheme="https://blog.cyfan.top/tags/Github/"/>
+    
+    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
+    
     <category term="踩坑" scheme="https://blog.cyfan.top/tags/踩坑/"/>
     
     <category term="手动填坑" scheme="https://blog.cyfan.top/tags/手动填坑/"/>
     
     <category term="评论系统" scheme="https://blog.cyfan.top/tags/评论系统/"/>
     
-    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
-    
     <category term="Gitalk" scheme="https://blog.cyfan.top/tags/Gitalk/"/>
-    
-    <category term="Github" scheme="https://blog.cyfan.top/tags/Github/"/>
     
   </entry>
   
@@ -1420,11 +1420,11 @@
     <category term="丆插件" scheme="https://blog.cyfan.top/categories/丆插件/"/>
     
     
-    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
-    
     <category term="Hexo" scheme="https://blog.cyfan.top/tags/Hexo/"/>
     
     <category term="站长必备" scheme="https://blog.cyfan.top/tags/站长必备/"/>
+    
+    <category term="评论" scheme="https://blog.cyfan.top/tags/评论/"/>
     
     <category term="Valine" scheme="https://blog.cyfan.top/tags/Valine/"/>
     
