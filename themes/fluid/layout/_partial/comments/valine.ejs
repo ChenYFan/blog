@@ -1,21 +1,43 @@
-<div id="hpp_comment">
+<div id="com">
 	<div class="grid__item theme-1">
-		<a href="javascript:onclock();" class="ui-box bottom-rightStart-burst"
+		<a href="javascript:loadcomments();" id="commentbutton" class="ui-box bottom-rightStart-burst"
 			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
 		</a>
 	</div>
 </div>
-<link rel="stylesheet"
-	href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
-<script src="https://npm.elemecdn.com/twikoo@1.2.4-beta/dist/twikoo.all.min.js"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+
+<link href="https://npm.elemecdn.com/artalk@2.1.4/dist/Artalk.css" rel="stylesheet">
+<script src="https://npm.elemecdn.com/artalk@2.1.4/dist/Artalk.js"></script>
 
 <script>
 	function onclock() {
-		twikoo.init({
+		//在新窗口打开
+		window.open("https://artalk.cyfan.top/captcha");
+		document.getElementById("commentbutton").innerText = "我已在新标签页中完成人机验证";
+		document.getElementById("commentbutton").href = "javascript:loadcomments();";
+		/*twikoo.init({
 			envId: "blog-comment-6g821sad74db776c",
 			el: '#hpp_comment',
 			region: "ap-shanghai",
 			path: 'window.location.pathname'
+		})*/
+	}
+	function loadcomments() {
+		new Artalk({
+			el: '#com',
+			pageKey:(()=>{
+				return window.location.pathname;
+			})(),
+			pageTitle: (()=>{
+				let title = document.title;
+				if(title.indexOf('|')>-1){
+					title = title.split('|')[0];
+				}
+				return title;
+			})(),
+			server: 'https://artalk.cyfan.top/api/',
+			site: 'ChenYFan的Artalk'
 		})
 	}
 </script>

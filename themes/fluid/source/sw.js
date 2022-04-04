@@ -216,18 +216,18 @@ const cache_url_list = [
 ]
 
 const blog = {
-    local: 0,
+    local: 1,
     origin: [
         "blog.cyfan.top",
-        "127.0.0.1:33333"
+        "127.0.0.1:9100"
     ],
     plus: [
         "blog.cyfan.top",
-        "119.91.80.151:59996",//GuangZhou.blog.cyfan.top
-        "blog-cyfan-top-upcdn.oplog.cn",//Own upyun cdn.Thanks to abudu's subdomain!
-        "cfworker.blog.cyfan.top",
-        "vercel.blog.cyfan.top",
-        "deno.blog.cyfan.top",
+        //"119.91.80.151:59996",//GuangZhou.blog.cyfan.top
+        //"blog-cyfan-top-upcdn.oplog.cn",//Own upyun cdn.Thanks to abudu's subdomain!
+        //"cfworker.blog.cyfan.top",
+        //"vercel.blog.cyfan.top",
+        //"deno.blog.cyfan.top",
         "gcore.blog.cyfan.top"
     ]
 };
@@ -246,13 +246,15 @@ const handle = async function (req) {
     const port = urlObj.port
     //setItem('origin',pathname)
     const domain = (urlStr.split('/'))[2]
+
     try {
-        if (blacklist.includes(uuid) && domain === 'blog-comment-6g821sad74db776c.ap-shanghai.tcb-api.tencentcloudapi.com') {
-            const comdata = await reqdata.json()
-            const uploaddata = JSON.parse(comdata.request_data)
-            if (uploaddata.event === "COMMENT_SUBMIT") {
+        if (blacklist.includes(uuid) && domain === 'artalk.cyfan.top') {
+            if (pathname === '/api/add') {
+                console.log('离线评论成功')
                 return new Response(JSON.stringify(
-                    {"requestId":"6d8607bd-4294-4c27-b808-cae4c64ffd75","data":{"response_data":"{\"id\":\"d2fe6f206249276c04849cdb30f62771\"}"}}
+
+                    { "success": false, "msg": "需要滑稽码", "data": { "img_data": "", "need_captcha": true } }
+
                 ))
             }
 
