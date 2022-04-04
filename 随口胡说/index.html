@@ -125,7 +125,7 @@ const setCustom = (s) => {
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

@@ -121,7 +121,7 @@ added 691 packages from 924 contributors in 97.818s</code></pre></div><h2 id="æ–
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

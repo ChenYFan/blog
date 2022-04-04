@@ -133,6 +133,102 @@ $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"
       </tags>
   </entry>
   <entry>
+    <title>Gitalk详细踩坑记录</title>
+    <url>/p/9f2a11d8.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>没想到怎么快就更新一篇了。</p><p>这真的是踩了个巨坑啊。</p><h2 id="为什么又要切换回Gitalk？"><a href="#为什么又要切换回Gitalk？" class="headerlink" title="为什么又要切换回Gitalk？"></a>为什么又要切换回Gitalk？</h2><p>咳咳，这事情还得从上一年12月说起。</p><p>当时正忙于学业，等到期末考完以后接受到一份LeanCloud邮件，大概内容就是我的API1个月没有调用被强制归档了。</p><p><span class="heimu" title="你知道的太多了">那也不能怪我啊！我博客没人来就说我缘故咯？</span></p><p>然后登陆上LeanCloud，恢复数据，然后就没有然后了。</p><p>昨天刚刚更新了一篇白嫖记录，登入博客后却发现没有更新。</p><p>接着去Coding，告诉我Coding转型了，接着用Pages要实名认证。<span class="heimu" title="你知道的太多了">我要是能实名认证那我不早就买一台国内服务器备案了？？？</span></p><p>没办法，只好又迁回Github。好在Github可以给每一个仓库绑定一个域名，（大不了以后更新博客麻烦点罢了。）</p><p>接着折腾了Github好一会儿，包括后来解决Coding赖着域名不放，国内ip解析错误的原因。</p><p>结果今天早上登陆却发现：</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/1.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="LeanCloud报错"></p><p>…</p><p>打开LeanCloud官方文档,并没有找到答案.</p><p>也就是说,我还不知道错误发生在归档后还是在迁移后的.</p><p>况且本来LeanCloud开发版每天休眠6h我也受够了,于是打算迁到Gitalk.</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据:"></a>数据:</h2><p>数据肯定是没法恢复了,毕竟是要Github账号的.</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置:"></a>配置:</h2><p>Gitalk官方说明安装只有简单的几句话:</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://npm.elemecdn.com/gitalk@1/dist/gitalk.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://npm.elemecdn.com/gitalk@1/dist/gitalk.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- or --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/gitalk/dist/gitalk.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/gitalk/dist/gitalk.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><blockquote><p>…<br>添加一个容器：<br><code>&lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</code><br>用下面的 Javascript 代码来生成 gitalk 插件：</p></blockquote><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-keyword">var</span> gitalk = <span class="hljs-keyword">new</span> Gitalk(&#123;
+  <span class="hljs-attribute">clientID</span>: <span class="hljs-string">'GitHub Application Client ID'</span>,
+  <span class="hljs-attribute">clientSecret</span>: <span class="hljs-string">'GitHub Application Client Secret'</span>,
+  <span class="hljs-attribute">repo</span>: <span class="hljs-string">'GitHub repo'</span>,
+  <span class="hljs-attribute">owner</span>: <span class="hljs-string">'GitHub repo owner'</span>,
+  <span class="hljs-attribute">admin</span>: [<span class="hljs-string">'GitHub repo owner and collaborators, only these guys can initialize github issues'</span>],
+  <span class="hljs-attribute">id:</span><span class="hljs-string"> location.pathname</span>,      <span class="hljs-comment">// Ensure uniqueness and length less than 50</span>
+  <span class="hljs-attribute">distractionFreeMode</span>: <span class="hljs-literal">false</span>  <span class="hljs-comment">// Facebook-like distraction free mode</span>
+&#125;)
+
+gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre></div><p>当然,在hexo里面使用估计就没有那么简单了,所以我最终按照里面自带集成的Gitment模板以及文档整理了一份.</p><p>实际上Gitment和Gitalk的核心原理是一样的,内容现实,所以最终还是成功了.</p><h2 id="注册"><a href="#注册" class="headerlink" title="注册:"></a>注册:</h2><blockquote><p>无图警告！</p></blockquote><p>点开 [<a href="https://github.com/settings/applications/new]" target="_blank" rel="noopener">https://github.com/settings/applications/new]</a>, 注册一个App</p><p>:: Register a new OAuth application<br>必填.填写这个app的名字(其实随便起就好了)<br>:: Homepage URL<br>必填,博客根目录,不能在最后带<code>/</code><br>:: Application description<br>胡乱填写的简介<br>:: Authorization callback URL<br>必填。与Homepage URL一样,是回显目录</p><p>点击Register，注册成功！</p><p>接着会跳转，此处就不截图了。</p><p>其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可</p><h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><p>根据Gitment样式，整理如下</p><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>进入 <code>\themes\next\layout\_third-party\comments\</code> 新建 <code>gitalk.swig</code> 文件,里面填写一下内容:</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
+&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;
+
+  <span class="hljs-symbol">&amp;lt;</span>link rel=<span class="hljs-symbol">&amp;quot;</span>stylesheet<span class="hljs-symbol">&amp;quot;</span> href=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.css<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
+  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.min.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+   <span class="hljs-symbol">&amp;lt;</span>script type=<span class="hljs-symbol">&amp;quot;</span>text/javascript<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
+        var gitalk = new Gitalk(&#123;
+          clientID: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          clientSecret: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          repo: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.repo &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          owner: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.githubID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          admin: [<span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.adminUser &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>],
+          id: location.pathname,
+          distractionFreeMode: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>
+        &#125;)
+        gitalk.render(<span class="hljs-symbol">&amp;#x27;</span>gitalk-container<span class="hljs-symbol">&amp;#x27;</span>)           
+       <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+&#123;% endif %&#125;
+&#123;% endraw %&#125;</code></pre></div><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>修改 <code>\themes\next\layout\_third-party\comments\</code> ,在最后一行填下:</p><div class="hljs"><pre><code class="hljs undefined">&#123;%<span class="hljs-built_in"> raw </span>%&#125;
+&#123;% include <span class="hljs-string">'gitalk.swig'</span> %&#125;
+&#123;% endraw %&#125;</code></pre></div><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>修改 <code>\themes\next\layout\_partials\comments.swig</code> ,在 <code>{if}</code> 之下, <code>{elseif}</code> 之上填下:</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
+&#123;% elseif theme.gitalk.enable %&#125;
+ <span class="hljs-symbol">&amp;lt;</span>div id=<span class="hljs-symbol">&amp;quot;</span>gitalk-container<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+&#123;% endraw %&#125;</code></pre></div><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>新建 <code>\themes\next\source\css\_common\components\third-party\gitalk.styl</code> ,填下:</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.gt-header</span> <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-class">.gt-comments</span> <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-class">.gt-popup</span> <span class="hljs-selector-tag">a</span>
+  <span class="hljs-selector-tag">border-bottom</span>: <span class="hljs-selector-tag">none</span>;
+<span class="hljs-selector-class">.gt-container</span> <span class="hljs-selector-class">.gt-popup</span> <span class="hljs-selector-class">.gt-action</span><span class="hljs-selector-class">.is--active</span><span class="hljs-selector-pseudo">:before</span>
+  <span class="hljs-selector-tag">top</span>: 0<span class="hljs-selector-class">.7em</span>;</code></pre></div><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>修改<code>\themes\next\source\css\_common\components\third-party\third-party.styl</code>,最后一行填下</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">"gitalk"</span>;</code></pre></div><h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>最后,在<code>\themes\next\_config.yml</code>最后一行填下:</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">gitalk:</span>
+  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">githubID:</span> <span class="hljs-string">github帐号</span>  <span class="hljs-comment">#如ChenYFan   </span>
+  <span class="hljs-attr">repo:</span> <span class="hljs-string">仓库名称</span>   <span class="hljs-comment"># 例：blog</span>
+  <span class="hljs-attr">ClientID:</span> <span class="hljs-string">Client</span> <span class="hljs-string">ID</span>
+  <span class="hljs-attr">ClientSecret:</span> <span class="hljs-string">Client</span> <span class="hljs-string">Secret</span>
+  <span class="hljs-attr">adminUser:</span> <span class="hljs-string">github帐号</span> <span class="hljs-comment">#指定可初始化评论账户</span>
+  <span class="hljs-attr">distractionFreeMode:</span> <span class="hljs-literal">true</span></code></pre></div><h3 id="结束"><a href="#结束" class="headerlink" title="结束?"></a>结束?</h3><p>打开博客,你会发现有一些博文评论是正常的,但是有一些博文你可能会看到:</p><p>Error:Validation Failed</p><p>没错，这不是我的错<span class="heimu" title="别打我！">滑稽狗头保命</span>。</p><p>这个错误在Gitalk用户里非常常见。</p><p>为什么？</p><p>这还得从官方文档讲起：</p><div class="hljs"><pre><code class="hljs undefined">...
+<span class="hljs-deletion">- owner String</span>
+
+<span class="hljs-deletion">-必须. GitHub repository 所有者，可以是个人或者组织。</span>
+
+<span class="hljs-deletion">-admin Array</span>
+
+<span class="hljs-deletion">-必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。</span>
+
+<span class="hljs-deletion">-id String</span>
+
+<span class="hljs-deletion">-Default: location.href.</span>
+
+<span class="hljs-deletion">-页面的唯一标识。长度必须小于50。</span>
+...</code></pre></div><p>注意一下id,这个最终会成为Github issues中的lable之一,但是lable是有字数限制的,50个英文单词.</p><p>但是有人会问我的中文名加上去之后也没有50字啊.</p><p>对啊,可是Gitalk会将其转码,比如说<code>留言板</code>三个字最终会转成<code>/%E7%95%99%E8%A8%80%E6%9D%BF/</code><span class="heimu" title="你知道的太多了">这又♀长又♂粗</span>的文字.</p><p>但是第一个Lable不能重复,重复后两个issues的两个Lable就相同了,这样两个评论就混在一起了.</p><p>所以网上就有人开始讨论怎么解决了.</p><h3 id="规避解码"><a href="#规避解码" class="headerlink" title="规避解码:"></a>规避解码:</h3><p>毕竟Github Lable其实是支持中文的…<span class="heimu" title="你知道的太多了">你怎么不早说!</span>,所以思路很简单,规避解码即可.</p><p>返回步骤1,第11行,默认值是<code>location.pathname</code>也就是路径,规避解码很简单,把它替换成<code>decode(location.pathname)</code>就可以啦.</p><p>当然这个办法最终还是有效的:</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/2.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="规避解码"></p><p>但是,但是,你还记得我有一篇文章的题目吗: <code>CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81</code></p><p>没错,解码以后就是: <code>CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！</code><br>加上博客域名和路径,将近60字.</p><p>这个方法依旧没有解决根本问题.</p><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p><del>这个最终还是被我采用了,原因是它修改起来真的很简单.</del> 最终这个办法还是被舍弃了。</p><p>返回步骤1,第11行,默认值是 <code>location.pathname</code> 也就是路径,把它替换成 <code>J3t7cGFnZS5kYXRlfX0n</code> (直接输入page.date被识别成nodejs语言执行了,只能通过base64编码,解码即可)(请解码后替换即可).</p><p>最终的lable会变成时间戳(还是毫秒级别的),时间戳就是目标时间距离1970-01-01 08:00:00(UTC +8)的毫秒</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/3.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="完结撒花"></p><p>这个是创建时间,也就是说只要我不是故意去更改时间,是几乎不可能碰撞的<span class="heimu" title="你知道的太多了">废话,我怎么可能在同一时间内写好两篇博文</span></p><p>而且时间戳到50位…9999年12月31日23点59分59秒的时间戳253402271999000（刚刚好15位），也就是说用到我200代都够用。</p><p>但是，</p><h3 id="MD5压缩字符"><a href="#MD5压缩字符" class="headerlink" title="MD5压缩字符"></a>MD5压缩字符</h3><blockquote><p>2020年2月27日最终选择。</p></blockquote><p>为什么？</p><p>因为后来发现使用时来作为Lable会导致在下一次修改后Lable改变。</p><p>因为选择的page.date并不是开头的date，而是根据电脑里面的修改时间判定的。</p><p>所以即使是改成page.update也没用…</p><p>所以最终采用了MD5</p><p>既然你最多50字,那么干脆用MD5强制压缩至32个字从根本解决问题,而且MD5只要不是恶意去碰撞基本不会相同.</p><p>毕竟MD5是一个比较著名的hash算法嘛.</p><p><del>但是,使用MD5需要额外添加很长一段js,在进行初始化估计就要一段时间了.</del></p><p><del>所以,此处不推荐使用MD5,如果你有这个需求,可以去gitalk或gitment官方github的issues中查看.</del></p><p>修改方式：在进入 <code>\themes\next\layout\_third-party\comments\gitalk.swig</code> ,修改成这样：</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
+&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;
+
+  <span class="hljs-symbol">&amp;lt;</span>link rel=<span class="hljs-symbol">&amp;quot;</span>stylesheet<span class="hljs-symbol">&amp;quot;</span> href=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.css<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
+  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.min.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+   <span class="hljs-symbol">&amp;lt;</span>script type=<span class="hljs-symbol">&amp;quot;</span>text/javascript<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
+        var gitalk = new Gitalk(&#123;
+          clientID: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          clientSecret: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          repo: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.repo &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          owner: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.githubID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
+          admin: [<span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.adminUser &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>],
+          id: md5(location.pathname),
+          distractionFreeMode: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>
+        &#125;)
+        gitalk.render(<span class="hljs-symbol">&amp;#x27;</span>gitalk-container<span class="hljs-symbol">&amp;#x27;</span>)           
+       <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+&#123;% endif %&#125;
+&#123;% endraw %&#125;</code></pre></div><p>至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如 <code>\留言板\</code> ,这个经过md5后是 <code>b31b6a578fce950674accdd14100e448</code></p><p>所以只要不改题目都没问题。</p><p>咳咳,<span class="heimu" title="你知道的太多了">还是MD5大法好b（￣▽￣）d　</span></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>看起来自己解决问题就是好啊。</p><p>另外，国内用户如果看到评论框有：Error: Network Error字样或长时间加载或没有评论框，可以尝试修改一下DNS至国外如1.1.1.1、1.0.0.1、8.8.8.8、8.8.4.4，如果还是不行，那就，那就拿梯子吧。</p><p>毕竟GXX对于Github尤其是API很不友好…</p><p>呃,听说三月七号开学,估计博客又要荒凉了,高中生活好啊…</p>]]></content>
+      <categories>
+        <category>爱折腾</category>
+      </categories>
+      <tags>
+        <tag>踩坑</tag>
+        <tag>手动填坑</tag>
+        <tag>评论系统</tag>
+        <tag>评论</tag>
+        <tag>Gitalk</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GithubのUnlimited Private Repo有感</title>
     <url>/p/36dee3d7.html</url>
     <content><![CDATA[<p>Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/k.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/s.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">？？？顿时感觉失去了关爱….</p><p><span class="heimu"><del>欸没错这篇又是水文</del></span>今天讲讲关于这件事以及对于github的心理感想。</p><h1 id="收购"><a href="#收购" class="headerlink" title="收购"></a>收购</h1><p>微软<del>爸爸</del>2018年末收购Github这件事情我是知道的。</p><p>哦，知道就知道呗，我当时的心理想法是这样的。</p><p>确实是这样，我虽然知道网上很多人对这件事褒贬不一，可我确实是心中毫无波澜。</p><p>因为很多人认为，有那么一个大靠山，就可以接着<del>薅</del>撸羊毛。</p><p>也有一些程序员觉得，这样Github就丧失了它开源（OpenSource）的初衷。</p><p>甚至还有Gitlab公然在底下挑衅。</p><p>（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p><p>我为什么当时毫无波澜呢，说实话原因有下：</p><p>1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/h.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>2.感觉收购后和收购前没什么不同。（大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/m.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p><p>嗯<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。</p><h1 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h1><p>渐渐的，用到Github多了，虽然是个学生，但还是有抽出心思写写无聊的程序，对于一些吊炸天的repo一个star，对于一些有版权风险的一个fork…逐渐对于github熟悉起来,也渐渐喜欢上了github,虽然后面使用过coding和gitee,但用户体验就没做那么好(个人感想),最终还是没有抛弃github…</p><p>Github附加功能有些真的没法比,光是那pages我就觉得好上天了,用过codingpages,A记录绑定的ip过几天就要换一次,CNAME绑定的又不会宕机时自动切换,有时候速度还不如Github.</p><h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p><p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p><p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p><p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的善用技术上网法则有些时候也能发现.</p><p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p><h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p><h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p><p>开了一个Public坑 ==&gt; 没人来 ==&gt; 默默自己写着repo ==&gt; 有一天有人把你的repo分享到了知乎 ==&gt; Star过一千 ==&gt; <del>接到局里喝茶(大大雾)</del><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"> ==&gt; 删除repo</p><p>开了一个Public坑 ==&gt; 没人来 ==&gt; 归档,不想写了 ==&gt; 一个人看到了,测试了一下,发了一个issues ==&gt; 一群人被吸引过来,发了一堆issues ==&gt;被迫续更</p><p>开了一个Public坑 ==&gt; 吸引了一群人 ==&gt;没空写了,转给社区,自己去悠哉悠哉了 ==&gt;社区继续维护</p><p>开了一个Public坑 ==&gt; 然后就没有然后了…</p><h3 id="Private坑"><a href="#Private坑" class="headerlink" title="Private坑"></a>Private坑</h3><p>开了一个Private Repo ==&gt; 哎呀自己写的怎么这么烂,欸,幸好没有开源 ==&gt; 清空repo重新写</p><p>开了一个Private Repo ==&gt; 欸我写的这么好,赶紧开源 ==&gt;跳回public坑 ==&gt;结局与前四个一样</p><p>开了一个Private Repo ==&gt; 欸我写的这么好,怎么没人Star呢 ==&gt;四处宣扬自己的项目 ==&gt; 最后发现开成私人坑了 ==&gt; 转回public ==&gt; 结局相同</p><p>开了一个Private Repo ==&gt; 做网盘 ==&gt; 这特么什么神速度 ==&gt; 退坑</p><h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>至少现在看来Private Repo似乎没有被滥用的很厉害,当然,善用免费服务才能让服务变得更加长久,多了微软<del>爸爸</del>,相信Github会做的更好!</p>]]></content>
@@ -1206,8 +1302,8 @@ https://cdn.jsdelivr.net/gh/ChenYFan-Tester/Artalk@gh-pages/Artalk.css</code></p
         <category>随心记</category>
       </categories>
       <tags>
-        <tag>Artalk</tag>
         <tag>评论</tag>
+        <tag>Artalk</tag>
         <tag>无服务器</tag>
       </tags>
   </entry>
@@ -1338,9 +1434,9 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
         <category>丆插件</category>
       </categories>
       <tags>
+        <tag>评论</tag>
         <tag>Hexo</tag>
         <tag>站长必备</tag>
-        <tag>评论</tag>
         <tag>Valine</tag>
       </tags>
   </entry>
@@ -3925,102 +4021,6 @@ Cape Neddick Light in York, Maine (© Haizhan Zheng/Getty Images)
         <tag>京东</tag>
         <tag>劫持</tag>
         <tag>安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Gitalk详细踩坑记录</title>
-    <url>/p/9f2a11d8.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>没想到怎么快就更新一篇了。</p><p>这真的是踩了个巨坑啊。</p><h2 id="为什么又要切换回Gitalk？"><a href="#为什么又要切换回Gitalk？" class="headerlink" title="为什么又要切换回Gitalk？"></a>为什么又要切换回Gitalk？</h2><p>咳咳，这事情还得从上一年12月说起。</p><p>当时正忙于学业，等到期末考完以后接受到一份LeanCloud邮件，大概内容就是我的API1个月没有调用被强制归档了。</p><p><span class="heimu" title="你知道的太多了">那也不能怪我啊！我博客没人来就说我缘故咯？</span></p><p>然后登陆上LeanCloud，恢复数据，然后就没有然后了。</p><p>昨天刚刚更新了一篇白嫖记录，登入博客后却发现没有更新。</p><p>接着去Coding，告诉我Coding转型了，接着用Pages要实名认证。<span class="heimu" title="你知道的太多了">我要是能实名认证那我不早就买一台国内服务器备案了？？？</span></p><p>没办法，只好又迁回Github。好在Github可以给每一个仓库绑定一个域名，（大不了以后更新博客麻烦点罢了。）</p><p>接着折腾了Github好一会儿，包括后来解决Coding赖着域名不放，国内ip解析错误的原因。</p><p>结果今天早上登陆却发现：</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/1.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="LeanCloud报错"></p><p>…</p><p>打开LeanCloud官方文档,并没有找到答案.</p><p>也就是说,我还不知道错误发生在归档后还是在迁移后的.</p><p>况且本来LeanCloud开发版每天休眠6h我也受够了,于是打算迁到Gitalk.</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据:"></a>数据:</h2><p>数据肯定是没法恢复了,毕竟是要Github账号的.</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置:"></a>配置:</h2><p>Gitalk官方说明安装只有简单的几句话:</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://npm.elemecdn.com/gitalk@1/dist/gitalk.css"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://npm.elemecdn.com/gitalk@1/dist/gitalk.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- or --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/gitalk/dist/gitalk.css"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/gitalk/dist/gitalk.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><blockquote><p>…<br>添加一个容器：<br><code>&lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</code><br>用下面的 Javascript 代码来生成 gitalk 插件：</p></blockquote><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-keyword">var</span> gitalk = <span class="hljs-keyword">new</span> Gitalk(&#123;
-  <span class="hljs-attribute">clientID</span>: <span class="hljs-string">'GitHub Application Client ID'</span>,
-  <span class="hljs-attribute">clientSecret</span>: <span class="hljs-string">'GitHub Application Client Secret'</span>,
-  <span class="hljs-attribute">repo</span>: <span class="hljs-string">'GitHub repo'</span>,
-  <span class="hljs-attribute">owner</span>: <span class="hljs-string">'GitHub repo owner'</span>,
-  <span class="hljs-attribute">admin</span>: [<span class="hljs-string">'GitHub repo owner and collaborators, only these guys can initialize github issues'</span>],
-  <span class="hljs-attribute">id:</span><span class="hljs-string"> location.pathname</span>,      <span class="hljs-comment">// Ensure uniqueness and length less than 50</span>
-  <span class="hljs-attribute">distractionFreeMode</span>: <span class="hljs-literal">false</span>  <span class="hljs-comment">// Facebook-like distraction free mode</span>
-&#125;)
-
-gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre></div><p>当然,在hexo里面使用估计就没有那么简单了,所以我最终按照里面自带集成的Gitment模板以及文档整理了一份.</p><p>实际上Gitment和Gitalk的核心原理是一样的,内容现实,所以最终还是成功了.</p><h2 id="注册"><a href="#注册" class="headerlink" title="注册:"></a>注册:</h2><blockquote><p>无图警告！</p></blockquote><p>点开 [<a href="https://github.com/settings/applications/new]" target="_blank" rel="noopener">https://github.com/settings/applications/new]</a>, 注册一个App</p><p>:: Register a new OAuth application<br>必填.填写这个app的名字(其实随便起就好了)<br>:: Homepage URL<br>必填,博客根目录,不能在最后带<code>/</code><br>:: Application description<br>胡乱填写的简介<br>:: Authorization callback URL<br>必填。与Homepage URL一样,是回显目录</p><p>点击Register，注册成功！</p><p>接着会跳转，此处就不截图了。</p><p>其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可</p><h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><p>根据Gitment样式，整理如下</p><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>进入 <code>\themes\next\layout\_third-party\comments\</code> 新建 <code>gitalk.swig</code> 文件,里面填写一下内容:</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
-&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;
-
-  <span class="hljs-symbol">&amp;lt;</span>link rel=<span class="hljs-symbol">&amp;quot;</span>stylesheet<span class="hljs-symbol">&amp;quot;</span> href=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.css<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
-  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.min.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
-   <span class="hljs-symbol">&amp;lt;</span>script type=<span class="hljs-symbol">&amp;quot;</span>text/javascript<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
-        var gitalk = new Gitalk(&#123;
-          clientID: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          clientSecret: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          repo: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.repo &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          owner: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.githubID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          admin: [<span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.adminUser &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>],
-          id: location.pathname,
-          distractionFreeMode: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>
-        &#125;)
-        gitalk.render(<span class="hljs-symbol">&amp;#x27;</span>gitalk-container<span class="hljs-symbol">&amp;#x27;</span>)           
-       <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
-&#123;% endif %&#125;
-&#123;% endraw %&#125;</code></pre></div><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>修改 <code>\themes\next\layout\_third-party\comments\</code> ,在最后一行填下:</p><div class="hljs"><pre><code class="hljs undefined">&#123;%<span class="hljs-built_in"> raw </span>%&#125;
-&#123;% include <span class="hljs-string">'gitalk.swig'</span> %&#125;
-&#123;% endraw %&#125;</code></pre></div><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>修改 <code>\themes\next\layout\_partials\comments.swig</code> ,在 <code>{if}</code> 之下, <code>{elseif}</code> 之上填下:</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
-&#123;% elseif theme.gitalk.enable %&#125;
- <span class="hljs-symbol">&amp;lt;</span>div id=<span class="hljs-symbol">&amp;quot;</span>gitalk-container<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
-&#123;% endraw %&#125;</code></pre></div><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>新建 <code>\themes\next\source\css\_common\components\third-party\gitalk.styl</code> ,填下:</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.gt-header</span> <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-class">.gt-comments</span> <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-class">.gt-popup</span> <span class="hljs-selector-tag">a</span>
-  <span class="hljs-selector-tag">border-bottom</span>: <span class="hljs-selector-tag">none</span>;
-<span class="hljs-selector-class">.gt-container</span> <span class="hljs-selector-class">.gt-popup</span> <span class="hljs-selector-class">.gt-action</span><span class="hljs-selector-class">.is--active</span><span class="hljs-selector-pseudo">:before</span>
-  <span class="hljs-selector-tag">top</span>: 0<span class="hljs-selector-class">.7em</span>;</code></pre></div><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>修改<code>\themes\next\source\css\_common\components\third-party\third-party.styl</code>,最后一行填下</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">"gitalk"</span>;</code></pre></div><h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>最后,在<code>\themes\next\_config.yml</code>最后一行填下:</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">gitalk:</span>
-  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
-  <span class="hljs-attr">githubID:</span> <span class="hljs-string">github帐号</span>  <span class="hljs-comment">#如ChenYFan   </span>
-  <span class="hljs-attr">repo:</span> <span class="hljs-string">仓库名称</span>   <span class="hljs-comment"># 例：blog</span>
-  <span class="hljs-attr">ClientID:</span> <span class="hljs-string">Client</span> <span class="hljs-string">ID</span>
-  <span class="hljs-attr">ClientSecret:</span> <span class="hljs-string">Client</span> <span class="hljs-string">Secret</span>
-  <span class="hljs-attr">adminUser:</span> <span class="hljs-string">github帐号</span> <span class="hljs-comment">#指定可初始化评论账户</span>
-  <span class="hljs-attr">distractionFreeMode:</span> <span class="hljs-literal">true</span></code></pre></div><h3 id="结束"><a href="#结束" class="headerlink" title="结束?"></a>结束?</h3><p>打开博客,你会发现有一些博文评论是正常的,但是有一些博文你可能会看到:</p><p>Error:Validation Failed</p><p>没错，这不是我的错<span class="heimu" title="别打我！">滑稽狗头保命</span>。</p><p>这个错误在Gitalk用户里非常常见。</p><p>为什么？</p><p>这还得从官方文档讲起：</p><div class="hljs"><pre><code class="hljs undefined">...
-<span class="hljs-deletion">- owner String</span>
-
-<span class="hljs-deletion">-必须. GitHub repository 所有者，可以是个人或者组织。</span>
-
-<span class="hljs-deletion">-admin Array</span>
-
-<span class="hljs-deletion">-必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。</span>
-
-<span class="hljs-deletion">-id String</span>
-
-<span class="hljs-deletion">-Default: location.href.</span>
-
-<span class="hljs-deletion">-页面的唯一标识。长度必须小于50。</span>
-...</code></pre></div><p>注意一下id,这个最终会成为Github issues中的lable之一,但是lable是有字数限制的,50个英文单词.</p><p>但是有人会问我的中文名加上去之后也没有50字啊.</p><p>对啊,可是Gitalk会将其转码,比如说<code>留言板</code>三个字最终会转成<code>/%E7%95%99%E8%A8%80%E6%9D%BF/</code><span class="heimu" title="你知道的太多了">这又♀长又♂粗</span>的文字.</p><p>但是第一个Lable不能重复,重复后两个issues的两个Lable就相同了,这样两个评论就混在一起了.</p><p>所以网上就有人开始讨论怎么解决了.</p><h3 id="规避解码"><a href="#规避解码" class="headerlink" title="规避解码:"></a>规避解码:</h3><p>毕竟Github Lable其实是支持中文的…<span class="heimu" title="你知道的太多了">你怎么不早说!</span>,所以思路很简单,规避解码即可.</p><p>返回步骤1,第11行,默认值是<code>location.pathname</code>也就是路径,规避解码很简单,把它替换成<code>decode(location.pathname)</code>就可以啦.</p><p>当然这个办法最终还是有效的:</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/2.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="规避解码"></p><p>但是,但是,你还记得我有一篇文章的题目吗: <code>CloudFlare%EF%BC%9A%E5%8F%AE%E5%92%9A%EF%BC%81%E6%82%A8%E7%9A%8415%E5%B9%B4%E5%85%8D%E8%B4%B9%E6%B3%9B%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E5%88%B0%E4%BA%86%EF%BC%81</code></p><p>没错,解码以后就是: <code>CloudFlare：叮咚！您的15年免费泛域名SSL证书到了！</code><br>加上博客域名和路径,将近60字.</p><p>这个方法依旧没有解决根本问题.</p><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p><del>这个最终还是被我采用了,原因是它修改起来真的很简单.</del> 最终这个办法还是被舍弃了。</p><p>返回步骤1,第11行,默认值是 <code>location.pathname</code> 也就是路径,把它替换成 <code>J3t7cGFnZS5kYXRlfX0n</code> (直接输入page.date被识别成nodejs语言执行了,只能通过base64编码,解码即可)(请解码后替换即可).</p><p>最终的lable会变成时间戳(还是毫秒级别的),时间戳就是目标时间距离1970-01-01 08:00:00(UTC +8)的毫秒</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/gitalk/3.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="图片" title="完结撒花"></p><p>这个是创建时间,也就是说只要我不是故意去更改时间,是几乎不可能碰撞的<span class="heimu" title="你知道的太多了">废话,我怎么可能在同一时间内写好两篇博文</span></p><p>而且时间戳到50位…9999年12月31日23点59分59秒的时间戳253402271999000（刚刚好15位），也就是说用到我200代都够用。</p><p>但是，</p><h3 id="MD5压缩字符"><a href="#MD5压缩字符" class="headerlink" title="MD5压缩字符"></a>MD5压缩字符</h3><blockquote><p>2020年2月27日最终选择。</p></blockquote><p>为什么？</p><p>因为后来发现使用时来作为Lable会导致在下一次修改后Lable改变。</p><p>因为选择的page.date并不是开头的date，而是根据电脑里面的修改时间判定的。</p><p>所以即使是改成page.update也没用…</p><p>所以最终采用了MD5</p><p>既然你最多50字,那么干脆用MD5强制压缩至32个字从根本解决问题,而且MD5只要不是恶意去碰撞基本不会相同.</p><p>毕竟MD5是一个比较著名的hash算法嘛.</p><p><del>但是,使用MD5需要额外添加很长一段js,在进行初始化估计就要一段时间了.</del></p><p><del>所以,此处不推荐使用MD5,如果你有这个需求,可以去gitalk或gitment官方github的issues中查看.</del></p><p>修改方式：在进入 <code>\themes\next\layout\_third-party\comments\gitalk.swig</code> ,修改成这样：</p><div class="hljs"><pre><code class="hljs html">&#123;% raw %&#125;
-&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;
-
-  <span class="hljs-symbol">&amp;lt;</span>link rel=<span class="hljs-symbol">&amp;quot;</span>stylesheet<span class="hljs-symbol">&amp;quot;</span> href=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.css<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
-  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://unpkg.com/gitalk/dist/gitalk.min.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
-  <span class="hljs-symbol">&amp;lt;</span>script src=<span class="hljs-symbol">&amp;quot;</span>https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
-   <span class="hljs-symbol">&amp;lt;</span>script type=<span class="hljs-symbol">&amp;quot;</span>text/javascript<span class="hljs-symbol">&amp;quot;</span><span class="hljs-symbol">&amp;gt;</span>
-        var gitalk = new Gitalk(&#123;
-          clientID: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          clientSecret: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          repo: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.repo &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          owner: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.githubID &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>,
-          admin: [<span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.adminUser &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>],
-          id: md5(location.pathname),
-          distractionFreeMode: <span class="hljs-symbol">&amp;#x27;</span>&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;<span class="hljs-symbol">&amp;#x27;</span>
-        &#125;)
-        gitalk.render(<span class="hljs-symbol">&amp;#x27;</span>gitalk-container<span class="hljs-symbol">&amp;#x27;</span>)           
-       <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
-&#123;% endif %&#125;
-&#123;% endraw %&#125;</code></pre></div><p>至于担心更换域名后Lable不匹配的问题,在这里说明一下,Lable采用的是相对目录,比如 <code>\留言板\</code> ,这个经过md5后是 <code>b31b6a578fce950674accdd14100e448</code></p><p>所以只要不改题目都没问题。</p><p>咳咳,<span class="heimu" title="你知道的太多了">还是MD5大法好b（￣▽￣）d　</span></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>看起来自己解决问题就是好啊。</p><p>另外，国内用户如果看到评论框有：Error: Network Error字样或长时间加载或没有评论框，可以尝试修改一下DNS至国外如1.1.1.1、1.0.0.1、8.8.8.8、8.8.4.4，如果还是不行，那就，那就拿梯子吧。</p><p>毕竟GXX对于Github尤其是API很不友好…</p><p>呃,听说三月七号开学,估计博客又要荒凉了,高中生活好啊…</p>]]></content>
-      <categories>
-        <category>爱折腾</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>评论</tag>
-        <tag>踩坑</tag>
-        <tag>手动填坑</tag>
-        <tag>评论系统</tag>
-        <tag>Gitalk</tag>
       </tags>
   </entry>
 </search>

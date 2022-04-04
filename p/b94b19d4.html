@@ -142,7 +142,7 @@ print(enc(<span class="hljs-number">882584971</span>))</code></pre></div><p>äº’ç
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

@@ -165,7 +165,7 @@ Drawing attention <span class="hljs-keyword">to</span> ads is a<span class="hljs
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

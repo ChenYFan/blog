@@ -333,7 +333,7 @@ val = <span class="hljs-keyword">await</span> get_comment(access_token, path, be
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

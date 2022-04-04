@@ -118,7 +118,7 @@ RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$<span class="hljs-number">1</span>]
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

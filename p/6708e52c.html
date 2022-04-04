@@ -116,7 +116,7 @@ Please visit <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;

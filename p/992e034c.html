@@ -248,7 +248,7 @@ Process exited after <span class="hljs-number">142.5</span> seconds with return 
 		new Artalk({
 			el: '#com',
 			pageKey:(()=>{
-				return window.location.pathname;
+				return window.location.origin+window.location.pathname;
 			})(),
 			pageTitle: (()=>{
 				let title = document.title;
