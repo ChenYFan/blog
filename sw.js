@@ -348,7 +348,8 @@ const handle = async function (req) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
             for (let k in blog.npmmirror) {
-                urls.push(blog.npmmirror[k] + fullpath(pathname))
+                //urls.push(blog.npmmirror[k] + fullpath(pathname))
+                //contenttype unsuccess!
             }
 
             return new Promise((resolve, reject) => {
