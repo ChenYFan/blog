@@ -137,21 +137,18 @@ let cdn = {
         tianli: {
             "url": "https://cdn1.tianli0.top/gh"
         },
-
-        //白嫖
-
-        //cdn.cnortles.top jsd.hin.cool
-        cnortles: {
-            "url": "https://cdn.cnortles.top/gh"
+        oplog:{
+            "url": "https://cdn.oplog.cn/gh"
         },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/gh"
-        }
 
     },
     "combine": {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/combine"
+        },
+        
+        oplog:{
+            "url": "https://cdn.oplog.cn/combine"
         },
         pigax_jsd: {
             "url": "https://u.pigax.cn/combine"
@@ -162,7 +159,6 @@ let cdn = {
         tianli: {
             "url": "https://cdn1.tianli0.top/combine"
         },
-        //cdn.cnortles.top jsd.hin.cool
         cnortles: {
             "url": "https://cdn.cnortles.top/combine"
         },
@@ -177,6 +173,9 @@ let cdn = {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/npm"
 
+        },
+        oplog:{
+            "url": "https://cdn.oplog.cn/npm"
         },
         zhimg: {
             "url": "https://unpkg.zhimg.com"
@@ -198,13 +197,6 @@ let cdn = {
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
-        },
-        //cdn.cnortles.top jsd.hin.cool
-        cnortles: {
-            "url": "https://cdn.cnortles.top/npm"
-        },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/npm"
         }
 
     }
@@ -214,7 +206,7 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-
+const blogversion = "chenyfan-blog@1.0.7"
 const blog = {
     local: 1,
     origin: [
@@ -229,6 +221,14 @@ const blog = {
         //"vercel.blog.cyfan.top",
         //"deno.blog.cyfan.top",
         "gcore.blog.cyfan.top"
+    ],
+    npmmirror:[
+        `https://unpkg.com/${blogversion}/`,
+        `https://npm.elemecdn.com/${blogversion}`,
+        `https://cdn.jsdelivr.net/npm/${blogversion}`,
+        `https://cdn-jsd.pigax.cn/npm/${blogversion}`,
+        `https://cdn1.tianli0.top/npm/${blogversion}`,
+        `https://cdn.oplog.cn/npm/${blogversion}`
     ]
 };
 
@@ -260,6 +260,7 @@ const handle = async function (req) {
             return fetch(urlStr,{
                 headers: new Headers(req.headers),
                 method: req.method,
+                mode:"cors",
                 body: req.method === 'POST' ? await reqdata.arrayBuffer() : null,
                 credentials: 'include'
             })
