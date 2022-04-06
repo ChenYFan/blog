@@ -38,9 +38,12 @@ jobs:
 
           echo "blog.cyfan.top" >> ./public/CNAME
 
-          npm version patch --no-git-tag-version
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM }}

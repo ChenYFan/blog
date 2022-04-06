@@ -137,7 +137,7 @@ let cdn = {
         tianli: {
             "url": "https://cdn1.tianli0.top/gh"
         },
-        oplog:{
+        oplog: {
             "url": "https://cdn.oplog.cn/gh"
         },
 
@@ -146,8 +146,8 @@ let cdn = {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/combine"
         },
-        
-        oplog:{
+
+        oplog: {
             "url": "https://cdn.oplog.cn/combine"
         },
         pigax_jsd: {
@@ -174,7 +174,7 @@ let cdn = {
             "url": "https://cdn.jsdelivr.net/npm"
 
         },
-        oplog:{
+        oplog: {
             "url": "https://cdn.oplog.cn/npm"
         },
         zhimg: {
@@ -206,9 +206,9 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.7"
+const blogversion = "chenyfan-blog@1.0.8"
 const blog = {
-    local: 1,
+    local: 0,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:9100"
@@ -222,13 +222,13 @@ const blog = {
         //"deno.blog.cyfan.top",
         "gcore.blog.cyfan.top"
     ],
-    npmmirror:[
-        `https://unpkg.com/${blogversion}/`,
-        `https://npm.elemecdn.com/${blogversion}`,
-        `https://cdn.jsdelivr.net/npm/${blogversion}`,
-        `https://cdn-jsd.pigax.cn/npm/${blogversion}`,
-        `https://cdn1.tianli0.top/npm/${blogversion}`,
-        `https://cdn.oplog.cn/npm/${blogversion}`
+    npmmirror: [
+        `https://unpkg.com/${blogversion}/public`,
+        `https://npm.elemecdn.com/${blogversion}/public`,
+        `https://cdn.jsdelivr.net/npm/${blogversion}/public`,
+        `https://cdn-jsd.pigax.cn/npm/${blogversion}/public`,
+        `https://cdn1.tianli0.top/npm/${blogversion}/public`,
+        `https://cdn.oplog.cn/npm/${blogversion}/public`
     ]
 };
 
@@ -244,9 +244,8 @@ const handle = async function (req) {
     const uuid = await db.read('uuid')
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
-    //setItem('origin',pathname)
     const domain = (urlStr.split('/'))[2]
-
+    if (path.match(/\/sw\.js/g)) { return fetch(req) }
     try {
         if (domain === 'artalk.cyfan.top') {
             if (blacklist.includes(uuid)) {
@@ -257,10 +256,10 @@ const handle = async function (req) {
                     ))
                 }
             }
-            return fetch(urlStr,{
+            return fetch(urlStr, {
                 headers: new Headers(req.headers),
                 method: req.method,
-                mode:"cors",
+                mode: "cors",
                 body: req.method === 'POST' ? await reqdata.arrayBuffer() : null,
                 credentials: 'include'
             })
@@ -347,6 +346,9 @@ const handle = async function (req) {
             urls = []
             for (let k in blog.plus) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+            }
+            for (let k in blog.npmmirror) {
+                urls.push(k + fullpath(pathname))
             }
 
             return new Promise((resolve, reject) => {
@@ -706,4 +708,17 @@ const handlecgi = async (req) => {
 
                 , { headers: { "content-type": "text/html; charset=utf-8" } })
     }
+}
+
+
+const fullpath = (path) => {
+    //如果path以/结尾,添加index
+    //如果path以/xxx结尾没有后缀,添加.html
+    if (path.match(/\/$/)) {
+        path += 'index'
+    }
+    if (!path.match(/\.[a-zA-Z]+$/)) {
+        path += '.html'
+    }
+    return path
 }

@@ -18,14 +18,14 @@
 		document.getElementById("commentbutton").href = "javascript:loadcomments();";
 	}
 	function loadcomments() {
-		new Artalk({
+		window.at = new Artalk({
 			el: '#com',
-			pageKey:(()=>{
-				return window.location.origin+window.location.pathname;
+			pageKey: (() => {
+				return window.location.origin + window.location.pathname;
 			})(),
-			pageTitle: (()=>{
+			pageTitle: (() => {
 				let title = document.title;
-				if(title.indexOf('|')>-1){
+				if (title.indexOf('|') > -1) {
 					title = title.split('|')[0];
 				}
 				return title;
@@ -33,6 +33,9 @@
 			server: 'https://artalk.cyfan.top/api/',
 			site: 'ChenYFan的Artalk'
 		})
+	}
+	const setCustom = (s) => {
+		at.setDarkMode(s === 'dark' ? true : false)
 	}
 </script>
 <style>
