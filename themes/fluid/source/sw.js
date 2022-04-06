@@ -245,7 +245,7 @@ const handle = async function (req) {
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const port = urlObj.port
     const domain = (urlStr.split('/'))[2]
-    if (path.match(/\/sw\.js/g)) { return fetch(req) }
+    if (pathname.match(/\/sw\.js/g)) { return fetch(req) }
     try {
         if (domain === 'artalk.cyfan.top') {
             if (blacklist.includes(uuid)) {
