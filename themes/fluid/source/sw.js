@@ -206,12 +206,12 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.8"
+const blogversion = "chenyfan-blog@1.0.9"
 const blog = {
     local: 0,
     origin: [
         "blog.cyfan.top",
-        "127.0.0.1:9100"
+        "127.0.0.1:9393"
     ],
     plus: [
         "blog.cyfan.top",
@@ -348,7 +348,7 @@ const handle = async function (req) {
                 urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
             }
             for (let k in blog.npmmirror) {
-                urls.push(k + fullpath(pathname))
+                urls.push(blog.npmmirror[k] + fullpath(pathname))
             }
 
             return new Promise((resolve, reject) => {
@@ -712,8 +712,7 @@ const handlecgi = async (req) => {
 
 
 const fullpath = (path) => {
-    //如果path以/结尾,添加index
-    //如果path以/xxx结尾没有后缀,添加.html
+    path=path.split('?')[0]
     if (path.match(/\/$/)) {
         path += 'index'
     }
