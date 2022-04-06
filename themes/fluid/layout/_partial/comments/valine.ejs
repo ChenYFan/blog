@@ -1,6 +1,6 @@
 <div id="com">
 	<div class="grid__item theme-1">
-		<a href="javascript:loadcomments();" id="commentbutton" class="ui-box bottom-rightStart-burst"
+		<a href="javascript:onclock();" id="commentbutton" class="ui-box bottom-rightStart-burst"
 			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
 		</a>
 	</div>
@@ -13,15 +13,9 @@
 <script>
 	function onclock() {
 		//在新窗口打开
-		window.open("https://artalk.cyfan.top/captcha");
+		window.open("https://artalk.cyfan.top/safecaptcha");
 		document.getElementById("commentbutton").innerText = "我已在新标签页中完成人机验证";
 		document.getElementById("commentbutton").href = "javascript:loadcomments();";
-		/*twikoo.init({
-			envId: "blog-comment-6g821sad74db776c",
-			el: '#hpp_comment',
-			region: "ap-shanghai",
-			path: 'window.location.pathname'
-		})*/
 	}
 	function loadcomments() {
 		new Artalk({

@@ -233,8 +233,8 @@ const blog = {
 };
 
 const blacklist = [
-    '9b5aee25-1d5b-4be8-9ea6-55651bfef4bc',//maplesugar闭麦
-    '0e7e3e61-20b4-414b-ae6b-577b6f25ee54',//测试
+    '9b5aee25-1d5b-4be8-9ea6-55651bfef4bc',
+    '0e7e3e61-20b4-414b-ae6b-577b6f25ee54'
 ]
 
 const handle = async function (req) {
@@ -248,16 +248,21 @@ const handle = async function (req) {
     const domain = (urlStr.split('/'))[2]
 
     try {
-        if (blacklist.includes(uuid) && domain === 'artalk.cyfan.top') {
-            if (pathname === '/api/add') {
-                console.log('离线评论成功')
-                return new Response(JSON.stringify(
-
-                    { "success": false, "msg": "需要滑稽码", "data": { "img_data": "", "need_captcha": true } }
-
-                ))
+        if (domain === 'artalk.cyfan.top') {
+            if (blacklist.includes(uuid)) {
+                if (pathname === '/api/add') {
+                    console.log('离线评论成功')
+                    return new Response(JSON.stringify(
+                        { "success": false, "msg": "需要滑稽码", "data": { "img_data": "", "need_captcha": true } }
+                    ))
+                }
             }
-
+            return fetch(urlStr,{
+                headers: new Headers(req.headers),
+                method: req.method,
+                body: req.method === 'POST' ? await reqdata.arrayBuffer() : null,
+                credentials: 'include'
+            })
         }
     } catch (e) { }
     const path = pathname.split('?')[0]
