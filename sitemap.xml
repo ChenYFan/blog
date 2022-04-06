@@ -560,15 +560,6 @@
   </url>
   
   <url>
-    <loc>https://blog.cyfan.top/blog-cgi.html</loc>
-    
-    <lastmod>2022-04-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.cyfan.top/jump.html</loc>
     
     <lastmod>2022-04-06</lastmod>
@@ -579,6 +570,15 @@
   
   <url>
     <loc>https://blog.cyfan.top/offline.html</loc>
+    
+    <lastmod>2022-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/blog-cgi.html</loc>
     
     <lastmod>2022-04-06</lastmod>
     
