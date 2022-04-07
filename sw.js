@@ -206,7 +206,7 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.9"
+const blogversion = "chenyfan-blog@1.0.10"
 const blog = {
     local: 0,
     origin: [
@@ -345,18 +345,17 @@ const handle = async function (req) {
 
             urls = []
             for (let k in blog.plus) {
-                urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+                //urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
+                urls.push(`https://${blog.plus[k]}` + fullpath(pathname))
             }
             for (let k in blog.npmmirror) {
-                //urls.push(blog.npmmirror[k] + fullpath(pathname))
-                //contenttype unsuccess!
+                urls.push(blog.npmmirror[k] + fullpath(pathname))
             }
 
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     caches.match(req).then(function (resp) {
                         if (!!resp) {
-                            console.log('Had Cache:' + urlStr)
                             setTimeout(() => {
                                 resolve(resp)
                             }, 200);
@@ -364,6 +363,7 @@ const handle = async function (req) {
                                 lfetch(urls, urlStr).then(function (res) {
                                     return caches.open(CACHE_NAME).then(function (cache) {
                                         cache.delete(req);
+                                        if (fullpath(pathname).match(/\.html$/g)) res.headers.set('Content-Type', 'text/html; charset=utf-8')
                                         cache.put(req, res.clone());
                                         resolve(res);
                                     });
@@ -373,6 +373,7 @@ const handle = async function (req) {
                             setTimeout(() => {
                                 lfetch(urls, urlStr).then(function (res) {
                                     return caches.open(CACHE_NAME).then(function (cache) {
+                                        if (fullpath(pathname).match(/\.html$/g)) res.headers.set('Content-Type', 'text/html; charset=utf-8')
                                         cache.put(req, res.clone());
                                         resolve(res);
                                     });
@@ -713,7 +714,7 @@ const handlecgi = async (req) => {
 
 
 const fullpath = (path) => {
-    path=path.split('?')[0]
+    path = path.split('?')[0]
     if (path.match(/\/$/)) {
         path += 'index'
     }
