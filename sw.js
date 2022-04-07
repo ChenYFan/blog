@@ -360,22 +360,44 @@ const handle = async function (req) {
                                 resolve(resp)
                             }, 200);
                             setTimeout(() => {
-                                lfetch(urls, urlStr).then(function (res) {
-                                    return caches.open(CACHE_NAME).then(function (cache) {
+                                lfetch(urls, urlStr).then(async function (res) {
+                                    return caches.open(CACHE_NAME).then(async function (cache) {
                                         cache.delete(req);
-                                        if (fullpath(pathname).match(/\.html$/g)) res.headers.set('Content-Type', 'text/html; charset=utf-8')
-                                        cache.put(req, res.clone());
-                                        resolve(res);
+                                        if (fullpath(pathname).match(/\.html$/g)) {
+                                            const NewRes = new Response(await res.arrayBuffer(), {
+                                                headers: {
+                                                    'Content-Type': 'text/html;charset=utf-8'
+                                                },
+                                                status: res.status,
+                                                statusText: res.statusText
+                                            })
+                                            cache.put(req, NewRes.clone());
+                                            resolve(NewRes)
+                                        } else {
+                                            cache.put(req, res.clone());
+                                            resolve(res)
+                                        }
                                     });
                                 });
                             }, 0);
                         } else {
                             setTimeout(() => {
-                                lfetch(urls, urlStr).then(function (res) {
-                                    return caches.open(CACHE_NAME).then(function (cache) {
-                                        if (fullpath(pathname).match(/\.html$/g)) res.headers.set('Content-Type', 'text/html; charset=utf-8')
-                                        cache.put(req, res.clone());
-                                        resolve(res);
+                                lfetch(urls, urlStr).then(async function (res) {
+                                    return caches.open(CACHE_NAME).then(async function (cache) {
+                                        if (fullpath(pathname).match(/\.html$/g)) {
+                                            const NewRes = new Response(await res.arrayBuffer(), {
+                                                headers: {
+                                                    'Content-Type': 'text/html;charset=utf-8'
+                                                },
+                                                status: res.status,
+                                                statusText: res.statusText
+                                            })
+                                            cache.put(req, NewRes.clone());
+                                            resolve(NewRes)
+                                        } else {
+                                            cache.put(req, res.clone());
+                                            resolve(res)
+                                        }
                                     });
                                 }).catch(function (err) {
                                     resolve(caches.match(new Request('/offline.html')))
