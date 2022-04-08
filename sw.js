@@ -59,12 +59,12 @@ self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
 
+  
     wsc.onclose = () => {
         setTimeout(() => {
             ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
         }, 1000);
     }
-
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(async function (cache) {
@@ -206,9 +206,9 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.10"
+const blogversion = "chenyfan-blog@1.0.11"
 const blog = {
-    local: 0,
+    local: 1,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:9393"
@@ -239,6 +239,9 @@ const blacklist = [
 
 const handle = async function (req) {
     const reqdata = await req.clone()
+    try {
+        if (!wsc.OPEN) wsc.onclose()
+    } catch (e) { }
     const urlStr = req.url
     let urlObj = new URL(urlStr)
     const uuid = await db.read('uuid')
@@ -410,55 +413,10 @@ const handle = async function (req) {
                     })
                 }, 0);
             })
-            /*
-            return lfetch(urls, urlStr).then(function (res) {
-                if (!res) { throw 'error' }
-                return caches.open(CACHE_NAME).then(function (cache) {
-                    
-                    cache.put(req, res.clone());
-                    return res;
-                });
-            })*//*
-            if (!n) {
-    
-                return new Response('<h1>ChenBlogHelper Error</h1>', { headers: { "content-type": "text/html; charset=utf-8" } })
-    
-                return caches.match(req)
-            } else {
-                caches.open(CACHE_NAME).then(function (cache) {
-                    cache.put(req, n.clone());
-                })
-                return n
-            }*/
-            /* .then(async function (resp) {
-                const res = await lfetch(urls, urlStr);
-                if (!res) { return resp; }
-                const cache = await caches.open(CACHE_NAME);
-                cache.put(req, res.clone());
-                return res;
-            })*//*
-            return lfetch(urls, urlStr).then((resp) => {
-                return caches.open(CACHE_NAME).then(function (cache) {
-                    cache.put(req, resp.clone());
-                    return resp;
-                })
-            })*/
 
         }
     }
-    /*if (urlStr.split('?')[0] == "https://chenyfan-blog-counter/upload") {
-        ws_sw({
-            type: "send",
-            data: JSON.stringify({
-                type: 'info',
-                data: JSON.parse(decodeURIComponent(atob(query('log')))),
-                uuid: uuid
-            })
-        })
-        return new Response(null, { status: 204 })
-    }*/
     for (var i in cache_url_list) {
-        //console.log(urlStr.match(cache_url_list[i]))
         if (urlStr.match(cache_url_list[i])) {
             return caches.match(req).then(function (resp) {
                 return resp || fetch(req).then(function (res) {

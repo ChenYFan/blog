@@ -92,7 +92,7 @@
     setButtonIcon(currentSetting);
     //自定义暗色模式，settimeout是保证将其踢到DOM末尾避免底下没加载
 
-    setTimeout(() => {
+    setInterval(() => {
       try {
         setCustom(currentSetting)
       } catch (n) { }
