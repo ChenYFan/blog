@@ -59,7 +59,7 @@ self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
 
-  
+
     wsc.onclose = () => {
         setTimeout(() => {
             ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
@@ -208,7 +208,7 @@ const cache_url_list = [
 ]
 const blogversion = "chenyfan-blog@1.0.11"
 const blog = {
-    local: 1,
+    local: 0,
     origin: [
         "blog.cyfan.top",
         "127.0.0.1:9393"
@@ -249,6 +249,7 @@ const handle = async function (req) {
     const port = urlObj.port
     const domain = (urlStr.split('/'))[2]
     if (pathname.match(/\/sw\.js/g)) { return fetch(req) }
+    if (pathname.match('/cdn-cgi/')) return new Response(null, { status: 308 })
     try {
         if (domain === 'artalk.cyfan.top') {
             if (blacklist.includes(uuid)) {
