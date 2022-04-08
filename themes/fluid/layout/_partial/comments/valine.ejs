@@ -17,6 +17,10 @@
 		document.getElementById("commentbutton").innerText = "我已在新标签页中完成人机验证";
 		document.getElementById("commentbutton").href = "javascript:loadcomments();";
 	}
+	
+	const setCustom = (s) => {
+		at.setDarkMode(s === 'dark' ? true : false)
+	}
 	function loadcomments() {
 		window.at = new Artalk({
 			el: '#com',
@@ -31,11 +35,20 @@
 				return title;
 			})(),
 			server: 'https://artalk.cyfan.top/api/',
-			site: 'ChenYFan的Artalk'
+			site: 'ChenYFan的Artalk',
+			emoticons:'https://cdn.jsdelivr.net/gh/ChenYFan/CDN@ca3ea6c/assets/list.json',
+			placeholder: '来啊,快活啊!\n所有评论均需人工审核,提交后将不会显示,审核通过后才显示,切勿重复发评',
+			noComment: '此时无声胜有声',
+			sendBtn:"发射!",
+			darkMode:(()=>{
+				//LS读取Fluid_Color_Scheme
+				return localStorage.getItem('Fluid_Color_Scheme')==='dark'?true:false;
+			})(),
+			flatMode:false,
+			maxNesting:3,
+			voteDown:true
+
 		})
-	}
-	const setCustom = (s) => {
-		at.setDarkMode(s === 'dark' ? true : false)
 	}
 </script>
 <style>
