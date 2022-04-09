@@ -695,7 +695,7 @@ const handlecgi = async (req) => {
 
 
 const fullpath = (path) => {
-    path = path.split('?')[0]
+    path = path.split('?')[0].split('#')[0]
     if (path.match(/\/$/)) {
         path += 'index'
     }
