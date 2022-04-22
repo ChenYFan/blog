@@ -666,3 +666,9 @@ links:
     intro: '分享设计与科技生活',
     image: 'https://blog.zhheo.com/img/avatar.png'
     }
+    - {        
+    title: 'LanYunのBlog',
+    link: 'https://lanyundev.vercel.app/',
+    intro: 'Share Technology.',
+    image: 'https://lanyundev.vercel.app/img/logo.jpg'
+    }
