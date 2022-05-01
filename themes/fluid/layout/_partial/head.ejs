@@ -57,7 +57,35 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
                                   <script>
                                     window.setCustom = () => { };
                                     (async () => {
-
+                                      const CACHE_NAME = 'ChenBlogHelperCache';
+                                      window.db = {
+                                        read: (key, config) => {
+                                          if (!config) { config = { type: "text" } }
+                                          return new Promise((resolve, reject) => {
+                                            caches.open(CACHE_NAME).then(cache => {
+                                              cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                                                if (!res) resolve(null)
+                                                res.text().then(text => resolve(text))
+                                              }).catch(() => {
+                                                resolve(null)
+                                              })
+                                            })
+                                          })
+                                        },
+                                        write: (key, value) => {
+                                          return new Promise((resolve, reject) => {
+                                            caches.open(CACHE_NAME).then(function (cache) {
+                                              cache.put(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`), new Response(value));
+                                              resolve()
+                                            }).catch(() => {
+                                              reject()
+                                            })
+                                          })
+                                        }
+                                      };
+                                      if (await db.read('disconnect') === "1") {
+                                        alert('我们未能与通信服务器达成联系，请检查您的网络情况，已标记为离线用户，评论功能将不可用。')
+                                      }
                                       window.mCh = {
                                         init: () => {
                                           window.messageChannel = new MessageChannel();
@@ -156,11 +184,11 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
                                       }*/
                                     })();
                                   </script>
-                                  <script type="text/javascript">
+                                  <!--<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "bpddocggwd");
-</script>
+</script>-->
   </head>
