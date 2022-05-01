@@ -107,7 +107,7 @@ self.addEventListener("message", async event => {
                         case 'info':
                             self.ClientPort.postMessage({
                                 id: event_data,
-                                type:"info",
+                                type: "info",
                                 data: {
                                     ip: data.data.ip,
                                     addr: data.data.addr,
@@ -366,10 +366,10 @@ const handle = async function (req) {
             if (urlStr.match(/\/blog\-cgi/g)) {
                 return handlecgi(req)
             }
-            if(wsc.readyState != 1){
-               await db.write('disconnect','1')
-            }else{
-                await db.write('disconnect','0')
+            if (wsc.readyState != 1) {
+                await db.write('disconnect', '1')
+            } else {
+                await db.write('disconnect', '0')
             }
             if (blog.local) { return fetch(req) }
 
@@ -575,7 +575,7 @@ const handlecgi = async (req) => {
     //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const query = q => urlObj.searchParams.get(q)
-    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.8/"
+    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.9/"
     //const endpoint = "http://127.0.0.1:45454/"
     let dash_main = await (await fetch(endpoint + 'index.html')).text()
 
@@ -761,7 +761,7 @@ const privconf = {
     read: async (key) => {
         try {
             const priv_config = JSON.parse(await db.read('priv_config') || '{}')
-            return typeof priv_config[key] === 'boolean' ? priv_config[key] : true
+            return typeof priv_config[key] === 'boolean' ? priv_config[key] : (key == "globalcompute" ? false : true)
         } catch (e) {
             return true
         }
