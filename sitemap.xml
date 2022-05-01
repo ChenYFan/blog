@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.cyfan.top/p/b94b19d4.html</loc>
+    
+    <lastmod>2022-05-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/p/e464ba8a.html</loc>
     
     <lastmod>2022-05-01</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/p/20ca08a.html</loc>
-    
-    <lastmod>2022-05-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/p/b94b19d4.html</loc>
     
     <lastmod>2022-05-01</lastmod>
     
@@ -745,6 +745,27 @@
   </url>
   
   <url>
+    <loc>https://blog.cyfan.top/tags/Bilibili/</loc>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/AV/</loc>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/tags/BV/</loc>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/tags/Adobe/</loc>
     <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -788,27 +809,6 @@
   
   <url>
     <loc>https://blog.cyfan.top/tags/%E7%89%88%E6%9D%83/</loc>
-    <lastmod>2022-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/Bilibili/</loc>
-    <lastmod>2022-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/AV/</loc>
-    <lastmod>2022-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.cyfan.top/tags/BV/</loc>
     <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
