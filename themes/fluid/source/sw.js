@@ -366,10 +366,12 @@ const handle = async function (req) {
             if (urlStr.match(/\/blog\-cgi/g)) {
                 return handlecgi(req)
             }
-            if (wsc.readyState != 1) {
-                await db.write('disconnect', '1')
-            } else {
-                await db.write('disconnect', '0')
+            if(typeof wsc !== "undefined"){
+                if (wsc.readyState != 1) {
+                    await db.write('disconnect', '1')
+                } else {
+                    await db.write('disconnect', '0')
+                }
             }
             if (blog.local) { return fetch(req) }
 
