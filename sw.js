@@ -107,6 +107,7 @@ self.addEventListener("message", async event => {
                         case 'info':
                             self.ClientPort.postMessage({
                                 id: event_data,
+                                type:"info",
                                 data: {
                                     ip: data.data.ip,
                                     addr: data.data.addr,
@@ -226,7 +227,7 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.11"
+const blogversion = "chenyfan-blog@1.0.12"
 const blog = {
     local: 0,
     origin: [
@@ -345,7 +346,7 @@ const handle = async function (req) {
                     urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
                 }
 
-
+                if (!await privconf.read('cache')) return lfetch(urls, urlStr)
                 return caches.match(req).then(function (resp) {
                     return resp || lfetch(urls, urlStr).then(function (res) {
                         return caches.open(CACHE_NAME).then(function (cache) {
@@ -364,6 +365,11 @@ const handle = async function (req) {
 
             if (urlStr.match(/\/blog\-cgi/g)) {
                 return handlecgi(req)
+            }
+            if(wsc.readyState != 1){
+               await db.write('disconnect','1')
+            }else{
+                await db.write('disconnect','0')
             }
             if (blog.local) { return fetch(req) }
 
@@ -439,9 +445,12 @@ const handle = async function (req) {
     }
     for (var i in cache_url_list) {
         if (urlStr.match(cache_url_list[i])) {
+
+            if (!await privconf.read('cache')) return fetch(req)
             return caches.match(req).then(function (resp) {
                 return resp || fetch(req).then(function (res) {
                     return caches.open(CACHE_NAME).then(function (cache) {
+
                         cache.put(req, res.clone());
                         return res;
                     });
@@ -449,12 +458,16 @@ const handle = async function (req) {
             })
         }
     }
+
     return fetch(req)
 }
 
 const lfetch = async (urls, url) => {
     //console.log(urls)
     const uuid = await db.read('uuid')
+    if (!await privconf.read('mirror')) {
+        return fetch(url)
+    }
     if (!Promise.any) {
         Promise.any = function (promises) {
             return new Promise((resolve, reject) => {
@@ -512,17 +525,19 @@ const lfetch = async (urls, url) => {
                                 }
                                 return JSON.stringify(hit)
                             })())
-                            ws_sw({
-                                type: "send",
-                                data: JSON.stringify({
-                                    type: 'fetch',
-                                    url: urls,
-                                    origin_url: url,
-                                    promise_any: true,
-                                    uuid: uuid,
-                                    request_uuid: generate_uuid()
+                            if (await privconf.read('analytics')) {
+                                ws_sw({
+                                    type: "send",
+                                    data: JSON.stringify({
+                                        type: 'fetch',
+                                        url: urls,
+                                        origin_url: url,
+                                        promise_any: true,
+                                        uuid: uuid,
+                                        request_uuid: generate_uuid()
+                                    })
                                 })
-                            })
+                            }
                         }, 0);
                         controller.abort();
                         resolve(resn)
@@ -560,13 +575,9 @@ const handlecgi = async (req) => {
     //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const query = q => urlObj.searchParams.get(q)
-    //const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.7/"
-    const endpoint = "http://127.0.0.1:45454/"
+    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.8/"
+    //const endpoint = "http://127.0.0.1:45454/"
     let dash_main = await (await fetch(endpoint + 'index.html')).text()
-    const priv_config = await db.read('priv_config') ? JSON.parse(await db.read('priv_config')) : {
-        analytics: true,
-        globalcompute: true,
-    }
 
     const HIT_HOT = await (async () => { try { return JSON.parse(await db.read('HIT_HOT')) || {} } catch (e) { return {} } })()
     const HIT_HOT_SIZE = await (async () => { try { return JSON.parse(await db.read('HIT_HOT_SIZE')) || {} } catch (e) { return {} } })()
@@ -609,50 +620,25 @@ const handlecgi = async (req) => {
     })()
     dash_main = dash_main.replace(/<!--MESSAGE-->/g, MSG_HTML)
     switch (query('dash')) {
+        case 'change':
+            await privconf.change(query('id'))
+            return Response.redirect('/blog-cgi?dash=privacy')
         case 'privacy':
-            const privacy_content = [
-                {
-                    "name": "Cookie",
-                    "info": "基础服务",
-                    "star": 5,
-                    "disabled": true,
-                    "svg": ` <path d="M512 128a384 384 0 0 0-384 384 384 384 0 0 0 384 384 384 384 0 0 0 384-384c0-21.333333-1.706667-42.666667-5.546667-64C878.933333 426.666667 853.333333 426.666667 853.333333 426.666667h-85.333333V384c0-42.666667-42.666667-42.666667-42.666667-42.666667h-85.333333V298.666667c0-42.666667-42.666667-42.666667-42.666667-42.666667h-42.666666V170.666667c0-42.666667-42.666667-42.666667-42.666667-42.666667M405.333333 256A64 64 0 0 1 469.333333 320 64 64 0 0 1 405.333333 384 64 64 0 0 1 341.333333 320 64 64 0 0 1 405.333333 256m-128 170.666667A64 64 0 0 1 341.333333 490.666667 64 64 0 0 1 277.333333 554.666667 64 64 0 0 1 213.333333 490.666667 64 64 0 0 1 277.333333 426.666667m213.333334 42.666666a64 64 0 0 1 64 64 64 64 0 0 1-64 64 64 64 0 0 1-64-64 64 64 0 0 1 64-64m213.333333 85.333334a64 64 0 0 1 64 64 64 64 0 0 1-64 64 64 64 0 0 1-64-64 64 64 0 0 1 64-64M469.333333 682.666667a64 64 0 0 1 64 64A64 64 0 0 1 469.333333 810.666667a64 64 0 0 1-64-64A64 64 0 0 1 469.333333 682.666667z" fill="rgb(79 70 229)" p-id="2096"></path>`,
-                    "des": "Cookie是一种技术，它可以帮助我们记住您的信息，以便您能够更好的使用我们的服务。但是在本站,Cookie仅用于基础认证，我们保证不会将其用于其他目的。"
-                },
-                {
-                    //统计
-                    "name": "ChenYFan Analytics",
-                    "id":"analytics",
-                    "info": "统计",
-                    "star": 45,
-                    "disabled": false,
-                    "svg": `<path d="M1019.904 450.56L536.576 557.056l417.792 208.896C999.424 692.224 1024 606.208 1024 512c0-20.48 0-40.96-4.096-61.44z m-12.288-61.44C958.464 184.32 786.432 28.672 573.44 4.096L446.464 512l561.152-122.88zM737.28 970.752c73.728-36.864 139.264-90.112 188.416-159.744L507.904 602.112l229.376 368.64zM512 0C229.376 0 0 229.376 0 512s229.376 512 512 512c61.44 0 118.784-12.288 172.032-28.672L385.024 512 512 0z" p-id="2097" fill="rgb(79 70 229)"></path>`,
-                    "des": "ChenYFan Analytics是由ChenYFan独立开发的一款统计工具，用于记录你在此网站的所有操作。如果禁用此功能，GlobalComputing功能将强制打开"
-                },
-                {
-                    //GlobalComputing
-                    "name": "GlobalComputing",
-                    "id":"globalcompute",
-                    "info": "全球计算",
-                    "star": 20,
-                    "disabled": !priv_config.analytics ,
-                    "svg":`<path d="M919.04 256L528 33.28a32 32 0 0 0-32 0L104.96 256a32 32 0 0 0-16 27.52v451.2a32 32 0 0 0 16 27.52l391.04 225.92a32 32 0 0 0 32 0L919.04 768a32 32 0 0 0 16-27.52v-192a32 32 0 0 0-64 0v153.6l-176-103.04V415.36a16 16 0 0 0-7.68-14.08L528 309.76V106.88l343.04 197.76v85.12a32 32 0 0 0 64 0V286.08a32 32 0 0 0-16-30.08z m-423.04 51.2L344.96 396.8 168.96 295.68l327.04-188.8z m-343.04 13.44l176 104.32v174.08l-176 101.76z m16 405.12L344.96 627.2l151.04 87.04v202.88z m512-101.12l175.36 101.12-328.32 191.36v-202.88z m-16-27.52L512 686.72 360.96 599.04V424.96L512 337.28l151.04 87.04z" fill="rgb(79 70 229)" p-id="3120"></path>`,
-                    "des": "GlobalComputing是一款利用用户闲置计算能力的工具，在用户容忍的范围内提供足够高的算力，用户可以主动关闭。此外，当统计功能被禁用的时候，此功能将强制打开"
-                }
-
-            ]
+            const privacy_content = await (await fetch(endpoint + 'part/privacy.json')).json()
             let privacy_html = await (await fetch(endpoint + 'content/privacy.html')).text()
             let privacy_part = await (await fetch(endpoint + 'part/privacy.html')).text()
             let privacy_init = ""
-            privacy_content.forEach(async (item) => {
-                privacy_init += privacy_part.replace("{{NAME}}", item.name)
+            for (let item of privacy_content) {
+                privacy_init += privacy_part
+                    .replace("{{ID}}", item.id)
+                    .replace("{{NAME}}", item.name)
                     .replace("{{INFO}}", item.info)
                     .replace("{{STAR}}", item.star)
                     .replace("{{DES}}", item.des)
                     .replace("{{SVG}}", item.svg)
                     .replace("{{DISABLED}}", item.disabled ? "300" : "600")
-                    .replace("{{ABILITY}}", item.disabled ? "不可更改，仅启用基础服务" : (priv_config[item.id] ? "已启用" : "未启用"))
-            })
+                    .replace("{{ABILITY}}", item.disabled ? "不可更改，仅启用基础服务" : (await privconf.read(item.id) ? "已启用" : "未启用"))
+            }
             privacy_html = privacy_html.replace(/<!--PRIVACY_CONTENT-->/g, privacy_init)
             return new Response(
                 dash_main
@@ -770,6 +756,23 @@ const handlecgi = async (req) => {
     }
 }
 
+
+const privconf = {
+    read: async (key) => {
+        try {
+            const priv_config = JSON.parse(await db.read('priv_config') || '{}')
+            return typeof priv_config[key] === 'boolean' ? priv_config[key] : true
+        } catch (e) {
+            return true
+        }
+    },
+    change: async (key) => {
+        const priv_config = JSON.parse(await db.read('priv_config') || '{}')
+        if (typeof priv_config[key] != 'boolean') priv_config[key] = true
+        priv_config[key] = !priv_config[key]
+        await db.write('priv_config', JSON.stringify(priv_config))
+    }
+}
 
 const fullpath = (path) => {
     path = path.split('?')[0].split('#')[0]
