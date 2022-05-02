@@ -149,12 +149,6 @@ let cdn = {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/gh"
         },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/gh"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/gh"
-        },
         tianli: {
             "url": "https://cdn1.tianli0.top/gh"
         },
@@ -170,21 +164,6 @@ let cdn = {
 
         oplog: {
             "url": "https://cdn.oplog.cn/combine"
-        },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/combine"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/combine"
-        },
-        tianli: {
-            "url": "https://cdn1.tianli0.top/combine"
-        },
-        cnortles: {
-            "url": "https://cdn.cnortles.top/combine"
-        },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/combine"
         }
     },
     "npm": {
@@ -207,15 +186,6 @@ let cdn = {
         bdstatic: {
             "url": "https://code.bdstatic.com/npm"
         },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/npm"
-        },
-        pigax_unpkg: {
-            "url": "https://unpkg.pigax.cn/"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/npm"
-        },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
         }
@@ -227,7 +197,7 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.12"
+const blogversion = "chenyfan-blog@1.0.13"
 const blog = {
     local: 0,
     origin: [
@@ -366,7 +336,7 @@ const handle = async function (req) {
             if (urlStr.match(/\/blog\-cgi/g)) {
                 return handlecgi(req)
             }
-            if(typeof wsc !== "undefined"){
+            if (typeof wsc !== "undefined") {
                 if (wsc.readyState != 1) {
                     await db.write('disconnect', '1')
                 } else {

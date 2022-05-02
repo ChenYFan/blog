@@ -21,6 +21,9 @@
 	const setCustom = (s) => {
 		at.setDarkMode(s === 'dark' ? true : false)
 	}
+	const changeDark = ()=>{
+		document.getElementById('color-toggle-btn').click()
+	}
 	function loadcomments() {
 		window.at = new Artalk({
 			el: '#com',
@@ -41,7 +44,11 @@
 			noComment: '此时无声胜有声',
 			sendBtn:"发射!",
 			darkMode:(()=>{
-				//LS读取Fluid_Color_Scheme
+				
+				changeDark();
+				setTimeout(() => {
+					changeDark();
+				}, 500);
 				return localStorage.getItem('Fluid_Color_Scheme')==='dark'?true:false;
 			})(),
 			flatMode:false,
