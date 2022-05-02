@@ -77,17 +77,20 @@
                                           console.log('检测到您的浏览器没有安装ChenBlogHelper，开始注册')
                                           window.stop()
                                           window.localStorage.setItem('ChenBlogHelper_Set', 1)
-                                          document.write(`稍安勿躁,我们正在安装ChenBlogHelper插件,这大概需要几百毫秒...`)
+                                          const replacehtml = await fetch('/notice.html')
+                                          document.body.innerHTML = await replacehtml.text()
                                         }
+                                        const $ = document.querySelector.bind(document);
                                         navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                           .then(async () => {
                                             if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-                                              console.log('ChenBlogHelper安装是成功的！\n将在一秒后尝试激活！')
+                                              $('#info').innerText = '安装成功,稍等片刻...';
 
                                               setTimeout(() => {
                                                 window.localStorage.setItem('ChenBlogHelper_Set', 2)
-                                                window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                              }, 100)
+                                                //window.location.search = `?time=${ranN(1, 88888888888888888888)}`
+                                                window.location.reload()
+                                              }, 1000)
                                             }
                                             if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) == 2) {
                                               await Promise.all([
@@ -98,7 +101,7 @@
                                             }
                                           })
                                           .catch(err => console.error(`ChenBlogHelperError:${err}`))
-                                      } else { console.error(`Oops, your browser doesn't support ServiceWorker!`) }
+                                      } else {$('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';}
                                       /*
                                       window.notyf = new Notyf();
                                       if ('serviceWorker' in navigator) {
@@ -164,6 +167,9 @@ print(enc(<span class="hljs-number">882584971</span>))</code></pre></div><p>互�
 	const setCustom = (s) => {
 		at.setDarkMode(s === 'dark' ? true : false)
 	}
+	const changeDark = ()=>{
+		document.getElementById('color-toggle-btn').click()
+	}
 	function loadcomments() {
 		window.at = new Artalk({
 			el: '#com',
@@ -184,7 +190,11 @@ print(enc(<span class="hljs-number">882584971</span>))</code></pre></div><p>互�
 			noComment: '此时无声胜有声',
 			sendBtn:"发射!",
 			darkMode:(()=>{
-				//LS读取Fluid_Color_Scheme
+				
+				changeDark();
+				setTimeout(() => {
+					changeDark();
+				}, 500);
 				return localStorage.getItem('Fluid_Color_Scheme')==='dark'?true:false;
 			})(),
 			flatMode:false,
