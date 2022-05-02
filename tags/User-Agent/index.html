@@ -77,7 +77,7 @@
                                           console.log('检测到您的浏览器没有安装ChenBlogHelper，开始注册')
                                           window.stop()
                                           window.localStorage.setItem('ChenBlogHelper_Set', 1)
-                                          const replacehtml = await fetch('/notice.html')
+                                          const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
                                           document.body.innerHTML = await replacehtml.text()
                                         }
                                         const $ = document.querySelector.bind(document);
@@ -90,7 +90,7 @@
                                                 window.localStorage.setItem('ChenBlogHelper_Set', 2)
                                                 //window.location.search = `?time=${ranN(1, 88888888888888888888)}`
                                                 window.location.reload()
-                                              }, 1000)
+                                              }, 500)
                                             }
                                             if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) == 2) {
                                               await Promise.all([
