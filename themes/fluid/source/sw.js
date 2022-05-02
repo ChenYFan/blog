@@ -197,7 +197,7 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.13"
+const blogversion = "chenyfan-blog@1.0.14"
 const blog = {
     local: 0,
     origin: [
