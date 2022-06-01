@@ -667,8 +667,14 @@ links:
     image: 'https://blog.zhheo.com/img/avatar.png'
     }
     - {        
-    itle: '混沌之海',
+    title: '混沌之海',
     link: 'https://blog.bloade.com/',
     intro: '瞎折腾的咸鱼',
     image: 'https://blog.bloade.com/wp-content/uploads/2020/02/Laughing_man-bw1RGBnoise_scaleLevel0x2.000000.png'
+    }
+    - {        
+    title: 'AHdark Blog',
+    link: 'https://ahdark.com/',
+    intro: 'AHdark Blog 分享技术与生活',
+    image: 'https://avatar.sourcegcdn.com/avatar/1840ecba1d2ffc5049fe8732526a1945?s=512'
     }
