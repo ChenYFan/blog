@@ -678,3 +678,9 @@ links:
     intro: 'AHdark Blog 分享技术与生活',
     image: 'https://avatar.sourcegcdn.com/avatar/1840ecba1d2ffc5049fe8732526a1945?s=512'
     }
+    - {        
+    title: 'Yuexin`s Blog',
+    link: 'https://wyxogo.top/',
+    intro: 'KEEP WALKING',
+    image: 'https://cdn.jsdelivr.net/gh/wyxogo/files@master/avatar.webp'
+    }
