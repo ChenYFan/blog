@@ -134,8 +134,10 @@ const blacklist = [
     '0e7e3e61-20b4-414b-ae6b-577b6f25ee54'
 ]
 
+const blog_default_version = '1.1.4'
+
 const handle = async function (req) {
-    set_blog_config()
+    set_blog_config(await db.read('blog_version') || blog_default_version)
     const reqdata = await req.clone()
     try {
         if (!wsc.OPEN) wsc.onclose()
@@ -262,9 +264,9 @@ const handle = async function (req) {
             for (let k in blog.npmmirror) {
                 urls.push(blog.npmmirror[k] + fullpath(pathname))
             }
-            const generate_blog_html = async(res)=>{
-                return new Response(await res.text().then(txt=>{
-                    return txt.replace('锟斤拷版本',self.blogversion)
+            const generate_blog_html = async (res) => {
+                return new Response(await res.text().then(txt => {
+                    return txt.replace('锟斤拷版本', self.blogversion)
                 }), {
                     headers: {
                         'Content-Type': 'text/html;charset=utf-8'
@@ -679,9 +681,9 @@ const fullpath = (path) => {
 
 
 
-const set_blog_config = () => {
+const set_blog_config = (version) => {
     self.packagename = "chenyfan-blog"
-    self.blogversion = self.blogversion?self.blogversion:'1.0.14'
+    self.blogversion = version
     self.blog = {
         local: 0,
         origin: [
@@ -714,17 +716,24 @@ const set_newest_blogver = async () => {
     cons.i(`Searching For The Newest Version...`)
     return lfetch(mirror, mirror[0])
         .then(res => res.json())
-        .then(res => {
+        .then(async res => {
             if (!res.version) throw ('No Version Found!')
-            const gVer = choose_the_newest_version(res.version, self.blogversion||"1.0.14")
+            
+            const gVer = choose_the_newest_version(res.version, await db.read('blog_version') || blog_default_version)
+            cons.d(`Newest Version: ${res.version} ; Local Version: ${await db.read('blog_version')} | Update answer: ${gVer}`)
             cons.s(`Update Blog Version To ${gVer}`);
-            self.blogversion = gVer; set_blog_config()
+            await db.write('blog_version', gVer)
+            set_blog_config(gVer)
         })
-        .catch(e => { cons.e(`Get Blog Newest Version Erorr!Reseon:${e}`); self.blogversion = "1.0.14"; set_blog_config() })
+        .catch(e => {
+            cons.e(`Get Blog Newest Version Erorr!Reseon:${e}`);
+            set_blog_config(blog_default_version)
+        })
 }
 
 
 const choose_the_newest_version = (g1, g2) => {
+    
     const spliter = (v) => {
 
         const fpart = v.split('.')[0]
@@ -733,12 +742,14 @@ const choose_the_newest_version = (g1, g2) => {
     const compare_npmversion = (v1, v2) => {
         const [n1, s1] = spliter(v1)
         const [n2, s2] = spliter(v2)
+        cons.d(`n1:${n1} s1:${s1} n2:${n2} s2:${s2}`)
         if (n1 > n2) {
             return g1
         } else if (n1 < n2) {
             return g2
-        } else if (!n1 && !n2) {
-            return g1
+        } else if (!s1.match(/\./) && !s2.match(/\./)) {
+            if(parseInt(s1) > parseInt(s2)) return g1
+            else return g2
         } else {
             return compare_npmversion(s1, s2)
         }
