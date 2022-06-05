@@ -12,6 +12,9 @@ self.cons = {
     },
     e: (m) => {
         console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
+    },
+    d: (m) => {
+        console.log(`%c[DEBUG]%c ${m}`, 'color:white;background:black;', '')
     }
 }
 self.db = {
@@ -352,7 +355,7 @@ const handle = async function (req) {
                 setTimeout(() => {
                     caches.match(req).then(function (resp) {
                         if (!!resp) {
-                           cons.s(`Cache Hited! | Origin:${urlStr}`)
+                            cons.s(`Cache Hited! | Origin:${urlStr}`)
                             setTimeout(() => {
                                 resolve(resp)
                             }, 200);
@@ -370,7 +373,7 @@ const handle = async function (req) {
                                                 statusText: res.statusText
                                             })
                                             cache.put(req, NewRes.clone());
-                                            
+
                                             resolve(NewRes)
                                         } else {
                                             cache.put(req, res.clone());
@@ -519,9 +522,9 @@ const lfetch = async (urls, url) => {
                 }).catch((e) => {
                     if (String(e).match('The user aborted a request') || String(e).match('Failed to fetch')) {
                         console.log()
-                    }else if(String(e).match('been blocked by CORS policy')){
+                    } else if (String(e).match('been blocked by CORS policy')) {
                         cons.e(`LFetch Blocked by CORS policy! | Origin: ${url}`)
-                    } 
+                    }
                     else {
                         cons.e(`LFetch Error! | Origin: ${url} | Resean: ${e}`)
                     }
@@ -786,7 +789,7 @@ const set_blog_config = () => {
             `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
             `https://cdn-jsd.pigax.cn/npm/${packagename}@${blogversion}/public`,
             `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`,
-            `https://cdn.oplog.cn/npm/${packagename}@${blogversion}/public`
+            //`https://cdn.oplog.cn/npm/${packagename}@${blogversion}/public`
         ]
     };
 }
@@ -800,15 +803,42 @@ const set_newest_blogver = async () => {
     cons.i(`Searching For The Newest Version...`)
     return lfetch(mirror, mirror[0])
         .then(res => res.json())
-        .then(res => { cons.s(`Update Blog Version To ${res.version}`); self.blogversion = res.version; set_blog_config() })
+        .then(res => {
+            if(!res.version)throw('No Version Found!')
+            const gVer = choose_the_newest_version(res.version, self.blogversion)
+            cons.s(`Update Blog Version To ${gVer}`);
+            self.blogversion = gVer; set_blog_config()
+        })
         .catch(e => { cons.e(`Get Blog Newest Version Erorr!Reseon:${e}`); self.blogversion = "1.0.14"; set_blog_config() })
 }
 
 
-self.blogversion = "chenyfan-blog@1.0.13"
+const choose_the_newest_version = (g1, g2) => {
+    const spliter = (v) => {
+        
+        const fpart = v.split('.')[0]
+        return [parseInt(fpart), v.replace(fpart + '.', '')]
+    }
+    const compare_npmversion = (v1, v2) => {
+        const [n1, s1] = spliter(v1)
+        const [n2, s2] = spliter(v2)
+        if (n1 > n2) {
+            return g1
+        } else if (n1 < n2) {
+            return g2
+        } else if (!n1 && !n2) {
+            return g1
+        } else {
+            return compare_npmversion(s1, s2)
+        }
+    }
+    return compare_npmversion(g1, g2)
+}
+
+self.blogversion = "chenyfan-blog@1.0.14"
 setInterval(async () => {
     await set_newest_blogver()
-}, 10 * 1000);
+}, 120 * 1000);
 (async () => {
     await set_newest_blogver()
 })()
