@@ -2,7 +2,7 @@ const CACHE_NAME = 'ChenBlogHelperCache';
 let cachelist = [];
 self.cons = {
     s: (m) => {
-        console.log(`%c[SUUCCESS]%c ${m}`, 'color:white;background:green;', '')
+        console.log(`%c[SUCCESS]%c ${m}`, 'color:white;background:green;', '')
     },
     w: (m) => {
         console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
