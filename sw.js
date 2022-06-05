@@ -716,7 +716,7 @@ const set_newest_blogver = async () => {
         .then(res => res.json())
         .then(res => {
             if (!res.version) throw ('No Version Found!')
-            const gVer = choose_the_newest_version(res.version, self.blogversion)
+            const gVer = choose_the_newest_version(res.version, self.blogversion||"1.0.14")
             cons.s(`Update Blog Version To ${gVer}`);
             self.blogversion = gVer; set_blog_config()
         })
