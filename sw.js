@@ -1,5 +1,19 @@
 const CACHE_NAME = 'ChenBlogHelperCache';
 let cachelist = [];
+self.cons = {
+    s: (m) => {
+        console.log(`%c[SUUCCESS]%c ${m}`, 'color:white;background:green;', '')
+    },
+    w: (m) => {
+        console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
+    },
+    i: (m) => {
+        console.log(`%c[INFO]%c ${m}`, 'color:white;background:blue;', '')
+    },
+    e: (m) => {
+        console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
+    }
+}
 self.db = {
     read: (key, config) => {
         if (!config) { config = { type: "text" } }
@@ -65,6 +79,7 @@ self.addEventListener('install', async function (installEvent) {
             ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
         }, 1000);
     }
+
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
             .then(async function (cache) {
@@ -197,31 +212,8 @@ const cache_url_list = [
     /(http:\/\/|https:\/\/)rmt\.ladydaily\.com/g,
     /(http:\/\/|https:\/\/)rmt\.dogedoge\.com/g
 ]
-const blogversion = "chenyfan-blog@1.0.14"
-const blog = {
-    local: 0,
-    origin: [
-        "blog.cyfan.top",
-        "127.0.0.1:9393"
-    ],
-    plus: [
-        "blog.cyfan.top",
-        //"119.91.80.151:59996",//GuangZhou.blog.cyfan.top
-        //"blog-cyfan-top-upcdn.oplog.cn",//Own upyun cdn.Thanks to abudu's subdomain!
-        //"cfworker.blog.cyfan.top",
-        //"vercel.blog.cyfan.top",
-        //"deno.blog.cyfan.top",
-        "gcore.blog.cyfan.top"
-    ],
-    npmmirror: [
-        `https://unpkg.com/${blogversion}/public`,
-        `https://npm.elemecdn.com/${blogversion}/public`,
-        `https://cdn.jsdelivr.net/npm/${blogversion}/public`,
-        `https://cdn-jsd.pigax.cn/npm/${blogversion}/public`,
-        `https://cdn1.tianli0.top/npm/${blogversion}/public`,
-        `https://cdn.oplog.cn/npm/${blogversion}/public`
-    ]
-};
+
+
 
 const blacklist = [
     '9b5aee25-1d5b-4be8-9ea6-55651bfef4bc',
@@ -245,7 +237,7 @@ const handle = async function (req) {
         if (domain === 'artalk.cyfan.top') {
             if (blacklist.includes(uuid)) {
                 if (pathname === '/api/add') {
-                    console.log('离线评论成功')
+
                     return new Response(JSON.stringify(
                         { "success": false, "msg": "需要滑稽码", "data": { "img_data": "", "need_captcha": true } }
                     ))
@@ -309,7 +301,7 @@ const handle = async function (req) {
     }
     for (let i in cdn) {
         for (let j in cdn[i]) {
-            //console.log(domain, cdn[i][j].url.split('https://')[1].split('/')[0])
+
             if (domain == cdn[i][j].url.split('https://')[1].split('/')[0] && urlStr.match(cdn[i][j].url)) {
                 urls = []
                 for (let k in cdn[i]) {
@@ -344,7 +336,9 @@ const handle = async function (req) {
                 }
             }
             if (blog.local) { return fetch(req) }
-
+            setTimeout(async () => {
+                await set_newest_blogver()
+            }, 1000);
             urls = []
             for (let k in blog.plus) {
                 //urls.push(urlStr.replace(domain, blog.plus[k]).replace(domain + ":" + port, blog.plus[k]).replace('http://', "https://"))
@@ -358,6 +352,7 @@ const handle = async function (req) {
                 setTimeout(() => {
                     caches.match(req).then(function (resp) {
                         if (!!resp) {
+                           cons.s(`Cache Hited! | Origin:${urlStr}`)
                             setTimeout(() => {
                                 resolve(resp)
                             }, 200);
@@ -365,6 +360,7 @@ const handle = async function (req) {
                                 lfetch(urls, urlStr).then(async function (res) {
                                     return caches.open(CACHE_NAME).then(async function (cache) {
                                         cache.delete(req);
+                                        cons.s(`Cache Updated! | Origin:${urlStr}`)
                                         if (fullpath(pathname).match(/\.html$/g)) {
                                             const NewRes = new Response(await res.arrayBuffer(), {
                                                 headers: {
@@ -374,6 +370,7 @@ const handle = async function (req) {
                                                 statusText: res.statusText
                                             })
                                             cache.put(req, NewRes.clone());
+                                            
                                             resolve(NewRes)
                                         } else {
                                             cache.put(req, res.clone());
@@ -383,6 +380,7 @@ const handle = async function (req) {
                                 });
                             }, 0);
                         } else {
+                            cons.w(`Cache Missed! | Origin:${urlStr}`)
                             setTimeout(() => {
                                 lfetch(urls, urlStr).then(async function (res) {
                                     return caches.open(CACHE_NAME).then(async function (cache) {
@@ -435,7 +433,8 @@ const handle = async function (req) {
 }
 
 const lfetch = async (urls, url) => {
-    //console.log(urls)
+    cons.i(`LFetch Handled! | Mirrors Count:${urls.length} | Origin: ${url}`)
+    const t1 = new Date().getTime()
     const uuid = await db.read('uuid')
     if (!await privconf.read('mirror')) {
         return fetch(url)
@@ -512,11 +511,20 @@ const lfetch = async (urls, url) => {
                             }
                         }, 0);
                         controller.abort();
+                        cons.s(`LFetch Success! | Time: ${new Date().getTime() - t1}ms | Origin: ${url} `)
                         resolve(resn)
                     } else {
                         reject(null)
                     }
-                }).catch(() => {
+                }).catch((e) => {
+                    if (String(e).match('The user aborted a request') || String(e).match('Failed to fetch')) {
+                        console.log()
+                    }else if(String(e).match('been blocked by CORS policy')){
+                        cons.e(`LFetch Blocked by CORS policy! | Origin: ${url}`)
+                    } 
+                    else {
+                        cons.e(`LFetch Error! | Origin: ${url} | Resean: ${e}`)
+                    }
                     reject(null)
                 })
         }
@@ -576,7 +584,7 @@ const handlecgi = async (req) => {
     })()
     let msg = await (await fetch(endpoint + 'part/message.html')).text()
     let msg_init = JSON.parse(await db.read('msg')) || []
-    console.log(msg_init)
+    //console.log(msg_init)
     //await fetch('https://test/'+JSON.stringify(msg_init))
 
     const MSG_HTML = (() => {
@@ -587,7 +595,7 @@ const handlecgi = async (req) => {
                 .replace(/<!--INFO-->/g, msg_init[i].info)
 
         }
-        console.log(u)
+        //console.log(u)
         return u
     })()
     dash_main = dash_main.replace(/<!--MESSAGE-->/g, MSG_HTML)
@@ -663,7 +671,7 @@ const handlecgi = async (req) => {
                 }
                 return u
             })()
-            console.log(CACHE_COUNT)
+            //console.log(CACHE_COUNT)
             const CACHE_SIZE_COUNT = (() => {
                 t = 0
                 for (let i in cache_list) {
@@ -756,3 +764,51 @@ const fullpath = (path) => {
     }
     return path
 }
+
+
+
+const set_blog_config = () => {
+    self.blog = {
+        local: 0,
+        origin: [
+            "blog.cyfan.top",
+            "127.0.0.1:9393",
+            "cheers-awful-nights-dispute.trycloudflare.com"
+        ],
+        plus: [
+            "blog.cyfan.top",
+            "gcore.blog.cyfan.top"
+        ],
+
+        npmmirror: [
+            `https://unpkg.com/${packagename}@${blogversion}/public`,
+            `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
+            `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+            `https://cdn-jsd.pigax.cn/npm/${packagename}@${blogversion}/public`,
+            `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`,
+            `https://cdn.oplog.cn/npm/${packagename}@${blogversion}/public`
+        ]
+    };
+}
+const set_newest_blogver = async () => {
+    self.packagename = "chenyfan-blog"
+    const mirror = [
+        `https://registry.npmmirror.com/${packagename}/latest`,
+        `https://registry.npmjs.org/${packagename}/latest`,
+        `https://mirrors.cloud.tencent.com/npm/${packagename}/latest`
+    ]
+    cons.i(`Searching For The Newest Version...`)
+    return lfetch(mirror, mirror[0])
+        .then(res => res.json())
+        .then(res => { cons.s(`Update Blog Version To ${res.version}`); self.blogversion = res.version; set_blog_config() })
+        .catch(e => { cons.e(`Get Blog Newest Version Erorr!Reseon:${e}`); self.blogversion = "1.0.14"; set_blog_config() })
+}
+
+
+self.blogversion = "chenyfan-blog@1.0.13"
+setInterval(async () => {
+    await set_newest_blogver()
+}, 10 * 1000);
+(async () => {
+    await set_newest_blogver()
+})()
