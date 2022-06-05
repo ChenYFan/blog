@@ -168,6 +168,7 @@
                                                                                             window.notyf = new Notyf();
 
                                                                                             (async () => {
+                                                                                                document.getElementById('bver').innerText = await getVersion();
                                                                                                 if (window.localStorage.getItem("ChenBlogRefferrer") != 'setted') {
                                                                                                     if (!window.localStorage.getItem("ChenBlogRefferrer")) {
                                                                                                         window.localStorage.setItem("ChenBlogRefferrer", document.referrer)
