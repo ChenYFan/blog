@@ -3008,54 +3008,6 @@ wrangler<span class="hljs-built_in"> secret </span>put FIREBASE_TOKEN</code></pr
       </tags>
   </entry>
   <entry>
-    <title>Pandownload:愿你归来仍是英雄</title>
-    <url>/p/1b33467f.html</url>
-    <content><![CDATA[<p>PanDownload 21世纪的英雄，在几天前，死了。</p>
-<p>4月15日下午，扬州网警巡查执法官方微博发布通报称：“Pandownload软件开发嫌疑人已经被捕。”</p>
-<p>刘某：PanDownload有窃取用户隐私行为。</p>
-<p>嗯，来，你的证据呢？</p>
-<h1 id="人性的毁灭"><a href="#人性的毁灭" class="headerlink" title="人性的毁灭"></a>人性的毁灭</h1><p>百度网盘迟迟不对PanDownload限制，之前很奇怪，现在明白了，原来是等到“盈利”到30万，有了个证据，才死死咬住不放。百度阴险，由此可见。</p>
-<p>百度网盘限速，我就只能说呵呵了，如果你杠百度网盘硬盘资源有限，那么开始你可以调小硬盘大小，尽量不限速，那还行。自己拼命张开嘴说自己吃的多，到头来发现吃不了又悄悄闭嘴，什么意思？</p>
-<p>刘某，一个人就可以把一个开发者抓到牢里，呵，我现在相当有理由怀疑这是个幌子，百度人性，可见一斑。哦不，百度没有人性。</p>
-<p>想当年，550KB的运用程序硬是给我弄成大文件。我？？？</p>
-<h1 id="要推车出去的停车场"><a href="#要推车出去的停车场" class="headerlink" title="要推车出去的停车场"></a>要推车出去的停车场</h1><p>百度网盘就好比停车场吧，刚开始假惺惺说这里空间比谁都大，好吧这确实赢得了我的好感，于是我也存了很多东西上去，就好比我把很多车开进来。直到垄断了整个停车场事业。百度终于展现自己的吃相了。</p>
-<p>开车进来？没问题！2T空间，随便你！对啊，2T空间，谁不想要呢？我也停了。附近的停车场用户太多没能力，倒闭了。</p>
-<p>现在，当我要开车出去的时候，你突然告诉我，不能开车出去，要用手推出去，理由是出去的通道很窄？要开车要付费，几十块一个月？</p>
-<p>PanDownload，形象点，就是把你分身成几个，一起推，现在，总算能正常出去了吧。</p>
-<p>PanDownload窃取用户隐私？你可能没搞懂，PanDownload，作用就是把你分身（Aria2多线程下载），窃取用户隐私，我可以肯定地说，就是个幌子。幕后百度，我只能说呵呵了。</p>
-<h1 id="漏洞百出的被捕声明"><a href="#漏洞百出的被捕声明" class="headerlink" title="漏洞百出的被捕声明"></a>漏洞百出的被捕声明</h1><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-195.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
-<p>首先，PanDownload核心就是获取个直链，你需要反编译解剖软件结构，一盯几个小时？民警办案效率挺高的嘛。</p>
-<p>黑客攻击计算机系统，哦，获取直链就算是黑客啦？我觉得我好屌哦。</p>
-<p>隐私照片和文件泄露：证据呢？</p>
-<p>以非会员权限突破百度网盘设定：你还是没脸说自己限速是吧，百度？</p>
-<p>侵入？非法控制？：PanDownload唯一的作用就是获取直接链接（百度网盘客户端的正常操作）以及多线程下载（官方客户端没有），我用多线程就算是违法咯？</p>
-<p>欸，行了行了，我都不想说了；</p>
-<h1 id="未来，何去何从"><a href="#未来，何去何从" class="headerlink" title="未来，何去何从"></a>未来，何去何从</h1><p>互联网上分享个文件真的很难吗？我想，对于众多小白来说，真的，互联网分享文件确实很难。</p>
-<p>百度一家，我已经彻底失去最后一点希望了，</p>
-<p>贴吧的风控我也是服了，认认真真敲好的字被删除，我还不如用知乎；</p>
-<p>搜索引擎？呵呵，营销号的风格，一目了然，国内我现在用<a href="https://magi.com" target="_blank" rel="noopener">magi</a> 一个人工智能搜索引擎，自动从网上拉取文章研究，AI把营销号和同类文章精准度真的高，而且搜索一些学习单词也很正常；或者使用DogeDoge（感觉颇似DuckDuckGo），精准的不误导不追踪；Bing，说实话不太习惯；国外的我就不必多说了；</p>
-<p>网盘？OneDrive15GB储存个人资料不香么？普通大文件分享像我这样的穷B Workers+GoogleDrive用户体验完爆百度，为什么要百度资本？Mega还行，实际上Mega15GB也就刚好吧（那个50GB中35GB是新用户临时体验，一个月后失效）。再不济，iCloud！苹果有国内加速节点，虽然5GB真的够呛，不过同步一些个人资料还行吧？开源项目直接扔Github，反正也没多大。</p>
-<p>所有百度，我只有用百度统计需求，原因么，Google统计国内加载真的很拖速度，迫不得已使用百度统计，虽然功能差很多，不过勉强吧；</p>
-<p><strong>PanDownload能死而复生么？我不清楚，但是，我衷心祈愿！</strong></p>
-<style>html{
-filter: grayscale(100%);
--webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
--ms-filter: grayscale(100%);
--o-filter: grayscale(100%);
-filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-}</style>]]></content>
-      <categories>
-        <category>随心记</category>
-      </categories>
-      <tags>
-        <tag>百度</tag>
-        <tag>网盘</tag>
-        <tag>PanDownload</tag>
-        <tag>悼文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PHPnow-Windows下最轻巧的PHP运行软件，没有之一</title>
     <url>/p/fb03447c.html</url>
     <content><![CDATA[<p>虽然作为一个静态博客的博主，但是还是有调试PHP的需求，<span class="heimu">（搭建静态是因为静态博客省钱）</span>，之前用过PHPStudy，不得不说功能真的非常强大，<del>但我很多功能都不需要</del> ，而且相当吃内存，我一个笔记本主要是追求轻巧，PHPStudy一个安装包将近50MB。最头疼的是，我的80端口已经被系统监听了，无法终结，PHPStudy即使改了端口也没用，导致MySQL服务刚启动就停止的奇葩现象，害的我一年都没有好好调试过PHP。</p>
@@ -3105,6 +3057,54 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
         <tag>PHP</tag>
         <tag>Windows</tag>
         <tag>精简</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pandownload:愿你归来仍是英雄</title>
+    <url>/p/1b33467f.html</url>
+    <content><![CDATA[<p>PanDownload 21世纪的英雄，在几天前，死了。</p>
+<p>4月15日下午，扬州网警巡查执法官方微博发布通报称：“Pandownload软件开发嫌疑人已经被捕。”</p>
+<p>刘某：PanDownload有窃取用户隐私行为。</p>
+<p>嗯，来，你的证据呢？</p>
+<h1 id="人性的毁灭"><a href="#人性的毁灭" class="headerlink" title="人性的毁灭"></a>人性的毁灭</h1><p>百度网盘迟迟不对PanDownload限制，之前很奇怪，现在明白了，原来是等到“盈利”到30万，有了个证据，才死死咬住不放。百度阴险，由此可见。</p>
+<p>百度网盘限速，我就只能说呵呵了，如果你杠百度网盘硬盘资源有限，那么开始你可以调小硬盘大小，尽量不限速，那还行。自己拼命张开嘴说自己吃的多，到头来发现吃不了又悄悄闭嘴，什么意思？</p>
+<p>刘某，一个人就可以把一个开发者抓到牢里，呵，我现在相当有理由怀疑这是个幌子，百度人性，可见一斑。哦不，百度没有人性。</p>
+<p>想当年，550KB的运用程序硬是给我弄成大文件。我？？？</p>
+<h1 id="要推车出去的停车场"><a href="#要推车出去的停车场" class="headerlink" title="要推车出去的停车场"></a>要推车出去的停车场</h1><p>百度网盘就好比停车场吧，刚开始假惺惺说这里空间比谁都大，好吧这确实赢得了我的好感，于是我也存了很多东西上去，就好比我把很多车开进来。直到垄断了整个停车场事业。百度终于展现自己的吃相了。</p>
+<p>开车进来？没问题！2T空间，随便你！对啊，2T空间，谁不想要呢？我也停了。附近的停车场用户太多没能力，倒闭了。</p>
+<p>现在，当我要开车出去的时候，你突然告诉我，不能开车出去，要用手推出去，理由是出去的通道很窄？要开车要付费，几十块一个月？</p>
+<p>PanDownload，形象点，就是把你分身成几个，一起推，现在，总算能正常出去了吧。</p>
+<p>PanDownload窃取用户隐私？你可能没搞懂，PanDownload，作用就是把你分身（Aria2多线程下载），窃取用户隐私，我可以肯定地说，就是个幌子。幕后百度，我只能说呵呵了。</p>
+<h1 id="漏洞百出的被捕声明"><a href="#漏洞百出的被捕声明" class="headerlink" title="漏洞百出的被捕声明"></a>漏洞百出的被捕声明</h1><p><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/post/pasted-195.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="upload successful"></p>
+<p>首先，PanDownload核心就是获取个直链，你需要反编译解剖软件结构，一盯几个小时？民警办案效率挺高的嘛。</p>
+<p>黑客攻击计算机系统，哦，获取直链就算是黑客啦？我觉得我好屌哦。</p>
+<p>隐私照片和文件泄露：证据呢？</p>
+<p>以非会员权限突破百度网盘设定：你还是没脸说自己限速是吧，百度？</p>
+<p>侵入？非法控制？：PanDownload唯一的作用就是获取直接链接（百度网盘客户端的正常操作）以及多线程下载（官方客户端没有），我用多线程就算是违法咯？</p>
+<p>欸，行了行了，我都不想说了；</p>
+<h1 id="未来，何去何从"><a href="#未来，何去何从" class="headerlink" title="未来，何去何从"></a>未来，何去何从</h1><p>互联网上分享个文件真的很难吗？我想，对于众多小白来说，真的，互联网分享文件确实很难。</p>
+<p>百度一家，我已经彻底失去最后一点希望了，</p>
+<p>贴吧的风控我也是服了，认认真真敲好的字被删除，我还不如用知乎；</p>
+<p>搜索引擎？呵呵，营销号的风格，一目了然，国内我现在用<a href="https://magi.com" target="_blank" rel="noopener">magi</a> 一个人工智能搜索引擎，自动从网上拉取文章研究，AI把营销号和同类文章精准度真的高，而且搜索一些学习单词也很正常；或者使用DogeDoge（感觉颇似DuckDuckGo），精准的不误导不追踪；Bing，说实话不太习惯；国外的我就不必多说了；</p>
+<p>网盘？OneDrive15GB储存个人资料不香么？普通大文件分享像我这样的穷B Workers+GoogleDrive用户体验完爆百度，为什么要百度资本？Mega还行，实际上Mega15GB也就刚好吧（那个50GB中35GB是新用户临时体验，一个月后失效）。再不济，iCloud！苹果有国内加速节点，虽然5GB真的够呛，不过同步一些个人资料还行吧？开源项目直接扔Github，反正也没多大。</p>
+<p>所有百度，我只有用百度统计需求，原因么，Google统计国内加载真的很拖速度，迫不得已使用百度统计，虽然功能差很多，不过勉强吧；</p>
+<p><strong>PanDownload能死而复生么？我不清楚，但是，我衷心祈愿！</strong></p>
+<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>]]></content>
+      <categories>
+        <category>随心记</category>
+      </categories>
+      <tags>
+        <tag>百度</tag>
+        <tag>网盘</tag>
+        <tag>PanDownload</tag>
+        <tag>悼文</tag>
       </tags>
   </entry>
   <entry>
