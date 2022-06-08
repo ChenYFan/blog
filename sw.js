@@ -134,7 +134,7 @@ const blacklist = [
     '0e7e3e61-20b4-414b-ae6b-577b6f25ee54'
 ]
 
-const blog_default_version = '1.1.4'
+const blog_default_version = '1.1.5'
 
 const handle = async function (req) {
     set_blog_config(await db.read('blog_version') || blog_default_version)
@@ -265,9 +265,7 @@ const handle = async function (req) {
                 urls.push(blog.npmmirror[k] + fullpath(pathname))
             }
             const generate_blog_html = async (res) => {
-                return new Response(await res.text().then(txt => {
-                    return txt.replace('锟斤拷版本', self.blogversion)
-                }), {
+                return new Response(await res.arrayBuffer(), {
                     headers: {
                         'Content-Type': 'text/html;charset=utf-8'
                     },
@@ -718,7 +716,7 @@ const set_newest_blogver = async () => {
         .then(res => res.json())
         .then(async res => {
             if (!res.version) throw ('No Version Found!')
-            
+
             const gVer = choose_the_newest_version(res.version, await db.read('blog_version') || blog_default_version)
             cons.d(`Newest Version: ${res.version} ; Local Version: ${await db.read('blog_version')} | Update answer: ${gVer}`)
             cons.s(`Update Blog Version To ${gVer}`);
@@ -733,7 +731,7 @@ const set_newest_blogver = async () => {
 
 
 const choose_the_newest_version = (g1, g2) => {
-    
+
     const spliter = (v) => {
 
         const fpart = v.split('.')[0]
@@ -748,7 +746,7 @@ const choose_the_newest_version = (g1, g2) => {
         } else if (n1 < n2) {
             return g2
         } else if (!s1.match(/\./) && !s2.match(/\./)) {
-            if(parseInt(s1) > parseInt(s2)) return g1
+            if (parseInt(s1) > parseInt(s2)) return g1
             else return g2
         } else {
             return compare_npmversion(s1, s2)
