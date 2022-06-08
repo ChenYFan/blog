@@ -299,6 +299,51 @@ $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"
       </tags>
   </entry>
   <entry>
+    <title>GithubのUnlimited Private Repo有感</title>
+    <url>/p/36dee3d7.html</url>
+    <content><![CDATA[<p>Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/k.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/s.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">？？？顿时感觉失去了关爱….</p>
+<p><span class="heimu"><del>欸没错这篇又是水文</del></span>今天讲讲关于这件事以及对于github的心理感想。</p>
+<h1 id="收购"><a href="#收购" class="headerlink" title="收购"></a>收购</h1><p>微软<del>爸爸</del>2018年末收购Github这件事情我是知道的。</p>
+<p>哦，知道就知道呗，我当时的心理想法是这样的。</p>
+<p>确实是这样，我虽然知道网上很多人对这件事褒贬不一，可我确实是心中毫无波澜。</p>
+<p>因为很多人认为，有那么一个大靠山，就可以接着<del>薅</del>撸羊毛。</p>
+<p>也有一些程序员觉得，这样Github就丧失了它开源（OpenSource）的初衷。</p>
+<p>甚至还有Gitlab公然在底下挑衅。</p>
+<p>（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
+<p>我为什么当时毫无波澜呢，说实话原因有下：</p>
+<p>1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/h.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>2.感觉收购后和收购前没什么不同。（大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/m.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
+<p>嗯<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。</p>
+<h1 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h1><p>渐渐的，用到Github多了，虽然是个学生，但还是有抽出心思写写无聊的程序，对于一些吊炸天的repo一个star，对于一些有版权风险的一个fork…逐渐对于github熟悉起来,也渐渐喜欢上了github,虽然后面使用过coding和gitee,但用户体验就没做那么好(个人感想),最终还是没有抛弃github…</p>
+<p>Github附加功能有些真的没法比,光是那pages我就觉得好上天了,用过codingpages,A记录绑定的ip过几天就要换一次,CNAME绑定的又不会宕机时自动切换,有时候速度还不如Github.</p>
+<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p>
+<p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
+<p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p>
+<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的善用技术上网法则有些时候也能发现.</p>
+<p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p>
+<h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p>
+<h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p>
+<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 默默自己写着repo ==&gt; 有一天有人把你的repo分享到了知乎 ==&gt; Star过一千 ==&gt; <del>接到局里喝茶(大大雾)</del><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"> ==&gt; 删除repo</p>
+<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 归档,不想写了 ==&gt; 一个人看到了,测试了一下,发了一个issues ==&gt; 一群人被吸引过来,发了一堆issues ==&gt;被迫续更</p>
+<p>开了一个Public坑 ==&gt; 吸引了一群人 ==&gt;没空写了,转给社区,自己去悠哉悠哉了 ==&gt;社区继续维护</p>
+<p>开了一个Public坑 ==&gt; 然后就没有然后了…</p>
+<h3 id="Private坑"><a href="#Private坑" class="headerlink" title="Private坑"></a>Private坑</h3><p>开了一个Private Repo ==&gt; 哎呀自己写的怎么这么烂,欸,幸好没有开源 ==&gt; 清空repo重新写</p>
+<p>开了一个Private Repo ==&gt; 欸我写的这么好,赶紧开源 ==&gt;跳回public坑 ==&gt;结局与前四个一样</p>
+<p>开了一个Private Repo ==&gt; 欸我写的这么好,怎么没人Star呢 ==&gt;四处宣扬自己的项目 ==&gt; 最后发现开成私人坑了 ==&gt; 转回public ==&gt; 结局相同</p>
+<p>开了一个Private Repo ==&gt; 做网盘 ==&gt; 这特么什么神速度 ==&gt; 退坑</p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>至少现在看来Private Repo似乎没有被滥用的很厉害,当然,善用免费服务才能让服务变得更加长久,多了微软<del>爸爸</del>,相信Github会做的更好!</p>
+]]></content>
+      <categories>
+        <category>瞎扯淡</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Repository</tag>
+        <tag>撸羊毛</tag>
+        <tag>私人</tag>
+        <tag>无限制</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Gitalk详细踩坑记录</title>
     <url>/p/9f2a11d8.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>没想到怎么快就更新一篇了。</p>
@@ -489,57 +534,12 @@ gitalk.render(<span class="hljs-string">'gitalk-container'</span>)</code></pre><
         <category>爱折腾</category>
       </categories>
       <tags>
+        <tag>Github</tag>
         <tag>踩坑</tag>
         <tag>手动填坑</tag>
         <tag>评论系统</tag>
         <tag>评论</tag>
         <tag>Gitalk</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GithubのUnlimited Private Repo有感</title>
-    <url>/p/36dee3d7.html</url>
-    <content><![CDATA[<p>Unlimited Repo这个项目上一年就开了，只不过当时我身边一堆垃圾新闻客户端根本没有提到这件事，我居然不知道<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/k.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。直到现在手贱开了一个PrivateRepo才发现什么时候变免费了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/s.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">？？？顿时感觉失去了关爱….</p>
-<p><span class="heimu"><del>欸没错这篇又是水文</del></span>今天讲讲关于这件事以及对于github的心理感想。</p>
-<h1 id="收购"><a href="#收购" class="headerlink" title="收购"></a>收购</h1><p>微软<del>爸爸</del>2018年末收购Github这件事情我是知道的。</p>
-<p>哦，知道就知道呗，我当时的心理想法是这样的。</p>
-<p>确实是这样，我虽然知道网上很多人对这件事褒贬不一，可我确实是心中毫无波澜。</p>
-<p>因为很多人认为，有那么一个大靠山，就可以接着<del>薅</del>撸羊毛。</p>
-<p>也有一些程序员觉得，这样Github就丧失了它开源（OpenSource）的初衷。</p>
-<p>甚至还有Gitlab公然在底下挑衅。</p>
-<p>（当然这篇博文不是过来喷GitLab的，我只是想描述当时Github有多惨。<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
-<p>我为什么当时毫无波澜呢，说实话原因有下：</p>
-<p>1.当时还是个萌新，不知道这有什么意义。（雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/h.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>2.感觉收购后和收购前没什么不同。（大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/m.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）<br>3.当时还没有理解Git是什么东西，上传方式都是拖拽上传（大大雾<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">）</p>
-<p>嗯<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/huaji.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">。</p>
-<h1 id="成长"><a href="#成长" class="headerlink" title="成长"></a>成长</h1><p>渐渐的，用到Github多了，虽然是个学生，但还是有抽出心思写写无聊的程序，对于一些吊炸天的repo一个star，对于一些有版权风险的一个fork…逐渐对于github熟悉起来,也渐渐喜欢上了github,虽然后面使用过coding和gitee,但用户体验就没做那么好(个人感想),最终还是没有抛弃github…</p>
-<p>Github附加功能有些真的没法比,光是那pages我就觉得好上天了,用过codingpages,A记录绑定的ip过几天就要换一次,CNAME绑定的又不会宕机时自动切换,有时候速度还不如Github.</p>
-<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><h2 id="拿来当网盘用"><a href="#拿来当网盘用" class="headerlink" title="拿来当网盘用"></a>拿来当网盘用</h2><p>很多人说github开放Unlimited Private Repo后国内会引起一波免费网盘潮,我觉得这似乎不大可能:</p>
-<p>1.Github本身只是托管代码的,那些放私人文件的一群人难道没有感觉到这一点么?<br>2.光是那Github全英文注册界面估计就能拦截一堆小学生了<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/j.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif">,滥用的可能性就会大大降低了.<br>3.Github被国内防火*限速了(这似乎才是最大原因好不好),用起来比百度网盘还难过.<img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"></p>
-<p>当然,如果只是放一些文档,我觉得大部分人也就是睁一只眼闭一只眼,毕竟临时放一些文档也不为过么.</p>
-<p>只是有时候瞎逛github总能找到一些SB宗教的信息,欸,打广告打到这上面来了,亏他们想得出,不过网页有时候也是可以借鉴的,一些比较好的善用技术上网法则有些时候也能发现.</p>
-<p>当然有一些正义的人会到这些repo上抗议,我看过了,但这些repo的拥有者反而更加不讲理,开口就是骂人.我觉得这样的人根本没有理可以讲,而且这种人也没有交流的价值,我个人建议还是不要管这些人,毕竟上Github的人大都都是有理智的,没有多少人会相信这一群讲话毫无根据的人,让他们自生自灭,不被人看得起,才是最好的解决办法.</p>
-<h2 id="好代码不会开源"><a href="#好代码不会开源" class="headerlink" title="好代码不会开源"></a>好代码不会开源</h2><p>好,我就说几个结局,看看大家有没有身同感受.</p>
-<h3 id="Public坑"><a href="#Public坑" class="headerlink" title="Public坑"></a>Public坑</h3><p>开了一个Public坑 ==&gt; 被dalao给了一个Star ==&gt; 两个人互相follow ==&gt; PY交易(雾) ==&gt;两个人都被互相激励,写出更好的代码</p>
-<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 默默自己写着repo ==&gt; 有一天有人把你的repo分享到了知乎 ==&gt; Star过一千 ==&gt; <del>接到局里喝茶(大大雾)</del><img src="https://npm.elemecdn.com/chenyfan-oss@1.0.0/pic/moji/8082.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif"> ==&gt; 删除repo</p>
-<p>开了一个Public坑 ==&gt; 没人来 ==&gt; 归档,不想写了 ==&gt; 一个人看到了,测试了一下,发了一个issues ==&gt; 一群人被吸引过来,发了一堆issues ==&gt;被迫续更</p>
-<p>开了一个Public坑 ==&gt; 吸引了一群人 ==&gt;没空写了,转给社区,自己去悠哉悠哉了 ==&gt;社区继续维护</p>
-<p>开了一个Public坑 ==&gt; 然后就没有然后了…</p>
-<h3 id="Private坑"><a href="#Private坑" class="headerlink" title="Private坑"></a>Private坑</h3><p>开了一个Private Repo ==&gt; 哎呀自己写的怎么这么烂,欸,幸好没有开源 ==&gt; 清空repo重新写</p>
-<p>开了一个Private Repo ==&gt; 欸我写的这么好,赶紧开源 ==&gt;跳回public坑 ==&gt;结局与前四个一样</p>
-<p>开了一个Private Repo ==&gt; 欸我写的这么好,怎么没人Star呢 ==&gt;四处宣扬自己的项目 ==&gt; 最后发现开成私人坑了 ==&gt; 转回public ==&gt; 结局相同</p>
-<p>开了一个Private Repo ==&gt; 做网盘 ==&gt; 这特么什么神速度 ==&gt; 退坑</p>
-<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>至少现在看来Private Repo似乎没有被滥用的很厉害,当然,善用免费服务才能让服务变得更加长久,多了微软<del>爸爸</del>,相信Github会做的更好!</p>
-]]></content>
-      <categories>
-        <category>瞎扯淡</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>Repository</tag>
-        <tag>撸羊毛</tag>
-        <tag>私人</tag>
-        <tag>无限制</tag>
       </tags>
   </entry>
   <entry>
@@ -917,494 +917,6 @@ admin:
         <tag>CloudFlare</tag>
         <tag>撸羊毛</tag>
         <tag>IPFS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS特效：一个打字绚烂烟花的特效</title>
-    <url>/p/d81838f5.html</url>
-    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><blockquote>
-<p><strong>转载警告</strong><br>该特效转载<a href="http://mlldxe.cn/archives/541" target="_blank" rel="noopener">http://mlldxe.cn/archives/541</a>,本来是仅仅支持wordpress的,但顺手被我抠出来放回javascript中了。(●’◡’●)好有成就感呢！</p>
-</blockquote>
-<blockquote>
-<p><strong>绚烂警告</strong><br>该代码效果及其绚烂,注意安全!</p>
-</blockquote>
-<p>好吧好吧,乱解刨别人代码也是不对的.</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h1><h2 id="原生代码"><a href="#原生代码" class="headerlink" title="原生代码:"></a>原生代码:</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
-<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
-    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
-            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
-                <span class="hljs-built_in">module</span>.exports = factory();
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
-                define([], factory);
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
-                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
-            <span class="hljs-keyword">else</span>
-                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
-        &#125;
-    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
-                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
-                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
-                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
-                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
-                        <span class="hljs-attr">exports</span>: &#123;&#125;,
-                        <span class="hljs-attr">id</span>: moduleId,
-                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
-                    &#125;;
-                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
-                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
-                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
-                &#125;
-                __webpack_require__.m = modules;
-                __webpack_require__.c = installedModules;
-                __webpack_require__.p = <span class="hljs-string">""</span>;
-                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
-            &#125;
-        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
-                <span class="hljs-string">'use strict'</span>;
-                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
-                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
-                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
-                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
-                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
-                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
-                &#125;);
-                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
-                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
-                <span class="hljs-keyword">var</span> particles = [];
-                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
-                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
-                POWERMODE.shake = <span class="hljs-literal">true</span>;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
-                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
-                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
-                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
-                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
-                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
-                    <span class="hljs-keyword">var</span> bcr;
-                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
-                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
-                        bcr = el.getBoundingClientRect();
-                        <span class="hljs-keyword">return</span> &#123;
-                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
-                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
-                            <span class="hljs-attr">color</span>: getColor(el)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
-                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
-                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
-                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
-                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
-                            startNode = startNode.parentNode
-                        &#125;
-                        bcr = range.getBoundingClientRect();
-                        <span class="hljs-keyword">return</span> &#123;
-                            <span class="hljs-attr">x</span>: bcr.left,
-                            <span class="hljs-attr">y</span>: bcr.top,
-                            <span class="hljs-attr">color</span>: getColor(startNode)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">return</span> &#123;
-                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
-                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
-                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
-                    <span class="hljs-keyword">return</span> &#123;
-                        <span class="hljs-attr">x</span>: x,
-                        <span class="hljs-attr">y</span>: y,
-                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
-                        <span class="hljs-attr">color</span>: color,
-                        <span class="hljs-attr">velocity</span>: &#123;
-                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
-                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
-                        &#125;
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
-                    &#123;
-                        <span class="hljs-keyword">var</span> caret = getCaret();
-                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
-                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
-                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
-                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
-                        &#125;
-                    &#125;
-                    &#123;
-                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
-                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
-                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
-                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
-                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
-                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
-                            &#125;, <span class="hljs-number">75</span>)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">if</span> (!rendering) &#123;
-                        requestAnimationFrame(loop)
-                    &#125;
-                &#125;
-                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
-                    rendering = <span class="hljs-literal">true</span>;
-                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
-                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
-                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
-                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
-                        <span class="hljs-keyword">var</span> particle = particles[i];
-                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
-                            <span class="hljs-keyword">continue</span>;
-                        particle.velocity.y += <span class="hljs-number">0.075</span>;
-                        particle.x += particle.velocity.x;
-                        particle.y += particle.velocity.y;
-                        particle.alpha *= <span class="hljs-number">0.96</span>;
-                        context.globalAlpha = particle.alpha;
-                        context.fillStyle = particle.color;
-                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
-                        rendered = <span class="hljs-literal">true</span>
-                    &#125;
-                    <span class="hljs-keyword">if</span> (rendered) &#123;
-                        requestAnimationFrame(loop)
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        rendering = <span class="hljs-literal">false</span>
-                    &#125;
-                &#125;
-                <span class="hljs-built_in">module</span>.exports = POWERMODE
-            &#125;
-        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
-                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
-                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
-                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
-                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
-                        <span class="hljs-keyword">if</span> (debug) &#123;
-                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
-                            <span class="hljs-keyword">if</span> (el) &#123;
-                                el.parentNode.removeChild(el)
-                            &#125;
-                        &#125;
-                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
-                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
-                        <span class="hljs-built_in">document</span>.body.appendChild(div);
-                        <span class="hljs-keyword">var</span> style = div.style;
-                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
-                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
-                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
-                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
-                        style.position = <span class="hljs-string">'absolute'</span>;
-                        <span class="hljs-keyword">if</span> (!debug)
-                            style.visibility = <span class="hljs-string">'hidden'</span>;
-                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
-                            style[prop] = computed[prop]
-                        &#125;);
-                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
-                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
-                                style.overflowY = <span class="hljs-string">'scroll'</span>
-                        &#125; <span class="hljs-keyword">else</span> &#123;
-                            style.overflow = <span class="hljs-string">'hidden'</span>
-                        &#125;
-                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
-                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
-                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
-                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
-                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
-                        div.appendChild(span);
-                        <span class="hljs-keyword">var</span> coordinates = &#123;
-                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
-                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
-                        &#125;;
-                        <span class="hljs-keyword">if</span> (debug) &#123;
-                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
-                        &#125; <span class="hljs-keyword">else</span> &#123;
-                            <span class="hljs-built_in">document</span>.body.removeChild(div)
-                        &#125;
-                        <span class="hljs-keyword">return</span> coordinates
-                    &#125;
-                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
-                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
-                    &#125;
-                &#125;())
-            &#125;
-        )])
-    &#125;)
-&#125;
-
-    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
-    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
-        POWERMODE.colorful=<span class="hljs-literal">true</span>;
-        POWERMODE.shake=<span class="hljs-literal">true</span>;
-        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
-    &#125;</code></pre></div>
-
-<h2 id="Tampermonkey用户有福了"><a href="#Tampermonkey用户有福了" class="headerlink" title="Tampermonkey用户有福了!"></a>Tampermonkey用户有福了!</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-comment">// ==UserScript==</span>
-<span class="hljs-comment">// @name         打字敲击特效</span>
-<span class="hljs-comment">// @namespace    /</span>
-<span class="hljs-comment">// @version      0.1</span>
-<span class="hljs-comment">// @description  ?</span>
-<span class="hljs-comment">// @author       CYF</span>
-<span class="hljs-comment">// @match        *://*/*</span>
-<span class="hljs-comment">// @grant        none</span>
-<span class="hljs-comment">// ==/UserScript==</span>
-
-<span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
-<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
-    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
-            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
-                <span class="hljs-built_in">module</span>.exports = factory();
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
-                define([], factory);
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
-                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
-            <span class="hljs-keyword">else</span>
-                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
-        &#125;
-    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
-                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
-                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
-                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
-                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
-                        <span class="hljs-attr">exports</span>: &#123;&#125;,
-                        <span class="hljs-attr">id</span>: moduleId,
-                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
-                    &#125;;
-                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
-                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
-                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
-                &#125;
-                __webpack_require__.m = modules;
-                __webpack_require__.c = installedModules;
-                __webpack_require__.p = <span class="hljs-string">""</span>;
-                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
-            &#125;
-        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
-                <span class="hljs-string">'use strict'</span>;
-                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
-                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
-                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
-                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
-                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
-                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
-                &#125;);
-                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
-                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
-                <span class="hljs-keyword">var</span> particles = [];
-                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
-                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
-                POWERMODE.shake = <span class="hljs-literal">true</span>;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
-                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
-                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
-                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
-                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
-                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
-                    <span class="hljs-keyword">var</span> bcr;
-                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
-                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
-                        bcr = el.getBoundingClientRect();
-                        <span class="hljs-keyword">return</span> &#123;
-                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
-                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
-                            <span class="hljs-attr">color</span>: getColor(el)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
-                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
-                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
-                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
-                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
-                            startNode = startNode.parentNode
-                        &#125;
-                        bcr = range.getBoundingClientRect();
-                        <span class="hljs-keyword">return</span> &#123;
-                            <span class="hljs-attr">x</span>: bcr.left,
-                            <span class="hljs-attr">y</span>: bcr.top,
-                            <span class="hljs-attr">color</span>: getColor(startNode)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">return</span> &#123;
-                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
-                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
-                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
-                    <span class="hljs-keyword">return</span> &#123;
-                        <span class="hljs-attr">x</span>: x,
-                        <span class="hljs-attr">y</span>: y,
-                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
-                        <span class="hljs-attr">color</span>: color,
-                        <span class="hljs-attr">velocity</span>: &#123;
-                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
-                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
-                        &#125;
-                    &#125;
-                &#125;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
-                    &#123;
-                        <span class="hljs-keyword">var</span> caret = getCaret();
-                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
-                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
-                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
-                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
-                        &#125;
-                    &#125;
-                    &#123;
-                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
-                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
-                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
-                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
-                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
-                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
-                            &#125;, <span class="hljs-number">75</span>)
-                        &#125;
-                    &#125;
-                    <span class="hljs-keyword">if</span> (!rendering) &#123;
-                        requestAnimationFrame(loop)
-                    &#125;
-                &#125;
-                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
-                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
-                    rendering = <span class="hljs-literal">true</span>;
-                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
-                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
-                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
-                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
-                        <span class="hljs-keyword">var</span> particle = particles[i];
-                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
-                            <span class="hljs-keyword">continue</span>;
-                        particle.velocity.y += <span class="hljs-number">0.075</span>;
-                        particle.x += particle.velocity.x;
-                        particle.y += particle.velocity.y;
-                        particle.alpha *= <span class="hljs-number">0.96</span>;
-                        context.globalAlpha = particle.alpha;
-                        context.fillStyle = particle.color;
-                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
-                        rendered = <span class="hljs-literal">true</span>
-                    &#125;
-                    <span class="hljs-keyword">if</span> (rendered) &#123;
-                        requestAnimationFrame(loop)
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        rendering = <span class="hljs-literal">false</span>
-                    &#125;
-                &#125;
-                <span class="hljs-built_in">module</span>.exports = POWERMODE
-            &#125;
-        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
-                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
-                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
-                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
-                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
-                        <span class="hljs-keyword">if</span> (debug) &#123;
-                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
-                            <span class="hljs-keyword">if</span> (el) &#123;
-                                el.parentNode.removeChild(el)
-                            &#125;
-                        &#125;
-                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
-                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
-                        <span class="hljs-built_in">document</span>.body.appendChild(div);
-                        <span class="hljs-keyword">var</span> style = div.style;
-                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
-                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
-                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
-                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
-                        style.position = <span class="hljs-string">'absolute'</span>;
-                        <span class="hljs-keyword">if</span> (!debug)
-                            style.visibility = <span class="hljs-string">'hidden'</span>;
-                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
-                            style[prop] = computed[prop]
-                        &#125;);
-                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
-                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
-                                style.overflowY = <span class="hljs-string">'scroll'</span>
-                        &#125; <span class="hljs-keyword">else</span> &#123;
-                            style.overflow = <span class="hljs-string">'hidden'</span>
-                        &#125;
-                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
-                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
-                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
-                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
-                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
-                        div.appendChild(span);
-                        <span class="hljs-keyword">var</span> coordinates = &#123;
-                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
-                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
-                        &#125;;
-                        <span class="hljs-keyword">if</span> (debug) &#123;
-                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
-                        &#125; <span class="hljs-keyword">else</span> &#123;
-                            <span class="hljs-built_in">document</span>.body.removeChild(div)
-                        &#125;
-                        <span class="hljs-keyword">return</span> coordinates
-                    &#125;
-                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
-                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
-                    &#125; <span class="hljs-keyword">else</span> &#123;
-                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
-                    &#125;
-                &#125;())
-            &#125;
-        )])
-    &#125;)
-&#125;
-
-    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
-    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
-        POWERMODE.colorful=<span class="hljs-literal">true</span>;
-        POWERMODE.shake=<span class="hljs-literal">true</span>;
-        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
-    &#125;</code></pre></div>
-
-<h1 id="修改提示"><a href="#修改提示" class="headerlink" title="修改提示:"></a>修改提示:</h1><p>最后几行:</p>
-<div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
-<span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
-    POWERMODE.colorful=<span class="hljs-literal">true</span>; 
-    POWERMODE.shake=<span class="hljs-literal">true</span>;
-    <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
-&#125;</code></pre></div>
-
-<p>中<code>POWERMODE.colorful=true;</code>指是否开启多彩颜色。而<code>POWERMODE.shake=true;</code>指是否开启屏幕震荡.<br>默认全部开启.</p>
-<hr>
-]]></content>
-      <categories>
-        <category>屌代码</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>特效</tag>
-        <tag>Tampermonkey</tag>
-        <tag>站长必备</tag>
-        <tag>萌哒哒</tag>
       </tags>
   </entry>
   <entry>
@@ -2251,6 +1763,494 @@ Control-C
       <tags>
         <tag>MarkDown</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS特效：一个打字绚烂烟花的特效</title>
+    <url>/p/d81838f5.html</url>
+    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><blockquote>
+<p><strong>转载警告</strong><br>该特效转载<a href="http://mlldxe.cn/archives/541" target="_blank" rel="noopener">http://mlldxe.cn/archives/541</a>,本来是仅仅支持wordpress的,但顺手被我抠出来放回javascript中了。(●’◡’●)好有成就感呢！</p>
+</blockquote>
+<blockquote>
+<p><strong>绚烂警告</strong><br>该代码效果及其绚烂,注意安全!</p>
+</blockquote>
+<p>好吧好吧,乱解刨别人代码也是不对的.</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h1><h2 id="原生代码"><a href="#原生代码" class="headerlink" title="原生代码:"></a>原生代码:</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
+                <span class="hljs-built_in">module</span>.exports = factory();
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
+                define([], factory);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
+                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
+            <span class="hljs-keyword">else</span>
+                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
+        &#125;
+    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
+                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
+                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
+                        <span class="hljs-attr">exports</span>: &#123;&#125;,
+                        <span class="hljs-attr">id</span>: moduleId,
+                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
+                    &#125;;
+                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
+                &#125;
+                __webpack_require__.m = modules;
+                __webpack_require__.c = installedModules;
+                __webpack_require__.p = <span class="hljs-string">""</span>;
+                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
+            &#125;
+        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
+                <span class="hljs-string">'use strict'</span>;
+                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
+                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
+                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
+                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
+                &#125;);
+                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
+                <span class="hljs-keyword">var</span> particles = [];
+                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
+                POWERMODE.shake = <span class="hljs-literal">true</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
+                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
+                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
+                    <span class="hljs-keyword">var</span> bcr;
+                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
+                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
+                        bcr = el.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
+                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(el)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
+                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
+                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
+                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
+                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
+                            startNode = startNode.parentNode
+                        &#125;
+                        bcr = range.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: bcr.left,
+                            <span class="hljs-attr">y</span>: bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(startNode)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: x,
+                        <span class="hljs-attr">y</span>: y,
+                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
+                        <span class="hljs-attr">color</span>: color,
+                        <span class="hljs-attr">velocity</span>: &#123;
+                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
+                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
+                        &#125;
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
+                    &#123;
+                        <span class="hljs-keyword">var</span> caret = getCaret();
+                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
+                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
+                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
+                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
+                        &#125;
+                    &#125;
+                    &#123;
+                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
+                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
+                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
+                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
+                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
+                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
+                            &#125;, <span class="hljs-number">75</span>)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">if</span> (!rendering) &#123;
+                        requestAnimationFrame(loop)
+                    &#125;
+                &#125;
+                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
+                    rendering = <span class="hljs-literal">true</span>;
+                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
+                        <span class="hljs-keyword">var</span> particle = particles[i];
+                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
+                            <span class="hljs-keyword">continue</span>;
+                        particle.velocity.y += <span class="hljs-number">0.075</span>;
+                        particle.x += particle.velocity.x;
+                        particle.y += particle.velocity.y;
+                        particle.alpha *= <span class="hljs-number">0.96</span>;
+                        context.globalAlpha = particle.alpha;
+                        context.fillStyle = particle.color;
+                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+                        rendered = <span class="hljs-literal">true</span>
+                    &#125;
+                    <span class="hljs-keyword">if</span> (rendered) &#123;
+                        requestAnimationFrame(loop)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        rendering = <span class="hljs-literal">false</span>
+                    &#125;
+                &#125;
+                <span class="hljs-built_in">module</span>.exports = POWERMODE
+            &#125;
+        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
+                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
+                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
+                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
+                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
+                            <span class="hljs-keyword">if</span> (el) &#123;
+                                el.parentNode.removeChild(el)
+                            &#125;
+                        &#125;
+                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
+                        <span class="hljs-built_in">document</span>.body.appendChild(div);
+                        <span class="hljs-keyword">var</span> style = div.style;
+                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
+                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
+                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
+                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
+                        style.position = <span class="hljs-string">'absolute'</span>;
+                        <span class="hljs-keyword">if</span> (!debug)
+                            style.visibility = <span class="hljs-string">'hidden'</span>;
+                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
+                            style[prop] = computed[prop]
+                        &#125;);
+                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
+                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
+                                style.overflowY = <span class="hljs-string">'scroll'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            style.overflow = <span class="hljs-string">'hidden'</span>
+                        &#125;
+                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
+                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
+                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
+                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
+                        div.appendChild(span);
+                        <span class="hljs-keyword">var</span> coordinates = &#123;
+                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
+                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
+                        &#125;;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            <span class="hljs-built_in">document</span>.body.removeChild(div)
+                        &#125;
+                        <span class="hljs-keyword">return</span> coordinates
+                    &#125;
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
+                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
+                    &#125;
+                &#125;())
+            &#125;
+        )])
+    &#125;)
+&#125;
+
+    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+        POWERMODE.colorful=<span class="hljs-literal">true</span>;
+        POWERMODE.shake=<span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+    &#125;</code></pre></div>
+
+<h2 id="Tampermonkey用户有福了"><a href="#Tampermonkey用户有福了" class="headerlink" title="Tampermonkey用户有福了!"></a>Tampermonkey用户有福了!</h2><div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-comment">// ==UserScript==</span>
+<span class="hljs-comment">// @name         打字敲击特效</span>
+<span class="hljs-comment">// @namespace    /</span>
+<span class="hljs-comment">// @version      0.1</span>
+<span class="hljs-comment">// @description  ?</span>
+<span class="hljs-comment">// @author       CYF</span>
+<span class="hljs-comment">// @match        *://*/*</span>
+<span class="hljs-comment">// @grant        none</span>
+<span class="hljs-comment">// ==/UserScript==</span>
+
+<span class="hljs-keyword">var</span> sw = <span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw &gt; <span class="hljs-number">1200</span>) &#123;
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackUniversalModuleDefinition</span>(<span class="hljs-params">root, factory</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span>)
+                <span class="hljs-built_in">module</span>.exports = factory();
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">'function'</span> &amp;&amp; define.amd)
+                define([], factory);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports === <span class="hljs-string">'object'</span>)
+                exports[<span class="hljs-string">"POWERMODE"</span>] = factory();
+            <span class="hljs-keyword">else</span>
+                root[<span class="hljs-string">"POWERMODE"</span>] = factory()
+        &#125;
+    )(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>&#123;
+                <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (installedModules[moduleId])
+                        <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+                    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = &#123;
+                        <span class="hljs-attr">exports</span>: &#123;&#125;,
+                        <span class="hljs-attr">id</span>: moduleId,
+                        <span class="hljs-attr">loaded</span>: <span class="hljs-literal">false</span>
+                    &#125;;
+                    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+                    <span class="hljs-built_in">module</span>.loaded = <span class="hljs-literal">true</span>;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports
+                &#125;
+                __webpack_require__.m = modules;
+                __webpack_require__.c = installedModules;
+                __webpack_require__.p = <span class="hljs-string">""</span>;
+                <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-number">0</span>)
+            &#125;
+        )([(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>&#123;
+                <span class="hljs-string">'use strict'</span>;
+                <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
+                canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                canvas.height = <span class="hljs-built_in">window</span>.innerHeight;
+                canvas.style.cssText = <span class="hljs-string">'position:fixed;top:0;left:0;pointer-events:none;z-index:999999'</span>;
+                <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    canvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+                    canvas.height = <span class="hljs-built_in">window</span>.innerHeight
+                &#125;);
+                <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+                <span class="hljs-keyword">var</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
+                <span class="hljs-keyword">var</span> particles = [];
+                <span class="hljs-keyword">var</span> particlePointer = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">var</span> rendering = <span class="hljs-literal">false</span>;
+                POWERMODE.shake = <span class="hljs-literal">true</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandom</span>(<span class="hljs-params">min, max</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.random() * (max - min) + min
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params">el</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span> (POWERMODE.colorful) &#123;
+                        <span class="hljs-keyword">var</span> u = getRandom(<span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
+                        <span class="hljs-keyword">return</span> <span class="hljs-string">'hsla('</span> + getRandom(u - <span class="hljs-number">10</span>, u + <span class="hljs-number">10</span>) + <span class="hljs-string">', 100%, '</span> + getRandom(<span class="hljs-number">50</span>, <span class="hljs-number">80</span>) + <span class="hljs-string">'%, '</span> + <span class="hljs-number">1</span> + <span class="hljs-string">')'</span>
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.getComputedStyle(el).color
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaret</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.activeElement;
+                    <span class="hljs-keyword">var</span> bcr;
+                    <span class="hljs-keyword">if</span> (el.tagName === <span class="hljs-string">'TEXTAREA'</span> || (el.tagName === <span class="hljs-string">'INPUT'</span> &amp;&amp; el.getAttribute(<span class="hljs-string">'type'</span>) === <span class="hljs-string">'text'</span>)) &#123;
+                        <span class="hljs-keyword">var</span> offset = __webpack_require__(<span class="hljs-number">1</span>)(el, el.selectionEnd);
+                        bcr = el.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: offset.left + bcr.left,
+                            <span class="hljs-attr">y</span>: offset.top + bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(el)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
+                    <span class="hljs-keyword">if</span> (selection.rangeCount) &#123;
+                        <span class="hljs-keyword">var</span> range = selection.getRangeAt(<span class="hljs-number">0</span>);
+                        <span class="hljs-keyword">var</span> startNode = range.startContainer;
+                        <span class="hljs-keyword">if</span> (startNode.nodeType === <span class="hljs-built_in">document</span>.TEXT_NODE) &#123;
+                            startNode = startNode.parentNode
+                        &#125;
+                        bcr = range.getBoundingClientRect();
+                        <span class="hljs-keyword">return</span> &#123;
+                            <span class="hljs-attr">x</span>: bcr.left,
+                            <span class="hljs-attr">y</span>: bcr.top,
+                            <span class="hljs-attr">color</span>: getColor(startNode)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+                        <span class="hljs-attr">color</span>: <span class="hljs-string">'transparent'</span>
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createParticle</span>(<span class="hljs-params">x, y, color</span>) </span>&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        <span class="hljs-attr">x</span>: x,
+                        <span class="hljs-attr">y</span>: y,
+                        <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,
+                        <span class="hljs-attr">color</span>: color,
+                        <span class="hljs-attr">velocity</span>: &#123;
+                            <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>,
+                            <span class="hljs-attr">y</span>: <span class="hljs-number">-3.5</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span>
+                        &#125;
+                    &#125;
+                &#125;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">POWERMODE</span>(<span class="hljs-params"></span>) </span>&#123;
+                    &#123;
+                        <span class="hljs-keyword">var</span> caret = getCaret();
+                        <span class="hljs-keyword">var</span> numParticles = <span class="hljs-number">5</span> + <span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>);
+                        <span class="hljs-keyword">while</span> (numParticles--) &#123;
+                            particles[particlePointer] = createParticle(caret.x, caret.y, caret.color);
+                            particlePointer = (particlePointer + <span class="hljs-number">1</span>) % <span class="hljs-number">500</span>
+                        &#125;
+                    &#125;
+                    &#123;
+                        <span class="hljs-keyword">if</span> (POWERMODE.shake) &#123;
+                            <span class="hljs-keyword">var</span> intensity = <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.random();
+                            <span class="hljs-keyword">var</span> x = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-keyword">var</span> y = intensity * (<span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
+                            <span class="hljs-built_in">document</span>.body.style.marginLeft = x + <span class="hljs-string">'px'</span>;
+                            <span class="hljs-built_in">document</span>.body.style.marginTop = y + <span class="hljs-string">'px'</span>;
+                            setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                                <span class="hljs-built_in">document</span>.body.style.marginLeft = <span class="hljs-string">''</span>;
+                                <span class="hljs-built_in">document</span>.body.style.marginTop = <span class="hljs-string">''</span>
+                            &#125;, <span class="hljs-number">75</span>)
+                        &#125;
+                    &#125;
+                    <span class="hljs-keyword">if</span> (!rendering) &#123;
+                        requestAnimationFrame(loop)
+                    &#125;
+                &#125;
+                ;POWERMODE.colorful = <span class="hljs-literal">false</span>;
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>&#123;
+                    rendering = <span class="hljs-literal">true</span>;
+                    context.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+                    <span class="hljs-keyword">var</span> rendered = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">var</span> rect = canvas.getBoundingClientRect();
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; particles.length; ++i) &#123;
+                        <span class="hljs-keyword">var</span> particle = particles[i];
+                        <span class="hljs-keyword">if</span> (particle.alpha &lt;= <span class="hljs-number">0.1</span>)
+                            <span class="hljs-keyword">continue</span>;
+                        particle.velocity.y += <span class="hljs-number">0.075</span>;
+                        particle.x += particle.velocity.x;
+                        particle.y += particle.velocity.y;
+                        particle.alpha *= <span class="hljs-number">0.96</span>;
+                        context.globalAlpha = particle.alpha;
+                        context.fillStyle = particle.color;
+                        context.fillRect(<span class="hljs-built_in">Math</span>.round(particle.x - <span class="hljs-number">1.5</span>) - rect.left, <span class="hljs-built_in">Math</span>.round(particle.y - <span class="hljs-number">1.5</span>) - rect.top, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+                        rendered = <span class="hljs-literal">true</span>
+                    &#125;
+                    <span class="hljs-keyword">if</span> (rendered) &#123;
+                        requestAnimationFrame(loop)
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        rendering = <span class="hljs-literal">false</span>
+                    &#125;
+                &#125;
+                <span class="hljs-built_in">module</span>.exports = POWERMODE
+            &#125;
+        ), (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>&#123;
+                (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> properties = [<span class="hljs-string">'direction'</span>, <span class="hljs-string">'boxSizing'</span>, <span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>, <span class="hljs-string">'overflowX'</span>, <span class="hljs-string">'overflowY'</span>, <span class="hljs-string">'borderTopWidth'</span>, <span class="hljs-string">'borderRightWidth'</span>, <span class="hljs-string">'borderBottomWidth'</span>, <span class="hljs-string">'borderLeftWidth'</span>, <span class="hljs-string">'borderStyle'</span>, <span class="hljs-string">'paddingTop'</span>, <span class="hljs-string">'paddingRight'</span>, <span class="hljs-string">'paddingBottom'</span>, <span class="hljs-string">'paddingLeft'</span>, <span class="hljs-string">'fontStyle'</span>, <span class="hljs-string">'fontVariant'</span>, <span class="hljs-string">'fontWeight'</span>, <span class="hljs-string">'fontStretch'</span>, <span class="hljs-string">'fontSize'</span>, <span class="hljs-string">'fontSizeAdjust'</span>, <span class="hljs-string">'lineHeight'</span>, <span class="hljs-string">'fontFamily'</span>, <span class="hljs-string">'textAlign'</span>, <span class="hljs-string">'textTransform'</span>, <span class="hljs-string">'textIndent'</span>, <span class="hljs-string">'textDecoration'</span>, <span class="hljs-string">'letterSpacing'</span>, <span class="hljs-string">'wordSpacing'</span>, <span class="hljs-string">'tabSize'</span>, <span class="hljs-string">'MozTabSize'</span>];
+                    <span class="hljs-keyword">var</span> isFirefox = <span class="hljs-built_in">window</span>.mozInnerScreenX != <span class="hljs-literal">null</span>;
+                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaretCoordinates</span>(<span class="hljs-params">element, position, options</span>) </span>&#123;
+                        <span class="hljs-keyword">var</span> debug = options &amp;&amp; options.debug || <span class="hljs-literal">false</span>;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#input-textarea-caret-position-mirror-div'</span>);
+                            <span class="hljs-keyword">if</span> (el) &#123;
+                                el.parentNode.removeChild(el)
+                            &#125;
+                        &#125;
+                        <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+                        div.id = <span class="hljs-string">'input-textarea-caret-position-mirror-div'</span>;
+                        <span class="hljs-built_in">document</span>.body.appendChild(div);
+                        <span class="hljs-keyword">var</span> style = div.style;
+                        <span class="hljs-keyword">var</span> computed = <span class="hljs-built_in">window</span>.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
+                        style.whiteSpace = <span class="hljs-string">'pre-wrap'</span>;
+                        <span class="hljs-keyword">if</span> (element.nodeName !== <span class="hljs-string">'INPUT'</span>)
+                            style.wordWrap = <span class="hljs-string">'break-word'</span>;
+                        style.position = <span class="hljs-string">'absolute'</span>;
+                        <span class="hljs-keyword">if</span> (!debug)
+                            style.visibility = <span class="hljs-string">'hidden'</span>;
+                        properties.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prop</span>) </span>&#123;
+                            style[prop] = computed[prop]
+                        &#125;);
+                        <span class="hljs-keyword">if</span> (isFirefox) &#123;
+                            <span class="hljs-keyword">if</span> (element.scrollHeight &gt; <span class="hljs-built_in">parseInt</span>(computed.height))
+                                style.overflowY = <span class="hljs-string">'scroll'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            style.overflow = <span class="hljs-string">'hidden'</span>
+                        &#125;
+                        div.textContent = element.value.substring(<span class="hljs-number">0</span>, position);
+                        <span class="hljs-keyword">if</span> (element.nodeName === <span class="hljs-string">'INPUT'</span>)
+                            div.textContent = div.textContent.replace(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">"\u00a0"</span>);
+                        <span class="hljs-keyword">var</span> span = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+                        span.textContent = element.value.substring(position) || <span class="hljs-string">'.'</span>;
+                        div.appendChild(span);
+                        <span class="hljs-keyword">var</span> coordinates = &#123;
+                            <span class="hljs-attr">top</span>: span.offsetTop + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderTopWidth'</span>]),
+                            <span class="hljs-attr">left</span>: span.offsetLeft + <span class="hljs-built_in">parseInt</span>(computed[<span class="hljs-string">'borderLeftWidth'</span>])
+                        &#125;;
+                        <span class="hljs-keyword">if</span> (debug) &#123;
+                            span.style.backgroundColor = <span class="hljs-string">'#aaa'</span>
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            <span class="hljs-built_in">document</span>.body.removeChild(div)
+                        &#125;
+                        <span class="hljs-keyword">return</span> coordinates
+                    &#125;
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> != <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports != <span class="hljs-string">"undefined"</span>) &#123;
+                        <span class="hljs-built_in">module</span>.exports = getCaretCoordinates
+                    &#125; <span class="hljs-keyword">else</span> &#123;
+                        <span class="hljs-built_in">window</span>.getCaretCoordinates = getCaretCoordinates
+                    &#125;
+                &#125;())
+            &#125;
+        )])
+    &#125;)
+&#125;
+
+    <span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+    <span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+        POWERMODE.colorful=<span class="hljs-literal">true</span>;
+        POWERMODE.shake=<span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+    &#125;</code></pre></div>
+
+<h1 id="修改提示"><a href="#修改提示" class="headerlink" title="修改提示:"></a>修改提示:</h1><p>最后几行:</p>
+<div class="hljs"><pre><code class="hljs Javascript"><span class="hljs-keyword">var</span> sw=<span class="hljs-built_in">window</span>.screen.width;
+<span class="hljs-keyword">if</span> (sw&gt;<span class="hljs-number">1200</span>) &#123;
+    POWERMODE.colorful=<span class="hljs-literal">true</span>; 
+    POWERMODE.shake=<span class="hljs-literal">true</span>;
+    <span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'input'</span>,POWERMODE)
+&#125;</code></pre></div>
+
+<p>中<code>POWERMODE.colorful=true;</code>指是否开启多彩颜色。而<code>POWERMODE.shake=true;</code>指是否开启屏幕震荡.<br>默认全部开启.</p>
+<hr>
+]]></content>
+      <categories>
+        <category>屌代码</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>特效</tag>
+        <tag>Tampermonkey</tag>
+        <tag>站长必备</tag>
+        <tag>萌哒哒</tag>
       </tags>
   </entry>
   <entry>
