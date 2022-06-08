@@ -51,5 +51,4 @@ jobs:
 
       - name: Refresh NPM Cache
         run: >
-          npm i cnpm
-          npx cnpm sync chenyfan-blog
+          curl -X PUT "https://registry.npmmirror.com/chenyfan-blog/sync?publish=false&nodeps=false"
