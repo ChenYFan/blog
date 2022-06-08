@@ -48,3 +48,8 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM }}
+
+      - name: Refresh NPM Cache
+        run: >
+          npm i cnpm -g
+          cnpm sync chenyfan-blog

@@ -177,6 +177,7 @@
                                                                                                         window.localStorage.setItem("ChenBlogRefferrer", 'setted')
                                                                                                     }
                                                                                                 }
+                                                                                                document.getElementById('blog_version').innerText = await db.read('blog_version')
                                                                                                 document._onreadystatechange = document.onreadystatechange
                                                                                                 document.onreadystatechange = function () {
                                                                                                     document._onreadystatechange()
