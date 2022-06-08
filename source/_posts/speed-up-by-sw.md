@@ -9,7 +9,7 @@ categories:
 des: 妙用黑科技为你的网站提速。
 #hide: false
 key: 'serviceworker,sw'
-abbrlink: c0af8604
+abbrlink: d3c51290
 hide: false
 index_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r17/main.jpg'
 banner_img: 'https://npm.elemecdn.com/chenyfan-os@0.0.0-r17/main.jpg'
