@@ -253,9 +253,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>Hexo</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>集成部署</tag>
       
@@ -675,11 +675,11 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>撸羊毛</tag>
       
       <tag>IPFS</tag>
+      
+      <tag>CloudFlare</tag>
       
     </tags>
     
@@ -795,9 +795,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>Github</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>网络</tag>
       
@@ -985,9 +985,9 @@
     
     <tags>
       
-      <tag>CloudFlare</tag>
-      
       <tag>撸羊毛</tag>
+      
+      <tag>CloudFlare</tag>
       
       <tag>奇淫巧计</tag>
       
@@ -1282,8 +1282,6 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>踩坑</tag>
       
       <tag>手动填坑</tag>
@@ -1293,6 +1291,8 @@
       <tag>评论</tag>
       
       <tag>Gitalk</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
