@@ -168,6 +168,10 @@ const handle = async function (req) {
                 credentials: 'include'
             })
         }
+        if (domain === "googlesyncdomain") {
+            urlObj.hostname = "pagead2.googlesyndication.com";
+            return fetch(urlObj, req)
+        }
     } catch (e) { }
     const path = pathname.split('?')[0]
     const query = q => urlObj.searchParams.get(q)
