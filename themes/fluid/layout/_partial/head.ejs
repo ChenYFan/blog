@@ -83,9 +83,6 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
                                           })
                                         }
                                       };
-                                      if (await db.read('disconnect') === "1") {
-                                        alert('我们未能与通信服务器达成联系，请检查您的网络情况，已标记为离线用户，评论功能将不可用。')
-                                      }
                                       window.mCh = {
                                         init: () => {
                                           window.messageChannel = new MessageChannel();
