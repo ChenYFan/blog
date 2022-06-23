@@ -5,7 +5,7 @@
   "hexo": {
     "version": "3.9.0"
   },
-  "script":{
+  "scripts":{
     "build":"npx hexo g"
   },
   "dependencies": {
