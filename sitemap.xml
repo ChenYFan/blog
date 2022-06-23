@@ -1312,6 +1312,13 @@
   </url>
   
   <url>
+    <loc>https://blog.cyfan.top/tags/Sensitive/</loc>
+    <lastmod>2022-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.cyfan.top/tags/%E5%9B%9E%E5%BA%94/</loc>
     <lastmod>2022-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -1973,6 +1980,13 @@
   
   <url>
     <loc>https://blog.cyfan.top/categories/%E6%9C%89%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2022-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.cyfan.top/categories/SensitivePosts/</loc>
     <lastmod>2022-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
