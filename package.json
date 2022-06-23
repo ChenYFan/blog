@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "script":{
+    "build":"npx hexo g"
+  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "chenyfan-blog-helper-dash": "^0.0.7",
