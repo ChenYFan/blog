@@ -476,10 +476,11 @@ const lfetch = async (urls, url) => {
                     const resn = res.clone()
                     if (resn.status == 200) {
                         setTimeout(async () => {
+                            try{
                             db.write('HIT_HOT', await (async () => {
                                 const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
                                 const domain = urls.split('/')[2]
-                                //hit[domain] = hit[domain] ? hit[domain] + 1 : 1
+                                hit[domain] = hit[domain] ? hit[domain] + 1 : 1
                                 if (blog.plus.indexOf(domain) > -1) {
                                     hit.site[domain] = hit.site[domain] ? hit.site[domain] + 1 : 1
                                 } else {
@@ -490,7 +491,7 @@ const lfetch = async (urls, url) => {
                             db.write('HIT_HOT_SIZE', await (async () => {
                                 const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT_SIZE')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
                                 const domain = urls.split('/')[2]
-                                //hit[domain] = hit[domain] ? hit[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
+                                hit[domain] = hit[domain] ? hit[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
                                 if (blog.plus.indexOf(domain) > -1) {
                                     hit.site[domain] = hit.site[domain] ? hit.site[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
                                 } else {
@@ -498,7 +499,7 @@ const lfetch = async (urls, url) => {
                                 }
                                 return JSON.stringify(hit)
                             })())
-                            if (await privconf.read('analytics')) {
+                            /*if (await privconf.read('analytics')) {
                                 ws_sw({
                                     type: "send",
                                     data: JSON.stringify({
@@ -510,7 +511,7 @@ const lfetch = async (urls, url) => {
                                         request_uuid: generate_uuid()
                                     })
                                 })
-                            }
+                            }*/}catch(n){}
                         }, 0);
                         controller.abort();
                         cons.s(`LFetch Success! | Time: ${new Date().getTime() - t1}ms | Origin: ${url} `)
