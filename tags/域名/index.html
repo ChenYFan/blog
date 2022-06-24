@@ -83,8 +83,9 @@
                                         navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
                                           .then(async () => {
                                             if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-                                              $('#info').innerText = '安装成功,稍等片刻...';
-
+                                              setTimeout(() => {
+                                                $('#info').innerText = '安装成功,稍等片刻...';
+                                              }, 0);
                                               setTimeout(() => {
                                                 window.localStorage.setItem('ChenBlogHelper_Set', 2)
                                                 //window.location.search = `?time=${ranN(1, 88888888888888888888)}`
@@ -100,7 +101,11 @@
                                             }
                                           })
                                           .catch(err => console.error(`ChenBlogHelperError:${err}`))
-                                      } else { $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.'; }
+                                      } else {
+                                        setTimeout(() => {
+                                          $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
+                                        }, 0);
+                                      }
                                       /*
                                       window.notyf = new Notyf();
                                       if ('serviceWorker' in navigator) {
