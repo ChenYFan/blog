@@ -220,7 +220,7 @@ const blacklist = [
     '0e7e3e61-20b4-414b-ae6b-577b6f25ee54'
 ]
 
-const blog_default_version = '1.1.8'
+const blog_default_version = '1.1.9'
 
 const handle = async function (req) {
     set_blog_config(await db.read('blog_version') || blog_default_version)
