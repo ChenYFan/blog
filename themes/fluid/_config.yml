@@ -678,3 +678,9 @@ links:
     intro: 'KEEP WALKING',
     image: 'https://wyxogo.top/images/avatar.webp'
     }
+    - {        
+    title: 'LanYunのBlog',
+    link: 'https://lanyundev.xyz/',
+    intro: 'Share Technology.',
+    image: 'https://lanyundev.xyz/img/logo.jpg'
+    }
