@@ -175,7 +175,7 @@ let cdn = {
     "combine": {
         jsdelivr: {
             "url": "https://cdn.jsdelivr.net/combine"
-        },
+        }
 
         //oplog: {
         //    "url": "https://cdn.oplog.cn/combine"
@@ -192,14 +192,17 @@ let cdn = {
         //oplog: {
         //    "url": "https://cdn.oplog.cn/npm"
         //},
-        zhimg: {
-            "url": "https://unpkg.zhimg.com"
+        jjz:{
+            "url": "https://jsd.onmicrosoft.cn/npm"
         },
-        unpkg: {
-            "url": "https://unpkg.com"
+        jjz_unpkg:{
+            "url": "https://npkg.onmicrosoft.cn"
         },
-        bdstatic: {
-            "url": "https://code.bdstatic.com/npm"
+        sourceg:{
+            "url": "https://npm.sourcegcdn.com"
+        },
+        GNT:{
+            "url": "https://cdn.bilicdn.tk/npm"
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
