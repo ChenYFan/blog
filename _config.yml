@@ -108,7 +108,7 @@ baidu_url_submit:
   host: blog.cyfan.top
   token: QWQ
   path: baidu_urls.txt 
-neat_enable: true
+neat_enable: false
 neat_html:
   enable: true
   exclude:
