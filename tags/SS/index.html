@@ -1,4 +1,70 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg"><link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="挣扎在互联网角落的小小博客，喜欢介绍一些普通的知识"><meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床"><meta name="author" content="CYF"><title>标签 - SS || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css"><script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js"></script><script>window.setCustom = () => { };
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?t=' + new Date().getTime()).then(async (registration) => {
+          // setTimeout(() => {
+          //   if (!navigator.userAgent.match(/(spider|bot)/g) && localStorage.getItem('ChenBlogHelper_installed') !== 'true') {
+          //     localStorage.setItem('ChenBlogHelper_installed', 'true');
+          //     fetch(window.location.href).then(res => res.text()).then(text => {
+          //       document.open()
+          //       document.write(text);
+          //       document.close();
+          //     });
+          //   }
+          // }, 100);
+        })
+      } else { alert('ChenBlogHelper 安装失败！部分交互功能将无法启用！') }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.cyfan.top/">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+    <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <meta name="theme-color" content="#F6B352">
+        
+          <meta name="description" content="挣扎在互联网角落的小小博客，喜欢介绍一些普通的知识">
+
+          <meta name="keywords" content="BLOG,薅羊毛,技术,高中生,DNS,CDN,滑稽,图床">
+          
+            
+                                <meta name="author" content="CYF">
+                                <title>
+                                  标签 - SS || 陈YFの博客(￣▽￣)&#34;
+                                </title>
+                                <!--<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>-->
+                                
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
+
+
+
+                                  <script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
+
+                                  </script>
+                                  <script>
+
+
+
+
+
+                                    window.setCustom = () => { };
                                     (async () => {
                                       const CACHE_NAME = 'ChenBlogHelperCache';
                                       window.db = {
@@ -69,43 +135,6 @@
                                       }
 
 
-                                      if ('serviceWorker' in navigator) {
-                                        if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
-                                          setTimeout(async () => {
-                                            console.log('检测到您的浏览器没有安装ChenBlogHelper，开始注册')
-                                            window.stop()
-                                            window.localStorage.setItem('ChenBlogHelper_Set', 1)
-                                            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
-                                            document.body.innerHTML = await replacehtml.text()
-                                          }, 0);
-                                        }
-                                        const $ = document.querySelector.bind(document);
-                                        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
-                                          .then(async () => {
-                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-                                              setTimeout(() => {
-                                                $('#info').innerText = '安装成功,稍等片刻...';
-                                              }, 0);
-                                              setTimeout(() => {
-                                                window.localStorage.setItem('ChenBlogHelper_Set', 2)
-                                                //window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                window.location.reload()
-                                              }, 500)
-                                            }
-                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) == 2) {
-                                              await Promise.all([
-                                                fetch('/offline.html'),
-                                                fetch('https://npm.elemecdn.com/chenyfan-os@0.0.0-r6')
-                                              ]);
-                                              window.localStorage.setItem('ChenBlogHelper_Set', 3)
-                                            }
-                                          })
-                                          .catch(err => console.error(`ChenBlogHelperError:${err}`))
-                                      } else {
-                                        setTimeout(() => {
-                                          $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
-                                        }, 0);
-                                      }
                                       /*
                                       window.notyf = new Notyf();
                                       if ('serviceWorker' in navigator) {
@@ -132,7 +161,393 @@
                                       } else {
                                           notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
                                       }*/
-                                    })();</script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong> 陈YFの博客(￣▽￣)" </strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../../archives/">归档 </a><a class="dropdown-item" href="../../categories/">分类 </a><a class="dropdown-item" href="../../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../../com/">留言板 </a><a class="dropdown-item" href="../../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../../about/">关于 </a><a class="dropdown-item" href="../../hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg t="1601864448019" class="icon" style="display:unset!important" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li><li class="nav-item" id="superlive"><a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display:unset!important" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1215" width="18" height="18"><path d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z" p-id="1216" fill="#ffffff"></path></svg>&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/back/6.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container nopadding-md"><div class="py-5" id="board" style="margin-top:0"><div class="container"><div class="row"><div class="col-12 col-md-10 m-auto"><div class="list-group"><p class="h4">共计 1 篇文章</p><hr><p class="h5">2020</p><a href="../../p/536a1a2d.html" class="list-group-item list-group-item-action"><span class="archive-post-title">在不支持ipv6的路由器下使用ipv6</span> <time style="float:right">04-05</time></a></div></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img width="30px" src="https://www.upyun.com/static/img/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="UPyun" title="UPyun"></a><br><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a><br><a class="nav-link" href="/blog-cgi">当前博客版本:<b id="blog_version">锟斤拷版本</b> | <b>博客用户端管理</b></a><p id="showsectime"></p><p><b>当前在线用户: <span id="user_count">【锟斤拷】</span> | 你的ip: <span id="ip">【锟斤拷】</span> | 你的所在国家/地区: <span id="loc">【锟斤拷】 </span>| 统计服务器通讯延迟：<span id="delay">【锟斤拷】</span></b></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div><style>.live2d{position:fixed;left:-100px;bottom:-20px;width:500px!important;height:437.5px!important;z-index:998;pointer-events:none!important}</style><div id="live2d" class="live2d" style="display:none"><canvas id="live2dm" class="live2d" style="z-index:999!important"></canvas></div></div></footer><script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script><script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script><script>//window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+                                    })();
+                                  </script>
+                                  <!--<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "bpddocggwd");
+</script>-->
+  <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+::-webkit-scrollbar-track-piece {
+background-color:#f8f8f8;
+}
+::-webkit-scrollbar {
+width:9px;
+height:9px;
+}
+::-webkit-scrollbar-thumb {
+background-color:#dddddd;
+background-clip:padding-box;
+min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#bbb;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong>
+        陈YFの博客(￣▽￣)"
+      </strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        文章
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../archives/">
+                                
+                                  归档
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../categories/">
+                                
+                                  分类
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../tags/">
+                                
+                                  标签
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        页面
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../com/">
+                                
+                                  留言板
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../随口胡说/ ">
+                                
+                                  随口胡说
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../about/">
+                                
+                                  关于
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../../hpp/admin/dash/home">
+                                
+                                  后台
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="../../links/">
+                        
+                          朋友们
+                      </a>
+                    </li>
+                    
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://cyfan.top">
+                        
+                          项目主页
+                      </a>
+                    </li>
+                    
+                      
+                        
+                          <li class="nav-item" id="search-btn">
+                            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                                class="iconfont icon-search"></i>&nbsp;</a>
+                          </li>
+                          
+                            
+                              <li class="nav-item" id="color-toggle-btn">
+                                <a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark"
+                                    id="color-toggle-icon"></i>&nbsp;</a>
+                              </li>
+                              
+                                <li class="nav-item" id="travellings-icon">
+                                  <a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg
+                                      t="1601864448019" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="804" width="18" height="18">
+                                      <path
+                                        d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z"
+                                        p-id="805" fill="#ffffff"></path>
+                                      <path
+                                        d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z"
+                                        p-id="806" fill="#ffffff"></path>
+                                      <path
+                                        d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z"
+                                        p-id="807" fill="#ffffff"></path>
+                                      <path
+                                        d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z"
+                                        p-id="808" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="tton">
+                                  <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="superlive">
+                                  <a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="1215" width="18" height="18">
+                                      <path
+                                        d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z"
+                                        p-id="1216" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://npm.elemecdn.com/chenyfan-cdn@2.0.0/img/back/6.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
+      
+      <p class="h5">2020</p>
+    
+    <a href="../../p/536a1a2d.html" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">在不支持ipv6的路由器下使用ipv6</span>
+      <time style="float: right;">04-05</time>
+    </a>
+  
+</div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+      <div>
+        <!--UPyun 联盟-->
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+          <img width="30px" src="https://www.upyun.com/static/img/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="UPyun" title="UPyun" />
+        </a>
+
+        <br/>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br>
+        <a class="nav-link" href="/blog-cgi"> 当前博客版本:<b id="blog_version">锟斤拷版本</b> | <b>博客用户端管理</b></a>
+        <!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+        <p id="showsectime"></p>
+        </script>
+        <p>
+          <b>
+          当前在线用户: <span id="user_count">【锟斤拷】</span> |
+          你的ip: <span id="ip">【锟斤拷】</span> |
+          你的所在国家/地区: <span id="loc">【锟斤拷】 </span> |
+          统计服务器通讯延迟：<span id="delay">【锟斤拷】</span>
+        </b>
+        </p>
+      </div>
+      
+
+          <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+          
+    </div>
+    <style>
+      .live2d {
+        position: fixed;
+        left: -100px;
+        bottom: -20px;
+        width: 500px !important;
+        height: 437.5px !important;
+        z-index: 998;
+        pointer-events: none !important;
+      }
+    </style>
+
+    <div id="live2d" class="live2d" style="display: none;">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
+
+
+
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
+
+<script>
+    //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
     window.cache_post = async (url, that) => {
         const info = {};
         info.len = 1
@@ -254,7 +669,124 @@
             loadScript
 
         }
-    }</script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"Jj0jIgofBpKZZk7F",ck:"Jj0jIgofBpKZZk7F",autoTrack:!0})</script><script src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","标签 - SS&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js"></script><script>var path="../../local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script>!function(e,r){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.notyf = new Notyf();
+    }
+</script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jj0jIgofBpKZZk7F",ck: "Jj0jIgofBpKZZk7F",autoTrack:true})</script>
+
+
+                            
+                                        
+                                                
+
+                                                    
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "标签 - SS&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+                                                        
+
+                                                            
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script>
+    var path = "../../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+                                                                
+
+                                                                    
+
+
+
+                                                                        
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+                                                                            
+
+
+                                                                                
+
+
+
+                                                                                    
+
+
+
+
+
+                                                                                        <script>
+                                                                                            window.notyf = new Notyf();
 
                                                                                             (async () => {
                                                                                                 //document.getElementById('bver').innerText = await getVersion();
@@ -323,4 +855,10 @@
                                                                                                     }
                                                                                                 }
 
-                                                                                            })()</script></body></html>
+                                                                                            })()
+                                                                                        </script>
+
+
+
+</body>
+</html>

@@ -1,4 +1,80 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><link rel="canonical" href="https://blog.cyfan.top/"><link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg"><link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#F6B352"><meta name="description" content="关于公开的或各种奇怪的方式的图床，能够解决图床选择困难症以及不知道用什么图床的同学，包括jsdelivr、npm、dogedoge"><meta name="keywords" content="图床,白嫖,PicGo"><meta name="author" content="CYF"><title>图床的千层套路 || 陈YFの博客(￣▽￣)&#34;</title><link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css"><script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js"></script><script>window.setCustom = () => { };
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?t=' + new Date().getTime()).then(async (registration) => {
+          // setTimeout(() => {
+          //   if (!navigator.userAgent.match(/(spider|bot)/g) && localStorage.getItem('ChenBlogHelper_installed') !== 'true') {
+          //     localStorage.setItem('ChenBlogHelper_installed', 'true');
+          //     fetch(window.location.href).then(res => res.text()).then(text => {
+          //       document.open()
+          //       document.write(text);
+          //       document.close();
+          //     });
+          //   }
+          // }, 100);
+        })
+      } else { alert('ChenBlogHelper 安装失败！部分交互功能将无法启用！') }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.cyfan.top/">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="https://npm.elemecdn.com/chenyfan-oss@4/512.jpg">
+    <link rel="icon" type="image/png" href="https://npm.elemecdn.com/chenyfan-oss@6.0.0/32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <meta name="theme-color" content="#F6B352">
+        
+            
+              
+                <meta name="description" content="关于公开的或各种奇怪的方式的图床，能够解决图床选择困难症以及不知道用什么图床的同学，包括jsdelivr、npm、dogedoge">
+                
+
+                  
+
+                      
+                        <meta name="keywords" content="图床,白嫖,PicGo">
+                        
+
+                          
+
+
+                              
+                                <meta name="author" content="CYF">
+                                <title>
+                                  图床的千层套路 || 陈YFの博客(￣▽￣)&#34;
+                                </title>
+                                <!--<style>html{
+filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</style>-->
+                                
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/font_1736178_pjno9b9zyxs.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/notyf@3/notyf.min.css">
+
+
+
+                                  <script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/utils.min.js">
+
+                                  </script>
+                                  <script>
+
+
+
+
+
+                                    window.setCustom = () => { };
                                     (async () => {
                                       const CACHE_NAME = 'ChenBlogHelperCache';
                                       window.db = {
@@ -69,43 +145,6 @@
                                       }
 
 
-                                      if ('serviceWorker' in navigator) {
-                                        if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 1) {
-                                          setTimeout(async () => {
-                                            console.log('检测到您的浏览器没有安装ChenBlogHelper，开始注册')
-                                            window.stop()
-                                            window.localStorage.setItem('ChenBlogHelper_Set', 1)
-                                            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
-                                            document.body.innerHTML = await replacehtml.text()
-                                          }, 0);
-                                        }
-                                        const $ = document.querySelector.bind(document);
-                                        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)
-                                          .then(async () => {
-                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) < 2) {
-                                              setTimeout(() => {
-                                                $('#info').innerText = '安装成功,稍等片刻...';
-                                              }, 0);
-                                              setTimeout(() => {
-                                                window.localStorage.setItem('ChenBlogHelper_Set', 2)
-                                                //window.location.search = `?time=${ranN(1, 88888888888888888888)}`
-                                                window.location.reload()
-                                              }, 500)
-                                            }
-                                            if (Number(window.localStorage.getItem('ChenBlogHelper_Set')) == 2) {
-                                              await Promise.all([
-                                                fetch('/offline.html'),
-                                                fetch('https://npm.elemecdn.com/chenyfan-os@0.0.0-r6')
-                                              ]);
-                                              window.localStorage.setItem('ChenBlogHelper_Set', 3)
-                                            }
-                                          })
-                                          .catch(err => console.error(`ChenBlogHelperError:${err}`))
-                                      } else {
-                                        setTimeout(() => {
-                                          $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
-                                        }, 0);
-                                      }
                                       /*
                                       window.notyf = new Notyf();
                                       if ('serviceWorker' in navigator) {
@@ -132,7 +171,316 @@
                                       } else {
                                           notyf.error('ChenBlogHelper安装失败！原因:浏览器不支持ServiceWorker')
                                       }*/
-                                    })();</script><link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)" type="application/atom+xml"></head><style>span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited{color:#252525}.heimu,.heimu a,.heimu a.new,a .heimu{background-color:#252525;color:#252525;text-shadow:none}body:not(.heimu_toggle_on) .heimu.off,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu:hover{transition:color .13s linear;color:#fff}body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) a:hover .heimu.off{transition:color .13s linear;color:#add8e6}body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off{transition:color .13s linear;color:#ba0000}.container,.container-md,.container-sm{max-width:75rem!important}::-webkit-scrollbar-track-piece{background-color:#f8f8f8}::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background-color:#ddd;background-clip:padding-box;min-height:28px}::-webkit-scrollbar-thumb:hover{background-color:#bbb}</style><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong> 陈YFの博客(￣▽￣)" </strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">文章</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../archives/">归档 </a><a class="dropdown-item" href="../categories/">分类 </a><a class="dropdown-item" href="../tags/">标签</a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">页面</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="../com/">留言板 </a><a class="dropdown-item" href="../随口胡说/">随口胡说 </a><a class="dropdown-item" href="../about/">关于 </a><a class="dropdown-item" href="../hpp/admin/dash/home">后台</a></div></li><li class="nav-item"><a class="nav-link" href="../links/">朋友们</a></li><li class="nav-item"><a class="nav-link" href="https://cyfan.top">项目主页</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li><li class="nav-item" id="travellings-icon"><a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg t="1601864448019" class="icon" style="display:unset!important" viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="804" width="18" height="18"><path d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z" p-id="805" fill="#ffffff"></path><path d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z" p-id="806" fill="#ffffff"></path><path d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z" p-id="807" fill="#ffffff"></path><path d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z" p-id="808" fill="#ffffff"></path></svg>&nbsp;</a></li><li class="nav-item" id="tton"><a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a></li><li class="nav-item" id="superlive"><a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display:unset!important" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1215" width="18" height="18"><path d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z" p-id="1216" fill="#ffffff"></path></svg>&nbsp;</a></li></ul></div></div></nav><div class="banner intro-2" id="background" parallax="true" style="background:url(https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container page-header text-center fade-in-up"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-09-12 21:27" pubdate>2020年9月12日 晚上</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 3.1k字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 35 分钟 </span><span id="post-meta-views"><i class="iconfont icon-rss"></i> <span id="pv-counter">loading</span> <span>阅读量</span></span></div></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto" id="post"><h1 style="display:none">图床的千层套路</h1><div class="markdown-body" id="post-body"><blockquote><p>博客最近在细心打磨终于上95分了，其中我认为图片功劳不可没。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cUEQrVYGFiDjqhy.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p></blockquote><p>2020年8月9日<a href="https://github.com/jsdelivr/jsdelivr/pull/18247/files" target="_blank" rel="noopener">Jsdelivr发布了一次使用政策：Create Acceptable Use Policy</a>，其中第4条Prohibited Use引起了众多议论：</p><div class="hljs"><pre><code class="hljs markdown"><span class="hljs-bullet">4. </span>Prohibited Use
+                                    })();
+                                  </script>
+                                  <!--<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "bpddocggwd");
+</script>-->
+  <link rel="alternate" href="atom.xml" title="陈YFの博客(￣▽￣)"" type="application/atom+xml">
+</head>
+<style>
+span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited {
+    color: #252525
+}
+.heimu,.heimu a,a .heimu,.heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+body:not(.heimu_toggle_on) .heimu:hover,body:not(.heimu_toggle_on) .heimu:active,body:not(.heimu_toggle_on) .heimu.off {
+    transition: color .13s linear;
+    color: #fff
+}
+body:not(.heimu_toggle_on) .heimu:hover a,body:not(.heimu_toggle_on) a:hover .heimu,body:not(.heimu_toggle_on) .heimu.off a,body:not(.heimu_toggle_on) a:hover .heimu.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off,body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off .new:hover,body:not(.heimu_toggle_on) .new:hover .heimu.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
+.container, .container-md, .container-sm {
+max-width: 75rem !important;
+}
+::-webkit-scrollbar-track-piece {
+background-color:#f8f8f8;
+}
+::-webkit-scrollbar {
+width:9px;
+height:9px;
+}
+::-webkit-scrollbar-thumb {
+background-color:#dddddd;
+background-clip:padding-box;
+min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#bbb;
+}
+</style>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/" data-letters="陈YFの博客">&nbsp;<strong>
+        陈YFの博客(￣▽￣)"
+      </strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        文章
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../archives/">
+                                
+                                  归档
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../categories/">
+                                
+                                  分类
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../tags/">
+                                
+                                  标签
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      
+                        页面
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../com/">
+                                
+                                  留言板
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../随口胡说/ ">
+                                
+                                  随口胡说
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../about/">
+                                
+                                  关于
+                              </a>
+                              
+                        
+                          
+                            
+                              <a class="dropdown-item" href="../hpp/admin/dash/home">
+                                
+                                  后台
+                              </a>
+                              
+                    </div>
+                  </li>
+                  
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="../links/">
+                        
+                          朋友们
+                      </a>
+                    </li>
+                    
+                      
+          
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://cyfan.top">
+                        
+                          项目主页
+                      </a>
+                    </li>
+                    
+                      
+                        
+                          <li class="nav-item" id="search-btn">
+                            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                                class="iconfont icon-search"></i>&nbsp;</a>
+                          </li>
+                          
+                            
+                              <li class="nav-item" id="color-toggle-btn">
+                                <a class="nav-link" href="javascript:">&nbsp;<i class="iconfont icon-dark"
+                                    id="color-toggle-icon"></i>&nbsp;</a>
+                              </li>
+                              
+                                <li class="nav-item" id="travellings-icon">
+                                  <a class="nav-link" target="_blank" href="https://travellings.link/">&nbsp;<svg
+                                      t="1601864448019" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1159 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="804" width="18" height="18">
+                                      <path
+                                        d="M1088.731 85.857c7.486 15.186-0.014 34.184-16.746 42.433L247.459 534.728c-16.735 8.25-36.37 2.625-43.855-12.56-7.485-15.184 0.013-34.183 16.748-42.432l824.525-406.438c16.734-8.248 36.368-2.626 43.854 12.56z"
+                                        p-id="805" fill="#ffffff"></path>
+                                      <path
+                                        d="M1067.131 69.833c16.507 3.765 27.377 17.834 24.278 31.421L938.702 770.787c-3.1 13.587-18.995 21.552-35.5 17.786-16.506-3.764-27.374-17.831-24.274-31.42l152.705-669.531c3.098-13.589 18.993-21.553 35.498-17.789z"
+                                        p-id="806" fill="#ffffff"></path>
+                                      <path
+                                        d="M1059.32 99.368c12.483 11.436 14.63 29.416 4.79 40.156l-484.802 529.24c-9.84 10.742-27.938 10.176-40.422-1.257-12.483-11.437-14.626-29.413-4.786-40.156L1018.9 98.111c9.839-10.741 27.937-10.177 40.42 1.257zM502.153 622.73c-6.02 16.604-24.36 25.185-40.965 19.166l-240.527-87.19c-16.606-6.02-25.187-24.36-19.168-40.965 6.02-16.605 24.36-25.186 40.965-19.167l240.526 87.192c16.606 6.018 25.187 24.36 19.169 40.964zM937.345 775.375c-6.019 16.605-24.36 25.186-40.966 19.167L655.851 707.35c-16.603-6.019-25.185-24.36-19.165-40.964s24.362-25.185 40.964-19.166l240.528 87.19c16.604 6.02 25.184 24.36 19.167 40.965z"
+                                        p-id="807" fill="#ffffff"></path>
+                                      <path
+                                        d="M585.576 911.117c0 17.662-14.318 31.98-31.98 31.98-17.663 0-31.981-14.318-31.981-31.98V655.275c0-17.662 14.318-31.98 31.98-31.98 17.663 0 31.98 14.318 31.98 31.98v255.842z"
+                                        p-id="808" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="tton">
+                                  <a class="nav-link" href="javascript:zh_tran(lololo);">&nbsp;语&nbsp;</a>
+                                </li>
+                                <li class="nav-item" id="superlive">
+                                  <a class="nav-link" id="liveswitch" href="javascript:void(0)">&nbsp;<svg t="1641824272454" class="icon" style="display: unset!important;"
+                                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                      p-id="1215" width="18" height="18">
+                                      <path
+                                        d="M526.336 68.608q91.136 0 171.008 32.768t139.264 89.6 93.696 133.632 34.304 163.84q0 88.064-35.328 164.864t-96.768 134.144q-19.456 21.504-51.2 21.504-22.528 0-41.984-13.312-43.008-27.648-61.952-57.856t-27.648-62.464-12.288-65.536-14.848-66.56-36.352-67.072-76.288-67.584q-25.6-16.384-48.128-24.576t-45.056-14.848-44.032-14.336-45.056-23.552-48.64-41.984-52.736-69.12q25.6-36.864 60.928-65.024t75.264-47.616 81.92-29.184 81.92-9.728zM570.368 545.792q14.336 31.744 19.968 61.44t8.704 57.344 8.704 52.736 20.48 48.128 42.496 44.032 76.8 39.424q3.072 3.072 5.12 11.776t5.12 19.968 9.728 26.112 19.968 30.208q-92.16 22.528-171.008 25.6t-158.72-20.48q9.216-22.528 13.312-40.96t5.12-34.304 0.512-30.208-1.536-29.696q-2.048-29.696-20.992-36.864t-44.032-3.584-50.176 12.288-40.448 10.752q-17.408 3.072-36.352 4.608t-35.328-1.024-26.112-9.728-6.656-22.528q2.048-12.288 4.608-28.672t2.56-33.792-5.632-33.28-19.968-27.136q-6.144-4.096-19.968-10.752t-26.112-14.848-18.432-16.384 3.072-16.384q20.48-15.36 41.984-34.816t32.768-41.984q5.12-10.24 6.144-21.504t-0.512-20.992-3.584-17.408-2.048-12.8-4.096-13.312-8.192-22.528-6.144-35.84 2.048-54.272q-26.624 7.168-37.888 30.72t-7.168 58.368q-16.384-24.576-17.408-45.568t6.656-37.888 22.528-30.208 31.232-22.528q26.624 57.344 57.856 86.016t65.536 43.52 69.12 21.504 68.096 19.968 63.488 39.424 54.784 78.336z"
+                                        p-id="1216" fill="#ffffff"></path>
+                                    </svg>&nbsp;</a>
+                                </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912212615.jpg?q=75') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-09-12 21:27" pubdate>
+      2020年9月12日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35
+      分钟
+    </span>
+  
+<span id="post-meta-views">
+<i class="iconfont icon-rss"></i>
+<span id="pv-counter">loading</span>
+       <span>阅读量</span>
+    </span>
+   
+  
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">图床的千层套路</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <blockquote>
+<p> 博客最近在细心打磨终于上95分了，其中我认为图片功劳不可没。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/cUEQrVYGFiDjqhy.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+</blockquote>
+<p>2020年8月9日<a href="https://github.com/jsdelivr/jsdelivr/pull/18247/files" target="_blank" rel="noopener">Jsdelivr发布了一次使用政策：Create Acceptable Use Policy</a>，其中第4条Prohibited Use引起了众多议论：</p>
+<div class="hljs"><pre><code class="hljs markdown"><span class="hljs-bullet">4. </span>Prohibited Use
 
 The following behavior is prohibited:
 <span class="hljs-bullet">
@@ -150,11 +498,62 @@ The following behavior is prohibited:
 
 <span class="hljs-code">    We recognize that there are legitimate projects that consist of a large number</span>
 <span class="hljs-code">    of files, and these are not considered abuse. For example: icons packs, apps,</span>
-<span class="hljs-code">    or games with a large number of assets.</span></code></pre></div><p>其中<code>running an image hosting website and using jsDelivr as a storage for all uploaded images</code> 这一句相当的有歧义，要多少的图片才能算是图站？博客里面图片放里面算吗？上传的图片怎样才不行？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/TlAGjm6IvJSMVpq.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>反观网上流传的白嫖Github做图床，基本点进去都是<code>https://cdn.jsdelivr.net/gh/</code> 这样子的图床，这种行为，我不敢妄加评论。但是，jsdelivr诞生的意义似乎并不是为了图床而生的，这种行为也很难判断成滥用。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29a8e0.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>使用政策发布之后，一时间，QQ群、v2ex、知乎上立刻就炸了锅。很多人猜测jsdelivr是不是滥用过度而禁止将其作为图床？免费图床的白嫖日子要结束了吗？更多的人，是在哭诉和询问那里还有像jsd一样优秀的<strong>图床</strong>可以白嫖，微博炸了，那里还有免费图床啊？</p><p>实际上，我一般采用的是<code>BackBlaze+CloudFlare</code> 但是自从八月底移动开始改道，从原先优秀的CMI绕路LAX后，国内CloudFlare访问质量再次暴跌，这不得不使我将博客迁至Vercel。好在八月份我有幸申请到了<code>doegdoge图床</code>使用权限，获得了国内较高速的图床.</p><p>但是，对于哪些没有没有图床的人来说，免费图床真的这么难以获得吗？</p><p>不好意思，<strong>免费图床非常多</strong>，只是你不会用而已，这篇文章，就是拯救面前陷入图床危机的你【当然是面向小白，大佬也可以在底下给我提意见鸭】。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><h1 id="公益图床"><a href="#公益图床" class="headerlink" title="公益图床"></a>公益图床</h1><h2 id="sm-ms"><a href="#sm-ms" class="headerlink" title="sm.ms"></a>sm.ms</h2><p><a href="https://sm.ms" target="_blank" rel="noopener">https://sm.ms</a></p><p>推荐程度：★</p><p>首先推荐的是这个图床，loli.net域名经典重现。三年前此图床域名还有备案采用的是国内CDN，可惜后来因为滥用吊销备案号而被迫迁移国外，用的是CloudFlare。实际使用效果面向国内确实不太好，建议备用。</p><p>你不需要注册，拖拽直接上传，只要不违反大陆和香港法律，他就能永久保留你的图片</p><p><img src="https://i.loli.net/2020/09/12/OxvnMBwd3VA8uyD.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>可搭配PicGo</p><h2 id="Imgur"><a href="#Imgur" class="headerlink" title="Imgur"></a>Imgur</h2><p><a href="https://imgur.com" target="_blank" rel="noopener">https://imgur.com</a></p><p>推荐程度：★★</p><p>国外一家牛逼的图片托管服务商，你可以选择注册或不注册，同样的，拖拽上传，永久保留，其SLA有着相当高的保证。</p><p>然而很可惜的是，这种网站很早就在国内被<strong>DNS域名污染</strong>，也就意味着访客无法正常加载你的图片。这也就是被打为两颗星的原因。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%B8%8D%E8%AF%B4%E8%AF%9D.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>当然，你也可以通过<a href="#图像缓存服务">#图像缓存服务</a> 从而实现国内访问。</p><p>可搭配PicGo【需注册】</p><h2 id="去不图床"><a href="#去不图床" class="headerlink" title="去不图床"></a>去不图床</h2><p><a href="https://7bu.top/" target="_blank" rel="noopener">https://7bu.top/</a></p><p>推荐程度：★★★★</p><p>由<a href="https://dusays.com/241/" target="_blank" rel="noopener">杜老师</a>提供的个人公益图床，存储于阿里和腾讯的COS，官方保证SLA&gt;=99%，是一个不错的选择，当然，7bu毕竟是个人维护的图床，能不能永久撑下去还是个问题，我也没有做过深度评测，无法表明其可用性。</p><p>可搭配PicGo。</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://7bu.top/api/upload</span>
+<span class="hljs-code">    or games with a large number of assets.</span></code></pre></div>
+
+<p>其中<code>running an image hosting website and using jsDelivr as a storage for all uploaded images</code> 这一句相当的有歧义，要多少的图片才能算是图站？博客里面图片放里面算吗？上传的图片怎样才不行？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/TlAGjm6IvJSMVpq.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>反观网上流传的白嫖Github做图床，基本点进去都是<code>https://cdn.jsdelivr.net/gh/</code> 这样子的图床，这种行为，我不敢妄加评论。但是，jsdelivr诞生的意义似乎并不是为了图床而生的，这种行为也很难判断成滥用。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896ece29a8e0.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>使用政策发布之后，一时间，QQ群、v2ex、知乎上立刻就炸了锅。很多人猜测jsdelivr是不是滥用过度而禁止将其作为图床？免费图床的白嫖日子要结束了吗？更多的人，是在哭诉和询问那里还有像jsd一样优秀的<strong>图床</strong>可以白嫖，微博炸了，那里还有免费图床啊？</p>
+<p>实际上，我一般采用的是<code>BackBlaze+CloudFlare</code> 但是自从八月底移动开始改道，从原先优秀的CMI绕路LAX后，国内CloudFlare访问质量再次暴跌，这不得不使我将博客迁至Vercel。好在八月份我有幸申请到了<code>doegdoge图床</code>使用权限，获得了国内较高速的图床.</p>
+<p>但是，对于哪些没有没有图床的人来说，免费图床真的这么难以获得吗？</p>
+<p>不好意思，<strong>免费图床非常多</strong>，只是你不会用而已，这篇文章，就是拯救面前陷入图床危机的你【当然是面向小白，大佬也可以在底下给我提意见鸭】。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_56.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h1 id="公益图床"><a href="#公益图床" class="headerlink" title="公益图床"></a>公益图床</h1><h2 id="sm-ms"><a href="#sm-ms" class="headerlink" title="sm.ms"></a>sm.ms</h2><p><a href="https://sm.ms" target="_blank" rel="noopener">https://sm.ms</a></p>
+<p>推荐程度：★</p>
+<p>首先推荐的是这个图床，loli.net域名经典重现。三年前此图床域名还有备案采用的是国内CDN，可惜后来因为滥用吊销备案号而被迫迁移国外，用的是CloudFlare。实际使用效果面向国内确实不太好，建议备用。</p>
+<p>你不需要注册，拖拽直接上传，只要不违反大陆和香港法律，他就能永久保留你的图片</p>
+<p><img src="https://i.loli.net/2020/09/12/OxvnMBwd3VA8uyD.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>可搭配PicGo</p>
+<h2 id="Imgur"><a href="#Imgur" class="headerlink" title="Imgur"></a>Imgur</h2><p><a href="https://imgur.com" target="_blank" rel="noopener">https://imgur.com</a></p>
+<p>推荐程度：★★</p>
+<p>国外一家牛逼的图片托管服务商，你可以选择注册或不注册，同样的，拖拽上传，永久保留，其SLA有着相当高的保证。</p>
+<p>然而很可惜的是，这种网站很早就在国内被<strong>DNS域名污染</strong>，也就意味着访客无法正常加载你的图片。这也就是被打为两颗星的原因。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%B8%8D%E8%AF%B4%E8%AF%9D.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>当然，你也可以通过<a href="#图像缓存服务">#图像缓存服务</a> 从而实现国内访问。</p>
+<p>可搭配PicGo【需注册】</p>
+<h2 id="去不图床"><a href="#去不图床" class="headerlink" title="去不图床"></a>去不图床</h2><p><a href="https://7bu.top/" target="_blank" rel="noopener">https://7bu.top/</a></p>
+<p>推荐程度：★★★★</p>
+<p>由<a href="https://dusays.com/241/" target="_blank" rel="noopener">杜老师</a>提供的个人公益图床，存储于阿里和腾讯的COS，官方保证SLA&gt;=99%，是一个不错的选择，当然，7bu毕竟是个人维护的图床，能不能永久撑下去还是个问题，我也没有做过深度评测，无法表明其可用性。</p>
+<p>可搭配PicGo。</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://7bu.top/api/upload</span>
 <span class="hljs-string">post参数：image</span>
-<span class="hljs-string">回调json：data.url</span></code></pre></div><p><a href="https://7bu.top/index/api.html" target="_blank" rel="noopener">更准确的API文档</a></p><p><img src="https://7.dusays.com/2020/09/13/aa555748a9f38.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><blockquote><p><del>而且，就在我上传测试图片的时候，明明已经表明图片已经上传，打开却发现COS提示404，这一点我不得陷入思考，个人维持的公益项目真的能保证SLA吗？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%BE%BF%E4%BE%BF.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></del></p></blockquote><blockquote><p>昨天上传的时候撞上服务器维修了，很抱歉做出了不够恰当的评价.7bu采用的是全国腾讯云CDN加速，国内访问速度十分优良。然而请注意，7bu刚开始建立的目的并不是面向全球【仅面对中国大陆游客】，这导致其大陆以外基本解析至国内西藏腾讯，访问效果并不好。并且，这是通过腾讯云的鉴黄，可能会存在误杀行为。具体使用请个人斟酌【不过作为开发环境还是可行的】。</p></blockquote><h1 id="白嫖的"><a href="#白嫖的" class="headerlink" title="白嫖的"></a>白嫖的</h1><h2 id="阿里图床"><a href="#阿里图床" class="headerlink" title="阿里图床"></a>阿里图床</h2><p><del>推荐程度：★★★★</del></p><p><del>我个人搭建的API：<a href="https://picbed.cyfan.top" target="_blank" rel="noopener">https://picbed.cyfan.top</a> 不保证上传SLA<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></del></p><p><del>由于小鸡联通国内网络不太好，很有可能无法正常上传，<a href="https://github.com/ChenYFan-Tester/Alibaba_pic" target="_blank" rel="noopener">原项目已经开源</a> ，你完全可以通过在国内的机子或者是本地搭建以获得更佳体验。</del></p><p><del>如果上传成功了，图片将会托管于阿里云的CDN，无论是速度还是延迟都相当的优秀。</del></p><p><del>官方大厂，下载SLA有保障。</del></p><p><del>可搭配PicGo。</del></p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://picbed.cyfan.top/update.php</span>
+<span class="hljs-string">回调json：data.url</span></code></pre></div>
+
+<p><a href="https://7bu.top/index/api.html" target="_blank" rel="noopener">更准确的API文档</a></p>
+<p><img src="https://7.dusays.com/2020/09/13/aa555748a9f38.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<blockquote>
+<p><del>而且，就在我上传测试图片的时候，明明已经表明图片已经上传，打开却发现COS提示404，这一点我不得陷入思考，个人维持的公益项目真的能保证SLA吗？<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/%E4%BE%BF%E4%BE%BF.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></del></p>
+</blockquote>
+<blockquote>
+<p>昨天上传的时候撞上服务器维修了，很抱歉做出了不够恰当的评价.7bu采用的是全国腾讯云CDN加速，国内访问速度十分优良。然而请注意，7bu刚开始建立的目的并不是面向全球【仅面对中国大陆游客】，这导致其大陆以外基本解析至国内西藏腾讯，访问效果并不好。并且，这是通过腾讯云的鉴黄，可能会存在误杀行为。具体使用请个人斟酌【不过作为开发环境还是可行的】。</p>
+</blockquote>
+<h1 id="白嫖的"><a href="#白嫖的" class="headerlink" title="白嫖的"></a>白嫖的</h1><h2 id="阿里图床"><a href="#阿里图床" class="headerlink" title="阿里图床"></a>阿里图床</h2><p><del>推荐程度：★★★★</del></p>
+<p><del>我个人搭建的API：<a href="https://picbed.cyfan.top" target="_blank" rel="noopener">https://picbed.cyfan.top</a> 不保证上传SLA<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53ce897ab55.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></del></p>
+<p><del>由于小鸡联通国内网络不太好，很有可能无法正常上传，<a href="https://github.com/ChenYFan-Tester/Alibaba_pic" target="_blank" rel="noopener">原项目已经开源</a> ，你完全可以通过在国内的机子或者是本地搭建以获得更佳体验。</del></p>
+<p><del>如果上传成功了，图片将会托管于阿里云的CDN，无论是速度还是延迟都相当的优秀。</del></p>
+<p><del>官方大厂，下载SLA有保障。</del></p>
+<p><del>可搭配PicGo。</del></p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://picbed.cyfan.top/update.php</span>
 <span class="hljs-string">post参数：file</span>
-<span class="hljs-string">回调json：data.url</span></code></pre></div><p><strong>已失效，切勿使用</strong></p><h2 id="DogeDoge图床"><a href="#DogeDoge图床" class="headerlink" title="DogeDoge图床"></a>DogeDoge图床</h2><p>推荐程度：★★★★★</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912192303.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="TEST"></p><p>其实很早就看到<a href="https://v2ex.com/t/659652" target="_blank" rel="noopener">V2EX的那篇征文了</a>：</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912190301.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>可是当时我不够优秀啊<span class="heimu">虽然现在同样不优秀</span>，博客也没满一年啊，于是白嫖的心态搁浅了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e8a408253.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>后来突然看到<a href="https://blog.jalenchuh.cn/" content="nofollow" target="_blank" rel="noopener">Jalen的博客</a>也用了DogeDoge图床，这才突然意识到原来我已经满一年了。于是抱着试试看的心态向doge官方邮箱发送了邮件，结果真过了。。。</p><p>dogedoge拥有着国内相当不错的CDN，国内访问飞快，但是国外的访问质量的确不如人意。【反正此博客面向中国大陆】</p><p>而且，DogeDoge拥有着很良心的处理参数：</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">w：宽</span>
+<span class="hljs-string">回调json：data.url</span></code></pre></div>
+
+<p><strong>已失效，切勿使用</strong></p>
+<h2 id="DogeDoge图床"><a href="#DogeDoge图床" class="headerlink" title="DogeDoge图床"></a>DogeDoge图床</h2><p>推荐程度：★★★★★</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912192303.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="TEST"></p>
+<p>其实很早就看到<a href="https://v2ex.com/t/659652" target="_blank" rel="noopener">V2EX的那篇征文了</a>：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912190301.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>可是当时我不够优秀啊<span class="heimu">虽然现在同样不优秀</span>，博客也没满一年啊，于是白嫖的心态搁浅了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5896e8a408253.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>后来突然看到<a href="https://blog.jalenchuh.cn/" content="nofollow" target="_blank" rel="noopener">Jalen的博客</a>也用了DogeDoge图床，这才突然意识到原来我已经满一年了。于是抱着试试看的心态向doge官方邮箱发送了邮件，结果真过了。。。</p>
+<p>dogedoge拥有着国内相当不错的CDN，国内访问飞快，但是国外的访问质量的确不如人意。【反正此博客面向中国大陆】</p>
+<p>而且，DogeDoge拥有着很良心的处理参数：</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">w：宽</span>
 <span class="hljs-string">h：高</span>
 <span class="hljs-string">mode：模式</span> <span class="hljs-bullet">-</span> <span class="hljs-string">crop</span> <span class="hljs-string">裁剪、clip</span> <span class="hljs-string">缩略</span>
 <span class="hljs-string">fmt：格式</span> <span class="hljs-bullet">-</span> <span class="hljs-string">jpg、png、webp（原图为</span> <span class="hljs-string">gif，且没有</span> <span class="hljs-string">frame</span> <span class="hljs-string">参数时，不做任何裁切、缩略处理）</span>
@@ -162,23 +561,170 @@ The following behavior is prohibited:
 <span class="hljs-string">q：压缩质量</span> <span class="hljs-bullet">-</span> <span class="hljs-number">1</span> <span class="hljs-bullet">-</span> <span class="hljs-number">100</span><span class="hljs-string">（默认</span> <span class="hljs-number">90</span> <span class="hljs-string">）</span>
 <span class="hljs-string">rect：指定位置裁剪</span> <span class="hljs-bullet">-</span> <span class="hljs-string">top,left,w,h（若与</span> <span class="hljs-string">w</span> <span class="hljs-string">/</span> <span class="hljs-string">h</span> <span class="hljs-string">参数同时存在，则</span> <span class="hljs-string">会在</span> <span class="hljs-string">rect</span> <span class="hljs-string">裁剪过后，继续按照</span> <span class="hljs-string">w</span> <span class="hljs-string">/</span> <span class="hljs-string">h</span> <span class="hljs-string">的要求缩略）</span>
 <span class="hljs-string">pos：（配合</span> <span class="hljs-string">w</span> <span class="hljs-string">/</span> <span class="hljs-string">h</span> <span class="hljs-string">）裁剪位置</span> <span class="hljs-bullet">-</span> <span class="hljs-string">top-left、top、top-right、left、center、right、bottom-left、bottom、bottom-right，默认为center</span>
-<span class="hljs-string">pos</span> <span class="hljs-string">还有一个特殊的值</span> <span class="hljs-string">auto，该值目前为</span> <span class="hljs-string">alpha</span> <span class="hljs-string">状态，可以根据图片重点来进行</span> <span class="hljs-string">pos</span> <span class="hljs-string">的位置取舍。</span></code></pre></div><p>话说回来，DogeDoge也可以搭配PicGo使用。</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://www.dogedoge.com/tools/upload/&#123;Your_Token&#125;</span>
+<span class="hljs-string">pos</span> <span class="hljs-string">还有一个特殊的值</span> <span class="hljs-string">auto，该值目前为</span> <span class="hljs-string">alpha</span> <span class="hljs-string">状态，可以根据图片重点来进行</span> <span class="hljs-string">pos</span> <span class="hljs-string">的位置取舍。</span></code></pre></div>
+
+<p>话说回来，DogeDoge也可以搭配PicGo使用。</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://www.dogedoge.com/tools/upload/&#123;Your_Token&#125;</span>
 <span class="hljs-string">post参数：file</span>
-<span class="hljs-string">回调json：data.o_url</span></code></pre></div><p>当然，现在的Doge图床还是处于免费的试用期【Creater】，不过好在试用期过后价格也比较合理，一般的tester也足够使用，目前看来SLA还是不错的。</p><p>不过，申请不到dogedoge图床也没关系，看下去你就会发现，白嫖的路千千万万，何必执着于一条。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205753.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><h2 id="BackBlaze"><a href="#BackBlaze" class="headerlink" title="BackBlaze"></a>BackBlaze</h2><p>推荐程度：★★★</p><p>具体可以看看<a href="/p/ce240368.html">这篇文章</a></p><h2 id="千奇百怪的"><a href="#千奇百怪的" class="headerlink" title="千奇百怪的"></a>千奇百怪的</h2><h2 id="Github-JSDelivr"><a href="#Github-JSDelivr" class="headerlink" title="Github+JSDelivr"></a>Github+JSDelivr</h2><p>正如我所说的，这种组合已经被广大博主所采纳，并且网上教程已经泛滥了，在这里不再阐述。</p><h2 id="npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像"><a href="#npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像" class="headerlink" title="npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像"></a>npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像</h2><p>推荐程度：★★★★★</p><p>为什么很多文章都没有提到用npm做图床？我想其中很大的原因是，白嫖jsd做图床的，很多都是小白【或者不愿花时间在于此的大佬】，同样的，这些文章面向的都是这些人，毕竟，以拖拽方式上传的Github和命令行方式上传，我想，大都数人会选择前者吧。</p><p>可是，你们没有想到的是，github文件镜像【github.com.cnpmjs.org是站点镜像】只有jsd一个，npm镜像可远远不止这一个啊！</p><p>让我们看看分别镜像在jsd、zhimg、bdstatic的文件怎么样：</p><p><img src="https://npm.elemecdn.com/chenyfan-oss@0.0.1/1.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://npm.elemecdn.com/chenyfan-oss@0.0.1/2.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://code.bdstatic.com/npm/chenyfan-oss@0.0.1/3.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>【unpkg镜像用的是CloudFlare，国内加速效果不好，暂时不写】</p><p>jsd就不必多说了，国内拥有强劲的网宿节点支撑【虽然以前出现过网宿下游投毒】，速度丝滑无比，国外也有强劲的CloudFlare上岗，可谓国内外两不误。而且，jsd对于npm的package单文件没有大小限制，也就是说泡个视频也不是问题。</p><p>zhimg是知乎的unpkg镜像，也是一个不错的选择【阿里CDN】，知乎官方也未对此做出限制，日常使用是可以的。</p><p>bdstatic是百度的内用npm镜像，速度也很好【百度CDN】，但是请注意，bdstatic作为内用cdn，其拉取频率较慢，经常出现无法及时更新。</p><p>啊哈？不会上传？<br><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>去<a href="https://npmjs.org" target="_blank" rel="noopener">npm</a><br>官网注册个账号去,然后先：</p><div class="hljs"><pre><code class="hljs bash">npm login</code></pre></div><p>接着：</p><div class="hljs"><pre><code class="hljs bash">npm init
-npm publish</code></pre></div><p>请注意，如果你之前用过淘宝镜像，那么请先手动切回源：</p><div class="hljs"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> registry https://registry.npmjs.org</code></pre></div><p>每一次发布图片后，你可以将原来的图片删除，更改<code>package.json</code> 版本号【向上增加】,然后<code>npm publish</code>即可</p><p>这个似乎可以搭配picgo，不过好像没这个插件，写起来也麻烦。。。</p><p>unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯都有，不过这个就要自己找了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7DgSoyqwtYBxchE.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>一些推荐的npm【or unpkg镜像】：</p><div class="hljs"><pre><code class="hljs markdown">【jsd出品，网宿国内节点】https://npm.elemecdn.com/
+<span class="hljs-string">回调json：data.o_url</span></code></pre></div>
+
+<p>当然，现在的Doge图床还是处于免费的试用期【Creater】，不过好在试用期过后价格也比较合理，一般的tester也足够使用，目前看来SLA还是不错的。</p>
+<p>不过，申请不到dogedoge图床也没关系，看下去你就会发现，白嫖的路千千万万，何必执着于一条。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_34.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205753.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h2 id="BackBlaze"><a href="#BackBlaze" class="headerlink" title="BackBlaze"></a>BackBlaze</h2><p>推荐程度：★★★</p>
+<p>具体可以看看<a href="/p/ce240368.html">这篇文章</a></p>
+<h2 id="千奇百怪的"><a href="#千奇百怪的" class="headerlink" title="千奇百怪的"></a>千奇百怪的</h2><h2 id="Github-JSDelivr"><a href="#Github-JSDelivr" class="headerlink" title="Github+JSDelivr"></a>Github+JSDelivr</h2><p>正如我所说的，这种组合已经被广大博主所采纳，并且网上教程已经泛滥了，在这里不再阐述。</p>
+<h2 id="npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像"><a href="#npm-JSDelivr-amp-amp-Zhimg-amp-amp-bdstatic-amp-amp-自定义镜像" class="headerlink" title="npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像"></a>npm+JSDelivr&amp;&amp;Zhimg&amp;&amp;bdstatic&amp;&amp;自定义镜像</h2><p>推荐程度：★★★★★</p>
+<p>为什么很多文章都没有提到用npm做图床？我想其中很大的原因是，白嫖jsd做图床的，很多都是小白【或者不愿花时间在于此的大佬】，同样的，这些文章面向的都是这些人，毕竟，以拖拽方式上传的Github和命令行方式上传，我想，大都数人会选择前者吧。</p>
+<p>可是，你们没有想到的是，github文件镜像【github.com.cnpmjs.org是站点镜像】只有jsd一个，npm镜像可远远不止这一个啊！</p>
+<p>让我们看看分别镜像在jsd、zhimg、bdstatic的文件怎么样：</p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@0.0.1/1.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://npm.elemecdn.com/chenyfan-oss@0.0.1/2.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://code.bdstatic.com/npm/chenyfan-oss@0.0.1/3.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>【unpkg镜像用的是CloudFlare，国内加速效果不好，暂时不写】</p>
+<p>jsd就不必多说了，国内拥有强劲的网宿节点支撑【虽然以前出现过网宿下游投毒】，速度丝滑无比，国外也有强劲的CloudFlare上岗，可谓国内外两不误。而且，jsd对于npm的package单文件没有大小限制，也就是说泡个视频也不是问题。</p>
+<p>zhimg是知乎的unpkg镜像，也是一个不错的选择【阿里CDN】，知乎官方也未对此做出限制，日常使用是可以的。</p>
+<p>bdstatic是百度的内用npm镜像，速度也很好【百度CDN】，但是请注意，bdstatic作为内用cdn，其拉取频率较慢，经常出现无法及时更新。</p>
+<p>啊哈？不会上传？<br><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/stick_31.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt>去<a href="https://npmjs.org" target="_blank" rel="noopener">npm</a><br>官网注册个账号去,然后先：</p>
+<div class="hljs"><pre><code class="hljs bash">npm login</code></pre></div>
+
+<p>接着：</p>
+<div class="hljs"><pre><code class="hljs bash">npm init
+npm publish</code></pre></div>
+
+<p>请注意，如果你之前用过淘宝镜像，那么请先手动切回源：</p>
+<div class="hljs"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> registry https://registry.npmjs.org</code></pre></div>
+
+<p>每一次发布图片后，你可以将原来的图片删除，更改<code>package.json</code> 版本号【向上增加】,然后<code>npm publish</code>即可</p>
+<p>这个似乎可以搭配picgo，不过好像没这个插件，写起来也麻烦。。。</p>
+<p>unpkg的国内镜像其实远远不止这些，包括七牛、饿了么、腾讯都有，不过这个就要自己找了。<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/7DgSoyqwtYBxchE.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>一些推荐的npm【or unpkg镜像】：</p>
+<div class="hljs"><pre><code class="hljs markdown">【jsd出品，网宿国内节点】https://npm.elemecdn.com/
 【知乎出品，网宿国内节点】https://npm.elemecdn.com/
 【百度出品，网宿国内节点】https://code.bdstatic.com/npm/
 【饿了么出品，网宿国内节点，回源是Unpkg，建议用这个】https://npm.elemecdn.com/
 【饿了么出品，网宿国内节点，回源是JSdelivr，貌似可以用github，但是我用的时候大多无法正常回源，只能获取几个已缓存的热门库】https://shadow.elemecdn.com/npm/
-【怎么都是网宿的】</code></pre></div><p>或者说，你还可以自建unpkg镜像。</p><p>啊，你说你没有服务器反向代理unpkg？</p><p>其实，七牛的对象存储，腾讯的COS和阿里的OSS都是支持镜像回源的鸭！</p><p>七牛http流量每月免费10GB，腾讯的国内免费60GB6个月，作为自用完全足够了！</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/L6LVJL_1ZUM2ISQ%5D10R%7B3HF.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><h2 id="ipfs"><a href="#ipfs" class="headerlink" title="ipfs"></a>ipfs</h2><p>我曾经<a href="/2020/04/07/IPFS-CloudFlare-ServerLessWebPage/">写过关于ipfs的讲解</a> ,作为一个去中心化的存储系统拿来做公开图床其实挺不错的。</p><p>我个人搭建的ipfs镜像【托管于CloudFlareWorkers】：<a href="https://ipfs.cyfan.top" target="_blank" rel="noopener">https://ipfs.cyfan.top</a> <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>我个人搭建的ipfs上传API：<a href="https://ipfsupload.cyfan.top" target="_blank" rel="noopener">https://ipfsupload.cyfan.top</a></p><p>基于Vercel+CloudFlare<del>【我也不知道worker为什么死活上传不上去】</del></p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://ipfsupload.cyfan.top/api/v0/add?pin=true</span>
+【怎么都是网宿的】</code></pre></div>
+
+<p>或者说，你还可以自建unpkg镜像。</p>
+<p>啊，你说你没有服务器反向代理unpkg？</p>
+<p>其实，七牛的对象存储，腾讯的COS和阿里的OSS都是支持镜像回源的鸭！</p>
+<p>七牛http流量每月免费10GB，腾讯的国内免费60GB6个月，作为自用完全足够了！</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/L6LVJL_1ZUM2ISQ%5D10R%7B3HF.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<h2 id="ipfs"><a href="#ipfs" class="headerlink" title="ipfs"></a>ipfs</h2><p>我曾经<a href="/2020/04/07/IPFS-CloudFlare-ServerLessWebPage/">写过关于ipfs的讲解</a> ,作为一个去中心化的存储系统拿来做公开图床其实挺不错的。</p>
+<p>我个人搭建的ipfs镜像【托管于CloudFlareWorkers】：<a href="https://ipfs.cyfan.top" target="_blank" rel="noopener">https://ipfs.cyfan.top</a> <img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53d78c3f4a5.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>我个人搭建的ipfs上传API：<a href="https://ipfsupload.cyfan.top" target="_blank" rel="noopener">https://ipfsupload.cyfan.top</a></p>
+<p>基于Vercel+CloudFlare<del>【我也不知道worker为什么死活上传不上去】</del></p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-string">接口地址：https://ipfsupload.cyfan.top/api/v0/add?pin=true</span>
 <span class="hljs-string">post参数：file</span>
-<span class="hljs-string">回调json：Hash</span></code></pre></div><blockquote><p>此处Hash获得的是文件的Qmhash，你还要依托ipfs镜像，如<a href="https://ipfs.cyfan.top/ipfs/{QmHash}" target="_blank" rel="noopener">https://ipfs.cyfan.top/ipfs/{QmHash}</a></p></blockquote><p><img src="https://ipfs.cyfan.top/ipfs/QmctXmCyxkN72nzoHMAgw1geR7u9XvK7sLo72W4bDZsCm2" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>顺便收录一些ipfs网关【可访问】：</p><div class="hljs"><pre><code class="hljs html">【北京 阿里云】https://hashnews.k1ic.com/
+<span class="hljs-string">回调json：Hash</span></code></pre></div>
+
+<blockquote>
+<p>此处Hash获得的是文件的Qmhash，你还要依托ipfs镜像，如<a href="https://ipfs.cyfan.top/ipfs/{QmHash}" target="_blank" rel="noopener">https://ipfs.cyfan.top/ipfs/{QmHash}</a></p>
+</blockquote>
+<p><img src="https://ipfs.cyfan.top/ipfs/QmctXmCyxkN72nzoHMAgw1geR7u9XvK7sLo72W4bDZsCm2" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>顺便收录一些ipfs网关【可访问】：</p>
+<div class="hljs"><pre><code class="hljs html">【北京 阿里云】https://hashnews.k1ic.com/
 【香港 阿里云】https://ipfs.jbb.one/
 【美国 DigitalOcean】https://ipfs.telos.miami/
-【Amazon】https://ipfs.oceanprotocol.com/</code></pre></div><p>你可以在<a href="https://ipfs.github.io/public-gateway-checker/" target="_blank" rel="noopener">https://ipfs.github.io/public-gateway-checker/</a>找到更多</p><h1 id="图片缓存服务"><a href="#图片缓存服务" class="headerlink" title="图片缓存服务"></a>图片缓存服务</h1><p>正如<a href="##Imgur">##Imgur</a>所说的，imgur在国内已经无法访问了，但是，图片缓存服务可以啊！</p><p><img src="https://search.pstatic.net/common/?src=https://i.imgur.com/Usdr0IT.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>收集了一些图片缓存服务：</p><div class="hljs"><pre><code class="hljs http">【国内网宿节点，只能加载特定图床图片如imgur】https://search.pstatic.net/common/?src=
+【Amazon】https://ipfs.oceanprotocol.com/</code></pre></div>
+
+<p>你可以在<a href="https://ipfs.github.io/public-gateway-checker/" target="_blank" rel="noopener">https://ipfs.github.io/public-gateway-checker/</a>找到更多</p>
+<h1 id="图片缓存服务"><a href="#图片缓存服务" class="headerlink" title="图片缓存服务"></a>图片缓存服务</h1><p>正如<a href="##Imgur">##Imgur</a>所说的，imgur在国内已经无法访问了，但是，图片缓存服务可以啊！</p>
+<p><img src="https://search.pstatic.net/common/?src=https://i.imgur.com/Usdr0IT.jpg" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>收集了一些图片缓存服务：</p>
+<div class="hljs"><pre><code class="hljs http">【国内网宿节点，只能加载特定图床图片如imgur】https://search.pstatic.net/common/?src=
 【Akamai节点，没有使用限制】https://imageproxy.pimg.tw/resize?url=
 【CloudFlare节点】https://images.weserv.nl/?url=
-【CloudFlare节点】https://pic1.xuehuaimg.com/proxy/</code></pre></div><h1 id="PicGo的搭配使用"><a href="#PicGo的搭配使用" class="headerlink" title="PicGo的搭配使用"></a>PicGo的搭配使用</h1><p>PicGo默认已经集成了部分图床，其拖拽上传、自动复制剪贴板实在赢得了无数人的心。但是，对于一些冷门的图床支持似乎就不太好，这时候你需要用自定义web图床实现这一切：</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205225.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>我在上方介绍的图床如果支持web端上传，基本上就会写一个post请求，你可以依葫芦画瓢填写进去</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205449.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>这样子你就可以实现较为丝滑的上传图片了：</p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912210009.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912210420.gif?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p><p>【为了压缩方便删除了部分帧】</p><h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>实际上最保险的莫过于使用各大厂商的对象存储，当然这笔钱不大好使。<br>你也可以用自己的VPS搭建Chevereto，当然前提是你有VPS<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53de1a4d14d.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="../categories/随心记/">随心记</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="../tags/图床/">图床</a> <a class="hover-with-bg" href="../tags/白嫖/">白嫖</a> <a class="hover-with-bg" href="../tags/PicGo/">PicGo</a> <a class="hover-with-bg" href="../tags/JSDelivr/">JSDelivr</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext row"><article class="post-prev col-6"><a href="480ab6ed.html"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">无服务器搭建Artalk评论系统后端</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="6ce8a474.html"><span class="hidden-mobile">多域名线程并发与DNS预解析</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments"><div id="com"><div class="grid__item theme-1"><a href="javascript:onclock();" id="commentbutton" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">点击加载评论</a></div></div><link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css"><link href="https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.css" rel="stylesheet"><script src="https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.js"></script><script>function onclock() {
+【CloudFlare节点】https://pic1.xuehuaimg.com/proxy/</code></pre></div>
+
+<h1 id="PicGo的搭配使用"><a href="#PicGo的搭配使用" class="headerlink" title="PicGo的搭配使用"></a>PicGo的搭配使用</h1><p>PicGo默认已经集成了部分图床，其拖拽上传、自动复制剪贴板实在赢得了无数人的心。但是，对于一些冷门的图床支持似乎就不太好，这时候你需要用自定义web图床实现这一切：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205225.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>我在上方介绍的图床如果支持web端上传，基本上就会写一个post请求，你可以依葫芦画瓢填写进去</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912205449.png?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>这样子你就可以实现较为丝滑的上传图片了：</p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912210009.jpg?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p><img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/20200912210420.gif?q=45" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+<p>【为了压缩方便删除了部分帧】</p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>实际上最保险的莫过于使用各大厂商的对象存储，当然这笔钱不大好使。<br>你也可以用自己的VPS搭建Chevereto，当然前提是你有VPS<img src="https://rmt.dogedoge.com/fetch/hi-c-oss/storage/5c53de1a4d14d.gif" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="../categories/随心记/">随心记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../tags/图床/">图床</a>
+                    
+                      <a class="hover-with-bg" href="../tags/白嫖/">白嫖</a>
+                    
+                      <a class="hover-with-bg" href="../tags/PicGo/">PicGo</a>
+                    
+                      <a class="hover-with-bg" href="../tags/JSDelivr/">JSDelivr</a>
+                    
+                  
+                  
+                  </div>
+                  
+
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="480ab6ed.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">无服务器搭建Artalk评论系统后端</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="6ce8a474.html">
+                        <span class="hidden-mobile">多域名线程并发与DNS预解析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                <div id="com">
+	<div class="grid__item theme-1">
+		<a href="javascript:onclock();" id="commentbutton" class="ui-box bottom-rightStart-burst"
+			style="background-color: var(--link-hover-bg-color);font-size: 20px;">点击加载评论
+		</a>
+	</div>
+</div>
+<link rel="stylesheet" href="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/animated-border.min.css" />
+
+<link href="https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.css" rel="stylesheet">
+<script src="https://npm.elemecdn.com/artalk@2.3.4/dist/Artalk.js"></script>
+
+<script>
+	function onclock() {
 		//在新窗口打开
 		window.open("https://artalk.cyfan.top/safecaptcha");
 		document.getElementById("commentbutton").innerText = "我已在新标签页中完成人机验证";
@@ -223,7 +769,248 @@ npm publish</code></pre></div><p>请注意，如果你之前用过淘宝镜像�
 			voteDown:true
 
 		})
-	}</script><style>.el-input-group__prepend{border:1px solid transparent!important}.el-textarea__inner{border:1px solid transparent!important}.el-input__inner{border:1px solid transparent!important}.grid__item{position:relative;display:grid;grid-template-columns:100%;grid-template-rows:100%;justify-items:center;overflow:hidden;padding:4rem 1.5rem;background:var(--color-item-bg)}.grid__item-title{font-size:.85rem;color:var(--color-item-title);align-self:flex-start;margin:0}.action{position:absolute;top:0;right:0;background:0 0;margin:2rem;color:var(--color-action);border:0;padding:0;opacity:0;pointer-events:none}.action:focus{outline:0}.particles-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;border-radius:5px;border-radius:var(--radius-button);background:var(--color-button-bg);color:var(--color-button-text);border:0;border:var(--border-button);margin:0;padding:1.5rem 3rem;padding:var(--button-padding)}.particles-button:focus{outline:0}.no-js .particles-button{grid-area:1/1/2/2}.particles{position:relative;grid-area:1/1/2/2}.particles-canvas{position:absolute;pointer-events:none;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.particles-wrapper{position:relative;display:inline-block;overflow:hidden}.theme-1{--color-action:var(--board-bg-color);--color-button-bg:var(--text-color);--color-button-text:#fff;--button-padding:1.5rem 3rem;--radius-button:5px;--border-button:0}</style><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%"></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div class="text-center py-3"><div><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img width="30px" src="https://www.upyun.com/static/img/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="UPyun" title="UPyun"></a><br><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a><i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a href="https://cloudflare.com">CloudFlare</a><br><a class="nav-link" href="/blog-cgi">当前博客版本:<b id="blog_version">锟斤拷版本</b> | <b>博客用户端管理</b></a><p id="showsectime"></p><p><b>当前在线用户: <span id="user_count">【锟斤拷】</span> | 你的ip: <span id="ip">【锟斤拷】</span> | 你的所在国家/地区: <span id="loc">【锟斤拷】 </span>| 统计服务器通讯延迟：<span id="delay">【锟斤拷】</span></b></p></div><div class="beian"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank">20209909号</a></div></div><style>.live2d{position:fixed;left:-100px;bottom:-20px;width:500px!important;height:437.5px!important;z-index:998;pointer-events:none!important}</style><div id="live2d" class="live2d" style="display:none"><canvas id="live2dm" class="live2d" style="z-index:999!important"></canvas></div></div></footer><script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script><script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script><script>//window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
+	}
+</script>
+<style>
+	.el-input-group__prepend {
+		border: 1px solid transparent !important;
+	}
+
+	.el-textarea__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.el-input__inner {
+		border: 1px solid transparent !important;
+	}
+
+	.grid__item {
+		position: relative;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		justify-items: center;
+		overflow: hidden;
+		padding: 4rem 1.5rem;
+		background: var(--color-item-bg);
+	}
+
+	.grid__item-title {
+		font-size: 0.85rem;
+		color: var(--color-item-title);
+		align-self: flex-start;
+		margin: 0;
+	}
+
+	.action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		margin: 2rem;
+		color: var(--color-action);
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.action:focus {
+		outline: none;
+	}
+
+	.particles-button {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: relative;
+		border-radius: 5px;
+		border-radius: var(--radius-button);
+		background: var(--color-button-bg);
+		color: var(--color-button-text);
+		border: 0;
+		border: var(--border-button);
+		margin: 0;
+		padding: 1.5rem 3rem;
+		padding: var(--button-padding);
+	}
+
+	.particles-button:focus {
+		outline: none;
+	}
+
+	.no-js .particles-button {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.particles-canvas {
+		position: absolute;
+		pointer-events: none;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.particles-wrapper {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.theme-1 {
+		--color-action: var(--board-bg-color);
+		--color-button-bg: var(--text-color);
+		--color-button-text: #fff;
+		--button-padding: 1.5rem 3rem;
+		--radius-button: 5px;
+		--border-button: 0;
+	}
+</style>
+
+<!-- ADs-in-Blog-Under-Valine -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1878991317600808" data-ad-slot="6517667779"
+	data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://npm.elemecdn.com/chenfyan-oss@6.0.3" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:40%">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div class="text-center py-3">
+      <div>
+        <!--UPyun 联盟-->
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+          <img width="30px" src="https://www.upyun.com/static/img/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" srcset="https://npm.elemecdn.com/chenyfan-blog@1.0.1/themes/fluid/source/img/loading.gif" alt="UPyun" title="UPyun" />
+        </a>
+
+        <br/>
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>由强力的Hexo驱动 | </b></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+          <b>由可爱的Fluid支持</b></a> | <a href="https://cyfan.top">由<del>炒鸡NB的</del>CYF书写</a> | 已加入<a
+          href="http://www.foreverblog.cn">十年之约</a> | 部分图片存储于<a href="https://www.dogedoge.com/">DogeDoge图床</a> | 托管于<a
+          href="https://cloudflare.com">CloudFlare</a></br>
+        <a class="nav-link" href="/blog-cgi"> 当前博客版本:<b id="blog_version">锟斤拷版本</b> | <b>博客用户端管理</b></a>
+        <!--
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>-->
+        <p id="showsectime"></p>
+        </script>
+        <p>
+          <b>
+          当前在线用户: <span id="user_count">【锟斤拷】</span> |
+          你的ip: <span id="ip">【锟斤拷】</span> |
+          你的所在国家/地区: <span id="loc">【锟斤拷】 </span> |
+          统计服务器通讯延迟：<span id="delay">【锟斤拷】</span>
+        </b>
+        </p>
+      </div>
+      
+
+          <div class="beian">
+<a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20209909" target="_blank"> 20209909号</a>
+  </div>
+
+          
+    </div>
+    <style>
+      .live2d {
+        position: fixed;
+        left: -100px;
+        bottom: -20px;
+        width: 500px !important;
+        height: 437.5px !important;
+        z-index: 998;
+        pointer-events: none !important;
+      }
+    </style>
+
+    <div id="live2d" class="live2d" style="display: none;">
+      <canvas id="live2dm" class="live2d" style="z-index: 999!important;"></canvas>
+    </div>
+
+
+
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Plugins -->
+<script src="https://npm.elemecdn.com/chenyfan-os@0.0.0-r1/lush.js"></script>
+<script src="https://npm.elemecdn.com/notyf@3.10.0/notyf.min.js"></script>
+
+<script>
+    //window.post_views_api = "https://blog.cyfan.top/api/ga-hit";
     window.cache_post = async (url, that) => {
         const info = {};
         info.len = 1
@@ -345,7 +1132,166 @@ npm publish</code></pre></div><p>请注意，如果你之前用过淘宝镜像�
             loadScript
 
         }
-    }</script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"Jj0jIgofBpKZZk7F",ck:"Jj0jIgofBpKZZk7F",autoTrack:!0})</script><script src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:"#post-body",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","图床的千层套路&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!0});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js"></script><script>var path="../local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>window.notyf = new Notyf();
+    }
+</script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jj0jIgofBpKZZk7F",ck: "Jj0jIgofBpKZZk7F",autoTrack:true})</script>
+
+
+                            
+                                        
+
+
+                                            
+                                                
+  <script  src="https://npm.elemecdn.com/tocbot@4.11.1/dist/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+                                                    
+  <script  src="https://npm.elemecdn.com/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "图床的千层套路&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: true,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+                                                        
+
+                                                            
+  <script  src="https://npm.elemecdn.com/chenyfan-blog@1.0.1/public/js/local-search.js" ></script>
+  <script>
+    var path = "../local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+                                                                
+  <script  src="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+                                                                    
+
+
+
+                                                                        
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+                                                                            
+
+
+                                                                                
+
+
+
+                                                                                    
+
+
+
+
+
+                                                                                        <script>
+                                                                                            window.notyf = new Notyf();
 
                                                                                             (async () => {
                                                                                                 //document.getElementById('bver').innerText = await getVersion();
@@ -414,4 +1360,10 @@ npm publish</code></pre></div><p>请注意，如果你之前用过淘宝镜像�
                                                                                                     }
                                                                                                 }
 
-                                                                                            })()</script></body></html>
+                                                                                            })()
+                                                                                        </script>
+
+
+
+</body>
+</html>

