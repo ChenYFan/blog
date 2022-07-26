@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: '序炁的博客',
+    link: 'https://www.ordchaos.com',
+    intro: '序炁OrderChaos的自留地',
+    image: 'https://www.ordchaos.com/img/avater.jpg'
+    }
