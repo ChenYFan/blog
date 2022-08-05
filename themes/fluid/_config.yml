@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: '陈鑫磊的博客',
+    link: 'https://www.cxl2020mc.top',
+    intro: '这个人太懒了啥也没写......',
+    image: 'https://www.cxl2020mc.top/img/avatar.png'
+    }
