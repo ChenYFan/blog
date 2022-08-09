@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: '序炁的博客',
+    link: 'https://www.ordchaos.com/',
+    intro: 'A dragon that born in the Order and Chaos.',
+    image: 'https://www.ordchaos.com/img/avatar.jpg'
+    }
