@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: '是非题',
+    link: 'https://www.shifeiti.com',
+    intro: '记录生活，热爱跑步，学习 FPGA 中',
+    image: 'https://other.shifeiti.com/logo/logo.png'
+    }
