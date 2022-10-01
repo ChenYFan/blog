@@ -12,7 +12,7 @@
     "cheerio": "^1.0.0-rc.3",
     "chenyfan-blog-helper-dash": "^0.0.7",
     "domhandler": "^3.0.0",
-    "dplayer": "^1.25.0",
+    "dplayer": "^1.27.0",
     "hexo": "^3.9.0",
     "hexo-abbrlink": "2.2.1",
     "hexo-baidu-url-submit": "0.0.6",
