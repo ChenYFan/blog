@@ -193,16 +193,16 @@ let cdn = {
         //oplog: {
         //    "url": "https://cdn.oplog.cn/npm"
         //},
-        jjz:{
+        jjz: {
             "url": "https://jsd.onmicrosoft.cn/npm"
         },
-        jjz_unpkg:{
+        jjz_unpkg: {
             "url": "https://npkg.onmicrosoft.cn"
         },
-        sourceg:{
+        sourceg: {
             "url": "https://npm.sourcegcdn.com"
         },
-        GNT:{
+        GNT: {
             "url": "https://cdn.bilicdn.tk/npm"
         },
         tianli: {
@@ -219,12 +219,14 @@ const cache_url_list = [
 
 
 
-const blacklist = [
-    '9b5aee25-1d5b-4be8-9ea6-55651bfef4bc',
-    '0e7e3e61-20b4-414b-ae6b-577b6f25ee54'
-]
+
 
 const blog_default_version = '1.2.0'
+
+
+const is_bad_commment = (comment) => {
+    return comment.match(/快递|空包|测试自杀/g)?1:0
+}
 
 const handle = async function (req) {
     set_blog_config(await db.read('blog_version') || blog_default_version)
@@ -242,21 +244,48 @@ const handle = async function (req) {
     if (pathname.match('/cdn-cgi/')) return new Response(null, { status: 308 })
     try {
         if (domain === 'artalk.cyfan.top') {
-            if (blacklist.includes(uuid)) {
-                if (pathname === '/api/add') {
+            if (urlStr.match('/api/add')) {
 
-                    return new Response(JSON.stringify(
-                        { "success": false, "msg": "需要滑稽码", "data": { "img_data": "", "need_captcha": true } }
+                const comment_body = await reqdata.formData()
+                if (await is_bad_commment(comment_body.get('content'))) {
+                    await db.write('bad_comment', 'true')
+                }
+                if (await db.read('bad_comment') === 'true') {
+                    return new Response(JSON.stringify({
+                        "success": true,
+                        "data": {
+                            "comment": {
+                                "id": 0,
+                                "content": "内容正在审核中",
+                                "content_marked": "\u003cp\u003e内容正在审核中。。。\u003c/p\u003e\n",
+                                "user_id": 0, "nick": "用户名正在审核中",
+                                "email_encrypted": "",
+                                "link": "",
+                                "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
+                                "date": new Date().toDateString(),
+                                "is_collapsed": false,
+                                "is_pending": true,
+                                "is_pinned": false,
+                                "is_allow_reply": false,
+                                "rid": 0, "badge_name": "", "badge_color": "", "visible": true, "vote_up": 0, "vote_down": 0,
+                                "page_key": "",
+                                "page_url": "",
+                                "site_name": "ChenYFan的Artalk"
+                            }
+                        }
+                    }
+
                     ))
+                } else {
+                    return fetch(urlStr, {
+                        headers: new Headers(req.headers),
+                        method: req.method,
+                        mode: "cors",
+                        body: req.method === 'POST' ? comment_body : null,
+                        credentials: 'include'
+                    })
                 }
             }
-            return fetch(urlStr, {
-                headers: new Headers(req.headers),
-                method: req.method,
-                mode: "cors",
-                body: req.method === 'POST' ? await reqdata.arrayBuffer() : null,
-                credentials: 'include'
-            })
         }
         if (domain === "googlesyncdomain") {
             urlObj.hostname = "pagead2.googlesyndication.com";
@@ -480,29 +509,29 @@ const lfetch = async (urls, url) => {
                     const resn = res.clone()
                     if (resn.status == 200) {
                         setTimeout(async () => {
-                            try{
-                            db.write('HIT_HOT', await (async () => {
-                                const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
-                                const domain = urls.split('/')[2]
-                                hit[domain] = hit[domain] ? hit[domain] + 1 : 1
-                                if (blog.plus.indexOf(domain) > -1) {
-                                    hit.site[domain] = hit.site[domain] ? hit.site[domain] + 1 : 1
-                                } else {
-                                    hit.static[domain] = hit.static[domain] ? hit.static[domain] + 1 : 1
-                                }
-                                return JSON.stringify(hit)
-                            })());
-                            db.write('HIT_HOT_SIZE', await (async () => {
-                                const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT_SIZE')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
-                                const domain = urls.split('/')[2]
-                                hit[domain] = hit[domain] ? hit[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
-                                if (blog.plus.indexOf(domain) > -1) {
-                                    hit.site[domain] = hit.site[domain] ? hit.site[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
-                                } else {
-                                    hit.static[domain] = hit.static[domain] ? hit.static[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
-                                }
-                                return JSON.stringify(hit)
-                            })())
+                            try {
+                                db.write('HIT_HOT', await (async () => {
+                                    const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
+                                    const domain = urls.split('/')[2]
+                                    hit[domain] = hit[domain] ? hit[domain] + 1 : 1
+                                    if (blog.plus.indexOf(domain) > -1) {
+                                        hit.site[domain] = hit.site[domain] ? hit.site[domain] + 1 : 1
+                                    } else {
+                                        hit.static[domain] = hit.static[domain] ? hit.static[domain] + 1 : 1
+                                    }
+                                    return JSON.stringify(hit)
+                                })());
+                                db.write('HIT_HOT_SIZE', await (async () => {
+                                    const hit = await (async () => { try { return JSON.parse(await db.read('HIT_HOT_SIZE')) || { site: {}, static: {} } } catch (e) { return { site: {}, static: {} } } })()
+                                    const domain = urls.split('/')[2]
+                                    hit[domain] = hit[domain] ? hit[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
+                                    if (blog.plus.indexOf(domain) > -1) {
+                                        hit.site[domain] = hit.site[domain] ? hit.site[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
+                                    } else {
+                                        hit.static[domain] = hit.static[domain] ? hit.static[domain] + Number(res.headers.get('Content-Length')) : Number(res.headers.get('Content-Length'))
+                                    }
+                                    return JSON.stringify(hit)
+                                })())
                             /*if (await privconf.read('analytics')) {
                                 ws_sw({
                                     type: "send",
@@ -515,7 +544,7 @@ const lfetch = async (urls, url) => {
                                         request_uuid: generate_uuid()
                                     })
                                 })
-                            }*/}catch(n){}
+                            }*/} catch (n) { }
                         }, 0);
                         controller.abort();
                         cons.s(`LFetch Success! | Time: ${new Date().getTime() - t1}ms | Origin: ${url} `)
