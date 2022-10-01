@@ -276,16 +276,15 @@ const handle = async function (req) {
                     }
 
                     ))
-                } else {
-                    return fetch(urlStr, {
-                        headers: new Headers(req.headers),
-                        method: req.method,
-                        mode: "cors",
-                        body: req.method === 'POST' ? comment_body : null,
-                        credentials: 'include'
-                    })
                 }
             }
+            return fetch(urlStr, {
+                headers: new Headers(req.headers),
+                method: req.method,
+                mode: "cors",
+                body: req.method === 'POST' ? comment_body : null,
+                credentials: 'include'
+            })
         }
         if (domain === "googlesyncdomain") {
             urlObj.hostname = "pagead2.googlesyndication.com";
