@@ -224,8 +224,8 @@ const cache_url_list = [
 const blog_default_version = '1.2.0'
 
 
-const is_bad_commment = (comment) => {
-    return comment.match(/快递|空包|测试自杀/g)?1:0
+const is_bad_commment = async (comment) => {
+    return comment.match(/快递|空包|测试自杀/g) ? 1 : 0
 }
 
 const handle = async function (req) {
