@@ -225,7 +225,7 @@ const blog_default_version = '1.2.0'
 
 
 const is_bad_commment = async (comment) => {
-    return comment.match(/快递|空包|测试自杀/g) ? 1 : 0
+    return comment.match(/快递|空包|你妈|你爹|傻逼|maplesuagr\.top/g) ? 1 : 0
 }
 
 const handle = async function (req) {
@@ -246,7 +246,7 @@ const handle = async function (req) {
         if (domain === 'artalk.cyfan.top') {
             if (urlStr.match('/api/add')) {
 
-                const comment_body = await reqdata.formData()
+                const comment_body = await (await reqdata.clone()).formData()
                 if (await is_bad_commment(comment_body.get('content'))) {
                     await db.write('bad_comment', 'true')
                 }
@@ -262,7 +262,7 @@ const handle = async function (req) {
                                 "email_encrypted": "",
                                 "link": "",
                                 "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
-                                "date": new Date().toDateString(),
+                                "date": new Date().toDateString()+" "+new Date().toTimeString(),
                                 "is_collapsed": false,
                                 "is_pending": true,
                                 "is_pinned": false,
@@ -278,11 +278,12 @@ const handle = async function (req) {
                     ))
                 }
             }
+            console.log('Artalk Crenditals!')
             return fetch(urlStr, {
                 headers: new Headers(req.headers),
                 method: req.method,
                 mode: "cors",
-                body: req.method === 'POST' ? comment_body : null,
+                body: req.method === 'POST' ? await reqdata.arrayBuffer() : null,
                 credentials: 'include'
             })
         }
