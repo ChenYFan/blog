@@ -221,7 +221,7 @@ const cache_url_list = [
 
 
 
-const blog_default_version = '1.2.0'
+const blog_default_version = '1.2.1'
 
 
 const is_bad_commment = async (comment) => {
