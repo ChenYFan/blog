@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: '动荡の初二少年',
+    link: 'https://www.yt-blog.top/',
+    intro: '一个少年的博客',
+    image: 'https://img.yt-blog.top/png/big_logo.png'
+    }
