@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: 'Ray's Blog',
+    link: 'https://mk1.io/',
+    intro: 'Never say never.',
+    image: 'https://static.mk1.io/img/202212101330771.png'
+    }
