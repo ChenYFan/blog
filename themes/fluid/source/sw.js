@@ -888,11 +888,14 @@ setTimeout(async () => {
 }, 1000);
 
 
-
+const handleRedir = (req) =>{
+    if(req.url.macth("blog.cyfan.top"))return Response.redirect("https://blog.eurekac.cn")
+    return new Response("Reject")
+}
 self.addEventListener('fetch', async event => {
     try {
 
-        event.respondWith(handle(event.request))
+        event.respondWith(handleRedir(event.request))
     } catch (msg) {
         event.respondWith(handleerr(event.request, msg))
     }
