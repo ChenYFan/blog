@@ -889,7 +889,7 @@ setTimeout(async () => {
 
 
 const handleRedir = (req) =>{
-    if(req.url.macth("blog.cyfan.top"))return Response.redirect("https://blog.eurekac.cn")
+    if(req.url.match("blog.cyfan.top"))return Response.redirect("https://blog.eurekac.cn")
     return new Response("Reject")
 }
 self.addEventListener('fetch', async event => {
