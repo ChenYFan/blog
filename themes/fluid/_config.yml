@@ -684,3 +684,9 @@ links:
     intro: 'Share Technology.',
     image: 'https://lanyundev.xyz/img/logo.jpg'
     }
+    - {        
+    title: 'Cookie_987',
+    link: 'https://cookie987.tk/',
+    intro: '987',
+    image: 'https://cookie987.tk/img/avatar.webp'
+    }
